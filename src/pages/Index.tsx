@@ -1,3 +1,4 @@
+
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import JurisdictionSelector from '@/components/JurisdictionSelector';
@@ -6,6 +7,8 @@ import AIWizard from '@/components/AIWizard';
 import PricingTiers from '@/components/PricingTiers';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
+import Dashboard from '@/components/Dashboard';
+import ComingSoonCards from '@/components/ComingSoonCards';
 
 const Index = () => {
   return (
@@ -29,9 +32,18 @@ const Index = () => {
           <BusinessNameWidget />
         </div>
       </section>
+
+      {/* Dashboard Section */}
+      <section id="dashboard">
+        <Dashboard />
+      </section>
       
       <ServiceIntegrations />
       <AIWizard />
+      
+      {/* Coming Soon Section */}
+      <ComingSoonCards />
+      
       <PricingTiers />
       <Footer />
     </div>
