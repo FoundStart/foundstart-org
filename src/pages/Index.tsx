@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import JurisdictionSelector from '@/components/JurisdictionSelector';
 import ServiceIntegrations from '@/components/ServiceIntegrations';
 import AIWizard from '@/components/AIWizard';
-import PricingTiers from '@/components/PricingTiers';
+import PricingTiers from '@/components/pricing/PricingTiers';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
 import Dashboard from '@/components/Dashboard';

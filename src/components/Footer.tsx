@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
@@ -6,41 +7,41 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        "Company Formation",
-        "Banking Setup",
-        "Payment Processing",
-        "Crypto Integration",
-        "Ongoing Compliance"
+        { name: "Company Formation", href: "#services" },
+        { name: "Banking Setup", href: "#services" },
+        { name: "Payment Processing", href: "#services" },
+        { name: "Crypto Integration", href: "#services" },
+        { name: "Ongoing Compliance", href: "#services" }
+      ]
+    },
+    {
+      title: "Partners",
+      links: [
+        { name: "Digital Partners", href: "/digital-partners" },
+        { name: "Freelancer Partners", href: "/freelancer-partners" },
+        { name: "Sister Partners", href: "/sister-partners" },
+        { name: "Partner Directory", href: "/digital-partners" },
+        { name: "Success Stories", href: "#about" }
       ]
     },
     {
       title: "Jurisdictions",
       links: [
-        "United States",
-        "United Kingdom", 
-        "Canada",
-        "Compare Options",
-        "AI Recommendations"
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        "Business Guide",
-        "Tax Information",
-        "Legal Requirements",
-        "Partner Directory",
-        "Success Stories"
+        { name: "United States", href: "#" },
+        { name: "United Kingdom", href: "#" }, 
+        { name: "Canada", href: "#" },
+        { name: "Compare Options", href: "#" },
+        { name: "AI Recommendations", href: "#" }
       ]
     },
     {
       title: "Support",
       links: [
-        "Help Center",
-        "Contact Us",
-        "Live Chat",
-        "Documentation",
-        "Status Page"
+        { name: "Help Center", href: "#" },
+        { name: "Contact Us", href: "#" },
+        { name: "Live Chat", href: "#" },
+        { name: "Documentation", href: "#" },
+        { name: "Status Page", href: "#" }
       ]
     }
   ];
@@ -50,12 +51,12 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
+            <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">SL</span>
               </div>
               <span className="text-lg font-bold gradient-text">StartupLaunchpad</span>
-            </div>
+            </Link>
             <p className="text-muted-foreground text-sm mb-4">
               Launch your business in minutes, not months. The all-in-one platform 
               for company formation, banking, and payments.
@@ -71,12 +72,21 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
+                    {link.href.startsWith('#') ? (
+                      <a
+                        href={link.href}
+                        className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
