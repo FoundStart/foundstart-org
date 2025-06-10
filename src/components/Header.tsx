@@ -14,6 +14,7 @@ const Header = () => {
     { name: 'Digital Partners', href: '/digital-partners' },
     { name: 'Freelancer Partners', href: '/freelancer-partners' },
     { name: 'Sister Partners', href: '/sister-partners' },
+    { name: 'Press & Blogs', href: '/press' },
     { name: 'Pricing', href: '#pricing' }
   ];
 
@@ -26,7 +27,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Building2 className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold gradient-text">StartupLaunchpad</span>
+            <span className="text-xl font-bold gradient-text">FoundStart</span>
           </Link>
 
           {/* Desktop Navigation */}

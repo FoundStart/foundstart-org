@@ -2,57 +2,64 @@
 import PricingCard from './PricingCard';
 
 const PricingTiers = () => {
-  const plans = [
+  const pricingPlans = [
     {
       name: "Starter",
-      price: "$299",
-      description: "Perfect for small businesses getting started",
+      price: "$99",
+      description: "Perfect for solo entrepreneurs",
       features: [
         "Company Formation (LLC/Corp)",
-        "Get one Domain .com",
-        "Get a Hosting (1 year)",
-        "Get 10 Email businesses",
-        "EIN/Tax ID Registration",
-        "Basic Banking Setup",
-        "50% discount on sister partners",
-        "Free access to digital partners"
+        "1 Domain .com registration",
+        "Basic web hosting (1GB)",
+        "5 Business email accounts",
+        "Basic website platform",
+        "Mobile app template",
+        "25% discount on sister partners",
+        "Access to digital partners directory"
       ],
       buttonText: "Get Started",
       buttonVariant: "outline" as const
     },
     {
       name: "Professional",
-      price: "$599",
-      description: "Most popular for growing businesses",
+      price: "$299",
+      description: "Ideal for growing businesses",
       features: [
-        "Everything in Starter",
-        "Create a Website Platform (SAAS-Services-Products)",
-        "Premium Banking Partners",
-        "Payment Processing Setup",
-        "Stripe Integration",
-        "Crypto Exchange Integration",
-        "Priority Support",
-        "Compliance Monitoring"
+        "Company Formation + EIN",
+        "1 Domain .com + SSL certificate",
+        "Premium hosting (10GB)",
+        "10 Business email accounts",
+        "Professional website platform (SAAS ready)",
+        "Mobile Application (Android + iOS)",
+        "Virtual Cards (5 cards)",
+        "eSIM Global (5GB data)",
+        "50% discount on sister partners",
+        "Free access to digital partners",
+        "Priority support"
       ],
       isPopular: true,
-      buttonText: "Start Professional"
+      buttonText: "Most Popular"
     },
     {
       name: "Enterprise",
-      price: "$999",
-      description: "Complete solution for established businesses",
+      price: "$599",
+      description: "For established businesses",
       features: [
-        "Everything in Professional",
-        "Mobile Application (Android-IOS-Harmony) with publishing",
-        "White-label Solutions",
-        "Custom Integrations",
-        "Dedicated Account Manager",
-        "Advanced Analytics",
-        "24/7 Premium Support",
-        "Custom Compliance Solutions"
+        "Complete business formation package",
+        "3 Domain registrations",
+        "Enterprise hosting (100GB)",
+        "Unlimited business emails",
+        "Full website platform (SAAS-Services-Products)",
+        "Mobile Application (Android-iOS-Harmony) with publishing",
+        "Unlimited Virtual Cards",
+        "eSIM Global (50GB data)",
+        "Gift Cards issuing platform",
+        "75% discount on sister partners",
+        "Premium access to all digital partners",
+        "Dedicated account manager",
+        "24/7 priority support"
       ],
-      buttonText: "Contact Sales",
-      buttonVariant: "outline" as const
+      buttonText: "Contact Sales"
     }
   ];
 
@@ -61,28 +68,30 @@ const PricingTiers = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Simple, Transparent <span className="gradient-text">Pricing</span>
+            Simple, <span className="gradient-text">Transparent</span> Pricing
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose the perfect plan for your business needs. All plans include our core services with different levels of support and features.
+            Choose the perfect plan for your business needs. All plans include 
+            our core formation services plus modern digital solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {pricingPlans.map((plan, index) => (
             <PricingCard key={index} plan={plan} />
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">
-            All plans include 30-day money-back guarantee
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground mb-4">
+            All plans include company formation, banking setup, and access to our partner ecosystem
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            <span>✓ No setup fees</span>
-            <span>✓ Cancel anytime</span>
-            <span>✓ 24/7 support</span>
-            <span>✓ Money-back guarantee</span>
+            <span>✓ Virtual Cards</span>
+            <span>✓ eSIM Services</span>
+            <span>✓ Gift Cards</span>
+            <span>✓ 230+ Digital Partners</span>
+            <span>✓ Mobile Apps</span>
           </div>
         </div>
       </div>

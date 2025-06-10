@@ -5,23 +5,23 @@ import { Badge } from '@/components/ui/badge';
 const ServiceIntegrations = () => {
   const serviceCategories = [
     {
-      title: "Banking Partners",
-      description: "Instant business account setup",
+      title: "Banking & Cards",
+      description: "Complete financial solutions",
       services: [
         { name: "Mercury", type: "Digital Banking", logo: "💎" },
         { name: "Brex", type: "Corporate Cards", logo: "💳" },
-        { name: "Silicon Valley Bank", type: "Traditional Banking", logo: "🏛️" },
-        { name: "Revolut Business", type: "Multi-currency", logo: "🌍" }
+        { name: "Virtual Cards", type: "Visa/Mastercard", logo: "💰" },
+        { name: "Wise", type: "Multi-currency", logo: "🌍" }
       ]
     },
     {
-      title: "Payment Processing",
-      description: "Accept payments instantly",
+      title: "Digital Services",
+      description: "Modern connectivity solutions",
       services: [
+        { name: "eSIM Global", type: "International Data", logo: "📶" },
+        { name: "Gift Cards", type: "Brand Rewards", logo: "🎁" },
         { name: "Stripe", type: "Online Payments", logo: "🔷" },
-        { name: "PayPal", type: "Global Payments", logo: "💙" },
-        { name: "Square", type: "Point of Sale", logo: "⬛" },
-        { name: "Adyen", type: "Enterprise", logo: "🟢" }
+        { name: "PayPal", type: "Global Payments", logo: "💙" }
       ]
     },
     {
@@ -55,7 +55,7 @@ const ServiceIntegrations = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Access all the tools you need to run your business through our 
-            carefully curated partner network. No more juggling multiple platforms.
+            carefully curated partner network. From virtual cards to eSIM services.
           </p>
         </div>
 
@@ -94,11 +94,11 @@ const ServiceIntegrations = () => {
         <div className="mt-16 text-center">
           <Card className="glass-card max-w-md mx-auto">
             <CardHeader>
-              <CardTitle className="text-2xl gradient-text">50+ Partners</CardTitle>
+              <CardTitle className="text-2xl gradient-text">230+ Partners</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Seamlessly integrated services with single sign-on and unified billing
+                Seamlessly integrated services including virtual cards, eSIM, gift cards, and more
               </p>
             </CardContent>
           </Card>

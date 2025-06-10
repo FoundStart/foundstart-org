@@ -8,7 +8,9 @@ import Index from "./pages/Index";
 import DigitalPartners from "./pages/DigitalPartners";
 import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
+import Press from "./pages/Press";
 import NotFound from "./pages/NotFound";
+import AIChatBot from "./components/AIChatBot";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +25,10 @@ const App = () => (
           <Route path="/digital-partners" element={<DigitalPartners />} />
           <Route path="/freelancer-partners" element={<FreelancerPartners />} />
           <Route path="/sister-partners" element={<SisterPartners />} />
+          <Route path="/press" element={<Press />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <AIChatBot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

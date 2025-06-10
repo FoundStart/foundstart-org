@@ -14,7 +14,9 @@ import {
   FileText,
   BarChart3,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Wifi,
+  Gift
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -36,6 +38,9 @@ const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarPr
     { id: 'website', name: 'Website Platform', icon: TrendingUp },
     { id: 'mobile', name: 'Mobile Application', icon: Smartphone },
     { id: 'banking', name: 'Business Banking', icon: CreditCard },
+    { id: 'virtualcards', name: 'Virtual Cards', icon: CreditCard },
+    { id: 'esim', name: 'eSIM Cards', icon: Wifi },
+    { id: 'giftcards', name: 'Gift Cards', icon: Gift },
     { id: 'analytics', name: 'Analytics', icon: BarChart3 },
     { id: 'documents', name: 'Documents', icon: FileText },
     { id: 'team', name: 'Team Management', icon: Users },

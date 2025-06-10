@@ -9,9 +9,9 @@ const Footer = () => {
       links: [
         { name: "Company Formation", href: "#services" },
         { name: "Banking Setup", href: "#services" },
-        { name: "Payment Processing", href: "#services" },
-        { name: "Crypto Integration", href: "#services" },
-        { name: "Ongoing Compliance", href: "#services" }
+        { name: "Virtual Cards", href: "#services" },
+        { name: "eSIM Cards", href: "#services" },
+        { name: "Gift Cards", href: "#services" }
       ]
     },
     {
@@ -21,17 +21,17 @@ const Footer = () => {
         { name: "Freelancer Partners", href: "/freelancer-partners" },
         { name: "Sister Partners", href: "/sister-partners" },
         { name: "Partner Directory", href: "/digital-partners" },
-        { name: "Success Stories", href: "#about" }
+        { name: "Success Stories", href: "/press" }
       ]
     },
     {
-      title: "Jurisdictions",
+      title: "Resources",
       links: [
-        { name: "United States", href: "#" },
-        { name: "United Kingdom", href: "#" }, 
-        { name: "Canada", href: "#" },
-        { name: "Compare Options", href: "#" },
-        { name: "AI Recommendations", href: "#" }
+        { name: "Press & Blogs", href: "/press" },
+        { name: "Startup Guide", href: "/press" },
+        { name: "Case Studies", href: "/press" },
+        { name: "Company News", href: "/press" },
+        { name: "Industry Insights", href: "/press" }
       ]
     },
     {
@@ -53,16 +53,16 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SL</span>
+                <span className="text-white font-bold text-sm">FS</span>
               </div>
-              <span className="text-lg font-bold gradient-text">StartupLaunchpad</span>
+              <span className="text-lg font-bold gradient-text">FoundStart</span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
               Launch your business in minutes, not months. The all-in-one platform 
-              for company formation, banking, and payments.
+              for company formation, banking, and digital services.
             </p>
             <div className="text-xs text-muted-foreground">
-              © 2024 StartupLaunchpad. All rights reserved.
+              © 2024 FoundStart. All rights reserved.
             </div>
           </div>
 
