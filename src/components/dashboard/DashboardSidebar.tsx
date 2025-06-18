@@ -16,7 +16,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Wifi,
-  Gift
+  Gift,
+  Search,
+  Target
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -41,6 +43,7 @@ const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarPr
     { id: 'virtualcards', name: 'Virtual Cards', icon: CreditCard },
     { id: 'esim', name: 'eSIM Cards', icon: Wifi },
     { id: 'giftcards', name: 'Gift Cards', icon: Gift },
+    { id: 'seo-optimization', name: 'SEO & Optimization', icon: Search },
     { id: 'analytics', name: 'Analytics', icon: BarChart3 },
     { id: 'documents', name: 'Documents', icon: FileText },
     { id: 'team', name: 'Team Management', icon: Users },
