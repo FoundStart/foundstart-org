@@ -14,28 +14,24 @@ import AIChatBot from "./components/AIChatBot";
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
       <BrowserRouter>
-        <TooltipProvider>
-          <div className="min-h-screen">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/digital-partners" element={<DigitalPartners />} />
-              <Route path="/freelancer-partners" element={<FreelancerPartners />} />
-              <Route path="/sister-partners" element={<SisterPartners />} />
-              <Route path="/press" element={<Press />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <AIChatBot />
-          </div>
-          <Toaster />
-          <Sonner />
-        </TooltipProvider>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/digital-partners" element={<DigitalPartners />} />
+          <Route path="/freelancer-partners" element={<FreelancerPartners />} />
+          <Route path="/sister-partners" element={<SisterPartners />} />
+          <Route path="/press" element={<Press />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <AIChatBot />
       </BrowserRouter>
-    </QueryClientProvider>
-  );
-};
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

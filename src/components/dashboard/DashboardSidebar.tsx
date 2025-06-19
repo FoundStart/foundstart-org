@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { 
   Building2, 
@@ -17,8 +18,7 @@ import {
   Wifi,
   Gift,
   Search,
-  Target,
-  Wallet
+  Target
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -33,7 +33,6 @@ const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarPr
 
   const services = [
     { id: 'overview', name: 'Overview', icon: Home },
-    { id: 'wallet', name: 'Digital Wallet', icon: Wallet },
     { id: 'company', name: 'Company Formation', icon: Building2 },
     { id: 'domain', name: 'Domain Registration', icon: Globe },
     { id: 'hosting', name: 'Web Hosting', icon: Server },
