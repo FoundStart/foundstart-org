@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -31,6 +32,9 @@ const Header = () => {
             </a>
             <a href="/digital-partners" className="text-sm font-medium hover:text-primary transition-colors">
               Partners
+            </a>
+            <a href="/seo-management" className="text-sm font-medium hover:text-primary transition-colors">
+              SEO Suite
             </a>
           </nav>
 
@@ -98,6 +102,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Partners
+              </a>
+              <a
+                href="/seo-management"
+                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                SEO Suite
               </a>
               <div className="px-3 py-2 space-y-2">
                 <SignedOut>

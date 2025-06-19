@@ -9,6 +9,7 @@ import DigitalPartners from "./pages/DigitalPartners";
 import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
 import Press from "./pages/Press";
+import SEOManagement from "./pages/SEOManagement";
 import NotFound from "./pages/NotFound";
 import AIChatBot from "./components/AIChatBot";
 
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/freelancer-partners" element={<FreelancerPartners />} />
               <Route path="/sister-partners" element={<SisterPartners />} />
               <Route path="/press" element={<Press />} />
+              <Route path="/seo-management" element={<SEOManagement />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <AIChatBot />
