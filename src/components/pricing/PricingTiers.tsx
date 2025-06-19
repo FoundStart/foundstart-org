@@ -14,7 +14,6 @@ const PricingTiers = () => {
         "5 Business email accounts",
         "Basic website platform",
         "Mobile app template",
-        "Basic SEO optimization",
         "25% discount on sister partners",
         "Access to digital partners directory"
       ],
@@ -34,8 +33,6 @@ const PricingTiers = () => {
         "Mobile Application (Android + iOS)",
         "Virtual Cards (5 cards)",
         "eSIM Global (5GB data)",
-        "SEO + ASO optimization",
-        "GEO targeting setup",
         "50% discount on sister partners",
         "Free access to digital partners",
         "Priority support"
@@ -57,8 +54,6 @@ const PricingTiers = () => {
         "Unlimited Virtual Cards",
         "eSIM Global (50GB data)",
         "Gift Cards issuing platform",
-        "Complete SEO + ASO + LLMO + GEO + AEO + SEM",
-        "AI-powered optimization",
         "75% discount on sister partners",
         "Premium access to all digital partners",
         "Dedicated account manager",
@@ -77,7 +72,7 @@ const PricingTiers = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose the perfect plan for your business needs. All plans include 
-            our core formation services plus modern digital solutions and optimization.
+            our core formation services plus modern digital solutions.
           </p>
         </div>
 
@@ -95,7 +90,6 @@ const PricingTiers = () => {
             <span>✓ Virtual Cards</span>
             <span>✓ eSIM Services</span>
             <span>✓ Gift Cards</span>
-            <span>✓ SEO/ASO/LLMO Optimization</span>
             <span>✓ 230+ Digital Partners</span>
             <span>✓ Mobile Apps</span>
           </div>

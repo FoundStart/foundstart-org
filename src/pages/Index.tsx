@@ -7,7 +7,7 @@ import AIWizard from '@/components/AIWizard';
 import PricingTiers from '@/components/pricing/PricingTiers';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
-import AuthenticatedDashboard from '@/components/AuthenticatedDashboard';
+import Dashboard from '@/components/Dashboard';
 import ComingSoonCards from '@/components/ComingSoonCards';
 
 const Index = () => {
@@ -35,7 +35,7 @@ const Index = () => {
 
       {/* Dashboard Section */}
       <section id="dashboard">
-        <AuthenticatedDashboard />
+        <Dashboard />
       </section>
       
       <ServiceIntegrations />
