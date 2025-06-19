@@ -17,8 +17,8 @@ const Footer = () => {
     {
       title: "Partners",
       links: [
-        { name: "Digital Partners (233)", href: "/digital-partners" },
-        { name: "Freelancer Partners (100)", href: "/freelancer-partners" },
+        { name: "Digital Partners", href: "/digital-partners" },
+        { name: "Freelancer Partners", href: "/freelancer-partners" },
         { name: "Sister Partners", href: "/sister-partners" },
         { name: "Partner Directory", href: "/digital-partners" },
         { name: "Success Stories", href: "/press" }

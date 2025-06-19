@@ -1,15 +1,7 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
-import { Link } from 'react-router-dom';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
@@ -20,10 +12,10 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"></div>
               <span className="text-xl font-bold gradient-text">StartupLaunchpad</span>
-            </Link>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,22 +29,9 @@ const Header = () => {
             <a href="#dashboard" className="text-sm font-medium hover:text-primary transition-colors">
               Dashboard
             </a>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
-                Partners <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem asChild>
-                  <Link to="/digital-partners">Digital Partners (233)</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/freelancer-partners">Freelancer Partners (100)</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Link to="/seo-management" className="text-sm font-medium hover:text-primary transition-colors">
-              SEO Suite
-            </Link>
+            <a href="/digital-partners" className="text-sm font-medium hover:text-primary transition-colors">
+              Partners
+            </a>
           </nav>
 
           {/* Auth Buttons & Theme Toggle */}
@@ -113,27 +92,13 @@ const Header = () => {
               >
                 Dashboard
               </a>
-              <Link
-                to="/digital-partners"
+              <a
+                href="/digital-partners"
                 className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Digital Partners (233)
-              </Link>
-              <Link
-                to="/freelancer-partners"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Freelancer Partners (100)
-              </Link>
-              <Link
-                to="/seo-management"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                SEO Suite
-              </Link>
+                Partners
+              </a>
               <div className="px-3 py-2 space-y-2">
                 <SignedOut>
                   <SignInButton>
