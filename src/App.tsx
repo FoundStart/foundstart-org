@@ -9,29 +9,35 @@ import DigitalPartners from "./pages/DigitalPartners";
 import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
 import Press from "./pages/Press";
+import SEOManagement from "./pages/SEOManagement";
 import NotFound from "./pages/NotFound";
 import AIChatBot from "./components/AIChatBot";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/digital-partners" element={<DigitalPartners />} />
-          <Route path="/freelancer-partners" element={<FreelancerPartners />} />
-          <Route path="/sister-partners" element={<SisterPartners />} />
-          <Route path="/press" element={<Press />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <AIChatBot />
+        <TooltipProvider>
+          <div className="min-h-screen">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/digital-partners" element={<DigitalPartners />} />
+              <Route path="/freelancer-partners" element={<FreelancerPartners />} />
+              <Route path="/sister-partners" element={<SisterPartners />} />
+              <Route path="/press" element={<Press />} />
+              <Route path="/seo-management" element={<SEOManagement />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <AIChatBot />
+          </div>
+          <Toaster />
+          <Sonner />
+        </TooltipProvider>
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+};
 
 export default App;
