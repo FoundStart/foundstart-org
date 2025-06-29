@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import JurisdictionSelector from '@/components/JurisdictionSelector';
 import ServiceIntegrations from '@/components/ServiceIntegrations';
 import AIWizard from '@/components/AIWizard';
+import AIFeatures from '@/components/AIFeatures';
 import PricingTiers from '@/components/pricing/PricingTiers';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
@@ -39,6 +40,7 @@ const Index = () => {
       </section>
       
       <ServiceIntegrations />
+      <AIFeatures />
       <AIWizard />
       
       {/* Coming Soon Section */}

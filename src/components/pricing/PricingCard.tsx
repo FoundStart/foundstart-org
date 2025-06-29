@@ -13,12 +13,32 @@ interface PricingCardProps {
     isPopular?: boolean;
     buttonText: string;
     buttonVariant?: "default" | "outline";
+    paypalPlanId?: string;
   };
 }
 
 const PricingCard = ({ plan }: PricingCardProps) => {
+  const handlePayPalPayment = (planId: string) => {
+    // In a real implementation, you would integrate with PayPal SDK
+    // For now, we'll show an alert and open PayPal in a new tab
+    console.log(`Initiating PayPal payment for plan: ${planId}`);
+    
+    // Example PayPal integration - replace with actual PayPal SDK
+    const paypalUrl = `https://www.paypal.com/checkout?plan=${planId}`;
+    window.open(paypalUrl, '_blank');
+  };
+
+  const handleButtonClick = () => {
+    if (plan.paypalPlanId) {
+      handlePayPalPayment(plan.paypalPlanId);
+    } else {
+      // Handle other actions like "Contact Sales"
+      console.log(`Action: ${plan.buttonText}`);
+    }
+  };
+
   return (
-    <Card className={`relative ${plan.isPopular ? 'border-primary shadow-xl scale-105' : ''}`}>
+    <Card className={`relative transition-all duration-300 hover:shadow-xl ${plan.isPopular ? 'border-primary shadow-xl scale-105' : ''}`}>
       {plan.isPopular && (
         <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
           Most Popular
@@ -47,9 +67,23 @@ const PricingCard = ({ plan }: PricingCardProps) => {
           className="w-full" 
           variant={plan.buttonVariant || "default"}
           size="lg"
+          onClick={handleButtonClick}
         >
           {plan.buttonText}
         </Button>
+
+        {plan.paypalPlanId && (
+          <div className="text-center">
+            <p className="text-xs text-muted-foreground mb-2">Secure payment via PayPal</p>
+            <div className="flex justify-center">
+              <img 
+                src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" 
+                alt="PayPal" 
+                className="h-6"
+              />
+            </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
