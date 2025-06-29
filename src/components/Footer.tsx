@@ -17,11 +17,11 @@ const Footer = () => {
     {
       title: "Partners",
       links: [
-        { name: "Digital Partners (233)", href: "/digital-partners" },
-        { name: "Freelancer Partners (100)", href: "/freelancer-partners" },
-        { name: "Sister Partners", href: "/sister-partners" },
+        { name: "Digital Partners (233+)", href: "/digital-partners" },
+        { name: "Freelancer Partners (100+)", href: "/freelancer-partners" },
         { name: "Partner Directory", href: "/digital-partners" },
-        { name: "Success Stories", href: "/press" }
+        { name: "Success Stories", href: "/press" },
+        { name: "Join Partnership", href: "/contact-sales" }
       ]
     },
     {
@@ -38,7 +38,7 @@ const Footer = () => {
       title: "Support",
       links: [
         { name: "Help Center", href: "#" },
-        { name: "Contact Us", href: "#" },
+        { name: "Contact Us", href: "/contact-sales" },
         { name: "Live Chat", href: "#" },
         { name: "Documentation", href: "#" },
         { name: "Status Page", href: "#" }
@@ -59,7 +59,7 @@ const Footer = () => {
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
               Launch your business in minutes, not months. The all-in-one platform 
-              for company formation, banking, and digital services.
+              for company formation, banking, and digital services with 333+ partners.
             </p>
             <div className="text-xs text-muted-foreground">
               © 2024 FoundStart. All rights reserved.

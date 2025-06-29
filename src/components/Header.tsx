@@ -36,19 +36,16 @@ const Header = () => {
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </a>
-            <a href="#dashboard" className="text-sm font-medium hover:text-primary transition-colors">
-              Dashboard
-            </a>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
                 Partners <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <Link to="/digital-partners">Digital Partners (233)</Link>
+                  <Link to="/digital-partners">Digital Partners (233+)</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/freelancer-partners">Freelancer Partners (100)</Link>
+                  <Link to="/freelancer-partners">Freelancer Partners (100+)</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -108,26 +105,19 @@ const Header = () => {
               >
                 Pricing
               </a>
-              <a
-                href="#dashboard"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Dashboard
-              </a>
               <Link
                 to="/digital-partners"
                 className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Digital Partners (233)
+                Digital Partners (233+)
               </Link>
               <Link
                 to="/freelancer-partners"
                 className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Freelancer Partners (100)
+                Freelancer Partners (100+)
               </Link>
               <Link
                 to="/seo-management"
