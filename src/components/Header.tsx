@@ -21,8 +21,10 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"></div>
-              <span className="text-xl font-bold gradient-text">StartupLaunchpad</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">FS</span>
+              </div>
+              <span className="text-xl font-bold gradient-text">FoundStart</span>
             </Link>
           </div>
 
