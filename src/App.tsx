@@ -10,6 +10,7 @@ import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
 import Press from "./pages/Press";
 import SEOManagement from "./pages/SEOManagement";
+import ContactSales from "./pages/ContactSales";
 import NotFound from "./pages/NotFound";
 import AIChatBot from "./components/AIChatBot";
 
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/sister-partners" element={<SisterPartners />} />
               <Route path="/press" element={<Press />} />
               <Route path="/seo-management" element={<SEOManagement />} />
+              <Route path="/contact-sales" element={<ContactSales />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <AIChatBot />

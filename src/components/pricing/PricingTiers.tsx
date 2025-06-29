@@ -1,4 +1,3 @@
-
 import PricingCard from './PricingCard';
 
 const PricingTiers = () => {
@@ -170,15 +169,15 @@ const PricingTiers = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="foundstart-pricing" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            AI-Powered Business Formation <span className="gradient-text">Platform</span>
+            <span className="gradient-text">Option 2:</span> FoundStart AI-Powered Formation
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Launch your business with AI guidance and expert support. 
-            Choose your jurisdiction and get started with FoundStart.
+            Get comprehensive business formation with AI guidance, compliance monitoring, 
+            and ongoing support. Pay securely with PayPal.
           </p>
         </div>
 

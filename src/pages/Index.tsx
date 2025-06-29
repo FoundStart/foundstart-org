@@ -8,7 +8,6 @@ import AIFeatures from '@/components/AIFeatures';
 import PricingTiers from '@/components/pricing/PricingTiers';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
-import AuthenticatedDashboard from '@/components/AuthenticatedDashboard';
 import ComingSoonCards from '@/components/ComingSoonCards';
 
 const Index = () => {
@@ -16,6 +15,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      
+      {/* Partner Links Section - First Option */}
       <JurisdictionSelector />
       
       {/* Business Name Widget Section */}
@@ -33,20 +34,18 @@ const Index = () => {
           <BusinessNameWidget />
         </div>
       </section>
-
-      {/* Dashboard Section */}
-      <section id="dashboard">
-        <AuthenticatedDashboard />
-      </section>
       
       <ServiceIntegrations />
       <AIFeatures />
+      
+      {/* FoundStart Paid Services - Second Option */}
+      <PricingTiers />
+      
       <AIWizard />
       
       {/* Coming Soon Section */}
       <ComingSoonCards />
       
-      <PricingTiers />
       <Footer />
     </div>
   );

@@ -3,17 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowRight, ExternalLink } from 'lucide-react';
-
-interface Jurisdiction {
-  id: string;
-  name: string;
-  flag: string;
-  timeframe: string;
-  cost: string;
-  benefits: string[];
-  popular?: boolean;
-}
+import { CheckCircle, ArrowRight, ExternalLink, Globe, CreditCard, Phone } from 'lucide-react';
 
 interface Partner {
   category: string;
@@ -23,58 +13,6 @@ interface Partner {
 }
 
 const JurisdictionSelector = () => {
-  const [selectedJurisdiction, setSelectedJurisdiction] = useState<string>('usa');
-  const [serviceType, setServiceType] = useState<'partners' | 'foundstart'>('foundstart');
-
-  const jurisdictions: Jurisdiction[] = [
-    {
-      id: 'usa',
-      name: 'United States',
-      flag: '🇺🇸',
-      timeframe: '1-3 business days',
-      cost: 'From $299',
-      benefits: [
-        'Delaware LLC formation',
-        'EIN number included',
-        'Registered agent service',
-        'Global business credibility',
-        'Access to US banking',
-        'Stripe integration ready'
-      ],
-      popular: true
-    },
-    {
-      id: 'uk',
-      name: 'United Kingdom',
-      flag: '🇬🇧',
-      timeframe: '24-48 hours',
-      cost: 'From £199',
-      benefits: [
-        'Companies House registration',
-        'UTR number application',
-        'London business address',
-        'EU market access',
-        'Strong legal framework',
-        'Fintech-friendly'
-      ]
-    },
-    {
-      id: 'canada',
-      name: 'Canada',
-      flag: '🇨🇦',
-      timeframe: '2-5 business days',
-      cost: 'From CAD $399',
-      benefits: [
-        'Federal incorporation',
-        'Business number (BN)',
-        'Toronto registered office',
-        'USMCA trade benefits',
-        'Stable banking system',
-        'Innovation incentives'
-      ]
-    }
-  ];
-
   const partners: Partner[] = [
     { category: 'Company Formation', details: '(UK-USA-CA) company Establish', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
     { category: 'Company Formation', details: 'UK company Establish', platform: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX' },
@@ -88,136 +26,161 @@ const JurisdictionSelector = () => {
     { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'esim me', url: 'https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB' }
   ];
 
+  const jurisdictionInfo = [
+    {
+      flag: '🇺🇸',
+      name: 'United States',
+      price: 'From $299',
+      timeframe: '1-3 business days',
+      benefits: [
+        'Delaware LLC formation',
+        'EIN number included',
+        'Registered agent service',
+        'Global business credibility',
+        'Access to US banking',
+        'Stripe integration ready'
+      ]
+    },
+    {
+      flag: '🇬🇧',
+      name: 'United Kingdom',
+      price: 'From £199',
+      timeframe: '24-48 hours',
+      benefits: [
+        'Companies House registration',
+        'UTR number application',
+        'London business address',
+        'EU market access',
+        'Strong legal framework',
+        'Fintech-friendly'
+      ]
+    },
+    {
+      flag: '🇨🇦',
+      name: 'Canada',
+      price: 'From CAD $399',
+      timeframe: '2-5 business days',
+      benefits: [
+        'Federal incorporation',
+        'Business number (BN)',
+        'Toronto registered office',
+        'USMCA trade benefits',
+        'Stable banking system',
+        'Innovation incentives'
+      ]
+    }
+  ];
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Company Formation':
+        return Globe;
+      case 'Finance':
+        return CreditCard;
+      case 'Telecommunications':
+        return Phone;
+      default:
+        return Globe;
+    }
+  };
+
   return (
-    <section id="jurisdictions" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section id="partner-links" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Choose Your <span className="gradient-text">Formation Path</span>
+            <span className="gradient-text">Option 1:</span> Quick Setup with Trusted Partners
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Two ways to start your business: Quick setup through our trusted partners 
-            or comprehensive service through FoundStart with AI guidance.
+            Get started immediately with our vetted formation partners. 
+            Click any platform to begin your business setup process instantly.
           </p>
         </div>
 
-        {/* Service Type Toggle */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-card rounded-lg p-1 flex">
-            <Button
-              variant={serviceType === 'partners' ? 'default' : 'ghost'}
-              onClick={() => setServiceType('partners')}
-              className="px-6 py-2"
-            >
-              Quick Setup (Partners)
-            </Button>
-            <Button
-              variant={serviceType === 'foundstart' ? 'default' : 'ghost'}
-              onClick={() => setServiceType('foundstart')}
-              className="px-6 py-2"
-            >
-              Full Service (FoundStart)
-            </Button>
-          </div>
+        {/* Jurisdiction Overview */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {jurisdictionInfo.map((jurisdiction, index) => (
+            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="text-6xl mb-4">{jurisdiction.flag}</div>
+                <CardTitle className="text-xl">{jurisdiction.name}</CardTitle>
+                <div className="space-y-2">
+                  <div className="text-2xl font-bold gradient-text">{jurisdiction.price}</div>
+                  <div className="text-sm text-muted-foreground">{jurisdiction.timeframe}</div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {jurisdiction.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center space-x-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
-        {serviceType === 'foundstart' ? (
-          // Original jurisdiction selection
-          <>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {jurisdictions.map((jurisdiction) => (
-                <Card
-                  key={jurisdiction.id}
-                  className={`cursor-pointer transition-all duration-300 hover:shadow-xl relative ${
-                    selectedJurisdiction === jurisdiction.id
-                      ? 'ring-2 ring-primary shadow-lg scale-105'
-                      : 'hover:scale-102'
-                  }`}
-                  onClick={() => setSelectedJurisdiction(jurisdiction.id)}
-                >
-                  {jurisdiction.popular && (
-                    <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-primary">
-                      Most Popular
-                    </Badge>
-                  )}
-                  
-                  <CardHeader className="text-center pb-4">
-                    <div className="text-6xl mb-4">{jurisdiction.flag}</div>
-                    <CardTitle className="text-2xl">{jurisdiction.name}</CardTitle>
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold gradient-text">{jurisdiction.cost}</div>
-                      <div className="text-sm text-muted-foreground">{jurisdiction.timeframe}</div>
-                    </div>
-                  </CardHeader>
+        {/* Partner Links by Category */}
+        {['Company Formation', 'Finance', 'Telecommunications'].map((category) => (
+          <div key={category} className="mb-12">
+            <div className="flex items-center mb-6">
+              {(() => {
+                const Icon = getCategoryIcon(category);
+                return <Icon className="w-6 h-6 text-primary mr-3" />;
+              })()}
+              <h3 className="text-2xl font-semibold gradient-text">{category}</h3>
+              <Badge variant="secondary" className="ml-3">
+                {partners.filter(p => p.category === category).length} Partners
+              </Badge>
+            </div>
 
-                  <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                      {jurisdiction.benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-start space-x-2">
-                          <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {selectedJurisdiction === jurisdiction.id && (
-                      <Button className="w-full mt-6 group animate-fade-in">
-                        Start with FoundStart
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {partners
+                .filter(partner => partner.category === category)
+                .map((partner, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg">{partner.platform}</CardTitle>
+                        <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                      </div>
+                      <p className="text-sm text-muted-foreground">{partner.details}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <Button 
+                        className="w-full group" 
+                        onClick={() => window.open(partner.url, '_blank')}
+                      >
+                        Visit {partner.platform}
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
             </div>
-          </>
-        ) : (
-          // Partner links section
-          <div className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold mb-4">Trusted Formation Partners</h3>
-              <p className="text-muted-foreground mb-8">
-                Get started quickly with our vetted partners. Click any link to begin your formation process.
-              </p>
-            </div>
-
-            {['Company Formation', 'Finance', 'Telecommunications'].map((category) => (
-              <div key={category}>
-                <h4 className="text-xl font-semibold mb-4 gradient-text">{category}</h4>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                  {partners
-                    .filter(partner => partner.category === category)
-                    .map((partner, index) => (
-                      <Card key={index} className="hover:shadow-lg transition-all duration-300">
-                        <CardContent className="p-4">
-                          <div className="flex justify-between items-start mb-2">
-                            <h5 className="font-semibold">{partner.platform}</h5>
-                            <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                          </div>
-                          <p className="text-sm text-muted-foreground mb-3">{partner.details}</p>
-                          <Button 
-                            onClick={() => window.open(partner.url, '_blank')}
-                            className="w-full"
-                            size="sm"
-                          >
-                            Visit {partner.platform}
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
-                </div>
-              </div>
-            ))}
           </div>
-        )}
+        ))}
 
-        <div className="text-center">
-          <p className="text-muted-foreground mb-4">
-            Need help choosing the right option for your business?
-          </p>
-          <Button variant="outline" size="lg">
-            Talk to Our Experts
-          </Button>
+        <div className="text-center mt-16">
+          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-purple-500/5 border-primary/20">
+            <CardContent className="p-8">
+              <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h4 className="text-xl font-semibold mb-4">Need Help Choosing?</h4>
+              <p className="text-muted-foreground mb-6">
+                Our partners offer quick, affordable business formation services. 
+                Each platform specializes in different jurisdictions and services.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
+                <Badge variant="outline">✓ Instant Setup</Badge>
+                <Badge variant="outline">✓ Direct Partnership</Badge>
+                <Badge variant="outline">✓ Competitive Pricing</Badge>
+                <Badge variant="outline">✓ Proven Track Record</Badge>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface PricingCardProps {
   plan: {
@@ -18,6 +19,8 @@ interface PricingCardProps {
 }
 
 const PricingCard = ({ plan }: PricingCardProps) => {
+  const navigate = useNavigate();
+
   const handlePayPalPayment = (planId: string) => {
     // In a real implementation, you would integrate with PayPal SDK
     // For now, we'll show an alert and open PayPal in a new tab
@@ -29,10 +32,12 @@ const PricingCard = ({ plan }: PricingCardProps) => {
   };
 
   const handleButtonClick = () => {
-    if (plan.paypalPlanId) {
+    if (plan.buttonText === "Contact Sales") {
+      navigate('/contact-sales');
+    } else if (plan.paypalPlanId) {
       handlePayPalPayment(plan.paypalPlanId);
     } else {
-      // Handle other actions like "Contact Sales"
+      // Handle other actions
       console.log(`Action: ${plan.buttonText}`);
     }
   };
@@ -72,7 +77,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
           {plan.buttonText}
         </Button>
 
-        {plan.paypalPlanId && (
+        {plan.paypalPlanId && plan.buttonText !== "Contact Sales" && (
           <div className="text-center">
             <p className="text-xs text-muted-foreground mb-2">Secure payment via PayPal</p>
             <div className="flex justify-center">
