@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -11,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import ThemeToggle from './ThemeToggle';
+import AuthButton from './AuthButton';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,21 +63,7 @@ const Header = () => {
           {/* Auth Buttons & Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <SignedOut>
-              <SignInButton>
-                <Button variant="ghost" size="sm">
-                  Sign In
-                </Button>
-              </SignInButton>
-              <SignInButton>
-                <Button size="sm">
-                  Get Started
-                </Button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton afterSignOutUrl="/" />
-            </SignedIn>
+            <AuthButton />
           </div>
 
           {/* Mobile menu button */}
@@ -146,24 +132,8 @@ const Header = () => {
               >
                 Affiliates
               </Link>
-              <div className="px-3 py-2 space-y-2">
-                <SignedOut>
-                  <SignInButton>
-                    <Button variant="ghost" className="w-full justify-start">
-                      Sign In
-                    </Button>
-                  </SignInButton>
-                  <SignInButton>
-                    <Button className="w-full">
-                      Get Started
-                    </Button>
-                  </SignInButton>
-                </SignedOut>
-                <SignedIn>
-                  <div className="flex justify-start">
-                    <UserButton afterSignOutUrl="/" />
-                  </div>
-                </SignedIn>
+              <div className="px-3 py-2">
+                <AuthButton />
               </div>
             </div>
           </div>
