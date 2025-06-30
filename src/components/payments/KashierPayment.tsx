@@ -35,6 +35,8 @@ const KashierPayment = ({
   });
 
   const handlePayment = async () => {
+    console.log('Starting payment process...');
+    
     if (!user) {
       toast({
         title: "Authentication Required",
@@ -56,6 +58,13 @@ const KashierPayment = ({
     setIsLoading(true);
 
     try {
+      console.log('Calling create-payment function with:', {
+        amount,
+        currency,
+        customer: customerData,
+        planId
+      });
+
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           amount,
@@ -65,13 +74,20 @@ const KashierPayment = ({
         }
       });
 
-      if (error) throw error;
+      console.log('Function response:', { data, error });
 
-      if (data.success && data.paymentUrl) {
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(error.message || 'Function call failed');
+      }
+
+      if (data?.success && data?.paymentUrl) {
+        console.log('Redirecting to payment URL:', data.paymentUrl);
         // Redirect to Kashier payment page
         window.location.href = data.paymentUrl;
       } else {
-        throw new Error('Failed to create payment order');
+        console.error('Invalid response from payment function:', data);
+        throw new Error(data?.error || 'Failed to create payment order');
       }
     } catch (error) {
       console.error('Payment error:', error);
