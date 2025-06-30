@@ -36,9 +36,6 @@ const Header = () => {
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </a>
-            <a href="#dashboard" className="text-sm font-medium hover:text-primary transition-colors">
-              Dashboard
-            </a>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
                 Partners <ChevronDown className="ml-1 h-4 w-4" />
@@ -52,8 +49,14 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link to="/seo-management" className="text-sm font-medium hover:text-primary transition-colors">
-              SEO Suite
+            <Link to="/tutorials" className="text-sm font-medium hover:text-primary transition-colors">
+              Tutorials
+            </Link>
+            <Link to="/blog" className="text-sm font-medium hover:text-primary transition-colors">
+              Blog
+            </Link>
+            <Link to="/affiliate-dashboard" className="text-sm font-medium hover:text-primary transition-colors">
+              Affiliates
             </Link>
           </nav>
 
@@ -108,13 +111,6 @@ const Header = () => {
               >
                 Pricing
               </a>
-              <a
-                href="#dashboard"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Dashboard
-              </a>
               <Link
                 to="/digital-partners"
                 className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
@@ -130,11 +126,25 @@ const Header = () => {
                 Freelancer Partners (100)
               </Link>
               <Link
-                to="/seo-management"
+                to="/tutorials"
                 className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                SEO Suite
+                Tutorials
+              </Link>
+              <Link
+                to="/blog"
+                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/affiliate-dashboard"
+                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Affiliates
               </Link>
               <div className="px-3 py-2 space-y-2">
                 <SignedOut>

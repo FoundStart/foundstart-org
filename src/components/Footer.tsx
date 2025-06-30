@@ -19,7 +19,6 @@ const Footer = () => {
       links: [
         { name: "Digital Partners (233)", href: "/digital-partners" },
         { name: "Freelancer Partners (100)", href: "/freelancer-partners" },
-        { name: "Sister Partners", href: "/sister-partners" },
         { name: "Partner Directory", href: "/digital-partners" },
         { name: "Success Stories", href: "/press" }
       ]
@@ -27,8 +26,8 @@ const Footer = () => {
     {
       title: "Resources",
       links: [
-        { name: "Press & Blogs", href: "/press" },
-        { name: "Startup Guide", href: "/press" },
+        { name: "Press & Blogs", href: "/blog" },
+        { name: "Tutorials", href: "/tutorials" },
         { name: "Case Studies", href: "/press" },
         { name: "Company News", href: "/press" },
         { name: "Industry Insights", href: "/press" }
@@ -41,7 +40,8 @@ const Footer = () => {
         { name: "Contact Us", href: "#" },
         { name: "Live Chat", href: "#" },
         { name: "Documentation", href: "#" },
-        { name: "Status Page", href: "#" }
+        { name: "SEO Suite", href: "/seo-management" },
+        { name: "Affiliate System", href: "/affiliate-dashboard" }
       ]
     }
   ];

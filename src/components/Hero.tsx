@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Play } from 'lucide-react';
 
 const Hero = () => {
   const [selectedStep, setSelectedStep] = useState(1);
@@ -29,6 +29,10 @@ const Hero = () => {
   ];
 
   const jurisdictions = ["USA", "UK", "Canada"];
+
+  const handleWatchDemo = () => {
+    window.open('https://youtu.be/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI', '_blank');
+  };
 
   return (
     <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 dark:from-background dark:via-blue-950/20 dark:to-purple-950/20">
@@ -67,8 +71,14 @@ const Hero = () => {
                 Start Your Business
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                Watch Demo
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 py-6 group"
+                onClick={handleWatchDemo}
+              >
+                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                Watch Demo by MoMo Sa
               </Button>
             </div>
 

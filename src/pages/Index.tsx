@@ -16,8 +16,11 @@ const Index = () => {
       <Header />
       <Hero />
       
-      {/* Partner Links Section - First Option */}
+      {/* Option 1: Partner Links Section */}
       <JurisdictionSelector />
+      
+      {/* Option 2: FoundStart Paid Services */}  
+      <PricingTiers />
       
       {/* Business Name Widget Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -37,10 +40,6 @@ const Index = () => {
       
       <ServiceIntegrations />
       <AIFeatures />
-      
-      {/* FoundStart Paid Services - Second Option */}
-      <PricingTiers />
-      
       <AIWizard />
       
       {/* Coming Soon Section */}

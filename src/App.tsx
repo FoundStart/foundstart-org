@@ -11,6 +11,9 @@ import SisterPartners from "./pages/SisterPartners";
 import Press from "./pages/Press";
 import SEOManagement from "./pages/SEOManagement";
 import ContactSales from "./pages/ContactSales";
+import Blog from "./pages/Blog";
+import Tutorials from "./pages/Tutorials";
+import AffiliateDashboard from "./pages/AffiliateDashboard";
 import NotFound from "./pages/NotFound";
 import AIChatBot from "./components/AIChatBot";
 
@@ -30,6 +33,9 @@ const App = () => {
               <Route path="/press" element={<Press />} />
               <Route path="/seo-management" element={<SEOManagement />} />
               <Route path="/contact-sales" element={<ContactSales />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/tutorials" element={<Tutorials />} />
+              <Route path="/affiliate-dashboard" element={<AffiliateDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <AIChatBot />

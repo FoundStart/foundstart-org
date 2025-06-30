@@ -1,3 +1,8 @@
+
+User-agent: *
+Allow: /
+
+# Specific bot permissions
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +15,21 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://foundstart.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any exist in future)
+Disallow: /admin/
+Disallow: /api/private/
+
+# Allow all public pages
+Allow: /digital-partners
+Allow: /freelancer-partners
+Allow: /blog
+Allow: /tutorials
+Allow: /affiliate-dashboard
+Allow: /press
+Allow: /seo-management
