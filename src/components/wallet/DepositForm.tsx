@@ -6,15 +6,18 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CreditCard, Building, Smartphone, Bitcoin } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthProvider';
+import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 
 const DepositForm = () => {
+  const { user } = useAuth();
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const paymentMethods = [
-    { id: 'credit_card', name: 'Credit/Debit Card', icon: CreditCard, fee: '2.9%' },
+    { id: 'kashier', name: 'Credit/Debit Card (Kashier)', icon: CreditCard, fee: '2.9%' },
     { id: 'bank_transfer', name: 'Bank Transfer', icon: Building, fee: '$0.50' },
     { id: 'paypal', name: 'PayPal', icon: Smartphone, fee: '3.4%' },
     { id: 'crypto', name: 'Cryptocurrency', icon: Bitcoin, fee: '1.5%' }
@@ -30,18 +33,61 @@ const DepositForm = () => {
       return;
     }
 
+    if (!user) {
+      toast({
+        title: "Authentication Required",
+        description: "Please sign in to deposit funds",
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsLoading(true);
     
-    // Simulate API call - will be replaced with Supabase integration
-    setTimeout(() => {
+    try {
+      if (paymentMethod === 'kashier') {
+        // Use Kashier for credit card payments
+        const { data, error } = await supabase.functions.invoke('create-payment', {
+          body: {
+            amount: parseFloat(amount),
+            currency: 'USD',
+            customer: {
+              name: user.email,
+              email: user.email,
+              phone: ''
+            },
+            planId: 'wallet-deposit'
+          }
+        });
+
+        if (error) throw error;
+
+        if (data.success && data.paymentUrl) {
+          window.location.href = data.paymentUrl;
+        } else {
+          throw new Error('Failed to create payment order');
+        }
+      } else {
+        // Simulate other payment methods
+        setTimeout(() => {
+          toast({
+            title: "Deposit Initiated",
+            description: `$${amount} deposit request has been submitted for processing.`
+          });
+          setAmount('');
+          setPaymentMethod('');
+          setIsLoading(false);
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('Deposit error:', error);
       toast({
-        title: "Deposit Initiated",
-        description: `$${amount} deposit request has been submitted for processing.`
+        title: "Deposit Error",
+        description: error.message || "Failed to process deposit",
+        variant: "destructive"
       });
-      setAmount('');
-      setPaymentMethod('');
       setIsLoading(false);
-    }, 2000);
+    }
   };
 
   const selectedMethod = paymentMethods.find(method => method.id === paymentMethod);
