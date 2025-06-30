@@ -7,11 +7,11 @@ const Footer = () => {
     {
       title: "Services",
       links: [
+        { name: "All Services", href: "/services" },
+        { name: "AI Chat Bots", href: "/services" },
         { name: "Company Formation", href: "#services" },
         { name: "Banking Setup", href: "#services" },
-        { name: "Virtual Cards", href: "#services" },
-        { name: "eSIM Cards", href: "#services" },
-        { name: "Gift Cards", href: "#services" }
+        { name: "AI Automation", href: "/services" }
       ]
     },
     {
