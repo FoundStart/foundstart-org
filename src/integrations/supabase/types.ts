@@ -9,6 +9,60 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      payment_transactions: {
+        Row: {
+          amount: number
+          created_at: string | null
+          currency: string
+          customer_data: Json | null
+          id: string
+          kashier_order_id: string | null
+          kashier_transaction_id: string | null
+          order_id: string
+          payment_method: string
+          payment_url: string | null
+          plan_id: string | null
+          status: string
+          updated_at: string | null
+          user_id: string
+          webhook_data: Json | null
+        }
+        Insert: {
+          amount: number
+          created_at?: string | null
+          currency?: string
+          customer_data?: Json | null
+          id?: string
+          kashier_order_id?: string | null
+          kashier_transaction_id?: string | null
+          order_id: string
+          payment_method?: string
+          payment_url?: string | null
+          plan_id?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id: string
+          webhook_data?: Json | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string | null
+          currency?: string
+          customer_data?: Json | null
+          id?: string
+          kashier_order_id?: string | null
+          kashier_transaction_id?: string | null
+          order_id?: string
+          payment_method?: string
+          payment_url?: string | null
+          plan_id?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id?: string
+          webhook_data?: Json | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
