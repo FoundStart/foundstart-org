@@ -42,7 +42,7 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <Link to="/digital-partners">Digital Partners (233)</Link>
+                  <Link to="/digital-partners">Digital Partners (400+)</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/freelancer-partners">Freelancer Partners (100)</Link>
@@ -51,6 +51,9 @@ const Header = () => {
             </DropdownMenu>
             <Link to="/tutorials" className="text-sm font-medium hover:text-primary transition-colors">
               Tutorials
+            </Link>
+            <Link to="/media" className="text-sm font-medium hover:text-primary transition-colors">
+              Media
             </Link>
             <Link to="/blog" className="text-sm font-medium hover:text-primary transition-colors">
               Blog
@@ -102,7 +105,7 @@ const Header = () => {
                 className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Digital Partners (233)
+                Digital Partners (400+)
               </Link>
               <Link
                 to="/freelancer-partners"
@@ -117,6 +120,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Tutorials
+              </Link>
+              <Link
+                to="/media"
+                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Media
               </Link>
               <Link
                 to="/blog"

@@ -12,6 +12,7 @@ import DigitalPartners from "./pages/DigitalPartners";
 import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
 import Press from "./pages/Press";
+import Media from "./pages/Media";
 import SEOManagement from "./pages/SEOManagement";
 import ContactSales from "./pages/ContactSales";
 import Blog from "./pages/Blog";
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/freelancer-partners" element={<FreelancerPartners />} />
                 <Route path="/sister-partners" element={<SisterPartners />} />
                 <Route path="/press" element={<Press />} />
+                <Route path="/media" element={<Media />} />
                 <Route path="/seo-management" element={<SEOManagement />} />
                 <Route path="/contact-sales" element={<ContactSales />} />
                 <Route path="/blog" element={<Blog />} />

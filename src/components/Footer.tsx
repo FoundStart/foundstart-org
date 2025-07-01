@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
+import { Youtube, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const footerSections = [
@@ -17,7 +18,7 @@ const Footer = () => {
     {
       title: "Partners",
       links: [
-        { name: "Digital Partners (233)", href: "/digital-partners" },
+        { name: "Digital Partners (400+)", href: "/digital-partners" },
         { name: "Freelancer Partners (100)", href: "/freelancer-partners" },
         { name: "Partner Directory", href: "/digital-partners" },
         { name: "Success Stories", href: "/press" }
@@ -27,6 +28,7 @@ const Footer = () => {
       title: "Resources",
       links: [
         { name: "Press & Blogs", href: "/blog" },
+        { name: "Media & Videos", href: "/media" },
         { name: "Tutorials", href: "/tutorials" },
         { name: "Case Studies", href: "/press" },
         { name: "Company News", href: "/press" },
@@ -46,6 +48,14 @@ const Footer = () => {
     }
   ];
 
+  const socialLinks = [
+    { name: "YouTube", href: "https://www.youtube.com/@foundstart/", icon: Youtube },
+    { name: "Facebook", href: "https://www.facebook.com/foundstart/", icon: Facebook },
+    { name: "Instagram", href: "https://www.instagram.com/foundstartco/", icon: Instagram },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/foundstart/", icon: Linkedin },
+    { name: "Twitter", href: "https://x.com/foundstartco", icon: Twitter }
+  ];
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -61,6 +71,26 @@ const Footer = () => {
               Launch your business in minutes, not months. The all-in-one platform 
               for company formation, banking, and digital services.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex space-x-3 mb-4">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label={social.name}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                );
+              })}
+            </div>
+            
             <div className="text-xs text-muted-foreground">
               © 2024 FoundStart. All rights reserved.
             </div>

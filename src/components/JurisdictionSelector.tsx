@@ -14,14 +14,15 @@ interface Partner {
 
 const JurisdictionSelector = () => {
   const partners: Partner[] = [
-    { category: 'Company Formation', details: '(UK-USA-CA) company Establish', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
-    { category: 'Company Formation', details: 'UK company Establish', platform: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX' },
-    { category: 'Company Formation', details: 'UK company Establish', platform: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30' },
-    { category: 'Company Formation', details: 'USA company Establish', platform: 'ITIN', url: 'https://theitin.com/ref/80' },
-    { category: 'Company Formation', details: 'USA company Establish', platform: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf' },
-    { category: 'Company Formation', details: 'USA company Establish', platform: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed' },
+    { category: 'Company Formation', details: '(UK-USA-CA) company formation', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
+    { category: 'Company Formation', details: 'UK company formation', platform: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX' },
+    { category: 'Company Formation', details: 'UK company formation', platform: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30' },
+    { category: 'Company Formation', details: 'USA company formation', platform: 'ITIN', url: 'https://theitin.com/ref/80' },
+    { category: 'Company Formation', details: 'USA company formation', platform: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf' },
+    { category: 'Company Formation', details: 'USA company formation', platform: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed' },
     { category: 'Finance', details: 'Payment Gateway', platform: 'Stripe', url: 'https://stripe.com' },
     { category: 'Finance', details: 'USA Bank', platform: 'Mercury', url: 'https://mercury.com/r/deeemoz-llc' },
+    { category: 'Finance', details: 'Bank/Wallet', platform: 'Wise', url: 'https://wise.com/invite/u/mohamedsayeda7' },
     { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'Bnesim', url: 'https://bnes.im/PHV3' },
     { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'esim me', url: 'https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB' }
   ];
@@ -92,7 +93,7 @@ const JurisdictionSelector = () => {
             <span className="gradient-text">Option 1:</span> Quick Setup with Trusted Partners
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get started immediately with our vetted formation partners. 
+            Get started immediately with our 400+ vetted formation partners. 
             Click any platform to begin your business setup process instantly.
           </p>
         </div>
@@ -168,17 +169,23 @@ const JurisdictionSelector = () => {
           <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-purple-500/5 border-primary/20">
             <CardContent className="p-8">
               <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h4 className="text-xl font-semibold mb-4">Need Help Choosing?</h4>
+              <h4 className="text-xl font-semibold mb-4">Explore All 400+ Partners</h4>
               <p className="text-muted-foreground mb-6">
-                Our partners offer quick, affordable business formation services. 
-                Each platform specializes in different jurisdictions and services.
+                Browse our complete directory of trusted business partners across all categories - 
+                from AI tools and automation to marketing and development services.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Badge variant="outline">✓ Instant Setup</Badge>
-                <Badge variant="outline">✓ Direct Partnership</Badge>
-                <Badge variant="outline">✓ Competitive Pricing</Badge>
-                <Badge variant="outline">✓ Proven Track Record</Badge>
+              <div className="flex flex-wrap justify-center gap-4 text-sm mb-6">
+                <Badge variant="outline">✓ 400+ Verified Partners</Badge>
+                <Badge variant="outline">✓ All Business Categories</Badge>
+                <Badge variant="outline">✓ Exclusive Deals</Badge>
+                <Badge variant="outline">✓ Regular Updates</Badge>
               </div>
+              <Button size="lg" asChild>
+                <a href="/digital-partners">
+                  <Globe className="w-4 h-4 mr-2" />
+                  View All Partners
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
