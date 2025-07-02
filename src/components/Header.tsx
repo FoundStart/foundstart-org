@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -15,6 +14,15 @@ import AuthButton from './AuthButton';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navigationItems = [
+    { name: 'Services', href: '/services' },
+    { name: 'Countries', href: '/countries' },
+    { name: 'Partners', href: '/partners' },
+    { name: 'Digital Partners', href: '/digital-partners' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact-sales' },
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,40 +38,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/services" className="text-sm font-medium hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link to="/countries" className="flex items-center text-sm font-medium hover:text-primary transition-colors">
-              🌍 Countries
-            </Link>
-            <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Pricing
-            </a>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
-                Partners <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem asChild>
-                  <Link to="/digital-partners">Digital Partners (400+)</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/freelancer-partners">Freelancer Partners (100)</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Link to="/tutorials" className="text-sm font-medium hover:text-primary transition-colors">
-              Tutorials
-            </Link>
-            <Link to="/media" className="text-sm font-medium hover:text-primary transition-colors">
-              Media
-            </Link>
-            <Link to="/blog" className="text-sm font-medium hover:text-primary transition-colors">
-              Blog
-            </Link>
-            <Link to="/affiliate-dashboard" className="text-sm font-medium hover:text-primary transition-colors">
-              Affiliates
-            </Link>
+            {navigationItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
           </nav>
 
           {/* Auth Buttons & Theme Toggle */}
@@ -89,69 +72,16 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
-              <Link
-                to="/services"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                to="/countries"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                🌍 Countries
-              </Link>
-              <a
-                href="#pricing"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </a>
-              <Link
-                to="/digital-partners"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Digital Partners (400+)
-              </Link>
-              <Link
-                to="/freelancer-partners"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Freelancer Partners (100)
-              </Link>
-              <Link
-                to="/tutorials"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Tutorials
-              </Link>
-              <Link
-                to="/media"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Media
-              </Link>
-              <Link
-                to="/blog"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                to="/affiliate-dashboard"
-                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Affiliates
-              </Link>
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
               <div className="px-3 py-2">
                 <AuthButton />
               </div>

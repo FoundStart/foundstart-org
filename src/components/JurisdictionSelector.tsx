@@ -1,158 +1,11 @@
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowRight, ExternalLink, Globe, CreditCard, Phone } from 'lucide-react';
-
-interface Partner {
-  category: string;
-  details: string;
-  platform: string;
-  url: string;
-}
+import JurisdictionOverview from './jurisdiction/JurisdictionOverview';
+import PartnerCategory from './jurisdiction/PartnerCategory';
+import JurisdictionCTA from './jurisdiction/JurisdictionCTA';
+import { Globe, CreditCard, Phone } from 'lucide-react';
+import { jurisdictionInfo, partnerData } from '@/data/jurisdictionData';
 
 const JurisdictionSelector = () => {
-  const partners: Partner[] = [
-    // Company Formation Partners - Updated
-    { category: 'Company Formation', details: 'Company formation in USA', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
-    { category: 'Company Formation', details: 'Company formation in USA', platform: 'ITIN', url: 'https://theitin.com/ref/80' },
-    { category: 'Company Formation', details: 'Company formation in USA', platform: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf' },
-    { category: 'Company Formation', details: 'Company formation in USA', platform: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed' },
-    { category: 'Company Formation', details: 'Company formation in USA', platform: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX' },
-    { category: 'Company Formation', details: 'Company formation in USA', platform: 'doola', url: 'https://partnersps.doola.com/yukcm0gd526a' },
-    { category: 'Company Formation', details: 'Company formation in UK', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
-    { category: 'Company Formation', details: 'Company formation in UK', platform: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30' },
-    { category: 'Company Formation', details: 'Company formation in UK', platform: 'Rapid Formation', url: 'https://rapid-formations.sjv.io/XmEo53' },
-    { category: 'Company Formation', details: 'Company formation in Canada', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
-    { category: 'Company Formation', details: 'Company formation in EU (UK-Estonia-Finland-Sweden-Latvia-Lithuania)', platform: '1office', url: 'https://my1office.co/en/company/register?ref=mdzknzu' },
-    
-    // Finance Partners
-    { category: 'Finance', details: 'Payment Gateway', platform: 'Stripe', url: 'https://stripe.com' },
-    { category: 'Finance', details: 'USA Bank', platform: 'Mercury', url: 'https://mercury.com/r/deeemoz-llc' },
-    { category: 'Finance', details: 'Bank/Wallet', platform: 'Wise', url: 'https://wise.com/invite/u/mohamedsayeda7' },
-    { category: 'Finance', details: 'Personal financial management', platform: 'Refresh me', url: 'https://get.refresh.me/0jswhxxxuxd4' },
-    
-    // Telecommunications Partners
-    { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'Bnesim', url: 'https://bnes.im/PHV3' },
-    { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'esim me', url: 'https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB' }
-  ];
-
-  const jurisdictionInfo = [
-    {
-      flag: '🇺🇸',
-      name: 'United States',
-      price: 'From $299',
-      timeframe: '1-3 business days',
-      benefits: [
-        'Delaware LLC formation',
-        'EIN number included',
-        'Registered agent service',
-        'Global business credibility',
-        'Access to US banking',
-        'Stripe integration ready'
-      ]
-    },
-    {
-      flag: '🇬🇧',
-      name: 'United Kingdom',
-      price: 'From £199',
-      timeframe: '24-48 hours',
-      benefits: [
-        'Companies House registration',
-        'UTR number application',
-        'London business address',
-        'EU market access',
-        'Strong legal framework',
-        'Fintech-friendly'
-      ]
-    },
-    {
-      flag: '🇨🇦',
-      name: 'Canada',
-      price: 'From CAD $399',
-      timeframe: '2-5 business days',
-      benefits: [
-        'Federal incorporation',
-        'Business number (BN)',
-        'Toronto registered office',
-        'USMCA trade benefits',
-        'Stable banking system',
-        'Innovation incentives'
-      ]
-    },
-    {
-      flag: '🇪🇪',
-      name: 'Estonia',
-      price: 'From €300',
-      timeframe: '1-2 business days',
-      benefits: [
-        'EU digital residency',
-        'e-Residency program',
-        'Digital-first government',
-        'EU market access',
-        'Low corporate tax',
-        'Tech-friendly environment'
-      ]
-    },
-    {
-      flag: '🇫🇮',
-      name: 'Finland',
-      price: 'From €350',
-      timeframe: '2-3 business days',
-      benefits: [
-        'EU market access',
-        'Nordic business culture',
-        'Strong innovation ecosystem',
-        'Stable economy',
-        'English-friendly environment',
-        'Tech startup incentives'
-      ]
-    },
-    {
-      flag: '🇸🇪',
-      name: 'Sweden',
-      price: 'From SEK 3,500',
-      timeframe: '1-3 business days',
-      benefits: [
-        'EU market access',
-        'Innovation-friendly policies',
-        'Strong startup ecosystem',
-        'Excellent infrastructure',
-        'High quality of life',
-        'English proficiency'
-      ]
-    },
-    {
-      flag: '🇱🇻',
-      name: 'Latvia',
-      price: 'From €250',
-      timeframe: '1-2 business days',
-      benefits: [
-        'EU market access',
-        'Strategic location',
-        'Low administrative burden',
-        'Competitive costs',
-        'Growing tech sector',
-        'Multilingual workforce'
-      ]
-    },
-    {
-      flag: '🇱🇹',
-      name: 'Lithuania',
-      price: 'From €280',
-      timeframe: '1-2 business days',
-      benefits: [
-        'EU market access',
-        'Fintech hub',
-        'Digital innovation',
-        'Business-friendly policies',
-        'Strategic location',
-        'Growing startup scene'
-      ]
-    }
-  ];
-
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'Company Formation':
@@ -165,6 +18,8 @@ const JurisdictionSelector = () => {
         return Globe;
     }
   };
+
+  const categories = ['Company Formation', 'Finance', 'Telecommunications'];
 
   return (
     <section id="partner-links" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -179,97 +34,18 @@ const JurisdictionSelector = () => {
           </p>
         </div>
 
-        {/* Jurisdiction Overview */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {jurisdictionInfo.map((jurisdiction, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="text-4xl mb-4">{jurisdiction.flag}</div>
-                <CardTitle className="text-lg">{jurisdiction.name}</CardTitle>
-                <div className="space-y-2">
-                  <div className="text-xl font-bold gradient-text">{jurisdiction.price}</div>
-                  <div className="text-sm text-muted-foreground">{jurisdiction.timeframe}</div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {jurisdiction.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center space-x-2 text-sm">
-                      <CheckCircle className="w-3 h-3 text-green-500" />
-                      <span>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <JurisdictionOverview jurisdictions={jurisdictionInfo} />
 
-        {/* Partner Links by Category */}
-        {['Company Formation', 'Finance', 'Telecommunications'].map((category) => (
-          <div key={category} className="mb-12">
-            <div className="flex items-center mb-6">
-              {(() => {
-                const Icon = getCategoryIcon(category);
-                return <Icon className="w-6 h-6 text-primary mr-3" />;
-              })()}
-              <h3 className="text-2xl font-semibold gradient-text">{category}</h3>
-              <Badge variant="secondary" className="ml-3">
-                {partners.filter(p => p.category === category).length} Partners
-              </Badge>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {partners
-                .filter(partner => partner.category === category)
-                .map((partner, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <CardHeader className="pb-4">
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg">{partner.platform}</CardTitle>
-                        <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                      </div>
-                      <p className="text-sm text-muted-foreground">{partner.details}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <Button 
-                        className="w-full group" 
-                        onClick={() => window.open(partner.url, '_blank')}
-                      >
-                        Visit {partner.platform}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-            </div>
-          </div>
+        {categories.map((category) => (
+          <PartnerCategory
+            key={category}
+            category={category}
+            partners={partnerData.filter(p => p.category === category)}
+            icon={getCategoryIcon(category)}
+          />
         ))}
 
-        <div className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-purple-500/5 border-primary/20">
-            <CardContent className="p-8">
-              <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h4 className="text-xl font-semibold mb-4">Explore All 400+ Partners</h4>
-              <p className="text-muted-foreground mb-6">
-                Browse our complete directory of trusted business partners across all categories - 
-                from AI tools and automation to marketing and development services.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm mb-6">
-                <Badge variant="outline">✓ 400+ Verified Partners</Badge>
-                <Badge variant="outline">✓ All Business Categories</Badge>
-                <Badge variant="outline">✓ Exclusive Deals</Badge>
-                <Badge variant="outline">✓ Regular Updates</Badge>
-              </div>
-              <Button size="lg" asChild>
-                <a href="/digital-partners">
-                  <Globe className="w-4 h-4 mr-2" />
-                  View All Partners
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+        <JurisdictionCTA />
       </div>
     </section>
   );
