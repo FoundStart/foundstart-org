@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthProvider";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Auth from "./pages/Auth";
+import Countries from "./pages/Countries";
 import DigitalPartners from "./pages/DigitalPartners";
 import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
@@ -34,6 +35,7 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/countries" element={<Countries />} />
                 <Route path="/digital-partners" element={<DigitalPartners />} />
                 <Route path="/freelancer-partners" element={<FreelancerPartners />} />
                 <Route path="/sister-partners" element={<SisterPartners />} />

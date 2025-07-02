@@ -28,7 +28,16 @@ const Hero = () => {
     }
   ];
 
-  const jurisdictions = ["USA", "UK", "Canada"];
+  const jurisdictions = [
+    { name: "USA", flag: "🇺🇸" },
+    { name: "UK", flag: "🇬🇧" },
+    { name: "Canada", flag: "🇨🇦" },
+    { name: "Estonia", flag: "🇪🇪" },
+    { name: "Finland", flag: "🇫🇮" },
+    { name: "Sweden", flag: "🇸🇪" },
+    { name: "Latvia", flag: "🇱🇻" },
+    { name: "Lithuania", flag: "🇱🇹" }
+  ];
 
   const handleWatchDemo = () => {
     window.open('https://youtu.be/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI', '_blank');
@@ -50,18 +59,19 @@ const Hero = () => {
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 From company formation to banking and payments - we handle everything. 
-                Start your business in the USA, UK, or Canada with our AI-powered platform 
-                and integrated partner ecosystem.
+                Start your business in the USA, UK, Canada, Estonia, Finland, Sweden, Latvia, or Lithuania 
+                with our AI-powered platform and integrated partner ecosystem.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {jurisdictions.map((jurisdiction) => (
                 <div
-                  key={jurisdiction}
-                  className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-border shadow-sm"
+                  key={jurisdiction.name}
+                  className="flex items-center justify-center px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <span className="font-medium">{jurisdiction}</span>
+                  <span className="text-lg mr-2">{jurisdiction.flag}</span>
+                  <span className="font-medium text-sm">{jurisdiction.name}</span>
                 </div>
               ))}
             </div>

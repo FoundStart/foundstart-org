@@ -33,6 +33,9 @@ const Header = () => {
             <Link to="/services" className="text-sm font-medium hover:text-primary transition-colors">
               Services
             </Link>
+            <Link to="/countries" className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+              🌍 Countries
+            </Link>
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </a>
@@ -92,6 +95,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
+              </Link>
+              <Link
+                to="/countries"
+                className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                🌍 Countries
               </Link>
               <a
                 href="#pricing"

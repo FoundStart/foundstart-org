@@ -14,7 +14,7 @@ interface Partner {
 
 const JurisdictionSelector = () => {
   const partners: Partner[] = [
-    // Company Formation Partners
+    // Company Formation Partners - Updated
     { category: 'Company Formation', details: 'Company formation in USA', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
     { category: 'Company Formation', details: 'Company formation in USA', platform: 'ITIN', url: 'https://theitin.com/ref/80' },
     { category: 'Company Formation', details: 'Company formation in USA', platform: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf' },
@@ -25,7 +25,7 @@ const JurisdictionSelector = () => {
     { category: 'Company Formation', details: 'Company formation in UK', platform: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30' },
     { category: 'Company Formation', details: 'Company formation in UK', platform: 'Rapid Formation', url: 'https://rapid-formations.sjv.io/XmEo53' },
     { category: 'Company Formation', details: 'Company formation in Canada', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/' },
-    { category: 'Company Formation', details: 'Company formation in Estonia', platform: '1office', url: 'https://my1office.co/en/company/register?ref=mdzknzu' },
+    { category: 'Company Formation', details: 'Company formation in EU (UK-Estonia-Finland-Sweden-Latvia-Lithuania)', platform: '1office', url: 'https://my1office.co/en/company/register?ref=mdzknzu' },
     
     // Finance Partners
     { category: 'Finance', details: 'Payment Gateway', platform: 'Stripe', url: 'https://stripe.com' },
@@ -94,6 +94,62 @@ const JurisdictionSelector = () => {
         'Low corporate tax',
         'Tech-friendly environment'
       ]
+    },
+    {
+      flag: '🇫🇮',
+      name: 'Finland',
+      price: 'From €350',
+      timeframe: '2-3 business days',
+      benefits: [
+        'EU market access',
+        'Nordic business culture',
+        'Strong innovation ecosystem',
+        'Stable economy',
+        'English-friendly environment',
+        'Tech startup incentives'
+      ]
+    },
+    {
+      flag: '🇸🇪',
+      name: 'Sweden',
+      price: 'From SEK 3,500',
+      timeframe: '1-3 business days',
+      benefits: [
+        'EU market access',
+        'Innovation-friendly policies',
+        'Strong startup ecosystem',
+        'Excellent infrastructure',
+        'High quality of life',
+        'English proficiency'
+      ]
+    },
+    {
+      flag: '🇱🇻',
+      name: 'Latvia',
+      price: 'From €250',
+      timeframe: '1-2 business days',
+      benefits: [
+        'EU market access',
+        'Strategic location',
+        'Low administrative burden',
+        'Competitive costs',
+        'Growing tech sector',
+        'Multilingual workforce'
+      ]
+    },
+    {
+      flag: '🇱🇹',
+      name: 'Lithuania',
+      price: 'From €280',
+      timeframe: '1-2 business days',
+      benefits: [
+        'EU market access',
+        'Fintech hub',
+        'Digital innovation',
+        'Business-friendly policies',
+        'Strategic location',
+        'Growing startup scene'
+      ]
     }
   ];
 
@@ -124,14 +180,14 @@ const JurisdictionSelector = () => {
         </div>
 
         {/* Jurisdiction Overview */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {jurisdictionInfo.map((jurisdiction, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <div className="text-6xl mb-4">{jurisdiction.flag}</div>
-                <CardTitle className="text-xl">{jurisdiction.name}</CardTitle>
+                <div className="text-4xl mb-4">{jurisdiction.flag}</div>
+                <CardTitle className="text-lg">{jurisdiction.name}</CardTitle>
                 <div className="space-y-2">
-                  <div className="text-2xl font-bold gradient-text">{jurisdiction.price}</div>
+                  <div className="text-xl font-bold gradient-text">{jurisdiction.price}</div>
                   <div className="text-sm text-muted-foreground">{jurisdiction.timeframe}</div>
                 </div>
               </CardHeader>
@@ -139,7 +195,7 @@ const JurisdictionSelector = () => {
                 <div className="space-y-2">
                   {jurisdiction.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-center space-x-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <CheckCircle className="w-3 h-3 text-green-500" />
                       <span>{benefit}</span>
                     </div>
                   ))}

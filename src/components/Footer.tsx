@@ -9,10 +9,24 @@ const Footer = () => {
       title: "Services",
       links: [
         { name: "All Services", href: "/services" },
+        { name: "Countries & Jurisdictions", href: "/countries" },
         { name: "AI Chat Bots", href: "/services" },
         { name: "Company Formation", href: "#services" },
         { name: "Banking Setup", href: "#services" },
         { name: "AI Automation", href: "/services" }
+      ]
+    },
+    {
+      title: "Countries",
+      links: [
+        { name: "🇺🇸 United States", href: "/countries" },
+        { name: "🇬🇧 United Kingdom", href: "/countries" },
+        { name: "🇨🇦 Canada", href: "/countries" },
+        { name: "🇪🇪 Estonia", href: "/countries" },
+        { name: "🇫🇮 Finland", href: "/countries" },
+        { name: "🇸🇪 Sweden", href: "/countries" },
+        { name: "🇱🇻 Latvia", href: "/countries" },
+        { name: "🇱🇹 Lithuania", href: "/countries" }
       ]
     },
     {
@@ -59,7 +73,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
