@@ -18,16 +18,28 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
+    const kashierSecretKey = Deno.env.get('KASHIER_SECRET_KEY')
+    
+    if (!kashierSecretKey) {
+      console.error('Missing Kashier secret key')
+      return new Response(
+        JSON.stringify({ error: 'Payment gateway configuration error' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
     const webhookData = await req.json()
+    console.log('Webhook received:', JSON.stringify(webhookData, null, 2))
     
     // Verify webhook authenticity
     const encoder = new TextEncoder()
-    const hashString = `${webhookData.merchant_order_id}${webhookData.amount}${webhookData.currency}d3884e3e-aed4-4341-b747-e91b815cd370`
+    const hashString = `${webhookData.merchant_order_id}${webhookData.amount}${webhookData.currency}${kashierSecretKey}`
     const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(hashString))
     const hashArray = Array.from(new Uint8Array(hashBuffer))
     const expectedHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
     
     if (webhookData.hash !== expectedHash) {
+      console.error('Invalid webhook signature. Expected:', expectedHash, 'Received:', webhookData.hash)
       return new Response(
         JSON.stringify({ error: 'Invalid webhook signature' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -42,7 +54,7 @@ serve(async (req) => {
       .single()
 
     if (findError || !transaction) {
-      console.error('Transaction not found:', webhookData.merchant_order_id)
+      console.error('Transaction not found:', webhookData.merchant_order_id, findError)
       return new Response(
         JSON.stringify({ error: 'Transaction not found' }),
         { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -50,10 +62,11 @@ serve(async (req) => {
     }
 
     // Update transaction status
+    const newStatus = webhookData.status === 'SUCCESS' ? 'completed' : 'failed'
     const { error: updateError } = await supabaseClient
       .from('payment_transactions')
       .update({
-        status: webhookData.status === 'SUCCESS' ? 'completed' : 'failed',
+        status: newStatus,
         kashier_transaction_id: webhookData.transaction_id,
         webhook_data: webhookData,
         updated_at: new Date().toISOString()
@@ -61,6 +74,7 @@ serve(async (req) => {
       .eq('id', transaction.id)
 
     if (updateError) {
+      console.error('Error updating transaction:', updateError)
       throw updateError
     }
 

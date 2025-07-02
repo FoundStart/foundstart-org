@@ -55,6 +55,10 @@ const BusinessNameWidget = () => {
     window.open('https://namelix.com/', '_blank');
   };
 
+  const openNamelizer = () => {
+    window.open('https://namelizer.netlify.app/', '_blank');
+  };
+
   return (
     <Card className="shadow-lg">
       <CardHeader>
@@ -63,15 +67,26 @@ const BusinessNameWidget = () => {
             <Sparkles className="w-6 h-6 text-primary" />
             <CardTitle>Business Name Generator</CardTitle>
           </div>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            onClick={openNamelix}
-            className="flex items-center space-x-1"
-          >
-            <span>Powered by Namelix</span>
-            <ExternalLink className="w-4 h-4" />
-          </Button>
+          <div className="flex space-x-2">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={openNamelix}
+              className="flex items-center space-x-1"
+            >
+              <span>Namelix</span>
+              <ExternalLink className="w-4 h-4" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={openNamelizer}
+              className="flex items-center space-x-1"
+            >
+              <span>NameLizer</span>
+              <ExternalLink className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
       </CardHeader>
 
@@ -172,13 +187,22 @@ const BusinessNameWidget = () => {
                   Domain: {selectedName.toLowerCase().replace(/\s+/g, '')}.com
                 </div>
               </div>
-              <Button 
-                onClick={openNamelix}
-                variant="outline"
-                size="sm"
-              >
-                Refine on Namelix
-              </Button>
+              <div className="flex space-x-2">
+                <Button 
+                  onClick={openNamelix}
+                  variant="outline"
+                  size="sm"
+                >
+                  Refine on Namelix
+                </Button>
+                <Button 
+                  onClick={openNamelizer}
+                  variant="outline"
+                  size="sm"
+                >
+                  Try NameLizer
+                </Button>
+              </div>
             </div>
           </div>
         )}
@@ -186,12 +210,18 @@ const BusinessNameWidget = () => {
         {/* CTA */}
         <div className="text-center p-4 bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-lg">
           <p className="text-sm text-muted-foreground mb-3">
-            Need more creative options? Use our partner Namelix for AI-powered name generation.
+            Need more creative options? Use our partner tools for AI-powered name generation.
           </p>
-          <Button onClick={openNamelix} className="group">
-            <span>Open Namelix</span>
-            <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <div className="flex justify-center space-x-2">
+            <Button onClick={openNamelix} className="group">
+              <span>Open Namelix</span>
+              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button onClick={openNamelizer} variant="outline" className="group">
+              <span>Open NameLizer</span>
+              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>

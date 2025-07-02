@@ -25,6 +25,19 @@ serve(async (req) => {
       }
     )
 
+    // Get Kashier credentials from environment
+    const kashierApiKey = Deno.env.get('KASHIER_API_KEY')
+    const kashierSecretKey = Deno.env.get('KASHIER_SECRET_KEY')
+    const kashierMerchantId = Deno.env.get('KASHIER_MERCHANT_ID')
+
+    if (!kashierApiKey || !kashierSecretKey || !kashierMerchantId) {
+      console.error('Missing Kashier credentials')
+      return new Response(
+        JSON.stringify({ error: 'Payment gateway configuration error' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
     // Get user from auth header
     const authHeader = req.headers.get('Authorization')
     console.log('Auth header present:', !!authHeader)
@@ -127,18 +140,18 @@ serve(async (req) => {
       merchant_order_id: orderId,
       amount: amount,
       currency: currency || 'USD',
-      merchant_id: 'MER-foundstart-001',
-      api_key: 'd3884e3e-aed4-4341-b747-e91b815cd370',
+      merchant_id: kashierMerchantId,
+      api_key: kashierApiKey,
       customer: customer,
       success_url: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-success?orderId=${orderId}`,
       failure_url: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-failure?orderId=${orderId}`,
       webhook_url: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-webhook`
     }
 
-    // Generate hash for Kashier
+    // Generate hash for Kashier using the secret key
     const encoder = new TextEncoder()
-    const hashString = `${orderId}${amount}${currency || 'USD'}d3884e3e-aed4-4341-b747-e91b815cd370`
-    console.log('Hash string:', hashString)
+    const hashString = `${orderId}${amount}${currency || 'USD'}${kashierSecretKey}`
+    console.log('Hash string (without secret):', `${orderId}${amount}${currency || 'USD'}[SECRET]`)
     
     const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(hashString))
     const hashArray = Array.from(new Uint8Array(hashBuffer))
@@ -147,13 +160,17 @@ serve(async (req) => {
     kashierData.hash = hash
     console.log('Generated hash:', hash)
 
-    console.log('Sending request to Kashier with data:', JSON.stringify(kashierData, null, 2))
+    console.log('Sending request to Kashier with data:', JSON.stringify({
+      ...kashierData,
+      api_key: '[HIDDEN]',
+      hash: '[HIDDEN]'
+    }, null, 2))
 
     const kashierResponse = await fetch('https://checkout.kashier.io/api/v1/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer d3884e3e-aed4-4341-b747-e91b815cd370`
+        'Authorization': `Bearer ${kashierApiKey}`
       },
       body: JSON.stringify(kashierData)
     })
@@ -162,7 +179,7 @@ serve(async (req) => {
     const kashierResult = await kashierResponse.json()
     console.log('Kashier response:', JSON.stringify(kashierResult, null, 2))
 
-    if (kashierResponse.ok) {
+    if (kashierResponse.ok && kashierResult.checkout_url) {
       // Update transaction with Kashier order details
       const { error: updateError } = await supabaseClient
         .from('payment_transactions')
