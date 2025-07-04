@@ -1,64 +1,74 @@
 
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Globe, User, FileText } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ArrowRight, ExternalLink, MessageSquare, UserPlus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const JurisdictionCTA = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="text-center mt-16 space-y-8">
-      <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-purple-500/5 border-primary/20">
-        <CardContent className="p-8">
-          <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h4 className="text-xl font-semibold mb-4">Explore All 400+ Partners</h4>
-          <p className="text-muted-foreground mb-6">
-            Browse our complete directory of trusted business partners across all categories - 
-            from AI tools and automation to marketing and development services.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm mb-6">
-            <Badge variant="outline">✓ 400+ Verified Partners</Badge>
-            <Badge variant="outline">✓ All Business Categories</Badge>
-            <Badge variant="outline">✓ Exclusive Deals</Badge>
-            <Badge variant="outline">✓ Regular Updates</Badge>
-          </div>
-          <Button size="lg" onClick={() => navigate('/digital-partners')}>
-            <Globe className="w-4 h-4 mr-2" />
-            View All Partners
-          </Button>
-        </CardContent>
-      </Card>
+    <div className="text-center space-y-8 mt-16">
+      <div>
+        <h3 className="text-2xl font-bold mb-4">
+          <span className="gradient-text">Option 2:</span> Need Custom Solutions?
+        </h3>
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+          Get personalized assistance for complex business formations or custom requirements.
+        </p>
+      </div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <Card className="bg-gradient-to-r from-blue-500/5 to-cyan-500/5 border-blue-500/20">
-          <CardContent className="p-6 text-center">
-            <User className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-            <h4 className="text-lg font-semibold mb-2">Ready to Start?</h4>
-            <p className="text-muted-foreground mb-4">
-              Sign up for our dashboard to manage all your business formation needs
-            </p>
-            <Button onClick={() => navigate('/auth')} className="w-full">
-              <User className="w-4 h-4 mr-2" />
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="hover:shadow-lg transition-all duration-300">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <UserPlus className="w-5 h-5 mr-2 text-primary" />
               Sign Up to Dashboard
-            </Button>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground mb-4">
+              Access your personalized business formation dashboard and track your progress.
+            </p>
+            <Link to="/auth">
+              <Button className="w-full group">
+                Sign Up Now
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-r from-green-500/5 to-emerald-500/5 border-green-500/20">
-          <CardContent className="p-6 text-center">
-            <FileText className="w-10 h-10 text-green-600 mx-auto mb-4" />
-            <h4 className="text-lg font-semibold mb-2">Need Custom Help?</h4>
-            <p className="text-muted-foreground mb-4">
-              Get a personalized quote for your specific business formation needs
-            </p>
-            <Button onClick={() => navigate('/contact-sales')} variant="outline" className="w-full">
-              <FileText className="w-4 h-4 mr-2" />
+        <Card className="hover:shadow-lg transition-all duration-300">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <MessageSquare className="w-5 h-5 mr-2 text-primary" />
               Get Quote & Inquiries
-            </Button>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground mb-4">
+              Request a custom quote or get answers to your specific questions.
+            </p>
+            <Link to="/services">
+              <Button variant="outline" className="w-full group">
+                Get Custom Quote
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="pt-8">
+        <h4 className="text-lg font-semibold mb-4">
+          Ready to start with our trusted partners?
+        </h4>
+        <Link to="/partners">
+          <Button size="lg" className="group">
+            <ExternalLink className="w-4 h-4 mr-2" />
+            View All Partner Links
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </Link>
       </div>
     </div>
   );

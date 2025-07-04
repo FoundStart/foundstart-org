@@ -7,7 +7,7 @@ export const countriesData = [
     price: 'From $299',
     timeframe: '1-3 business days',
     currency: 'USD',
-    description: 'The world\'s largest economy with unparalleled business opportunities and global market access.',
+    description: 'Start your business in the world\'s largest economy with access to global markets, advanced infrastructure, and business-friendly policies.',
     benefits: [
       'Delaware LLC formation',
       'EIN number included',
@@ -15,12 +15,12 @@ export const countriesData = [
       'Global business credibility',
       'Access to US banking',
       'Stripe integration ready',
-      'Silicon Valley ecosystem',
-      'World\'s largest consumer market'
+      'World\'s largest consumer market',
+      'Advanced legal framework'
     ],
     partners: ['Privatily', 'ITIN', 'Clemta', 'Startglobal', 'Firstbase', 'doola'],
     keyStats: {
-      gdp: '$21.4 trillion',
+      gdp: '$26.9 trillion',
       population: '331 million',
       easeOfBusiness: '6th globally',
       corporateTax: '21%'
@@ -33,7 +33,7 @@ export const countriesData = [
     price: 'From £199',
     timeframe: '24-48 hours',
     currency: 'GBP',
-    description: 'Gateway to Europe with strong financial services and a business-friendly environment.',
+    description: 'Establish your company in one of the world\'s leading financial centers with strong legal frameworks and global business connections.',
     benefits: [
       'Companies House registration',
       'UTR number application',
@@ -41,25 +41,25 @@ export const countriesData = [
       'EU market access',
       'Strong legal framework',
       'Fintech-friendly',
-      'Global financial center',
-      'English common law system'
+      'English common law system',
+      'Gateway to Europe'
     ],
     partners: ['Privatily', '1stFormations', 'Rapid Formation'],
     keyStats: {
-      gdp: '$2.8 trillion',
+      gdp: '$3.1 trillion',
       population: '67 million',
       easeOfBusiness: '8th globally',
       corporateTax: '19%'
     }
   },
   {
-    id: 'Canada',
+    id: 'CA',
     flag: '🇨🇦',
     name: 'Canada',
     price: 'From CAD $399',
     timeframe: '2-5 business days',
     currency: 'CAD',
-    description: 'Stable economy with excellent trade relationships and innovation incentives.',
+    description: 'Benefit from Canada\'s stable economy, skilled workforce, and strategic location providing access to both US and global markets.',
     benefits: [
       'Federal incorporation',
       'Business number (BN)',
@@ -68,24 +68,24 @@ export const countriesData = [
       'Stable banking system',
       'Innovation incentives',
       'Multicultural workforce',
-      'Strong healthcare system'
+      'Strong rule of law'
     ],
     partners: ['Privatily'],
     keyStats: {
-      gdp: '$1.7 trillion',
+      gdp: '$2.1 trillion',
       population: '38 million',
       easeOfBusiness: '23rd globally',
       corporateTax: '15%'
     }
   },
   {
-    id: 'Estonia',
+    id: 'EE',
     flag: '🇪🇪',
     name: 'Estonia',
     price: 'From €300',
     timeframe: '1-2 business days',
     currency: 'EUR',
-    description: 'Digital-first nation leading in e-governance and digital innovation.',
+    description: 'Join the digital revolution with Estonia\'s e-Residency program and access the EU market through the world\'s most digitally advanced country.',
     benefits: [
       'EU digital residency',
       'e-Residency program',
@@ -93,25 +93,25 @@ export const countriesData = [
       'EU market access',
       'Low corporate tax',
       'Tech-friendly environment',
-      '100% digital services',
-      'Blockchain technology leader'
+      '100% online company management',
+      'Advanced digital infrastructure'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$31 billion',
+      gdp: '$38 billion',
       population: '1.3 million',
       easeOfBusiness: '18th globally',
       corporateTax: '20%'
     }
   },
   {
-    id: 'Finland',
+    id: 'FI',
     flag: '🇫🇮',
     name: 'Finland',
     price: 'From €350',
     timeframe: '2-3 business days',
     currency: 'EUR',
-    description: 'Nordic innovation hub with excellent education system and startup ecosystem.',
+    description: 'Establish your business in the Nordic innovation hub known for its excellent education system, stable economy, and tech-friendly environment.',
     benefits: [
       'EU market access',
       'Nordic business culture',
@@ -119,25 +119,25 @@ export const countriesData = [
       'Stable economy',
       'English-friendly environment',
       'Tech startup incentives',
-      'Excellent education system',
+      'Excellent infrastructure',
       'High quality of life'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$269 billion',
+      gdp: '$297 billion',
       population: '5.5 million',
       easeOfBusiness: '20th globally',
       corporateTax: '20%'
     }
   },
   {
-    id: 'Sweden',
+    id: 'SE',
     flag: '🇸🇪',
     name: 'Sweden',
     price: 'From SEK 3,500',
     timeframe: '1-3 business days',
     currency: 'SEK',
-    description: 'Innovation powerhouse with world-class infrastructure and startup culture.',
+    description: 'Start your business in Sweden\'s innovation-driven economy with access to the EU market and a world-class startup ecosystem.',
     benefits: [
       'EU market access',
       'Innovation-friendly policies',
@@ -145,25 +145,25 @@ export const countriesData = [
       'Excellent infrastructure',
       'High quality of life',
       'English proficiency',
-      'Sustainable business practices',
-      'World-class innovation'
+      'Home to global tech companies',
+      'Sustainable business practices'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$541 billion',
+      gdp: '$635 billion',
       population: '10.4 million',
       easeOfBusiness: '10th globally',
       corporateTax: '20.6%'
     }
   },
   {
-    id: 'Latvia',
+    id: 'LV',
     flag: '🇱🇻',
     name: 'Latvia',
     price: 'From €250',
     timeframe: '1-2 business days',
     currency: 'EUR',
-    description: 'Strategic Baltic location with growing tech sector and competitive business costs.',
+    description: 'Benefit from Latvia\'s strategic location in the Baltics with competitive costs, EU market access, and a growing tech sector.',
     benefits: [
       'EU market access',
       'Strategic location',
@@ -171,25 +171,25 @@ export const countriesData = [
       'Competitive costs',
       'Growing tech sector',
       'Multilingual workforce',
-      'Baltic gateway',
-      'Business-friendly policies'
+      'Gateway to Eastern Europe',
+      'Modern digital infrastructure'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$34 billion',
+      gdp: '$40 billion',
       population: '1.9 million',
       easeOfBusiness: '19th globally',
       corporateTax: '20%'
     }
   },
   {
-    id: 'Lithuania',
+    id: 'LT',
     flag: '🇱🇹',
     name: 'Lithuania',
     price: 'From €280',
     timeframe: '1-2 business days',
     currency: 'EUR',
-    description: 'Fintech hub with digital innovation and business-friendly regulatory environment.',
+    description: 'Establish your business in Lithuania\'s rapidly growing fintech hub with EU market access and business-friendly policies.',
     benefits: [
       'EU market access',
       'Fintech hub',
@@ -197,12 +197,12 @@ export const countriesData = [
       'Business-friendly policies',
       'Strategic location',
       'Growing startup scene',
-      'Regulatory sandbox',
-      'Tech talent pool'
+      'Strong IT sector',
+      'Competitive operating costs'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$56 billion',
+      gdp: '$71 billion',
       population: '2.8 million',
       easeOfBusiness: '11th globally',
       corporateTax: '15%'

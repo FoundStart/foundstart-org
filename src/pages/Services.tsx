@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -20,11 +19,14 @@ import {
   Search,
   Headphones,
   Code,
-  Palette
+  Palette,
+  Building,
+  ExternalLink
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { toast } = useToast();
@@ -49,6 +51,46 @@ const Services = () => {
   };
 
   const services = [
+    {
+      category: "Business Formation Solutions",
+      icon: <Building className="w-6 h-6" />,
+      items: [
+        { 
+          name: "Option 1: Quick Setup with Partners", 
+          price: "From $199", 
+          description: "Instant access to 400+ vetted formation partners across 8 countries",
+          action: "partners",
+          actionText: "View Partners"
+        },
+        { 
+          name: "Option 2: Custom Formation Service", 
+          price: "Custom Quote", 
+          description: "Personalized business formation with dedicated support and dashboard access",
+          action: "quote",
+          actionText: "Get Quote"
+        },
+        { 
+          name: "USA Company Formation", 
+          price: "From $299", 
+          description: "Delaware LLC with EIN, registered agent, and banking setup" 
+        },
+        { 
+          name: "UK Company Formation", 
+          price: "From £199", 
+          description: "Companies House registration with London address and UTR application" 
+        },
+        { 
+          name: "Canada Company Formation", 
+          price: "From CAD $399", 
+          description: "Federal incorporation with business number and Toronto office" 
+        },
+        { 
+          name: "EU Company Formation", 
+          price: "From €250", 
+          description: "Estonia, Finland, Sweden, Latvia, Lithuania - EU market access" 
+        }
+      ]
+    },
     {
       category: "AI Chat Bots & Voice Solutions",
       icon: <Bot className="w-6 h-6" />,
@@ -103,6 +145,17 @@ const Services = () => {
     }
   ];
 
+  const handleServiceAction = (service: any) => {
+    if (service.action === 'partners') {
+      window.open('/partners', '_blank');
+    } else if (service.action === 'quote') {
+      setSelectedService(service.name);
+      document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      setSelectedService(service.name);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -114,15 +167,19 @@ const Services = () => {
             Our <span className="gradient-text">Services</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Comprehensive AI-powered solutions to transform your business. From chatbots to complete 
-            automation workflows, we provide everything you need to scale efficiently.
+            Comprehensive AI-powered solutions and business formation services to transform your business. 
+            From chatbots to complete automation workflows and company formation across 8 countries.
           </p>
-          <Button size="lg" className="mr-4">
-            Get Started Today
-          </Button>
-          <Button variant="outline" size="lg">
-            View Pricing
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="mr-4">
+              Get Started Today
+            </Button>
+            <Link to="/countries">
+              <Button variant="outline" size="lg">
+                View Countries
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -148,9 +205,10 @@ const Services = () => {
                     <CardContent>
                       <Button 
                         className="w-full" 
-                        onClick={() => setSelectedService(service.name)}
+                        onClick={() => handleServiceAction(service)}
                       >
-                        Get Quote
+                        {service.actionText || 'Get Quote'}
+                        {service.action === 'partners' && <ExternalLink className="w-4 h-4 ml-2" />}
                       </Button>
                     </CardContent>
                   </Card>
@@ -162,7 +220,7 @@ const Services = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="quote-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -277,7 +335,7 @@ const Services = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of businesses already using our AI-powered solutions
+            Join thousands of businesses already using our AI-powered solutions and formation services
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary">

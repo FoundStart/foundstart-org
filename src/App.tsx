@@ -22,6 +22,7 @@ import Tutorials from "./pages/Tutorials";
 import AffiliateDashboard from "./pages/AffiliateDashboard";
 import NotFound from "./pages/NotFound";
 import AIChatBot from "./components/AIChatBot";
+import MobileBottomNav from "./components/MobileBottomNav";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,7 @@ const App = () => {
       <TooltipProvider>
         <AuthProvider>
           <BrowserRouter>
-            <div className="min-h-screen">
+            <div className="min-h-screen pb-16 md:pb-0">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/auth" element={<Auth />} />
@@ -51,6 +52,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <AIChatBot />
+              <MobileBottomNav />
             </div>
             <Toaster />
             <Sonner />
