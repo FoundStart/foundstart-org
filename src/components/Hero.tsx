@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, CheckCircle, Play, Youtube } from 'lucide-react';
 
 const Hero = () => {
+  const [showVideo, setShowVideo] = useState(false);
+  
   const jurisdictions = [
     { name: "USA", flag: "🇺🇸" },
     { name: "UK", flag: "🇬🇧" },
@@ -17,7 +19,7 @@ const Hero = () => {
   ];
 
   const handleWatchDemo = () => {
-    window.open('https://youtu.be/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI', '_blank');
+    setShowVideo(true);
   };
 
   return (
@@ -88,28 +90,55 @@ const Hero = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-center">Watch FoundStart CEO Demo</h3>
-              <Card className="cursor-pointer transition-all duration-300 hover:shadow-lg border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardContent 
-                  className="p-8 text-center space-y-4"
-                  onClick={handleWatchDemo}
-                >
-                  <div className="relative mx-auto w-24 h-24 bg-red-600 rounded-full flex items-center justify-center group hover:bg-red-700 transition-colors">
-                    <Youtube className="w-12 h-12 text-white group-hover:scale-110 transition-transform" />
-                    <div className="absolute inset-0 rounded-full bg-red-600/20 animate-ping"></div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold gradient-text mb-2">
-                      Complete Business Formation Guide
-                    </h4>
-                    <p className="text-muted-foreground">
-                      Watch FoundStart CEO Mr. MoMo Sa demonstrate our AI-powered platform 
-                      and see how you can start your business in minutes.
-                    </p>
-                  </div>
-                  <Button variant="outline" className="group">
-                    <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    Watch Now on YouTube
-                  </Button>
+              <Card className="transition-all duration-300 hover:shadow-lg border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+                <CardContent className="p-6">
+                  {!showVideo ? (
+                    <div 
+                      className="text-center space-y-4 cursor-pointer"
+                      onClick={handleWatchDemo}
+                    >
+                      <div className="relative mx-auto w-24 h-24 bg-red-600 rounded-full flex items-center justify-center group hover:bg-red-700 transition-colors">
+                        <Youtube className="w-12 h-12 text-white group-hover:scale-110 transition-transform" />
+                        <div className="absolute inset-0 rounded-full bg-red-600/20 animate-ping"></div>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold gradient-text mb-2">
+                          Complete Business Formation Guide
+                        </h4>
+                        <p className="text-muted-foreground">
+                          Watch FoundStart CEO Mr. MoMo Sa demonstrate our AI-powered platform 
+                          and see how you can start your business in minutes.
+                        </p>
+                      </div>
+                      <Button variant="outline" className="group">
+                        <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                        Watch Now
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      <div className="aspect-video rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI&autoplay=1"
+                          title="FoundStart CEO Demo - Mr. MoMo Sa"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="rounded-lg"
+                        ></iframe>
+                      </div>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        onClick={() => setShowVideo(false)}
+                        className="w-full"
+                      >
+                        Close Video
+                      </Button>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </div>

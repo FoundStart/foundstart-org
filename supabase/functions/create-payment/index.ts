@@ -30,10 +30,19 @@ serve(async (req) => {
     const kashierSecretKey = Deno.env.get('KASHIER_SECRET_KEY')
     const kashierMerchantId = Deno.env.get('KASHIER_MERCHANT_ID')
 
+    console.log('Kashier credentials check:', {
+      apiKey: !!kashierApiKey,
+      secretKey: !!kashierSecretKey,
+      merchantId: !!kashierMerchantId
+    })
+
     if (!kashierApiKey || !kashierSecretKey || !kashierMerchantId) {
       console.error('Missing Kashier credentials')
       return new Response(
-        JSON.stringify({ error: 'Payment gateway configuration error' }),
+        JSON.stringify({ 
+          error: 'Payment gateway configuration error',
+          details: 'Missing required Kashier credentials'
+        }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
@@ -136,35 +145,37 @@ serve(async (req) => {
     console.log('Transaction created successfully:', transaction.id)
 
     // Create Kashier payment order
+    const currentUrl = req.url.replace('/functions/v1/create-payment', '')
+    const baseUrl = currentUrl || `https://tylancgjmllwhuzptlxh.supabase.co`
+    
     const kashierData = {
       merchant_order_id: orderId,
       amount: amount,
       currency: currency || 'USD',
       merchant_id: kashierMerchantId,
-      api_key: kashierApiKey,
-      customer: customer,
-      success_url: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-success?orderId=${orderId}`,
-      failure_url: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-failure?orderId=${orderId}`,
-      webhook_url: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-webhook`
+      customer: {
+        name: customer.name || customer.email,
+        email: customer.email,
+        phone: customer.phone || ''
+      },
+      success_url: `${baseUrl}/`,
+      failure_url: `${baseUrl}/`,
+      webhook_url: `${baseUrl}/functions/v1/payment-webhook`
     }
 
-    // Generate hash for Kashier using the secret key
+    // Generate hash for Kashier
     const encoder = new TextEncoder()
     const hashString = `${orderId}${amount}${currency || 'USD'}${kashierSecretKey}`
-    console.log('Hash string (without secret):', `${orderId}${amount}${currency || 'USD'}[SECRET]`)
+    console.log('Hash string components:', { orderId, amount, currency: currency || 'USD' })
     
     const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(hashString))
     const hashArray = Array.from(new Uint8Array(hashBuffer))
     const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
     
     kashierData.hash = hash
-    console.log('Generated hash:', hash)
+    console.log('Generated hash for Kashier')
 
-    console.log('Sending request to Kashier with data:', JSON.stringify({
-      ...kashierData,
-      api_key: '[HIDDEN]',
-      hash: '[HIDDEN]'
-    }, null, 2))
+    console.log('Sending request to Kashier API...')
 
     const kashierResponse = await fetch('https://checkout.kashier.io/api/v1/orders', {
       method: 'POST',
