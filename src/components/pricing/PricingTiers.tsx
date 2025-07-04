@@ -1,3 +1,4 @@
+
 import PricingCard from './PricingCard';
 
 const PricingTiers = () => {
@@ -168,6 +169,276 @@ const PricingTiers = () => {
     }
   ];
 
+  const estoniaPricingPlans = [
+    {
+      name: "Estonia Starter",
+      price: "€300",
+      description: "EU Digital Residency business setup",
+      features: [
+        "Estonian OÜ Company Formation",
+        "e-Residency Program Setup",
+        "Digital Business Registration",
+        "Registered Office Service (1 year)",
+        "EU Market Access",
+        "AI Business Setup Consultation",
+        "Digital Banking Assistance",
+        "Payment Processing Integration"
+      ],
+      buttonText: "Start in Estonia",
+      paypalPlanId: "estonia-starter"
+    },
+    {
+      name: "Estonia Professional",
+      price: "€500",
+      description: "Advanced EU digital business",
+      features: [
+        "Everything in Estonia Starter Package",
+        "Expedited e-Residency Processing",
+        "Premium Tallinn Business Address",
+        "VAT Registration in EU",
+        "Digital Accounting Setup",
+        "Compliance Monitoring",
+        "Advanced Digital Banking",
+        "Crypto-friendly Setup"
+      ],
+      buttonText: "Go Professional",
+      paypalPlanId: "estonia-professional"
+    },
+    {
+      name: "Estonia Enterprise",
+      price: "€899",
+      description: "Complete EU digital solution",
+      features: [
+        "Everything in Estonia Professional Package",
+        "Multi-EU Country Setup",
+        "Full Digital Corporate Services",
+        "Advanced Fintech Banking",
+        "Priority AI Support",
+        "Legal Document Suite",
+        "Ongoing EU Business Advisory",
+        "International Digital Commerce"
+      ],
+      buttonText: "Enterprise Setup",
+      paypalPlanId: "estonia-enterprise"
+    }
+  ];
+
+  const finlandPricingPlans = [
+    {
+      name: "Finland Starter",
+      price: "€350",
+      description: "Nordic innovation hub setup",
+      features: [
+        "Finnish Oy Company Formation",
+        "Trade Register Registration",
+        "Corporate Documents & Bylaws",
+        "Registered Office Service (1 year)",
+        "EU Market Access",
+        "AI Business Setup Consultation",
+        "Nordic Banking Assistance",
+        "Payment Processing Integration"
+      ],
+      buttonText: "Start in Finland",
+      paypalPlanId: "finland-starter"
+    },
+    {
+      name: "Finland Professional",
+      price: "€550",
+      description: "Advanced Nordic business setup",
+      features: [
+        "Everything in Finland Starter Package",
+        "Expedited Company Formation",
+        "Premium Helsinki Business Address",
+        "VAT Registration",
+        "Y-tunnus Business ID",
+        "Compliance Monitoring",
+        "Innovation Incentives Setup",
+        "Tech Startup Benefits"
+      ],
+      buttonText: "Go Professional",
+      paypalPlanId: "finland-professional"
+    },
+    {
+      name: "Finland Enterprise",
+      price: "€949",
+      description: "Complete Nordic solution",
+      features: [
+        "Everything in Finland Professional Package",
+        "Multi-Nordic Setup Options",
+        "Full Corporate Maintenance",
+        "Advanced Banking Solutions",
+        "Priority AI Support",
+        "Legal Document Suite",
+        "Ongoing Business Advisory",
+        "International Trade Setup"
+      ],
+      buttonText: "Enterprise Setup",
+      paypalPlanId: "finland-enterprise"
+    }
+  ];
+
+  const swedenPricingPlans = [
+    {
+      name: "Sweden Starter",
+      price: "SEK 3,500",
+      description: "Swedish innovation business setup",
+      features: [
+        "Swedish AB Company Formation",
+        "Bolagsverket Registration",
+        "Corporate Articles & Bylaws",
+        "Registered Office Service (1 year)",
+        "EU Market Access",
+        "AI Business Setup Consultation",
+        "Swedish Banking Assistance",
+        "Payment Processing Integration"
+      ],
+      buttonText: "Start in Sweden",
+      paypalPlanId: "sweden-starter"
+    },
+    {
+      name: "Sweden Professional",
+      price: "SEK 5,500",
+      description: "Advanced Swedish business setup",
+      features: [
+        "Everything in Sweden Starter Package",
+        "Expedited Company Formation",
+        "Premium Stockholm Business Address",
+        "VAT Registration (Moms)",
+        "F-skatt Certificate",
+        "Compliance Monitoring",
+        "Innovation Hub Access",
+        "Startup Ecosystem Benefits"
+      ],
+      buttonText: "Go Professional",
+      paypalPlanId: "sweden-professional"
+    },
+    {
+      name: "Sweden Enterprise",
+      price: "SEK 9,500",
+      description: "Complete Swedish solution",
+      features: [
+        "Everything in Sweden Professional Package",
+        "Multi-Nordic Business Setup",
+        "Full Corporate Services",
+        "Advanced Banking Solutions",
+        "Priority AI Support",
+        "Legal Document Suite",
+        "Ongoing Business Advisory",
+        "Global Market Access"
+      ],
+      buttonText: "Enterprise Setup",
+      paypalPlanId: "sweden-enterprise"
+    }
+  ];
+
+  const latviaPricingPlans = [
+    {
+      name: "Latvia Starter",
+      price: "€250",
+      description: "Baltic business gateway setup",
+      features: [
+        "Latvian SIA Company Formation",
+        "Commercial Register Registration",
+        "Corporate Articles & Bylaws",
+        "Registered Office Service (1 year)",
+        "EU Market Access",
+        "AI Business Setup Consultation",
+        "Baltic Banking Assistance",
+        "Payment Processing Integration"
+      ],
+      buttonText: "Start in Latvia",
+      paypalPlanId: "latvia-starter"
+    },
+    {
+      name: "Latvia Professional",
+      price: "€450",
+      description: "Advanced Baltic business setup",
+      features: [
+        "Everything in Latvia Starter Package",
+        "Expedited Company Formation",
+        "Premium Riga Business Address",
+        "VAT Registration",
+        "PVN Registration",
+        "Compliance Monitoring",
+        "Eastern Europe Gateway",
+        "Multilingual Support"
+      ],
+      buttonText: "Go Professional",
+      paypalPlanId: "latvia-professional"
+    },
+    {
+      name: "Latvia Enterprise",
+      price: "€799",
+      description: "Complete Baltic solution",
+      features: [
+        "Everything in Latvia Professional Package",
+        "Multi-Baltic Setup Options",
+        "Full Corporate Maintenance",
+        "Advanced Banking Solutions",
+        "Priority AI Support",
+        "Legal Document Suite",
+        "Ongoing Business Advisory",
+        "Regional Trade Setup"
+      ],
+      buttonText: "Enterprise Setup",
+      paypalPlanId: "latvia-enterprise"
+    }
+  ];
+
+  const lithuaniaPricingPlans = [
+    {
+      name: "Lithuania Starter",
+      price: "€280",
+      description: "Fintech hub business setup",
+      features: [
+        "Lithuanian UAB Company Formation",
+        "Register of Legal Entities",
+        "Corporate Articles & Bylaws",
+        "Registered Office Service (1 year)",
+        "EU Market Access",
+        "AI Business Setup Consultation",
+        "Fintech Banking Assistance",
+        "Payment Processing Integration"
+      ],
+      buttonText: "Start in Lithuania",
+      paypalPlanId: "lithuania-starter"
+    },
+    {
+      name: "Lithuania Professional",
+      price: "€480",
+      description: "Advanced fintech business setup",
+      features: [
+        "Everything in Lithuania Starter Package",
+        "Expedited Company Formation",
+        "Premium Vilnius Business Address",
+        "VAT Registration (PVM)",
+        "Tax Number Registration",
+        "Compliance Monitoring",
+        "Fintech Hub Benefits",
+        "Digital Innovation Support"
+      ],
+      buttonText: "Go Professional",
+      paypalPlanId: "lithuania-professional"
+    },
+    {
+      name: "Lithuania Enterprise",
+      price: "€829",
+      description: "Complete fintech solution",
+      features: [
+        "Everything in Lithuania Professional Package",
+        "Multi-Baltic Fintech Setup",
+        "Full Corporate Services",
+        "Advanced Fintech Banking",
+        "Priority AI Support",
+        "Legal Document Suite",
+        "Ongoing Business Advisory",
+        "International Fintech Access"
+      ],
+      buttonText: "Enterprise Setup",
+      paypalPlanId: "lithuania-enterprise"
+    }
+  ];
+
   return (
     <section id="foundstart-pricing" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
@@ -206,6 +477,56 @@ const PricingTiers = () => {
           <h3 className="text-2xl font-semibold text-center mb-8">🇬🇧 United Kingdom</h3>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {ukPricingPlans.map((plan, index) => (
+              <PricingCard key={index} plan={plan} />
+            ))}
+          </div>
+        </div>
+
+        {/* Estonia Pricing */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-semibold text-center mb-8">🇪🇪 Estonia</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {estoniaPricingPlans.map((plan, index) => (
+              <PricingCard key={index} plan={plan} />
+            ))}
+          </div>
+        </div>
+
+        {/* Finland Pricing */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-semibold text-center mb-8">🇫🇮 Finland</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {finlandPricingPlans.map((plan, index) => (
+              <PricingCard key={index} plan={plan} />
+            ))}
+          </div>
+        </div>
+
+        {/* Sweden Pricing */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-semibold text-center mb-8">🇸🇪 Sweden</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {swedenPricingPlans.map((plan, index) => (
+              <PricingCard key={index} plan={plan} />
+            ))}
+          </div>
+        </div>
+
+        {/* Latvia Pricing */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-semibold text-center mb-8">🇱🇻 Latvia</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {latviaPricingPlans.map((plan, index) => (
+              <PricingCard key={index} plan={plan} />
+            ))}
+          </div>
+        </div>
+
+        {/* Lithuania Pricing */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-semibold text-center mb-8">🇱🇹 Lithuania</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {lithuaniaPricingPlans.map((plan, index) => (
               <PricingCard key={index} plan={plan} />
             ))}
           </div>

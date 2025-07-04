@@ -2,32 +2,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, CheckCircle, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle, Play, Youtube } from 'lucide-react';
 
 const Hero = () => {
-  const [selectedStep, setSelectedStep] = useState(1);
-
-  const steps = [
-    {
-      id: 1,
-      title: "AI-Powered Setup",
-      description: "Our intelligent wizard guides you through business formation in minutes",
-      icon: "🤖"
-    },
-    {
-      id: 2,
-      title: "One-Click Banking",
-      description: "Instantly connect with partner banks and set up your business accounts",
-      icon: "🏦"
-    },
-    {
-      id: 3,
-      title: "Payment Integration",
-      description: "Start accepting payments with integrated Stripe and crypto solutions",
-      icon: "💳"
-    }
-  ];
-
   const jurisdictions = [
     { name: "USA", flag: "🇺🇸" },
     { name: "UK", flag: "🇬🇧" },
@@ -87,7 +64,7 @@ const Hero = () => {
                 className="text-lg px-8 py-6 group"
                 onClick={handleWatchDemo}
               >
-                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Youtube className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Watch Demo by MoMo Sa
               </Button>
             </div>
@@ -110,35 +87,31 @@ const Hero = () => {
 
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-center">How it works</h3>
-              <div className="grid gap-4">
-                {steps.map((step, index) => (
-                  <Card
-                    key={step.id}
-                    className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                      selectedStep === step.id 
-                        ? 'ring-2 ring-primary bg-primary/5' 
-                        : 'hover:bg-accent/50'
-                    }`}
-                    onClick={() => setSelectedStep(step.id)}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="text-3xl">{step.icon}</div>
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <span className="text-2xl font-bold text-primary">
-                              {index + 1}
-                            </span>
-                            <h4 className="text-lg font-semibold">{step.title}</h4>
-                          </div>
-                          <p className="text-muted-foreground">{step.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              <h3 className="text-2xl font-semibold text-center">Watch FoundStart CEO Demo</h3>
+              <Card className="cursor-pointer transition-all duration-300 hover:shadow-lg border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+                <CardContent 
+                  className="p-8 text-center space-y-4"
+                  onClick={handleWatchDemo}
+                >
+                  <div className="relative mx-auto w-24 h-24 bg-red-600 rounded-full flex items-center justify-center group hover:bg-red-700 transition-colors">
+                    <Youtube className="w-12 h-12 text-white group-hover:scale-110 transition-transform" />
+                    <div className="absolute inset-0 rounded-full bg-red-600/20 animate-ping"></div>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold gradient-text mb-2">
+                      Complete Business Formation Guide
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Watch FoundStart CEO Mr. MoMo Sa demonstrate our AI-powered platform 
+                      and see how you can start your business in minutes.
+                    </p>
+                  </div>
+                  <Button variant="outline" className="group">
+                    <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                    Watch Now on YouTube
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
 
             <div className="glass-card rounded-2xl p-6 animate-float">
