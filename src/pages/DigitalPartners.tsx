@@ -17,12 +17,12 @@ const DigitalPartners = () => {
     { category: "Business Company Formation", platform: "Clemta", url: "https://clemta.com/?ref=njbhzwf", niche: "Company formation in USA" },
     { category: "Business Company Formation", platform: "Startglobal", url: "http://startglobal.co/?via=mohamed-sayed", niche: "Company formation in USA" },
     { category: "Business Company Formation", platform: "doola", url: "https://partnersps.doola.com/yukcm0gd526a", niche: "Company formation in USA" },
+    { category: "Business Company Formation", platform: "Privatily", url: "https://privatily.com/ref/Deeemoz/", niche: "Company formation in Canada" },
     { category: "Business Company Formation", platform: "Firstbase", url: "https://firstbase.pxf.io/RGaDzX", niche: "Company formation in UK" },
     { category: "Business Company Formation", platform: "1stFormations", url: "https://1st-formations-limited.sjv.io/4GKB30", niche: "Company formation in UK" },
-    { category: "Business Company Formation", platform: "Rapid Formation", url: "https://rapid-formations.sjv.io/XmEo53", niche: "Company formation in UK" },
     { category: "Business Company Formation", platform: "Privatily", url: "https://privatily.com/ref/Deeemoz/", niche: "Company formation in UK" },
-    { category: "Business Company Formation", platform: "Privatily", url: "https://privatily.com/ref/Deeemoz/", niche: "Company formation in Canada" },
-    { category: "Business Company Formation", platform: "1office", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in Estonia" },
+    { category: "Business Company Formation", platform: "Rapid Formation", url: "https://rapid-formations.sjv.io/XmEo53", niche: "Company formation in UK" },
+    { category: "Business Company Formation", platform: "1office", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in (UK-Estonia-Finland-Sweden-Latvia-Lithuania)" },
 
     // Telecommunication
     { category: "Telecommunication", platform: "Bnesim", url: "https://bnes.im/PHV3", niche: "eSIM Telecommunication" },
@@ -355,7 +355,7 @@ const DigitalPartners = () => {
       <main className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center space-y-4 mb-16">
+            <div className="text-center space-y-4 mb-16 animate-fade-in">
               <h1 className="text-3xl md:text-4xl font-bold">
                 Digital <span className="gradient-text">Partners</span>
               </h1>
@@ -365,13 +365,13 @@ const DigitalPartners = () => {
             </div>
 
             {/* Search and Filter */}
-            <div className="mb-8 space-y-4">
+            <div className="mb-8 space-y-4 animate-slide-in">
               <div className="flex flex-col md:flex-row gap-4">
                 <Input
                   placeholder="Search partners..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="flex-1"
+                  className="flex-1 hover-scale"
                 />
               </div>
               
@@ -382,6 +382,7 @@ const DigitalPartners = () => {
                     variant={selectedCategory === category ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedCategory(category)}
+                    className="hover-scale"
                   >
                     {category}
                   </Button>
@@ -389,7 +390,7 @@ const DigitalPartners = () => {
               </div>
 
               <div className="text-center">
-                <Badge variant="outline" className="text-lg px-4 py-2">
+                <Badge variant="outline" className="text-lg px-4 py-2 animate-pulse">
                   {filteredPartners.length} Partners Found
                 </Badge>
               </div>
@@ -398,12 +399,18 @@ const DigitalPartners = () => {
             {/* Partners Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredPartners.map((partner, index) => (
-                <PartnerCard key={index} partner={partner} />
+                <div
+                  key={index}
+                  className="animate-scale-in hover-scale"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <PartnerCard partner={partner} />
+                </div>
               ))}
             </div>
 
             {filteredPartners.length === 0 && (
-              <div className="text-center py-12">
+              <div className="text-center py-12 animate-fade-in">
                 <p className="text-muted-foreground">No partners found matching your criteria.</p>
               </div>
             )}
