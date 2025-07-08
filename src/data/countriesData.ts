@@ -1,28 +1,25 @@
-
 export const countriesData = [
   {
     id: 'USA',
     flag: '🇺🇸',
     name: 'United States',
-    price: 'From $299',
-    timeframe: '1-3 business days',
+    price: '$299',
+    timeframe: '5-7 business days',
     currency: 'USD',
-    description: 'Start your business in the world\'s largest economy with access to global markets, advanced infrastructure, and business-friendly policies.',
+    description: 'Form your US company with our trusted partners including Privatily, ITIN, Clemta, Startglobal, and doola. Get access to US banking, payment processing, and global business opportunities.',
     benefits: [
-      'Delaware LLC formation',
-      'EIN number included',
-      'Registered agent service',
-      'Global business credibility',
-      'Access to US banking',
-      'Stripe integration ready',
-      'World\'s largest consumer market',
-      'Advanced legal framework'
+      'Access to US banking and financial services',
+      'Global credibility and market access',
+      'Flexible business structures (LLC, Corporation)',
+      'Tax advantages and deductions',
+      'E-commerce and payment processing',
+      'Investor attraction and funding opportunities'
     ],
-    partners: ['Privatily', 'ITIN', 'Clemta', 'Startglobal', 'Firstbase', 'doola'],
+    partners: ['Privatily', 'ITIN', 'Clemta', 'Startglobal', 'doola'],
     keyStats: {
-      gdp: '$26.9 trillion',
-      population: '331 million',
-      easeOfBusiness: '6th globally',
+      gdp: '$21.4T',
+      population: '331M',
+      easeOfBusiness: '6th',
       corporateTax: '21%'
     }
   },
@@ -30,25 +27,23 @@ export const countriesData = [
     id: 'UK',
     flag: '🇬🇧',
     name: 'United Kingdom',
-    price: 'From £199',
-    timeframe: '24-48 hours',
+    price: '£199',
+    timeframe: '3-5 business days',
     currency: 'GBP',
-    description: 'Establish your company in one of the world\'s leading financial centers with strong legal frameworks and global business connections.',
+    description: 'Establish your UK company with leading formation partners including Firstbase, 1stFormations, Privatily, and Rapid Formation. Access European markets and benefit from the UK\'s business-friendly environment.',
     benefits: [
-      'Companies House registration',
-      'UTR number application',
-      'London business address',
-      'EU market access',
-      'Strong legal framework',
-      'Fintech-friendly',
-      'English common law system',
-      'Gateway to Europe'
+      'Gateway to European markets',
+      'Strong legal and regulatory framework',
+      'Access to UK banking system',
+      'International business reputation',
+      'Simplified company formation process',
+      'Competitive corporate tax rates'
     ],
-    partners: ['Privatily', '1stFormations', 'Rapid Formation'],
+    partners: ['Firstbase', '1stFormations', 'Privatily', 'Rapid Formation'],
     keyStats: {
-      gdp: '$3.1 trillion',
-      population: '67 million',
-      easeOfBusiness: '8th globally',
+      gdp: '$2.8T',
+      population: '67M',
+      easeOfBusiness: '8th',
       corporateTax: '19%'
     }
   },
@@ -56,25 +51,23 @@ export const countriesData = [
     id: 'CA',
     flag: '🇨🇦',
     name: 'Canada',
-    price: 'From CAD $399',
-    timeframe: '2-5 business days',
+    price: 'CAD $399',
+    timeframe: '7-10 business days',
     currency: 'CAD',
-    description: 'Benefit from Canada\'s stable economy, skilled workforce, and strategic location providing access to both US and global markets.',
+    description: 'Start your Canadian business with Privatily, our trusted formation partner. Canada offers a stable economy, skilled workforce, and excellent quality of life for business owners.',
     benefits: [
-      'Federal incorporation',
-      'Business number (BN)',
-      'Toronto registered office',
-      'USMCA trade benefits',
-      'Stable banking system',
-      'Innovation incentives',
-      'Multicultural workforce',
-      'Strong rule of law'
+      'Stable political and economic environment',
+      'Access to NAFTA/USMCA markets',
+      'Skilled and educated workforce',
+      'Strong banking and financial sector',
+      'Innovation and technology incentives',
+      'High quality of life'
     ],
     partners: ['Privatily'],
     keyStats: {
-      gdp: '$2.1 trillion',
-      population: '38 million',
-      easeOfBusiness: '23rd globally',
+      gdp: '$1.7T',
+      population: '38M',
+      easeOfBusiness: '23rd',
       corporateTax: '15%'
     }
   },
@@ -82,25 +75,23 @@ export const countriesData = [
     id: 'EE',
     flag: '🇪🇪',
     name: 'Estonia',
-    price: 'From €300',
-    timeframe: '1-2 business days',
+    price: '€300',
+    timeframe: '3-5 business days',
     currency: 'EUR',
-    description: 'Join the digital revolution with Estonia\'s e-Residency program and access the EU market through the world\'s most digitally advanced country.',
+    description: 'Launch your Estonian company with 1office, benefiting from the world\'s most advanced digital infrastructure and e-Residency program.',
     benefits: [
-      'EU digital residency',
-      'e-Residency program',
-      'Digital-first government',
+      'World-leading digital infrastructure',
+      'E-Residency program for global entrepreneurs',
       'EU market access',
-      'Low corporate tax',
-      'Tech-friendly environment',
+      'No corporate tax on retained earnings',
       '100% online company management',
-      'Advanced digital infrastructure'
+      'Startup-friendly environment'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$38 billion',
-      population: '1.3 million',
-      easeOfBusiness: '18th globally',
+      gdp: '$31B',
+      population: '1.3M',
+      easeOfBusiness: '18th',
       corporateTax: '20%'
     }
   },
@@ -108,25 +99,23 @@ export const countriesData = [
     id: 'FI',
     flag: '🇫🇮',
     name: 'Finland',
-    price: 'From €350',
-    timeframe: '2-3 business days',
+    price: '€350',
+    timeframe: '5-7 business days',
     currency: 'EUR',
-    description: 'Establish your business in the Nordic innovation hub known for its excellent education system, stable economy, and tech-friendly environment.',
+    description: 'Establish your Finnish company with 1office and access one of the world\'s most innovative and stable business environments.',
     benefits: [
+      'Highly educated workforce',
+      'Innovation and R&D incentives',
+      'Stable political environment',
       'EU market access',
-      'Nordic business culture',
-      'Strong innovation ecosystem',
-      'Stable economy',
-      'English-friendly environment',
-      'Tech startup incentives',
-      'Excellent infrastructure',
-      'High quality of life'
+      'Strong social infrastructure',
+      'Digital government services'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$297 billion',
-      population: '5.5 million',
-      easeOfBusiness: '20th globally',
+      gdp: '$269B',
+      population: '5.5M',
+      easeOfBusiness: '20th',
       corporateTax: '20%'
     }
   },
@@ -134,25 +123,23 @@ export const countriesData = [
     id: 'SE',
     flag: '🇸🇪',
     name: 'Sweden',
-    price: 'From SEK 3,500',
-    timeframe: '1-3 business days',
+    price: 'SEK 3,500',
+    timeframe: '5-7 business days',
     currency: 'SEK',
-    description: 'Start your business in Sweden\'s innovation-driven economy with access to the EU market and a world-class startup ecosystem.',
+    description: 'Start your Swedish business with 1office and tap into one of Europe\'s most innovative and business-friendly markets.',
     benefits: [
+      'Innovation and technology leadership',
+      'Skilled workforce',
+      'Strong infrastructure',
       'EU market access',
-      'Innovation-friendly policies',
-      'Strong startup ecosystem',
-      'Excellent infrastructure',
-      'High quality of life',
-      'English proficiency',
-      'Home to global tech companies',
-      'Sustainable business practices'
+      'Sustainable business practices',
+      'Work-life balance culture'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$635 billion',
-      population: '10.4 million',
-      easeOfBusiness: '10th globally',
+      gdp: '$541B',
+      population: '10.4M',
+      easeOfBusiness: '10th',
       corporateTax: '20.6%'
     }
   },
@@ -160,25 +147,23 @@ export const countriesData = [
     id: 'LV',
     flag: '🇱🇻',
     name: 'Latvia',
-    price: 'From €250',
-    timeframe: '1-2 business days',
+    price: '€250',
+    timeframe: '3-5 business days',
     currency: 'EUR',
-    description: 'Benefit from Latvia\'s strategic location in the Baltics with competitive costs, EU market access, and a growing tech sector.',
+    description: 'Form your Latvian company with 1office and benefit from competitive costs and strategic location in the Baltics.',
     benefits: [
+      'Strategic location in the Baltics',
+      'Cost-effective business operations',
       'EU market access',
-      'Strategic location',
-      'Low administrative burden',
-      'Competitive costs',
-      'Growing tech sector',
-      'Multilingual workforce',
-      'Gateway to Eastern Europe',
-      'Modern digital infrastructure'
+      'Skilled workforce',
+      'Growing digital economy',
+      'Competitive tax rates'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$40 billion',
-      population: '1.9 million',
-      easeOfBusiness: '19th globally',
+      gdp: '$34B',
+      population: '1.9M',
+      easeOfBusiness: '19th',
       corporateTax: '20%'
     }
   },
@@ -186,26 +171,50 @@ export const countriesData = [
     id: 'LT',
     flag: '🇱🇹',
     name: 'Lithuania',
-    price: 'From €280',
-    timeframe: '1-2 business days',
+    price: '€280',
+    timeframe: '3-5 business days',
     currency: 'EUR',
-    description: 'Establish your business in Lithuania\'s rapidly growing fintech hub with EU market access and business-friendly policies.',
+    description: 'Establish your Lithuanian company with 1office and access the rapidly growing Baltic market with EU benefits.',
     benefits: [
+      'Rapidly growing economy',
+      'Strategic Baltic location',
       'EU market access',
-      'Fintech hub',
-      'Digital innovation',
-      'Business-friendly policies',
-      'Strategic location',
-      'Growing startup scene',
-      'Strong IT sector',
-      'Competitive operating costs'
+      'Competitive business costs',
+      'Strong fintech sector',
+      'Educated workforce'
     ],
     partners: ['1office'],
     keyStats: {
-      gdp: '$71 billion',
-      population: '2.8 million',
-      easeOfBusiness: '11th globally',
+      gdp: '$56B',
+      population: '2.8M',
+      easeOfBusiness: '11th',
       corporateTax: '15%'
+    }
+  },
+  {
+    id: 'EG',
+    flag: '🇪🇬',
+    name: 'Egypt',
+    price: 'Get Quote',
+    timeframe: '14-21 business days',
+    currency: 'EGP',
+    description: 'Establish your Egyptian company with our expert guidance. Choose from 6 different company structures under Investment Law No. 72 of 2017, with 100% foreign ownership allowed in most sectors.',
+    benefits: [
+      'Gateway to Middle East and Africa',
+      '100% foreign ownership allowed*',
+      '6 different company structures available',
+      'Large domestic market (100M+ population)',
+      'Strategic geographic location',
+      'Government investment incentives',
+      'Access to Suez Canal trade route',
+      'Growing digital economy'
+    ],
+    partners: ['FoundStart Legal Team'],
+    keyStats: {
+      gdp: '$469B',
+      population: '104M',
+      easeOfBusiness: '114th',
+      corporateTax: '22.5%'
     }
   }
 ];

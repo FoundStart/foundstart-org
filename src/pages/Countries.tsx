@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import CountrySelector from '@/components/countries/CountrySelector';
 import CountryDetails from '@/components/countries/CountryDetails';
 import CountryGrid from '@/components/countries/CountryGrid';
+import EgyptFormationGuide from '@/components/countries/EgyptFormationGuide';
 import { countriesData } from '@/data/countriesData';
 
 const Countries = () => {
@@ -35,7 +36,11 @@ const Countries = () => {
               onCountrySelect={setSelectedCountry}
             />
 
-            <CountryDetails country={selectedCountryData} />
+            {selectedCountry === 'EG' ? (
+              <EgyptFormationGuide />
+            ) : (
+              <CountryDetails country={selectedCountryData} />
+            )}
 
             <CountryGrid 
               countries={countriesData}
