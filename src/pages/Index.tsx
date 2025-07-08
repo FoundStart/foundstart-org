@@ -10,8 +10,11 @@ import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
 import ComingSoonCards from '@/components/ComingSoonCards';
 import AIChatBot from '@/components/AIChatBot';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const Index = () => {
+  const { t, isRTL } = useTranslation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -26,13 +29,12 @@ const Index = () => {
       {/* Business Name Widget Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center space-y-4 mb-12">
+          <div className={`space-y-4 mb-12 ${isRTL ? 'text-right' : 'text-center'}`}>
             <h2 className="text-3xl md:text-4xl font-bold">
-              Find the Perfect <span className="gradient-text">Business Name</span>
+              {t.findPerfectName} <span className="gradient-text">{t.businessName}</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Generate unique, brandable names for your business with AI-powered suggestions 
-              and instant availability checking.
+              {t.businessNameDescription}
             </p>
           </div>
           <BusinessNameWidget />

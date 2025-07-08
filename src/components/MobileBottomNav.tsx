@@ -2,21 +2,23 @@
 import { Home, Building, Users, Phone, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const MobileBottomNav = () => {
   const location = useLocation();
+  const { t, isRTL } = useTranslation();
   
   const navItems = [
-    { icon: Home, label: 'Home', path: '/' },
-    { icon: Building, label: 'Countries', path: '/countries' },
-    { icon: Users, label: 'Partners', path: '/partners' },
-    { icon: Phone, label: 'Services', path: '/services' },
-    { icon: User, label: 'Auth', path: '/auth' }
+    { icon: Home, label: t.home, path: '/' },
+    { icon: Building, label: t.countries, path: '/countries' },
+    { icon: Users, label: t.partners, path: '/partners' },
+    { icon: Phone, label: t.services, path: '/services' },
+    { icon: User, label: t.auth, path: '/auth' }
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border md:hidden">
-      <div className="flex items-center justify-around py-2">
+    <div className={`fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border md:hidden ${isRTL ? 'flex-row-reverse' : ''}`}>
+      <div className={`flex items-center justify-around py-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path;

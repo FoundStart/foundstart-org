@@ -7,9 +7,11 @@ import CountryDetails from '@/components/countries/CountryDetails';
 import CountryGrid from '@/components/countries/CountryGrid';
 import EgyptFormationGuide from '@/components/countries/EgyptFormationGuide';
 import { countriesData } from '@/data/countriesData';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const Countries = () => {
   const [selectedCountry, setSelectedCountry] = useState('USA');
+  const { t, isRTL } = useTranslation();
 
   const selectedCountryData = countriesData.find(c => c.id === selectedCountry) || countriesData[0];
 
@@ -20,13 +22,12 @@ const Countries = () => {
       <main className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center space-y-4 mb-16">
+            <div className={`space-y-4 mb-16 ${isRTL ? 'text-right' : 'text-center'}`}>
               <h1 className="text-3xl md:text-4xl font-bold">
-                Choose Your <span className="gradient-text">Business Jurisdiction</span>
+                {t.chooseJurisdiction} <span className="gradient-text">Business Jurisdiction</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Start your business in any of our supported countries. Each jurisdiction offers unique advantages 
-                for different business types and goals.
+                {t.chooseJurisdictionDescription}
               </p>
             </div>
 
