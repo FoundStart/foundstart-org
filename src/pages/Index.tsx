@@ -9,6 +9,7 @@ import PricingTiers from '@/components/pricing/PricingTiers';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
 import ComingSoonCards from '@/components/ComingSoonCards';
+import AIChatBot from '@/components/AIChatBot';
 
 const Index = () => {
   return (
@@ -46,6 +47,9 @@ const Index = () => {
       <ComingSoonCards />
       
       <Footer />
+      
+      {/* AI Chat Bot */}
+      <AIChatBot />
     </div>
   );
 };

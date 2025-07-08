@@ -1,587 +1,164 @@
-
-import PricingCard from './PricingCard';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Check, Star, Crown, Zap } from 'lucide-react';
 
 const PricingTiers = () => {
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "$499",
-      description: "Perfect for new entrepreneurs",
-      features: [
-        "LLC Formation via preferred partner",
-        "EIN (Tax ID) Registration",
-        "Operating Agreement Template",
-        "Registered Agent Service (1 year)",
-        "Basic Business Address",
-        "ITIN consultation",
-        "AI Business Setup Consultation",
-        "Mercury Bank Account Setup Assistance",
-        "Stripe Payment Gateway Integration"
-      ],
-      buttonText: "Get Started",
-      buttonVariant: "outline" as const,
-      paypalPlanId: "starter-plan"
-    },
-    {
-      name: "Professional",
-      price: "$899",
-      description: "Most popular for serious businesses",
-      features: [
-        "Everything in Starter Package",
-        "Full ITIN Application Service",
-        "Expedited Processing (3-5 business days)",
-        "Premium Business Address & Mail Forwarding",
-        "Business Banking with Mercury (Premium features)",
-        "Advanced Stripe Integration (No fees on first $20K)",
-        "Compliance Monitoring (1 year)",
-        "Business License Research",
-        "BOI Filing included",
-        "AI-Powered Tax Optimization Consultation"
-      ],
-      isPopular: true,
-      buttonText: "Most Popular",
-      paypalPlanId: "professional-plan"
-    },
-    {
-      name: "Enterprise",
-      price: "$1,599",
-      description: "Complete solution for established businesses",
-      features: [
-        "Everything in Professional Package",
-        "Clemta Premium or StartGlobal Enterprise level service",
-        "Multi-state Registration Options",
-        "Multiple ITIN applications (family/partners)",
-        "Full Compliance Management with CPA consultation",
-        "Priority AI Agent Support",
-        "Advanced Financial Setup & Monthly Bookkeeping",
-        "Custom Legal Document Preparation",
-        "Ongoing Business Advisory (6 months)",
-        "Trademark consultation included"
-      ],
-      buttonText: "Contact Sales",
-      paypalPlanId: "enterprise-plan"
-    }
+  const [selectedCountry, setSelectedCountry] = useState('USA');
+
+  const countries = [
+    { id: 'USA', name: 'United States', flag: '🇺🇸' },
+    { id: 'UK', name: 'United Kingdom', flag: '🇬🇧' },
+    { id: 'Canada', name: 'Canada', flag: '🇨🇦' },
+    { id: 'Estonia', name: 'Estonia', flag: '🇪🇪' },
+    { id: 'Finland', name: 'Finland', flag: '🇫🇮' },
+    { id: 'Sweden', name: 'Sweden', flag: '🇸🇪' },
+    { id: 'Latvia', name: 'Latvia', flag: '🇱🇻' },
+    { id: 'Lithuania', name: 'Lithuania', flag: '🇱🇹' },
+    { id: 'Egypt', name: 'Egypt', flag: '🇪🇬' }
   ];
 
-  const canadaPricingPlans = [
-    {
-      name: "Canada Starter",
-      price: "$499 CAD",
-      description: "Federal or Provincial Corporation setup",
-      features: [
-        "Federal or Provincial Corporation Registration",
-        "Business Number (BN) Registration",
-        "Corporate Bylaws & Resolutions",
-        "Registered Office Service (1 year)",
-        "AI Business Setup Consultation",
-        "Canadian Banking Setup Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in Canada",
-      paypalPlanId: "canada-starter"
+  const pricingData = {
+    USA: {
+      basic: { price: '$299', features: ['Company Formation', 'EIN', 'Registered Agent'] },
+      pro: { price: '$599', features: ['Basic +', 'US Bank Account', 'Accounting Setup'] },
+      premium: { price: '$999', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
     },
-    {
-      name: "Canada Professional",
-      price: "$799 CAD",
-      description: "Advanced Canadian business setup",
-      features: [
-        "Everything in Canada Starter Package",
-        "Expedited Processing",
-        "Premium Registered Office Address",
-        "GST/HST Registration",
-        "Provincial Tax Account Setup",
-        "Compliance Calendar & Reminders",
-        "Business License Research",
-        "AI-Powered Tax Planning"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "canada-professional"
+    UK: {
+      basic: { price: '£199', features: ['Company Formation', 'Registered Office', 'Confirmation Statement'] },
+      pro: { price: '£399', features: ['Basic +', 'UK Bank Account', 'VAT Registration'] },
+      premium: { price: '£699', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
     },
-    {
-      name: "Canada Enterprise",
-      price: "$1,399 CAD",
-      description: "Complete Canadian business solution",
-      features: [
-        "Everything in Canada Professional Package",
-        "Multi-provincial Registration",
-        "Full Corporate Maintenance",
-        "Advanced Banking Solutions",
-        "Priority AI Support",
-        "Legal Document Templates",
-        "Ongoing Business Advisory (3 months)",
-        "International Trade Setup"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "canada-enterprise"
+    Canada: {
+      basic: { price: 'CAD $399', features: ['Company Formation', 'Business Number', 'Registered Office'] },
+      pro: { price: 'CAD $799', features: ['Basic +', 'Canadian Bank Account', 'Accounting Setup'] },
+      premium: { price: 'CAD $1299', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
+    },
+    Estonia: {
+      basic: { price: '€300', features: ['Company Formation', 'e-Residency Setup', 'Digital Signature'] },
+      pro: { price: '€600', features: ['Basic +', 'EU Bank Account', 'VAT Registration'] },
+      premium: { price: '€900', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
+    },
+    Finland: {
+      basic: { price: '€350', features: ['Company Formation', 'Business ID', 'Registered Office'] },
+      pro: { price: '€700', features: ['Basic +', 'Finnish Bank Account', 'Accounting Setup'] },
+      premium: { price: '€1050', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
+    },
+    Sweden: {
+      basic: { price: 'SEK 3,500', features: ['Company Formation', 'Business Registration', 'Registered Office'] },
+      pro: { price: 'SEK 7,000', features: ['Basic +', 'Swedish Bank Account', 'VAT Registration'] },
+      premium: { price: 'SEK 10,500', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
+    },
+    Latvia: {
+      basic: { price: '€250', features: ['Company Formation', 'Business Registration', 'Registered Office'] },
+      pro: { price: '€500', features: ['Basic +', 'Latvian Bank Account', 'VAT Registration'] },
+      premium: { price: '€750', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
+    },
+    Lithuania: {
+      basic: { price: '€280', features: ['Company Formation', 'Business Registration', 'Registered Office'] },
+      pro: { price: '€560', features: ['Basic +', 'Lithuanian Bank Account', 'VAT Registration'] },
+      premium: { price: '€840', features: ['Pro +', 'Tax Consultation', 'Priority Support'] }
+    },
+    Egypt: {
+      basic: { price: 'Get Quote', features: ['Company Formation', 'GAFI Registration', 'Commercial Registration'] },
+      pro: { price: 'Get Quote', features: ['Basic +', 'Tax Registration', 'Banking Assistance'] },
+      premium: { price: 'Get Quote', features: ['Pro +', 'Legal Consultation', 'Ongoing Compliance'] }
     }
-  ];
+  };
 
-  const ukPricingPlans = [
-    {
-      name: "UK Starter",
-      price: "£399",
-      description: "Private Limited Company formation",
-      features: [
-        "Private Limited Company Formation",
-        "Companies House Registration",
-        "Memorandum & Articles of Association",
-        "Registered Office Service (1 year)",
-        "AI Business Setup Consultation",
-        "UK Banking Setup Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in UK",
-      paypalPlanId: "uk-starter"
-    },
-    {
-      name: "UK Professional",
-      price: "£599",
-      description: "Advanced UK business setup",
-      features: [
-        "Everything in UK Starter Package",
-        "Same-day Company Formation",
-        "Premium London Business Address",
-        "VAT Registration (if required)",
-        "PAYE Setup for Employers",
-        "Compliance Monitoring",
-        "Business License Research",
-        "AI-Powered Tax Optimization"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "uk-professional"
-    },
-    {
-      name: "UK Enterprise",
-      price: "£1,199",
-      description: "Complete UK business solution",
-      features: [
-        "Everything in UK Professional Package",
-        "Multiple Company Formations",
-        "Full Secretarial Services",
-        "Advanced Banking Solutions",
-        "Priority AI Agent Support",
-        "Legal Document Suite",
-        "Ongoing Business Advisory (3 months)",
-        "International Business Setup"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "uk-enterprise"
-    }
-  ];
-
-  const estoniaPricingPlans = [
-    {
-      name: "Estonia Starter",
-      price: "€300",
-      description: "EU Digital Residency business setup",
-      features: [
-        "Estonian OÜ Company Formation",
-        "e-Residency Program Setup",
-        "Digital Business Registration",
-        "Registered Office Service (1 year)",
-        "EU Market Access",
-        "AI Business Setup Consultation",
-        "Digital Banking Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in Estonia",
-      paypalPlanId: "estonia-starter"
-    },
-    {
-      name: "Estonia Professional",
-      price: "€500",
-      description: "Advanced EU digital business",
-      features: [
-        "Everything in Estonia Starter Package",
-        "Expedited e-Residency Processing",
-        "Premium Tallinn Business Address",
-        "VAT Registration in EU",
-        "Digital Accounting Setup",
-        "Compliance Monitoring",
-        "Advanced Digital Banking",
-        "Crypto-friendly Setup"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "estonia-professional"
-    },
-    {
-      name: "Estonia Enterprise",
-      price: "€899",
-      description: "Complete EU digital solution",
-      features: [
-        "Everything in Estonia Professional Package",
-        "Multi-EU Country Setup",
-        "Full Digital Corporate Services",
-        "Advanced Fintech Banking",
-        "Priority AI Support",
-        "Legal Document Suite",
-        "Ongoing EU Business Advisory",
-        "International Digital Commerce"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "estonia-enterprise"
-    }
-  ];
-
-  const finlandPricingPlans = [
-    {
-      name: "Finland Starter",
-      price: "€350",
-      description: "Nordic innovation hub setup",
-      features: [
-        "Finnish Oy Company Formation",
-        "Trade Register Registration",
-        "Corporate Documents & Bylaws",
-        "Registered Office Service (1 year)",
-        "EU Market Access",
-        "AI Business Setup Consultation",
-        "Nordic Banking Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in Finland",
-      paypalPlanId: "finland-starter"
-    },
-    {
-      name: "Finland Professional",
-      price: "€550",
-      description: "Advanced Nordic business setup",
-      features: [
-        "Everything in Finland Starter Package",
-        "Expedited Company Formation",
-        "Premium Helsinki Business Address",
-        "VAT Registration",
-        "Y-tunnus Business ID",
-        "Compliance Monitoring",
-        "Innovation Incentives Setup",
-        "Tech Startup Benefits"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "finland-professional"
-    },
-    {
-      name: "Finland Enterprise",
-      price: "€949",
-      description: "Complete Nordic solution",
-      features: [
-        "Everything in Finland Professional Package",
-        "Multi-Nordic Setup Options",
-        "Full Corporate Maintenance",
-        "Advanced Banking Solutions",
-        "Priority AI Support",
-        "Legal Document Suite",
-        "Ongoing Business Advisory",
-        "International Trade Setup"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "finland-enterprise"
-    }
-  ];
-
-  const swedenPricingPlans = [
-    {
-      name: "Sweden Starter",
-      price: "SEK 3,500",
-      description: "Swedish innovation business setup",
-      features: [
-        "Swedish AB Company Formation",
-        "Bolagsverket Registration",
-        "Corporate Articles & Bylaws",
-        "Registered Office Service (1 year)",
-        "EU Market Access",
-        "AI Business Setup Consultation",
-        "Swedish Banking Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in Sweden",
-      paypalPlanId: "sweden-starter"
-    },
-    {
-      name: "Sweden Professional",
-      price: "SEK 5,500",
-      description: "Advanced Swedish business setup",
-      features: [
-        "Everything in Sweden Starter Package",
-        "Expedited Company Formation",
-        "Premium Stockholm Business Address",
-        "VAT Registration (Moms)",
-        "F-skatt Certificate",
-        "Compliance Monitoring",
-        "Innovation Hub Access",
-        "Startup Ecosystem Benefits"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "sweden-professional"
-    },
-    {
-      name: "Sweden Enterprise",
-      price: "SEK 9,500",
-      description: "Complete Swedish solution",
-      features: [
-        "Everything in Sweden Professional Package",
-        "Multi-Nordic Business Setup",
-        "Full Corporate Services",
-        "Advanced Banking Solutions",
-        "Priority AI Support",
-        "Legal Document Suite",
-        "Ongoing Business Advisory",
-        "Global Market Access"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "sweden-enterprise"
-    }
-  ];
-
-  const latviaPricingPlans = [
-    {
-      name: "Latvia Starter",
-      price: "€250",
-      description: "Baltic business gateway setup",
-      features: [
-        "Latvian SIA Company Formation",
-        "Commercial Register Registration",
-        "Corporate Articles & Bylaws",
-        "Registered Office Service (1 year)",
-        "EU Market Access",
-        "AI Business Setup Consultation",
-        "Baltic Banking Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in Latvia",
-      paypalPlanId: "latvia-starter"
-    },
-    {
-      name: "Latvia Professional",
-      price: "€450",
-      description: "Advanced Baltic business setup",
-      features: [
-        "Everything in Latvia Starter Package",
-        "Expedited Company Formation",
-        "Premium Riga Business Address",
-        "VAT Registration",
-        "PVN Registration",
-        "Compliance Monitoring",
-        "Eastern Europe Gateway",
-        "Multilingual Support"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "latvia-professional"
-    },
-    {
-      name: "Latvia Enterprise",
-      price: "€799",
-      description: "Complete Baltic solution",
-      features: [
-        "Everything in Latvia Professional Package",
-        "Multi-Baltic Setup Options",
-        "Full Corporate Maintenance",
-        "Advanced Banking Solutions",
-        "Priority AI Support",
-        "Legal Document Suite",
-        "Ongoing Business Advisory",
-        "Regional Trade Setup"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "latvia-enterprise"
-    }
-  ];
-
-  const lithuaniaPricingPlans = [
-    {
-      name: "Lithuania Starter",
-      price: "€280",
-      description: "Fintech hub business setup",
-      features: [
-        "Lithuanian UAB Company Formation",
-        "Register of Legal Entities",
-        "Corporate Articles & Bylaws",
-        "Registered Office Service (1 year)",
-        "EU Market Access",
-        "AI Business Setup Consultation",
-        "Fintech Banking Assistance",
-        "Payment Processing Integration"
-      ],
-      buttonText: "Start in Lithuania",
-      paypalPlanId: "lithuania-starter"
-    },
-    {
-      name: "Lithuania Professional",
-      price: "€480",
-      description: "Advanced fintech business setup",
-      features: [
-        "Everything in Lithuania Starter Package",
-        "Expedited Company Formation",
-        "Premium Vilnius Business Address",
-        "VAT Registration (PVM)",
-        "Tax Number Registration",
-        "Compliance Monitoring",
-        "Fintech Hub Benefits",
-        "Digital Innovation Support"
-      ],
-      buttonText: "Go Professional",
-      paypalPlanId: "lithuania-professional"
-    },
-    {
-      name: "Lithuania Enterprise",
-      price: "€829",
-      description: "Complete fintech solution",
-      features: [
-        "Everything in Lithuania Professional Package",
-        "Multi-Baltic Fintech Setup",
-        "Full Corporate Services",
-        "Advanced Fintech Banking",
-        "Priority AI Support",
-        "Legal Document Suite",
-        "Ongoing Business Advisory",
-        "International Fintech Access"
-      ],
-      buttonText: "Enterprise Setup",
-      paypalPlanId: "lithuania-enterprise"
-    }
-  ];
+  const selectedCountryData = pricingData[selectedCountry];
 
   return (
-    <section id="foundstart-pricing" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="gradient-text">Option 2:</span> FoundStart AI-Powered Formation
+            <span className="gradient-text">Option 2:</span> FoundStart Paid Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get comprehensive business formation with AI guidance, compliance monitoring, 
-            and ongoing support. Pay securely with PayPal.
+            Choose a jurisdiction and select a pricing tier to get started with our premium services.
           </p>
         </div>
 
-        {/* United States Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇺🇸 United States (USA)</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {countries.map((country) => (
+            <Button
+              key={country.id}
+              variant={selectedCountry === country.id ? "default" : "outline"}
+              size="lg"
+              onClick={() => setSelectedCountry(country.id)}
+              className="flex items-center space-x-2"
+            >
+              <span className="text-xl">{country.flag}</span>
+              <span>{country.name}</span>
+            </Button>
+          ))}
         </div>
 
-        {/* Canada Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇨🇦 Canada</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {canadaPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* United Kingdom Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇬🇧 United Kingdom</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {ukPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* Estonia Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇪🇪 Estonia</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {estoniaPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* Finland Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇫🇮 Finland</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {finlandPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* Sweden Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇸🇪 Sweden</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {swedenPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* Latvia Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇱🇻 Latvia</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {latviaPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* Lithuania Pricing */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-center mb-8">🇱🇹 Lithuania</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {lithuaniaPricingPlans.map((plan, index) => (
-              <PricingCard key={index} plan={plan} />
-            ))}
-          </div>
-        </div>
-
-        {/* AI Agent Features */}
-        <div className="bg-card rounded-xl p-8 mb-16">
-          <h3 className="text-2xl font-semibold text-center mb-8">
-            🤖 AI Agent Features <span className="text-sm font-normal text-muted-foreground">(Included in All Packages)</span>
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-semibold mb-4 gradient-text">Core AI Services:</h4>
-              <ul className="space-y-2 text-sm">
-                <li>• Business Name Generator & Availability Check</li>
-                <li>• Industry-Specific Compliance Requirements</li>
-                <li>• Tax Structure Optimization Recommendations</li>
-                <li>• Banking & Financial Setup Guidance</li>
-                <li>• License & Permit Identification</li>
-                <li>• Legal Structure Advisory</li>
-                <li>• Ongoing Compliance Reminders</li>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+            <CardHeader className="space-y-2.5">
+              <CardTitle className="text-2xl font-bold">Basic</CardTitle>
+              <Badge variant="secondary">
+                Starting Business <Zap className="w-4 h-4 ml-1" />
+              </Badge>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div className="font-bold text-xl">{selectedCountryData?.basic.price}</div>
+              <ul className="grid gap-2 text-sm text-muted-foreground">
+                {selectedCountryData && selectedCountryData.basic.features.map((feature, index) => (
+                  <li key={index} className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-green-500" />
+                    {feature}
+                  </li>
+                ))}
               </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold mb-4 gradient-text">Advanced AI Features (Professional & Enterprise):</h4>
-              <ul className="space-y-2 text-sm">
-                <li>• Predictive Compliance Monitoring</li>
-                <li>• Automated Document Generation</li>
-                <li>• Real-time Regulatory Updates</li>
-                <li>• Custom Business Plan Generation</li>
-                <li>• Market Analysis & Insights</li>
-                <li>• Growth Strategy Recommendations</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+              <Button className="w-full">Get Started</Button>
+            </CardContent>
+          </Card>
 
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-4">
-            All plans include AI-powered business consultation and expert support
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-6">
-            <span>✓ AI Business Guidance</span>
-            <span>✓ Expert Support</span>
-            <span>✓ Banking Assistance</span>
-            <span>✓ Payment Processing</span>
-            <span>✓ Compliance Monitoring</span>
-            <span>✓ Document Templates</span>
-          </div>
-          <p className="text-xs text-muted-foreground">
-            *Prices exclude government filing fees and may vary based on specific requirements.<br/>
-            All packages include comprehensive AI-powered guidance and 24/7 customer support.
-          </p>
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+            <CardHeader className="space-y-2.5">
+              <CardTitle className="text-2xl font-bold">Pro</CardTitle>
+              <Badge variant="secondary">
+                Growing Business <Star className="w-4 h-4 ml-1" />
+              </Badge>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div className="font-bold text-xl">{selectedCountryData?.pro.price}</div>
+              <ul className="grid gap-2 text-sm text-muted-foreground">
+                {selectedCountryData && selectedCountryData.pro.features.map((feature, index) => (
+                  <li key={index} className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-green-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full">Get Started</Button>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+            <CardHeader className="space-y-2.5">
+              <CardTitle className="text-2xl font-bold">Premium</CardTitle>
+              <Badge variant="secondary">
+                Established Business <Crown className="w-4 h-4 ml-1" />
+              </Badge>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div className="font-bold text-xl">{selectedCountryData?.premium.price}</div>
+              <ul className="grid gap-2 text-sm text-muted-foreground">
+                {selectedCountryData && selectedCountryData.premium.features.map((feature, index) => (
+                  <li key={index} className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-green-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full">Get Started</Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

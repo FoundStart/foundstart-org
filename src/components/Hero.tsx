@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, CheckCircle, Play, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -15,7 +16,8 @@ const Hero = () => {
     { name: "Finland", flag: "🇫🇮" },
     { name: "Sweden", flag: "🇸🇪" },
     { name: "Latvia", flag: "🇱🇻" },
-    { name: "Lithuania", flag: "🇱🇹" }
+    { name: "Lithuania", flag: "🇱🇹" },
+    { name: "Egypt", flag: "🇪🇬" }
   ];
 
   const handleWatchDemo = () => {
@@ -38,12 +40,12 @@ const Hero = () => {
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 From company formation to banking and payments - we handle everything. 
-                Start your business in the USA, UK, Canada, Estonia, Finland, Sweden, Latvia, or Lithuania 
+                Start your business in the USA, UK, Canada, Estonia, Finland, Sweden, Latvia, Lithuania, or Egypt 
                 with our AI-powered platform and integrated partner ecosystem.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-3">
               {jurisdictions.map((jurisdiction) => (
                 <div
                   key={jurisdiction.name}
@@ -56,9 +58,11 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6 group">
-                Start Your Business
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="text-lg px-8 py-6 group" asChild>
+                <Link to="/countries">
+                  Start Your Business
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
               <Button 
                 size="lg" 

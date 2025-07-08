@@ -1,116 +1,66 @@
-
 export const jurisdictionInfo = [
   {
-    flag: '🇺🇸',
-    name: 'United States',
-    price: 'From $299',
-    timeframe: '1-3 business days',
-    benefits: [
-      'Delaware LLC formation',
-      'EIN number included',
-      'Registered agent service',
-      'Global business credibility',
-      'Access to US banking',
-      'Stripe integration ready'
-    ]
+    flag: "🇺🇸",
+    name: "USA",
+    description: "Delaware, Wyoming, Nevada formations",
+    timeframe: "3-5 days",
+    partners: 5
   },
   {
-    flag: '🇬🇧',
-    name: 'United Kingdom',
-    price: 'From £199',
-    timeframe: '24-48 hours',
-    benefits: [
-      'Companies House registration',
-      'UTR number application',
-      'London business address',
-      'EU market access',
-      'Strong legal framework',
-      'Fintech-friendly'
-    ]
+    flag: "🇬🇧",
+    name: "UK",
+    description: "England, Scotland, Wales formations",
+    timeframe: "1-3 days",
+    partners: 4
   },
   {
-    flag: '🇨🇦',
-    name: 'Canada',
-    price: 'From CAD $399',
-    timeframe: '2-5 business days',
-    benefits: [
-      'Federal incorporation',
-      'Business number (BN)',
-      'Toronto registered office',
-      'USMCA trade benefits',
-      'Stable banking system',
-      'Innovation incentives'
-    ]
+    flag: "🇨🇦",
+    name: "Canada",
+    description: "Federal and Provincial formations",
+    timeframe: "5-10 days",
+    partners: 1
   },
   {
-    flag: '🇪🇪',
-    name: 'Estonia',
-    price: 'From €300',
-    timeframe: '1-2 business days',
-    benefits: [
-      'EU digital residency',
-      'e-Residency program',
-      'Digital-first government',
-      'EU market access',
-      'Low corporate tax',
-      'Tech-friendly environment'
-    ]
+    flag: "🇪🇪",
+    name: "Estonia",
+    description: "EU Digital-first formations",
+    timeframe: "1-3 days",
+    partners: 1
   },
   {
-    flag: '🇫🇮',
-    name: 'Finland',
-    price: 'From €350',
-    timeframe: '2-3 business days',
-    benefits: [
-      'EU market access',
-      'Nordic business culture',
-      'Strong innovation ecosystem',
-      'Stable economy',
-      'English-friendly environment',
-      'Tech startup incentives'
-    ]
+    flag: "🇫🇮",
+    name: "Finland",
+    description: "Nordic business formations",
+    timeframe: "3-7 days",
+    partners: 1
   },
   {
-    flag: '🇸🇪',
-    name: 'Sweden',
-    price: 'From SEK 3,500',
-    timeframe: '1-3 business days',
-    benefits: [
-      'EU market access',
-      'Innovation-friendly policies',
-      'Strong startup ecosystem',
-      'Excellent infrastructure',
-      'High quality of life',
-      'English proficiency'
-    ]
+    flag: "🇸🇪",
+    name: "Sweden",
+    description: "Scandinavian formations",
+    timeframe: "3-7 days",
+    partners: 1
   },
   {
-    flag: '🇱🇻',
-    name: 'Latvia',
-    price: 'From €250',
-    timeframe: '1-2 business days',
-    benefits: [
-      'EU market access',
-      'Strategic location',
-      'Low administrative burden',
-      'Competitive costs',
-      'Growing tech sector',
-      'Multilingual workforce'
-    ]
+    flag: "🇱🇻",
+    name: "Latvia",
+    description: "Baltic EU formations",
+    timeframe: "3-5 days",
+    partners: 1
   },
   {
-    flag: '🇱🇹',
-    name: 'Lithuania',
-    price: 'From €280',
-    timeframe: '1-2 business days',
-    benefits: [
-      'EU market access',
-      'Fintech hub',
-      'Digital innovation',
-      'Business-friendly policies',
-      'Strategic location',
-      'Growing startup scene'
-    ]
+    flag: "🇱🇹",
+    name: "Lithuania",
+    description: "Baltic tech hub formations",
+    timeframe: "3-5 days",
+    partners: 1
+  },
+  {
+    flag: "🇪🇬",
+    name: "Egypt",
+    description: "Middle East & Africa gateway",
+    timeframe: "14-21 days",
+    partners: 1
   }
 ];
 
@@ -136,5 +86,17 @@ export const partnerData = [
   
   // Telecommunications Partners
   { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'Bnesim', url: 'https://bnes.im/PHV3' },
-  { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'esim me', url: 'https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB' }
+  { category: 'Telecommunications', details: 'eSIM Telecommunication', platform: 'esim me', url: 'https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB' },
+  
+  // Add Egypt partner to company formation section
+  {
+    name: "FoundStart Legal Team",
+    description: "Expert legal guidance for Egyptian company formation with 6 different structures under Investment Law No. 72 of 2017",
+    logo: "🇪🇬",
+    category: "Company Formation",
+    countries: ["Egypt"],
+    features: ["6 company structures", "100% foreign ownership*", "GAFI registration", "Legal consultation"],
+    url: "/contact-sales",
+    isInternal: true
+  }
 ];
