@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 interface JurisdictionInfo {
   flag: string;
   name: string;
-  price: string;
+  description: string;
   timeframe: string;
+  partners: number;
+  price: string;
   benefits: string[];
 }
 
@@ -20,20 +22,21 @@ const JurisdictionOverview = ({ jurisdictions }: JurisdictionOverviewProps) => {
   const getPartnerLink = (countryName: string) => {
     // Map countries to their primary partner links
     const partnerLinks: { [key: string]: string } = {
-      'United States': 'https://privatily.com/ref/Deeemoz/',
-      'United Kingdom': 'https://privatily.com/ref/Deeemoz/',
+      'USA': 'https://privatily.com/ref/Deeemoz/',
+      'UK': 'https://privatily.com/ref/Deeemoz/',
       'Canada': 'https://privatily.com/ref/Deeemoz/',
       'Estonia': 'https://my1office.co/en/company/register?ref=mdzknzu',
       'Finland': 'https://my1office.co/en/company/register?ref=mdzknzu',
       'Sweden': 'https://my1office.co/en/company/register?ref=mdzknzu',
       'Latvia': 'https://my1office.co/en/company/register?ref=mdzknzu',
-      'Lithuania': 'https://my1office.co/en/company/register?ref=mdzknzu'
+      'Lithuania': 'https://my1office.co/en/company/register?ref=mdzknzu',
+      'Egypt': '/contact-sales'
     };
     return partnerLinks[countryName] || '/partners';
   };
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       {jurisdictions.map((jurisdiction, index) => (
         <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
           <CardHeader>
@@ -55,7 +58,14 @@ const JurisdictionOverview = ({ jurisdictions }: JurisdictionOverviewProps) => {
             </div>
             <Button 
               className="w-full group mb-2" 
-              onClick={() => window.open(getPartnerLink(jurisdiction.name), '_blank')}
+              onClick={() => {
+                const link = getPartnerLink(jurisdiction.name);
+                if (link.startsWith('http')) {
+                  window.open(link, '_blank');
+                } else {
+                  window.location.href = link;
+                }
+              }}
             >
               Start in {jurisdiction.name}
               <ExternalLink className="w-4 h-4 ml-2" />
