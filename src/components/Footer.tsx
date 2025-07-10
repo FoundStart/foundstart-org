@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
 import { Youtube, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+
 const Footer = () => {
   const footerSections = [{
     title: "Services",
@@ -8,7 +9,7 @@ const Footer = () => {
       name: "All Services",
       href: "/services"
     }, {
-      name: "Countries & Jurisdictions",
+      name: "Countries & Jurisdictions", 
       href: "/countries"
     }, {
       name: "AI Chat Bots",
@@ -53,10 +54,10 @@ const Footer = () => {
   }, {
     title: "Partners",
     links: [{
-      name: "Digital Partners (400+)",
+      name: "Digital Partners",
       href: "/digital-partners"
     }, {
-      name: "Freelancer Partners (100)",
+      name: "Freelancer Partners",
       href: "/freelancer-partners"
     }, {
       name: "Partner Directory",
@@ -108,6 +109,7 @@ const Footer = () => {
       href: "/affiliate-dashboard"
     }]
   }];
+
   const socialLinks = [{
     name: "YouTube",
     href: "https://www.youtube.com/@foundstart/",
@@ -129,6 +131,7 @@ const Footer = () => {
     href: "https://x.com/foundstartco",
     icon: Twitter
   }];
+
   return <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
@@ -193,4 +196,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
