@@ -8,7 +8,12 @@ import { useTranslation } from '@/contexts/TranslationContext';
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
-  const { t, isRTL } = useTranslation();
+  const { t, isRTL, language } = useTranslation();
+  
+  // Demo video URLs based on language
+  const demoVideoUrl = language === 'ar' 
+    ? "https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI&autoplay=1"
+    : "https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI&autoplay=1";
   
   const jurisdictions = [
     { name: t.usa, flag: "🇺🇸" },
@@ -124,8 +129,8 @@ const Hero = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src="https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI&autoplay=1"
-                          title="FoundStart CEO Demo - Mr. MoMo Sa"
+                          src={demoVideoUrl}
+                          title={language === 'ar' ? "FoundStart Arabic Demo - MoMo Sa" : "FoundStart English Demo - MoMo Sa"}
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen

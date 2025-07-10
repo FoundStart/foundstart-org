@@ -5,15 +5,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Play, Clock, Users, Star } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 const Tutorials = () => {
+  const { language } = useTranslation();
+
   const featuredVideo = {
     title: "FoundStart Platform Demo by MoMo Sa - CEO & Founder",
     description: "Complete walkthrough of the FoundStart platform by our CEO MoMo Sa, covering business formation, banking setup, and AI-powered features.",
     duration: "15 min",
     views: "10,2K",
     rating: 4.9,
-    videoUrl: "https://youtu.be/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI",
+    videoUrl: language === 'ar' 
+      ? "https://youtu.be/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI"
+      : "https://youtu.be/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI",
     thumbnail: "/lovable-uploads/23e6b7a9-ef93-4946-945e-8196c41070bd.png"
   };
 
@@ -97,7 +102,9 @@ const Tutorials = () => {
                     <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
                   </div>
                   <Badge className="mb-2">Featured Tutorial</Badge>
-                  <p className="text-sm text-muted-foreground">Click to watch on YouTube</p>
+                  <p className="text-sm text-muted-foreground">
+                    {language === 'ar' ? 'انقر لمشاهدة الفيديو العربي' : 'Click to watch English demo'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -128,7 +135,7 @@ const Tutorials = () => {
                   onClick={() => handlePlayVideo(featuredVideo.videoUrl)}
                 >
                   <Play className="w-5 h-5 mr-2" />
-                  Watch Demo by MoMo Sa
+                  {language === 'ar' ? 'مشاهدة الفيديو العربي' : 'Watch English Demo'}
                 </Button>
               </div>
             </CardContent>
