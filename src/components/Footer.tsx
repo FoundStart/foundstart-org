@@ -132,7 +132,8 @@ const Footer = () => {
     icon: Twitter
   }];
 
-  return <footer className="bg-card border-t border-border">
+  return (
+    <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-1">
@@ -160,27 +161,35 @@ const Footer = () => {
             <div className="text-xs text-muted-foreground">© 2025 FoundStart. All rights reserved, MoMoAI</div>
           </div>
 
-          {footerSections.map((section, index) => <div key={index}>
+          {footerSections.map((section, index) => (
+            <div key={index}>
               <h4 className="font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => <li key={linkIndex}>
-                    {link.href.startsWith('#') ? <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    {link.href.startsWith('#') ? (
+                      <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                         {link.name}
-                      </a> : <Link to={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                      </a>
+                    ) : (
+                      <Link to={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                         {link.name}
-                      </Link>}
-                  </li>)}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         <Separator className="my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex space-x-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a>
+            <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
+            <Link to="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -194,7 +203,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
 
 export default Footer;

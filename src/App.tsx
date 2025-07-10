@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +23,9 @@ import Tutorials from "./pages/Tutorials";
 import AffiliateDashboard from "./pages/AffiliateDashboard";
 import SEOManagement from "./pages/SEOManagement";
 import ContactSales from "./pages/ContactSales";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -56,6 +58,9 @@ function App() {
                   <Route path="/affiliate-dashboard" element={<AffiliateDashboard />} />
                   <Route path="/seo-management" element={<SEOManagement />} />
                   <Route path="/contact-sales" element={<ContactSales />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/cookie-policy" element={<CookiePolicy />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <MobileBottomNav />
