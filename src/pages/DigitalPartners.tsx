@@ -61,6 +61,8 @@ const DigitalPartners = () => {
     { category: "AI Videos-UGC", platform: "Adcreative", url: "https://free-trial.adcreative.ai/lqp6txbhnoa6", niche: "AI UGC" },
     { category: "AI Videos-UGC", platform: "Veed", url: "https://veed.cello.so/PiYocZYTYQ1", niche: "AI UGC" },
     { category: "AI Videos-UGC", platform: "Invideo", url: "https://invideo.sjv.io/yqovdV", niche: "AI Videos" },
+    { category: "AI Videos-UGC", platform: "Renderforest", url: "https://renderforest.pxf.io/3JzgJK", niche: "AI Videos" },
+    { category: "AI Videos-UGC", platform: "Vindoz", url: "https://www.vidnoz.com/?a_aid=686cfe6fa8f02", niche: "AI Videos" },
 
     // Business Automation
     { category: "Business Automation", platform: "Pabbly", url: "https://payments.pabbly.com/api/affurl/RVYZ07kQyUZ0Z1HUKZ1m/HyZ0KsMikOjASVp2p?target=b1BHyhSldo6RN1Fn", niche: "Business Automation" },
@@ -97,16 +99,19 @@ const DigitalPartners = () => {
     { category: "AI Videos", platform: "Video Robot VR2", url: "https://paykstrt.com/19004/145081", niche: "Video AI tool" },
     { category: "AI Videos", platform: "DoodleMaker", url: "https://paykstrt.com/21278/145081", niche: "DoodleMaker" },
     { category: "AI Videos", platform: "DoodleMaker2", url: "https://paykstrt.com/21462/145081", niche: "DoodleMaker2" },
-    { category: "AI Videos", platform: "Syllaby", url: "https://syllaby.io/?via=momo89", niche: "Turn any Idea into Faceless VideosAI Avatar VideosB-Roll Videos" },
+    { category: "AI Videos", platform: "Syllaby", url: "https://syllaby.io/?via=momo89", niche: "Turn any Idea into Faceless Videos, AI Avatar Videos, B-Roll Videos" },
     { category: "AI Videos", platform: "AvatarBuilder", url: "https://paykstrt.com/24810/145081", niche: "AvatarBuilder" },
     { category: "AI Videos", platform: "Vidyo AI", url: "https://vidyo.ai?via=409w3", niche: "AI Video long to short" },
     { category: "AI Videos", platform: "Quso AI", url: "https://quso.ai?via=409w3", niche: "AI Video long to short" },
     { category: "AI Videos", platform: "Videogen", url: "https://videogen.io?fpr=mohamed35", niche: "AI videos" },
     { category: "AI Videos", platform: "Awesomescreenshot", url: "https://www.awesomescreenshot.com/workspace/invite/8ec75fbbc0305d8d0aa422d9d2a4276b", niche: "Video screen recording & Editing" },
-    { category: "AI Videos", platform: "OpusClip", url: "OpusClip", niche: "Video clip into shorts" },
-    { category: "AI Videos", platform: "captions.ai", url: "captions.ai", niche: "" },
-    { category: "AI Videos", platform: "videohunt.ai", url: "videohunt.ai", niche: "" },
+    { category: "AI Videos", platform: "OpusClip", url: "https://opusclip.com", niche: "Video clip into shorts" },
+    { category: "AI Videos", platform: "captions.ai", url: "https://captions.ai", niche: "AI Video captions" },
+    { category: "AI Videos", platform: "videohunt.ai", url: "https://videohunt.ai", niche: "AI Video tools" },
     { category: "AI Videos", platform: "Autoshorts AI", url: "https://autoshorts.ai/?ref=momosa", niche: "AI Video shorts" },
+
+    // AI Voices
+    { category: "AI Voices", platform: "PlayHt", url: "https://play.ht/?via=aimomo", niche: "AI Voice Generator & Text to Speech AI Voice Platform" },
 
     // Mobile APP developments
     { category: "Mobile APP developments", platform: "Rork AI", url: "https://rork.com/?ref=mohamedvj", niche: "No Code AI-Full stack AI" },
@@ -129,8 +134,8 @@ const DigitalPartners = () => {
     { category: "Web Hosting", platform: "Plesk", url: "https://try.plesk.com/la8gncfyj9za", niche: "Web hosting" },
 
     // Business Email
-    { category: "Business Email", platform: "Hostinger Business Starter email", url: "https://www.hostinger.com/cart?product=hostinger_mail%3Apro&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c522-55b1-7265-be78-34fd5d24a51b", niche: "Business Starter email" },
-    { category: "Business Email", platform: "Hostinger Business Premium email", url: "https://www.hostinger.com/cart?product=hostinger_mail%3Apremium&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c52a-57fd-7087-9f8f-69da15dcfbb8", niche: "Business Premium email" },
+    { category: "Business Email", platform: "Hostinger Business Starter", url: "https://www.hostinger.com/cart?product=hostinger_mail%3Apro&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c522-55b1-7265-be78-34fd5d24a51b", niche: "Business Starter email" },
+    { category: "Business Email", platform: "Hostinger Business Premium", url: "https://www.hostinger.com/cart?product=hostinger_mail%3Apremium&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c52a-57fd-7087-9f8f-69da15dcfbb8", niche: "Business Premium email" },
 
     // Cloud Hosting
     { category: "Cloud Hosting", platform: "Hostinger Cloud Startup", url: "https://www.hostinger.com/cart?product=hosting%3Acloud_economy&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c52f-dd23-71ed-9053-135cd18f8efd", niche: "Cloud Startup" },
@@ -142,6 +147,7 @@ const DigitalPartners = () => {
     { category: "VPS Hosting", platform: "Hostinger VPS KVM 2", url: "https://www.hostinger.com/cart?product=vps%3Avps_kvm_2&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c532-b55c-72e2-8453-e924207ef41e", niche: "VPS KVM 2" },
     { category: "VPS Hosting", platform: "Hostinger VPS KVM 4", url: "https://www.hostinger.com/cart?product=vps%3Avps_kvm_4&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c532-d622-7290-be8c-65d3be89d8c9", niche: "VPS KVM 4" },
     { category: "VPS Hosting", platform: "Hostinger VPS KVM 8", url: "https://www.hostinger.com/cart?product=vps%3Avps_kvm_8&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c532-fedb-73ae-9100-5e8d369fb06e", niche: "VPS KVM 8" },
+    { category: "VPS Hosting", platform: "Clawcloudrun", url: "https://console.run.claw.cloud/signin?link=7B88USLSWWKR", niche: "VPS Clouds Run & deploy" },
 
     // RDP/VPS Servers
     { category: "RDP/VPS Servers", platform: "RDP Hostings", url: "https://rdphostings.com/rdp/aff.php?aff=2412", niche: "RDP Hosting" },
@@ -152,15 +158,18 @@ const DigitalPartners = () => {
     { category: "Security", platform: "Proxy seller", url: "https://proxy-seller.com/?partner=BJLV3W376I4NLQ", niche: "VPN Proxy" },
     { category: "Security", platform: "Proxy sale", url: "https://proxy-sale.com/?partner_link=IKZvgpF6pz", niche: "VPN Proxy" },
 
+    // Vibe Coding
+    { category: "Vibe Coding", platform: "Lovable AI", url: "https://lovable.dev/?via=momo", niche: "AI No Code AI-Full stack AI" },
+    { category: "Vibe Coding", platform: "EasySite", url: "https://www.easysite.ai/?via=vibecoding", niche: "AI No Code AI-Full stack AI" },
+    { category: "Vibe Coding", platform: "Hostinger Premium", url: "https://www.hostinger.com/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c534-87a8-734e-8df1-e0b1624db8ff&product_type=website-builder", niche: "AI Premium Website Builder" },
+    { category: "Vibe Coding", platform: "Hostinger Business", url: "https://www.hostinger.com/cart?product=hosting%3Ahostinger_business&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c534-9936-7250-8d56-8fb5c42a2c07&product_type=website-builder", niche: "AI Business Website Builder" },
+
     // Web developments
-    { category: "Web developments", platform: "Lovable AI", url: "https://lovable.dev/?via=momo", niche: "No Code AI-Full stack AI" },
-    { category: "Web developments", platform: "Hostinger Premium Website Builder", url: "https://www.hostinger.com/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c534-87a8-734e-8df1-e0b1624db8ff&product_type=website-builder", niche: "Premium Website Builder" },
-    { category: "Web developments", platform: "Hostinger Business Website Builder", url: "https://www.hostinger.com/cart?product=hosting%3Ahostinger_business&period=12&referral_type=cart_link&REFERRALCODE=823ALLAHWQ5J&referral_id=0197c534-9936-7250-8d56-8fb5c42a2c07&product_type=website-builder", niche: "Business Website Builder" },
     { category: "Web developments", platform: "Purelanderas", url: "https://purelanderas.com/a/click.php?refid=s4qXbrSuxy", niche: "No code landing pages" },
     { category: "Web developments", platform: "FastComet", url: "https://affiliate.fastcomet.com/scripts/2wc9ym?a_aid=633f9f44789f0", niche: "Web Developments-No Coding" },
-    { category: "Web developments", platform: "Strikingly", url: "https://www.strikingly.com/a/YtunJy", niche: "Web domains , hosting & Emails" },
-    { category: "Web developments", platform: "Hetacloud", url: "https://hetacloud.com/aff.php?aff=4", niche: "Web domains , hosting & Emails" },
-    { category: "Web developments", platform: "Whmcs", url: "https://www.whmcs.com/members/aff.php?aff=44417", niche: "Web domains , hosting & Emails" },
+    { category: "Web developments", platform: "Strikingly", url: "https://www.strikingly.com/a/YtunJy", niche: "Web domains, hosting & Emails" },
+    { category: "Web developments", platform: "Hetacloud", url: "https://hetacloud.com/aff.php?aff=4", niche: "Web domains, hosting & Emails" },
+    { category: "Web developments", platform: "Whmcs", url: "https://www.whmcs.com/members/aff.php?aff=44417", niche: "Web domains, hosting & Emails" },
     { category: "Web developments", platform: "Cookieyes", url: "https://www.cookieyes.com/welcome/?ref=m2qzzda", niche: "Web" },
 
     // Digital marketplace
@@ -349,7 +358,7 @@ const DigitalPartners = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <Header />
       
       <main className="pt-20">
