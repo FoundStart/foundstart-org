@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -15,7 +14,7 @@ const DigitalPartners = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = '//pl27137303.profitableratecpm.com/80/e6/a5/80e6a5';
+    script.src = '//pl27137303.profitableratecpm.com/80/e6/a5/80e6a5909d296502b1621bb8bfe52d34.js';
     document.head.appendChild(script);
 
     // Cleanup function to remove script when component unmounts
