@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DigitalPartnersHeader from '@/components/partners/DigitalPartnersHeader';
@@ -10,6 +10,36 @@ import { digitalPartnersData } from '@/data/digitalPartnersData';
 const DigitalPartners = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Add pop-under ad script to head
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//pl27137303.profitableratecpm.com/80/e6/a5/80e6a5909d296502b1621bb8bfe52d34.js';
+    document.head.appendChild(script);
+
+    // Cleanup function to remove script when component unmounts
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Add native banner ad script
+  useEffect(() => {
+    const bannerScript = document.createElement('script');
+    bannerScript.async = true;
+    bannerScript.setAttribute('data-cfasync', 'false');
+    bannerScript.src = '//pl27137413.profitableratecpm.com/61e180cdc6e3d0f23166a654a1e412ab/invoke.js';
+    document.head.appendChild(bannerScript);
+
+    return () => {
+      if (document.head.contains(bannerScript)) {
+        document.head.removeChild(bannerScript);
+      }
+    };
+  }, []);
 
   const categories = ['All', ...Array.from(new Set(digitalPartnersData.map(p => p.category)))];
 
@@ -37,6 +67,11 @@ const DigitalPartners = () => {
               setSelectedCategory={setSelectedCategory}
               categories={categories}
             />
+
+            {/* Native Banner Ad */}
+            <div className="mb-8 text-center">
+              <div id="container-61e180cdc6e3d0f23166a654a1e412ab"></div>
+            </div>
 
             <DigitalPartnersGrid partners={filteredPartners} />
           </div>
