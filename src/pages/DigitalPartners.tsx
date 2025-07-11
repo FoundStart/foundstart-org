@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DigitalPartnersHeader from '@/components/partners/DigitalPartnersHeader';
@@ -10,6 +10,21 @@ import { digitalPartnersData } from '@/data/digitalPartnersData';
 const DigitalPartners = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Add pop-under ad script to head
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//pl27137303.profitableratecpm.com/80/e6/a5/80e6a5';
+    document.head.appendChild(script);
+
+    // Cleanup function to remove script when component unmounts
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
 
   const categories = ['All', ...Array.from(new Set(digitalPartnersData.map(p => p.category)))];
 
