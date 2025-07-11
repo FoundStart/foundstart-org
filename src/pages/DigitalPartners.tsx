@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -21,6 +22,21 @@ const DigitalPartners = () => {
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Add native banner ad script
+  useEffect(() => {
+    const bannerScript = document.createElement('script');
+    bannerScript.async = true;
+    bannerScript.setAttribute('data-cfasync', 'false');
+    bannerScript.src = '//pl27137413.profitableratecpm.com/61e180cdc6e3d0f23166a654a1e412ab/invoke.js';
+    document.head.appendChild(bannerScript);
+
+    return () => {
+      if (document.head.contains(bannerScript)) {
+        document.head.removeChild(bannerScript);
       }
     };
   }, []);
@@ -51,6 +67,11 @@ const DigitalPartners = () => {
               setSelectedCategory={setSelectedCategory}
               categories={categories}
             />
+
+            {/* Native Banner Ad */}
+            <div className="mb-8 text-center">
+              <div id="container-61e180cdc6e3d0f23166a654a1e412ab"></div>
+            </div>
 
             <DigitalPartnersGrid partners={filteredPartners} />
           </div>
