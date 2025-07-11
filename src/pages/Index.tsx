@@ -16,37 +16,41 @@ const Index = () => {
   const { t, isRTL } = useTranslation();
   
   return (
-    <div className="min-h-screen bg-background pb-16 md:pb-0">
+    <div className="min-h-screen bg-background">
       <Header />
-      <Hero />
       
-      {/* Option 1: Partner Links Section */}
-      <JurisdictionSelector />
-      
-      {/* Option 2: FoundStart Paid Services */}  
-      <PricingTiers />
-      
-      {/* Business Name Widget Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <div className={`space-y-4 mb-12 ${isRTL ? 'text-right' : 'text-center'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              {t.findPerfectName} <span className="gradient-text">{t.businessName}</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t.businessNameDescription}
-            </p>
+      {/* Main content with proper mobile spacing */}
+      <main className="pb-20 md:pb-0">
+        <Hero />
+        
+        {/* Option 1: Partner Links Section */}
+        <JurisdictionSelector />
+        
+        {/* Option 2: FoundStart Paid Services */}  
+        <PricingTiers />
+        
+        {/* Business Name Widget Section */}
+        <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+          <div className="container mx-auto max-w-4xl">
+            <div className={`space-y-4 mb-8 md:mb-12 ${isRTL ? 'text-right' : 'text-center'}`}>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                {t.findPerfectName} <span className="gradient-text">{t.businessName}</span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                {t.businessNameDescription}
+              </p>
+            </div>
+            <BusinessNameWidget />
           </div>
-          <BusinessNameWidget />
-        </div>
-      </section>
-      
-      <ServiceIntegrations />
-      <AIFeatures />
-      <AIWizard />
-      
-      {/* Coming Soon Section */}
-      <ComingSoonCards />
+        </section>
+        
+        <ServiceIntegrations />
+        <AIFeatures />
+        <AIWizard />
+        
+        {/* Coming Soon Section */}
+        <ComingSoonCards />
+      </main>
       
       <Footer />
       

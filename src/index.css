@@ -80,6 +80,15 @@
     @apply backdrop-blur-md bg-background/50 border border-border/50;
   }
 
+  /* Mobile-specific utilities */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
   /* Enhanced Animation Utilities */
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
