@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
-import { Youtube, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Youtube, Facebook, Instagram, Linkedin, Twitter, MessageCircle, Download } from 'lucide-react';
 
 const Footer = () => {
   const footerSections = [{
@@ -110,27 +111,24 @@ const Footer = () => {
     }]
   }];
 
-  const socialLinks = [{
-    name: "YouTube",
-    href: "https://www.youtube.com/@foundstart/",
-    icon: Youtube
-  }, {
-    name: "Facebook",
-    href: "https://www.facebook.com/foundstart/",
-    icon: Facebook
-  }, {
-    name: "Instagram",
-    href: "https://www.instagram.com/foundstartco/",
-    icon: Instagram
-  }, {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/foundstart/",
-    icon: Linkedin
-  }, {
-    name: "Twitter",
-    href: "https://x.com/foundstartco",
-    icon: Twitter
-  }];
+  const socialLinks = [
+    { name: "Facebook", href: "https://www.facebook.com/momoaiearab", icon: Facebook },
+    { name: "WhatsApp", href: "https://wa.me/message/UQZ6STBLDXKPD1", icon: MessageCircle },
+    { name: "Instagram", href: "https://www.instagram.com/momoaiar/", icon: Instagram },
+    { name: "Threads", href: "https://www.threads.com/@momoaiar", icon: MessageCircle },
+    { name: "YouTube", href: "http://www.youtube.com/@momoai-momo", icon: Youtube },
+    { name: "TikTok", href: "http://tiktok.com/@momoaiar", icon: MessageCircle },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/mohamed-sayed-6b2a38226/", icon: Linkedin },
+    { name: "Reddit", href: "https://www.reddit.com/user/Exotic_Researcher688/", icon: MessageCircle },
+    { name: "Quora", href: "https://momoai.quora.com/", icon: MessageCircle },
+    { name: "X", href: "https://x.com/MSAGoldgroup", icon: Twitter },
+    { name: "Pinterest", href: "https://pin.it/2GSKpcQur", icon: MessageCircle },
+    { name: "Minds", href: "https://www.minds.com/momoai/", icon: MessageCircle },
+    { name: "Rumble", href: "https://rumble.com/user/Deeemoz", icon: MessageCircle },
+    { name: "Medium", href: "https://medium.com/@Deeemoz", icon: MessageCircle },
+    { name: "Beehiiv", href: "https://deeemoz.beehiiv.com/", icon: MessageCircle },
+    { name: "Substack", href: "https://substack.com/@deeemoz", icon: MessageCircle },
+  ];
 
   return (
     <footer className="bg-card border-t border-border">
@@ -148,12 +146,26 @@ const Footer = () => {
               for company formation, banking, and digital services.
             </p>
             
+            {/* Download Button */}
+            <div className="mb-4">
+              <a 
+                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT51oaHgrpKbNUUh_1t4ubKyFgQZVXLHQRbA3_EHMc4xDcByOOrnTkyIf63-Gn9AmK2UMF5iXJcKv41/pubhtml" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="w-full">
+                  <Download className="w-4 h-4 mr-2" />
+                  MoMoAI Business Sheet
+                </Button>
+              </a>
+            </div>
+
             {/* Social Media Links */}
-            <div className="flex space-x-3 mb-4">
-              {socialLinks.map((social, index) => {
+            <div className="grid grid-cols-4 gap-2 mb-4">
+              {socialLinks.slice(0, 16).map((social, index) => {
               const Icon = social.icon;
-              return <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={social.name}>
-                    <Icon className="w-5 h-5" />
+              return <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-muted/50" aria-label={social.name} title={social.name}>
+                    <Icon className="w-4 h-4" />
                   </a>;
             })}
             </div>

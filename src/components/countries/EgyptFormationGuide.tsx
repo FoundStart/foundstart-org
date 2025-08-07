@@ -246,10 +246,19 @@ const EgyptFormationGuide = () => {
             We'll help you choose the right structure and handle all legal requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact-sales">
-              <Button size="lg" className="hover-scale">
-                Get Quote for Egypt Formation
+            <a 
+              href="https://wa.me/message/UQZ6STBLDXKPD1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="hover-scale bg-green-600 hover:bg-green-700">
+                Contact via WhatsApp
                 <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
+            <Link to="/contact-sales">
+              <Button size="lg" variant="outline" className="hover-scale">
+                Get Quote for Egypt Formation
               </Button>
             </Link>
             <Link to="/services">
