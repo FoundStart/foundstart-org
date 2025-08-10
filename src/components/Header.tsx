@@ -28,11 +28,8 @@ const Header = () => {
         <div className={`flex h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
           <div className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
-            <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">FS</span>
-              </div>
-              <span className="text-xl font-bold gradient-text hidden sm:block">FoundStart</span>
+            <Link to="/" className="flex items-center">
+              <span className="text-xl font-bold gradient-text">FoundStart</span>
             </Link>
           </div>
 

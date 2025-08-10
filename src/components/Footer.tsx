@@ -135,10 +135,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">FS</span>
-              </div>
+            <Link to="/" className="flex items-center mb-4">
               <span className="text-lg font-bold gradient-text">FoundStart</span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
