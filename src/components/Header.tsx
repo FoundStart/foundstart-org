@@ -24,14 +24,15 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex h-14 md:h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
-          <div className={`flex items-center space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
-            <Link to="/" className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
-              <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xs md:text-sm">FS</span>
+      <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
+        <div className={`flex h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
+          {/* Logo */}
+          <div className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
+            <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">FS</span>
               </div>
-              <span className="text-lg md:text-xl font-bold gradient-text">FoundStart</span>
+              <span className="text-xl font-bold gradient-text hidden sm:block">FoundStart</span>
             </Link>
           </div>
 
@@ -41,21 +42,21 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
 
-          {/* Auth Buttons & Controls */}
+          {/* Desktop Controls */}
           <div className={`hidden lg:flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
             <LanguageToggle />
             <ThemeToggle />
             <AuthButton />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Controls */}
           <div className={`lg:hidden flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
             <LanguageToggle />
             <ThemeToggle />
@@ -63,28 +64,31 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="h-8 w-8 md:h-10 md:w-10"
+              className="h-10 w-10 touch-manipulation"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-4 w-4 md:h-5 md:w-5" /> : <Menu className="h-4 w-4 md:h-5 md:w-5" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t bg-background/95 backdrop-blur">
-            <div className={`px-2 pt-2 pb-4 space-y-1 sm:px-3 ${isRTL ? 'text-right' : ''}`}>
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors hover:bg-muted/50 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="px-3 py-2 border-t border-border mt-2 pt-4">
+          <div className="lg:hidden absolute left-0 right-0 top-full bg-background/95 backdrop-blur border-b shadow-lg">
+            <div className={`max-w-7xl mx-auto px-3 py-4 ${isRTL ? 'text-right' : ''}`}>
+              <nav className="space-y-1">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all duration-200 touch-manipulation"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+              <div className="mt-4 pt-4 border-t border-border">
                 <AuthButton />
               </div>
             </div>
