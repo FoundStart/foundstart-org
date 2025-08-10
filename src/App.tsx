@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
-import MobileBottomNav from "@/components/MobileBottomNav";
+
 import Index from "./pages/Index";
 import Countries from "./pages/Countries";
 import Services from "./pages/Services";
@@ -63,7 +63,7 @@ function App() {
                   <Route path="/cookie-policy" element={<CookiePolicy />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <MobileBottomNav />
+                
               </AuthProvider>
             </BrowserRouter>
           </TooltipProvider>
