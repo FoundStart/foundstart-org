@@ -92,19 +92,32 @@
 
   /* Mobile-first responsive utilities */
   .mobile-container {
-    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+    @apply px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto;
   }
 
   .mobile-spacing {
-    @apply py-4 sm:py-6 lg:py-8;
+    @apply py-3 sm:py-6 lg:py-8;
   }
 
   .mobile-text {
-    @apply text-sm sm:text-base;
+    @apply text-xs sm:text-base leading-relaxed;
   }
 
   .mobile-heading {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+    @apply text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold;
+  }
+
+  /* Mobile viewport optimizations */
+  .mobile-page {
+    @apply min-h-screen w-full overflow-x-hidden;
+  }
+
+  .mobile-content {
+    @apply w-full max-w-full px-3 sm:px-6;
+  }
+
+  .mobile-section {
+    @apply py-4 sm:py-8 lg:py-12;
   }
 
   /* Improved mobile interactions */
