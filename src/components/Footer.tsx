@@ -96,7 +96,7 @@ const Footer = () => {
       href: "#"
     }, {
       name: "Contact Us",
-      href: "#"
+      href: "/contact-us"
     }, {
       name: "Live Chat",
       href: "#"
@@ -109,6 +109,21 @@ const Footer = () => {
     }, {
       name: "Affiliate System",
       href: "/affiliate-dashboard"
+    }]
+  }, {
+    title: "Company",
+    links: [{
+      name: "Who We Are",
+      href: "/who-we-are"
+    }, {
+      name: "Privacy Policy",
+      href: "/privacy-policy"
+    }, {
+      name: "Terms of Service",
+      href: "/terms-of-service"
+    }, {
+      name: "Cookie Policy",
+      href: "/cookie-policy"
     }]
   }];
 
@@ -199,6 +214,8 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex space-x-6 text-sm text-muted-foreground">
+            <Link to="/who-we-are" className="hover:text-foreground transition-colors">Who We Are</Link>
+            <Link to="/contact-us" className="hover:text-foreground transition-colors">Contact Us</Link>
             <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
             <Link to="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link>

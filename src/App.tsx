@@ -26,6 +26,8 @@ import ContactSales from "./pages/ContactSales";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
+import WhoWeAre from "./pages/WhoWeAre";
+import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -61,6 +63,8 @@ function App() {
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-of-service" element={<TermsOfService />} />
                   <Route path="/cookie-policy" element={<CookiePolicy />} />
+                  <Route path="/who-we-are" element={<WhoWeAre />} />
+                  <Route path="/contact-us" element={<ContactUs />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 
