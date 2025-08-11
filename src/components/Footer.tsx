@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { Youtube, Facebook, Instagram, Linkedin, Twitter, MessageCircle, Download } from 'lucide-react';
+import PricingTiers from '@/components/pricing/PricingTiers';
 
 const Footer = () => {
   const footerSections = [{
@@ -131,7 +132,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border">
+    <>
+      <PricingTiers />
+      <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-1">
@@ -213,6 +216,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

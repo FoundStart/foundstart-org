@@ -5,7 +5,7 @@ import JurisdictionSelector from '@/components/JurisdictionSelector';
 import ServiceIntegrations from '@/components/ServiceIntegrations';
 import AIWizard from '@/components/AIWizard';
 import AIFeatures from '@/components/AIFeatures';
-import PricingTiers from '@/components/pricing/PricingTiers';
+
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
 import ComingSoonCards from '@/components/ComingSoonCards';
@@ -26,8 +26,6 @@ const Index = () => {
         {/* Option 1: Partner Links Section */}
         <JurisdictionSelector />
         
-        {/* Option 2: FoundStart Paid Services */}  
-        <PricingTiers />
         
         {/* Business Name Widget Section */}
         <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
