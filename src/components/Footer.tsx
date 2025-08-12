@@ -151,8 +151,8 @@ const Footer = () => {
       <PricingTiers />
       <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
+          <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <span className="text-lg font-bold gradient-text">FoundStart</span>
             </Link>
@@ -188,7 +188,7 @@ const Footer = () => {
             <div className="text-xs text-muted-foreground">© 2025 FoundStart. All rights reserved, MoMoAI</div>
           </div>
 
-          {footerSections.map((section, index) => (
+          {footerSections.filter(section => section.title !== "Company").map((section, index) => (
             <div key={index}>
               <h4 className="font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">

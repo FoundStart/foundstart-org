@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CountrySelector from '@/components/countries/CountrySelector';
 import CountryDetails from '@/components/countries/CountryDetails';
 import CountryGrid from '@/components/countries/CountryGrid';
@@ -22,6 +25,16 @@ const Countries = () => {
       <main className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
+            {/* Back Button */}
+            <div className="mb-8">
+              <Button variant="outline" asChild>
+                <Link to="/">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Home
+                </Link>
+              </Button>
+            </div>
+            
             <div className={`space-y-4 mb-16 ${isRTL ? 'text-right' : 'text-center'}`}>
               <h1 className="text-3xl md:text-4xl font-bold">
                 {t.chooseJurisdiction} <span className="gradient-text">Business Jurisdiction</span>

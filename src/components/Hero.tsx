@@ -52,13 +52,14 @@ const Hero = () => {
 
             <div className="grid grid-cols-3 md:grid-cols-3 gap-3">
               {jurisdictions.map((jurisdiction) => (
-                <div
+                <Link
                   key={jurisdiction.name}
-                  className={`flex items-center justify-center px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow ${isRTL ? 'flex-row-reverse' : ''}`}
+                  to="/countries"
+                  className={`flex items-center justify-center px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer group ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
-                  <span className={`text-lg ${isRTL ? 'ml-2' : 'mr-2'}`}>{jurisdiction.flag}</span>
-                  <span className="font-medium text-sm">{jurisdiction.name}</span>
-                </div>
+                  <span className={`text-lg ${isRTL ? 'ml-2' : 'mr-2'} group-hover:scale-110 transition-transform`}>{jurisdiction.flag}</span>
+                  <span className="font-medium text-sm group-hover:text-primary transition-colors">{jurisdiction.name}</span>
+                </Link>
               ))}
             </div>
 
@@ -97,64 +98,24 @@ const Hero = () => {
           </div>
 
           <div className={`space-y-6 ${isRTL ? 'lg:order-1' : ''}`}>
-            <div className="space-y-4">
-              <h3 className={`text-2xl font-semibold ${isRTL ? 'text-right' : 'text-center'}`}>{t.watchDemoBy}</h3>
-              <Card className="transition-all duration-300 hover:shadow-lg border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardContent className="p-6">
-                  {!showVideo ? (
-                    <div 
-                      className={`space-y-4 cursor-pointer ${isRTL ? 'text-right' : 'text-center'}`}
-                      onClick={handleWatchDemo}
-                    >
-                      <div className="relative mx-auto w-24 h-24 bg-red-600 rounded-full flex items-center justify-center group hover:bg-red-700 transition-colors">
-                        <Youtube className="w-12 h-12 text-white group-hover:scale-110 transition-transform" />
-                        <div className="absolute inset-0 rounded-full bg-red-600/20 animate-ping"></div>
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold gradient-text mb-2">
-                          {t.completeGuideTitle}
-                        </h4>
-                        <p className="text-muted-foreground">
-                          {t.completeGuideDescription}
-                        </p>
-                      </div>
-                      <Button variant="outline" className="group">
-                        <Play className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'} group-hover:scale-110 transition-transform`} />
-                        {t.watchNow}
-                      </Button>
-                    </div>
-                  ) : (
-                    <div className="space-y-4">
-                      <div className="aspect-video rounded-lg overflow-hidden">
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src={demoVideoUrl}
-                          title={language === 'ar' ? "FoundStart Arabic Demo - MoMo Sa" : "FoundStart English Demo - MoMo Sa"}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                          className="rounded-lg"
-                        ></iframe>
-                      </div>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        onClick={() => setShowVideo(false)}
-                        className="w-full"
-                      >
-                        {t.closeVideo}
-                      </Button>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
-
             <div className="glass-card rounded-2xl p-6 animate-float">
               <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="text-3xl font-bold gradient-text">5-10 {isRTL ? 'دقائق' : 'minutes'}</div>
                 <div className="text-muted-foreground">{t.averageSetupTime}</div>
+              </div>
+            </div>
+            
+            <div className="glass-card rounded-2xl p-6">
+              <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
+                <div className="text-2xl font-bold gradient-text">400+</div>
+                <div className="text-muted-foreground">Trusted Partners</div>
+              </div>
+            </div>
+            
+            <div className="glass-card rounded-2xl p-6">
+              <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
+                <div className="text-2xl font-bold gradient-text">9</div>
+                <div className="text-muted-foreground">Jurisdictions</div>
               </div>
             </div>
           </div>

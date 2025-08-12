@@ -21,7 +21,8 @@ import {
   Code,
   Palette,
   Building,
-  ExternalLink
+  ExternalLink,
+  ArrowLeft
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -160,9 +161,20 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-purple-500/10">
-        <div className="container mx-auto max-w-6xl text-center">
+      <main className="pt-20">
+        {/* Back Button */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <Button variant="outline" asChild>
+            <Link to="/">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
+        
+        {/* Hero Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-purple-500/10">
+          <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Our <span className="gradient-text">Services</span>
           </h1>
@@ -348,6 +360,7 @@ const Services = () => {
           </div>
         </div>
       </section>
+      </main>
       
       <Footer />
     </div>

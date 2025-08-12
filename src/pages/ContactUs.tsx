@@ -5,8 +5,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { Mail, Phone, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageCircle, Send, ArrowLeft } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -35,9 +38,22 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Hero Section */}
-        <div className="text-center space-y-4 mb-16">
+      <Header />
+      
+      <main className="pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Back Button */}
+          <div className="mb-8">
+            <Button variant="outline" asChild>
+              <Link to="/">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </Link>
+            </Button>
+          </div>
+          
+          {/* Hero Section */}
+          <div className="text-center space-y-4 mb-16">
           <h1 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Contact Us</span>
           </h1>
@@ -209,7 +225,10 @@ const ContactUs = () => {
             </Card>
           </div>
         </div>
-      </div>
+        </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };

@@ -5,7 +5,8 @@ import PricingTiers from '@/components/PricingTiers';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Globe, ExternalLink } from 'lucide-react';
+import { CheckCircle, Globe, ExternalLink, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Pricing = () => {
   const countryPricing = [
@@ -37,6 +38,16 @@ const Pricing = () => {
       <Header />
       
       <main className="pt-20">
+        {/* Back Button */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <Button variant="outline" asChild>
+            <Link to="/">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
+        
         {/* Hero Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 dark:from-background dark:via-blue-950/20 dark:to-purple-950/20">
           <div className="container mx-auto max-w-7xl text-center animate-fade-in">
