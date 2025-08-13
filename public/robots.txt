@@ -2,12 +2,14 @@
 User-agent: *
 Allow: /
 
-# Specific bot permissions
+# Specific bot permissions for company formation content
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -15,21 +17,47 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Sitemap location
-Sitemap: https://foundstart.com/sitemap.xml
+User-agent: LinkedInBot
+Allow: /
 
-# Crawl delay
+User-agent: WhatsApp
+Allow: /
+
+# Sitemap locations
+Sitemap: https://foundstart.com/sitemap.xml
+Sitemap: https://foundstart.com/sitemap.txt
+
+# Crawl delay for bots
 Crawl-delay: 1
 
-# Disallow admin areas (if any exist in future)
+# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /api/private/
+Disallow: /auth/
+Disallow: /_next/
+Disallow: /tmp/
 
-# Allow all public pages
+# Allow all public pages for company formation services
+Allow: /countries
+Allow: /services  
 Allow: /digital-partners
 Allow: /freelancer-partners
+Allow: /sister-partners
+Allow: /pricing
 Allow: /blog
 Allow: /tutorials
 Allow: /affiliate-dashboard
 Allow: /press
+Allow: /media
 Allow: /seo-management
+Allow: /contact-sales
+Allow: /contact-us
+Allow: /who-we-are
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /cookie-policy
+
+# Special files for AI and SEO
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ads.txt
