@@ -17,6 +17,7 @@ import FreelancerPartners from "./pages/FreelancerPartners";
 import SisterPartners from "./pages/SisterPartners";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Press from "./pages/Press";
 import Media from "./pages/Media";
 import Tutorials from "./pages/Tutorials";
@@ -29,6 +30,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 import WhoWeAre from "./pages/WhoWeAre";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
+import DigitalNomadVisas from "./pages/DigitalNomadVisas";
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -54,6 +56,7 @@ function App() {
                   <Route path="/freelancer-partners" element={<FreelancerPartners />} />
                   <Route path="/sister-partners" element={<SisterPartners />} />
                   <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/digital-nomad-guide" element={<BlogPost />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
                   <Route path="/tutorials" element={<Tutorials />} />
@@ -65,6 +68,7 @@ function App() {
                   <Route path="/cookie-policy" element={<CookiePolicy />} />
                   <Route path="/who-we-are" element={<WhoWeAre />} />
                   <Route path="/contact-us" element={<ContactUs />} />
+                  <Route path="/digital-nomad-visas" element={<DigitalNomadVisas />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 

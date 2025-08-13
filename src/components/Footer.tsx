@@ -216,6 +216,7 @@ const Footer = () => {
           <div className="flex space-x-6 text-sm text-muted-foreground">
             <Link to="/who-we-are" className="hover:text-foreground transition-colors">Who We Are</Link>
             <Link to="/contact-us" className="hover:text-foreground transition-colors">Contact Us</Link>
+            <Link to="/digital-nomad-visas" className="hover:text-foreground transition-colors">Digital Nomad Visas</Link>
             <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
             <Link to="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link>
