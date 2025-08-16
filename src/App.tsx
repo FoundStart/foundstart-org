@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
@@ -31,9 +32,22 @@ import WhoWeAre from "./pages/WhoWeAre";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import DigitalNomadVisas from "./pages/DigitalNomadVisas";
+import MobileBottomNav from "./components/MobileBottomNav";
+import AIChatBot from "./components/AIChatBot";
 import "./App.css";
 
 const queryClient = new QueryClient();
+
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
@@ -45,6 +59,7 @@ function App() {
             <Sonner />
             <BrowserRouter>
               <AuthProvider>
+                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
@@ -71,7 +86,8 @@ function App() {
                   <Route path="/digital-nomad-visas" element={<DigitalNomadVisas />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                
+                <MobileBottomNav />
+                <AIChatBot />
               </AuthProvider>
             </BrowserRouter>
           </TooltipProvider>

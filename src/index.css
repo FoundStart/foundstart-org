@@ -297,3 +297,43 @@
 .animate-stagger-3 { animation-delay: 0.3s; }
 .animate-stagger-4 { animation-delay: 0.4s; }
 .animate-stagger-5 { animation-delay: 0.5s; }
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px; /* Space for bottom navigation */
+  }
+  
+  .container {
+    @apply px-4;
+  }
+  
+  /* Ensure text is readable on mobile */
+  h1 {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  h2 {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  /* Mobile-friendly cards */
+  .card {
+    @apply mx-2 sm:mx-0;
+  }
+  
+  /* Responsive spacing */
+  .section-padding {
+    @apply py-10 sm:py-16 lg:py-20;
+  }
+  
+  /* Mobile menu adjustments */
+  .mobile-menu {
+    @apply max-h-[calc(100vh-140px)] overflow-y-auto;
+  }
+  
+  /* Touch-friendly elements */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}

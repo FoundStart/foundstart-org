@@ -28,6 +28,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
 import { Link } from 'react-router-dom';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Services = () => {
   const { toast } = useToast();
@@ -182,16 +183,17 @@ const Services = () => {
             Comprehensive AI-powered solutions and business formation services to transform your business. 
             From chatbots to complete automation workflows and company formation across 8 countries.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="mr-4">
-              Get Started Today
-            </Button>
-            <Link to="/countries">
-              <Button variant="outline" size="lg">
-                View Countries
-              </Button>
-            </Link>
-          </div>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Button size="lg">
+               Get Started Today
+             </Button>
+             <WhatsAppButton size="lg" variant="outline" />
+             <Link to="/countries">
+               <Button variant="outline" size="lg">
+                 View Countries
+               </Button>
+             </Link>
+           </div>
         </div>
       </section>
 
@@ -214,15 +216,18 @@ const Services = () => {
                       </div>
                       <CardDescription>{service.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      <Button 
-                        className="w-full" 
-                        onClick={() => handleServiceAction(service)}
-                      >
-                        {service.actionText || 'Get Quote'}
-                        {service.action === 'partners' && <ExternalLink className="w-4 h-4 ml-2" />}
-                      </Button>
-                    </CardContent>
+                     <CardContent>
+                       <div className="flex flex-col gap-2">
+                         <Button 
+                           className="w-full" 
+                           onClick={() => handleServiceAction(service)}
+                         >
+                           {service.actionText || 'Get Quote'}
+                           {service.action === 'partners' && <ExternalLink className="w-4 h-4 ml-2" />}
+                         </Button>
+                         <WhatsAppButton variant="outline" className="w-full" />
+                       </div>
+                     </CardContent>
                   </Card>
                 ))}
               </div>
@@ -349,15 +354,16 @@ const Services = () => {
           <p className="text-xl mb-8 opacity-90">
             Join thousands of businesses already using our AI-powered solutions and formation services
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              Schedule a Demo
-            </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Us Now
-            </Button>
-          </div>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Button size="lg" variant="secondary">
+               Schedule a Demo
+             </Button>
+             <WhatsAppButton size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-green-600" />
+             <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
+               <Phone className="w-4 h-4 mr-2" />
+               Call Us Now
+             </Button>
+           </div>
         </div>
       </section>
       </main>

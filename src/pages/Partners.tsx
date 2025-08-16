@@ -6,8 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { ArrowRight, ExternalLink, Search } from 'lucide-react';
+import { ArrowRight, ExternalLink, Search, ArrowLeft } from 'lucide-react';
 import { partnerData } from '@/data/jurisdictionData';
+import { Link } from 'react-router-dom';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Partners = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,16 +28,32 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-20">
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <main className="pt-20 pb-20 lg:pb-0">
+        <section className="section-padding px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
+            {/* Back Button */}
+            <div className="mb-8">
+              <Button variant="outline" asChild>
+                <Link to="/">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Home
+                </Link>
+              </Button>
+            </div>
+
             <div className="text-center space-y-4 mb-16">
-              <h1 className="text-3xl md:text-4xl font-bold">
-                Our Trusted <span className="gradient-text">Business Partners</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                Our <span className="gradient-text">460+ Trusted Partners</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Access exclusive deals and partnerships to grow your business with vetted platforms and services.
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
+                Access exclusive deals and partnerships to grow your business with vetted platforms and services across multiple categories.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                <Button size="lg">
+                  Explore Partnerships
+                </Button>
+                <WhatsAppButton size="lg" variant="outline" />
+              </div>
             </div>
 
             {/* Search and Filter */}
@@ -78,14 +96,17 @@ const Partners = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">{partner.details}</p>
-                    <Button 
-                      className="w-full group" 
-                      onClick={() => window.open(partner.url, '_blank')}
-                    >
-                      Visit {partner.platform}
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                     <p className="text-sm text-muted-foreground mb-4">{partner.details}</p>
+                     <div className="flex flex-col gap-2">
+                       <Button 
+                         className="w-full group" 
+                         onClick={() => window.open(partner.url, '_blank')}
+                       >
+                         Visit {partner.platform}
+                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                       </Button>
+                       <WhatsAppButton variant="outline" className="w-full" />
+                     </div>
                   </CardContent>
                 </Card>
               ))}
