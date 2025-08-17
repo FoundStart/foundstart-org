@@ -98,7 +98,29 @@ const Hero = () => {
           </div>
 
           <div className={`space-y-6 ${isRTL ? 'lg:order-1' : ''}`}>
+            {/* YouTube Video Widget */}
             <div className="glass-card rounded-2xl p-6 animate-float">
+              <div className={`space-y-4 ${isRTL ? 'text-right' : 'text-center'}`}>
+                <h3 className="text-lg font-semibold gradient-text">
+                  {language === 'ar' ? 'شاهد الفيديو التوضيحي' : 'Watch CEO Demo'}
+                </h3>
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src={language === 'ar' 
+                      ? "https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI"
+                      : "https://www.youtube.com/embed/UdbIUm6a8fI?si=kyghwxE8wrjCIGyI"
+                    }
+                    title="FoundStart CEO Demo"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            
+            <div className="glass-card rounded-2xl p-6">
               <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="text-3xl font-bold gradient-text">5-10 {isRTL ? 'دقائق' : 'minutes'}</div>
                 <div className="text-muted-foreground">{t.averageSetupTime}</div>
@@ -107,7 +129,7 @@ const Hero = () => {
             
             <div className="glass-card rounded-2xl p-6">
               <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
-                <div className="text-2xl font-bold gradient-text">400+</div>
+                <div className="text-2xl font-bold gradient-text">370+</div>
                 <div className="text-muted-foreground">Trusted Partners</div>
               </div>
             </div>

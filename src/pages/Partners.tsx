@@ -43,7 +43,7 @@ const Partners = () => {
 
             <div className="text-center space-y-4 mb-16">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                Our <span className="gradient-text">460+ Trusted Partners</span>
+                Our <span className="gradient-text">370+ Trusted Partners</span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Access exclusive deals and partnerships to grow your business with vetted platforms and services across multiple categories.
