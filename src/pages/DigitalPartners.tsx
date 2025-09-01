@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import DigitalPartnersHeader from '@/components/partners/DigitalPartnersHeader';
 import DigitalPartnersFilters from '@/components/partners/DigitalPartnersFilters';
 import DigitalPartnersGrid from '@/components/partners/DigitalPartnersGrid';
+import DigitalPartnersSidebar from '@/components/partners/DigitalPartnersSidebar';
 import { digitalPartnersData } from '@/data/digitalPartnersData';
 
 const DigitalPartners = () => {
@@ -15,6 +16,15 @@ const DigitalPartners = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = ['All', ...Array.from(new Set(digitalPartnersData.map(p => p.category)))];
+
+  // Count partners per category
+  const partnersCount = useMemo(() => {
+    const counts: Record<string, number> = {};
+    digitalPartnersData.forEach(partner => {
+      counts[partner.category] = (counts[partner.category] || 0) + 1;
+    });
+    return counts;
+  }, []);
 
   const filteredPartners = digitalPartnersData.filter(partner => {
     const matchesSearch = partner.platform.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -51,7 +61,22 @@ const DigitalPartners = () => {
               categories={categories}
             />
 
-            <DigitalPartnersGrid partners={filteredPartners} />
+            <div className="grid lg:grid-cols-4 gap-8 mt-8">
+              {/* Sidebar */}
+              <div className="lg:col-span-1">
+                <DigitalPartnersSidebar
+                  categories={categories.slice(1)} // Remove 'All' from sidebar
+                  selectedCategory={selectedCategory}
+                  setSelectedCategory={setSelectedCategory}
+                  partnersCount={partnersCount}
+                />
+              </div>
+
+              {/* Main Content */}
+              <div className="lg:col-span-3">
+                <DigitalPartnersGrid partners={filteredPartners} />
+              </div>
+            </div>
           </div>
         </section>
       </main>

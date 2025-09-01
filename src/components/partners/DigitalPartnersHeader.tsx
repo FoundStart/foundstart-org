@@ -12,7 +12,7 @@ const DigitalPartnersHeader = ({ filteredPartnersCount }: DigitalPartnersHeaderP
         Digital <span className="gradient-text">Partners</span>
       </h1>
       <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-        Discover 370+ trusted partners across all business categories to help grow your venture.
+        Discover 375+ trusted partners across all business categories to help grow your venture.
       </p>
       <Badge variant="outline" className="text-lg px-4 py-2 animate-pulse">
         {filteredPartnersCount} Partners Found
