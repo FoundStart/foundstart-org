@@ -12,8 +12,8 @@ const Hero = () => {
   
   // Demo video URLs based on language
   const demoVideoUrl = language === 'ar' 
-    ? "https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI&autoplay=1"
-    : "https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI&autoplay=1";
+    ? "https://www.youtube.com/embed/dvyjdyrKFUw?si=kyghwxE8wrjCIGyI"
+    : "https://www.youtube.com/embed/UdbIUm6a8fI?si=kyghwxE8wrjCIGyI";
   
   const jurisdictions = [
     { name: t.usa, flag: "🇺🇸" },
@@ -106,10 +106,7 @@ const Hero = () => {
                 </h3>
                 <div className="aspect-video rounded-lg overflow-hidden">
                   <iframe
-                    src={language === 'ar' 
-                      ? "https://www.youtube.com/embed/dvyjdyrKFUw?si=kyghwxE8wrjCIGyI"
-                      : "https://www.youtube.com/embed/UdbIUm6a8fI?si=kyghwxE8wrjCIGyI"
-                    }
+                    src={demoVideoUrl}
                     title="FoundStart CEO Demo"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
