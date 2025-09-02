@@ -107,7 +107,7 @@ const Hero = () => {
                 <div className="aspect-video rounded-lg overflow-hidden">
                   <iframe
                     src={language === 'ar' 
-                      ? "https://www.youtube.com/embed/OVd9b5M6OMk?si=kyghwxE8wrjCIGyI"
+                      ? "https://www.youtube.com/embed/dvyjdyrKFUw?si=kyghwxE8wrjCIGyI"
                       : "https://www.youtube.com/embed/UdbIUm6a8fI?si=kyghwxE8wrjCIGyI"
                     }
                     title="FoundStart CEO Demo"

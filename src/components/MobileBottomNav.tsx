@@ -1,17 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Globe, Users, Briefcase, Newspaper } from 'lucide-react';
+import { Globe, Users, UserCheck, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const MobileBottomNav = () => {
   const location = useLocation();
 
   const navItems = [
-    { 
-      icon: Home, 
-      label: 'Home', 
-      href: '/', 
-      isActive: location.pathname === '/' 
-    },
     { 
       icon: Globe, 
       label: 'Countries', 
@@ -20,22 +14,22 @@ const MobileBottomNav = () => {
     },
     { 
       icon: Users, 
-      label: 'Partners', 
-      href: '/partners', 
-      isActive: location.pathname.includes('/partners'),
-      badge: '460+'
+      label: 'Digital Partners', 
+      href: '/digital-partners', 
+      isActive: location.pathname.includes('/digital-partners'),
+      badge: '375+'
+    },
+    { 
+      icon: UserCheck, 
+      label: 'Freelancer', 
+      href: '/freelancer-partners', 
+      isActive: location.pathname.includes('/freelancer-partners')
     },
     { 
       icon: Briefcase, 
       label: 'Services', 
       href: '/services', 
       isActive: location.pathname === '/services' 
-    },
-    { 
-      icon: Newspaper, 
-      label: 'Media', 
-      href: '/blog', 
-      isActive: location.pathname.includes('/blog') || location.pathname.includes('/media') || location.pathname.includes('/press')
     }
   ];
 
