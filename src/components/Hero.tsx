@@ -10,10 +10,8 @@ const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
   const { t, isRTL, language } = useTranslation();
   
-  // Demo video URLs based on language
-  const demoVideoUrl = language === 'ar' 
-    ? "https://www.youtube.com/embed/dvyjdyrKFUw?si=kyghwxE8wrjCIGyI"
-    : "https://www.youtube.com/embed/UdbIUm6a8fI?si=kyghwxE8wrjCIGyI";
+  // Demo video URL - same for both languages
+  const demoVideoUrl = "https://www.youtube.com/embed/dvyjdyrKFUw?si=kyghwxE8wrjCIGyI";
   
   const jurisdictions = [
     { name: t.usa, flag: "🇺🇸" },
