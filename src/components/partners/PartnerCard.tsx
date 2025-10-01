@@ -9,6 +9,7 @@ interface PartnerCardProps {
     url: string;
     niche?: string;
     coupon?: string;
+    videoUrl?: string;
   };
 }
 const PartnerCard = ({
@@ -29,11 +30,20 @@ const PartnerCard = ({
           </div>
         )}
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-2">
         <Button className="w-full" onClick={() => window.open(partner.url, '_blank')}>
           <ExternalLink className="w-4 h-4 mr-2" />
           Visit Platform
         </Button>
+        {partner.videoUrl && (
+          <Button 
+            variant="outline"
+            className="w-full" 
+            onClick={() => window.open(partner.videoUrl, '_blank')}
+          >
+            Watch Demo
+          </Button>
+        )}
       </CardContent>
     </Card>;
 };

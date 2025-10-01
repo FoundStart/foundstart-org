@@ -94,6 +94,13 @@ const Partners = () => {
                       <ExternalLink className="w-4 h-4 text-muted-foreground" />
                       <Badge variant="outline" className="text-xs">Affiliate Partner</Badge>
                     </div>
+                    {partner.coupon && (
+                      <div className="mt-2">
+                        <Badge variant="destructive" className="text-xs">
+                          Coupon: {partner.coupon}
+                        </Badge>
+                      </div>
+                    )}
                   </CardHeader>
                   <CardContent>
                      <p className="text-sm text-muted-foreground mb-4">{partner.details}</p>
@@ -105,6 +112,15 @@ const Partners = () => {
                          Visit {partner.platform}
                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                        </Button>
+                       {partner.videoUrl && (
+                         <Button 
+                           variant="outline"
+                           className="w-full" 
+                           onClick={() => window.open(partner.videoUrl, '_blank')}
+                         >
+                           Watch Demo
+                         </Button>
+                       )}
                        <WhatsAppButton variant="outline" className="w-full" />
                      </div>
                   </CardContent>

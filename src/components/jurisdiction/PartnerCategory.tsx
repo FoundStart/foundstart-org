@@ -9,6 +9,8 @@ interface Partner {
   details: string;
   platform: string;
   url: string;
+  coupon?: string;
+  videoUrl?: string;
 }
 
 interface PartnerCategoryProps {
@@ -37,8 +39,15 @@ const PartnerCategory = ({ category, partners, icon: Icon }: PartnerCategoryProp
                 <ExternalLink className="w-4 h-4 text-muted-foreground" />
               </div>
               <p className="text-sm text-muted-foreground">{partner.details}</p>
+              {partner.coupon && (
+                <div className="mt-2">
+                  <Badge variant="destructive" className="text-xs">
+                    Coupon: {partner.coupon}
+                  </Badge>
+                </div>
+              )}
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-2">
               <Button 
                 className="w-full group" 
                 onClick={() => window.open(partner.url, '_blank')}
@@ -46,6 +55,15 @@ const PartnerCategory = ({ category, partners, icon: Icon }: PartnerCategoryProp
                 Visit {partner.platform}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
+              {partner.videoUrl && (
+                <Button 
+                  variant="outline"
+                  className="w-full" 
+                  onClick={() => window.open(partner.videoUrl, '_blank')}
+                >
+                  Watch Demo
+                </Button>
+              )}
             </CardContent>
           </Card>
         ))}
