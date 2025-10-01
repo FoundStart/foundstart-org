@@ -65,7 +65,7 @@ const Services = () => {
           actionText: "View Partners"
         },
         { 
-          name: "Option 2: Custom Formation Service", 
+          name: "Custom Formation Service", 
           price: "Custom Quote", 
           description: "Personalized business formation with dedicated support and dashboard access",
           action: "quote",

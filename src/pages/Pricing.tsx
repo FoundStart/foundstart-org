@@ -69,7 +69,7 @@ const Pricing = () => {
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16 animate-slide-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="gradient-text">Option 2:</span> Formation by Country
+                <span className="gradient-text">Formation by Country</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Start your business in any of our 8 supported jurisdictions with our trusted formation partners.

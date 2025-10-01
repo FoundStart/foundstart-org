@@ -74,7 +74,7 @@ const PricingTiers = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="gradient-text">Option 2:</span> FoundStart Paid Services
+            <span className="gradient-text">FoundStart Paid Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose a jurisdiction and select a pricing tier to get started with our premium services.

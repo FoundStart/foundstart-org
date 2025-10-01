@@ -9,7 +9,7 @@ const JurisdictionCTA = () => {
     <div className="text-center space-y-8 mt-16">
       <div>
         <h3 className="text-2xl font-bold mb-4">
-          <span className="gradient-text">Option 2:</span> Need Custom Solutions?
+          Need <span className="gradient-text">Custom Solutions?</span>
         </h3>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
           Get personalized assistance for complex business formations or custom requirements.
