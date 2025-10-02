@@ -14,7 +14,125 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      companies: {
+        Row: {
+          company_name: string
+          company_type: string | null
+          created_at: string | null
+          ein_number: string | null
+          formation_date: string | null
+          id: string
+          jurisdiction: string
+          registered_agent: string | null
+          status: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          company_name: string
+          company_type?: string | null
+          created_at?: string | null
+          ein_number?: string | null
+          formation_date?: string | null
+          id?: string
+          jurisdiction: string
+          registered_agent?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          company_name?: string
+          company_type?: string | null
+          created_at?: string | null
+          ein_number?: string | null
+          formation_date?: string | null
+          id?: string
+          jurisdiction?: string
+          registered_agent?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          company_name: string | null
+          created_at: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          company_name?: string | null
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          company_name?: string | null
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      services: {
+        Row: {
+          company_id: string
+          created_at: string | null
+          expires_at: string | null
+          id: string
+          price: number
+          purchased_at: string | null
+          service_name: string
+          service_type: string
+          status: string | null
+          user_id: string
+        }
+        Insert: {
+          company_id: string
+          created_at?: string | null
+          expires_at?: string | null
+          id?: string
+          price: number
+          purchased_at?: string | null
+          service_name: string
+          service_type: string
+          status?: string | null
+          user_id: string
+        }
+        Update: {
+          company_id?: string
+          created_at?: string | null
+          expires_at?: string | null
+          id?: string
+          price?: number
+          purchased_at?: string | null
+          service_name?: string
+          service_type?: string
+          status?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "services_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
