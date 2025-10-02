@@ -6,6 +6,8 @@ export const countriesData = [
     price: '$299',
     timeframe: '5-7 business days',
     currency: 'USD',
+    ctaUrl: 'https://privatily.com/ref/Deeemoz/',
+    videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
     description: 'Form your US company with our trusted partners including Privatily, ITIN, Clemta, Startglobal, and doola. Get access to US banking, payment processing, and global business opportunities.',
     benefits: [
       'Access to US banking and financial services',
@@ -30,6 +32,8 @@ export const countriesData = [
     price: '£199',
     timeframe: '3-5 business days',
     currency: 'GBP',
+    ctaUrl: 'https://1st-formations-limited.sjv.io/4GKB30',
+    videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM',
     description: 'Establish your UK company with leading formation partners including Firstbase, 1stFormations, Privatily, and Rapid Formation. Access European markets and benefit from the UK\'s business-friendly environment.',
     benefits: [
       'Gateway to European markets',
@@ -54,6 +58,8 @@ export const countriesData = [
     price: 'CAD $399',
     timeframe: '7-10 business days',
     currency: 'CAD',
+    ctaUrl: 'https://privatily.com/ref/Deeemoz/',
+    videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
     description: 'Start your Canadian business with Privatily, our trusted formation partner. Canada offers a stable economy, skilled workforce, and excellent quality of life for business owners.',
     benefits: [
       'Stable political and economic environment',
@@ -78,6 +84,8 @@ export const countriesData = [
     price: '€300',
     timeframe: '3-5 business days',
     currency: 'EUR',
+    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g',
     description: 'Launch your Estonian company with 1office, benefiting from the world\'s most advanced digital infrastructure and e-Residency program.',
     benefits: [
       'World-leading digital infrastructure',
@@ -102,6 +110,8 @@ export const countriesData = [
     price: '€350',
     timeframe: '5-7 business days',
     currency: 'EUR',
+    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE',
     description: 'Establish your Finnish company with 1office and access one of the world\'s most innovative and stable business environments.',
     benefits: [
       'Highly educated workforce',
@@ -126,6 +136,8 @@ export const countriesData = [
     price: 'SEK 3,500',
     timeframe: '5-7 business days',
     currency: 'SEK',
+    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA',
     description: 'Start your Swedish business with 1office and tap into one of Europe\'s most innovative and business-friendly markets.',
     benefits: [
       'Innovation and technology leadership',
@@ -150,6 +162,8 @@ export const countriesData = [
     price: '€250',
     timeframe: '3-5 business days',
     currency: 'EUR',
+    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38',
     description: 'Form your Latvian company with 1office and benefit from competitive costs and strategic location in the Baltics.',
     benefits: [
       'Strategic location in the Baltics',
@@ -174,6 +188,8 @@ export const countriesData = [
     price: '€280',
     timeframe: '3-5 business days',
     currency: 'EUR',
+    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU',
     description: 'Establish your Lithuanian company with 1office and access the rapidly growing Baltic market with EU benefits.',
     benefits: [
       'Rapidly growing economy',
@@ -198,6 +214,8 @@ export const countriesData = [
     price: 'Get Quote',
     timeframe: '14-21 business days',
     currency: 'EGP',
+    ctaUrl: 'https://foundstart.vercel.app/',
+    videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw',
     description: 'Establish your Egyptian company with our expert guidance. Choose from 6 different company structures under Investment Law No. 72 of 2017, with 100% foreign ownership allowed in most sectors.',
     benefits: [
       'Gateway to Middle East and Africa',

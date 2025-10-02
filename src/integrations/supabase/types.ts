@@ -7,94 +7,14 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "12.2.3 (519615d)"
+    PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      payment_transactions: {
-        Row: {
-          amount: number
-          created_at: string | null
-          currency: string
-          customer_data: Json | null
-          id: string
-          kashier_order_id: string | null
-          kashier_transaction_id: string | null
-          order_id: string
-          payment_method: string
-          payment_url: string | null
-          plan_id: string | null
-          status: string
-          updated_at: string | null
-          user_id: string
-          webhook_data: Json | null
-        }
-        Insert: {
-          amount: number
-          created_at?: string | null
-          currency?: string
-          customer_data?: Json | null
-          id?: string
-          kashier_order_id?: string | null
-          kashier_transaction_id?: string | null
-          order_id: string
-          payment_method?: string
-          payment_url?: string | null
-          plan_id?: string | null
-          status?: string
-          updated_at?: string | null
-          user_id: string
-          webhook_data?: Json | null
-        }
-        Update: {
-          amount?: number
-          created_at?: string | null
-          currency?: string
-          customer_data?: Json | null
-          id?: string
-          kashier_order_id?: string | null
-          kashier_transaction_id?: string | null
-          order_id?: string
-          payment_method?: string
-          payment_url?: string | null
-          plan_id?: string | null
-          status?: string
-          updated_at?: string | null
-          user_id?: string
-          webhook_data?: Json | null
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          avatar_url: string | null
-          created_at: string | null
-          email: string | null
-          full_name: string | null
-          id: string
-          updated_at: string | null
-        }
-        Insert: {
-          avatar_url?: string | null
-          created_at?: string | null
-          email?: string | null
-          full_name?: string | null
-          id: string
-          updated_at?: string | null
-        }
-        Update: {
-          avatar_url?: string | null
-          created_at?: string | null
-          email?: string | null
-          full_name?: string | null
-          id?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never

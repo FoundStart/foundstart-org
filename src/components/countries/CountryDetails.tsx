@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Building, TrendingUp, Users, Globe } from 'lucide-react';
+import VideoThumbnail from '@/components/VideoThumbnail';
 
 interface Country {
   id: string;
@@ -11,6 +12,8 @@ interface Country {
   price: string;
   timeframe: string;
   currency: string;
+  ctaUrl?: string;
+  videoUrl?: string;
   description: string;
   benefits: string[];
   partners: string[];
@@ -60,6 +63,17 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
           <p className="text-lg text-muted-foreground text-center leading-relaxed animate-fade-in">
             {country.description}
           </p>
+
+          {/* Video Demo */}
+          {country.videoUrl && (
+            <div className="animate-fade-in">
+              <VideoThumbnail 
+                videoUrl={country.videoUrl}
+                title={`${country.name} Company Formation Demo`}
+                className="w-full h-64 md:h-96"
+              />
+            </div>
+          )}
 
           {/* Partner Formation Companies */}
           <div className="space-y-4 animate-slide-in">
@@ -123,7 +137,11 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
           </div>
 
           <div className="text-center pt-6">
-            <Button size="lg" className="hover-scale group animate-pulse">
+            <Button 
+              size="lg" 
+              className="hover-scale group animate-pulse"
+              onClick={() => country.ctaUrl && window.open(country.ctaUrl, '_blank')}
+            >
               Start Formation in {country.name}
               <ExternalLink className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
             </Button>
