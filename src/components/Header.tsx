@@ -13,7 +13,6 @@ const Header = () => {
   const { t, isRTL } = useTranslation();
 
   const navigationItems = [
-    { name: t.services, href: '/services' },
     { name: t.countries, href: '/countries' },
     { name: t.partners, href: '/partners' },
     { name: t.digitalPartners, href: '/digital-partners' },
