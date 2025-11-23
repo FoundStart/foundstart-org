@@ -18,10 +18,14 @@ import {
   Gift,
   Search,
   Target,
-  Wallet
+  Wallet,
+  Package,
+  DollarSign,
+  Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useUserRole } from '@/hooks/useUserRole';
 
 interface DashboardSidebarProps {
   activeService: string;
@@ -30,9 +34,12 @@ interface DashboardSidebarProps {
 
 const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
+  const { isAdmin } = useUserRole();
 
-  const services = [
+  const userServices = [
     { id: 'overview', name: 'Overview', icon: Home },
+    { id: 'my-services', name: 'My Services', icon: Package },
+    { id: 'pricing', name: 'Pricing', icon: DollarSign },
     { id: 'wallet', name: 'Digital Wallet', icon: Wallet },
     { id: 'company', name: 'Company Formation', icon: Building2 },
     { id: 'domain', name: 'Domain Registration', icon: Globe },
@@ -47,9 +54,16 @@ const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarPr
     { id: 'seo-optimization', name: 'SEO & Optimization', icon: Search },
     { id: 'analytics', name: 'Analytics', icon: BarChart3 },
     { id: 'documents', name: 'Documents', icon: FileText },
-    { id: 'team', name: 'Team Management', icon: Users },
     { id: 'settings', name: 'Settings', icon: Settings }
   ];
+
+  const adminServices = [
+    { id: 'admin-overview', name: 'Admin Overview', icon: Shield },
+    { id: 'user-management', name: 'User Management', icon: Users },
+    { id: 'all-services', name: 'All Services', icon: Package },
+  ];
+
+  const services = isAdmin ? [...adminServices, ...userServices] : userServices;
 
   return (
     <div className={cn(
