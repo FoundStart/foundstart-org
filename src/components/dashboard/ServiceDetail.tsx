@@ -1,6 +1,7 @@
 import WalletDashboard from '../wallet/WalletDashboard';
 import UserManagement from '../admin/UserManagement';
 import AdminOverview from '../admin/AdminOverview';
+import ServiceManagement from '../admin/ServiceManagement';
 import MyServices from './MyServices';
 import PricingSection from './PricingSection';
 
@@ -22,6 +23,9 @@ const ServiceDetail = ({ serviceId }: { serviceId: string }) => {
       
       case 'admin-overview':
         return <AdminOverview />;
+      
+      case 'service-management':
+        return <ServiceManagement />;
       
       case 'all-services':
         return (
