@@ -60,6 +60,7 @@ const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarPr
   const adminServices = [
     { id: 'admin-overview', name: 'Admin Overview', icon: Shield },
     { id: 'user-management', name: 'User Management', icon: Users },
+    { id: 'service-management', name: 'Service Management', icon: Settings },
     { id: 'all-services', name: 'All Services', icon: Package },
   ];
 
