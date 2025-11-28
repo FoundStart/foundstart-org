@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useToast } from '@/hooks/use-toast';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
-import { Search, CheckCircle, XCircle, Trash2 } from 'lucide-react';
+import { Search, CheckCircle, XCircle, Trash2, Settings, DollarSign, Calendar, User } from 'lucide-react';
 
 interface Service {
   id: string;
@@ -164,29 +165,40 @@ const ServiceManagement = () => {
   };
 
   if (loading) {
-    return <div className="p-8 text-center">Loading services...</div>;
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-pulse text-muted-foreground">Loading services...</div>
+      </div>
+    );
   }
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Service Management</h2>
-        <p className="text-muted-foreground">Manage all user services from this dashboard</p>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+            <Settings className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <h1 className="text-xl sm:text-2xl font-bold">Service Management</h1>
+            <p className="text-sm text-muted-foreground">Manage all user services</p>
+          </div>
+        </div>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search by service name, user email, or name..."
+            placeholder="Search services..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10"
           />
         </div>
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-48">
-            <SelectValue placeholder="Filter by status" />
+          <SelectTrigger className="w-full sm:w-40">
+            <SelectValue placeholder="Status" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Status</SelectItem>
@@ -198,7 +210,83 @@ const ServiceManagement = () => {
         </Select>
       </div>
 
-      <div className="rounded-md border">
+      {/* Mobile Card View */}
+      <div className="grid gap-4 md:hidden">
+        {filteredServices.length === 0 ? (
+          <Card>
+            <CardContent className="p-6 text-center text-muted-foreground">
+              No services found
+            </CardContent>
+          </Card>
+        ) : (
+          filteredServices.map((service) => (
+            <Card key={service.id}>
+              <CardContent className="p-4">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold truncate">{service.service_name}</h3>
+                    <p className="text-sm text-muted-foreground">{service.service_type}</p>
+                  </div>
+                  {getStatusBadge(service.status)}
+                </div>
+                
+                <div className="space-y-2 text-sm mb-4">
+                  <div className="flex items-center text-muted-foreground">
+                    <User className="w-4 h-4 mr-2" />
+                    <span className="truncate">{service.profiles?.full_name || service.profiles?.email || 'N/A'}</span>
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <DollarSign className="w-4 h-4 mr-2" />
+                    ${service.price}
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {new Date(service.purchased_at).toLocaleDateString()}
+                  </div>
+                </div>
+                
+                <div className="flex gap-2">
+                  {service.status !== 'active' && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => updateServiceStatus(service.id, 'active')}
+                    >
+                      <CheckCircle className="h-4 w-4 mr-1" />
+                      Activate
+                    </Button>
+                  )}
+                  {service.status !== 'suspended' && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => updateServiceStatus(service.id, 'suspended')}
+                    >
+                      <XCircle className="h-4 w-4 mr-1" />
+                      Suspend
+                    </Button>
+                  )}
+                  <Button
+                    size="sm"
+                    variant="destructive"
+                    onClick={() => {
+                      setSelectedService(service.id);
+                      setDeleteDialogOpen(true);
+                    }}
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        )}
+      </div>
+
+      {/* Desktop Table View */}
+      <div className="rounded-md border hidden md:block">
         <Table>
           <TableHeader>
             <TableRow>
@@ -276,16 +364,16 @@ const ServiceManagement = () => {
       </div>
 
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
-        <AlertDialogContent>
+        <AlertDialogContent className="mx-4 sm:mx-auto">
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure?</AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone. This will permanently delete the service.
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleDeleteService}>Delete</AlertDialogAction>
+          <AlertDialogFooter className="flex-col sm:flex-row gap-2">
+            <AlertDialogCancel className="w-full sm:w-auto">Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDeleteService} className="w-full sm:w-auto">Delete</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

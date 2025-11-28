@@ -17,7 +17,6 @@ import {
   Wifi,
   Gift,
   Search,
-  Target,
   Wallet,
   Package,
   DollarSign,
@@ -26,6 +25,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useUserRole } from '@/hooks/useUserRole';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface DashboardSidebarProps {
   activeService: string;
@@ -35,6 +36,7 @@ interface DashboardSidebarProps {
 const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const { isAdmin } = useUserRole();
+  const isMobile = useIsMobile();
 
   const userServices = [
     { id: 'overview', name: 'Overview', icon: Home },
@@ -65,47 +67,80 @@ const DashboardSidebar = ({ activeService, onServiceChange }: DashboardSidebarPr
   ];
 
   const services = isAdmin ? [...adminServices, ...userServices] : userServices;
+  const showCollapsed = !isMobile && collapsed;
 
   return (
     <div className={cn(
-      "bg-card border-r border-border h-full transition-all duration-300",
-      collapsed ? "w-16" : "w-64"
+      "bg-card border-r border-border h-full transition-all duration-300 flex flex-col",
+      showCollapsed ? "w-16" : "w-full lg:w-64"
     )}>
-      <div className="p-4 border-b border-border">
+      <div className="p-3 sm:p-4 border-b border-border shrink-0">
         <div className="flex items-center justify-between">
-          {!collapsed && (
-            <h2 className="text-lg font-semibold">Dashboard</h2>
+          {!showCollapsed && (
+            <h2 className="text-base sm:text-lg font-semibold">Dashboard</h2>
           )}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setCollapsed(!collapsed)}
-            className="ml-auto"
-          >
-            {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
-          </Button>
+          {!isMobile && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setCollapsed(!collapsed)}
+              className="ml-auto shrink-0"
+            >
+              {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+            </Button>
+          )}
         </div>
       </div>
 
-      <nav className="p-4 space-y-2">
-        {services.map((service) => {
-          const Icon = service.icon;
-          return (
-            <Button
-              key={service.id}
-              variant={activeService === service.id ? "default" : "ghost"}
-              className={cn(
-                "w-full justify-start",
-                collapsed && "px-3"
-              )}
-              onClick={() => onServiceChange(service.id)}
-            >
-              <Icon className="w-5 h-5" />
-              {!collapsed && <span className="ml-3">{service.name}</span>}
-            </Button>
-          );
-        })}
-      </nav>
+      <ScrollArea className="flex-1">
+        <nav className="p-2 sm:p-4 space-y-1 sm:space-y-2">
+          {isAdmin && !showCollapsed && (
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2">
+              Admin
+            </div>
+          )}
+          {isAdmin && adminServices.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Button
+                key={service.id}
+                variant={activeService === service.id ? "default" : "ghost"}
+                className={cn(
+                  "w-full justify-start h-10 sm:h-auto",
+                  showCollapsed && "px-3 justify-center"
+                )}
+                onClick={() => onServiceChange(service.id)}
+              >
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                {!showCollapsed && <span className="ml-2 sm:ml-3 text-sm">{service.name}</span>}
+              </Button>
+            );
+          })}
+          
+          {isAdmin && !showCollapsed && (
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2 mt-4">
+              User Dashboard
+            </div>
+          )}
+          {userServices.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Button
+                key={service.id}
+                variant={activeService === service.id ? "default" : "ghost"}
+                className={cn(
+                  "w-full justify-start h-10 sm:h-auto",
+                  showCollapsed && "px-3 justify-center"
+                )}
+                onClick={() => onServiceChange(service.id)}
+              >
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                {!showCollapsed && <span className="ml-2 sm:ml-3 text-sm">{service.name}</span>}
+              </Button>
+            );
+          })}
+        </nav>
+      </ScrollArea>
     </div>
   );
 };
