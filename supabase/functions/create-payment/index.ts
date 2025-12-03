@@ -8,6 +8,32 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+// Rate limiting configuration
+const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 10 // 10 requests per minute per user
+
+// In-memory rate limit store (resets on cold start, but provides basic protection)
+const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
+
+function checkRateLimit(userId: string): { allowed: boolean; retryAfter?: number } {
+  const now = Date.now()
+  const userLimit = rateLimitStore.get(userId)
+  
+  if (!userLimit || now > userLimit.resetTime) {
+    // Reset or create new window
+    rateLimitStore.set(userId, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
+    return { allowed: true }
+  }
+  
+  if (userLimit.count >= MAX_REQUESTS_PER_WINDOW) {
+    const retryAfter = Math.ceil((userLimit.resetTime - now) / 1000)
+    return { allowed: false, retryAfter }
+  }
+  
+  userLimit.count++
+  return { allowed: true }
+}
+
 // Validation schemas
 const customerSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name must be less than 100 characters').trim(),
@@ -94,6 +120,26 @@ serve(async (req) => {
     }
 
     console.log('User authenticated:', user.id)
+
+    // Check rate limit
+    const rateLimit = checkRateLimit(user.id)
+    if (!rateLimit.allowed) {
+      console.warn(`Rate limit exceeded for user: ${user.id}`)
+      return new Response(
+        JSON.stringify({ 
+          error: 'Too many payment requests. Please try again later.',
+          retryAfter: rateLimit.retryAfter
+        }),
+        { 
+          status: 429, 
+          headers: { 
+            ...corsHeaders, 
+            'Content-Type': 'application/json',
+            'Retry-After': String(rateLimit.retryAfter)
+          } 
+        }
+      )
+    }
 
     // Parse request body
     let body
