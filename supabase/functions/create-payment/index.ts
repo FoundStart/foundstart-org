@@ -220,12 +220,14 @@ serve(async (req) => {
     }
 
   } catch (error) {
+    // Log detailed error server-side only for debugging
     console.error('Create Payment Error:', error)
     console.error('Error stack:', error.stack)
+    
+    // Return generic error message to client - never expose internal details
     return new Response(
       JSON.stringify({ 
-        error: error.message || 'Unknown error occurred',
-        details: error.stack || 'No stack trace available'
+        error: 'Payment processing failed. Please try again or contact support.'
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
