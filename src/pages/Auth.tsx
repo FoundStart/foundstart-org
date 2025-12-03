@@ -10,6 +10,23 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2, Eye, EyeOff } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { z } from 'zod';
+
+// Validation schemas
+const signInSchema = z.object({
+  email: z.string().email('Please enter a valid email address').max(255, 'Email is too long'),
+  password: z.string().min(6, 'Password must be at least 6 characters')
+});
+
+const signUpSchema = z.object({
+  email: z.string().email('Please enter a valid email address').max(255, 'Email is too long'),
+  password: z.string()
+    .min(8, 'Password must be at least 8 characters')
+    .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
+    .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
+    .regex(/[0-9]/, 'Password must contain at least one number'),
+  fullName: z.string().min(2, 'Full name must be at least 2 characters').max(100, 'Full name is too long')
+});
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -18,6 +35,7 @@ const Auth = () => {
   const [fullName, setFullName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState<{ email?: string; password?: string; fullName?: string }>({});
   
   const { signIn, signUp, user } = useAuth();
   const { toast } = useToast();
@@ -29,8 +47,38 @@ const Auth = () => {
     }
   }, [user, navigate]);
 
+  const validateForm = (): boolean => {
+    setErrors({});
+    
+    try {
+      if (isSignUp) {
+        signUpSchema.parse({ email, password, fullName });
+      } else {
+        signInSchema.parse({ email, password });
+      }
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const newErrors: { email?: string; password?: string; fullName?: string } = {};
+        error.errors.forEach((err) => {
+          const field = err.path[0] as keyof typeof newErrors;
+          if (!newErrors[field]) {
+            newErrors[field] = err.message;
+          }
+        });
+        setErrors(newErrors);
+      }
+      return false;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsLoading(true);
 
     try {
@@ -101,9 +149,12 @@ const Auth = () => {
                       type="text"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      required={isSignUp}
                       placeholder="Enter your full name"
+                      className={errors.fullName ? 'border-destructive' : ''}
                     />
+                    {errors.fullName && (
+                      <p className="text-sm text-destructive mt-1">{errors.fullName}</p>
+                    )}
                   </div>
                 )}
                 
@@ -114,9 +165,12 @@ const Auth = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
                     placeholder="Enter your email"
+                    className={errors.email ? 'border-destructive' : ''}
                   />
+                  {errors.email && (
+                    <p className="text-sm text-destructive mt-1">{errors.email}</p>
+                  )}
                 </div>
                 
                 <div>
@@ -127,9 +181,8 @@ const Auth = () => {
                       type={showPassword ? "text" : "password"}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      required
                       placeholder="Enter your password"
-                      minLength={6}
+                      className={errors.password ? 'border-destructive' : ''}
                     />
                     <Button
                       type="button"
@@ -141,6 +194,14 @@ const Auth = () => {
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </Button>
                   </div>
+                  {errors.password && (
+                    <p className="text-sm text-destructive mt-1">{errors.password}</p>
+                  )}
+                  {isSignUp && !errors.password && (
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Must be 8+ characters with uppercase, lowercase, and number
+                    </p>
+                  )}
                 </div>
                 
                 <Button 
@@ -162,7 +223,10 @@ const Auth = () => {
               <div className="mt-6 text-center">
                 <Button
                   variant="link"
-                  onClick={() => setIsSignUp(!isSignUp)}
+                  onClick={() => {
+                    setIsSignUp(!isSignUp);
+                    setErrors({});
+                  }}
                   className="text-sm"
                 >
                   {isSignUp 

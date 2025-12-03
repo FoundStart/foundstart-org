@@ -1,11 +1,26 @@
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
+
+// Validation schemas
+const customerSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name must be less than 100 characters').trim(),
+  email: z.string().email('Invalid email address').max(255, 'Email must be less than 255 characters').trim(),
+  phone: z.string().regex(/^[\d\+\-\s()]{0,20}$/, 'Invalid phone number format').optional().or(z.literal(''))
+})
+
+const paymentSchema = z.object({
+  amount: z.number().positive('Amount must be positive').max(100000, 'Amount exceeds maximum limit'),
+  currency: z.string().length(3, 'Currency must be a 3-letter code').optional().default('USD'),
+  customer: customerSchema,
+  planId: z.string().optional()
+})
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -93,22 +108,19 @@ serve(async (req) => {
       )
     }
 
-    const { amount, currency, customer, planId } = body
-
-    // Validate required fields
-    if (!amount || amount <= 0) {
+    // Validate request body with zod schema
+    const validationResult = paymentSchema.safeParse(body)
+    
+    if (!validationResult.success) {
+      const errorMessages = validationResult.error.errors.map(e => e.message).join(', ')
+      console.error('Validation errors:', validationResult.error.errors)
       return new Response(
-        JSON.stringify({ error: 'Valid amount is required' }),
+        JSON.stringify({ error: `Validation failed: ${errorMessages}` }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
 
-    if (!customer || !customer.email) {
-      return new Response(
-        JSON.stringify({ error: 'Customer information with email is required' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      )
-    }
+    const { amount, currency, customer, planId } = validationResult.data
 
     // Generate unique order ID
     const orderId = `FS-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
