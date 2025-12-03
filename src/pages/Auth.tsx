@@ -28,6 +28,10 @@ const signUpSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters').max(100, 'Full name is too long')
 });
 
+// Rate limiting configuration
+const RATE_LIMIT_ATTEMPTS = 5;
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
@@ -36,6 +40,8 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string; fullName?: string }>({});
+  const [attempts, setAttempts] = useState(0);
+  const [lockoutUntil, setLockoutUntil] = useState<number | null>(null);
   
   const { signIn, signUp, user } = useAuth();
   const { toast } = useToast();
@@ -75,6 +81,17 @@ const Auth = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Check rate limit lockout
+    if (lockoutUntil && Date.now() < lockoutUntil) {
+      const secondsRemaining = Math.ceil((lockoutUntil - Date.now()) / 1000);
+      toast({
+        title: "Too many attempts",
+        description: `Please wait ${secondsRemaining} seconds before trying again.`,
+        variant: "destructive",
+      });
+      return;
+    }
+    
     if (!validateForm()) {
       return;
     }
@@ -103,11 +120,29 @@ const Auth = () => {
       }
 
       if (result.error) {
-        toast({
-          title: "Authentication Error",
-          description: result.error.message,
-          variant: "destructive",
-        });
+        // Increment failed attempts
+        const newAttempts = attempts + 1;
+        setAttempts(newAttempts);
+        
+        if (newAttempts >= RATE_LIMIT_ATTEMPTS) {
+          setLockoutUntil(Date.now() + RATE_LIMIT_WINDOW_MS);
+          setAttempts(0);
+          toast({
+            title: "Too many failed attempts",
+            description: "Please wait 1 minute before trying again.",
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Authentication Error",
+            description: result.error.message,
+            variant: "destructive",
+          });
+        }
+      } else {
+        // Reset attempts on success
+        setAttempts(0);
+        setLockoutUntil(null);
       }
     } catch (error) {
       toast({
