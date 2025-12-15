@@ -1,13 +1,24 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const blogPosts = [
+    {
+      id: 0,
+      title: "Premium Domains for Sale – Brand-Ready, Short & Scalable",
+      description: "Curated portfolio of 50+ premium, brandable domains perfect for startups, SaaS platforms, fintech, e-commerce, AI projects, crypto, and global brands.",
+      category: "Domains",
+      author: "FoundStart Team",
+      date: "Jan 10, 2025",
+      readTime: "5 min read",
+      featured: true,
+      slug: "premium-domains-for-sale"
+    },
     {
       id: 1,
       title: "Complete Guide to LLC Formation in 2024",
@@ -16,7 +27,7 @@ const Blog = () => {
       author: "MoMo Sa",
       date: "Dec 15, 2024",
       readTime: "8 min read",
-      featured: true
+      slug: "llc-formation-guide"
     },
     {
       id: 2,
@@ -25,7 +36,8 @@ const Blog = () => {
       category: "International Business",
       author: "Sarah Johnson",
       date: "Dec 12, 2024",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      slug: "uk-vs-us-company-formation"
     },
     {
       id: 3,
@@ -34,7 +46,8 @@ const Blog = () => {
       category: "Banking",
       author: "David Chen",
       date: "Dec 10, 2024",
-      readTime: "7 min read"
+      readTime: "7 min read",
+      slug: "banking-solutions-mercury-vs-traditional"
     },
     {
       id: 4,
@@ -43,7 +56,8 @@ const Blog = () => {
       category: "Tax & Compliance",
       author: "Lisa Rodriguez",
       date: "Dec 8, 2024",
-      readTime: "5 min read"
+      readTime: "5 min read",
+      slug: "ein-application-guide"
     },
     {
       id: 5,
@@ -52,7 +66,8 @@ const Blog = () => {
       category: "Business Formation",
       author: "Michael Turner",
       date: "Dec 5, 2024",
-      readTime: "9 min read"
+      readTime: "9 min read",
+      slug: "delaware-vs-wyoming-llc"
     },
     {
       id: 6,
@@ -61,7 +76,8 @@ const Blog = () => {
       category: "Payments",
       author: "Alex Kim",
       date: "Dec 3, 2024",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      slug: "crypto-payment-integration"
     },
     {
       id: 7,
@@ -70,7 +86,8 @@ const Blog = () => {
       category: "Financial Tools",
       author: "Emma Wilson",
       date: "Dec 1, 2024",
-      readTime: "4 min read"
+      readTime: "4 min read",
+      slug: "virtual-cards-for-business"
     },
     {
       id: 8,
@@ -79,16 +96,18 @@ const Blog = () => {
       category: "International Business",
       author: "James Thompson",
       date: "Nov 28, 2024",
-      readTime: "8 min read"
+      readTime: "8 min read",
+      slug: "canadian-corporation-setup"
     },
     {
       id: 9,
-      title: "eSIM Cards for Digital Nomads and International Business",
-      description: "How eSIM technology is revolutionizing international communication for businesses and entrepreneurs.",
-      category: "Technology",
-      author: "Sofia Martinez",
-      date: "Nov 25, 2024",
-      readTime: "5 min read"
+      title: "The Complete Guide to Digital Nomad Visas and Company Formation",
+      description: "Everything you need to know about working remotely worldwide, visa requirements, and company structure.",
+      category: "Remote Business",
+      author: "FoundStart Team",
+      date: "Jan 15, 2025",
+      readTime: "12 min read",
+      slug: "digital-nomad-guide"
     },
     {
       id: 10,
@@ -97,7 +116,8 @@ const Blog = () => {
       category: "Business Formation",
       author: "Robert Davis",
       date: "Nov 22, 2024",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      slug: "registered-agent-services"
     },
     {
       id: 11,
@@ -106,7 +126,8 @@ const Blog = () => {
       category: "AI & Technology",
       author: "MoMo Sa",
       date: "Nov 20, 2024",
-      readTime: "7 min read"
+      readTime: "7 min read",
+      slug: "ai-business-name-generation"
     },
     {
       id: 12,
@@ -115,7 +136,8 @@ const Blog = () => {
       category: "Banking",
       author: "Anna Foster",
       date: "Nov 18, 2024",
-      readTime: "9 min read"
+      readTime: "9 min read",
+      slug: "international-banking-us-llc"
     },
     {
       id: 13,
@@ -124,7 +146,8 @@ const Blog = () => {
       category: "Payments",
       author: "Chris Lee",
       date: "Nov 15, 2024",
-      readTime: "8 min read"
+      readTime: "8 min read",
+      slug: "stripe-vs-paypal"
     },
     {
       id: 14,
@@ -133,7 +156,8 @@ const Blog = () => {
       category: "Legal",
       author: "Jennifer Adams",
       date: "Nov 12, 2024",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      slug: "llc-operating-agreements"
     },
     {
       id: 15,
@@ -142,7 +166,8 @@ const Blog = () => {
       category: "International Business",
       author: "Ahmed Hassan",
       date: "Nov 10, 2024",
-      readTime: "10 min read"
+      readTime: "10 min read",
+      slug: "dubai-business-formation"
     },
     {
       id: 16,
@@ -151,7 +176,8 @@ const Blog = () => {
       category: "Tax & Compliance",
       author: "Rachel Green",
       date: "Nov 8, 2024",
-      readTime: "5 min read"
+      readTime: "5 min read",
+      slug: "gift-cards-business-revenue"
     },
     {
       id: 17,
@@ -160,7 +186,8 @@ const Blog = () => {
       category: "International Business",
       author: "Omar Al-Rashid",
       date: "Nov 5, 2024",
-      readTime: "7 min read"
+      readTime: "7 min read",
+      slug: "saudi-arabia-business-formation"
     },
     {
       id: 18,
@@ -169,7 +196,8 @@ const Blog = () => {
       category: "Remote Business",
       author: "Elena Kowalski",
       date: "Nov 3, 2024",
-      readTime: "8 min read"
+      readTime: "8 min read",
+      slug: "digital-nomad-business-setup"
     },
     {
       id: 19,
@@ -178,7 +206,8 @@ const Blog = () => {
       category: "Tax & Compliance",
       author: "Mark Williams",
       date: "Nov 1, 2024",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      slug: "us-annual-compliance"
     },
     {
       id: 20,
@@ -187,7 +216,8 @@ const Blog = () => {
       category: "AI & Technology",
       author: "MoMo Sa",
       date: "Oct 30, 2024",
-      readTime: "9 min read"
+      readTime: "9 min read",
+      slug: "future-business-formation-ai"
     }
   ];
 
@@ -231,7 +261,7 @@ const Blog = () => {
                 </div>
               </div>
               <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex flex-wrap items-center gap-4 mb-4">
                   <Badge variant="secondary">{post.category}</Badge>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <User className="w-4 h-4 mr-1" />
@@ -243,10 +273,12 @@ const Blog = () => {
                   </div>
                 </div>
                 <p className="text-muted-foreground mb-6">{post.description}</p>
-                <Button className="group">
-                  Read More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={`/blog/${post.slug}`}>
+                  <Button className="group">
+                    Read More
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </CardContent>
             </div>
           </Card>
@@ -277,10 +309,12 @@ const Blog = () => {
                     {post.date}
                   </div>
                 </div>
-                <Button variant="ghost" className="w-full mt-4 group">
-                  Read Article
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={`/blog/${post.slug}`}>
+                  <Button variant="ghost" className="w-full mt-4 group">
+                    Read Article
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

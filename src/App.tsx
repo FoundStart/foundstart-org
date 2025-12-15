@@ -19,6 +19,9 @@ import SisterPartners from "./pages/SisterPartners";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import PremiumDomainsBlog from "./pages/blog/PremiumDomainsBlog";
+import LLCFormationGuideBlog from "./pages/blog/LLCFormationGuideBlog";
+import UKvsUSFormationBlog from "./pages/blog/UKvsUSFormationBlog";
 import Press from "./pages/Press";
 import Media from "./pages/Media";
 import Tutorials from "./pages/Tutorials";
@@ -73,6 +76,9 @@ function App() {
                   <Route path="/sister-partners" element={<SisterPartners />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/digital-nomad-guide" element={<BlogPost />} />
+                  <Route path="/blog/premium-domains-for-sale" element={<PremiumDomainsBlog />} />
+                  <Route path="/blog/llc-formation-guide" element={<LLCFormationGuideBlog />} />
+                  <Route path="/blog/uk-vs-us-company-formation" element={<UKvsUSFormationBlog />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
                   <Route path="/tutorials" element={<Tutorials />} />
