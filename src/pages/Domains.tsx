@@ -11,64 +11,61 @@ interface Domain {
   name: string;
   price: string;
   category: string;
+  hosting: string;
   saleUrl: string;
 }
 
 const domainsData: Domain[] = [
-  // Business, SaaS & Startups
-  { name: 'Namelizer.com', price: '$4,000', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/namelizer.com/' },
-  { name: 'FoundVC.com', price: '$6,500', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/foundvc.com/' },
-  { name: 'Foundstart.org', price: '$6,000', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/foundstart.org/' },
-  { name: 'Investue.com', price: '$4,500', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/investue.com/' },
-  { name: 'Careeroh.com', price: '$4,000', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/careeroh.com/' },
-  { name: 'Finaprise.com', price: '$3,500', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/finaprise.com/' },
-  { name: 'MetaMany.com', price: '$2,800', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/metamany.com/' },
-  { name: 'AppWebo.com', price: '$900', category: 'Business & SaaS', saleUrl: 'https://www.spaceship.com/marketplace/domain/appwebo.com/' },
-  
-  // E-Commerce & Marketplaces
-  { name: 'Shopeter.com', price: '$3,000', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/shopeter.com/' },
-  { name: 'Storezly.com', price: '$2,500', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/storezly.com/' },
-  { name: 'Buyill.com', price: '$10,000', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/buyill.com/' },
-  { name: 'ClotheCart.com', price: '$2,995', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/clothecart.com/' },
-  { name: 'Storecho.com', price: '$1,995', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/storecho.com/' },
-  { name: 'Cartgy.com', price: '$1,250', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/cartgy.com/' },
-  { name: 'Foodievo.com', price: '$3,500', category: 'E-Commerce', saleUrl: 'https://www.spaceship.com/marketplace/domain/foodievo.com/' },
-  
-  // Fintech, Payments & Crypto
-  { name: 'OppaPay.com', price: '$2,500', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/oppapay.com/' },
-  { name: 'Paylita.com', price: '$4,999', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/paylita.com/' },
-  { name: 'Payort.com', price: '$4,595', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/payort.com/' },
-  { name: 'NixCash.com', price: '$3,995', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/nixcash.com/' },
-  { name: 'CoinsLite.com', price: '$4,500', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/coinslite.com/' },
-  { name: 'Cryptinco.com', price: '$4,000', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/cryptinco.com/' },
-  { name: 'Cryptalyzes.com', price: '$3,800', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/cryptalyzes.com/' },
-  { name: 'Cryptemp.com', price: '$2,500', category: 'Fintech & Crypto', saleUrl: 'https://www.spaceship.com/marketplace/domain/cryptemp.com/' },
-  
-  // Tech, AI & Digital Products
-  { name: 'CometCall.com', price: '$3,500', category: 'Tech & AI', saleUrl: 'https://www.spaceship.com/marketplace/domain/cometcall.com/' },
-  { name: 'HeyKeyword.com', price: '$3,500', category: 'Tech & AI', saleUrl: 'https://www.spaceship.com/marketplace/domain/heykeyword.com/' },
-  { name: 'Codestia.com', price: '$2,495', category: 'Tech & AI', saleUrl: 'https://www.spaceship.com/marketplace/domain/codestia.com/' },
-  { name: 'Solivid.com', price: '$2,200', category: 'Tech & AI', saleUrl: 'https://www.spaceship.com/marketplace/domain/solivid.com/' },
-  { name: 'Expensol.com', price: '$3,950', category: 'Tech & AI', saleUrl: 'https://www.spaceship.com/marketplace/domain/expensol.com/' },
-  { name: 'Hosstec.com', price: '$2,500', category: 'Tech & AI', saleUrl: 'https://www.spaceship.com/marketplace/domain/hosstec.com/' },
-  
-  // Brandable & Creative Names
-  { name: 'Talaboo.com', price: '$4,000', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/talaboo.com/' },
-  { name: 'Transacly.com', price: '$1,300', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/transacly.com/' },
-  { name: 'Shortili.com', price: '$1,500', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/shortili.com/' },
-  { name: 'Coursaro.com', price: '$3,200', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/coursaro.com/' },
-  { name: 'Creativoya.com', price: '$2,800', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/creativoya.com/' },
-  { name: 'Fruitla.com', price: '$2,900', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/fruitla.com/' },
-  { name: 'Etivago.com', price: '$2,800', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/etivago.com/' },
-  { name: 'CarDolla.com', price: '$3,995', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/cardolla.com/' },
-  { name: 'Halalye.com', price: '$6,900', category: 'Brandable', saleUrl: 'https://www.spaceship.com/marketplace/domain/halalye.com/' },
-  
-  // Budget & Entry-Level Domains
-  { name: 'Deeemoz.com', price: '$750', category: 'Budget', saleUrl: 'https://www.spaceship.com/marketplace/domain/deeemoz.com/' },
-  { name: 'Deeemoz.fun', price: '$99', category: 'Budget', saleUrl: 'https://www.spaceship.com/marketplace/domain/deeemoz.fun/' },
-  { name: 'GoldenStoreSeg.com', price: '$500', category: 'Budget', saleUrl: 'https://www.spaceship.com/marketplace/domain/goldenstoreseg.com/' },
-  { name: 'MSA-Serv.com', price: '$500', category: 'Budget', saleUrl: 'https://www.spaceship.com/marketplace/domain/msa-serv.com/' },
-  { name: 'UniqranKing.com', price: '$1,200', category: 'Budget', saleUrl: 'https://www.spaceship.com/marketplace/domain/uniqranking.com/' },
+  { name: 'shofic.com', price: '$1,250', category: 'Brandable', hosting: 'Godaddy', saleUrl: 'https://dcc.godaddy.com/control/portfolio/shofic.com/settings' },
+  { name: 'namelizer.com', price: '$4,000', category: 'Business & SaaS', hosting: 'Godaddy', saleUrl: 'https://dcc.godaddy.com/control/portfolio/namelizer.com/settings' },
+  { name: 'carthot.com', price: '$999', category: 'E-Commerce', hosting: 'Unstoppable Domains', saleUrl: 'http://carthot.com' },
+  { name: 'oppapay.com', price: '$2,500', category: 'Fintech & Crypto', hosting: 'Unstoppable Domains', saleUrl: 'https://oppapay.com' },
+  { name: 'talaboo.com', price: '$4,000', category: 'Brandable', hosting: 'Unstoppable Domains', saleUrl: 'https://talaboo.com' },
+  { name: 'transacly.com', price: '$1,300', category: 'Brandable', hosting: 'Unstoppable Domains', saleUrl: 'https://transacly.com' },
+  { name: 'Shopeter.com', price: '$3,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://Shopeter.com' },
+  { name: 'Storezly.com', price: '$2,500', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://Storezly.com' },
+  { name: 'Buyill.com', price: '$10,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://Buyill.com' },
+  { name: 'Shortili.com', price: '$1,500', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Shortili.com' },
+  { name: 'Coursaro.com', price: '$3,200', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Coursaro.com' },
+  { name: 'Creativoya.com', price: '$2,800', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Creativoya.com' },
+  { name: 'Solivid.com', price: '$2,200', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://Solivid.com' },
+  { name: 'Expensol.com', price: '$3,950', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://Expensol.com' },
+  { name: 'Cryptalyzes.com', price: '$3,800', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://Cryptalyzes.com' },
+  { name: 'Heykeyword.com', price: '$3,500', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://Heykeyword.com' },
+  { name: 'investue.com', price: '$4,500', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://investue.com' },
+  { name: 'NixCash.com', price: '$3,995', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://NixCash.com' },
+  { name: 'Etivago.com', price: '$2,800', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Etivago.com' },
+  { name: 'Hosstec.com', price: '$2,500', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://Hosstec.com' },
+  { name: 'Storecho.com', price: '$1,995', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://Storecho.com' },
+  { name: 'Foodievo.com', price: '$3,500', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://Foodievo.com' },
+  { name: 'Foundstart.org', price: '$6,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://Foundstart.org' },
+  { name: 'Cryptinco.com', price: '$4,000', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://Cryptinco.com' },
+  { name: 'Fruitla.com', price: '$2,900', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Fruitla.com' },
+  { name: 'ecardera.com', price: '$2,500', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://ecardera.com' },
+  { name: 'Codestia.com', price: '$2,495', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://Codestia.com' },
+  { name: 'CarDolla.com', price: '$3,995', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://CarDolla.com' },
+  { name: 'UniqranKing.com', price: '$1,200', category: 'Budget', hosting: 'Spaceship', saleUrl: 'https://UniqranKing.com' },
+  { name: 'CometCall.com', price: '$3,500', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://CometCall.com' },
+  { name: 'Enitsa.com', price: '$2,600', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Enitsa.com' },
+  { name: 'Paylita.com', price: '$4,999', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://Paylita.com' },
+  { name: 'TakeRides.com', price: '$4,995', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://TakeRides.com' },
+  { name: 'FoundVC.com', price: '$6,500', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://FoundVC.com' },
+  { name: 'Cryptemp.com', price: '$2,500', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://Cryptemp.com' },
+  { name: 'Careeroh.com', price: '$4,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://Careeroh.com' },
+  { name: 'Cartgy.com', price: '$1,250', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://Cartgy.com' },
+  { name: 'ClotheCart.com', price: '$2,995', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://ClotheCart.com' },
+  { name: 'Shortet.com', price: '$2,200', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Shortet.com' },
+  { name: 'CoinsLite.com', price: '$4,500', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://CoinsLite.com' },
+  { name: 'Halalye.com', price: '$6,900', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Halalye.com' },
+  { name: 'Payort.com', price: '$4,595', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://Payort.com' },
+  { name: 'Finaprise.com', price: '$3,500', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://Finaprise.com' },
+  { name: 'Emboxer.com', price: '$1,800', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://Emboxer.com' },
+  { name: 'MetaMany.com', price: '$2,800', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://MetaMany.com' },
+  { name: 'AppWebo.com', price: '$900', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://AppWebo.com' },
+  { name: 'Deeemoz.com', price: '$750', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://Deeemoz.com' },
+  { name: 'deeemoz.fun', price: '$99', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://deeemoz.fun' },
+  { name: 'goldenstoreseg.com', price: '$500', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://goldenstoreseg.com' },
+  { name: 'msa-serv.com', price: '$500', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://msa-serv.com' },
 ];
 
 const categories = [
