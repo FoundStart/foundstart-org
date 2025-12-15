@@ -62,6 +62,9 @@ const Footer = () => {
       name: "Freelancer Partners",
       href: "/freelancer-partners"
     }, {
+      name: "Premium Domains",
+      href: "/domains"
+    }, {
       name: "Partner Directory",
       href: "/digital-partners"
     }, {

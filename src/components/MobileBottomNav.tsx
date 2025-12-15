@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Globe, Users, UserCheck, Briefcase } from 'lucide-react';
+import { Globe, Users, UserCheck, Briefcase, Globe2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const MobileBottomNav = () => {
@@ -14,16 +14,16 @@ const MobileBottomNav = () => {
     },
     { 
       icon: Users, 
-      label: 'Digital Partners', 
+      label: 'Partners', 
       href: '/digital-partners', 
       isActive: location.pathname.includes('/digital-partners'),
       badge: '375+'
     },
     { 
-      icon: UserCheck, 
-      label: 'Freelancer', 
-      href: '/freelancer-partners', 
-      isActive: location.pathname.includes('/freelancer-partners')
+      icon: Globe2, 
+      label: 'Domains', 
+      href: '/domains', 
+      isActive: location.pathname === '/domains'
     },
     { 
       icon: Briefcase, 
