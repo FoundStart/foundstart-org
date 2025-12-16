@@ -23,23 +23,28 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div className={`flex h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
           <div className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" aria-label="FoundStart Home">
               <span className="text-xl font-bold gradient-text">FoundStart</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className={`hidden lg:flex items-center space-x-6 xl:space-x-8 ${isRTL ? 'space-x-reverse ml-auto' : 'ml-auto'}`}>
-            {navigationItems.map((item) => (
+          <nav 
+            className={`hidden lg:flex items-center space-x-6 xl:space-x-8 ${isRTL ? 'space-x-reverse ml-auto' : 'ml-auto'}`}
+            role="navigation"
+            aria-label="Main navigation"
+          >
+            {navigationItems.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
+                aria-label={item.name}
               >
                 {item.name}
               </Link>
@@ -71,15 +76,16 @@ const Header = () => {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute left-0 right-0 top-full bg-background/95 backdrop-blur border-b shadow-lg">
+          <div className="lg:hidden absolute left-0 right-0 top-full bg-background/95 backdrop-blur border-b shadow-lg" role="dialog" aria-modal="true" aria-label="Mobile menu">
             <div className={`max-w-7xl mx-auto px-3 py-4 ${isRTL ? 'text-right' : ''}`}>
-              <nav className="space-y-1">
-                {navigationItems.map((item) => (
+              <nav className="space-y-1" role="navigation" aria-label="Mobile navigation">
+                {navigationItems.map((item, index) => (
                   <Link
                     key={item.name}
                     to={item.href}
                     className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all duration-200 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
+                    aria-label={item.name}
                   >
                     {item.name}
                   </Link>
