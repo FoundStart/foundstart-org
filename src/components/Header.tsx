@@ -15,9 +15,10 @@ const Header = () => {
   const navigationItems = [
     { name: t.countries, href: '/countries' },
     { name: t.partners, href: '/partners' },
-    { name: t.digitalPartners, href: '/digital-partners' },
     { name: "Domains", href: '/domains' },
+    { name: t.digitalPartners, href: '/digital-partners' },
     { name: "Freelancer Partners", href: '/freelancer-partners' },
+    { name: "Services", href: '/services' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },
   ];
