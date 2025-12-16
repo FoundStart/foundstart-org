@@ -71,26 +71,28 @@ const Services = () => {
           action: "quote",
           actionText: "Get Quote"
         },
-        { 
-          name: "USA Company Formation", 
-          price: "From $299", 
-          description: "Delaware LLC with EIN, registered agent, and banking setup" 
-        },
-        { 
-          name: "UK Company Formation", 
-          price: "From £199", 
-          description: "Companies House registration with London address and UTR application" 
-        },
-        { 
-          name: "Canada Company Formation", 
-          price: "From CAD $399", 
-          description: "Federal incorporation with business number and Toronto office" 
-        },
-        { 
-          name: "EU Company Formation", 
-          price: "From €250", 
-          description: "Estonia, Finland, Sweden, Latvia, Lithuania - EU market access" 
-        }
+        { name: "USA Company Formation", price: "From $299", description: "Delaware LLC with EIN, registered agent, and banking setup" },
+        { name: "UK Company Formation", price: "From £199", description: "Companies House registration with London address and UTR application" },
+        { name: "Canada Company Formation", price: "From CAD $399", description: "Federal incorporation with business number and Toronto office" },
+        { name: "EU Company Formation", price: "From €250", description: "Estonia, Finland, Sweden, Latvia, Lithuania - EU market access" }
+      ]
+    },
+    {
+      category: "Remote Tasks & Hiring Services",
+      icon: <Headphones className="w-6 h-6" />,
+      items: [
+        { name: "Virtual Assistants", price: "From $5/hr", description: "Professional VAs for admin, scheduling, email management & research" },
+        { name: "Data Entry & Processing", price: "From $3/hr", description: "Accurate data entry, web scraping, spreadsheet management" },
+        { name: "Customer Support Agents", price: "From $6/hr", description: "24/7 customer service via chat, email, and phone support" },
+        { name: "Content Writing", price: "From $10/article", description: "Blog posts, articles, copywriting, product descriptions" },
+        { name: "Graphic Design", price: "From $15/design", description: "Logos, banners, social media graphics, UI/UX design" },
+        { name: "Video Editing", price: "From $20/video", description: "Professional video editing, YouTube content, reels & shorts" },
+        { name: "Translation Services", price: "From $0.05/word", description: "50+ languages, documents, websites, subtitles translation" },
+        { name: "Social Media Management", price: "From $99/mo", description: "Content creation, scheduling, engagement & analytics" },
+        { name: "Lead Generation", price: "From $0.10/lead", description: "B2B/B2C leads, email lists, LinkedIn outreach campaigns" },
+        { name: "Bookkeeping & Accounting", price: "From $149/mo", description: "Financial records, invoicing, tax preparation support" },
+        { name: "Web Development Tasks", price: "From $25/hr", description: "Bug fixes, updates, feature additions, WordPress maintenance" },
+        { name: "SEO & Link Building", price: "From $99/mo", description: "Backlinks, guest posts, keyword optimization, site audits" }
       ]
     },
     {
