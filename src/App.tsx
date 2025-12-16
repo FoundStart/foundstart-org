@@ -36,7 +36,6 @@ import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import DigitalNomadVisas from "./pages/DigitalNomadVisas";
 import Domains from "./pages/Domains";
-import MobileBottomNav from "./components/MobileBottomNav";
 import AIChatBot from "./components/AIChatBot";
 import "./App.css";
 
@@ -94,7 +93,6 @@ function App() {
                   <Route path="/domains" element={<Domains />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <MobileBottomNav />
                 <AIChatBot />
               </AuthProvider>
             </BrowserRouter>
