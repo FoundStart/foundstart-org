@@ -155,11 +155,11 @@ const Domains = () => {
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <CardHeader className="pb-2 sm:pb-3">
-                    <div className="flex items-start justify-between gap-2">
-                      <CardTitle className="text-base sm:text-lg font-bold break-all">
+                    <div className="flex items-center justify-between gap-3">
+                      <CardTitle className="text-sm sm:text-base font-bold whitespace-nowrap truncate">
                         {domain.name}
                       </CardTitle>
-                      <Badge variant="secondary" className="text-base sm:text-lg font-bold shrink-0 bg-primary/10 text-primary">
+                      <Badge variant="secondary" className="text-sm sm:text-base font-bold shrink-0 bg-primary/10 text-primary">
                         {domain.price}
                       </Badge>
                     </div>
