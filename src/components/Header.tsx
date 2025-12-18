@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,16 @@ import { useTranslation } from '@/contexts/TranslationContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { t, isRTL } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigationItems = [
     { name: t.countries, href: '/countries' },
@@ -24,7 +33,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
+    <header className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`} role="banner">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div className={`flex h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
@@ -36,7 +45,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav 
-            className={`hidden lg:flex items-center space-x-4 xl:space-x-6 ${isRTL ? 'space-x-reverse ml-8' : 'ml-8'}`}
+            className={`hidden lg:flex items-center space-x-2 xl:space-x-4 ${isRTL ? 'space-x-reverse ml-6' : 'ml-6'}`}
             role="navigation"
             aria-label="Main navigation"
           >
@@ -44,7 +53,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
+                className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
                 aria-label={item.name}
               >
                 {item.name}
