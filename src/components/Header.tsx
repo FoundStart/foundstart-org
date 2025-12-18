@@ -17,7 +17,7 @@ const Header = () => {
     { name: t.partners, href: '/partners' },
     { name: "Domains", href: '/domains' },
     { name: t.digitalPartners, href: '/digital-partners' },
-    { name: "Freelancer Partners", href: '/freelancer-partners' },
+    { name: "Freelancer", href: '/freelancer-partners' },
     { name: "Services", href: '/services' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },
@@ -36,7 +36,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav 
-            className={`hidden lg:flex items-center space-x-6 xl:space-x-8 ${isRTL ? 'space-x-reverse ml-auto' : 'ml-auto'}`}
+            className={`hidden lg:flex items-center space-x-4 xl:space-x-6 ${isRTL ? 'space-x-reverse ml-8' : 'ml-8'}`}
             role="navigation"
             aria-label="Main navigation"
           >
