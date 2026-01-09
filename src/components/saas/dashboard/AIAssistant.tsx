@@ -14,6 +14,7 @@ import {
   FileText,
   Megaphone,
   Lightbulb,
+  Loader2,
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -82,28 +83,82 @@ const AIAssistant = () => {
     }
 
     setIsGenerating(true);
-    
-    // Simulated AI response - in production, this would call the AI API
-    setTimeout(() => {
-      setOutputText(`Here's a comprehensive response to your request:
+    setOutputText('');
 
-**${inputText}**
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-assistant`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          },
+          body: JSON.stringify({ prompt: inputText, category: selectedCategory }),
+        }
+      );
 
-Based on your query, here are the key points to consider:
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        if (response.status === 429) {
+          throw new Error('Rate limit exceeded. Please wait a moment and try again.');
+        }
+        if (response.status === 402) {
+          throw new Error('AI credits exhausted. Please contact support.');
+        }
+        throw new Error(errorData.error || 'Failed to generate response');
+      }
 
-1. **Initial Steps**: Begin by researching the specific requirements for your chosen jurisdiction. Each country has unique regulations and processes.
+      if (!response.body) {
+        throw new Error('No response body');
+      }
 
-2. **Documentation**: Prepare all necessary documentation including identification, proof of address, and business plans.
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let textBuffer = '';
+      let fullOutput = '';
 
-3. **Timeline**: Typical formation takes 1-4 weeks depending on the jurisdiction and entity type.
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        textBuffer += decoder.decode(value, { stream: true });
 
-4. **Costs**: Formation fees vary by location, typically ranging from $100-$1,000 for basic formation.
+        let newlineIndex: number;
+        while ((newlineIndex = textBuffer.indexOf('\n')) !== -1) {
+          let line = textBuffer.slice(0, newlineIndex);
+          textBuffer = textBuffer.slice(newlineIndex + 1);
 
-5. **Ongoing Compliance**: After formation, maintain good standing through annual filings and registered agent services.
+          if (line.endsWith('\r')) line = line.slice(0, -1);
+          if (line.startsWith(':') || line.trim() === '') continue;
+          if (!line.startsWith('data: ')) continue;
 
-Need more specific guidance? Feel free to ask follow-up questions!`);
+          const jsonStr = line.slice(6).trim();
+          if (jsonStr === '[DONE]') break;
+
+          try {
+            const parsed = JSON.parse(jsonStr);
+            const content = parsed.choices?.[0]?.delta?.content;
+            if (content) {
+              fullOutput += content;
+              setOutputText(fullOutput);
+            }
+          } catch {
+            textBuffer = line + '\n' + textBuffer;
+            break;
+          }
+        }
+      }
+    } catch (error) {
+      console.error('AI generation error:', error);
+      toast({
+        title: 'Error',
+        description: error instanceof Error ? error.message : 'Failed to generate response',
+        variant: 'destructive',
+      });
+    } finally {
       setIsGenerating(false);
-    }, 2000);
+    }
   };
 
   const handleSelectPrompt = (prompt: string) => {
@@ -129,7 +184,7 @@ Need more specific guidance? Feel free to ask follow-up questions!`);
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">AI Assistant</h1>
-        <p className="text-muted-foreground">Generate business content with AI</p>
+        <p className="text-muted-foreground">Generate business content with AI powered by Lovable</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
@@ -202,7 +257,7 @@ Need more specific guidance? Feel free to ask follow-up questions!`);
               >
                 {isGenerating ? (
                   <>
-                    <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Generating...
                   </>
                 ) : (
@@ -230,8 +285,8 @@ Need more specific guidance? Feel free to ask follow-up questions!`);
                     </Button>
                   </div>
                 </div>
-                <div className="rounded-lg border bg-muted/50 p-4">
-                  <pre className="whitespace-pre-wrap text-sm">{outputText}</pre>
+                <div className="rounded-lg border bg-muted/50 p-4 max-h-96 overflow-y-auto">
+                  <pre className="whitespace-pre-wrap text-sm font-sans">{outputText}</pre>
                 </div>
               </div>
             )}

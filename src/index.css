@@ -92,11 +92,11 @@
 
   /* Mobile-first responsive utilities */
   .mobile-container {
-    @apply px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+    @apply px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto w-full;
   }
 
   .mobile-spacing {
-    @apply py-3 sm:py-6 lg:py-8;
+    @apply py-4 sm:py-6 lg:py-8;
   }
 
   .mobile-text {
@@ -113,7 +113,7 @@
   }
 
   .mobile-content {
-    @apply w-full max-w-full px-3 sm:px-6;
+    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .mobile-section {
@@ -305,7 +305,7 @@
   }
   
   .container {
-    @apply px-4;
+    @apply px-4 max-w-full;
   }
   
   /* Ensure text is readable on mobile */

@@ -4,99 +4,183 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Globe, Sparkles, Shield, Zap, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Globe, Sparkles, Shield, Zap, ArrowLeft, Server, Building2, Briefcase, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Domain {
   name: string;
-  price: string;
   category: string;
   hosting: string;
-  saleUrl: string;
+  godaddyUrl: string;
 }
 
 const domainsData: Domain[] = [
-  { name: 'AppWebo.com', price: '$5,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=AppWebo.com' },
-  { name: 'Buyill.com', price: '$10,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Buyill.com' },
-  { name: 'CarDolla.com', price: '$6,000', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CarDolla.com' },
-  { name: 'Careeroh.com', price: '$6,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Careeroh.com' },
-  { name: 'Cartgy.com', price: '$5,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cartgy.com' },
-  { name: 'carthot.com', price: '$5,000', category: 'E-Commerce', hosting: 'Unstoppabledomains', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=carthot.com' },
-  { name: 'ClotheCart.com', price: '$5,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ClotheCart.com' },
-  { name: 'Codestia.com', price: '$5,000', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Codestia.com' },
-  { name: 'CoinsLite.com', price: '$7,500', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CoinsLite.com' },
-  { name: 'CometCall.com', price: '$5,000', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CometCall.com' },
-  { name: 'Coursaro.com', price: '$5,000', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Coursaro.com' },
-  { name: 'Creativoya.com', price: '$5,000', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Creativoya.com' },
-  { name: 'Cryptalyzes.com', price: '$5,000', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cryptalyzes.com' },
-  { name: 'Cryptemp.com', price: '$5,000', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cryptemp.com' },
-  { name: 'Cryptinco.com', price: '$5,000', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cryptinco.com' },
-  { name: 'Deeemoz.com', price: '$1,100', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Deeemoz.com' },
-  { name: 'deeemoz.fun', price: '$99', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=deeemoz.fun' },
-  { name: 'ecardera.com', price: '$7,500', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ecardera.com' },
-  { name: 'Emboxer.com', price: '$7,500', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Emboxer.com' },
-  { name: 'Enitsa.com', price: '$7,500', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Enitsa.com' },
-  { name: 'Etivago.com', price: '$7,500', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Etivago.com' },
-  { name: 'Expensol.com', price: '$7,500', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Expensol.com' },
-  { name: 'Finaprise.com', price: '$7,500', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Finaprise.com' },
-  { name: 'Foodievo.com', price: '$5,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Foodievo.com' },
-  { name: 'Foundstart.org', price: '$10,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Foundstart.org' },
-  { name: 'FoundVC.com', price: '$10,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=FoundVC.com' },
-  { name: 'Fruitla.com', price: '$7,500', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Fruitla.com' },
-  { name: 'goldenstoreseg.com', price: '$500', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=goldenstoreseg.com' },
-  { name: 'Halalye.com', price: '$10,000', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Halalye.com' },
-  { name: 'Heykeyword.com', price: '$5,000', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Heykeyword.com' },
-  { name: 'Hosstec.com', price: '$5,000', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Hosstec.com' },
-  { name: 'investue.com', price: '$7,500', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=investue.com' },
-  { name: 'MetaMany.com', price: '$5,000', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=MetaMany.com' },
-  { name: 'msa-serv.com', price: '$500', category: 'Budget', hosting: 'Hostinger', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=msa-serv.com' },
-  { name: 'namelizer.com', price: '$5,000', category: 'Business & SaaS', hosting: 'Godaddy', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=namelizer.com' },
-  { name: 'NixCash.com', price: '$10,000', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=NixCash.com' },
-  { name: 'oppapay.com', price: '$8,500', category: 'Fintech & Crypto', hosting: 'Unstoppabledomains', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=oppapay.com' },
-  { name: 'Paylita.com', price: '$8,500', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Paylita.com' },
-  { name: 'Payort.com', price: '$8,500', category: 'Fintech & Crypto', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Payort.com' },
-  { name: 'shofic.com', price: '$5,000', category: 'Brandable', hosting: 'Godaddy', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=shofic.com' },
-  { name: 'Shopeter.com', price: '$5,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shopeter.com' },
-  { name: 'shopic.com', price: '$10,000', category: 'E-Commerce', hosting: 'Afternic', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=shopic.com' },
-  { name: 'Shortet.com', price: '$5,000', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shortet.com' },
-  { name: 'Shortili.com', price: '$5,000', category: 'Brandable', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shortili.com' },
-  { name: 'Solivid.com', price: '$5,000', category: 'Tech & AI', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Solivid.com' },
-  { name: 'Storecho.com', price: '$5,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Storecho.com' },
-  { name: 'Storezly.com', price: '$5,000', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Storezly.com' },
-  { name: 'TakeRides.com', price: '$6,500', category: 'E-Commerce', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=TakeRides.com' },
-  { name: 'talaboo.com', price: '$10,000', category: 'Brandable', hosting: 'Unstoppabledomains', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=talaboo.com' },
-  { name: 'transacly.com', price: '$10,000', category: 'Fintech & Crypto', hosting: 'Unstoppabledomains', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=transacly.com' },
-  { name: 'UniqranKing.com', price: '$4,500', category: 'Business & SaaS', hosting: 'Spaceship', saleUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=UniqranKing.com' },
+  { name: 'Affillex.com', category: 'Startups, SaaS & Tech, Affiliate', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Affillex.com' },
+  { name: 'Afinya.com', category: 'Startups, SaaS & Tech, Affiliate', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Afinya.com' },
+  { name: 'AppWebo.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=AppWebo.com' },
+  { name: 'AssetMotive.com', category: 'Finance & Assets', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=AssetMotive.com' },
+  { name: 'Assetsium.com', category: 'Finance & Assets', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Assetsium.com' },
+  { name: 'Autobases.com', category: 'Automotive', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Autobases.com' },
+  { name: 'BekoMart.com', category: 'E-Commerce & Marketplaces', hosting: 'Namebright', godaddyUrl: 'https://www.dropcatch.com/domain/bekomart.com' },
+  { name: 'Buyill.com', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Buyill.com' },
+  { name: 'Caisho.com', category: 'Brandable', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Caisho.com' },
+  { name: 'Cardido.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cardido.com' },
+  { name: 'CarDolla.com', category: 'Fintech, E-commerce, Automotive', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CarDolla.com' },
+  { name: 'Careeroh.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Careeroh.com' },
+  { name: 'Cartdidi.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cartdidi.com' },
+  { name: 'Cartgy.com', category: 'Fintech, E-commerce, Automotive', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cartgy.com' },
+  { name: 'Carthot.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=carthot.com' },
+  { name: 'Cashzor.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cashzor.com' },
+  { name: 'ChasesGram.com', category: 'Social & Media', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ChasesGram.com' },
+  { name: 'Chatelly.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=chatelly.com' },
+  { name: 'CitySpain.com', category: 'Travel & Regional', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CitySpain.com' },
+  { name: 'ClauGram.com', category: 'Social & Media', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ClauGram.com' },
+  { name: 'ClotheCart.com', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ClotheCart.com' },
+  { name: 'Codestia.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Codestia.com' },
+  { name: 'CoinsLite.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CoinsLite.com' },
+  { name: 'CometCall.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CometCall.com' },
+  { name: 'ComZio.com', category: 'Brandable', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ComZio.com' },
+  { name: 'Coursaro.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Coursaro.com' },
+  { name: 'Creativoya.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Creativoya.com' },
+  { name: 'Cryptalyzes.com', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cryptalyzes.com' },
+  { name: 'Cryptemp.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cryptemp.com' },
+  { name: 'Cryptinco.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cryptinco.com' },
+  { name: 'Dealago.com', category: 'E-Commerce & Marketplaces, SAAS', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Dealago.com' },
+  { name: 'Dealello.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Dealello.com' },
+  { name: 'Dealiar.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Dealiar.com' },
+  { name: 'Dealigi.com', category: 'E-Commerce & Marketplaces, SAAS', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=dealigi.com' },
+  { name: 'Deeemoz.com', category: 'Startups, SaaS & Tech', hosting: 'Hostinger', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Deeemoz.com' },
+  { name: 'Deeemoz.fun', category: 'Startups, SaaS & Tech', hosting: 'Hostinger', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=deeemoz.fun' },
+  { name: 'Deeemoz.shop', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Deeemoz.shop' },
+  { name: 'Diroh.com', category: 'Brandable', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Diroh.com' },
+  { name: 'Dropoh.com', category: 'E-Commerce', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Dropoh.com' },
+  { name: 'Easycheckpay.com', category: 'Fintech, Payments', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Easycheckpay.com' },
+  { name: 'Ecardera.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ecardera.com' },
+  { name: 'Ecardura.com', category: 'Fintech, Payments', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Ecardura.com' },
+  { name: 'Emboxer.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Emboxer.com' },
+  { name: 'Enitsa.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Enitsa.com' },
+  { name: 'Estatesa.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=estatesa.com' },
+  { name: 'EstatesChain.com', category: 'Real Estate & Blockchain', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=EstatesChain.com' },
+  { name: 'Etivago.com', category: 'Startups, SaaS & Travel', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Etivago.com' },
+  { name: 'Existmatch.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Existmatch.com' },
+  { name: 'Exitsme.com', category: 'Startups, SaaS, RealEstate, Gov', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=exitsme.com' },
+  { name: 'Exitsmena.com', category: 'Startups, SaaS, Regional', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Exitsmena.com' },
+  { name: 'Expensol.com', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Expensol.com' },
+  { name: 'Finaprise.com', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Finaprise.com' },
+  { name: 'Fintekly.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=fintekly.com' },
+  { name: 'Flowmotic.com', category: 'AI, Automation, Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=flowmotic.com' },
+  { name: 'Foodievo.com', category: 'Startups, SaaS & Tech, SAAS', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Foodievo.com' },
+  { name: 'Foundstart.org', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Foundstart.org' },
+  { name: 'FoundVC.com', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=FoundVC.com' },
+  { name: 'Fruitla.com', category: 'Startups, SaaS & Tech, APP, Grocery', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Fruitla.com' },
+  { name: 'Giftbed.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Giftbed.com' },
+  { name: 'Goldenstoreseg.com', category: 'E-Commerce & Marketplaces', hosting: 'Hostinger', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=goldenstoreseg.com' },
+  { name: 'Gramger.com', category: 'Social & Media', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Gramger.com' },
+  { name: 'Gramout.com', category: 'Social & Media', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Gramout.com' },
+  { name: 'Halalye.com', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Halalye.com' },
+  { name: 'Heykeyword.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Heykeyword.com' },
+  { name: 'Hosstec.com', category: 'SAAS & Hosting', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Hosstec.com' },
+  { name: 'Investicash.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Investicash.com' },
+  { name: 'Investue.com', category: 'Venture, Community & Brands', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=investue.com' },
+  { name: 'Jobagy.com', category: 'Recruitments, Freelancer, SAAS', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=jobagy.com' },
+  { name: 'Jobigy.com', category: 'Recruitments, Freelancer, SAAS', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=jobigy.com' },
+  { name: 'Justailawyer.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Justailawyer.com' },
+  { name: 'Keepence.com', category: 'Fintech, SAAS', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=keepence.com' },
+  { name: 'Loadwhale.com', category: 'Logistics & Shipping', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Loadwhale.com' },
+  { name: 'MartlyGram.com', category: 'E-Commerce & Social', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=MartlyGram.com' },
+  { name: 'Martome.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Martome.com' },
+  { name: 'Medianar.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=medianar.com' },
+  { name: 'Mediationmarket.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Mediationmarket.com' },
+  { name: 'MetaMany.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=MetaMany.com' },
+  { name: 'MoMoMob.com', category: 'Fintech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=momomob.com' },
+  { name: 'MSA-serv.com', category: 'Startups, SaaS & Tech', hosting: 'Hostinger', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=msa-serv.com' },
+  { name: 'Namelizer.com', category: 'Startups, SaaS & Tech', hosting: 'Godaddy', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Namelizer.com' },
+  { name: 'Nanymart.com', category: 'Startups, SaaS & Tech, Nanny marketplace', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=nanymart.com' },
+  { name: 'NixCash.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=NixCash.com' },
+  { name: 'Oppapay.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Oppapay.com' },
+  { name: 'Paylita.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Paylita.com' },
+  { name: 'Payoha.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=payoha.com' },
+  { name: 'Payort.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Payort.com' },
+  { name: 'Sellerizer.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Sellerizer.com' },
+  { name: 'Shofic.com', category: 'E-Commerce & Marketplaces', hosting: 'Godaddy', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shofic.com' },
+  { name: 'Shopeter.com', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shopeter.com' },
+  { name: 'Shortet.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shortet.com' },
+  { name: 'Shortili.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shortili.com' },
+  { name: 'Shortoo.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shortoo.com' },
+  { name: 'Socialautoposters.com', category: 'Social & Automation', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Socialautoposters.com' },
+  { name: 'Sociallaters.com', category: 'Social & Media', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Sociallaters.com' },
+  { name: 'Societygram.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Societygram.com' },
+  { name: 'Solivid.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Solivid.com' },
+  { name: 'Storecho.com', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Storecho.com' },
+  { name: 'Storezly.com', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Storezly.com' },
+  { name: 'TakeRides.com', category: 'Fleet Automotive', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=TakeRides.com' },
+  { name: 'Talaboo.com', category: 'Startups, SaaS & Tech, APP, Grocery', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Talaboo.com' },
+  { name: 'Talabook.com', category: 'Startups, SaaS & Tech, APP, Grocery', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=talabook.com' },
+  { name: 'Teeped.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Teeped.com' },
+  { name: 'Topypay.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=topypay.com' },
+  { name: 'Tradoq.com', category: 'E-Commerce & Marketplaces', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Tradoq.com' },
+  { name: 'Trancesend.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=trancesend.com' },
+  { name: 'Transacly.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Transacly.com' },
+  { name: 'Transactionizer.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Transactionizer.com' },
+  { name: 'UniqranKing.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=UniqranKing.com' },
+  { name: 'VestaBroker.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Vestabroker.com' },
+  { name: 'WhenSpend.com', category: 'Startups, SaaS & Tech', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=whenspend.com' },
+  { name: 'YesShoot.com', category: 'Media & Photography', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=YesShoot.com' },
+  { name: 'ZadAfrica.com', category: 'Regional & Africa', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ZadAfrica.com' },
+  { name: 'ZohPay.com', category: 'Fintech, Payments & Crypto', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=zohpay.com' },
+  { name: 'ZonFood.com', category: 'Startups, SaaS & Tech, Food', hosting: 'UD', godaddyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Zonfood.com' },
 ];
 
 const categories = [
   { name: 'All', icon: Globe },
-  { name: 'Business & SaaS', icon: Sparkles },
-  { name: 'E-Commerce', icon: Globe },
-  { name: 'Fintech & Crypto', icon: Shield },
-  { name: 'Tech & AI', icon: Zap },
-  { name: 'Brandable', icon: Sparkles },
-  { name: 'Budget', icon: Globe },
+  { name: 'Startups, SaaS & Tech', icon: Sparkles },
+  { name: 'E-Commerce & Marketplaces', icon: Building2 },
+  { name: 'Fintech, Payments & Crypto', icon: Shield },
+  { name: 'Venture, Community & Brands', icon: Zap },
+  { name: 'Automotive', icon: Truck },
+  { name: 'Other', icon: Briefcase },
 ];
 
-const getCategoryColor = (category: string) => {
+const getHostingColor = (hosting: string) => {
   const colors: Record<string, string> = {
-    'Business & SaaS': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
-    'E-Commerce': 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20',
-    'Fintech & Crypto': 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
-    'Tech & AI': 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
-    'Brandable': 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
-    'Budget': 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-500/20',
+    'Spaceship': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+    'UD': 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
+    'Hostinger': 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
+    'Godaddy': 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20',
+    'Namebright': 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
   };
-  return colors[category] || 'bg-muted text-muted-foreground';
+  return colors[hosting] || 'bg-muted text-muted-foreground';
+};
+
+const getCategoryColor = (category: string) => {
+  if (category.includes('Fintech') || category.includes('Crypto') || category.includes('Payments')) {
+    return 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20';
+  }
+  if (category.includes('E-Commerce') || category.includes('Marketplaces')) {
+    return 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20';
+  }
+  if (category.includes('SaaS') || category.includes('Tech') || category.includes('Startups')) {
+    return 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20';
+  }
+  if (category.includes('Venture') || category.includes('Brands')) {
+    return 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20';
+  }
+  return 'bg-muted text-muted-foreground';
 };
 
 const Domains = () => {
   const [selectedCategory, setSelectedCategory] = React.useState('All');
+  const [searchQuery, setSearchQuery] = React.useState('');
   
-  const filteredDomains = selectedCategory === 'All' 
-    ? domainsData 
-    : domainsData.filter(d => d.category === selectedCategory);
+  const filteredDomains = domainsData.filter(d => {
+    const matchesCategory = selectedCategory === 'All' || 
+      (selectedCategory === 'Other' 
+        ? !['Startups, SaaS & Tech', 'E-Commerce & Marketplaces', 'Fintech, Payments & Crypto', 'Venture, Community & Brands', 'Automotive'].some(cat => d.category.includes(cat.split(',')[0]))
+        : d.category.includes(selectedCategory.split(',')[0]));
+    const matchesSearch = d.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      d.category.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -104,8 +188,8 @@ const Domains = () => {
       
       <main className="pt-20 pb-24 lg:pb-8">
         {/* Hero Section */}
-        <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
-          <div className="container mx-auto max-w-7xl">
+        <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-[1400px]">
             {/* Back Button */}
             <div className="mb-6">
               <Button variant="outline" asChild size="sm">
@@ -117,7 +201,7 @@ const Domains = () => {
             </div>
 
             <div className="text-center mb-8 sm:mb-12">
-              <Badge className="mb-4 animate-pulse-slow">🔥 Premium Domains Available</Badge>
+              <Badge className="mb-4 animate-pulse-slow">🔥 {domainsData.length}+ Premium Domains Available</Badge>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                 Premium Domains <span className="gradient-text">For Sale</span>
               </h1>
@@ -125,6 +209,17 @@ const Domains = () => {
                 Brand-ready, short & scalable domains perfect for startups, SaaS platforms, fintech, 
                 e-commerce, AI projects, crypto, marketplaces, and global brands.
               </p>
+            </div>
+
+            {/* Search */}
+            <div className="max-w-md mx-auto mb-6">
+              <input
+                type="text"
+                placeholder="Search domains..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+              />
             </div>
 
             {/* Category Filters */}
@@ -146,22 +241,33 @@ const Domains = () => {
               })}
             </div>
 
+            {/* Results count */}
+            <p className="text-center text-sm text-muted-foreground mb-6">
+              Showing {filteredDomains.length} of {domainsData.length} domains
+            </p>
+
             {/* Domains Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
               {filteredDomains.map((domain, index) => (
                 <Card 
                   key={domain.name} 
                   className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group"
-                  style={{ animationDelay: `${index * 0.05}s` }}
+                  style={{ animationDelay: `${index * 0.02}s` }}
                 >
                   <CardHeader className="pb-2 sm:pb-3">
-                    <div className="flex items-center justify-between gap-3">
-                      <CardTitle className="text-sm sm:text-base font-bold whitespace-nowrap truncate">
+                    <div className="flex flex-col gap-2">
+                      <CardTitle className="text-base sm:text-lg font-bold">
                         {domain.name}
                       </CardTitle>
-                      <Badge variant="secondary" className="text-sm sm:text-base font-bold shrink-0 bg-primary/10 text-primary">
-                        {domain.price}
-                      </Badge>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <Badge 
+                          variant="outline" 
+                          className={`text-xs ${getHostingColor(domain.hosting)}`}
+                        >
+                          <Server className="w-3 h-3 mr-1" />
+                          {domain.hosting}
+                        </Badge>
+                      </div>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
@@ -169,7 +275,7 @@ const Domains = () => {
                       variant="outline" 
                       className={`mb-3 sm:mb-4 text-xs ${getCategoryColor(domain.category)}`}
                     >
-                      {domain.category}
+                      {domain.category.length > 30 ? domain.category.slice(0, 30) + '...' : domain.category}
                     </Badge>
                     <Button 
                       asChild 
@@ -177,11 +283,11 @@ const Domains = () => {
                       size="sm"
                     >
                       <a 
-                        href={domain.saleUrl} 
+                        href={domain.godaddyUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        Buy Now
+                        View Details
                         <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
                       </a>
                     </Button>
@@ -222,7 +328,7 @@ const Domains = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-sm sm:text-base">Clear Pricing</h4>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Transparent "Buy Now" pricing</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Transparent pricing via registrars</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -240,7 +346,7 @@ const Domains = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-sm sm:text-base">Trusted Registrars</h4>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Spaceship, GoDaddy, Hostinger</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Spaceship, GoDaddy, Hostinger, UD</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -249,39 +355,17 @@ const Domains = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-sm sm:text-base">Bundle Deals</h4>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Contact us for special offers</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Contact us for multi-domain discounts</p>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </section>
-
-            {/* CTA Section */}
-            <section className="mt-8 sm:mt-12 text-center">
-              <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Interested in a domain or bundle deal? Contact us now!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button asChild size="lg" className="text-sm sm:text-base">
-                  <Link to="/contact-sales">
-                    Contact Sales
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="text-sm sm:text-base">
-                  <a href="https://wa.me/21002905764" target="_blank" rel="noopener noreferrer">
-                    WhatsApp Us
-                  </a>
-                </Button>
-              </div>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-4">
-                Premium domains move fast. Own the name that defines your future. 🚀
-              </p>
-            </section>
           </div>
         </section>
       </main>
-
+      
       <Footer />
     </div>
   );
