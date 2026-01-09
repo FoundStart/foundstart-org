@@ -14,43 +14,115 @@ import {
   Clock,
   AlertCircle,
   Plus,
+  Bot,
+  Loader2,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthProvider';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
 
 const DashboardHome = () => {
   const { user } = useAuth();
 
-  // Mock data - will be replaced with real data
+  // Fetch user's companies
+  const { data: companies = [], isLoading: companiesLoading } = useQuery({
+    queryKey: ['user-companies', user?.id],
+    queryFn: async () => {
+      if (!user?.id) return [];
+      const { data, error } = await supabase
+        .from('companies')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      return data || [];
+    },
+    enabled: !!user?.id,
+  });
+
+  // Fetch user's documents
+  const { data: documents = [] } = useQuery({
+    queryKey: ['user-documents', user?.id],
+    queryFn: async () => {
+      if (!user?.id) return [];
+      const { data, error } = await supabase
+        .from('documents')
+        .select('*')
+        .eq('user_id', user.id);
+      if (error) throw error;
+      return data || [];
+    },
+    enabled: !!user?.id,
+  });
+
+  // Fetch user's orders
+  const { data: orders = [] } = useQuery({
+    queryKey: ['user-orders', user?.id],
+    queryFn: async () => {
+      if (!user?.id) return [];
+      const { data, error } = await supabase
+        .from('orders')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      return data || [];
+    },
+    enabled: !!user?.id,
+  });
+
+  // Fetch user's services
+  const { data: services = [] } = useQuery({
+    queryKey: ['user-services', user?.id],
+    queryFn: async () => {
+      if (!user?.id) return [];
+      const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('user_id', user.id);
+      if (error) throw error;
+      return data || [];
+    },
+    enabled: !!user?.id,
+  });
+
+  const pendingPayments = orders
+    .filter(o => o.status === 'pending')
+    .reduce((sum, o) => sum + (o.total_price || 0), 0);
+
   const stats = [
-    { title: 'Companies', value: '2', icon: Building2, color: 'text-primary' },
-    { title: 'Active Services', value: '5', icon: ShoppingCart, color: 'text-green-500' },
-    { title: 'Documents', value: '12', icon: FileText, color: 'text-blue-500' },
-    { title: 'Pending Payments', value: '$450', icon: CreditCard, color: 'text-orange-500' },
-  ];
-
-  const recentActivity = [
-    { action: 'Company formation submitted', entity: 'TechStart LLC', time: '2 hours ago', status: 'pending' },
-    { action: 'Document uploaded', entity: 'Operating Agreement', time: '1 day ago', status: 'completed' },
-    { action: 'Service ordered', entity: 'Registered Agent - Wyoming', time: '2 days ago', status: 'processing' },
-    { action: 'Payment received', entity: 'Invoice #INV-001', time: '3 days ago', status: 'completed' },
-  ];
-
-  const companyProgress = [
-    { name: 'TechStart LLC', country: 'USA', progress: 75, status: 'In Progress' },
-    { name: 'GlobalTech Ltd', country: 'UK', progress: 100, status: 'Completed' },
+    { title: 'Companies', value: companies.length.toString(), icon: Building2, color: 'text-primary' },
+    { title: 'Active Services', value: services.filter(s => s.status === 'active').length.toString(), icon: ShoppingCart, color: 'text-green-500' },
+    { title: 'Documents', value: documents.length.toString(), icon: FileText, color: 'text-blue-500' },
+    { title: 'Pending Payments', value: `$${pendingPayments}`, icon: CreditCard, color: 'text-orange-500' },
   ];
 
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
         return <CheckCircle2 className="h-4 w-4 text-green-500" />;
+      case 'in_progress':
       case 'processing':
         return <Clock className="h-4 w-4 text-blue-500" />;
       case 'pending':
+      case 'submitted':
+      case 'draft':
         return <AlertCircle className="h-4 w-4 text-orange-500" />;
       default:
         return null;
     }
+  };
+
+  const getCompanyProgress = (status: string | null) => {
+    const progressMap: Record<string, number> = {
+      draft: 20,
+      submitted: 40,
+      in_progress: 60,
+      pending_documents: 80,
+      completed: 100,
+      rejected: 0,
+    };
+    return progressMap[status || 'draft'] || 0;
   };
 
   return (
@@ -101,19 +173,23 @@ const DashboardHome = () => {
             <CardDescription>Track your company formations</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {companyProgress.length > 0 ? (
-              companyProgress.map((company, index) => (
-                <div key={index} className="space-y-2">
+            {companiesLoading ? (
+              <div className="flex items-center justify-center py-8">
+                <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+              </div>
+            ) : companies.length > 0 ? (
+              companies.slice(0, 3).map((company) => (
+                <div key={company.id} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-medium">{company.name}</p>
-                      <p className="text-sm text-muted-foreground">{company.country}</p>
+                      <p className="font-medium">{company.company_name}</p>
+                      <p className="text-sm text-muted-foreground">{company.jurisdiction}</p>
                     </div>
-                    <Badge variant={company.progress === 100 ? 'default' : 'secondary'}>
-                      {company.status}
+                    <Badge variant={company.formation_status === 'completed' ? 'default' : 'secondary'}>
+                      {company.formation_status?.replace('_', ' ') || 'Draft'}
                     </Badge>
                   </div>
-                  <Progress value={company.progress} className="h-2" />
+                  <Progress value={getCompanyProgress(company.formation_status)} className="h-2" />
                 </div>
               ))
             ) : (
@@ -128,24 +204,28 @@ const DashboardHome = () => {
           </CardContent>
         </Card>
 
-        {/* Recent Activity */}
+        {/* Recent Orders */}
         <Card>
           <CardHeader>
-            <CardTitle>Recent Activity</CardTitle>
-            <CardDescription>Your latest actions and updates</CardDescription>
+            <CardTitle>Recent Orders</CardTitle>
+            <CardDescription>Your latest orders and updates</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentActivity.map((activity, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  {getStatusIcon(activity.status)}
-                  <div className="flex-1 space-y-1">
-                    <p className="text-sm font-medium leading-none">{activity.action}</p>
-                    <p className="text-sm text-muted-foreground">{activity.entity}</p>
+              {orders.length > 0 ? (
+                orders.slice(0, 4).map((order) => (
+                  <div key={order.id} className="flex items-start gap-3">
+                    {getStatusIcon(order.status || 'pending')}
+                    <div className="flex-1 space-y-1">
+                      <p className="text-sm font-medium leading-none">{order.order_type}</p>
+                      <p className="text-sm text-muted-foreground">${order.total_price}</p>
+                    </div>
+                    <Badge variant="outline">{order.status}</Badge>
                   </div>
-                  <p className="text-xs text-muted-foreground">{activity.time}</p>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-sm text-muted-foreground text-center py-4">No orders yet</p>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -173,7 +253,7 @@ const DashboardHome = () => {
             </Button>
             <Button variant="outline" asChild className="h-auto flex-col gap-2 py-4">
               <Link to="/dashboard/ai-assistant">
-                <ArrowRight className="h-6 w-6" />
+                <Bot className="h-6 w-6" />
                 <span>AI Assistant</span>
               </Link>
             </Button>
