@@ -305,6 +305,63 @@ export type Database = {
           },
         ]
       }
+      domain_favorites: {
+        Row: {
+          created_at: string
+          domain_name: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          domain_name: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          domain_name?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      domain_inquiries: {
+        Row: {
+          created_at: string
+          domain_name: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          domain_name: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          domain_name?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       orders: {
         Row: {
           company_id: string | null

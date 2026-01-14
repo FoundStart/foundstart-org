@@ -4,8 +4,9 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Globe, Sparkles, Shield, Zap, ArrowLeft, Server, Building2, Briefcase, Truck, MessageCircle, Mail, DollarSign } from 'lucide-react';
+import { ExternalLink, Globe, Sparkles, Shield, Zap, ArrowLeft, Server, Building2, Briefcase, Truck, MessageCircle, Mail, DollarSign, Heart, ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 
 interface Domain {
   name: string;
@@ -223,6 +224,7 @@ const Domains = () => {
   const [selectedCategory, setSelectedCategory] = React.useState('All');
   const [searchQuery, setSearchQuery] = React.useState('');
   const [priceFilter, setPriceFilter] = React.useState<'all' | 'premium' | 'standard'>('all');
+  const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
   
   const filteredDomains = domainsData.filter(d => {
     const matchesCategory = selectedCategory === 'All' || 
@@ -248,12 +250,23 @@ const Domains = () => {
         {/* Hero Section */}
         <section className="py-6 sm:py-10 lg:py-14 px-3 sm:px-6 lg:px-8">
           <div className="w-full max-w-7xl mx-auto">
-            {/* Back Button */}
-            <div className="mb-4 sm:mb-6">
+            {/* Back Button & Wishlist */}
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
               <Button variant="outline" asChild size="sm">
                 <Link to="/">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Home
+                </Link>
+              </Button>
+              <Button variant="outline" asChild size="sm" className="relative">
+                <Link to="/domain-wishlist">
+                  <Heart className={`w-4 h-4 mr-2 ${favorites.length > 0 ? 'fill-red-500 text-red-500' : ''}`} />
+                  Wishlist
+                  {favorites.length > 0 && (
+                    <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs">
+                      {favorites.length}
+                    </Badge>
+                  )}
                 </Link>
               </Button>
             </div>
@@ -370,9 +383,19 @@ const Domains = () => {
                         <CardTitle className="text-sm sm:text-base lg:text-lg font-bold truncate">
                           {domain.name}
                         </CardTitle>
-                        <Badge className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm font-bold shrink-0 ml-2">
-                          ${domain.price}
-                        </Badge>
+                        <div className="flex items-center gap-1.5 shrink-0 ml-2">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-7 w-7"
+                            onClick={() => toggleFavorite(domain.name)}
+                          >
+                            <Heart className={`w-4 h-4 ${isFavorite(domain.name) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
+                          </Button>
+                          <Badge className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm font-bold">
+                            ${domain.price}
+                          </Badge>
+                        </div>
                       </div>
                       <div className="flex items-center gap-1.5 flex-wrap">
                         <Badge 
@@ -400,22 +423,16 @@ const Domains = () => {
                     </Badge>
                     
                     <div className="flex flex-col gap-2">
-                      {domain.buyUrl && (
-                        <Button 
-                          asChild 
-                          className="w-full group-hover:bg-primary/90 text-xs sm:text-sm"
-                          size="sm"
-                        >
-                          <a 
-                            href={domain.buyUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
-                            View Details
-                            <ExternalLink className="w-3 h-3 ml-1.5" />
-                          </a>
-                        </Button>
-                      )}
+                      <Button 
+                        asChild 
+                        className="w-full group-hover:bg-primary/90 text-xs sm:text-sm"
+                        size="sm"
+                      >
+                        <Link to={`/domain-inquiry?domain=${domain.name}`}>
+                          <ShoppingCart className="w-3 h-3 mr-1.5" />
+                          Inquire Now
+                        </Link>
+                      </Button>
                       <div className="flex gap-2">
                         <Button 
                           asChild 
@@ -443,6 +460,18 @@ const Domains = () => {
                             <span className="hidden sm:inline">Email</span>
                           </a>
                         </Button>
+                        {domain.buyUrl && (
+                          <Button 
+                            asChild 
+                            variant="outline"
+                            className="flex-1 text-xs sm:text-sm"
+                            size="sm"
+                          >
+                            <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </CardContent>
