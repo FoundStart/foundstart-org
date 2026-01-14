@@ -36,6 +36,8 @@ import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import DigitalNomadVisas from "./pages/DigitalNomadVisas";
 import Domains from "./pages/Domains";
+import DomainInquiry from "./pages/DomainInquiry";
+import DomainWishlist from "./pages/DomainWishlist";
 import CustomerDashboard from "./pages/saas/CustomerDashboard";
 import AdminDashboard from "./pages/saas/AdminDashboard";
 import AIChatBot from "./components/AIChatBot";
@@ -93,6 +95,8 @@ function App() {
                   <Route path="/contact-us" element={<ContactUs />} />
                   <Route path="/digital-nomad-visas" element={<DigitalNomadVisas />} />
                   <Route path="/domains" element={<Domains />} />
+                  <Route path="/domain-inquiry" element={<DomainInquiry />} />
+                  <Route path="/domain-wishlist" element={<DomainWishlist />} />
                   <Route path="/dashboard/*" element={<CustomerDashboard />} />
                   <Route path="/admin/*" element={<AdminDashboard />} />
                   <Route path="*" element={<NotFound />} />
