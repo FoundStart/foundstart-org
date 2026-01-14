@@ -92,19 +92,19 @@
 
   /* Mobile-first responsive utilities */
   .mobile-container {
-    @apply px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto w-full;
+    @apply px-3 sm:px-4 md:px-6 lg:px-8 max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto w-full;
   }
 
   .mobile-spacing {
-    @apply py-4 sm:py-6 lg:py-8;
+    @apply py-3 sm:py-4 md:py-6 lg:py-8;
   }
 
   .mobile-text {
-    @apply text-xs sm:text-base leading-relaxed;
+    @apply text-xs sm:text-sm md:text-base leading-relaxed;
   }
 
   .mobile-heading {
-    @apply text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold;
+    @apply text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold;
   }
 
   /* Mobile viewport optimizations */
@@ -113,11 +113,16 @@
   }
 
   .mobile-content {
-    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
   }
 
   .mobile-section {
-    @apply py-4 sm:py-8 lg:py-12;
+    @apply py-3 sm:py-6 md:py-8 lg:py-12;
+  }
+
+  /* Full-width mobile container */
+  .full-width-mobile {
+    @apply w-full px-2 sm:px-4 md:px-6 lg:px-8;
   }
 
   /* Improved mobile interactions */
@@ -299,41 +304,85 @@
 .animate-stagger-5 { animation-delay: 0.5s; }
 
 /* Mobile responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   body {
-    padding-bottom: 80px; /* Space for bottom navigation */
+    padding-bottom: 70px; /* Space for bottom navigation */
   }
   
   .container {
-    @apply px-4 max-w-full;
+    @apply px-2 max-w-full;
   }
   
   /* Ensure text is readable on mobile */
   h1 {
-    @apply text-2xl sm:text-3xl;
+    @apply text-lg leading-tight;
   }
   
   h2 {
-    @apply text-xl sm:text-2xl;
+    @apply text-base leading-tight;
+  }
+  
+  h3 {
+    @apply text-sm;
+  }
+  
+  p {
+    @apply text-xs;
   }
   
   /* Mobile-friendly cards */
   .card {
-    @apply mx-2 sm:mx-0;
+    @apply mx-1;
   }
   
   /* Responsive spacing */
   .section-padding {
-    @apply py-10 sm:py-16 lg:py-20;
+    @apply py-6;
   }
   
   /* Mobile menu adjustments */
   .mobile-menu {
-    @apply max-h-[calc(100vh-140px)] overflow-y-auto;
+    @apply max-h-[calc(100vh-120px)] overflow-y-auto;
   }
   
   /* Touch-friendly elements */
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    padding-bottom: 80px;
+  }
+  
+  .container {
+    @apply px-3 max-w-full;
+  }
+  
+  h1 {
+    @apply text-xl;
+  }
+  
+  h2 {
+    @apply text-lg;
+  }
+  
+  .card {
+    @apply mx-1;
+  }
+  
+  .section-padding {
+    @apply py-8;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .section-padding {
+    @apply py-12 lg:py-16 xl:py-20;
   }
 }
