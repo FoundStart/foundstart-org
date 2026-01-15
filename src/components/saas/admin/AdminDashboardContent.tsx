@@ -7,6 +7,7 @@ import UserManagement from '@/components/admin/UserManagement';
 import CompanyManagement from '@/components/admin/CompanyManagement';
 import ServiceManagement from '@/components/admin/ServiceManagement';
 import OrderManagement from '@/components/admin/OrderManagement';
+import DomainInquiryManagement from '@/components/admin/DomainInquiryManagement';
 
 const PlaceholderPage = ({ title }: { title: string }) => (
   <div className="space-y-6">
@@ -29,7 +30,7 @@ const AdminDashboardContent = () => {
           <Route path="companies" element={<CompanyManagement />} />
           <Route path="services" element={<ServiceManagement />} />
           <Route path="orders" element={<OrderManagement />} />
-          <Route path="payments" element={<PlaceholderPage title="Payments" />} />
+          <Route path="domain-inquiries" element={<DomainInquiryManagement />} />
           <Route path="prompts" element={<PlaceholderPage title="AI Prompts" />} />
           <Route path="logs" element={<PlaceholderPage title="Activity Logs" />} />
         </Routes>

@@ -11,6 +11,7 @@ const menuItems = [
   { title: 'Companies', icon: Building2, href: '/admin/companies' },
   { title: 'Services', icon: ShoppingCart, href: '/admin/services' },
   { title: 'Orders', icon: FileText, href: '/admin/orders' },
+  { title: 'Domain Inquiries', icon: FileText, href: '/admin/domain-inquiries' },
   { title: 'Payments', icon: CreditCard, href: '/admin/payments' },
   { title: 'AI Prompts', icon: Bot, href: '/admin/prompts' },
   { title: 'Activity Logs', icon: Activity, href: '/admin/logs' },
