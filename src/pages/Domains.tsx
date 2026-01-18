@@ -243,12 +243,12 @@ const Domains = () => {
   const emailLink = "mailto:momo@foundstart.org";
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Header />
       
-      <main className="pt-20 pb-24 lg:pb-8">
+      <main className="pt-20 pb-24 lg:pb-8 w-full max-w-full overflow-x-hidden">
         {/* Hero Section */}
-        <section className="py-6 sm:py-10 lg:py-14 px-3 sm:px-6 lg:px-8">
+        <section className="py-4 sm:py-10 lg:py-14 px-2 sm:px-4 lg:px-8 w-full max-w-full">
           <div className="w-full max-w-7xl mx-auto">
             {/* Back Button & Wishlist */}
             <div className="flex items-center justify-between mb-4 sm:mb-6">

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { LayoutDashboard, Users, Building2, ShoppingCart, FileText, CreditCard, Bot, Activity, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, Building2, ShoppingCart, FileText, CreditCard, Bot, Activity, Settings, LogOut, Globe, BarChart3 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Button } from '@/components/ui/button';
+import NotificationBell from '@/components/notifications/NotificationBell';
 
 const menuItems = [
   { title: 'Overview', icon: LayoutDashboard, href: '/admin' },
@@ -11,7 +12,8 @@ const menuItems = [
   { title: 'Companies', icon: Building2, href: '/admin/companies' },
   { title: 'Services', icon: ShoppingCart, href: '/admin/services' },
   { title: 'Orders', icon: FileText, href: '/admin/orders' },
-  { title: 'Domain Inquiries', icon: FileText, href: '/admin/domain-inquiries' },
+  { title: 'Domain Inquiries', icon: Globe, href: '/admin/domain-inquiries' },
+  { title: 'Domain Analytics', icon: BarChart3, href: '/admin/domain-analytics' },
   { title: 'Payments', icon: CreditCard, href: '/admin/payments' },
   { title: 'AI Prompts', icon: Bot, href: '/admin/prompts' },
   { title: 'Activity Logs', icon: Activity, href: '/admin/logs' },
@@ -24,10 +26,13 @@ const AdminSidebar = () => {
   return (
     <Sidebar className="border-r border-border">
       <SidebarHeader className="border-b border-border p-4">
-        <Link to="/admin" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-destructive text-destructive-foreground font-bold">A</div>
-          <span className="text-lg font-semibold">Admin Panel</span>
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link to="/admin" className="flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-destructive text-destructive-foreground font-bold">A</div>
+            <span className="text-lg font-semibold">Admin Panel</span>
+          </Link>
+          <NotificationBell />
+        </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

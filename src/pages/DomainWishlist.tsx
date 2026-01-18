@@ -31,10 +31,10 @@ const DomainWishlist = () => {
 
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
         <Header />
-        <main className="flex-1 pt-24 pb-12">
-          <div className="container mx-auto px-4 text-center">
+        <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+          <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto text-center">
             <div className="animate-pulse">Loading...</div>
           </div>
         </main>
@@ -45,10 +45,10 @@ const DomainWishlist = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
         <Header />
-        <main className="flex-1 pt-24 pb-12">
-          <div className="container mx-auto px-4 max-w-2xl">
+        <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+          <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto md:max-w-2xl">
             <Card className="text-center">
               <CardContent className="pt-12 pb-8">
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -79,11 +79,11 @@ const DomainWishlist = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
       <Header />
-      <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <Link 
+      <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+        <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto">
+          <Link
             to="/domains" 
             className="inline-flex items-center text-primary hover:underline mb-6"
           >
@@ -122,7 +122,7 @@ const DomainWishlist = () => {
               </CardContent>
             </Card>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
               {favoriteDomains.map((domain) => (
                 <Card key={domain.name} className="group hover:shadow-lg transition-all duration-300">
                   <CardHeader className="pb-3">

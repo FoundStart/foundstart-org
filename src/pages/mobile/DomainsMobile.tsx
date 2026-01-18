@@ -73,7 +73,7 @@ const DomainsMobile = () => {
 
   return (
     <MobileLayout>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full w-full max-w-full overflow-x-hidden">
         {/* Sticky Search Header */}
         <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-lg border-b border-border px-4 py-3 space-y-3">
           <div className="flex items-center gap-2">
@@ -192,8 +192,8 @@ const DomainsMobile = () => {
         </div>
 
         {/* Results */}
-        <div className="flex-1 p-4 space-y-3">
-          <div className="flex items-center justify-between">
+        <div className="flex-1 px-2 py-3 space-y-3 w-full max-w-full overflow-x-hidden">
+          <div className="flex items-center justify-between px-1">
             <span className="text-sm text-muted-foreground">
               {filteredDomains.length} domain{filteredDomains.length !== 1 ? 's' : ''}
             </span>
