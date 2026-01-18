@@ -71,10 +71,10 @@ const DomainInquiry = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
         <Header />
-        <main className="flex-1 pt-24 pb-12">
-          <div className="container mx-auto px-4 max-w-2xl">
+        <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+          <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto md:max-w-2xl">
             <Card className="text-center">
               <CardContent className="pt-12 pb-8">
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -109,11 +109,11 @@ const DomainInquiry = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
       <Header />
-      <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <Link 
+      <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+        <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto">
+          <Link
             to="/domains" 
             className="inline-flex items-center text-primary hover:underline mb-6"
           >
@@ -121,7 +121,7 @@ const DomainInquiry = () => {
             Back to Domains
           </Link>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card>
