@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CheckCircle, AlertTriangle, FileText, Users, Scale, Building, ExternalLink } from 'lucide-react';
 import { egyptFormationTypes, egyptLegalFramework, egyptFormationServices } from '@/data/egyptFormationData';
 import { Link } from 'react-router-dom';
+import EgyptPricingSection from './EgyptPricingSection';
 
 const EgyptFormationGuide = () => {
   const [selectedType, setSelectedType] = useState(egyptFormationTypes[0]);
@@ -236,6 +237,9 @@ const EgyptFormationGuide = () => {
           </Card>
         </TabsContent>
       </Tabs>
+
+      {/* Egypt Pricing Section */}
+      <EgyptPricingSection />
 
       {/* CTA Section */}
       <Card className="glass-card bg-gradient-to-r from-primary/10 to-purple-500/10">

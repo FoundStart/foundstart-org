@@ -5,319 +5,117 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { blogPosts, categories } from '@/data/blogPostsData';
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      id: 0,
-      title: "Premium Domains for Sale – Brand-Ready, Short & Scalable",
-      description: "Curated portfolio of 50+ premium, brandable domains perfect for startups, SaaS platforms, fintech, e-commerce, AI projects, crypto, and global brands.",
-      category: "Domains",
-      author: "FoundStart Team",
-      date: "Jan 10, 2025",
-      readTime: "5 min read",
-      featured: true,
-      slug: "premium-domains-for-sale"
-    },
-    {
-      id: 1,
-      title: "Complete Guide to LLC Formation in 2024",
-      description: "Everything you need to know about forming an LLC, from choosing a state to filing paperwork and ongoing compliance requirements.",
-      category: "Business Formation",
-      author: "MoMo Sa",
-      date: "Dec 15, 2024",
-      readTime: "8 min read",
-      slug: "llc-formation-guide"
-    },
-    {
-      id: 2,
-      title: "UK vs US Company Formation: Which is Right for You?",
-      description: "Compare the benefits, costs, and requirements of forming a company in the UK versus the United States.",
-      category: "International Business",
-      author: "Sarah Johnson",
-      date: "Dec 12, 2024",
-      readTime: "6 min read",
-      slug: "uk-vs-us-company-formation"
-    },
-    {
-      id: 3,
-      title: "Banking Solutions for New Businesses: Mercury vs Traditional Banks",
-      description: "Explore the best banking options for startups, including digital banks like Mercury and traditional banking solutions.",
-      category: "Banking",
-      author: "David Chen",
-      date: "Dec 10, 2024",
-      readTime: "7 min read",
-      slug: "banking-solutions-mercury-vs-traditional"
-    },
-    {
-      id: 4,
-      title: "EIN Application Process: Step-by-Step Guide",
-      description: "Learn how to obtain your Employer Identification Number (EIN) quickly and efficiently for your new business.",
-      category: "Tax & Compliance",
-      author: "Lisa Rodriguez",
-      date: "Dec 8, 2024",
-      readTime: "5 min read",
-      slug: "ein-application-guide"
-    },
-    {
-      id: 5,
-      title: "Delaware vs Wyoming: Best States for LLC Formation",
-      description: "Compare the top states for LLC formation, including tax benefits, privacy protections, and business-friendly laws.",
-      category: "Business Formation",
-      author: "Michael Turner",
-      date: "Dec 5, 2024",
-      readTime: "9 min read",
-      slug: "delaware-vs-wyoming-llc"
-    },
-    {
-      id: 6,
-      title: "Crypto Payment Integration for Small Businesses",
-      description: "How to accept cryptocurrency payments in your business and the legal considerations you need to know.",
-      category: "Payments",
-      author: "Alex Kim",
-      date: "Dec 3, 2024",
-      readTime: "6 min read",
-      slug: "crypto-payment-integration"
-    },
-    {
-      id: 7,
-      title: "Virtual Cards for Business: Benefits and Best Practices",
-      description: "Discover how virtual payment cards can streamline your business expenses and improve security.",
-      category: "Financial Tools",
-      author: "Emma Wilson",
-      date: "Dec 1, 2024",
-      readTime: "4 min read",
-      slug: "virtual-cards-for-business"
-    },
-    {
-      id: 8,
-      title: "Canadian Corporation Setup: Complete Guide",
-      description: "Everything you need to know about incorporating in Canada, including federal vs provincial incorporation.",
-      category: "International Business",
-      author: "James Thompson",
-      date: "Nov 28, 2024",
-      readTime: "8 min read",
-      slug: "canadian-corporation-setup"
-    },
-    {
-      id: 9,
-      title: "The Complete Guide to Digital Nomad Visas and Company Formation",
-      description: "Everything you need to know about working remotely worldwide, visa requirements, and company structure.",
-      category: "Remote Business",
-      author: "FoundStart Team",
-      date: "Jan 15, 2025",
-      readTime: "12 min read",
-      slug: "digital-nomad-guide"
-    },
-    {
-      id: 10,
-      title: "Registered Agent Services: What You Need to Know",
-      description: "Understanding the role of registered agents and how to choose the right service for your business.",
-      category: "Business Formation",
-      author: "Robert Davis",
-      date: "Nov 22, 2024",
-      readTime: "6 min read",
-      slug: "registered-agent-services"
-    },
-    {
-      id: 11,
-      title: "AI-Powered Business Name Generation: The Future is Here",
-      description: "How artificial intelligence is transforming the way entrepreneurs find the perfect business name.",
-      category: "AI & Technology",
-      author: "MoMo Sa",
-      date: "Nov 20, 2024",
-      readTime: "7 min read",
-      slug: "ai-business-name-generation"
-    },
-    {
-      id: 12,
-      title: "International Banking for US LLCs",
-      description: "Navigate the complexities of opening international bank accounts for your US-based LLC.",
-      category: "Banking",
-      author: "Anna Foster",
-      date: "Nov 18, 2024",
-      readTime: "9 min read",
-      slug: "international-banking-us-llc"
-    },
-    {
-      id: 13,
-      title: "Stripe vs PayPal: Which Payment Processor is Best?",
-      description: "A comprehensive comparison of the two leading payment processors for online businesses.",
-      category: "Payments",
-      author: "Chris Lee",
-      date: "Nov 15, 2024",
-      readTime: "8 min read",
-      slug: "stripe-vs-paypal"
-    },
-    {
-      id: 14,
-      title: "Operating Agreements: Essential Documents for LLCs",
-      description: "Why every LLC needs an operating agreement and what should be included in this crucial document.",
-      category: "Legal",
-      author: "Jennifer Adams",
-      date: "Nov 12, 2024",
-      readTime: "6 min read",
-      slug: "llc-operating-agreements"
-    },
-    {
-      id: 15,
-      title: "Business Formation in Dubai: Complete Guide",
-      description: "Explore the opportunities and requirements for setting up a business in Dubai's thriving economy.",
-      category: "International Business",
-      author: "Ahmed Hassan",
-      date: "Nov 10, 2024",
-      readTime: "10 min read",
-      slug: "dubai-business-formation"
-    },
-    {
-      id: 16,
-      title: "Gift Cards as Business Revenue: Legal and Tax Implications",
-      description: "Understanding how gift card sales affect your business finances and tax obligations.",
-      category: "Tax & Compliance",
-      author: "Rachel Green",
-      date: "Nov 8, 2024",
-      readTime: "5 min read",
-      slug: "gift-cards-business-revenue"
-    },
-    {
-      id: 17,
-      title: "Saudi Arabia Business Formation: New Opportunities",
-      description: "How Vision 2030 is creating new opportunities for international businesses in Saudi Arabia.",
-      category: "International Business",
-      author: "Omar Al-Rashid",
-      date: "Nov 5, 2024",
-      readTime: "7 min read",
-      slug: "saudi-arabia-business-formation"
-    },
-    {
-      id: 18,
-      title: "Digital Nomad Business Setup: Complete Guide",
-      description: "How to structure your business as a digital nomad while maintaining compliance across jurisdictions.",
-      category: "Remote Business",
-      author: "Elena Kowalski",
-      date: "Nov 3, 2024",
-      readTime: "8 min read",
-      slug: "digital-nomad-business-setup"
-    },
-    {
-      id: 19,
-      title: "Annual Compliance Requirements for US Companies",
-      description: "Stay compliant with federal and state requirements through ongoing annual filings and obligations.",
-      category: "Tax & Compliance",
-      author: "Mark Williams",
-      date: "Nov 1, 2024",
-      readTime: "6 min read",
-      slug: "us-annual-compliance"
-    },
-    {
-      id: 20,
-      title: "The Future of Business Formation: AI and Automation",
-      description: "How artificial intelligence and automation are transforming the business formation landscape.",
-      category: "AI & Technology",
-      author: "MoMo Sa",
-      date: "Oct 30, 2024",
-      readTime: "9 min read",
-      slug: "future-business-formation-ai"
-    }
-  ];
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Business Formation", "International Business", "Banking", "Payments", "AI & Technology", "Tax & Compliance"];
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+
+  const featuredPosts = filteredPosts.filter(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Header />
       
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center space-y-4 mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold gradient-text">FoundStart Blog</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Insights, guides, and expert advice on business formation, international expansion, 
-            and the latest in fintech innovation.
-          </p>
-        </div>
+      <div className="w-full max-w-full px-4 sm:px-6 lg:px-8 py-16">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center space-y-4 mb-12">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">FoundStart Blog</h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Insights, guides, and expert advice on agency formation, business setup, 
+              and starting your company in the USA & Europe.
+            </p>
+          </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
-            <Badge 
-              key={category} 
-              variant="secondary" 
-              className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              {category}
-            </Badge>
-          ))}
-        </div>
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {categories.map((category) => (
+              <Badge 
+                key={category} 
+                variant={selectedCategory === category ? "default" : "secondary"}
+                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-3 py-1"
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </Badge>
+            ))}
+          </div>
 
-        {/* Featured Post */}
-        {blogPosts.filter(post => post.featured).map((post) => (
-          <Card key={post.id} className="mb-12 overflow-hidden border-2 border-primary/20">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-primary/10 to-purple-600/10 p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <Badge className="mb-4">Featured Post</Badge>
-                  <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-                  <p className="text-muted-foreground">{post.description}</p>
+          {/* Featured Post */}
+          {featuredPosts.map((post) => (
+            <Card key={post.id} className="mb-12 overflow-hidden border-2 border-primary/20">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-primary/10 to-purple-600/10 p-6 md:p-8 flex items-center justify-center">
+                  <div className="text-center">
+                    <Badge className="mb-4">Featured Post</Badge>
+                    <h2 className="text-xl md:text-2xl font-bold mb-2">{post.title}</h2>
+                    <p className="text-muted-foreground text-sm md:text-base">{post.description}</p>
+                  </div>
                 </div>
+                <CardContent className="p-6 md:p-8">
+                  <div className="flex flex-wrap items-center gap-4 mb-4">
+                    <Badge variant="secondary">{post.category}</Badge>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <User className="w-4 h-4 mr-1" />
+                      {post.author}
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {post.date}
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-6">{post.description}</p>
+                  <Link to={`/blog/${post.slug}`}>
+                    <Button className="group">
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </CardContent>
               </div>
-              <CardContent className="p-8">
-                <div className="flex flex-wrap items-center gap-4 mb-4">
-                  <Badge variant="secondary">{post.category}</Badge>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <User className="w-4 h-4 mr-1" />
-                    {post.author}
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {post.date}
-                  </div>
-                </div>
-                <p className="text-muted-foreground mb-6">{post.description}</p>
-                <Link to={`/blog/${post.slug}`}>
-                  <Button className="group">
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </div>
-          </Card>
-        ))}
-
-        {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.filter(post => !post.featured).map((post) => (
-            <Card key={post.id} className="group hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <Badge variant="secondary">{post.category}</Badge>
-                  <span className="text-sm text-muted-foreground">{post.readTime}</span>
-                </div>
-                <CardTitle className="group-hover:text-primary transition-colors">
-                  {post.title}
-                </CardTitle>
-                <CardDescription>{post.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <User className="w-4 h-4 mr-1" />
-                    {post.author}
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {post.date}
-                  </div>
-                </div>
-                <Link to={`/blog/${post.slug}`}>
-                  <Button variant="ghost" className="w-full mt-4 group">
-                    Read Article
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </CardContent>
             </Card>
           ))}
+
+          {/* Blog Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {regularPosts.map((post) => (
+              <Card key={post.id} className="group hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary">{post.category}</Badge>
+                    <span className="text-xs md:text-sm text-muted-foreground">{post.readTime}</span>
+                  </div>
+                  <CardTitle className="text-base md:text-lg group-hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </CardTitle>
+                  <CardDescription className="line-clamp-2">{post.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between text-xs md:text-sm">
+                    <div className="flex items-center text-muted-foreground">
+                      <User className="w-4 h-4 mr-1" />
+                      {post.author}
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {post.date}
+                    </div>
+                  </div>
+                  <Link to={`/blog/${post.slug}`}>
+                    <Button variant="ghost" className="w-full mt-4 group">
+                      Read Article
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
 

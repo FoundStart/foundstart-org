@@ -104,6 +104,109 @@ export const egyptFormationTypes = [
   }
 ];
 
+export const egyptCompanyPackages = [
+  {
+    id: 'export-company',
+    name: 'Export Company',
+    arabicName: 'شركة التصدير',
+    price: 16000,
+    currency: 'EGP',
+    description: 'Free permanent export card',
+    arabicDescription: 'بطاقة تصديرية دائمة مجانًا',
+    features: ['Company Formation', 'Commercial Registration', 'Tax Registration', 'Export Card']
+  },
+  {
+    id: 'contracting-supply',
+    name: 'Contracting & Supply Company',
+    arabicName: 'شركة المقاولات و التوريدات',
+    price: 25000,
+    currency: 'EGP',
+    description: 'Insurance file + Construction Federation registration',
+    arabicDescription: 'فتح ملف تاميني + التسجيل في اتحاد التشييد و البناء',
+    features: ['Company Formation', 'Insurance File', 'Federation Registration', 'Commercial Registration']
+  },
+  {
+    id: 'trade-manufacturing',
+    name: 'Trade & Manufacturing Company',
+    arabicName: 'شركة التجاره و التصنيع',
+    price: 15000,
+    currency: 'EGP',
+    description: 'Factory license assistance',
+    arabicDescription: 'مساعدة في حصول على ترخيص المصنع',
+    features: ['Company Formation', 'Factory License Support', 'Commercial Registration', 'Tax Registration']
+  },
+  {
+    id: 'real-estate-marketing',
+    name: 'Real Estate Marketing Company',
+    arabicName: 'شركة تسويق عقاري',
+    price: 17000,
+    currency: 'EGP',
+    description: 'Export/Import subscription',
+    arabicDescription: 'اشتراك في الصادرات و الواردات',
+    features: ['Company Formation', 'Export/Import Subscription', 'Commercial Registration', 'Tax Registration']
+  },
+  {
+    id: 'agricultural-investment',
+    name: 'Agricultural & Livestock Investment',
+    arabicName: 'شركة استثمار زراعي و داجني و حيواني',
+    price: 20500,
+    currency: 'EGP',
+    description: 'Activity certificate',
+    arabicDescription: 'شهادة مزولة نشاط',
+    features: ['Company Formation', 'Activity Certificate', 'Commercial Registration', 'Tax Registration']
+  },
+  {
+    id: 'tourism-investment',
+    name: 'Tourism Investment & Marketing',
+    arabicName: 'شركة استثمار و تسويق السياحي',
+    price: 12500,
+    currency: 'EGP',
+    description: 'Activity certificate',
+    arabicDescription: 'شهادة مزاولة',
+    features: ['Company Formation', 'Tourism License', 'Commercial Registration', 'Tax Registration']
+  },
+  {
+    id: 'import-company',
+    name: 'Import Company',
+    arabicName: 'شركة الاستيراد',
+    price: 55500,
+    currency: 'EGP',
+    description: 'Import card facilitation',
+    arabicDescription: 'بنقدم لك تسهيلات البطاقة الاستيرادية',
+    features: ['Company Formation', 'Import Card', 'Commercial Registration', 'Tax Registration', 'Bank Account Support']
+  },
+  {
+    id: 'labor-supply',
+    name: 'Labor Supply Company',
+    arabicName: 'شركة الحاق عماله',
+    price: 51000,
+    currency: 'EGP',
+    description: 'Domestic & International + Ministry of Manpower License',
+    arabicDescription: 'بالداخل و الخارج + ترخيص من القوى العاملة',
+    features: ['Company Formation', 'Manpower License', 'Commercial Registration', 'Tax Registration']
+  },
+  {
+    id: 'digital-marketing',
+    name: 'Digital Marketing & Advertising',
+    arabicName: 'شركة تسويق الكتروني و دعاية و اعلان',
+    price: 16500,
+    currency: 'EGP',
+    description: 'Export/Import subscription',
+    arabicDescription: 'أشتراك في الصادرات و الواردات',
+    features: ['Company Formation', 'Export/Import Subscription', 'Commercial Registration', 'Tax Registration']
+  },
+  {
+    id: 'software-company',
+    name: 'Software Company',
+    arabicName: 'شركة برمجة',
+    price: 14500,
+    currency: 'EGP',
+    description: 'Ministry of Communications License',
+    arabicDescription: 'ترخيص وزارة التصالات',
+    features: ['Company Formation', 'Communications License', 'Commercial Registration', 'Tax Registration']
+  }
+];
+
 export const egyptLegalFramework = {
   primaryLaws: [
     'Investment Law No. 72 of 2017',
