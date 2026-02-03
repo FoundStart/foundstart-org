@@ -42,6 +42,7 @@ import DomainWishlist from "./pages/DomainWishlist";
 import BulkDomainInquiry from "./pages/BulkDomainInquiry";
 import CustomerDashboard from "./pages/saas/CustomerDashboard";
 import AdminDashboard from "./pages/saas/AdminDashboard";
+import PricingCalculator from "./pages/PricingCalculator";
 import AIChatBot from "./components/AIChatBot";
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 import "./App.css";
@@ -76,6 +77,7 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/pricing" element={<Pricing />} />
+                  <Route path="/pricing-calculator" element={<PricingCalculator />} />
                   <Route path="/auth" element={<Auth />} />
                   <Route path="/digital-partners" element={<DigitalPartners />} />
                   <Route path="/freelancer-partners" element={<FreelancerPartners />} />
