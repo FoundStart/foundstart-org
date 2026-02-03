@@ -28,6 +28,7 @@ const Header = () => {
     { name: t.digitalPartners, href: '/digital-partners' },
     { name: "Freelancer", href: '/freelancer-partners' },
     { name: "Services", href: '/services' },
+    { name: "Pricing", href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },
   ];
