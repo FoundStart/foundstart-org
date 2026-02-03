@@ -68,10 +68,18 @@ const Hero = () => {
                   <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 group-hover:-translate-x-1' : 'ml-2 group-hover:translate-x-1'} transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
               </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 group" asChild>
+                <Link to="/pricing-calculator">
+                  {isRTL ? 'حاسبة التكاليف' : 'Calculate Pricing'}
+                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 group-hover:-translate-x-1' : 'ml-2 group-hover:translate-x-1'} transition-transform ${isRTL ? 'rotate-180' : ''}`} />
+                </Link>
+              </Button>
+            </div>
+            <div className={`flex justify-center sm:justify-start ${isRTL ? 'sm:justify-end' : ''}`}>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="text-lg px-8 py-6 group"
+                variant="ghost" 
+                className="text-lg group"
                 onClick={handleWatchDemo}
               >
                 <Youtube className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'} group-hover:scale-110 transition-transform`} />
