@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import DashboardHome from './dashboard/DashboardHome';
+import MyCompanies from './dashboard/MyCompanies';
+import MyServicesPage from './dashboard/MyServicesPage';
 import CompanyFormation from './dashboard/CompanyFormation';
 import ServicesMarketplace from './dashboard/ServicesMarketplace';
 import AIAssistant from './dashboard/AIAssistant';
@@ -10,6 +12,7 @@ import BillingPayments from './dashboard/BillingPayments';
 import AffiliatesDashboard from './dashboard/AffiliatesDashboard';
 import SupportCenter from './dashboard/SupportCenter';
 import AccountSettings from './dashboard/AccountSettings';
+import WalletDashboard from '@/components/wallet/WalletDashboard';
 
 const CustomerDashboardContent = () => {
   return (
@@ -27,10 +30,13 @@ const CustomerDashboardContent = () => {
       <div className="flex-1 p-4 lg:p-6">
         <Routes>
           <Route index element={<DashboardHome />} />
+          <Route path="companies" element={<MyCompanies />} />
+          <Route path="my-services" element={<MyServicesPage />} />
           <Route path="formation/*" element={<CompanyFormation />} />
           <Route path="services/*" element={<ServicesMarketplace />} />
           <Route path="ai-assistant" element={<AIAssistant />} />
           <Route path="documents" element={<DocumentsCenter />} />
+          <Route path="wallet" element={<WalletDashboard />} />
           <Route path="billing" element={<BillingPayments />} />
           <Route path="affiliates" element={<AffiliatesDashboard />} />
           <Route path="support/*" element={<SupportCenter />} />
