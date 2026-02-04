@@ -23,24 +23,46 @@ import {
   Settings,
   LogOut,
   Users,
+  Globe,
+  Wallet,
+  Package,
+  Briefcase,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Button } from '@/components/ui/button';
 
-const menuItems = [
+const mainMenuItems = [
   { title: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
-  { title: 'Company Formation', icon: Building2, href: '/dashboard/formation' },
-  { title: 'Services', icon: ShoppingCart, href: '/dashboard/services' },
+  { title: 'My Companies', icon: Building2, href: '/dashboard/companies' },
+  { title: 'My Services', icon: Package, href: '/dashboard/my-services' },
+  { title: 'New Formation', icon: Briefcase, href: '/dashboard/formation' },
+];
+
+const servicesMenuItems = [
+  { title: 'Services Marketplace', icon: ShoppingCart, href: '/dashboard/services' },
+  { title: 'Domain Search', icon: Globe, href: '/domains' },
   { title: 'AI Assistant', icon: Bot, href: '/dashboard/ai-assistant' },
+];
+
+const accountMenuItems = [
   { title: 'Documents', icon: FileText, href: '/dashboard/documents' },
+  { title: 'Wallet', icon: Wallet, href: '/dashboard/wallet' },
   { title: 'Billing', icon: CreditCard, href: '/dashboard/billing' },
   { title: 'Affiliates', icon: Users, href: '/dashboard/affiliates' },
   { title: 'Support', icon: HelpCircle, href: '/dashboard/support' },
+  { title: 'Settings', icon: Settings, href: '/dashboard/settings' },
 ];
 
 const CustomerSidebar = () => {
   const location = useLocation();
   const { signOut, user } = useAuth();
+
+  const isActive = (href: string) => {
+    if (href === '/dashboard') {
+      return location.pathname === '/dashboard';
+    }
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <Sidebar className="border-r border-border">
@@ -58,12 +80,27 @@ const CustomerSidebar = () => {
           <SidebarGroupLabel>Main Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
+              {mainMenuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={location.pathname === item.href}
-                  >
+                  <SidebarMenuButton asChild isActive={isActive(item.href)}>
+                    <Link to={item.href}>
+                      <item.icon className="h-4 w-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Services</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {servicesMenuItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild isActive={isActive(item.href)}>
                     <Link to={item.href}>
                       <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>
@@ -79,17 +116,16 @@ const CustomerSidebar = () => {
           <SidebarGroupLabel>Account</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  isActive={location.pathname === '/dashboard/settings'}
-                >
-                  <Link to="/dashboard/settings">
-                    <Settings className="h-4 w-4" />
-                    <span>Settings</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              {accountMenuItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild isActive={isActive(item.href)}>
+                    <Link to={item.href}>
+                      <item.icon className="h-4 w-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
