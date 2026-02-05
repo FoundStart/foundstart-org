@@ -10,6 +10,7 @@ import { TranslationProvider } from "@/contexts/TranslationContext";
 
 import Index from "./pages/Index";
 import Countries from "./pages/Countries";
+ import CountryPage from "./pages/CountryPage";
 import Services from "./pages/Services";
 import Partners from "./pages/Partners";
 import Auth from "./pages/Auth";
@@ -74,6 +75,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
+                   <Route path="/country/:countryId" element={<CountryPage />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/pricing" element={<Pricing />} />
