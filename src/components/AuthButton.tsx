@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthProvider';
-import { Link } from 'react-router-dom';
-import { User, LogOut } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { User, LogOut, LayoutDashboard } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +14,12 @@ import {
 
 const AuthButton = () => {
   const { user, signOut, loading } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
+  };
 
   if (loading) {
     return <div className="h-9 w-20 bg-muted animate-pulse rounded" />;
@@ -34,7 +40,13 @@ const AuthButton = () => {
             <span>{user.email}</span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={signOut}>
+          <DropdownMenuItem asChild>
+            <Link to="/dashboard">
+              <LayoutDashboard className="mr-2 h-4 w-4" />
+              <span>Dashboard</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={handleSignOut}>
             <LogOut className="mr-2 h-4 w-4" />
             <span>Sign Out</span>
           </DropdownMenuItem>

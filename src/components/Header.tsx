@@ -1,12 +1,18 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import AuthButton from './AuthButton';
 import LanguageToggle from './LanguageToggle';
 import { useTranslation } from '@/contexts/TranslationContext';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,15 +28,18 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { name: t.countries, href: '/countries' },
-    { name: t.partners, href: '/partners' },
-    { name: "Domains", href: '/domains' },
-    { name: t.digitalPartners, href: '/digital-partners' },
-    { name: "Freelancer", href: '/freelancer-partners' },
+    { name: "Domains", href: '/domains', isDropdown: false },
     { name: "Services", href: '/services' },
     { name: "Pricing", href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },
+  ];
+
+  const partnersDropdownItems = [
+    { name: t.countries, href: '/countries' },
+    { name: t.partners, href: '/partners' },
+    { name: t.digitalPartners, href: '/digital-partners' },
+    { name: "Freelancer", href: '/freelancer-partners' },
   ];
 
   return (
@@ -50,6 +59,26 @@ const Header = () => {
             role="navigation"
             aria-label="Main navigation"
           >
+            {/* Partners Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap outline-none">
+                {t.partners}
+                <ChevronDown className="ml-1 h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                {partnersDropdownItems.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link
+                      to={item.href}
+                      className="w-full cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             {navigationItems.map((item, index) => (
               <Link
                 key={item.name}
@@ -90,6 +119,22 @@ const Header = () => {
           <div className="lg:hidden absolute left-0 right-0 top-full bg-background/95 backdrop-blur border-b shadow-lg" role="dialog" aria-modal="true" aria-label="Mobile menu">
             <div className={`max-w-7xl mx-auto px-3 py-4 ${isRTL ? 'text-right' : ''}`}>
               <nav className="space-y-1" role="navigation" aria-label="Mobile navigation">
+              {/* Mobile Partners Section */}
+              <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                {t.partners}
+              </div>
+              {partnersDropdownItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block px-6 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all duration-200 touch-manipulation"
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label={item.name}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="border-t border-border my-2" />
                 {navigationItems.map((item, index) => (
                   <Link
                     key={item.name}
