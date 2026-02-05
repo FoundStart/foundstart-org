@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
+import EntitySelector from '@/components/EntitySelector';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -140,6 +141,9 @@ const Index = () => {
       
       <main className="pb-20 md:pb-0 w-full max-w-full">
         <Hero />
+        
+        {/* Entity Selector */}
+        <EntitySelector />
         
         {/* Quick Stats */}
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-primary/5">

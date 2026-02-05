@@ -1,17 +1,18 @@
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Calculator, Globe, Building2, Package, ArrowRight, Sparkles, Check } from 'lucide-react';
+import { Calculator, Globe, Building2, Package, ArrowRight, Sparkles, Check, Lock } from 'lucide-react';
 import { pricingData, getCountryPricing, calculateTotal } from '@/data/pricingCalculatorData';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthProvider';
 
 const PricingCalculator: React.FC = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [selectedEntityType, setSelectedEntityType] = useState<string>('');
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
@@ -54,7 +55,28 @@ const PricingCalculator: React.FC = () => {
   };
 
   const handleGetStarted = () => {
-    navigate('/auth');
+    if (user) {
+      // Navigate to dashboard with selected options
+      navigate('/dashboard/formation', { 
+        state: { 
+          country: selectedCountry, 
+          entityType: selectedEntityType, 
+          addOns: selectedAddOns 
+        } 
+      });
+    } else {
+      // Navigate to auth with redirect
+      navigate('/auth', { 
+        state: { 
+          redirectTo: '/dashboard/formation',
+          formationData: {
+            country: selectedCountry, 
+            entityType: selectedEntityType, 
+            addOns: selectedAddOns 
+          }
+        } 
+      });
+    }
   };
 
   return (
@@ -281,9 +303,16 @@ const PricingCalculator: React.FC = () => {
                       size="lg"
                       onClick={handleGetStarted}
                     >
-                      Get Started
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      {user ? 'Continue to Dashboard' : 'Sign Up to Continue'}
+                      {user ? <ArrowRight className="ml-2 h-4 w-4" /> : <Lock className="ml-2 h-4 w-4" />}
                     </Button>
+                    
+                    {!user && (
+                      <p className="text-xs text-center text-muted-foreground mt-2">
+                        Already have an account?{' '}
+                        <Link to="/auth" className="text-primary hover:underline">Sign in</Link>
+                      </p>
+                    )}
                   </>
                 ) : (
                   <div className="text-center py-8 space-y-4">
