@@ -25,7 +25,7 @@ export const domainsData: Domain[] = [
   { id: 12, name: 'Buyill.com', hosting: 'Spaceship', category: 'E-Commerce & Marketplaces', registrationPrice: 11.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Buyill' },
   { id: 13, name: 'Caisho.com', hosting: 'UD', category: 'Startups, SaaS & Tech', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: '' },
   { id: 14, name: 'Cardido.com', hosting: 'UD', category: 'Fintech, Payments & Crypto', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cardido' },
-  { id: 15, name: 'CarDolla.com', hosting: 'Spaceship', category: 'Fintech, E-commerce, Automotive', registrationPrice: 11.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CarDolla' },
+  { id: 15, name: 'CarDolla.com', hosting: 'Spaceship', category: 'Fintech, E-commerce, Automotive', registrationPrice: 11.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://checkout.link.godaddy/cbe47da3-94d3-4f81-a530-d76635af7412' },
   { id: 16, name: 'Careeroh.com', hosting: 'Spaceship', category: 'Startups, SaaS & Tech', registrationPrice: 11.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Careeroh' },
   { id: 17, name: 'Cartdidi.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Cartdidi' },
   { id: 18, name: 'Carthot.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=carthot' },
@@ -166,7 +166,7 @@ export const domainsData: Domain[] = [
   { id: 151, name: 'YesShoot.com', hosting: 'UD', category: 'Sport', registrationPrice: 5.99, salePrice: 2500, businessType: 'Business', buyUrl: '' },
   { id: 152, name: 'ZadAfrica.com', hosting: 'UD', category: 'Startups, SaaS & Tech, Food', registrationPrice: 5.99, salePrice: 2500, businessType: 'Business', buyUrl: '' },
   
-  // Domains without sale price
+  // Contact for price domains (no sale price)
   { id: 153, name: 'Bestofmart.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
   { id: 154, name: 'Cloddi.com', hosting: 'UD', category: 'Startups, SaaS & Tech', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
   { id: 155, name: 'Domianity.com', hosting: 'UD', category: 'Startups, SaaS & Tech', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
@@ -185,19 +185,39 @@ export const domainsData: Domain[] = [
   { id: 168, name: 'Stremion.com', hosting: 'UD', category: 'Startups, SaaS & Stream, IPTV, TV', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
   { id: 169, name: 'Transationser.com', hosting: 'UD', category: 'Fintech, Payments & Crypto', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
   { id: 170, name: 'Uniqranker.com', hosting: 'UD', category: 'Startups, SaaS & Tech', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 171, name: 'paybrink.com', hosting: 'UD', category: 'Fintech, Payments & Crypto', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 172, name: 'rewardial.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 173, name: 'cartburn.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 174, name: 'syrri.com', hosting: 'UD', category: 'Startups, SaaS & Tech, Tool', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 175, name: 'voucherdeck.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 176, name: 'Mediadirect.uk', hosting: 'Spaceship', category: 'Startups, SaaS & Marketing', registrationPrice: 11.99, salePrice: null, businessType: '', buyUrl: '' },
 ];
 
 export const categories = [
   'All',
-  'Startups, SaaS & Tech',
-  'E-Commerce & Marketplaces',
   'Fintech, Payments & Crypto',
+  'E-Commerce & Marketplaces',
+  'Startups, SaaS & Tech',
   'Venture, Community & Brands',
-  'AI, Automation',
-  'Social Media',
   'Recruitments, Freelancer',
+  'AI & Automation',
+  'Food & Grocery',
+  'Automotive',
+  'Sport',
+  'Marketing',
 ];
 
-export const hostingProviders = ['All', 'UD', 'Spaceship', 'Godaddy', 'Hostinger', 'Namebright'];
+export const hostingProviders = [
+  'All',
+  'UD',
+  'Spaceship',
+  'Godaddy',
+  'Hostinger',
+  'Namebright',
+];
 
-export const businessTypes = ['All', 'Business', 'Domain'];
+export const businessTypes = [
+  'All',
+  'Domain',
+  'Business',
+];
