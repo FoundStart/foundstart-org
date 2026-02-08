@@ -56,7 +56,7 @@ const BusinessNameWidget = () => {
   };
 
   const openNamelizer = () => {
-    window.open('https://namelizer.netlify.app/', '_blank');
+    window.open('https://namelizer.com/', '_blank');
   };
 
   return (
