@@ -10,6 +10,15 @@ import { Label } from '@/components/ui/label';
 import { ArrowLeft, Send, Globe, MessageCircle, Mail, Phone, CheckCircle2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { z } from 'zod';
+
+const domainInquirySchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name too long').trim(),
+  email: z.string().email('Invalid email address').max(255, 'Email too long').trim(),
+  phone: z.string().max(20, 'Phone too long').optional().or(z.literal('')),
+  domain_name: z.string().min(2, 'Domain name too short').max(253, 'Domain name too long').trim(),
+  message: z.string().max(2000, 'Message must be under 2000 characters').optional().or(z.literal('')),
+});
 
 const DomainInquiry = () => {
   const [searchParams] = useSearchParams();
@@ -40,14 +49,16 @@ const DomainInquiry = () => {
 
     setIsSubmitting(true);
     try {
+      const validatedData = domainInquirySchema.parse(formData);
+      
       const { error } = await supabase
         .from('domain_inquiries')
         .insert({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || null,
-          domain_name: formData.domain_name,
-          message: formData.message || null
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          domain_name: validatedData.domain_name,
+          message: validatedData.message || null
         });
 
       if (error) throw error;
@@ -58,12 +69,13 @@ const DomainInquiry = () => {
         description: "We'll get back to you within 24 hours."
       });
     } catch (error: any) {
+      if (error instanceof z.ZodError) {
+        toast({ title: 'Invalid input', description: error.errors[0].message, variant: 'destructive' });
+        setIsSubmitting(false);
+        return;
+      }
       console.error('Error submitting inquiry:', error);
-      toast({
-        title: "Error",
-        description: error.message || "Failed to submit inquiry. Please try again.",
-        variant: "destructive"
-      });
+      toast({ title: "Error", description: error.message || "Failed to submit inquiry.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }

@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthProvider';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Eye, EyeOff } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { z } from 'zod';
@@ -242,6 +243,32 @@ const Auth = () => {
                     </p>
                   )}
                 </div>
+                
+                {!isSignUp && (
+                  <div className="flex justify-end mt-1">
+                    <Button
+                      type="button"
+                      variant="link"
+                      className="text-sm px-0 h-auto"
+                      onClick={async () => {
+                        if (!email) {
+                          toast({ title: 'Enter your email first', description: 'Please enter your email address above.', variant: 'destructive' });
+                          return;
+                        }
+                        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                          redirectTo: `${window.location.origin}/reset-password`
+                        });
+                        if (error) {
+                          toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                        } else {
+                          toast({ title: 'Check your email', description: 'Password reset link has been sent.' });
+                        }
+                      }}
+                    >
+                      Forgot Password?
+                    </Button>
+                  </div>
+                )}
                 
                 <Button 
                   type="submit" 

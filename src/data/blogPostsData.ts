@@ -25,6 +25,17 @@ export const blogPosts: BlogPost[] = [
     slug: "premium-domains-for-sale"
   },
   {
+    id: 24,
+    title: "180+ Premium Domains for Sale — Complete Portfolio with Backlinks",
+    description: "Browse our full collection of 180+ premium brandable domains for startups, SaaS, fintech, e-commerce, AI, and crypto. Every domain listed with category, hosting, and direct inquiry links.",
+    category: "Domains",
+    author: "FoundStart Team",
+    date: "Feb 10, 2026",
+    readTime: "15 min read",
+    featured: true,
+    slug: "premium-domains-showcase"
+  },
+  {
     id: 1,
     title: "How to Start a Marketing Agency in the USA with FoundStart",
     description: "Complete guide to establishing a marketing agency in the USA. Learn about LLC formation, tax requirements, and how FoundStart partners make it seamless.",

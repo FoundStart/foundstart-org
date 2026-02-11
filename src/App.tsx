@@ -10,7 +10,7 @@ import { TranslationProvider } from "@/contexts/TranslationContext";
 
 import Index from "./pages/Index";
 import Countries from "./pages/Countries";
- import CountryPage from "./pages/CountryPage";
+import CountryPage from "./pages/CountryPage";
 import Services from "./pages/Services";
 import Partners from "./pages/Partners";
 import Auth from "./pages/Auth";
@@ -21,6 +21,7 @@ import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import PremiumDomainsBlog from "./pages/blog/PremiumDomainsBlog";
+import PremiumDomainsShowcaseBlog from "./pages/blog/PremiumDomainsShowcaseBlog";
 import LLCFormationGuideBlog from "./pages/blog/LLCFormationGuideBlog";
 import UKvsUSFormationBlog from "./pages/blog/UKvsUSFormationBlog";
 import AgencyFormationBlog from "./pages/blog/AgencyFormationBlog";
@@ -44,6 +45,9 @@ import BulkDomainInquiry from "./pages/BulkDomainInquiry";
 import CustomerDashboard from "./pages/saas/CustomerDashboard";
 import AdminDashboard from "./pages/saas/AdminDashboard";
 import PricingCalculator from "./pages/PricingCalculator";
+import FAQ from "./pages/FAQ";
+import AllPartners from "./pages/AllPartners";
+import ResetPassword from "./pages/ResetPassword";
 import AIChatBot from "./components/AIChatBot";
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 import "./App.css";
@@ -75,18 +79,21 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
-                   <Route path="/country/:countryId" element={<CountryPage />} />
+                  <Route path="/country/:countryId" element={<CountryPage />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/partners" element={<Partners />} />
+                  <Route path="/all-partners" element={<AllPartners />} />
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/pricing-calculator" element={<PricingCalculator />} />
                   <Route path="/auth" element={<Auth />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
                   <Route path="/digital-partners" element={<DigitalPartners />} />
                   <Route path="/freelancer-partners" element={<FreelancerPartners />} />
                   <Route path="/sister-partners" element={<SisterPartners />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/digital-nomad-guide" element={<BlogPost />} />
                   <Route path="/blog/premium-domains-for-sale" element={<PremiumDomainsBlog />} />
+                  <Route path="/blog/premium-domains-showcase" element={<PremiumDomainsShowcaseBlog />} />
                   <Route path="/blog/llc-formation-guide" element={<LLCFormationGuideBlog />} />
                   <Route path="/blog/uk-vs-us-company-formation" element={<UKvsUSFormationBlog />} />
                   <Route path="/blog/:slug" element={<AgencyFormationBlog />} />
@@ -101,6 +108,7 @@ function App() {
                   <Route path="/cookie-policy" element={<CookiePolicy />} />
                   <Route path="/who-we-are" element={<WhoWeAre />} />
                   <Route path="/contact-us" element={<ContactUs />} />
+                  <Route path="/faq" element={<FAQ />} />
                   <Route path="/digital-nomad-visas" element={<DigitalNomadVisas />} />
                   <Route path="/domains" element={<Domains />} />
                   <Route path="/domain-inquiry" element={<DomainInquiry />} />
