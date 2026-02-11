@@ -123,26 +123,26 @@ const Hero = () => {
               </div>
             </div>
             
-            <div className="glass-card rounded-2xl p-6">
+            <Link to="/partners" className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer block">
               <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="text-3xl font-bold gradient-text">5-10 {isRTL ? 'دقائق' : 'minutes'}</div>
                 <div className="text-muted-foreground">{t.averageSetupTime}</div>
               </div>
-            </div>
+            </Link>
             
-            <div className="glass-card rounded-2xl p-6">
+            <Link to="/digital-partners" className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer block">
               <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="text-2xl font-bold gradient-text">370+</div>
                 <div className="text-muted-foreground">Trusted Partners</div>
               </div>
-            </div>
+            </Link>
             
-            <div className="glass-card rounded-2xl p-6">
+            <Link to="/countries" className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer block">
               <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="text-2xl font-bold gradient-text">9</div>
                 <div className="text-muted-foreground">Jurisdictions</div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
