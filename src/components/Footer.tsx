@@ -119,6 +119,9 @@ const Footer = () => {
       name: "Who We Are",
       href: "/who-we-are"
     }, {
+      name: "FAQ",
+      href: "/faq"
+    }, {
       name: "Privacy Policy",
       href: "/privacy-policy"
     }, {

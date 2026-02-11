@@ -7,7 +7,8 @@ import { useTranslation } from '@/contexts/TranslationContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Building2, Globe, Shield, CheckCircle, Star, Users, CreditCard, Mail, Server, Smartphone, Wifi, Gift, Search, Brain, Target, TrendingUp, Briefcase, FileText, Users2 } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ArrowRight, Building2, Globe, Shield, CheckCircle, Star, Users, CreditCard, Mail, Server, Smartphone, Wifi, Gift, Search, Brain, Target, TrendingUp, Briefcase, FileText, Users2, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -279,6 +280,40 @@ const Index = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Preview */}
+        <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-8">
+              <HelpCircle className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h2 className="text-2xl md:text-4xl font-bold mb-2">Frequently Asked Questions</h2>
+              <p className="text-muted-foreground">Quick answers to common questions</p>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="1">
+                <AccordionTrigger>How long does company formation take?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">Most formations complete in 5-10 minutes for filing. Full processing: USA (1-3 days), UK (24-48 hrs), Europe (1-4 weeks).</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="2">
+                <AccordionTrigger>Do I need to be a resident to form a company?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">No! Non-residents can form companies in most jurisdictions. We handle all paperwork remotely.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="3">
+                <AccordionTrigger>How many premium domains do you offer?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">180+ premium domains across Fintech, E-Commerce, SaaS, AI, and more. Prices from $59.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="4">
+                <AccordionTrigger>What payment methods do you accept?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">Credit/debit cards (Visa, Mastercard), bank transfers, and digital payment solutions.</AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <div className="text-center mt-6">
+              <Button variant="outline" asChild>
+                <Link to="/faq">View All FAQs <ArrowRight className="w-4 h-4 ml-2" /></Link>
+              </Button>
             </div>
           </div>
         </section>

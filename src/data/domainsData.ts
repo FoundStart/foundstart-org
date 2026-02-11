@@ -191,6 +191,10 @@ export const domainsData: Domain[] = [
   { id: 174, name: 'syrri.com', hosting: 'UD', category: 'Startups, SaaS & Tech, Tool', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
   { id: 175, name: 'voucherdeck.com', hosting: 'UD', category: 'E-Commerce & Marketplaces', registrationPrice: 5.99, salePrice: null, businessType: '', buyUrl: '' },
   { id: 176, name: 'Mediadirect.uk', hosting: 'Spaceship', category: 'Startups, SaaS & Marketing', registrationPrice: 11.99, salePrice: null, businessType: '', buyUrl: '' },
+  { id: 177, name: 'Ecanro.com', hosting: 'UD', category: 'E-Commerce & Marketplaces, SAAS', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Ecanro' },
+  { id: 178, name: 'Emotorsmarket.com', hosting: 'UD', category: 'Fintech, E-commerce, Automotive, SAAS', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Emotorsmarket' },
+  { id: 179, name: 'Ecardora.com', hosting: 'UD', category: 'E-Commerce & Marketplaces, SAAS', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Ecardora' },
+  { id: 180, name: 'Ecanio.com', hosting: 'UD', category: 'E-Commerce & Marketplaces, SAAS', registrationPrice: 5.99, salePrice: 59, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Ecanio' },
 ];
 
 export const categories = [

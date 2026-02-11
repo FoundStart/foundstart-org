@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 import AuthButton from './AuthButton';
 import LanguageToggle from './LanguageToggle';
@@ -17,6 +18,7 @@ import {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
   const { t, isRTL } = useTranslation();
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { name: "Domains", href: '/domains', isDropdown: false },
+    { name: "Domains", href: '/domains' },
     { name: "Services", href: '/services' },
     { name: "Pricing", href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
@@ -79,16 +81,24 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            {navigationItems.map((item, index) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                aria-label={item.name}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigationItems.map((item, index) => {
+              const isActive = item.name === "Domains" 
+                ? location.pathname.includes('/domain') 
+                : location.pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "text-xs xl:text-sm font-medium transition-colors duration-200 whitespace-nowrap",
+                    isActive ? "text-primary" : "text-foreground hover:text-primary"
+                  )}
+                  aria-label={item.name}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop Controls */}

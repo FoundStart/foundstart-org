@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Globe, Users, Globe2, Briefcase, Heart } from 'lucide-react';
+import { Home, Globe, Users, Globe2, UserPlus } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 
 const MobileBottomNav = () => {
   const location = useLocation();
-  const { favorites } = useDomainFavorites();
 
   const navItems = [
     { 
@@ -19,26 +17,25 @@ const MobileBottomNav = () => {
       icon: Globe, 
       label: 'Countries', 
       href: '/countries', 
-      isActive: location.pathname === '/countries' 
+      isActive: location.pathname === '/countries' || location.pathname.startsWith('/country/')
+    },
+    { 
+      icon: Users, 
+      label: 'Partners', 
+      href: '/all-partners', 
+      isActive: location.pathname.includes('/partners') || location.pathname === '/all-partners',
     },
     { 
       icon: Globe2, 
       label: 'Domains', 
       href: '/domains', 
-      isActive: location.pathname === '/domains'
+      isActive: location.pathname.includes('/domain')
     },
     { 
-      icon: Users, 
-      label: 'Partners', 
-      href: '/digital-partners', 
-      isActive: location.pathname.includes('/partners'),
-    },
-    { 
-      icon: Heart, 
-      label: 'Wishlist', 
-      href: '/domain-wishlist', 
-      isActive: location.pathname === '/domain-wishlist',
-      badge: favorites.length > 0 ? favorites.length : undefined
+      icon: UserPlus, 
+      label: 'Register', 
+      href: '/auth', 
+      isActive: location.pathname === '/auth',
     },
   ];
 
@@ -63,14 +60,7 @@ const MobileBottomNav = () => {
                 )}
                 aria-current={item.isActive ? "page" : undefined}
               >
-                <div className="relative">
-                  <Icon className={cn("w-5 h-5", item.isActive && "text-primary")} />
-                  {item.badge && (
-                    <span className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-[10px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center">
-                      {item.badge > 9 ? '9+' : item.badge}
-                    </span>
-                  )}
-                </div>
+                <Icon className={cn("w-5 h-5", item.isActive && "text-primary")} />
                 <span className={cn(
                   "text-[10px] mt-1 font-medium",
                   item.isActive && "text-primary"
