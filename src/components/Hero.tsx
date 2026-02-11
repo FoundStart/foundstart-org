@@ -143,6 +143,24 @@ const Hero = () => {
                 <div className="text-muted-foreground">Jurisdictions</div>
               </div>
             </Link>
+
+            <div className="col-span-full flex flex-wrap justify-center gap-3 mt-2">
+              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
+                <Link to="/partners">Formation Partners</Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
+                <Link to="/digital-partners">Digital Partners</Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
+                <Link to="/freelancer-partners">Freelancer Partners</Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
+                <Link to="/sister-partners">Sister Partners</Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
+                <Link to="/domains">Domains Marketplace</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
