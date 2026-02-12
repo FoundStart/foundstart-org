@@ -69,15 +69,13 @@ serve(async (req) => {
     // Get Kashier credentials from environment
     const kashierApiKey = Deno.env.get('KASHIER_API_KEY')
     const kashierSecretKey = Deno.env.get('KASHIER_SECRET_KEY')
-    const kashierMerchantId = Deno.env.get('KASHIER_MERCHANT_ID')
 
     console.log('Kashier credentials check:', {
       apiKey: !!kashierApiKey,
       secretKey: !!kashierSecretKey,
-      merchantId: !!kashierMerchantId
     })
 
-    if (!kashierApiKey || !kashierSecretKey || !kashierMerchantId) {
+    if (!kashierApiKey || !kashierSecretKey) {
       console.error('Missing Kashier credentials')
       return new Response(
         JSON.stringify({ 
@@ -210,14 +208,13 @@ serve(async (req) => {
       merchant_order_id: orderId,
       amount: amount,
       currency: currency || 'USD',
-      merchant_id: kashierMerchantId,
       customer: {
         name: customer.name || customer.email,
         email: customer.email,
         phone: customer.phone || ''
       },
-      success_url: `${baseUrl}/`,
-      failure_url: `${baseUrl}/`,
+      success_url: `${baseUrl}/dashboard`,
+      failure_url: `${baseUrl}/dashboard/billing`,
       webhook_url: `${baseUrl}/functions/v1/payment-webhook`
     }
 

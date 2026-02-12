@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { LayoutDashboard, Users, Building2, ShoppingCart, FileText, CreditCard, Bot, Activity, Settings, LogOut, Globe, BarChart3 } from 'lucide-react';
+import { LayoutDashboard, Users, Building2, ShoppingCart, FileText, CreditCard, Bot, Activity, Settings, LogOut, Globe, BarChart3, Link as LinkIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Button } from '@/components/ui/button';
 import NotificationBell from '@/components/notifications/NotificationBell';
@@ -15,6 +15,7 @@ const menuItems = [
   { title: 'Domain Inquiries', icon: Globe, href: '/admin/domain-inquiries' },
   { title: 'Domain Analytics', icon: BarChart3, href: '/admin/domain-analytics' },
   { title: 'Payments', icon: CreditCard, href: '/admin/payments' },
+  { title: 'Affiliates', icon: LinkIcon, href: '/admin/affiliates' },
   { title: 'AI Prompts', icon: Bot, href: '/admin/prompts' },
   { title: 'Activity Logs', icon: Activity, href: '/admin/logs' },
 ];

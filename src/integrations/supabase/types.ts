@@ -50,36 +50,86 @@ export type Database = {
         }
         Relationships: []
       }
+      affiliate_clicks: {
+        Row: {
+          affiliate_id: string
+          converted: boolean | null
+          created_at: string | null
+          id: string
+          ip_address: string | null
+          referral_code: string
+          service_url: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          affiliate_id: string
+          converted?: boolean | null
+          created_at?: string | null
+          id?: string
+          ip_address?: string | null
+          referral_code: string
+          service_url?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          affiliate_id?: string
+          converted?: boolean | null
+          created_at?: string | null
+          id?: string
+          ip_address?: string | null
+          referral_code?: string
+          service_url?: string | null
+          user_agent?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "affiliate_clicks_affiliate_id_fkey"
+            columns: ["affiliate_id"]
+            isOneToOne: false
+            referencedRelation: "affiliates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       affiliates: {
         Row: {
+          affiliate_links: Json | null
           commission_rate: number | null
           created_at: string | null
           id: string
           is_active: boolean | null
           pending_earnings: number | null
           referral_code: string
+          total_clicks: number | null
+          total_conversions: number | null
           total_earnings: number | null
           updated_at: string | null
           user_id: string
         }
         Insert: {
+          affiliate_links?: Json | null
           commission_rate?: number | null
           created_at?: string | null
           id?: string
           is_active?: boolean | null
           pending_earnings?: number | null
           referral_code: string
+          total_clicks?: number | null
+          total_conversions?: number | null
           total_earnings?: number | null
           updated_at?: string | null
           user_id: string
         }
         Update: {
+          affiliate_links?: Json | null
           commission_rate?: number | null
           created_at?: string | null
           id?: string
           is_active?: boolean | null
           pending_earnings?: number | null
           referral_code?: string
+          total_clicks?: number | null
+          total_conversions?: number | null
           total_earnings?: number | null
           updated_at?: string | null
           user_id?: string
@@ -418,6 +468,54 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      payment_transactions: {
+        Row: {
+          amount: number
+          created_at: string | null
+          currency: string
+          customer_data: Json | null
+          id: string
+          kashier_order_id: string | null
+          order_id: string
+          payment_method: string
+          payment_url: string | null
+          plan_id: string | null
+          status: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string | null
+          currency?: string
+          customer_data?: Json | null
+          id?: string
+          kashier_order_id?: string | null
+          order_id: string
+          payment_method?: string
+          payment_url?: string | null
+          plan_id?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string | null
+          currency?: string
+          customer_data?: Json | null
+          id?: string
+          kashier_order_id?: string | null
+          order_id?: string
+          payment_method?: string
+          payment_url?: string | null
+          plan_id?: string | null
+          status?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
       }
       payments: {
         Row: {
