@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
+import { CurrencyProvider } from "@/contexts/CurrencyContext";
 
 import Index from "./pages/Index";
 import Countries from "./pages/Countries";
@@ -70,6 +71,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <TranslationProvider>
+          <CurrencyProvider>
           <TooltipProvider>
             <Toaster />
             <Sonner />
@@ -123,6 +125,7 @@ function App() {
               </AuthProvider>
             </BrowserRouter>
           </TooltipProvider>
+          </CurrencyProvider>
         </TranslationProvider>
       </ThemeProvider>
     </QueryClientProvider>

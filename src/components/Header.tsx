@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 import AuthButton from './AuthButton';
 import LanguageToggle from './LanguageToggle';
+import CurrencySelector from './CurrencySelector';
 import { useTranslation } from '@/contexts/TranslationContext';
 import {
   DropdownMenu,
@@ -29,8 +30,12 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const domainsDropdownItems = [
+    { name: "Premium Domains", href: '/domains' },
+    { name: "Domain Marketplace", href: '/domains#marketplace' },
+  ];
+
   const navigationItems = [
-    { name: "Domains", href: '/domains' },
     { name: "Services", href: '/services' },
     { name: "Pricing", href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
@@ -81,6 +86,21 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* Domains Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap outline-none">
+                Domains
+                <ChevronDown className="ml-1 h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                {domainsDropdownItems.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link to={item.href} className="w-full cursor-pointer">{item.name}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             {navigationItems.map((item, index) => {
               const isActive = item.name === "Domains" 
@@ -103,14 +123,16 @@ const Header = () => {
           </nav>
 
           {/* Desktop Controls */}
-          <div className={`hidden lg:flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
+          <div className={`hidden lg:flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
+            <CurrencySelector />
             <LanguageToggle />
             <ThemeToggle />
             <AuthButton />
           </div>
 
           {/* Mobile Controls */}
-          <div className={`lg:hidden flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
+          <div className={`lg:hidden flex items-center space-x-1 ${isRTL ? 'space-x-reverse' : ''}`}>
+            <CurrencySelector />
             <LanguageToggle />
             <ThemeToggle />
             <Button
