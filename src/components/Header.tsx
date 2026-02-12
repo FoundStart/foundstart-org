@@ -42,6 +42,7 @@ const Header = () => {
     { name: t.partners, href: '/partners' },
     { name: t.digitalPartners, href: '/digital-partners' },
     { name: "Freelancer", href: '/freelancer-partners' },
+    { name: "Sister Partners", href: '/sister-partners' },
   ];
 
   return (
