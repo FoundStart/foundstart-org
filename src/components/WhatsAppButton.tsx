@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton = ({ variant = 'default', size = 'default', className = '' }: WhatsAppButtonProps) => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/21002905764', '_blank');
+    window.open('https://wa.me/201002905764', '_blank');
   };
 
   return (
