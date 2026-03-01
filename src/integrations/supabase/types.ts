@@ -477,6 +477,7 @@ export type Database = {
           customer_data: Json | null
           id: string
           kashier_order_id: string | null
+          kashier_transaction_id: string | null
           order_id: string
           payment_method: string
           payment_url: string | null
@@ -484,6 +485,7 @@ export type Database = {
           status: string
           updated_at: string | null
           user_id: string
+          webhook_data: Json | null
         }
         Insert: {
           amount: number
@@ -492,6 +494,7 @@ export type Database = {
           customer_data?: Json | null
           id?: string
           kashier_order_id?: string | null
+          kashier_transaction_id?: string | null
           order_id: string
           payment_method?: string
           payment_url?: string | null
@@ -499,6 +502,7 @@ export type Database = {
           status?: string
           updated_at?: string | null
           user_id: string
+          webhook_data?: Json | null
         }
         Update: {
           amount?: number
@@ -507,6 +511,7 @@ export type Database = {
           customer_data?: Json | null
           id?: string
           kashier_order_id?: string | null
+          kashier_transaction_id?: string | null
           order_id?: string
           payment_method?: string
           payment_url?: string | null
@@ -514,6 +519,7 @@ export type Database = {
           status?: string
           updated_at?: string | null
           user_id?: string
+          webhook_data?: Json | null
         }
         Relationships: []
       }
