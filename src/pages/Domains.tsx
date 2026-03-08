@@ -12,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, List, Sparkles, Store } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
-import { domainsData, categories, hostingProviders, businessTypes, Domain } from '@/data/domainsData';
+import { domainsData, categories, hostingProviders, businessTypes } from '@/data/domainsData';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
