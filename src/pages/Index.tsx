@@ -1,12 +1,6 @@
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { 
-  ArrowRight, Building2, Globe, Shield, CheckCircle, Star, Users, CreditCard, Mail, Server, 
-  Smartphone, Wifi, Gift, Search, Brain, Target, TrendingUp, Briefcase, FileText, Users2, 
-  HelpCircle, Zap, Sparkles, Rocket
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
@@ -27,11 +21,8 @@ const Index = () => {
       
       <main className="pb-20 md:pb-0 w-full max-w-full">
         <Hero />
-
-        {/* Services Showcase */}
         <HomeServices language={language} isRTL={isRTL} />
 
-        {/* Business Name Generator */}
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
           <div className="container mx-auto max-w-4xl">
             <motion.div
@@ -51,16 +42,10 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA Cards */}
-        <HomeCTA language={language} isRTL={isRTL} />
-
-        {/* Why Choose FoundStart */}
+        <HomeCTA />
         <HomeWhyChoose />
-
-        {/* FAQ */}
         <HomeFAQ />
 
-        {/* Final CTA */}
         <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-purple-500/10" />
           <div className="container mx-auto max-w-4xl text-center relative">

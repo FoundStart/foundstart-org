@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Building2, Globe, Briefcase } from 'lucide-react';
+import { Building2, Globe, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -13,12 +13,7 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-interface HomeCTAProps {
-  language: string;
-  isRTL: boolean;
-}
-
-const HomeCTA = ({ language, isRTL }: HomeCTAProps) => (
+const HomeCTA = () => (
   <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
     <div className="container mx-auto max-w-6xl">
       <motion.div
