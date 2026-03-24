@@ -1,23 +1,23 @@
 export const digitalPartnersData = [
   // Business Company Formation
-  { category: "Business Company Formation", platform: "FoundStart", url: "https://foundstart.vercel.app/", niche: "Company formation in USA & Europe", coupon: "" },
-  { category: "Business Company Formation", platform: "Privatily", url: "https://privatily.com/ref/Deeemoz/", niche: "Company formation in USA-UK", coupon: "" },
-  { category: "Business Company Formation", platform: "ITIN", url: "https://theitin.com/ref/80", niche: "Company formation in USA", coupon: "SAYED50" },
-  { category: "Business Company Formation", platform: "Clemta", url: "https://clemta.com/?ref=njbhzwf", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Startglobal", url: "http://startglobal.co/?via=mohamed-sayed", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Doola", url: "https://partnersps.doola.com/yukcm0gd526a", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Tailorbrands", url: "https://tailorbrands.go2cloud.org/aff_c?offer_id=66&aff_id=9476", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Startfleet", url: "https://startfleet.io?affp=7FkePzgFIAly", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "My1office", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Firstbase", url: "https://firstbase.pxf.io/RGaDzX", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "1stFormations", url: "https://1st-formations-limited.sjv.io/4GKB30", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Privatily", url: "https://privatily.com/ref/Deeemoz/", niche: "Company formation in USA-UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Rapid Formation", url: "https://rapid-formations.sjv.io/XmEo53", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Estonia", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in Estonia", coupon: "" },
-  { category: "Business Company Formation", platform: "Finland", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in Finland", coupon: "" },
-  { category: "Business Company Formation", platform: "Sweden", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in Sweden", coupon: "" },
-  { category: "Business Company Formation", platform: "Latvia", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in Latvia", coupon: "" },
-  { category: "Business Company Formation", platform: "Lithuania", url: "https://my1office.co/en/company/register?ref=mdzknzu", niche: "Company formation in Lithuania", coupon: "" },
+  { category: "Business Company Formation", platform: "FoundStart", url: "https://foundstart.org", niche: "Company formation in USA & Europe", coupon: "", videoUrl: "https://www.youtube.com/watch?v=dvyjdyrKFUw" },
+  { category: "Business Company Formation", platform: "Privatily", url: "https://privatily.com/ref/Deeemoz/", niche: "Company formation in USA-UK", coupon: "", videoUrl: "https://www.youtube.com/watch?v=M6kqj4gOo_Q" },
+  { category: "Business Company Formation", platform: "ITIN", url: "https://theitin.com/ref/80", niche: "Company formation in USA", coupon: "SAYED50", videoUrl: "https://www.youtube.com/watch?v=irNk9U4seys" },
+  { category: "Business Company Formation", platform: "Clemta", url: "https://clemta.com/?ref=njbhzwf", niche: "Company formation in USA", coupon: "", videoUrl: "https://www.youtube.com/watch?v=f0bHXjz-sRA" },
+  { category: "Business Company Formation", platform: "Startglobal", url: "http://startglobal.co/?via=mohamed-sayed", niche: "Company formation in USA", coupon: "", videoUrl: "https://www.youtube.com/watch?v=Hh568VJ0jW8" },
+  { category: "Business Company Formation", platform: "Doola", url: "https://partnersps.doola.com/yukcm0gd526a", niche: "Company formation in USA", coupon: "", videoUrl: "https://www.youtube.com/watch?v=Kl2Drv4TiKQ" },
+  { category: "Business Company Formation", platform: "Tailorbrands", url: "https://tailorbrands.go2cloud.org/aff_c?offer_id=66&aff_id=9476", niche: "Company formation in USA", coupon: "", videoUrl: "https://www.youtube.com/watch?v=W4wbVlR2b-E" },
+  { category: "Business Company Formation", platform: "Startfleet", url: "https://startfleet.io?affp=7FkePzgFIAly", niche: "Company formation in USA", coupon: "", videoUrl: "https://www.youtube.com/watch?v=ALSx9TKGAeM" },
+  { category: "Business Company Formation", platform: "My1office", url: "https://1office.co?fpr=momo", niche: "Company formation in UK", coupon: "", videoUrl: "https://www.youtube.com/watch?v=B9X1-xxE-UY" },
+  { category: "Business Company Formation", platform: "Firstbase", url: "https://firstbase.pxf.io/RGaDzX", niche: "Company formation in UK", coupon: "", videoUrl: "https://www.youtube.com/watch?v=juXv8iz-jDg" },
+  { category: "Business Company Formation", platform: "1stFormations", url: "https://1st-formations-limited.sjv.io/4GKB30", niche: "Company formation in UK", coupon: "", videoUrl: "https://www.youtube.com/watch?v=955CDcBJuWM" },
+  { category: "Business Company Formation", platform: "Rapid Formation", url: "https://rapid-formations.sjv.io/XmEo53", niche: "Company formation in UK", coupon: "", videoUrl: "https://www.youtube.com/watch?v=yvbwFtm0cDg" },
+  { category: "Business Company Formation", platform: "Estonia (1office)", url: "https://1office.co?fpr=momo", niche: "Company formation in Estonia", coupon: "", videoUrl: "https://www.youtube.com/watch?v=d8ImxFQTA9g" },
+  { category: "Business Company Formation", platform: "Finland (1office)", url: "https://1office.co?fpr=momo", niche: "Company formation in Finland", coupon: "", videoUrl: "https://www.youtube.com/watch?v=RqttCWbsWDE" },
+  { category: "Business Company Formation", platform: "Sweden (1office)", url: "https://1office.co?fpr=momo", niche: "Company formation in Sweden", coupon: "", videoUrl: "https://www.youtube.com/watch?v=2lO5yuTZ7tA" },
+  { category: "Business Company Formation", platform: "Latvia (1office)", url: "https://1office.co?fpr=momo", niche: "Company formation in Latvia", coupon: "", videoUrl: "https://www.youtube.com/watch?v=5RAKkl8Kn38" },
+  { category: "Business Company Formation", platform: "Lithuania (1office)", url: "https://1office.co?fpr=momo", niche: "Company formation in Lithuania", coupon: "", videoUrl: "https://www.youtube.com/watch?v=b7scJVZQ1rU" },
+  { category: "Business Company Formation", platform: "Ireland (1office)", url: "https://1office.co?fpr=momo", niche: "Company formation in Ireland", coupon: "", videoUrl: "https://www.youtube.com/watch?v=HHRYdAeqmvQ" },
 
   // Telecommunication
   { category: "Telecommunication", platform: "esim me", url: "https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB", niche: "eSIM your eSIM anywhare anytime", coupon: "" },
@@ -434,4 +434,64 @@ export const digitalPartnersData = [
   { category: "SEO tools - Traffic", platform: "Brandpush", url: "https://www.brandpush.co/?ref=53410", niche: "Publisher News Platform-Press release", coupon: "" },
   { category: "SEO tools - Traffic", platform: "EIN Press Wire", url: "https://www.einpresswire.com/pricing?via=io0ed", niche: "Publisher News Platform-Press release", coupon: "" },
   { category: "SEO tools - Traffic", platform: "Monkey Digital", url: "https://www.monkeydigital.org?ref=103530", niche: "Marketing Services & SEO", coupon: "" },
+
+  // Missing entries - Vibe Coding additions
+  { category: "Vibe Coding", platform: "OnSpace AI", url: "https://onspace.link/mohamed-sayed", niche: "OnSpace AI", coupon: "" },
+  { category: "Vibe Coding", platform: "Stacksmarket", url: "https://stacksmarket.co/?ref=AFF-6GH6HO5AF", niche: "Digitize Your Entire-Business with AI in One Click", coupon: "" },
+  { category: "Vibe Coding", platform: "Medo Dev", url: "https://medo.dev/?invitecode=user-9zvipncfwr28", niche: "Build full stack apps by AI", coupon: "" },
+  { category: "Vibe Coding", platform: "AppGen", url: "https://appgen.com/?ref=momo", niche: "Build full mobile apps with AI", coupon: "" },
+  { category: "Vibe Coding", platform: "HeyBoss AI", url: "https://heyboss.ai?ref=2WDFT2GW", niche: "Launch Your Business in 10 Minutes with AI", coupon: "" },
+  { category: "Vibe Coding", platform: "EasyOrder", url: "https://www.easy-orders.net?view=c1c02529-d785-4904-8a94-f884ef985f2f", niche: "Build your store in 5 minutes", coupon: "" },
+  { category: "Vibe Coding", platform: "Softlite", url: "https://softlite.io/?wpam_id=9", niche: "Clone websites to your Page Builders in with AI", coupon: "" },
+  { category: "Vibe Coding", platform: "Aitmpl", url: "https://www.aitmpl.com/skills", niche: "Claude code template", coupon: "" },
+  { category: "Vibe Coding", platform: "Autocoder", url: "https://www.autocoder.cc/", niche: "All-in-One Code Automation", coupon: "" },
+  { category: "Vibe Coding", platform: "Appcreator24", url: "https://www.appcreator24.com/afi/1165836", niche: "No Code Apps builder", coupon: "" },
+
+  // Missing AI Videos additions
+  { category: "AI Videos", platform: "Magiclight", url: "https://magiclight.ai/?code=mrkdb6i99", niche: "AI Video maker", coupon: "" },
+  { category: "AI Videos", platform: "Golpoai", url: "https://video.golpoai.com/?via=momosa", niche: "AI-powered whiteboard video", coupon: "" },
+  { category: "AI Videos & Image", platform: "Pollo AI", url: "https://pollo.ai?ref=mdjlzwy", niche: "The ultimate Ai videos & Image creation platform", coupon: "" },
+
+  // Missing AI Voices
+  { category: "AI Voices", platform: "Wisprflow", url: "https://ref.wisprflow.ai/mohamed-sayed", niche: "The voice-to-text AI that turns speech into clear, polished writing", coupon: "" },
+
+  // Missing Business Automation
+  { category: "Business Automation", platform: "Ocoya", url: "https://www.ocoya.com/?via=momo", niche: "Social media management using AI", coupon: "" },
+  { category: "Business Automation", platform: "Agent Router", url: "https://agentrouter.org/register?aff=ABVj", niche: "Agent Router", coupon: "" },
+  { category: "Business Automation", platform: "Scispace", url: "https://scispace.com/?via=Momo", niche: "Ai researcher Agent", coupon: "" },
+  { category: "Business Automation", platform: "Post planner", url: "https://www.postplanner.com/?via=momo", niche: "Schedule the best content in your industry", coupon: "" },
+  { category: "Business Automation", platform: "UploadPost", url: "https://www.upload-post.com/?linkId=lp_144414&sourceId=momo&tenantId=upload-post-app", niche: "Social Media API, One Call, Every Platform", coupon: "" },
+
+  // Missing AI Tools
+  { category: "AI Tools", platform: "Gravitywrite", url: "https://gravitywrite.com/?via=momo", niche: "Create Content 10X Faster", coupon: "" },
+  { category: "AI Tools", platform: "Insightfulpipe", url: "https://insightfulpipe.com?atp=momo", niche: "MCP Servers & Connectors", coupon: "" },
+
+  // Missing Dropshipping
+  { category: "Dropshipping & POD", platform: "Minea", url: "https://app.minea.com/en/ads/meta-library?ref=momo54", niche: "Where winning products are found (Meta ads-TikTok-Pinterest)", coupon: "" },
+
+  // Missing SMM Panel
+  { category: "SMM Panel", platform: "Onlinker", url: "https://onlinker.net/?ref=ONL-K9J7QW", niche: "Get Leads & Website Traffic on Autopilot", coupon: "" },
+  { category: "SMM Panel", platform: "Naizop", url: "https://naizop.com/ref/pp4w7", niche: "Digital marketing SMM", coupon: "" },
+
+  // Missing Design
+  { category: "Design", platform: "Sellerpic", url: "https://app.sellerpic.ai?fpr=momo37", niche: "AI fashion model & image & video generator", coupon: "" },
+  { category: "Design", platform: "Collov AI", url: "https://collov.ai/?via=momo", niche: "Virtual Ai for Realestate & Homes", coupon: "" },
+
+  // Missing Learning & Courses
+  { category: "Learning & Courses", platform: "easyT", url: "https://easyt.online?affcode=398126_nzgpazpf", niche: "Arabic Courses Platform", coupon: "" },
+
+  // Missing Managements
+  { category: "Managements", platform: "Wetracked", url: "https://www.wetracked.io/?ref=4855f2a8-fcc1-4fa3-bdef-0fa2d2273daa", niche: "Track your ads", coupon: "" },
+
+  // Missing Hostingial
+  { category: "Web Hosting", platform: "Hostingial", url: "https://dash.hostingial.com/affiliates.php", niche: "Establish Your Business Presence On The Internet", coupon: "" },
+
+  // Travel Business
+  { category: "Travel Business", platform: "Travel Code", url: "https://join.travel-code.com/iu0okpm8qtfn", niche: "Travel", coupon: "" },
+
+  // Health
+  { category: "Health", platform: "Daily Gem", url: "http://dailygem.co/GEM-A-SFYFCTWH", niche: "Health", coupon: "" },
+
+  // Gamsgo duplicate in Digital marketplace
+  { category: "Digital marketplace", platform: "Gamsgo (Premium)", url: "https://www.gamsgo.com/share/jnvJ2", niche: "Digital Marketplace", coupon: "" },
 ];
