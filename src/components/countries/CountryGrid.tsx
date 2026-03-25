@@ -1,13 +1,19 @@
 
 import CountryCard from './CountryCard';
 
+interface Partner {
+  name: string;
+  url: string;
+  videoUrl?: string;
+}
+
 interface Country {
   id: string;
   flag: string;
   name: string;
   price: string;
   timeframe: string;
-  partners: string[];
+  partners: Partner[];
 }
 
 interface CountryGridProps {
@@ -21,11 +27,7 @@ const CountryGrid = ({ countries, onCountrySelect }: CountryGridProps) => {
       <h2 className="text-2xl font-bold text-center">All Supported Countries</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {countries.map((country) => (
-          <CountryCard
-            key={country.id}
-            country={country}
-            onClick={() => onCountrySelect(country.id)}
-          />
+          <CountryCard key={country.id} country={country} onClick={() => onCountrySelect(country.id)} />
         ))}
       </div>
     </div>
