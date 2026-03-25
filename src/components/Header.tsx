@@ -43,8 +43,7 @@ const Header = () => {
   ];
 
   const partnersDropdownItems = [
-    { name: t.countries, href: '/countries' },
-    { name: t.partners, href: '/partners' },
+    { name: "Countries & Partners", href: '/countries' },
     { name: t.digitalPartners, href: '/digital-partners' },
     { name: "Freelancer", href: '/freelancer-partners' },
     { name: "Sister Partners", href: '/sister-partners' },
