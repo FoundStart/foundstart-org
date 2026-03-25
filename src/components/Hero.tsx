@@ -1,18 +1,14 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, CheckCircle, Play, Youtube } from 'lucide-react';
+import { ArrowRight, CheckCircle, Sparkles, Globe, Building2, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
   const { t, isRTL, language } = useTranslation();
-  
-  // Demo video URL - same for both languages
-  const demoVideoUrl = "https://www.youtube.com/embed/dvyjdyrKFUw?si=kyghwxE8wrjCIGyI";
-  
+
   const jurisdictions = [
     { name: t.usa, flag: "🇺🇸" },
     { name: t.uk, flag: "🇬🇧" },
@@ -22,148 +18,173 @@ const Hero = () => {
     { name: t.sweden, flag: "🇸🇪" },
     { name: t.latvia, flag: "🇱🇻" },
     { name: t.lithuania, flag: "🇱🇹" },
-    { name: t.egypt, flag: "🇪🇬" }
+    { name: language === 'ar' ? 'أيرلندا' : 'Ireland', flag: "🇮🇪" },
+    { name: t.egypt, flag: "🇪🇬" },
   ];
 
-  const handleWatchDemo = () => {
-    setShowVideo(true);
-  };
+  const quickActions = [
+    'Form a US LLC',
+    'UK Company Formation',
+    'Estonia e-Residency',
+    'Ireland Low-Tax Setup',
+    'Premium Domains',
+  ];
 
   return (
-    <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 dark:from-background dark:via-blue-950/20 dark:to-purple-950/20">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className={`space-y-8 animate-fade-in ${isRTL ? 'lg:order-2' : ''}`}>
-            <div className={`space-y-4 ${isRTL ? 'text-right' : ''}`}>
-              <div className={`inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
-                <CheckCircle className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                {t.trustedBy}
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                {t.heroTitle}{" "}
-                <span className="gradient-text">{t.heroTitleHighlight}</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                {t.heroDescription}
-              </p>
-            </div>
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[hsl(222,84%,4.9%)]">
+      {/* Gradient orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
+        <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-purple-600/15 blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-[80px]" />
+      </div>
 
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-3">
-              {jurisdictions.map((jurisdiction) => (
-                <Link
-                  key={jurisdiction.name}
-                  to="/countries"
-                  className={`flex items-center justify-center px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer group ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <span className={`text-lg ${isRTL ? 'ml-2' : 'mr-2'} group-hover:scale-110 transition-transform`}>{jurisdiction.flag}</span>
-                  <span className="font-medium text-sm group-hover:text-primary transition-colors">{jurisdiction.name}</span>
-                </Link>
-              ))}
-            </div>
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white/80 text-sm mb-8"
+        >
+          <Sparkles className="w-4 h-4 text-amber-400" />
+          {language === 'ar' ? 'تأسيس شركتك في 10 دقائق' : 'Launch Your Business in 10 Jurisdictions'}
+        </motion.div>
 
-            <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button size="lg" className="text-lg px-8 py-6 group" asChild>
-                <Link to="/countries">
-                  {t.startYourBusiness}
-                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 group-hover:-translate-x-1' : 'ml-2 group-hover:translate-x-1'} transition-transform ${isRTL ? 'rotate-180' : ''}`} />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 group" asChild>
-                <Link to="/pricing-calculator">
-                  {isRTL ? 'حاسبة التكاليف' : 'Calculate Pricing'}
-                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 group-hover:-translate-x-1' : 'ml-2 group-hover:translate-x-1'} transition-transform ${isRTL ? 'rotate-180' : ''}`} />
-                </Link>
-              </Button>
-            </div>
-            <div className={`flex justify-center sm:justify-start ${isRTL ? 'sm:justify-end' : ''}`}>
-              <Button 
-                size="lg" 
-                variant="ghost" 
-                className="text-lg group"
-                onClick={handleWatchDemo}
-              >
-                <Youtube className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'} group-hover:scale-110 transition-transform`} />
-                {t.watchDemo}
-              </Button>
-            </div>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6"
+        >
+          {language === 'ar' ? 'أسس شركتك' : 'Build Your Business'}{' '}
+          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            {language === 'ar' ? 'عالمياً' : 'Globally'}
+          </span>
+        </motion.h1>
 
-            <div className={`flex items-center space-x-8 text-sm text-muted-foreground ${isRTL ? 'space-x-reverse flex-row-reverse' : ''}`}>
-              <div className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse flex-row-reverse' : ''}`}>
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>{t.noHiddenFees}</span>
-              </div>
-              <div className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse flex-row-reverse' : ''}`}>
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>{t.support24}</span>
-              </div>
-              <div className={`flex items-center space-x-2 ${isRTL ? 'space-x-reverse flex-row-reverse' : ''}`}>
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>{t.moneyBackGuarantee}</span>
-              </div>
-            </div>
-          </div>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10"
+        >
+          {language === 'ar'
+            ? 'FoundStart يساعدك على تأسيس شركتك في أمريكا وأوروبا والشرق الأوسط بسهولة.'
+            : 'FoundStart helps you form companies in USA, UK, Europe & Middle East with trusted partners.'}
+        </motion.p>
 
-          <div className={`space-y-6 ${isRTL ? 'lg:order-1' : ''}`}>
-            {/* YouTube Video Widget */}
-            <div className="glass-card rounded-2xl p-6 animate-float">
-              <div className={`space-y-4 ${isRTL ? 'text-right' : 'text-center'}`}>
-                <h3 className="text-lg font-semibold gradient-text">
-                  {language === 'ar' ? 'شاهد الفيديو التوضيحي' : 'Watch CEO Demo'}
-                </h3>
-                <div className="aspect-video rounded-lg overflow-hidden">
-                  <iframe
-                    src={demoVideoUrl}
-                    title="FoundStart CEO Demo"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full h-full"
-                  ></iframe>
-                </div>
-              </div>
+        {/* Search-style CTA bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="max-w-2xl mx-auto mb-8"
+        >
+          <Link to="/countries" className="block">
+            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer group">
+              <Globe className="w-5 h-5 text-white/40" />
+              <Building2 className="w-5 h-5 text-purple-400/60" />
+              <span className="text-white/40 text-left flex-1">
+                {language === 'ar' ? 'اختر الدولة لتأسيس شركتك...' : 'Choose a jurisdiction to start your company...'}
+              </span>
+              <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-white/60 group-hover:translate-x-1 transition-all" />
             </div>
-            
-            <Link to="/partners" className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer block">
-              <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
-                <div className="text-3xl font-bold gradient-text">5-10 {isRTL ? 'دقائق' : 'minutes'}</div>
-                <div className="text-muted-foreground">{t.averageSetupTime}</div>
-              </div>
+          </Link>
+        </motion.div>
+
+        {/* Quick action pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex flex-wrap justify-center gap-2 mb-12"
+        >
+          {quickActions.map((action) => (
+            <Link
+              key={action}
+              to="/countries"
+              className="px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-white/70 text-sm hover:bg-white/10 hover:text-white transition-all"
+            >
+              {action}
             </Link>
-            
-            <Link to="/digital-partners" className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer block">
-              <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
-                <div className="text-2xl font-bold gradient-text">370+</div>
-                <div className="text-muted-foreground">Trusted Partners</div>
-              </div>
-            </Link>
-            
-            <Link to="/countries" className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer block">
-              <div className={`space-y-2 ${isRTL ? 'text-right' : 'text-center'}`}>
-                <div className="text-2xl font-bold gradient-text">9</div>
-                <div className="text-muted-foreground">Jurisdictions</div>
-              </div>
-            </Link>
+          ))}
+        </motion.div>
 
-            <div className="col-span-full flex flex-wrap justify-center gap-3 mt-2">
-              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
-                <Link to="/partners">Formation Partners</Link>
-              </Button>
-              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
-                <Link to="/digital-partners">Digital Partners</Link>
-              </Button>
-              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
-                <Link to="/freelancer-partners">Freelancer Partners</Link>
-              </Button>
-              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
-                <Link to="/sister-partners">Sister Partners</Link>
-              </Button>
-              <Button variant="outline" size="sm" asChild className="hover:scale-105 transition-transform">
-                <Link to="/domains">Domains Marketplace</Link>
-              </Button>
-            </div>
+        {/* Jurisdiction flags row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          {jurisdictions.map((j) => (
+            <Link
+              key={j.name}
+              to="/countries"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-white/80 text-xs hover:bg-white/10 hover:scale-105 transition-all"
+            >
+              <span className="text-base">{j.flag}</span>
+              <span>{j.name}</span>
+            </Link>
+          ))}
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+        >
+          <Button size="lg" className="text-base px-8 py-6 bg-white text-black hover:bg-white/90 font-semibold" asChild>
+            <Link to="/countries">
+              {t.startYourBusiness}
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="ghost"
+            className="text-base text-white/70 hover:text-white hover:bg-white/10"
+            onClick={() => setShowVideo(true)}
+          >
+            <Youtube className="w-5 h-5 mr-2" />
+            {t.watchDemo}
+          </Button>
+        </motion.div>
+
+        {/* Trust badges */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="flex flex-wrap justify-center gap-6 text-xs text-white/40"
+        >
+          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />{t.noHiddenFees}</span>
+          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />{t.support24}</span>
+          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />10+ Jurisdictions</span>
+          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />370+ Partners</span>
+        </motion.div>
+      </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setShowVideo(false)}>
+          <div className="w-full max-w-4xl mx-4 aspect-video rounded-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src="https://www.youtube.com/embed/dvyjdyrKFUw?autoplay=1"
+              title="FoundStart Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
