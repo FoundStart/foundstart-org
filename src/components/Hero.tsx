@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
-  const { t, isRTL, language } = useTranslation();
+  const { t, language } = useTranslation();
 
   const jurisdictions = [
     { name: t.usa, flag: "🇺🇸" },
