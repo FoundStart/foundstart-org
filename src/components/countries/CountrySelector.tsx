@@ -1,22 +1,18 @@
 
 import { Button } from '@/components/ui/button';
 
+interface Partner {
+  name: string;
+  url: string;
+  videoUrl?: string;
+}
+
 interface Country {
   id: string;
   flag: string;
   name: string;
-  price: string;
-  timeframe: string;
-  currency: string;
-  description: string;
-  benefits: string[];
-  partners: string[];
-  keyStats: {
-    gdp: string;
-    population: string;
-    easeOfBusiness: string;
-    corporateTax: string;
-  };
+  partners: Partner[];
+  [key: string]: unknown;
 }
 
 interface CountrySelectorProps {

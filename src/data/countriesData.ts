@@ -6,9 +6,9 @@ export const countriesData = [
     price: '$299',
     timeframe: '5-7 business days',
     currency: 'USD',
-    ctaUrl: 'https://privatily.com/ref/Deeemoz/',
-    videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
-    description: 'Form your US company with our trusted partners including Privatily, ITIN, Clemta, Startglobal, and doola. Get access to US banking, payment processing, and global business opportunities.',
+    ctaUrl: 'https://foundstart.org',
+    videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw',
+    description: 'Form your US company with our trusted partners including FoundStart, Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, and Startfleet.',
     benefits: [
       'Access to US banking and financial services',
       'Global credibility and market access',
@@ -17,13 +17,17 @@ export const countriesData = [
       'E-commerce and payment processing',
       'Investor attraction and funding opportunities'
     ],
-    partners: ['Privatily', 'ITIN', 'Clemta', 'Startglobal', 'doola'],
-    keyStats: {
-      gdp: '$21.4T',
-      population: '331M',
-      easeOfBusiness: '6th',
-      corporateTax: '21%'
-    }
+    partners: [
+      { name: 'FoundStart', url: 'https://foundstart.org', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
+      { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
+      { name: 'ITIN', url: 'https://theitin.com/ref/80SAYED50', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys' },
+      { name: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
+      { name: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed', videoUrl: 'https://www.youtube.com/watch?v=Hh568VJ0jW8' },
+      { name: 'Doola', url: 'https://partnersps.doola.com/yukcm0gd526a', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ' },
+      { name: 'Tailorbrands', url: 'https://tailorbrands.go2cloud.org/aff_c?offer_id=66&aff_id=9476', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E' },
+      { name: 'Startfleet', url: 'https://startfleet.io?affp=7FkePzgFIAly', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM' },
+    ],
+    keyStats: { gdp: '$21.4T', population: '331M', easeOfBusiness: '6th', corporateTax: '21%' }
   },
   {
     id: 'UK',
@@ -34,7 +38,7 @@ export const countriesData = [
     currency: 'GBP',
     ctaUrl: 'https://1st-formations-limited.sjv.io/4GKB30',
     videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM',
-    description: 'Establish your UK company with leading formation partners including Firstbase, 1stFormations, Privatily, and Rapid Formation. Access European markets and benefit from the UK\'s business-friendly environment.',
+    description: 'Establish your UK company with leading formation partners including My1office, Firstbase, 1stFormations, Privatily, and Rapid Formation.',
     benefits: [
       'Gateway to European markets',
       'Strong legal and regulatory framework',
@@ -43,13 +47,14 @@ export const countriesData = [
       'Simplified company formation process',
       'Competitive corporate tax rates'
     ],
-    partners: ['Firstbase', '1stFormations', 'Privatily', 'Rapid Formation'],
-    keyStats: {
-      gdp: '$2.8T',
-      population: '67M',
-      easeOfBusiness: '8th',
-      corporateTax: '19%'
-    }
+    partners: [
+      { name: 'My1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
+      { name: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
+      { name: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
+      { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
+      { name: 'Rapid Formation', url: 'https://rapid-formations.sjv.io/XmEo53', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
+    ],
+    keyStats: { gdp: '$2.8T', population: '67M', easeOfBusiness: '8th', corporateTax: '19%' }
   },
   {
     id: 'CA',
@@ -60,7 +65,7 @@ export const countriesData = [
     currency: 'CAD',
     ctaUrl: 'https://privatily.com/ref/Deeemoz/',
     videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
-    description: 'Start your Canadian business with Privatily, our trusted formation partner. Canada offers a stable economy, skilled workforce, and excellent quality of life for business owners.',
+    description: 'Start your Canadian business with Privatily, our trusted formation partner.',
     benefits: [
       'Stable political and economic environment',
       'Access to NAFTA/USMCA markets',
@@ -69,13 +74,10 @@ export const countriesData = [
       'Innovation and technology incentives',
       'High quality of life'
     ],
-    partners: ['Privatily'],
-    keyStats: {
-      gdp: '$1.7T',
-      population: '38M',
-      easeOfBusiness: '23rd',
-      corporateTax: '15%'
-    }
+    partners: [
+      { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
+    ],
+    keyStats: { gdp: '$1.7T', population: '38M', easeOfBusiness: '23rd', corporateTax: '15%' }
   },
   {
     id: 'EE',
@@ -84,7 +86,7 @@ export const countriesData = [
     price: '€300',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    ctaUrl: 'https://1office.co?fpr=momo',
     videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g',
     description: 'Launch your Estonian company with 1office, benefiting from the world\'s most advanced digital infrastructure and e-Residency program.',
     benefits: [
@@ -95,13 +97,10 @@ export const countriesData = [
       '100% online company management',
       'Startup-friendly environment'
     ],
-    partners: ['1office'],
-    keyStats: {
-      gdp: '$31B',
-      population: '1.3M',
-      easeOfBusiness: '18th',
-      corporateTax: '20%'
-    }
+    partners: [
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g' },
+    ],
+    keyStats: { gdp: '$31B', population: '1.3M', easeOfBusiness: '18th', corporateTax: '20%' }
   },
   {
     id: 'FI',
@@ -110,7 +109,7 @@ export const countriesData = [
     price: '€350',
     timeframe: '5-7 business days',
     currency: 'EUR',
-    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    ctaUrl: 'https://1office.co?fpr=momo',
     videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE',
     description: 'Establish your Finnish company with 1office and access one of the world\'s most innovative and stable business environments.',
     benefits: [
@@ -121,13 +120,10 @@ export const countriesData = [
       'Strong social infrastructure',
       'Digital government services'
     ],
-    partners: ['1office'],
-    keyStats: {
-      gdp: '$269B',
-      population: '5.5M',
-      easeOfBusiness: '20th',
-      corporateTax: '20%'
-    }
+    partners: [
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE' },
+    ],
+    keyStats: { gdp: '$269B', population: '5.5M', easeOfBusiness: '20th', corporateTax: '20%' }
   },
   {
     id: 'SE',
@@ -136,9 +132,9 @@ export const countriesData = [
     price: 'SEK 3,500',
     timeframe: '5-7 business days',
     currency: 'SEK',
-    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    ctaUrl: 'https://1office.co?fpr=momo',
     videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA',
-    description: 'Start your Swedish business with 1office and tap into one of Europe\'s most innovative and business-friendly markets.',
+    description: 'Start your Swedish business with 1office and tap into one of Europe\'s most innovative markets.',
     benefits: [
       'Innovation and technology leadership',
       'Skilled workforce',
@@ -147,13 +143,10 @@ export const countriesData = [
       'Sustainable business practices',
       'Work-life balance culture'
     ],
-    partners: ['1office'],
-    keyStats: {
-      gdp: '$541B',
-      population: '10.4M',
-      easeOfBusiness: '10th',
-      corporateTax: '20.6%'
-    }
+    partners: [
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA' },
+    ],
+    keyStats: { gdp: '$541B', population: '10.4M', easeOfBusiness: '10th', corporateTax: '20.6%' }
   },
   {
     id: 'LV',
@@ -162,7 +155,7 @@ export const countriesData = [
     price: '€250',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    ctaUrl: 'https://1office.co?fpr=momo',
     videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38',
     description: 'Form your Latvian company with 1office and benefit from competitive costs and strategic location in the Baltics.',
     benefits: [
@@ -173,13 +166,10 @@ export const countriesData = [
       'Growing digital economy',
       'Competitive tax rates'
     ],
-    partners: ['1office'],
-    keyStats: {
-      gdp: '$34B',
-      population: '1.9M',
-      easeOfBusiness: '19th',
-      corporateTax: '20%'
-    }
+    partners: [
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38' },
+    ],
+    keyStats: { gdp: '$34B', population: '1.9M', easeOfBusiness: '19th', corporateTax: '20%' }
   },
   {
     id: 'LT',
@@ -188,7 +178,7 @@ export const countriesData = [
     price: '€280',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://my1office.co/en/company/register?ref=mdzknzu',
+    ctaUrl: 'https://1office.co?fpr=momo',
     videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU',
     description: 'Establish your Lithuanian company with 1office and access the rapidly growing Baltic market with EU benefits.',
     benefits: [
@@ -199,13 +189,33 @@ export const countriesData = [
       'Strong fintech sector',
       'Educated workforce'
     ],
-    partners: ['1office'],
-    keyStats: {
-      gdp: '$56B',
-      population: '2.8M',
-      easeOfBusiness: '11th',
-      corporateTax: '15%'
-    }
+    partners: [
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU' },
+    ],
+    keyStats: { gdp: '$56B', population: '2.8M', easeOfBusiness: '11th', corporateTax: '15%' }
+  },
+  {
+    id: 'IE',
+    flag: '🇮🇪',
+    name: 'Ireland',
+    price: '€350',
+    timeframe: '5-7 business days',
+    currency: 'EUR',
+    ctaUrl: 'https://1office.co?fpr=momo',
+    videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ',
+    description: 'Establish your Irish company with 1office and access one of Europe\'s most business-friendly environments with low corporate tax rates.',
+    benefits: [
+      'Low 12.5% corporate tax rate',
+      'EU market access and English-speaking',
+      'Strong tech and pharma sectors',
+      'Highly educated workforce',
+      'Gateway to European markets',
+      'Stable legal and regulatory framework'
+    ],
+    partners: [
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ' },
+    ],
+    keyStats: { gdp: '$529B', population: '5.1M', easeOfBusiness: '24th', corporateTax: '12.5%' }
   },
   {
     id: 'EG',
@@ -214,9 +224,9 @@ export const countriesData = [
     price: 'Get Quote',
     timeframe: '14-21 business days',
     currency: 'EGP',
-    ctaUrl: 'https://foundstart.vercel.app/',
+    ctaUrl: 'https://foundstart.org',
     videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw',
-    description: 'Establish your Egyptian company with our expert guidance. Choose from 6 different company structures under Investment Law No. 72 of 2017, with 100% foreign ownership allowed in most sectors.',
+    description: 'Establish your Egyptian company with our expert guidance. Choose from 6 different company structures under Investment Law No. 72 of 2017.',
     benefits: [
       'Gateway to Middle East and Africa',
       '100% foreign ownership allowed*',
@@ -227,12 +237,9 @@ export const countriesData = [
       'Access to Suez Canal trade route',
       'Growing digital economy'
     ],
-    partners: ['FoundStart Legal Team'],
-    keyStats: {
-      gdp: '$469B',
-      population: '104M',
-      easeOfBusiness: '114th',
-      corporateTax: '22.5%'
-    }
+    partners: [
+      { name: 'FoundStart Legal Team', url: 'https://foundstart.org', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
+    ],
+    keyStats: { gdp: '$469B', population: '104M', easeOfBusiness: '114th', corporateTax: '22.5%' }
   }
 ];
