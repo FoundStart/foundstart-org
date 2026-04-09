@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import PageHero from '@/components/PageHero';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -34,7 +35,8 @@ const Countries = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20 pb-20 lg:pb-0">
+      <main className="pb-20 lg:pb-0">
+        <PageHero title="Company Formation" highlight="Worldwide" subtitle="Form your business in 10+ jurisdictions with trusted partners" />
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
             <div className="mb-8">
