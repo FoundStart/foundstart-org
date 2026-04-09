@@ -37,6 +37,7 @@ const Countries = () => {
       <Header />
       <main className="pb-20 lg:pb-0">
         <PageHero title="Company Formation" highlight="Worldwide" subtitle="Form your business in 10+ jurisdictions with trusted partners" />
+        <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
             <div className="mb-8">
               <Button variant="outline" asChild>
