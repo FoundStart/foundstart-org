@@ -7,11 +7,9 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Mail, Clock, MessageCircle, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
-import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
-import WhatsAppButton from '@/components/WhatsAppButton';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });

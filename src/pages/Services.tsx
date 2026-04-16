@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { Bot, Globe, Smartphone, Phone, Mail, Zap, ShoppingCart, Search, Headphones, Code, Building, ExternalLink } from 'lucide-react';
+import { Bot, Globe, Mail, Zap, Search, Headphones, Building, ExternalLink } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
