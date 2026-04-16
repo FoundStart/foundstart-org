@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Search } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import { sisterDomains } from '@/data/sisterPartnersData';
 
 const SisterPartners = () => {
@@ -18,18 +18,15 @@ const SisterPartners = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20 pb-20 lg:pb-0">
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto max-w-7xl">
-            <div className="text-center space-y-4 mb-16">
-              <h1 className="text-3xl md:text-4xl font-bold">
-                Sister <span className="gradient-text">Partners</span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Explore our {sisterDomains.length} sister domains & brands across various industries.
-              </p>
-            </div>
+      <main>
+        <PageHero
+          title="Sister"
+          highlight="Partners"
+          subtitle={`Explore our ${sisterDomains.length} sister domains & brands across various industries.`}
+        />
 
+        <section className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-7xl">
             <div className="mb-8">
               <div className="relative max-w-md mx-auto">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />

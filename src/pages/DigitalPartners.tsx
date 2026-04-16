@@ -1,11 +1,7 @@
-
 import { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import DigitalPartnersHeader from '@/components/partners/DigitalPartnersHeader';
+import PageHero from '@/components/PageHero';
 import DigitalPartnersFilters from '@/components/partners/DigitalPartnersFilters';
 import DigitalPartnersGrid from '@/components/partners/DigitalPartnersGrid';
 import DigitalPartnersSidebar from '@/components/partners/DigitalPartnersSidebar';
@@ -17,7 +13,6 @@ const DigitalPartners = () => {
 
   const categories = ['All', ...Array.from(new Set(digitalPartnersData.map(p => p.category)))];
 
-  // Count partners per category
   const partnersCount = useMemo(() => {
     const counts: Record<string, number> = {};
     digitalPartnersData.forEach(partner => {
@@ -38,21 +33,15 @@ const DigitalPartners = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-20">
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <main>
+        <PageHero
+          title="600+ Digital"
+          highlight="Partners"
+          subtitle={`Access exclusive deals and partnerships to grow your business. Showing ${filteredPartners.length} partners across ${categories.length - 1} categories.`}
+        />
+
+        <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            {/* Back Button */}
-            <div className="mb-8">
-              <Button variant="outline" asChild>
-                <Link to="/">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Home
-                </Link>
-              </Button>
-            </div>
-            
-            <DigitalPartnersHeader filteredPartnersCount={filteredPartners.length} />
-            
             <DigitalPartnersFilters
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
@@ -62,17 +51,14 @@ const DigitalPartners = () => {
             />
 
             <div className="grid lg:grid-cols-4 gap-8 mt-8">
-              {/* Sidebar */}
               <div className="lg:col-span-1">
                 <DigitalPartnersSidebar
-                  categories={categories.slice(1)} // Remove 'All' from sidebar
+                  categories={categories.slice(1)}
                   selectedCategory={selectedCategory}
                   setSelectedCategory={setSelectedCategory}
                   partnersCount={partnersCount}
                 />
               </div>
-
-              {/* Main Content */}
               <div className="lg:col-span-3">
                 <DigitalPartnersGrid partners={filteredPartners} />
               </div>

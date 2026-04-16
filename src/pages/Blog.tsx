@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -22,16 +23,14 @@ const Blog = () => {
     <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Header />
       
+      <PageHero
+        title="FoundStart"
+        highlight="Blog"
+        subtitle="Insights, guides, and expert advice on agency formation, business setup, and starting your company in the USA & Europe."
+      />
+
       <div className="w-full max-w-full px-4 sm:px-6 lg:px-8 py-16">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center space-y-4 mb-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">FoundStart Blog</h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Insights, guides, and expert advice on agency formation, business setup, 
-              and starting your company in the USA & Europe.
-            </p>
-          </div>
-
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {categories.map((category) => (

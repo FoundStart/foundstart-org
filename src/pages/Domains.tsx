@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import DomainSearchMarketplace from '@/components/domains/DomainSearchMarketplace';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -67,31 +68,26 @@ const Domains = () => {
       <Header />
       
       <main className="pb-20 md:pb-0">
-        {/* Hero Section */}
-        <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto max-w-7xl text-center">
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
-              Domain <span className="gradient-text">Hub</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Browse our curated premium domains or search across 16+ registrars and marketplaces — all in one place.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/domain-wishlist">
-                <Button variant="outline" size="lg">
-                  <Heart className="w-5 h-5 mr-2" />
-                  My Wishlist ({favorites.length})
-                </Button>
-              </Link>
-              <Link to="/bulk-domain-inquiry">
-                <Button size="lg">
-                  <ShoppingCart className="w-5 h-5 mr-2" />
-                  Bulk Inquiry
-                </Button>
-              </Link>
-            </div>
+        <PageHero
+          title="Domain"
+          highlight="Hub"
+          subtitle="Browse our curated premium domains or search across 16+ registrars and marketplaces — all in one place."
+        >
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            <Link to="/domain-wishlist">
+              <Button variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10">
+                <Heart className="w-5 h-5 mr-2" />
+                My Wishlist ({favorites.length})
+              </Button>
+            </Link>
+            <Link to="/bulk-domain-inquiry">
+              <Button size="lg" className="bg-white text-black hover:bg-white/90">
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Bulk Inquiry
+              </Button>
+            </Link>
           </div>
-        </section>
+        </PageHero>
 
         {/* Tabbed Content */}
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
@@ -108,7 +104,6 @@ const Domains = () => {
                 </TabsTrigger>
               </TabsList>
 
-              {/* Premium Domains Tab */}
               <TabsContent value="premium">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                   <h2 className="text-2xl md:text-3xl font-bold">
@@ -124,7 +119,6 @@ const Domains = () => {
                   </div>
                 </div>
 
-                {/* Filters */}
                 <Card className="mb-6">
                   <CardContent className="p-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -150,7 +144,6 @@ const Domains = () => {
 
                 <p className="text-sm text-muted-foreground mb-4">Showing {filteredDomains.length} of {domainsData.length} domains</p>
 
-                {/* Table View */}
                 {viewMode === 'table' && (
                   <div className="rounded-lg border overflow-x-auto">
                     <Table>
@@ -214,7 +207,6 @@ const Domains = () => {
                   </div>
                 )}
 
-                {/* Grid View */}
                 {viewMode === 'grid' && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {filteredDomains.map((domain) => (
@@ -254,7 +246,6 @@ const Domains = () => {
                 )}
               </TabsContent>
 
-              {/* Search Marketplace Tab */}
               <TabsContent value="search">
                 <DomainSearchMarketplace />
               </TabsContent>
