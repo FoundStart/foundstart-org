@@ -8,7 +8,7 @@ export const countriesData = [
     currency: 'USD',
     ctaUrl: 'https://foundstart.org',
     videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw',
-    description: 'Form your US company with our trusted partners including FoundStart, Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, and Startfleet.',
+    description: 'Form your US company with our trusted partners including FoundStart, Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, Startfleet, and Go Nomad HQ.',
     benefits: [
       'Access to US banking and financial services',
       'Global credibility and market access',
@@ -24,8 +24,9 @@ export const countriesData = [
       { name: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
       { name: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed', videoUrl: 'https://www.youtube.com/watch?v=Hh568VJ0jW8' },
       { name: 'Doola', url: 'https://partnersps.doola.com/yukcm0gd526a', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ' },
-      { name: 'Tailorbrands', url: 'https://tailorbrands.go2cloud.org/aff_c?offer_id=66&aff_id=9476', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E' },
+      { name: 'Tailorbrands', url: 'https://shortet.com/tailorbrands', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E' },
       { name: 'Startfleet', url: 'https://startfleet.io?affp=7FkePzgFIAly', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM' },
+      { name: 'Go Nomad HQ', url: 'https://shortet.com/Go-Nomad-HQ', videoUrl: 'https://www.youtube.com/watch?v=TAV2pxr0yuw' },
     ],
     keyStats: { gdp: '$21.4T', population: '331M', easeOfBusiness: '6th', corporateTax: '21%' }
   },
@@ -38,7 +39,7 @@ export const countriesData = [
     currency: 'GBP',
     ctaUrl: 'https://1st-formations-limited.sjv.io/4GKB30',
     videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM',
-    description: 'Establish your UK company with leading formation partners including My1office, Firstbase, 1stFormations, Privatily, and Rapid Formation.',
+    description: 'Establish your UK company with leading formation partners including My1office, Firstbase, 1stFormations, Privatily, Rapid Formation, and Go Nomad HQ.',
     benefits: [
       'Gateway to European markets',
       'Strong legal and regulatory framework',
@@ -53,6 +54,7 @@ export const countriesData = [
       { name: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
       { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
       { name: 'Rapid Formation', url: 'https://rapid-formations.sjv.io/XmEo53', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
+      { name: 'Go Nomad HQ', url: 'https://shortet.com/Go-Nomad-HQ', videoUrl: 'https://www.youtube.com/watch?v=TAV2pxr0yuw' },
     ],
     keyStats: { gdp: '$2.8T', population: '67M', easeOfBusiness: '8th', corporateTax: '19%' }
   },

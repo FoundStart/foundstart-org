@@ -14,13 +14,13 @@ export const jurisdictionInfo = [
 
 export const partnerData = [
   // Company Formation Partners
-  { category: 'Company Formation', details: 'Company formation in USA & Europe', platform: 'FoundStart', url: 'https://foundstart.org', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
+  { category: 'Company Formation', details: 'Company formation in USA, UK & Europe', platform: 'FoundStart', url: 'https://foundstart.org', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
   { category: 'Company Formation', details: 'Company formation in USA-UK', platform: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'ITIN', url: 'https://theitin.com/ref/80SAYED50', coupon: 'SAYED50', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed', videoUrl: 'https://www.youtube.com/watch?v=Hh568VJ0jW8' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'Doola', url: 'https://partnersps.doola.com/yukcm0gd526a', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ' },
-  { category: 'Company Formation', details: 'Company formation in USA', platform: 'Tailorbrands', url: 'https://tailorbrands.go2cloud.org/aff_c?offer_id=66&aff_id=9476', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E' },
+  { category: 'Company Formation', details: 'Company formation in USA', platform: 'Tailorbrands', url: 'https://shortet.com/tailorbrands', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'Startfleet', url: 'https://startfleet.io?affp=7FkePzgFIAly', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM' },
   { category: 'Company Formation', details: 'Company formation in UK', platform: 'My1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
   { category: 'Company Formation', details: 'Company formation in UK', platform: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
@@ -33,6 +33,7 @@ export const partnerData = [
   { category: 'Company Formation', details: 'Company formation in Latvia', platform: '1office (Latvia)', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38' },
   { category: 'Company Formation', details: 'Company formation in Lithuania', platform: '1office (Lithuania)', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU' },
   { category: 'Company Formation', details: 'Company formation in Ireland', platform: '1office (Ireland)', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ' },
+  { category: 'Company Formation', details: 'Company formation in USA-UK', platform: 'Go Nomad HQ', url: 'https://shortet.com/Go-Nomad-HQ', videoUrl: 'https://www.youtube.com/watch?v=TAV2pxr0yuw' },
   
   // Finance Partners
   { category: 'Finance', details: 'Payment Gateway', platform: 'Stripe', url: 'https://stripe.com' },
@@ -41,8 +42,8 @@ export const partnerData = [
   { category: 'Finance', details: 'Personal financial management', platform: 'Refresh me', url: 'https://get.refresh.me/0jswhxxxuxd4' },
   
   // Telecommunications Partners
-  { category: 'Telecommunications', details: 'eSIM your eSIM anywhare anytime', platform: 'esim me', url: 'https://esim.me/esim-me-card-for-android?tracking=uNTexiT4sVLlxvvReENXMkAuUAMnyL60fRxBqMvmfSfUMUYCd6vNYXOsTKfmyWtB', videoUrl: 'https://www.youtube.com/watch?v=IONXfsWin4I' },
-  { category: 'Telecommunications', details: 'Buy a virtual phone number & esim', platform: 'SMS Fast', url: 'https://smsfast.com/?ref=2414', videoUrl: 'https://www.youtube.com/watch?v=BMcwoVoq3_g' },
-  { category: 'Telecommunications', details: 'Bnesim your eSIM anywhare anytime', platform: 'Bnesim', url: 'https://bnes.im/PHV3', videoUrl: 'https://www.youtube.com/watch?v=uf-n2XbjaKI' },
-  { category: 'Telecommunications', details: 'Get EUR 3.00 € off their first purchase', platform: 'Airalo', url: 'https://www.airalo.com/', coupon: 'MOHAME30889', videoUrl: 'https://www.youtube.com/watch?v=__1p4WqeIdg' }
+  { category: 'Telecommunications', details: 'eSIM your eSIM anywhare anytime', platform: 'esim me', url: 'https://shortet.com/esim', videoUrl: 'https://www.youtube.com/watch?v=IONXfsWin4I' },
+  { category: 'Telecommunications', details: 'Buy a virtual phone number & esim', platform: 'SMS Fast', url: 'https://shortet.com/smsfast', videoUrl: 'https://www.youtube.com/watch?v=BMcwoVoq3_g' },
+  { category: 'Telecommunications', details: 'Bnesim your eSIM anywhare anytime', platform: 'Bnesim', url: 'https://shortet.com/Bnesim', videoUrl: 'https://www.youtube.com/watch?v=uf-n2XbjaKI' },
+  { category: 'Telecommunications', details: 'Get EUR 3.00 € off their first purchase', platform: 'Airalo', url: 'https://shortet.com/airalo', coupon: 'MOHAME30889', videoUrl: 'https://www.youtube.com/watch?v=__1p4WqeIdg' }
 ];

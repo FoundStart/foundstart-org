@@ -1,12 +1,11 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import PricingTiers from '@/components/PricingTiers';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Globe, ExternalLink, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { CheckCircle, Globe, ExternalLink } from 'lucide-react';
 
 const Pricing = () => {
   const countryPricing = [
@@ -17,12 +16,13 @@ const Pricing = () => {
     { flag: '🇫🇮', name: 'Finland', price: '€350', currency: 'EUR', partners: ['1office'] },
     { flag: '🇸🇪', name: 'Sweden', price: 'SEK 3,500', currency: 'SEK', partners: ['1office'] },
     { flag: '🇱🇻', name: 'Latvia', price: '€250', currency: 'EUR', partners: ['1office'] },
-    { flag: '🇱🇹', name: 'Lithuania', price: '€280', currency: 'EUR', partners: ['1office'] }
+    { flag: '🇱🇹', name: 'Lithuania', price: '€280', currency: 'EUR', partners: ['1office'] },
+    { flag: '🇮🇪', name: 'Ireland', price: '€350', currency: 'EUR', partners: ['1office'] },
   ];
 
   const option2Services = [
     'AI-powered business formation',
-    'Multi-jurisdiction support (8 countries)',
+    'Multi-jurisdiction support (10 countries)',
     'Automated compliance monitoring',
     'Digital partner ecosystem access',
     'Banking and payment setup',
@@ -37,54 +37,37 @@ const Pricing = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-20">
-        {/* Back Button */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <Button variant="outline" asChild>
-            <Link to="/">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
-          </Button>
-        </div>
-        
-        {/* Hero Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/30 dark:from-background dark:via-blue-950/20 dark:to-purple-950/20">
-          <div className="container mx-auto max-w-7xl text-center animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Transparent <span className="gradient-text">Pricing</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Choose your jurisdiction and get started with our comprehensive business formation packages. 
-              No hidden fees, no surprises.
-            </p>
-            <Badge className="text-lg px-6 py-2 animate-pulse">
-              💰 30-Day Money-Back Guarantee
-            </Badge>
-          </div>
-        </section>
+      <main>
+        <PageHero
+          title="Transparent"
+          highlight="Pricing"
+          subtitle="Choose your jurisdiction and get started with our comprehensive business formation packages. No hidden fees, no surprises."
+        >
+          <Badge className="text-lg px-6 py-2 animate-pulse mt-2">
+            💰 30-Day Money-Back Guarantee
+          </Badge>
+        </PageHero>
 
-        {/* Option 2: Country-Based Pricing */}
+        {/* Country-Based Pricing */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center mb-16 animate-slide-in">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 <span className="gradient-text">Formation by Country</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Start your business in any of our 8 supported jurisdictions with our trusted formation partners.
+                Start your business in any of our 10 supported jurisdictions with our trusted formation partners.
               </p>
             </div>
 
-            {/* Services Included */}
-            <Card className="mb-12 glass-card animate-scale-in">
+            <Card className="mb-12 glass-card">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">What's Included in Every Package</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {option2Services.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3 hover-scale">
+                    <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                       <span>{service}</span>
                     </div>
@@ -93,16 +76,11 @@ const Pricing = () => {
               </CardContent>
             </Card>
 
-            {/* Country Pricing Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {countryPricing.map((country, index) => (
-                <Card 
-                  key={index} 
-                  className="hover:shadow-xl transition-all duration-500 hover-scale glass-card animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+                <Card key={index} className="hover:shadow-xl transition-all duration-500 glass-card">
                   <CardHeader className="text-center pb-4">
-                    <div className="text-4xl mb-2 animate-bounce">{country.flag}</div>
+                    <div className="text-4xl mb-2">{country.flag}</div>
                     <CardTitle className="text-lg">{country.name}</CardTitle>
                     <div className="text-3xl font-bold gradient-text">{country.price}</div>
                     <Badge variant="outline">{country.currency}</Badge>
@@ -121,7 +99,7 @@ const Pricing = () => {
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full group hover-scale">
+                    <Button className="w-full group">
                       Start in {country.name}
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
                     </Button>
@@ -130,8 +108,7 @@ const Pricing = () => {
               ))}
             </div>
 
-            {/* CTA Section */}
-            <div className="text-center mt-16 animate-fade-in">
+            <div className="text-center mt-16">
               <Card className="max-w-2xl mx-auto glass-card">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4">Ready to Start Your Business?</h3>
@@ -139,12 +116,8 @@ const Pricing = () => {
                     Join 10,000+ entrepreneurs who have successfully launched their businesses with FoundStart.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button size="lg" className="hover-scale">
-                      Choose Your Country
-                    </Button>
-                    <Button size="lg" variant="outline" className="hover-scale">
-                      View All Services
-                    </Button>
+                    <Button size="lg">Choose Your Country</Button>
+                    <Button size="lg" variant="outline">View All Services</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -152,7 +125,6 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* Complete Service Packages */}
         <PricingTiers />
       </main>
 
