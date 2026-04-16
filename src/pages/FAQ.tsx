@@ -96,7 +96,7 @@ const FAQ = () => {
                   <Link to="/contact-us">Contact Us</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://wa.me/21002905764" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/message/UQZ6STBLDXKPD1" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     WhatsApp
                   </a>
