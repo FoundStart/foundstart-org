@@ -12,6 +12,7 @@ import {
 import { useAuth } from '@/contexts/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import PricingTiers from '@/components/pricing/PricingTiers';
 
 const DashboardHome = () => {
   const { user } = useAuth();
@@ -324,6 +325,8 @@ const DashboardHome = () => {
           )}
         </CardContent>
       </Card>
+
+      <PricingTiers />
     </div>
   );
 };
