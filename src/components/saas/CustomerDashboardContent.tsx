@@ -13,6 +13,7 @@ import AffiliatesDashboard from './dashboard/AffiliatesDashboard';
 import SupportCenter from './dashboard/SupportCenter';
 import AccountSettings from './dashboard/AccountSettings';
 import WalletDashboard from '@/components/wallet/WalletDashboard';
+import PricingPlans from './dashboard/PricingPlans';
 
 const CustomerDashboardContent = () => {
   return (
@@ -38,6 +39,7 @@ const CustomerDashboardContent = () => {
           <Route path="documents" element={<DocumentsCenter />} />
           <Route path="wallet" element={<WalletDashboard />} />
           <Route path="billing" element={<BillingPayments />} />
+          <Route path="pricing" element={<PricingPlans />} />
           <Route path="affiliates" element={<AffiliatesDashboard />} />
           <Route path="support/*" element={<SupportCenter />} />
           <Route path="settings" element={<AccountSettings />} />

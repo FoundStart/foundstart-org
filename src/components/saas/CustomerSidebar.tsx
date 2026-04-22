@@ -27,6 +27,7 @@ import {
   Wallet,
   Package,
   Briefcase,
+  Tag,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Button } from '@/components/ui/button';
@@ -48,6 +49,7 @@ const accountMenuItems = [
   { title: 'Documents', icon: FileText, href: '/dashboard/documents' },
   { title: 'Wallet', icon: Wallet, href: '/dashboard/wallet' },
   { title: 'Billing', icon: CreditCard, href: '/dashboard/billing' },
+  { title: 'Pricing Plans', icon: Tag, href: '/dashboard/pricing' },
   { title: 'Affiliates', icon: Users, href: '/dashboard/affiliates' },
   { title: 'Support', icon: HelpCircle, href: '/dashboard/support' },
   { title: 'Settings', icon: Settings, href: '/dashboard/settings' },

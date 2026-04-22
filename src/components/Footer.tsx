@@ -116,6 +116,9 @@ const Footer = () => {
   }, {
     title: "Company",
     links: [{
+      name: "Pricing & Country Tiers",
+      href: "/pricing#country-tiers"
+    }, {
       name: "Who We Are",
       href: "/who-we-are"
     }, {
