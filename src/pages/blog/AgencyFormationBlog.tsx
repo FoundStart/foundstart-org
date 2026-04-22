@@ -208,6 +208,135 @@ const blogContents: Record<string, BlogContent> = {
     ],
     ctaText: "Start Your European Agency",
     relatedSlugs: ["estonia-eresidency-agency", "consulting-agency-germany", "branding-agency-netherlands"]
+  },
+  'payment-gateways-egypt': {
+    title: "Payment Gateways in Egypt: The Complete 2026 Guide for Founders",
+    description: "Compare top payment gateways available in Egypt — Kashier, Paymob, Fawry, Stripe (via foreign entity), PayTabs and more. Fees, settlement, and how to integrate.",
+    category: "Fintech",
+    author: "FoundStart Team",
+    date: "Apr 22, 2026",
+    readTime: "12 min read",
+    sections: [
+      {
+        title: "Why Egypt's Payment Landscape Matters",
+        content: [
+          "Egypt is one of the fastest growing fintech markets in MENA, with a young digital population, rapid mobile wallet adoption (Instapay, Vodafone Cash, Etisalat Cash, Orange Cash), and a Central Bank pushing aggressively toward cashless payments.",
+          "For startups and SaaS founders, choosing the right payment gateway determines conversion rate, settlement speed, and ability to accept both local EGP cards and international Visa/Mastercard payments."
+        ],
+        list: [
+          "Local card acceptance (Meeza, Visa, Mastercard EGP)",
+          "Mobile wallet support (Instapay, Vodafone Cash)",
+          "Installments providers (valU, Sympl, Aman, Souhoola, ContactPay)",
+          "USD/EUR settlement options for cross-border SaaS",
+          "Recurring billing & tokenization for subscriptions"
+        ]
+      },
+      {
+        title: "Top Payment Gateways in Egypt",
+        content: [
+          "Below are the most established gateways operating in Egypt today. FoundStart integrates Kashier as its primary processor for EGP transactions, and Stripe for international USD billing via a US/UK entity."
+        ],
+        list: [
+          "Kashier — Modern API-first gateway, Visa/Mastercard/Meeza, mobile wallets, installments, fast onboarding (FoundStart's primary)",
+          "Paymob — Largest Egyptian PSP, deep wallet & installments coverage, accepted by most banks",
+          "Fawry — Cash collection network + online checkout, ideal for cash-on-delivery and unbanked customers",
+          "PayTabs Egypt — Regional GCC + Egypt processor, multi-currency settlement",
+          "Geidea — Bank-grade gateway backed by Al Ahli, strong for enterprise and POS",
+          "ContactPay & valU — Best-in-class buy-now-pay-later integrations",
+          "Stripe — Not directly licensed in Egypt; accessible by founders who incorporate a US/UK entity through FoundStart"
+        ]
+      },
+      {
+        title: "Fees & Settlement (Typical Ranges)",
+        content: [
+          "Pricing is negotiable based on monthly volume. Typical published rates as of 2026:"
+        ],
+        list: [
+          "Kashier: 2.50% – 2.75% per transaction, T+2 settlement to Egyptian bank",
+          "Paymob: 2.75% + EGP 2 per transaction, T+1 to T+3 settlement",
+          "Fawry: 1.5% – 3% (varies by channel: cash, card, wallet)",
+          "PayTabs: 2.85% per transaction, multi-currency settlement",
+          "Stripe (via foreign entity): 2.9% + $0.30, daily payouts to Mercury / Wise"
+        ]
+      },
+      {
+        title: "Which One Should You Pick?",
+        content: [
+          "If you sell only inside Egypt and accept EGP — start with Kashier or Paymob. Both give you full coverage of cards, wallets, and installments.",
+          "If your customers prefer cash, layer Fawry on top so you don't lose unbanked buyers.",
+          "If you sell SaaS to global customers, the smart move is to incorporate a US LLC or UK Ltd via FoundStart and bill globally through Stripe — settling USD into Mercury or Wise, then transferring to your Egyptian operating account when needed.",
+          "Many FoundStart founders run a hybrid: Kashier for EGP local sales + Stripe for international subscriptions."
+        ]
+      }
+    ],
+    ctaText: "Set Up Payments with FoundStart",
+    relatedSlugs: ["payment-gateways-worldwide", "marketing-agency-usa", "premium-domains-for-sale"]
+  },
+  'payment-gateways-worldwide': {
+    title: "Payment Gateways Worldwide: 2026 Comparison for Global Founders",
+    description: "The definitive comparison of global payment gateways — Stripe, PayPal, Adyen, Wise, Mercury, Razorpay, Mollie, 2Checkout and more. Pick the right stack for your jurisdiction.",
+    category: "Fintech",
+    author: "FoundStart Team",
+    date: "Apr 22, 2026",
+    readTime: "14 min read",
+    sections: [
+      {
+        title: "Why Your Payment Stack Defines Your Growth",
+        content: [
+          "Global founders rarely use a single gateway. The right stack depends on (1) where your company is incorporated, (2) where your customers are, and (3) how you want to be paid out.",
+          "FoundStart helps founders incorporate in 10+ jurisdictions (USA, UK, Estonia, Ireland, Finland, Sweden, Latvia, Lithuania, Canada, Egypt) — each unlocks a different set of premium gateways."
+        ]
+      },
+      {
+        title: "Top Global Payment Gateways",
+        content: [
+          "These are the gateways FoundStart founders use most often, ranked by global reach and developer experience."
+        ],
+        list: [
+          "Stripe — Best overall for SaaS, subscriptions, marketplaces. 47+ countries. Requires US, UK, EU, CA, AU, SG entity",
+          "PayPal / Braintree — Universal buyer trust, 200+ markets, weak for subscriptions vs Stripe",
+          "Adyen — Enterprise-grade unified platform used by Uber, Spotify, eBay. High volume only",
+          "Wise Business — Multi-currency receiving accounts in USD, EUR, GBP, AUD, NZD, CAD, HUF, RON, TRY, SGD",
+          "Mercury — US business banking with virtual cards, ACH, wires; ideal for US LLC/Corp",
+          "Razorpay — Dominant in India, supports UPI, cards, netbanking",
+          "Mollie — Best for European SMBs, supports iDEAL, Bancontact, SEPA, Klarna",
+          "2Checkout / Verifone — Merchant-of-record, handles global tax compliance for digital goods",
+          "Paddle / LemonSqueezy — Merchant-of-record SaaS billing, handles VAT/sales tax automatically",
+          "Airwallex — Global business accounts and FX, popular in APAC",
+          "Revolut Business — Multi-currency accounts and cards across UK/EU"
+        ]
+      },
+      {
+        title: "Recommended Stack by Entity Type",
+        content: [
+          "Match your gateway choice to where you incorporate."
+        ],
+        list: [
+          "US LLC / C-Corp → Stripe + Mercury + Wise (gold standard)",
+          "UK Ltd → Stripe UK + Wise + Revolut Business",
+          "Estonia OÜ (e-Residency) → Stripe Atlas alternative + Wise + Payoneer",
+          "Ireland Ltd → Stripe Ireland + Revolut + Mollie for EU",
+          "Egypt LLC → Kashier + Paymob locally, Stripe via parallel US entity",
+          "India Pvt Ltd → Razorpay + Stripe India",
+          "Singapore Pte Ltd → Stripe SG + Airwallex + Wise"
+        ]
+      },
+      {
+        title: "Merchant-of-Record vs Direct Gateway",
+        content: [
+          "If you sell digital products, SaaS, or info-products globally, consider a Merchant-of-Record (MoR) like Paddle, LemonSqueezy, or 2Checkout. They become the legal seller, collect VAT/GST/sales tax in 100+ jurisdictions on your behalf, and pay you a single net amount.",
+          "Trade-off: MoRs charge 5%–8% all-in vs ~3% on Stripe — but they remove a massive compliance burden. Most early-stage founders should start with an MoR and migrate to Stripe direct once they pass $500k ARR."
+        ]
+      },
+      {
+        title: "How FoundStart Sets You Up End-to-End",
+        content: [
+          "When you form your company through FoundStart, we don't just file paperwork. We help you open the right banking + payment stack for your jurisdiction, including Stripe activation, Mercury/Wise accounts, and Kashier for Egyptian operations — all from one dashboard."
+        ]
+      }
+    ],
+    ctaText: "Form Your Global Company",
+    relatedSlugs: ["payment-gateways-egypt", "marketing-agency-usa", "uk-vs-us-company-formation"]
   }
 };
 

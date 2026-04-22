@@ -14,6 +14,28 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 100,
+    title: "Payment Gateways in Egypt: The Complete 2026 Guide for Founders",
+    description: "Compare Kashier, Paymob, Fawry, PayTabs and Stripe-via-foreign-entity. Fees, settlement times, mobile wallets and installments — everything Egyptian founders need.",
+    category: "Fintech",
+    author: "FoundStart Team",
+    date: "Apr 22, 2026",
+    readTime: "12 min read",
+    featured: true,
+    slug: "payment-gateways-egypt"
+  },
+  {
+    id: 101,
+    title: "Payment Gateways Worldwide: 2026 Comparison for Global Founders",
+    description: "The definitive comparison of Stripe, PayPal, Adyen, Wise, Mercury, Razorpay, Mollie, Paddle and more. Pick the right stack for your jurisdiction.",
+    category: "Fintech",
+    author: "FoundStart Team",
+    date: "Apr 22, 2026",
+    readTime: "14 min read",
+    featured: true,
+    slug: "payment-gateways-worldwide"
+  },
+  {
     id: 0,
     title: "Premium Domains for Sale – Brand-Ready, Short & Scalable",
     description: "Curated portfolio of 50+ premium, brandable domains perfect for startups, SaaS platforms, fintech, e-commerce, AI projects, crypto, and global brands.",
