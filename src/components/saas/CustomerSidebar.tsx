@@ -41,7 +41,7 @@ const mainMenuItems = [
 
 const servicesMenuItems = [
   { title: 'Services Marketplace', icon: ShoppingCart, href: '/dashboard/services' },
-  { title: 'Domain Search', icon: Globe, href: '/domains' },
+  { title: 'Domain Search', icon: Globe, href: '/dashboard/domains' },
   { title: 'AI Assistant', icon: Bot, href: '/dashboard/ai-assistant' },
 ];
 
