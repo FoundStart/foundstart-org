@@ -6,7 +6,7 @@ export const countriesData = [
     price: '$299',
     timeframe: '5-7 business days',
     currency: 'USD',
-    ctaUrl: 'https://foundstart.org',
+    ctaUrl: 'https://shortet.com/foundstart',
     videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw',
     description: 'Form your US company with our trusted partners including FoundStart, Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, Startfleet, and Go Nomad HQ.',
     benefits: [
@@ -18,14 +18,14 @@ export const countriesData = [
       'Investor attraction and funding opportunities'
     ],
     partners: [
-      { name: 'FoundStart', url: 'https://foundstart.org', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
-      { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
-      { name: 'ITIN', url: 'https://theitin.com/ref/80SAYED50', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys' },
-      { name: 'Clemta', url: 'https://clemta.com/?ref=njbhzwf', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
-      { name: 'Startglobal', url: 'http://startglobal.co/?via=mohamed-sayed', videoUrl: 'https://www.youtube.com/watch?v=Hh568VJ0jW8' },
-      { name: 'Doola', url: 'https://partnersps.doola.com/yukcm0gd526a', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ' },
+      { name: 'FoundStart', url: 'https://shortet.com/foundstart', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
+      { name: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
+      { name: 'ITIN', url: 'https://shortet.com/theitin', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys' },
+      { name: 'Clemta', url: 'https://shortet.com/clemta', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
+      { name: 'Startglobal', url: 'https://shortet.com/startglobal', videoUrl: 'https://www.youtube.com/watch?v=Hh568VJ0jW8' },
+      { name: 'Doola', url: 'https://shortet.com/doola', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ' },
       { name: 'Tailorbrands', url: 'https://shortet.com/tailorbrands', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E' },
-      { name: 'Startfleet', url: 'https://startfleet.io?affp=7FkePzgFIAly', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM' },
+      { name: 'Startfleet', url: 'https://shortet.com/startfleet', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM' },
       { name: 'Go Nomad HQ', url: 'https://shortet.com/Go-Nomad-HQ', videoUrl: 'https://www.youtube.com/watch?v=TAV2pxr0yuw' },
     ],
     keyStats: { gdp: '$21.4T', population: '331M', easeOfBusiness: '6th', corporateTax: '21%' }
@@ -37,9 +37,9 @@ export const countriesData = [
     price: '£199',
     timeframe: '3-5 business days',
     currency: 'GBP',
-    ctaUrl: 'https://1st-formations-limited.sjv.io/4GKB30',
+    ctaUrl: 'https://shortet.com/1st-formations',
     videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM',
-    description: 'Establish your UK company with leading formation partners including My1office, Firstbase, 1stFormations, Privatily, Rapid Formation, and Go Nomad HQ.',
+    description: 'Establish your UK company with leading formation partners including 1office, Firstbase, 1stFormations, Privatily, Rapid Formation, and Go Nomad HQ.',
     benefits: [
       'Gateway to European markets',
       'Strong legal and regulatory framework',
@@ -49,11 +49,11 @@ export const countriesData = [
       'Competitive corporate tax rates'
     ],
     partners: [
-      { name: 'My1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
-      { name: 'Firstbase', url: 'https://firstbase.pxf.io/RGaDzX', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
-      { name: '1stFormations', url: 'https://1st-formations-limited.sjv.io/4GKB30', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
-      { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
-      { name: 'Rapid Formation', url: 'https://rapid-formations.sjv.io/XmEo53', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
+      { name: 'Firstbase', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
+      { name: '1stFormations', url: 'https://shortet.com/1st-formations', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
+      { name: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
+      { name: 'Rapid Formation', url: 'https://shortet.com/rapid-formations', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
       { name: 'Go Nomad HQ', url: 'https://shortet.com/Go-Nomad-HQ', videoUrl: 'https://www.youtube.com/watch?v=TAV2pxr0yuw' },
     ],
     keyStats: { gdp: '$2.8T', population: '67M', easeOfBusiness: '8th', corporateTax: '19%' }
@@ -65,7 +65,7 @@ export const countriesData = [
     price: 'CAD $399',
     timeframe: '7-10 business days',
     currency: 'CAD',
-    ctaUrl: 'https://privatily.com/ref/Deeemoz/',
+    ctaUrl: 'https://shortet.com/privatily',
     videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
     description: 'Start your Canadian business with Privatily, our trusted formation partner.',
     benefits: [
@@ -77,7 +77,7 @@ export const countriesData = [
       'High quality of life'
     ],
     partners: [
-      { name: 'Privatily', url: 'https://privatily.com/ref/Deeemoz/', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
+      { name: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
     ],
     keyStats: { gdp: '$1.7T', population: '38M', easeOfBusiness: '23rd', corporateTax: '15%' }
   },
@@ -88,7 +88,7 @@ export const countriesData = [
     price: '€300',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g',
     description: 'Launch your Estonian company with 1office, benefiting from the world\'s most advanced digital infrastructure and e-Residency program.',
     benefits: [
@@ -100,7 +100,7 @@ export const countriesData = [
       'Startup-friendly environment'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g' },
     ],
     keyStats: { gdp: '$31B', population: '1.3M', easeOfBusiness: '18th', corporateTax: '20%' }
   },
@@ -111,7 +111,7 @@ export const countriesData = [
     price: '€350',
     timeframe: '5-7 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE',
     description: 'Establish your Finnish company with 1office and access one of the world\'s most innovative and stable business environments.',
     benefits: [
@@ -123,7 +123,7 @@ export const countriesData = [
       'Digital government services'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE' },
     ],
     keyStats: { gdp: '$269B', population: '5.5M', easeOfBusiness: '20th', corporateTax: '20%' }
   },
@@ -134,7 +134,7 @@ export const countriesData = [
     price: 'SEK 3,500',
     timeframe: '5-7 business days',
     currency: 'SEK',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA',
     description: 'Start your Swedish business with 1office and tap into one of Europe\'s most innovative markets.',
     benefits: [
@@ -146,7 +146,7 @@ export const countriesData = [
       'Work-life balance culture'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA' },
     ],
     keyStats: { gdp: '$541B', population: '10.4M', easeOfBusiness: '10th', corporateTax: '20.6%' }
   },
@@ -157,7 +157,7 @@ export const countriesData = [
     price: '€250',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38',
     description: 'Form your Latvian company with 1office and benefit from competitive costs and strategic location in the Baltics.',
     benefits: [
@@ -169,7 +169,7 @@ export const countriesData = [
       'Competitive tax rates'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38' },
     ],
     keyStats: { gdp: '$34B', population: '1.9M', easeOfBusiness: '19th', corporateTax: '20%' }
   },
@@ -180,7 +180,7 @@ export const countriesData = [
     price: '€280',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU',
     description: 'Establish your Lithuanian company with 1office and access the rapidly growing Baltic market with EU benefits.',
     benefits: [
@@ -192,7 +192,7 @@ export const countriesData = [
       'Educated workforce'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU' },
     ],
     keyStats: { gdp: '$56B', population: '2.8M', easeOfBusiness: '11th', corporateTax: '15%' }
   },
