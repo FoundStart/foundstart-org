@@ -88,7 +88,7 @@ export const countriesData = [
     price: '€300',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g',
     description: 'Launch your Estonian company with 1office, benefiting from the world\'s most advanced digital infrastructure and e-Residency program.',
     benefits: [
@@ -100,7 +100,7 @@ export const countriesData = [
       'Startup-friendly environment'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g' },
     ],
     keyStats: { gdp: '$31B', population: '1.3M', easeOfBusiness: '18th', corporateTax: '20%' }
   },
@@ -111,7 +111,7 @@ export const countriesData = [
     price: '€350',
     timeframe: '5-7 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE',
     description: 'Establish your Finnish company with 1office and access one of the world\'s most innovative and stable business environments.',
     benefits: [
@@ -123,7 +123,7 @@ export const countriesData = [
       'Digital government services'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE' },
     ],
     keyStats: { gdp: '$269B', population: '5.5M', easeOfBusiness: '20th', corporateTax: '20%' }
   },
@@ -134,7 +134,7 @@ export const countriesData = [
     price: 'SEK 3,500',
     timeframe: '5-7 business days',
     currency: 'SEK',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA',
     description: 'Start your Swedish business with 1office and tap into one of Europe\'s most innovative markets.',
     benefits: [
@@ -146,7 +146,7 @@ export const countriesData = [
       'Work-life balance culture'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=2lO5yuTZ7tA' },
     ],
     keyStats: { gdp: '$541B', population: '10.4M', easeOfBusiness: '10th', corporateTax: '20.6%' }
   },
@@ -157,7 +157,7 @@ export const countriesData = [
     price: '€250',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38',
     description: 'Form your Latvian company with 1office and benefit from competitive costs and strategic location in the Baltics.',
     benefits: [
@@ -169,7 +169,7 @@ export const countriesData = [
       'Competitive tax rates'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=5RAKkl8Kn38' },
     ],
     keyStats: { gdp: '$34B', population: '1.9M', easeOfBusiness: '19th', corporateTax: '20%' }
   },
@@ -180,7 +180,7 @@ export const countriesData = [
     price: '€280',
     timeframe: '3-5 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU',
     description: 'Establish your Lithuanian company with 1office and access the rapidly growing Baltic market with EU benefits.',
     benefits: [
@@ -192,7 +192,7 @@ export const countriesData = [
       'Educated workforce'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=b7scJVZQ1rU' },
     ],
     keyStats: { gdp: '$56B', population: '2.8M', easeOfBusiness: '11th', corporateTax: '15%' }
   },
@@ -203,7 +203,7 @@ export const countriesData = [
     price: '€350',
     timeframe: '5-7 business days',
     currency: 'EUR',
-    ctaUrl: 'https://1office.co?fpr=momo',
+    ctaUrl: 'https://shortet.com/1office',
     videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ',
     description: 'Establish your Irish company with 1office and access one of Europe\'s most business-friendly environments with low corporate tax rates.',
     benefits: [
@@ -215,7 +215,7 @@ export const countriesData = [
       'Stable legal and regulatory framework'
     ],
     partners: [
-      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ' },
+      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ' },
     ],
     keyStats: { gdp: '$529B', population: '5.1M', easeOfBusiness: '24th', corporateTax: '12.5%' }
   },
