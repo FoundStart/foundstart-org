@@ -203,7 +203,7 @@ export const countriesData = [
     price: '€350',
     timeframe: '5-7 business days',
     currency: 'EUR',
-    ctaUrl: 'https://shortet.com/1office',
+    ctaUrl: 'https://1office.co?fpr=momo',
     videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ',
     description: 'Establish your Irish company with 1office and access one of Europe\'s most business-friendly environments with low corporate tax rates.',
     benefits: [
@@ -215,7 +215,7 @@ export const countriesData = [
       'Stable legal and regulatory framework'
     ],
     partners: [
-      { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ' },
+      { name: '1office', url: 'https://1office.co?fpr=momo', videoUrl: 'https://www.youtube.com/watch?v=HHRYdAeqmvQ' },
     ],
     keyStats: { gdp: '$529B', population: '5.1M', easeOfBusiness: '24th', corporateTax: '12.5%' }
   },
