@@ -193,7 +193,7 @@ serve(async (req) => {
     if (dbError) {
       console.error('Database error:', dbError)
       return new Response(
-        JSON.stringify({ error: 'Database error: ' + dbError.message }),
+        JSON.stringify({ error: 'Unable to create payment. Please try again or contact support.' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
