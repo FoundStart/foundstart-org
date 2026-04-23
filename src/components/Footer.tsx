@@ -168,16 +168,27 @@ const Footer = () => {
               for company formation, banking, and digital services.
             </p>
             
-            {/* Download Button */}
-            <div className="mb-4">
-              <a 
-                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT51oaHgrpKbNUUh_1t4ubKyFgQZVXLHQRbA3_EHMc4xDcByOOrnTkyIf63-Gn9AmK2UMF5iXJcKv41/pubhtml" 
-                target="_blank" 
+            {/* Download Buttons */}
+            <div className="mb-4 space-y-2">
+              <a
+                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT51oaHgrpKbNUUh_1t4ubKyFgQZVXLHQRbA3_EHMc4xDcByOOrnTkyIf63-Gn9AmK2UMF5iXJcKv41/pubhtml"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button variant="outline" size="sm" className="w-full">
                   <Download className="w-4 h-4 mr-2" />
                   MoMoAI Business Sheet
+                </Button>
+              </a>
+              <a
+                href="/Business_Sheet_2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                <Button variant="outline" size="sm" className="w-full">
+                  <Download className="w-4 h-4 mr-2" />
+                  Digital Partners 2026 (PDF)
                 </Button>
               </a>
             </div>

@@ -14,6 +14,7 @@ import SupportCenter from './dashboard/SupportCenter';
 import AccountSettings from './dashboard/AccountSettings';
 import WalletDashboard from '@/components/wallet/WalletDashboard';
 import PricingPlans from './dashboard/PricingPlans';
+import DashboardDomains from './dashboard/DashboardDomains';
 
 const CustomerDashboardContent = () => {
   return (
@@ -35,6 +36,7 @@ const CustomerDashboardContent = () => {
           <Route path="my-services" element={<MyServicesPage />} />
           <Route path="formation/*" element={<CompanyFormation />} />
           <Route path="services/*" element={<ServicesMarketplace />} />
+          <Route path="domains" element={<DashboardDomains />} />
           <Route path="ai-assistant" element={<AIAssistant />} />
           <Route path="documents" element={<DocumentsCenter />} />
           <Route path="wallet" element={<WalletDashboard />} />
