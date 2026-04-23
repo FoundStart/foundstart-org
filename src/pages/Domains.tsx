@@ -13,17 +13,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, List, Sparkles, Store } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
-import { domainsData, categories, hostingProviders, businessTypes } from '@/data/domainsData';
+import { domainsData, categories, hostingProviders } from '@/data/domainsData';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedHosting, setSelectedHosting] = useState('All');
-  const [selectedBusinessType, setSelectedBusinessType] = useState('All');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'salePrice'>('name');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table');
-  
+
   const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
 
   const filteredDomains = useMemo(() => {
@@ -33,17 +31,13 @@ const Domains = () => {
                              domain.category.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'All' || domain.category.toLowerCase().includes(selectedCategory.toLowerCase());
         const matchesHosting = selectedHosting === 'All' || domain.hosting === selectedHosting;
-        const matchesBusinessType = selectedBusinessType === 'All' || domain.businessType === selectedBusinessType;
-        return matchesSearch && matchesCategory && matchesHosting && matchesBusinessType;
+        return matchesSearch && matchesCategory && matchesHosting;
       })
       .sort((a, b) => {
-        let comparison = 0;
-        if (sortBy === 'name') comparison = a.name.localeCompare(b.name);
-        else if (sortBy === 'price') comparison = a.registrationPrice - b.registrationPrice;
-        else if (sortBy === 'salePrice') comparison = (a.salePrice || 0) - (b.salePrice || 0);
-        return sortOrder === 'asc' ? comparison : -comparison;
+        const c = a.name.localeCompare(b.name);
+        return sortOrder === 'asc' ? c : -c;
       });
-  }, [searchQuery, selectedCategory, selectedHosting, selectedBusinessType, sortBy, sortOrder]);
+  }, [searchQuery, selectedCategory, selectedHosting, sortOrder]);
 
   const getHostingBadge = (hosting: string) => {
     const colors: Record<string, string> = {
@@ -53,20 +47,10 @@ const Domains = () => {
     return <Badge className={`${colors[hosting] || 'bg-gray-500'} text-white text-xs`}>{hosting}</Badge>;
   };
 
-  const getBusinessTypeBadge = (type: string) => {
-    if (!type) return null;
-    return <Badge variant={type === 'Business' ? 'default' : 'secondary'} className="text-xs">{type}</Badge>;
-  };
-
-  const handleSort = (column: 'name' | 'price' | 'salePrice') => {
-    if (sortBy === column) setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-    else { setSortBy(column); setSortOrder('asc'); }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pb-20 md:pb-0">
         <PageHero
           title="Domain"
@@ -89,7 +73,6 @@ const Domains = () => {
           </div>
         </PageHero>
 
-        {/* Tabbed Content */}
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
             <Tabs defaultValue="premium" className="w-full">
@@ -121,7 +104,7 @@ const Domains = () => {
 
                 <Card className="mb-6">
                   <CardContent className="p-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                       <div className="relative lg:col-span-2">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                         <Input placeholder="Search domains..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10" />
@@ -133,10 +116,6 @@ const Domains = () => {
                       <Select value={selectedHosting} onValueChange={setSelectedHosting}>
                         <SelectTrigger><SelectValue placeholder="Hosting" /></SelectTrigger>
                         <SelectContent>{hostingProviders.map(host => <SelectItem key={host} value={host}>{host}</SelectItem>)}</SelectContent>
-                      </Select>
-                      <Select value={selectedBusinessType} onValueChange={setSelectedBusinessType}>
-                        <SelectTrigger><SelectValue placeholder="Type" /></SelectTrigger>
-                        <SelectContent>{businessTypes.map(type => <SelectItem key={type} value={type}>{type}</SelectItem>)}</SelectContent>
                       </Select>
                     </div>
                   </CardContent>
@@ -151,17 +130,12 @@ const Domains = () => {
                         <TableRow>
                           <TableHead className="w-12">#</TableHead>
                           <TableHead>
-                            <Button variant="ghost" size="sm" onClick={() => handleSort('name')}>Domain <ArrowUpDown className="w-3 h-3 ml-1" /></Button>
+                            <Button variant="ghost" size="sm" onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+                              Domain <ArrowUpDown className="w-3 h-3 ml-1" />
+                            </Button>
                           </TableHead>
                           <TableHead>Hosting</TableHead>
                           <TableHead className="hidden md:table-cell">Category</TableHead>
-                          <TableHead>
-                            <Button variant="ghost" size="sm" onClick={() => handleSort('price')}>Reg. Price <ArrowUpDown className="w-3 h-3 ml-1" /></Button>
-                          </TableHead>
-                          <TableHead>
-                            <Button variant="ghost" size="sm" onClick={() => handleSort('salePrice')}>Sale Price <ArrowUpDown className="w-3 h-3 ml-1" /></Button>
-                          </TableHead>
-                          <TableHead>Type</TableHead>
                           <TableHead className="text-right">Actions</TableHead>
                         </TableRow>
                       </TableHeader>
@@ -176,14 +150,9 @@ const Domains = () => {
                               </div>
                             </TableCell>
                             <TableCell>{getHostingBadge(domain.hosting)}</TableCell>
-                            <TableCell className="hidden md:table-cell max-w-[200px]">
+                            <TableCell className="hidden md:table-cell max-w-[260px]">
                               <span className="text-sm text-muted-foreground truncate block">{domain.category}</span>
                             </TableCell>
-                            <TableCell>${domain.registrationPrice}</TableCell>
-                            <TableCell>
-                              {domain.salePrice ? <span className="font-bold text-primary">${domain.salePrice}</span> : <span className="text-muted-foreground">Contact</span>}
-                            </TableCell>
-                            <TableCell>{getBusinessTypeBadge(domain.businessType)}</TableCell>
                             <TableCell className="text-right">
                               <div className="flex items-center justify-end gap-2">
                                 <Button variant="ghost" size="icon" onClick={() => toggleFavorite(domain.name)} className={isFavorite(domain.name) ? 'text-red-500' : ''}>
@@ -191,7 +160,7 @@ const Domains = () => {
                                 </Button>
                                 {domain.buyUrl ? (
                                   <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer">
-                                    <Button size="sm" variant="outline"><ExternalLink className="w-3 h-3 mr-1" />Buy</Button>
+                                    <Button size="sm" variant="outline"><ExternalLink className="w-3 h-3 mr-1" />Visit</Button>
                                   </a>
                                 ) : (
                                   <Link to={`/domain-inquiry?domain=${encodeURIComponent(domain.name)}`}>
@@ -213,26 +182,19 @@ const Domains = () => {
                       <Card key={domain.id} className="hover:shadow-lg transition-shadow">
                         <CardContent className="p-4">
                           <div className="flex justify-between items-start mb-3">
-                            <div className="flex items-center gap-2">
-                              <Globe className="w-5 h-5 text-primary" />
+                            <div className="flex items-center gap-2 min-w-0">
+                              <Globe className="w-5 h-5 text-primary shrink-0" />
                               <h3 className="font-semibold truncate">{domain.name}</h3>
                             </div>
                             <Button variant="ghost" size="icon" onClick={() => toggleFavorite(domain.name)} className={`h-8 w-8 ${isFavorite(domain.name) ? 'text-red-500' : ''}`}>
                               <Heart className={`w-4 h-4 ${isFavorite(domain.name) ? 'fill-current' : ''}`} />
                             </Button>
                           </div>
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {getHostingBadge(domain.hosting)}
-                            {getBusinessTypeBadge(domain.businessType)}
-                          </div>
-                          <p className="text-sm text-muted-foreground mb-3 truncate">{domain.category}</p>
-                          <div className="flex justify-between items-center mb-3">
-                            <span className="text-sm">Reg: ${domain.registrationPrice}</span>
-                            {domain.salePrice ? <span className="font-bold text-primary text-lg">${domain.salePrice}</span> : <span className="text-muted-foreground text-sm">Contact</span>}
-                          </div>
+                          <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{domain.category}</p>
                           {domain.buyUrl ? (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-                              <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />Buy Now</Button>
+                              <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />Visit</Button>
                             </a>
                           ) : (
                             <Link to={`/domain-inquiry?domain=${encodeURIComponent(domain.name)}`} className="w-full">
@@ -253,7 +215,7 @@ const Domains = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
