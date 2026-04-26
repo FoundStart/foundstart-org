@@ -598,6 +598,86 @@ const AgencyFormationBlog: React.FC = () => {
                 </CardContent>
               </Card>
 
+              {/* Egypt-tailored CTA + checklist (Egypt posts only) */}
+              {(slug === 'egypt-company-types-payment-gateways' ||
+                slug === 'payment-gateways-egypt' ||
+                content.category?.toLowerCase().includes('egypt')) && (
+                <Card className="mt-8 border-primary/30 bg-gradient-to-br from-amber-500/10 via-background to-primary/10">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Building2 className="w-7 h-7 text-primary" />
+                      <h3 className="text-2xl font-bold">Egypt Setup Wizard & Onboarding Checklist</h3>
+                    </div>
+                    <p className="text-muted-foreground mb-6">
+                      Use our Egypt-specific wizard to incorporate your company and activate Kashier or Paymob — all from one dashboard.
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          <Building2 className="w-4 h-4 text-primary" /> Company Formation Checklist
+                        </h4>
+                        <ul className="space-y-2 text-sm">
+                          {[
+                            'Choose entity type (LLC, SPC, JSC, Branch, Rep Office)',
+                            'Reserve trade name with GAFI',
+                            'Submit articles of association & shareholder IDs',
+                            'Open EGP corporate bank account',
+                            'Register with Tax Authority & obtain Tax Card',
+                            'Register with Commercial Registry & Social Insurance',
+                          ].map((item) => (
+                            <li key={item} className="flex items-start gap-2">
+                              <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          <DollarSign className="w-4 h-4 text-primary" /> Payment Gateway Onboarding
+                        </h4>
+                        <ul className="space-y-2 text-sm">
+                          {[
+                            'Pick your gateway (Kashier, Paymob, Fawry, PayTabs)',
+                            'Submit commercial registry & tax card',
+                            'Provide bank account & beneficiary details (KYC)',
+                            'Integrate checkout SDK or hosted page',
+                            'Test transactions in sandbox',
+                            'Go live & enable wallets / installments',
+                          ].map((item) => (
+                            <li key={item} className="flex items-start gap-2">
+                              <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <Button size="lg" asChild>
+                        <Link to="/country/egypt">
+                          Open Egypt Setup Wizard
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <Link to="/pricing-calculator">
+                          Estimate Formation Cost
+                        </Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
+                          Talk to an Egypt Expert
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+
               {/* Related Posts */}
               <div className="mt-12">
                 <h3 className="text-xl font-bold mb-6">Related Articles</h3>
