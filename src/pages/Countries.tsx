@@ -102,14 +102,16 @@ const Countries = () => {
                       />
                     )}
 
-                    {/* Formation Partners for this country */}
+                    {/* Formation Partners for this country (deduped) */}
                     <div>
                       <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
                         <Building className="w-5 h-5 text-primary" />
                         Formation Partners
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        {selectedCountryData.partners.map((partner, i) => (
+                        {Array.from(
+                          new Map(selectedCountryData.partners.map(p => [p.name.toLowerCase(), p])).values()
+                        ).map((partner, i) => (
                           <Button
                             key={i}
                             variant="outline"
@@ -160,22 +162,28 @@ const Countries = () => {
                 {/* Country Grid */}
                 <h2 className="text-2xl font-bold text-center mb-6">All Supported Countries</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-                  {countriesData.map((c) => (
-                    <Card
-                      key={c.id}
-                      className="text-center hover:shadow-lg transition-all cursor-pointer hover:scale-105"
-                      onClick={() => setSelectedCountry(c.id)}
-                    >
-                      <CardContent className="p-4">
-                        <div className="text-3xl mb-1">{c.flag}</div>
-                        <div className="font-semibold text-sm">{c.name}</div>
-                        <div className="text-xs text-primary">{c.price}</div>
-                        <Badge variant="outline" className="mt-2 text-xs">
-                          {c.partners.length} Partner{c.partners.length > 1 ? 's' : ''}
-                        </Badge>
-                      </CardContent>
-                    </Card>
-                  ))}
+                  {countriesData.map((c) => {
+                    const uniquePartners = Array.from(new Map(c.partners.map(p => [p.name.toLowerCase(), p])).values());
+                    return (
+                      <Card
+                        key={c.id}
+                        className="text-center hover:shadow-lg transition-all cursor-pointer hover:scale-105 flex flex-col"
+                        onClick={() => setSelectedCountry(c.id)}
+                      >
+                        <CardContent className="p-4 flex flex-col items-center gap-2">
+                          <div className="text-3xl">{c.flag}</div>
+                          <div className="font-semibold text-sm">{c.name}</div>
+                          <div className="text-xs text-primary font-medium">{c.price}</div>
+                          <Badge variant="outline" className="text-xs">
+                            {uniquePartners.length} Partner{uniquePartners.length > 1 ? 's' : ''}
+                          </Badge>
+                          <Button size="sm" className="w-full mt-2" onClick={(e) => { e.stopPropagation(); setSelectedCountry(c.id); }}>
+                            Form Company <ArrowRight className="w-3 h-3 ml-1" />
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    );
+                  })}
                 </div>
               </TabsContent>
 
