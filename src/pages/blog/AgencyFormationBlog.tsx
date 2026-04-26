@@ -337,6 +337,102 @@ const blogContents: Record<string, BlogContent> = {
     ],
     ctaText: "Form Your Global Company",
     relatedSlugs: ["payment-gateways-egypt", "marketing-agency-usa", "uk-vs-us-company-formation"]
+  },
+  'egypt-company-types-payment-gateways': {
+    title: "Egypt Company Types & Payment Gateways: The Founder's 2026 Playbook",
+    description: "A complete guide to Egypt's 6 legal company structures under Investment Law No. 72/2017 and the best payment gateways (Kashier, Paymob, Fawry, PayTabs) for collecting payments locally.",
+    category: "Egypt",
+    author: "FoundStart Team",
+    date: "Apr 26, 2026",
+    readTime: "13 min read",
+    sections: [
+      {
+        title: "Why Egypt? The Market Opportunity",
+        content: [
+          "Egypt is the largest market in the Middle East and North Africa with 104M+ consumers, a young digitally-native population, and a fast-growing fintech sector.",
+          "Foreign founders enjoy 100% ownership in most activities under Investment Law No. 72/2017, plus tax holidays in designated zones and a competitive 22.5% corporate tax rate."
+        ],
+        list: [
+          "104M+ population — largest consumer market in MENA",
+          "100% foreign ownership permitted in most sectors",
+          "Strategic Suez Canal trade location",
+          "Government incentives for tech, manufacturing & export",
+          "Rapidly growing e-commerce & fintech adoption"
+        ]
+      },
+      {
+        title: "The 6 Egyptian Company Structures",
+        content: [
+          "Choosing the right legal entity is the most important decision you'll make. Each structure has different capital requirements, liability profiles, and tax treatment."
+        ],
+        list: [
+          "1) LLC (Limited Liability Company) — Most popular. Min. 1 shareholder, no minimum capital for most activities, limited liability. Best for SMEs, agencies, and SaaS.",
+          "2) JSC (Joint Stock Company) — Min. EGP 250,000 capital, 3+ shareholders. Required for banking, insurance, and IPO-bound startups.",
+          "3) SPC (Sole Person Company) — Single owner with limited liability. Newer structure, ideal for solo founders who want LLC-like protection.",
+          "4) Branch Office — Extension of a foreign parent. Can conduct full commercial activity but parent is liable.",
+          "5) Representative Office — Marketing & liaison only. No revenue activity allowed. Cheapest setup for market research.",
+          "6) Sole Proprietorship — Unlimited personal liability. Simplest tax filing but risky for any scaling business."
+        ]
+      },
+      {
+        title: "How to Pick the Right Structure",
+        content: [
+          "Match the entity to your stage and risk profile. Most foreign founders choose LLC or SPC for the liability protection without JSC's capital lockup."
+        ],
+        list: [
+          "Bootstrapped solo founder → SPC",
+          "2+ co-founders / agency / SaaS → LLC",
+          "Raising VC, planning IPO, regulated sector → JSC",
+          "Testing the market before commitment → Representative Office",
+          "Existing foreign company expanding → Branch Office"
+        ]
+      },
+      {
+        title: "Payment Gateways: Collecting Money in Egypt",
+        content: [
+          "Once your company is registered and you have a corporate bank account, you need a payment gateway to accept cards, mobile wallets, and installments. Local gateways are essential because international processors like Stripe don't directly serve EGP-billed Egyptian entities."
+        ],
+        list: [
+          "Kashier — FoundStart's primary integration. Cards, Apple Pay, mobile wallets, BNPL. Fast onboarding, strong dashboard, ~2.75% per transaction.",
+          "Paymob — Largest gateway in Egypt. Cards, Vodafone Cash, Fawry, ValU installments. Best for high-volume merchants. ~2.5–3%.",
+          "Fawry — Cash-based + cards. Critical for the unbanked segment. Customers can pay at 250,000+ Fawry points across Egypt.",
+          "PayTabs — Regional player covering Egypt + GCC. Good for cross-border MENA businesses. Supports recurring billing.",
+          "Geidea — POS + online. Strong for retail and F&B with physical locations."
+        ]
+      },
+      {
+        title: "Comparing the Gateways",
+        content: [
+          "Pick based on your customer base and product type. For SaaS subscriptions, prioritize recurring billing and cards. For consumer e-commerce, prioritize wallet + installment coverage."
+        ],
+        list: [
+          "Best for SaaS / subscriptions: Kashier or PayTabs",
+          "Best for high-volume e-commerce: Paymob",
+          "Best for cash-paying customers: Fawry",
+          "Best for cross-border MENA: PayTabs",
+          "Best for omnichannel retail: Geidea",
+          "Settlement times typically 2–5 business days; chargeback policies vary."
+        ]
+      },
+      {
+        title: "Setup Checklist",
+        content: [
+          "FoundStart's Egyptian formation team handles the full stack so you can be live and accepting payments within 3–4 weeks."
+        ],
+        list: [
+          "Choose company structure (LLC recommended for most)",
+          "Reserve company name with GAFI",
+          "Submit incorporation documents under Law 72/2017",
+          "Obtain commercial registry & tax card",
+          "Open corporate bank account",
+          "Apply to Kashier or Paymob with company docs",
+          "Integrate gateway via FoundStart's pre-built modules",
+          "Go live & start collecting EGP"
+        ]
+      }
+    ],
+    ctaText: "Form Your Egyptian Company",
+    relatedSlugs: ["payment-gateways-egypt", "payment-gateways-worldwide", "marketing-agency-usa"]
   }
 };
 

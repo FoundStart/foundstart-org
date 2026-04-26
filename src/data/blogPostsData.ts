@@ -14,6 +14,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 102,
+    title: "Egypt Company Types & Payment Gateways: The Founder's 2026 Playbook",
+    description: "Compare all 6 Egyptian company structures (LLC, JSC, SPC, Branch, Rep Office, Sole Proprietorship) and the best local payment gateways — Kashier, Paymob, Fawry, PayTabs.",
+    category: "Egypt",
+    author: "FoundStart Team",
+    date: "Apr 26, 2026",
+    readTime: "13 min read",
+    featured: true,
+    slug: "egypt-company-types-payment-gateways"
+  },
+  {
     id: 100,
     title: "Payment Gateways in Egypt: The Complete 2026 Guide for Founders",
     description: "Compare Kashier, Paymob, Fawry, PayTabs and Stripe-via-foreign-entity. Fees, settlement times, mobile wallets and installments — everything Egyptian founders need.",

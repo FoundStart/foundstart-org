@@ -25,7 +25,6 @@ export const partnerData = [
   { category: 'Company Formation', details: 'Company formation in UK', platform: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
   { category: 'Company Formation', details: 'Company formation in UK', platform: 'Firstbase', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
   { category: 'Company Formation', details: 'Company formation in UK', platform: '1stFormations', url: 'https://shortet.com/1st-formations', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
-  { category: 'Company Formation', details: 'Company formation in USA-UK', platform: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
   { category: 'Company Formation', details: 'Company formation in UK', platform: 'Rapid Formation', url: 'https://shortet.com/rapid-formations', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
   { category: 'Company Formation', details: 'Company formation in Estonia', platform: '1office (Estonia)', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=d8ImxFQTA9g' },
   { category: 'Company Formation', details: 'Company formation in Finland', platform: '1office (Finland)', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=RqttCWbsWDE' },

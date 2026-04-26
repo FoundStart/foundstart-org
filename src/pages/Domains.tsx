@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
 import DomainSearchMarketplace from '@/components/domains/DomainSearchMarketplace';
+import BulkDomainImport from '@/components/domains/BulkDomainImport';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,6 +15,7 @@ import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, Li
 import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, categories, hostingProviders } from '@/data/domainsData';
+import { loadBulkDomains, mergeDomains } from '@/utils/domainNormalization';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,11 +23,29 @@ const Domains = () => {
   const [selectedHosting, setSelectedHosting] = useState('All');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table');
+  const [bulkVersion, setBulkVersion] = useState(0);
 
   const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
 
+  const allDomains = useMemo(
+    () => mergeDomains(domainsData, loadBulkDomains()),
+    [bulkVersion]
+  );
+
+  const quickCategories = useMemo(() => {
+    const counts = new Map<string, number>();
+    allDomains.forEach(d => {
+      const main = d.category.split(/[,/]/)[0].trim();
+      if (main) counts.set(main, (counts.get(main) || 0) + 1);
+    });
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8)
+      .map(([name]) => name);
+  }, [allDomains]);
+
   const filteredDomains = useMemo(() => {
-    return domainsData
+    return allDomains
       .filter(domain => {
         const matchesSearch = domain.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                              domain.category.toLowerCase().includes(searchQuery.toLowerCase());
@@ -37,7 +57,7 @@ const Domains = () => {
         const c = a.name.localeCompare(b.name);
         return sortOrder === 'asc' ? c : -c;
       });
-  }, [searchQuery, selectedCategory, selectedHosting, sortOrder]);
+  }, [allDomains, searchQuery, selectedCategory, selectedHosting, sortOrder]);
 
   const getHostingBadge = (hosting: string) => {
     const colors: Record<string, string> = {
@@ -93,6 +113,7 @@ const Domains = () => {
                     Our <span className="gradient-text">Domain Collection</span>
                   </h2>
                   <div className="flex items-center gap-2">
+                    <BulkDomainImport onImport={() => setBulkVersion(v => v + 1)} />
                     <Button variant={viewMode === 'table' ? 'default' : 'outline'} size="sm" onClick={() => setViewMode('table')}>
                       <List className="w-4 h-4" />
                     </Button>
@@ -103,11 +124,11 @@ const Domains = () => {
                 </div>
 
                 <Card className="mb-6">
-                  <CardContent className="p-4">
+                  <CardContent className="p-4 space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                       <div className="relative lg:col-span-2">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                        <Input placeholder="Search domains..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10" />
+                        <Input placeholder="Search by name or category..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10" />
                       </div>
                       <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                         <SelectTrigger><SelectValue placeholder="Category" /></SelectTrigger>
@@ -118,10 +139,29 @@ const Domains = () => {
                         <SelectContent>{hostingProviders.map(host => <SelectItem key={host} value={host}>{host}</SelectItem>)}</SelectContent>
                       </Select>
                     </div>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge
+                        variant={selectedCategory === 'All' ? 'default' : 'outline'}
+                        className="cursor-pointer hover:bg-primary/90"
+                        onClick={() => setSelectedCategory('All')}
+                      >
+                        All
+                      </Badge>
+                      {quickCategories.map(cat => (
+                        <Badge
+                          key={cat}
+                          variant={selectedCategory === cat ? 'default' : 'outline'}
+                          className="cursor-pointer hover:bg-primary/90"
+                          onClick={() => setSelectedCategory(cat)}
+                        >
+                          {cat}
+                        </Badge>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
 
-                <p className="text-sm text-muted-foreground mb-4">Showing {filteredDomains.length} of {domainsData.length} domains</p>
+                <p className="text-sm text-muted-foreground mb-4">Showing {filteredDomains.length} of {allDomains.length} domains</p>
 
                 {viewMode === 'table' && (
                   <div className="rounded-lg border overflow-x-auto">
