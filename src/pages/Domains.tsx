@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
 import DomainSearchMarketplace from '@/components/domains/DomainSearchMarketplace';
+import BulkDomainImport from '@/components/domains/BulkDomainImport';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,6 +15,7 @@ import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, Li
 import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, categories, hostingProviders } from '@/data/domainsData';
+import { loadBulkDomains, mergeDomains } from '@/utils/domainNormalization';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,8 +23,26 @@ const Domains = () => {
   const [selectedHosting, setSelectedHosting] = useState('All');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table');
+  const [bulkVersion, setBulkVersion] = useState(0);
 
   const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
+
+  const allDomains = useMemo(
+    () => mergeDomains(domainsData, loadBulkDomains()),
+    [bulkVersion]
+  );
+
+  const quickCategories = useMemo(() => {
+    const counts = new Map<string, number>();
+    allDomains.forEach(d => {
+      const main = d.category.split(/[,/]/)[0].trim();
+      if (main) counts.set(main, (counts.get(main) || 0) + 1);
+    });
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8)
+      .map(([name]) => name);
+  }, [allDomains]);
 
   const filteredDomains = useMemo(() => {
     return domainsData
