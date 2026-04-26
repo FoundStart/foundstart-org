@@ -11,11 +11,11 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, List, Sparkles, Store } from 'lucide-react';
+import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, List, Sparkles, Store, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, categories, hostingProviders } from '@/data/domainsData';
-import { loadBulkDomains, mergeDomains } from '@/utils/domainNormalization';
+import { loadBulkDomains, mergeDomains, toCsv, downloadCsv } from '@/utils/domainNormalization';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -112,8 +112,26 @@ const Domains = () => {
                   <h2 className="text-2xl md:text-3xl font-bold">
                     Our <span className="gradient-text">Domain Collection</span>
                   </h2>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <BulkDomainImport onImport={() => setBulkVersion(v => v + 1)} />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2"
+                      onClick={() => {
+                        const bulk = loadBulkDomains();
+                        const priceMap = new Map(bulk.map(b => [b.name.toLowerCase(), b.price || '']));
+                        const rows = allDomains.map(d => ({
+                          name: d.name,
+                          hosting: d.hosting,
+                          category: d.category,
+                          price: priceMap.get(d.name.toLowerCase()) || '',
+                        }));
+                        downloadCsv(`foundstart-domains-${new Date().toISOString().slice(0,10)}.csv`, toCsv(rows));
+                      }}
+                    >
+                      <Download className="w-4 h-4" /> Export CSV
+                    </Button>
                     <Button variant={viewMode === 'table' ? 'default' : 'outline'} size="sm" onClick={() => setViewMode('table')}>
                       <List className="w-4 h-4" />
                     </Button>
