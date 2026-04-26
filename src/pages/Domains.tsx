@@ -112,8 +112,26 @@ const Domains = () => {
                   <h2 className="text-2xl md:text-3xl font-bold">
                     Our <span className="gradient-text">Domain Collection</span>
                   </h2>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <BulkDomainImport onImport={() => setBulkVersion(v => v + 1)} />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2"
+                      onClick={() => {
+                        const bulk = loadBulkDomains();
+                        const priceMap = new Map(bulk.map(b => [b.name.toLowerCase(), b.price || '']));
+                        const rows = allDomains.map(d => ({
+                          name: d.name,
+                          hosting: d.hosting,
+                          category: d.category,
+                          price: priceMap.get(d.name.toLowerCase()) || '',
+                        }));
+                        downloadCsv(`foundstart-domains-${new Date().toISOString().slice(0,10)}.csv`, toCsv(rows));
+                      }}
+                    >
+                      <Download className="w-4 h-4" /> Export CSV
+                    </Button>
                     <Button variant={viewMode === 'table' ? 'default' : 'outline'} size="sm" onClick={() => setViewMode('table')}>
                       <List className="w-4 h-4" />
                     </Button>
