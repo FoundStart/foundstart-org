@@ -11,11 +11,11 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, List, Sparkles, Store } from 'lucide-react';
+import { ExternalLink, Heart, Search, Globe, ShoppingCart, ArrowUpDown, Grid, List, Sparkles, Store, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, categories, hostingProviders } from '@/data/domainsData';
-import { loadBulkDomains, mergeDomains } from '@/utils/domainNormalization';
+import { loadBulkDomains, mergeDomains, toCsv, downloadCsv } from '@/utils/domainNormalization';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
