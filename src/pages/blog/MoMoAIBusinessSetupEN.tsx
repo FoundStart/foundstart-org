@@ -65,12 +65,14 @@ const telecomPartners: PartnerCTA[] = [
 ];
 
 const paymentPartners: PartnerCTA[] = [
-  { name: 'Stripe', desc: 'Primary gateway — 135+ currencies, subscriptions', url: 'https://stripe.com' },
   { name: 'Wise', desc: 'Multi-currency receiving for Stripe payouts', url: 'https://shortet.com/Wise' },
   { name: 'Mercury', desc: 'US bank account for Stripe payouts', url: 'https://shortet.com/Mercury' },
   { name: 'WorldFirst', desc: 'Global payment receiving', url: 'https://shortet.com/Worldfirst' },
   { name: 'Kast', desc: 'USD card for paying SaaS & ads', url: 'https://shortet.com/Kast' },
 ];
+
+// Non-partnered services — referenced as plain text mentions, no CTA cards
+const nonPartneredPayments = ['Stripe', 'Shopify Payments', 'PayPal Business', 'LemonSqueezy', 'Paddle'];
 
 const PartnerGrid: React.FC<{ items: PartnerCTA[] }> = ({ items }) => (
   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6 not-prose">
