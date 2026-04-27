@@ -15,21 +15,22 @@ import heroImg from '@/assets/blog-momoai-business-setup-ar.jpg';
 interface PartnerCTA { name: string; desc: string; url: string; }
 
 const formationPartners: PartnerCTA[] = [
-  { name: 'FoundStart', desc: 'تأسيس في الولايات المتحدة والمملكة المتحدة وأوروبا', url: 'https://foundstart.org' },
-  { name: 'Doola', desc: 'حزمة LLC + EIN + حساب بنكي', url: 'https://partnersps.doola.com/yukcm0gd526a' },
-  { name: 'Clemta', desc: 'تأسيس LLC أمريكية', url: 'https://clemta.com/?ref=njbhzwf' },
-  { name: 'Startglobal', desc: 'تأسيس LLC أمريكية', url: 'https://startglobal.co' },
-  { name: 'Tailorbrands', desc: 'LLC + هوية تجارية', url: 'https://www.tailorbrands.com' },
-  { name: 'Startfleet', desc: 'تأسيس LLC أمريكية', url: 'https://startfleet.io' },
-  { name: 'Privatily', desc: 'تأسيس USA و UK', url: 'https://privatily.com' },
-  { name: 'Go Nomad HQ', desc: 'تأسيس USA و UK للرحّالة الرقميين', url: 'https://gonomadhq.com' },
+  { name: 'FoundStart', desc: 'تأسيس في الولايات المتحدة والمملكة المتحدة وأوروبا', url: 'https://shortet.com/foundstart' },
+  { name: 'Doola', desc: 'حزمة LLC + EIN + حساب بنكي', url: 'https://shortet.com/doola' },
+  { name: 'Clemta', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/clemta' },
+  { name: 'Startglobal', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startglobal' },
+  { name: 'Tailorbrands', desc: 'LLC + هوية تجارية', url: 'https://shortet.com/tailorbrands' },
+  { name: 'Startfleet', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startfleet' },
+  { name: 'Privatily', desc: 'تأسيس USA و UK', url: 'https://shortet.com/privatily' },
+  { name: 'ITIN', desc: 'خدمة ITIN لغير المقيمين', url: 'https://shortet.com/theitin' },
+  { name: 'Go Nomad HQ', desc: 'تأسيس USA و UK للرحّالة الرقميين', url: 'https://shortet.com/Go-Nomad-HQ' },
 ];
 
 const ukPartners: PartnerCTA[] = [
-  { name: '1stFormations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://www.1stformations.co.uk' },
-  { name: 'Rapid Formations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://www.rapidformations.co.uk' },
-  { name: 'Firstbase', desc: 'تأسيس شركة بريطانية وعالمية', url: 'https://www.firstbase.io' },
-  { name: '1office', desc: 'UK + إستونيا + الدول الإسكندنافية', url: 'https://www.1office.co' },
+  { name: '1stFormations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://shortet.com/1st-formations' },
+  { name: 'Rapid Formations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://shortet.com/rapid-formations' },
+  { name: 'Firstbase', desc: 'تأسيس شركة بريطانية وعالمية', url: 'https://shortet.com/firstbase' },
+  { name: '1office', desc: 'UK + إستونيا + الدول الإسكندنافية', url: 'https://shortet.com/1office' },
 ];
 
 const euPartners: PartnerCTA[] = [
