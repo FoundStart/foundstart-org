@@ -193,8 +193,16 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />Part 3 — Payment Gateways</h2>
               <p>
-                This is the core of monetization. Stripe is the recommended primary gateway for SaaS and digital
-                products. Pair it with Wise, Mercury or WorldFirst to receive payouts globally.
+                <strong>Stripe</strong> is the recommended primary gateway for SaaS and digital products (135+ currencies,
+                subscriptions, hosted Checkout). Other non-partnered options worth evaluating directly:{' '}
+                <a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a>,{' '}
+                <a href="https://www.shopify.com/payments" target="_blank" rel="noopener noreferrer">Shopify Payments</a>,{' '}
+                <a href="https://www.paypal.com/business" target="_blank" rel="noopener noreferrer">PayPal Business</a>,{' '}
+                <a href="https://www.lemonsqueezy.com" target="_blank" rel="noopener noreferrer">LemonSqueezy</a>, and{' '}
+                <a href="https://www.paddle.com" target="_blank" rel="noopener noreferrer">Paddle</a>.
+              </p>
+              <p>
+                To <strong>receive Stripe payouts globally</strong>, pair it with our partnered banking & wallet stack below:
               </p>
               <PartnerGrid items={paymentPartners} />
 
