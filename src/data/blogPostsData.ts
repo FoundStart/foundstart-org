@@ -14,6 +14,28 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 200,
+    title: "MoMoAI Business Operations: Complete Setup Guide (Formation, Banking & Payments)",
+    description: "The full MoMoAI 2026 playbook — US LLC / UK Ltd / EU formation, Mercury & Wise banking, Stripe & Shopify Payments, and the recommended payment stack by use case.",
+    category: "Business Setup",
+    author: "MoMoAI x FoundStart",
+    date: "Apr 27, 2026",
+    readTime: "18 min read",
+    featured: true,
+    slug: "momoai-business-setup-guide-en"
+  },
+  {
+    id: 201,
+    title: "MoMoAI — دليل العمليات التجارية الشامل (التأسيس، البنوك وبوابات الدفع)",
+    description: "دليل MoMoAI 2026 الكامل للمؤسسين العرب: تأسيس LLC أمريكية / Ltd بريطانية / شركة أوروبية، حسابات Mercury و Wise، وإعداد Stripe و Shopify Payments وغيرها.",
+    category: "Business Setup",
+    author: "MoMoAI x FoundStart",
+    date: "27 أبريل 2026",
+    readTime: "قراءة 18 دقيقة",
+    featured: true,
+    slug: "momoai-business-setup-guide-ar"
+  },
+  {
     id: 102,
     title: "Egypt Company Types & Payment Gateways: The Founder's 2026 Playbook",
     description: "Compare all 6 Egyptian company structures (LLC, JSC, SPC, Branch, Rep Office, Sole Proprietorship) and the best local payment gateways — Kashier, Paymob, Fawry, PayTabs.",
