@@ -19,36 +19,57 @@ interface PartnerCTA {
 }
 
 const formationPartners: PartnerCTA[] = [
-  { name: 'FoundStart', desc: 'USA, UK & Europe formation', url: 'https://foundstart.org' },
-  { name: 'Doola', desc: 'US LLC + EIN + banking bundle', url: 'https://partnersps.doola.com/yukcm0gd526a' },
-  { name: 'Clemta', desc: 'US LLC formation', url: 'https://clemta.com/?ref=njbhzwf' },
-  { name: 'Startglobal', desc: 'US LLC formation', url: 'https://startglobal.co' },
-  { name: 'Tailorbrands', desc: 'US LLC + branding', url: 'https://www.tailorbrands.com' },
-  { name: 'Startfleet', desc: 'US LLC formation', url: 'https://startfleet.io' },
-  { name: 'Privatily', desc: 'USA & UK formation', url: 'https://privatily.com' },
-  { name: 'Go Nomad HQ', desc: 'USA & UK for nomads', url: 'https://gonomadhq.com' },
+  { name: 'FoundStart', desc: 'USA, UK & Europe formation', url: 'https://shortet.com/foundstart' },
+  { name: 'Doola', desc: 'US LLC + EIN + banking bundle', url: 'https://shortet.com/doola' },
+  { name: 'Clemta', desc: 'US LLC formation', url: 'https://shortet.com/clemta' },
+  { name: 'Startglobal', desc: 'US LLC formation', url: 'https://shortet.com/startglobal' },
+  { name: 'Tailorbrands', desc: 'US LLC + branding', url: 'https://shortet.com/tailorbrands' },
+  { name: 'Startfleet', desc: 'US LLC formation', url: 'https://shortet.com/startfleet' },
+  { name: 'Privatily', desc: 'USA & UK formation', url: 'https://shortet.com/privatily' },
+  { name: 'ITIN', desc: 'ITIN service for non-US founders', url: 'https://shortet.com/theitin' },
+  { name: 'Go Nomad HQ', desc: 'USA & UK for nomads', url: 'https://shortet.com/Go-Nomad-HQ' },
 ];
 
 const ukPartners: PartnerCTA[] = [
-  { name: '1stFormations', desc: 'UK Ltd formation', url: 'https://www.1stformations.co.uk' },
-  { name: 'Rapid Formations', desc: 'UK Ltd formation', url: 'https://www.rapidformations.co.uk' },
-  { name: 'Firstbase', desc: 'UK & global formation', url: 'https://www.firstbase.io' },
-  { name: '1office', desc: 'UK + Estonia + Nordics', url: 'https://www.1office.co' },
+  { name: '1stFormations', desc: 'UK Ltd formation', url: 'https://shortet.com/1st-formations' },
+  { name: 'Rapid Formations', desc: 'UK Ltd formation', url: 'https://shortet.com/rapid-formations' },
+  { name: 'Firstbase', desc: 'UK & global formation', url: 'https://shortet.com/firstbase' },
+  { name: '1office', desc: 'UK + Estonia + Nordics', url: 'https://shortet.com/1office' },
+];
+
+const euPartners: PartnerCTA[] = [
+  { name: 'Estonia (1office)', desc: 'EU company via e-Residency', url: 'https://shortet.com/1office' },
+  { name: 'Finland (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
+  { name: 'Sweden (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
+  { name: 'Latvia (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
+  { name: 'Lithuania (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
+  { name: 'Ireland (1office)', desc: 'EU English-speaking company', url: 'https://1office.co?fpr=momo' },
 ];
 
 const bankingPartners: PartnerCTA[] = [
-  { name: 'Mercury', desc: 'US business bank — no fees, Stripe-ready', url: 'https://mercury.com/r/deeemoz-llc' },
-  { name: 'Wise Business', desc: 'Multi-currency receiving (USD/EUR/GBP)', url: 'https://wise.com/invite/u/mohamedsayeda7' },
-  { name: 'Kast', desc: 'USD virtual cards for online spend', url: 'https://kast.xyz' },
-  { name: 'Grey', desc: 'Global banking for non-US founders', url: 'https://grey.co' },
+  { name: 'Mercury', desc: 'US business bank — no fees, Stripe-ready', url: 'https://shortet.com/Mercury' },
+  { name: 'Wise', desc: 'Multi-currency bank/wallet (USD/EUR/GBP)', url: 'https://shortet.com/Wise' },
+  { name: 'WorldFirst', desc: 'Global business banking', url: 'https://shortet.com/Worldfirst' },
+  { name: 'Kast', desc: 'Free USD account + virtual card', url: 'https://shortet.com/Kast' },
+  { name: 'Grey', desc: 'Inclusive global banking', url: 'https://shortet.com/Grey' },
+  { name: 'Airtm', desc: 'Digital wallet (LATAM/MENA friendly)', url: 'https://shortet.com/airtm' },
+  { name: 'RedotPay', desc: 'Crypto-linked digital wallet', url: 'https://shortet.com/RedotPay' },
+  { name: 'ByBit', desc: 'Crypto exchange + P2P', url: 'https://shortet.com/bybit' },
+];
+
+const telecomPartners: PartnerCTA[] = [
+  { name: 'Airalo', desc: 'eSIM for travel — €3 off first purchase', url: 'https://shortet.com/airalo' },
+  { name: 'Bnesim', desc: 'eSIM anywhere, anytime', url: 'https://shortet.com/Bnesim' },
+  { name: 'esim.me', desc: 'Global eSIM service', url: 'https://shortet.com/esim' },
+  { name: 'SMS Fast', desc: 'Virtual phone numbers + eSIM', url: 'https://shortet.com/smsfast' },
 ];
 
 const paymentPartners: PartnerCTA[] = [
   { name: 'Stripe', desc: 'Primary gateway — 135+ currencies, subscriptions', url: 'https://stripe.com' },
-  { name: 'Shopify Payments', desc: 'Built-in checkout for Shopify stores', url: 'https://www.shopify.com/payments' },
-  { name: 'PayPal Business', desc: 'Global checkout + buyer trust', url: 'https://www.paypal.com/business' },
-  { name: 'LemonSqueezy', desc: 'Merchant of Record for SaaS + tax', url: 'https://www.lemonsqueezy.com' },
-  { name: 'Paddle', desc: 'MoR billing & subscription platform', url: 'https://www.paddle.com' },
+  { name: 'Wise', desc: 'Multi-currency receiving for Stripe payouts', url: 'https://shortet.com/Wise' },
+  { name: 'Mercury', desc: 'US bank account for Stripe payouts', url: 'https://shortet.com/Mercury' },
+  { name: 'WorldFirst', desc: 'Global payment receiving', url: 'https://shortet.com/Worldfirst' },
+  { name: 'Kast', desc: 'USD card for paying SaaS & ads', url: 'https://shortet.com/Kast' },
 ];
 
 const PartnerGrid: React.FC<{ items: PartnerCTA[] }> = ({ items }) => (
