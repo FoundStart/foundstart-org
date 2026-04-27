@@ -169,7 +169,6 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
                 الإقامة الرقمية الإستونية تتيح إدارة شركة أوروبية بالكامل عن بُعد. لاتفيا وليتوانيا وفنلندا والسويد
                 وأيرلندا متاحة عبر 1office.
               </p>
-              <PartnerGrid items={euPartners} />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />الجزء الثاني — الحسابات البنكية والمالية</h2>
               <p>
@@ -180,17 +179,11 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />الجزء الثالث — بوابات الدفع</h2>
               <p>
-                Stripe هو البوابة الأساسية الموصى بها لـ SaaS والمنتجات الرقمية. اربطه مع Wise أو Mercury أو WorldFirst
-                لاستلام المدفوعات عالمياً.
+                Stripe هو البوابة الأساسية الموصى بها لـ SaaS والمنتجات الرقمية. Shopify Payments مدمج لمتاجر Shopify.
+                PayPal Business يضيف ثقة المشتري عالمياً، و LemonSqueezy / Paddle خياران ممتازان كـ Merchant of Record
+                يديران ضريبة القيمة المضافة عالمياً.
               </p>
               <PartnerGrid items={paymentPartners} />
-
-              <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />الاتصالات و eSIM (أساسيات KYC)</h3>
-              <p>
-                رقم هاتف فعّال وخطة بيانات مطلوبة لإكمال Stripe و Mercury ومعظم تحققات KYC. شركاؤنا في eSIM والأرقام
-                الافتراضية يغطّونك عالمياً.
-              </p>
-              <PartnerGrid items={telecomPartners} />
 
               <h3>متطلبات Stripe</h3>
               <ul>
