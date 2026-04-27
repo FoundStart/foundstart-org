@@ -26,6 +26,8 @@ import PremiumDomainsShowcaseBlog from "./pages/blog/PremiumDomainsShowcaseBlog"
 import LLCFormationGuideBlog from "./pages/blog/LLCFormationGuideBlog";
 import UKvsUSFormationBlog from "./pages/blog/UKvsUSFormationBlog";
 import AgencyFormationBlog from "./pages/blog/AgencyFormationBlog";
+import MoMoAIBusinessSetupEN from "./pages/blog/MoMoAIBusinessSetupEN";
+import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
 import Press from "./pages/Press";
 import Media from "./pages/Media";
 import Tutorials from "./pages/Tutorials";
@@ -98,6 +100,8 @@ function App() {
                   <Route path="/blog/premium-domains-showcase" element={<PremiumDomainsShowcaseBlog />} />
                   <Route path="/blog/llc-formation-guide" element={<LLCFormationGuideBlog />} />
                   <Route path="/blog/uk-vs-us-company-formation" element={<UKvsUSFormationBlog />} />
+                  <Route path="/blog/momoai-business-setup-guide-en" element={<MoMoAIBusinessSetupEN />} />
+                  <Route path="/blog/momoai-business-setup-guide-ar" element={<MoMoAIBusinessSetupAR />} />
                   <Route path="/blog/:slug" element={<AgencyFormationBlog />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
