@@ -180,6 +180,7 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
                 Estonian e-Residency lets you run a fully EU-incorporated company remotely. Latvia, Lithuania, Finland,
                 Sweden and Ireland are also available via 1office.
               </p>
+              <PartnerGrid items={euPartners} />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />Part 2 — Banking & Financial Accounts</h2>
               <p>
@@ -191,10 +192,16 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />Part 3 — Payment Gateways</h2>
               <p>
                 This is the core of monetization. Stripe is the recommended primary gateway for SaaS and digital
-                products. Shopify Payments is built-in for Shopify stores. PayPal Business adds buyer trust globally,
-                and LemonSqueezy / Paddle are excellent Merchant-of-Record options that handle global VAT.
+                products. Pair it with Wise, Mercury or WorldFirst to receive payouts globally.
               </p>
               <PartnerGrid items={paymentPartners} />
+
+              <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />Telecom & eSIM (KYC essentials)</h3>
+              <p>
+                A working phone number and data plan are required for Stripe, Mercury, and most KYC flows. These eSIM
+                and virtual number partners cover you globally.
+              </p>
+              <PartnerGrid items={telecomPartners} />
 
               <h3>Stripe Requirements</h3>
               <ul>
