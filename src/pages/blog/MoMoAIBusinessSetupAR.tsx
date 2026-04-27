@@ -15,57 +15,36 @@ import heroImg from '@/assets/blog-momoai-business-setup-ar.jpg';
 interface PartnerCTA { name: string; desc: string; url: string; }
 
 const formationPartners: PartnerCTA[] = [
-  { name: 'FoundStart', desc: 'تأسيس في الولايات المتحدة والمملكة المتحدة وأوروبا', url: 'https://shortet.com/foundstart' },
-  { name: 'Doola', desc: 'حزمة LLC + EIN + حساب بنكي', url: 'https://shortet.com/doola' },
-  { name: 'Clemta', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/clemta' },
-  { name: 'Startglobal', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startglobal' },
-  { name: 'Tailorbrands', desc: 'LLC + هوية تجارية', url: 'https://shortet.com/tailorbrands' },
-  { name: 'Startfleet', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startfleet' },
-  { name: 'Privatily', desc: 'تأسيس USA و UK', url: 'https://shortet.com/privatily' },
-  { name: 'ITIN', desc: 'خدمة ITIN لغير الأمريكيين', url: 'https://shortet.com/theitin' },
-  { name: 'Go Nomad HQ', desc: 'تأسيس USA و UK للرحّالة الرقميين', url: 'https://shortet.com/Go-Nomad-HQ' },
+  { name: 'FoundStart', desc: 'تأسيس في الولايات المتحدة والمملكة المتحدة وأوروبا', url: 'https://foundstart.org' },
+  { name: 'Doola', desc: 'حزمة LLC + EIN + حساب بنكي', url: 'https://partnersps.doola.com/yukcm0gd526a' },
+  { name: 'Clemta', desc: 'تأسيس LLC أمريكية', url: 'https://clemta.com/?ref=njbhzwf' },
+  { name: 'Startglobal', desc: 'تأسيس LLC أمريكية', url: 'https://startglobal.co' },
+  { name: 'Tailorbrands', desc: 'LLC + هوية تجارية', url: 'https://www.tailorbrands.com' },
+  { name: 'Startfleet', desc: 'تأسيس LLC أمريكية', url: 'https://startfleet.io' },
+  { name: 'Privatily', desc: 'تأسيس USA و UK', url: 'https://privatily.com' },
+  { name: 'Go Nomad HQ', desc: 'تأسيس USA و UK للرحّالة الرقميين', url: 'https://gonomadhq.com' },
 ];
 
 const ukPartners: PartnerCTA[] = [
-  { name: '1stFormations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://shortet.com/1st-formations' },
-  { name: 'Rapid Formations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://shortet.com/rapid-formations' },
-  { name: 'Firstbase', desc: 'تأسيس شركة بريطانية وعالمية', url: 'https://shortet.com/firstbase' },
-  { name: '1office', desc: 'UK + إستونيا + الدول الإسكندنافية', url: 'https://shortet.com/1office' },
-];
-
-const euPartners: PartnerCTA[] = [
-  { name: 'إستونيا (1office)', desc: 'شركة أوروبية عبر الإقامة الرقمية', url: 'https://shortet.com/1office' },
-  { name: 'فنلندا (1office)', desc: 'تأسيس شركة أوروبية', url: 'https://shortet.com/1office' },
-  { name: 'السويد (1office)', desc: 'تأسيس شركة أوروبية', url: 'https://shortet.com/1office' },
-  { name: 'لاتفيا (1office)', desc: 'تأسيس شركة أوروبية', url: 'https://shortet.com/1office' },
-  { name: 'ليتوانيا (1office)', desc: 'تأسيس شركة أوروبية', url: 'https://shortet.com/1office' },
-  { name: 'أيرلندا (1office)', desc: 'شركة أوروبية ناطقة بالإنجليزية', url: 'https://1office.co?fpr=momo' },
+  { name: '1stFormations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://www.1stformations.co.uk' },
+  { name: 'Rapid Formations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://www.rapidformations.co.uk' },
+  { name: 'Firstbase', desc: 'تأسيس شركة بريطانية وعالمية', url: 'https://www.firstbase.io' },
+  { name: '1office', desc: 'UK + إستونيا + الدول الإسكندنافية', url: 'https://www.1office.co' },
 ];
 
 const bankingPartners: PartnerCTA[] = [
-  { name: 'Mercury', desc: 'بنك أمريكي للشركات — بدون رسوم، متوافق مع Stripe', url: 'https://shortet.com/Mercury' },
-  { name: 'Wise', desc: 'بنك/محفظة متعددة العملات (USD/EUR/GBP)', url: 'https://shortet.com/Wise' },
-  { name: 'WorldFirst', desc: 'بنك عالمي للأعمال', url: 'https://shortet.com/Worldfirst' },
-  { name: 'Kast', desc: 'حساب USD وبطاقة افتراضية مجاناً', url: 'https://shortet.com/Kast' },
-  { name: 'Grey', desc: 'خدمات بنكية عالمية شاملة', url: 'https://shortet.com/Grey' },
-  { name: 'Airtm', desc: 'محفظة رقمية (مناسبة لـ MENA و LATAM)', url: 'https://shortet.com/airtm' },
-  { name: 'RedotPay', desc: 'محفظة رقمية مرتبطة بالعملات المشفرة', url: 'https://shortet.com/RedotPay' },
-  { name: 'ByBit', desc: 'بورصة عملات مشفرة + P2P', url: 'https://shortet.com/bybit' },
-];
-
-const telecomPartners: PartnerCTA[] = [
-  { name: 'Airalo', desc: 'eSIM للسفر — خصم 3 يورو على أول عملية شراء', url: 'https://shortet.com/airalo' },
-  { name: 'Bnesim', desc: 'eSIM في أي مكان وأي وقت', url: 'https://shortet.com/Bnesim' },
-  { name: 'esim.me', desc: 'خدمة eSIM عالمية', url: 'https://shortet.com/esim' },
-  { name: 'SMS Fast', desc: 'أرقام هاتف افتراضية + eSIM', url: 'https://shortet.com/smsfast' },
+  { name: 'Mercury', desc: 'بنك أمريكي للشركات — بدون رسوم، متوافق مع Stripe', url: 'https://mercury.com/r/deeemoz-llc' },
+  { name: 'Wise Business', desc: 'استلام بعملات متعددة (USD/EUR/GBP)', url: 'https://wise.com/invite/u/mohamedsayeda7' },
+  { name: 'Kast', desc: 'بطاقات USD افتراضية للمشتريات الأونلاين', url: 'https://kast.xyz' },
+  { name: 'Grey', desc: 'خدمات بنكية عالمية للمؤسسين خارج الولايات المتحدة', url: 'https://grey.co' },
 ];
 
 const paymentPartners: PartnerCTA[] = [
   { name: 'Stripe', desc: 'البوابة الأساسية — أكثر من 135 عملة واشتراكات', url: 'https://stripe.com' },
-  { name: 'Wise', desc: 'استلام متعدد العملات لمدفوعات Stripe', url: 'https://shortet.com/Wise' },
-  { name: 'Mercury', desc: 'حساب أمريكي لاستلام مدفوعات Stripe', url: 'https://shortet.com/Mercury' },
-  { name: 'WorldFirst', desc: 'استلام مدفوعات عالمية', url: 'https://shortet.com/Worldfirst' },
-  { name: 'Kast', desc: 'بطاقة USD لدفع SaaS والإعلانات', url: 'https://shortet.com/Kast' },
+  { name: 'Shopify Payments', desc: 'دفع مدمج لمتاجر Shopify', url: 'https://www.shopify.com/payments' },
+  { name: 'PayPal Business', desc: 'دفع عالمي + ثقة المشتري', url: 'https://www.paypal.com/business' },
+  { name: 'LemonSqueezy', desc: 'تاجر مسجل (MoR) لـ SaaS مع إدارة الضرائب', url: 'https://www.lemonsqueezy.com' },
+  { name: 'Paddle', desc: 'منصة فوترة واشتراكات MoR', url: 'https://www.paddle.com' },
 ];
 
 const PartnerGrid: React.FC<{ items: PartnerCTA[] }> = ({ items }) => (
