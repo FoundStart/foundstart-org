@@ -168,6 +168,7 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
                 الإقامة الرقمية الإستونية تتيح إدارة شركة أوروبية بالكامل عن بُعد. لاتفيا وليتوانيا وفنلندا والسويد
                 وأيرلندا متاحة عبر 1office.
               </p>
+              <PartnerGrid items={euPartners} />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />الجزء الثاني — الحسابات البنكية والمالية</h2>
               <p>
@@ -178,11 +179,24 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />الجزء الثالث — بوابات الدفع</h2>
               <p>
-                Stripe هو البوابة الأساسية الموصى بها لـ SaaS والمنتجات الرقمية. Shopify Payments مدمج لمتاجر Shopify.
-                PayPal Business يضيف ثقة المشتري عالمياً، و LemonSqueezy / Paddle خياران ممتازان كـ Merchant of Record
-                يديران ضريبة القيمة المضافة عالمياً.
+                <strong>Stripe</strong> هو البوابة الأساسية الموصى بها لـ SaaS والمنتجات الرقمية (أكثر من 135 عملة + اشتراكات).
+                خيارات أخرى غير مرتبطة بشراكتنا يمكنك التسجيل فيها مباشرة:{' '}
+                <a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a>،{' '}
+                <a href="https://www.shopify.com/payments" target="_blank" rel="noopener noreferrer">Shopify Payments</a>،{' '}
+                <a href="https://www.paypal.com/business" target="_blank" rel="noopener noreferrer">PayPal Business</a>،{' '}
+                <a href="https://www.lemonsqueezy.com" target="_blank" rel="noopener noreferrer">LemonSqueezy</a>، و{' '}
+                <a href="https://www.paddle.com" target="_blank" rel="noopener noreferrer">Paddle</a>.
+              </p>
+              <p>
+                لاستلام مدفوعات Stripe عالمياً اربطها بمنظومة شركائنا في البنوك والمحافظ:
               </p>
               <PartnerGrid items={paymentPartners} />
+
+              <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />الاتصالات و eSIM (متطلبات KYC)</h3>
+              <p>
+                رقم هاتف نشط وخطة بيانات مطلوبان لـ Stripe و Mercury ومعظم تدفقات KYC. شركاؤنا في eSIM والأرقام الافتراضية يغطونك عالمياً.
+              </p>
+              <PartnerGrid items={telecomPartners} />
 
               <h3>متطلبات Stripe</h3>
               <ul>
