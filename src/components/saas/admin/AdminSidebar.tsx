@@ -16,6 +16,7 @@ const menuItems = [
   { title: 'Domain Analytics', icon: BarChart3, href: '/admin/domain-analytics' },
   { title: 'Payments', icon: CreditCard, href: '/admin/payments' },
   { title: 'Affiliates', icon: LinkIcon, href: '/admin/affiliates' },
+  { title: 'Blog Partner Analytics', icon: BarChart3, href: '/admin/blog-partner-analytics' },
   { title: 'AI Prompts', icon: Bot, href: '/admin/prompts' },
   { title: 'Activity Logs', icon: Activity, href: '/admin/logs' },
 ];
