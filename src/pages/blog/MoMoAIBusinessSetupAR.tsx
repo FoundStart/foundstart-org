@@ -85,28 +85,28 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
                 <li>افتح حساباً بنكياً تجارياً أمريكياً — Mercury موصى به.</li>
                 <li>تقدم بطلب Stripe ببيانات LLC و EIN والحساب البنكي.</li>
               </ul>
-              <PartnerGrid items={formationPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="formation" />
 
               <h3>1.2 شركة بريطانية (Ltd)</h3>
               <p>
                 تمنحك Ltd البريطانية الوصول إلى Stripe UK و PayPal Business والأسواق الأوروبية — ممتازة لـ SaaS التي
                 تستهدف العملاء الأوروبيين.
               </p>
-              <PartnerGrid items={ukPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="uk" />
 
               <h3>1.3 شركات الاتحاد الأوروبي (إستونيا والدول الأخرى)</h3>
               <p>
                 الإقامة الرقمية الإستونية تتيح إدارة شركة أوروبية بالكامل عن بُعد. لاتفيا وليتوانيا وفنلندا والسويد
                 وأيرلندا متاحة عبر 1office.
               </p>
-              <PartnerGrid items={euPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="eu" />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />الجزء الثاني — الحسابات البنكية والمالية</h2>
               <p>
                 بعد تأسيس شركتك تحتاج منظومة بنكية متكاملة: بنك أمريكي للشركات، استلام متعدد العملات، بطاقات افتراضية،
                 ومنصات عملات مشفرة.
               </p>
-              <PartnerGrid items={bankingPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="banking" />
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />الجزء الثالث — بوابات الدفع</h2>
               <p>
@@ -121,13 +121,16 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
               <p>
                 لاستلام مدفوعات Stripe عالمياً اربطها بمنظومة شركائنا في البنوك والمحافظ:
               </p>
-              <PartnerGrid items={paymentPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="payment" />
 
               <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />الاتصالات و eSIM (متطلبات KYC)</h3>
               <p>
                 رقم هاتف نشط وخطة بيانات مطلوبان لـ Stripe و Mercury ومعظم تدفقات KYC. شركاؤنا في eSIM والأرقام الافتراضية يغطونك عالمياً.
               </p>
-              <PartnerGrid items={telecomPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="telecom" />
+
+              {/* الشركاء في لمحة */}
+              <PartnerGlossary catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} />
 
               <h3>متطلبات Stripe</h3>
               <ul>
