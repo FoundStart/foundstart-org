@@ -11,89 +11,11 @@ import {
   Building2, CreditCard, Banknote, Globe, Wallet, ShieldCheck,
 } from 'lucide-react';
 import heroImg from '@/assets/blog-momoai-business-setup-en.jpg';
+import { partnerCatalogEN } from '@/data/blogPartnersConfig';
+import { BlogPartnerGrid, PartnerGlossary } from '@/components/blog/PartnerBlocks';
 
-interface PartnerCTA {
-  name: string;
-  desc: string;
-  url: string;
-}
-
-const formationPartners: PartnerCTA[] = [
-  { name: 'FoundStart', desc: 'USA, UK & Europe formation', url: 'https://shortet.com/foundstart' },
-  { name: 'Doola', desc: 'US LLC + EIN + banking bundle', url: 'https://shortet.com/doola' },
-  { name: 'Clemta', desc: 'US LLC formation', url: 'https://shortet.com/clemta' },
-  { name: 'Startglobal', desc: 'US LLC formation', url: 'https://shortet.com/startglobal' },
-  { name: 'Tailorbrands', desc: 'US LLC + branding', url: 'https://shortet.com/tailorbrands' },
-  { name: 'Startfleet', desc: 'US LLC formation', url: 'https://shortet.com/startfleet' },
-  { name: 'Privatily', desc: 'USA & UK formation', url: 'https://shortet.com/privatily' },
-  { name: 'ITIN', desc: 'ITIN service for non-US founders', url: 'https://shortet.com/theitin' },
-  { name: 'Go Nomad HQ', desc: 'USA & UK for nomads', url: 'https://shortet.com/Go-Nomad-HQ' },
-];
-
-const ukPartners: PartnerCTA[] = [
-  { name: '1stFormations', desc: 'UK Ltd formation', url: 'https://shortet.com/1st-formations' },
-  { name: 'Rapid Formations', desc: 'UK Ltd formation', url: 'https://shortet.com/rapid-formations' },
-  { name: 'Firstbase', desc: 'UK & global formation', url: 'https://shortet.com/firstbase' },
-  { name: '1office', desc: 'UK + Estonia + Nordics', url: 'https://shortet.com/1office' },
-];
-
-const euPartners: PartnerCTA[] = [
-  { name: 'Estonia (1office)', desc: 'EU company via e-Residency', url: 'https://shortet.com/1office' },
-  { name: 'Finland (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
-  { name: 'Sweden (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
-  { name: 'Latvia (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
-  { name: 'Lithuania (1office)', desc: 'EU company formation', url: 'https://shortet.com/1office' },
-  { name: 'Ireland (1office)', desc: 'EU English-speaking company', url: 'https://1office.co?fpr=momo' },
-];
-
-const bankingPartners: PartnerCTA[] = [
-  { name: 'Mercury', desc: 'US business bank — no fees, Stripe-ready', url: 'https://shortet.com/Mercury' },
-  { name: 'Wise', desc: 'Multi-currency bank/wallet (USD/EUR/GBP)', url: 'https://shortet.com/Wise' },
-  { name: 'WorldFirst', desc: 'Global business banking', url: 'https://shortet.com/Worldfirst' },
-  { name: 'Kast', desc: 'Free USD account + virtual card', url: 'https://shortet.com/Kast' },
-  { name: 'Grey', desc: 'Inclusive global banking', url: 'https://shortet.com/Grey' },
-  { name: 'Airtm', desc: 'Digital wallet (LATAM/MENA friendly)', url: 'https://shortet.com/airtm' },
-  { name: 'RedotPay', desc: 'Crypto-linked digital wallet', url: 'https://shortet.com/RedotPay' },
-  { name: 'ByBit', desc: 'Crypto exchange + P2P', url: 'https://shortet.com/bybit' },
-];
-
-const telecomPartners: PartnerCTA[] = [
-  { name: 'Airalo', desc: 'eSIM for travel — €3 off first purchase', url: 'https://shortet.com/airalo' },
-  { name: 'Bnesim', desc: 'eSIM anywhere, anytime', url: 'https://shortet.com/Bnesim' },
-  { name: 'esim.me', desc: 'Global eSIM service', url: 'https://shortet.com/esim' },
-  { name: 'SMS Fast', desc: 'Virtual phone numbers + eSIM', url: 'https://shortet.com/smsfast' },
-];
-
-const paymentPartners: PartnerCTA[] = [
-  { name: 'Wise', desc: 'Multi-currency receiving for Stripe payouts', url: 'https://shortet.com/Wise' },
-  { name: 'Mercury', desc: 'US bank account for Stripe payouts', url: 'https://shortet.com/Mercury' },
-  { name: 'WorldFirst', desc: 'Global payment receiving', url: 'https://shortet.com/Worldfirst' },
-  { name: 'Kast', desc: 'USD card for paying SaaS & ads', url: 'https://shortet.com/Kast' },
-];
-
-// Non-partnered services — referenced as plain text mentions, no CTA cards
-const nonPartneredPayments = ['Stripe', 'Shopify Payments', 'PayPal Business', 'LemonSqueezy', 'Paddle'];
-
-const PartnerGrid: React.FC<{ items: PartnerCTA[] }> = ({ items }) => (
-  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6 not-prose">
-    {items.map((p) => (
-      <Card key={p.name} className="hover:border-primary/50 transition-colors">
-        <CardContent className="p-5 flex flex-col h-full">
-          <div className="flex items-center gap-2 mb-2">
-            <Badge variant="secondary">{p.name}</Badge>
-          </div>
-          <p className="text-sm text-muted-foreground mb-4 flex-1">{p.desc}</p>
-          <Button size="sm" asChild className="w-full">
-            <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">
-              Visit {p.name}
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </a>
-          </Button>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-);
+const BLOG_SLUG = 'momoai-business-setup-guide-en';
+const catalog = partnerCatalogEN;
 
 const MoMoAIBusinessSetupEN: React.FC = () => {
   const title = 'MoMoAI Business Operations: Complete Setup Guide (Formation, Banking & Payments)';
@@ -166,7 +88,7 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
                 <li>Open a US business bank account — Mercury recommended.</li>
                 <li>Apply for Stripe with your LLC details, EIN, and US bank.</li>
               </ul>
-              <PartnerGrid items={formationPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="formation" />
 
               <h3>1.2 UK Company (Ltd)</h3>
               <p>
@@ -175,21 +97,21 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
               <ul>
                 <li>Choose company name → Register with Companies House → Get UTR (tax reference) → Open Starling/Wise Business → Apply for Stripe UK.</li>
               </ul>
-              <PartnerGrid items={ukPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="uk" />
 
               <h3>1.3 EU (Estonia & Nordics)</h3>
               <p>
                 Estonian e-Residency lets you run a fully EU-incorporated company remotely. Latvia, Lithuania, Finland,
                 Sweden and Ireland are also available via 1office.
               </p>
-              <PartnerGrid items={euPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="eu" />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />Part 2 — Banking & Financial Accounts</h2>
               <p>
                 Once your company is live you need a complete banking stack: a US business bank, multi-currency
                 receiving, virtual cards, and crypto rails.
               </p>
-              <PartnerGrid items={bankingPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="banking" />
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />Part 3 — Payment Gateways</h2>
               <p>
@@ -204,14 +126,17 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
               <p>
                 To <strong>receive Stripe payouts globally</strong>, pair it with our partnered banking & wallet stack below:
               </p>
-              <PartnerGrid items={paymentPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="payment" />
 
               <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />Telecom & eSIM (KYC essentials)</h3>
               <p>
                 A working phone number and data plan are required for Stripe, Mercury, and most KYC flows. These eSIM
                 and virtual number partners cover you globally.
               </p>
-              <PartnerGrid items={telecomPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="telecom" />
+
+              {/* Partners at a glance — grouped glossary */}
+              <PartnerGlossary catalog={catalog} locale="en" blogSlug={BLOG_SLUG} />
 
               <h3>Stripe Requirements</h3>
               <ul>

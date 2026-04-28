@@ -10,6 +10,7 @@ import OrderManagement from '@/components/admin/OrderManagement';
 import DomainInquiryManagement from '@/components/admin/DomainInquiryManagement';
 import DomainAnalyticsDashboard from '@/components/admin/DomainAnalyticsDashboard';
 import AdminAffiliatesManagement from '@/components/admin/AdminAffiliatesManagement';
+import BlogPartnerAnalytics from '@/components/admin/BlogPartnerAnalytics';
 import NotificationBell from '@/components/notifications/NotificationBell';
 
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -38,6 +39,7 @@ const AdminDashboardContent = () => {
           <Route path="domain-analytics" element={<DomainAnalyticsDashboard />} />
           <Route path="prompts" element={<PlaceholderPage title="AI Prompts" />} />
           <Route path="affiliates" element={<AdminAffiliatesManagement />} />
+          <Route path="blog-partner-analytics" element={<BlogPartnerAnalytics />} />
           <Route path="payments" element={<PlaceholderPage title="Payments" />} />
           <Route path="logs" element={<PlaceholderPage title="Activity Logs" />} />
         </Routes>

@@ -11,80 +11,11 @@ import {
   Building2, CreditCard, Banknote, Globe, Wallet, ShieldCheck,
 } from 'lucide-react';
 import heroImg from '@/assets/blog-momoai-business-setup-ar.jpg';
+import { partnerCatalogAR } from '@/data/blogPartnersConfig';
+import { BlogPartnerGrid, PartnerGlossary } from '@/components/blog/PartnerBlocks';
 
-interface PartnerCTA { name: string; desc: string; url: string; }
-
-const formationPartners: PartnerCTA[] = [
-  { name: 'FoundStart', desc: 'تأسيس في الولايات المتحدة والمملكة المتحدة وأوروبا', url: 'https://shortet.com/foundstart' },
-  { name: 'Doola', desc: 'حزمة LLC + EIN + حساب بنكي', url: 'https://shortet.com/doola' },
-  { name: 'Clemta', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/clemta' },
-  { name: 'Startglobal', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startglobal' },
-  { name: 'Tailorbrands', desc: 'LLC + هوية تجارية', url: 'https://shortet.com/tailorbrands' },
-  { name: 'Startfleet', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startfleet' },
-  { name: 'Privatily', desc: 'تأسيس USA و UK', url: 'https://shortet.com/privatily' },
-  { name: 'ITIN', desc: 'خدمة ITIN لغير المقيمين', url: 'https://shortet.com/theitin' },
-  { name: 'Go Nomad HQ', desc: 'تأسيس USA و UK للرحّالة الرقميين', url: 'https://shortet.com/Go-Nomad-HQ' },
-];
-
-const ukPartners: PartnerCTA[] = [
-  { name: '1stFormations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://shortet.com/1st-formations' },
-  { name: 'Rapid Formations', desc: 'تأسيس Ltd في المملكة المتحدة', url: 'https://shortet.com/rapid-formations' },
-  { name: 'Firstbase', desc: 'تأسيس شركة بريطانية وعالمية', url: 'https://shortet.com/firstbase' },
-  { name: '1office', desc: 'UK + إستونيا + الدول الإسكندنافية', url: 'https://shortet.com/1office' },
-];
-
-const euPartners: PartnerCTA[] = [
-  { name: '1office — إستونيا', desc: 'شركة أوروبية عبر الإقامة الرقمية', url: 'https://shortet.com/1office' },
-  { name: '1office — فنلندا', desc: 'تأسيس شركة في الاتحاد الأوروبي', url: 'https://shortet.com/1office' },
-  { name: '1office — السويد', desc: 'تأسيس شركة في الاتحاد الأوروبي', url: 'https://shortet.com/1office' },
-  { name: '1office — لاتفيا', desc: 'تأسيس شركة في الاتحاد الأوروبي', url: 'https://shortet.com/1office' },
-  { name: '1office — ليتوانيا', desc: 'تأسيس شركة في الاتحاد الأوروبي', url: 'https://shortet.com/1office' },
-  { name: '1office — أيرلندا', desc: 'شركة أوروبية ناطقة بالإنجليزية', url: 'https://1office.co?fpr=momo' },
-];
-
-const bankingPartners: PartnerCTA[] = [
-  { name: 'Mercury', desc: 'بنك أمريكي للشركات — بدون رسوم، متوافق مع Stripe', url: 'https://shortet.com/Mercury' },
-  { name: 'Wise', desc: 'استلام بعملات متعددة (USD/EUR/GBP)', url: 'https://shortet.com/Wise' },
-  { name: 'WorldFirst', desc: 'خدمات بنكية عالمية للشركات', url: 'https://shortet.com/Worldfirst' },
-  { name: 'Kast', desc: 'بطاقات USD افتراضية للمشتريات الأونلاين', url: 'https://shortet.com/Kast' },
-  { name: 'Grey', desc: 'خدمات بنكية عالمية للمؤسسين خارج الولايات المتحدة', url: 'https://shortet.com/Grey' },
-  { name: 'Airtm', desc: 'محفظة رقمية (مناسبة للشرق الأوسط/أمريكا اللاتينية)', url: 'https://shortet.com/airtm' },
-  { name: 'RedotPay', desc: 'محفظة رقمية مرتبطة بالعملات المشفرة', url: 'https://shortet.com/RedotPay' },
-  { name: 'ByBit', desc: 'منصة تداول عملات مشفرة + P2P', url: 'https://shortet.com/bybit' },
-];
-
-const telecomPartners: PartnerCTA[] = [
-  { name: 'Airalo', desc: 'eSIM للسفر — خصم 3€ على أول شراء', url: 'https://shortet.com/airalo' },
-  { name: 'Bnesim', desc: 'eSIM في أي مكان وأي وقت', url: 'https://shortet.com/Bnesim' },
-  { name: 'esim.me', desc: 'خدمة eSIM عالمية', url: 'https://shortet.com/esim' },
-  { name: 'SMS Fast', desc: 'أرقام افتراضية + eSIM', url: 'https://shortet.com/smsfast' },
-];
-
-const paymentPartners: PartnerCTA[] = [
-  { name: 'Wise', desc: 'استلام بعملات متعددة لمدفوعات Stripe', url: 'https://shortet.com/Wise' },
-  { name: 'Mercury', desc: 'حساب بنكي أمريكي لاستقبال مدفوعات Stripe', url: 'https://shortet.com/Mercury' },
-  { name: 'WorldFirst', desc: 'استلام مدفوعات عالمية', url: 'https://shortet.com/Worldfirst' },
-  { name: 'Kast', desc: 'بطاقة USD لدفع SaaS والإعلانات', url: 'https://shortet.com/Kast' },
-];
-
-const PartnerGrid: React.FC<{ items: PartnerCTA[] }> = ({ items }) => (
-  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6 not-prose">
-    {items.map((p) => (
-      <Card key={p.name} className="hover:border-primary/50 transition-colors">
-        <CardContent className="p-5 flex flex-col h-full">
-          <div className="flex items-center gap-2 mb-2"><Badge variant="secondary">{p.name}</Badge></div>
-          <p className="text-sm text-muted-foreground mb-4 flex-1">{p.desc}</p>
-          <Button size="sm" asChild className="w-full">
-            <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">
-              زيارة {p.name}
-              <ArrowRight className="ms-2 w-4 h-4" />
-            </a>
-          </Button>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-);
+const BLOG_SLUG = 'momoai-business-setup-guide-ar';
+const catalog = partnerCatalogAR;
 
 const MoMoAIBusinessSetupAR: React.FC = () => {
   const title = 'MoMoAI — دليل العمليات التجارية الشامل (التأسيس، البنوك وبوابات الدفع)';
@@ -154,28 +85,28 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
                 <li>افتح حساباً بنكياً تجارياً أمريكياً — Mercury موصى به.</li>
                 <li>تقدم بطلب Stripe ببيانات LLC و EIN والحساب البنكي.</li>
               </ul>
-              <PartnerGrid items={formationPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="formation" />
 
               <h3>1.2 شركة بريطانية (Ltd)</h3>
               <p>
                 تمنحك Ltd البريطانية الوصول إلى Stripe UK و PayPal Business والأسواق الأوروبية — ممتازة لـ SaaS التي
                 تستهدف العملاء الأوروبيين.
               </p>
-              <PartnerGrid items={ukPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="uk" />
 
               <h3>1.3 شركات الاتحاد الأوروبي (إستونيا والدول الأخرى)</h3>
               <p>
                 الإقامة الرقمية الإستونية تتيح إدارة شركة أوروبية بالكامل عن بُعد. لاتفيا وليتوانيا وفنلندا والسويد
                 وأيرلندا متاحة عبر 1office.
               </p>
-              <PartnerGrid items={euPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="eu" />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />الجزء الثاني — الحسابات البنكية والمالية</h2>
               <p>
                 بعد تأسيس شركتك تحتاج منظومة بنكية متكاملة: بنك أمريكي للشركات، استلام متعدد العملات، بطاقات افتراضية،
                 ومنصات عملات مشفرة.
               </p>
-              <PartnerGrid items={bankingPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="banking" />
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />الجزء الثالث — بوابات الدفع</h2>
               <p>
@@ -190,13 +121,16 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
               <p>
                 لاستلام مدفوعات Stripe عالمياً اربطها بمنظومة شركائنا في البنوك والمحافظ:
               </p>
-              <PartnerGrid items={paymentPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="payment" />
 
               <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />الاتصالات و eSIM (متطلبات KYC)</h3>
               <p>
                 رقم هاتف نشط وخطة بيانات مطلوبان لـ Stripe و Mercury ومعظم تدفقات KYC. شركاؤنا في eSIM والأرقام الافتراضية يغطونك عالمياً.
               </p>
-              <PartnerGrid items={telecomPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} category="telecom" />
+
+              {/* الشركاء في لمحة */}
+              <PartnerGlossary catalog={catalog} locale="ar" blogSlug={BLOG_SLUG} />
 
               <h3>متطلبات Stripe</h3>
               <ul>
