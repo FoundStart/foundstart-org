@@ -88,7 +88,7 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
                 <li>Open a US business bank account — Mercury recommended.</li>
                 <li>Apply for Stripe with your LLC details, EIN, and US bank.</li>
               </ul>
-              <PartnerGrid items={formationPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="formation" />
 
               <h3>1.2 UK Company (Ltd)</h3>
               <p>
@@ -97,21 +97,21 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
               <ul>
                 <li>Choose company name → Register with Companies House → Get UTR (tax reference) → Open Starling/Wise Business → Apply for Stripe UK.</li>
               </ul>
-              <PartnerGrid items={ukPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="uk" />
 
               <h3>1.3 EU (Estonia & Nordics)</h3>
               <p>
                 Estonian e-Residency lets you run a fully EU-incorporated company remotely. Latvia, Lithuania, Finland,
                 Sweden and Ireland are also available via 1office.
               </p>
-              <PartnerGrid items={euPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="eu" />
 
               <h2 className="flex items-center gap-3"><Banknote className="w-6 h-6 text-primary" />Part 2 — Banking & Financial Accounts</h2>
               <p>
                 Once your company is live you need a complete banking stack: a US business bank, multi-currency
                 receiving, virtual cards, and crypto rails.
               </p>
-              <PartnerGrid items={bankingPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="banking" />
 
               <h2 className="flex items-center gap-3"><CreditCard className="w-6 h-6 text-primary" />Part 3 — Payment Gateways</h2>
               <p>
@@ -126,14 +126,17 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
               <p>
                 To <strong>receive Stripe payouts globally</strong>, pair it with our partnered banking & wallet stack below:
               </p>
-              <PartnerGrid items={paymentPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="payment" />
 
               <h3 className="flex items-center gap-3 mt-10"><Globe className="w-5 h-5 text-primary" />Telecom & eSIM (KYC essentials)</h3>
               <p>
                 A working phone number and data plan are required for Stripe, Mercury, and most KYC flows. These eSIM
                 and virtual number partners cover you globally.
               </p>
-              <PartnerGrid items={telecomPartners} />
+              <BlogPartnerGrid catalog={catalog} locale="en" blogSlug={BLOG_SLUG} category="telecom" />
+
+              {/* Partners at a glance — grouped glossary */}
+              <PartnerGlossary catalog={catalog} locale="en" blogSlug={BLOG_SLUG} />
 
               <h3>Stripe Requirements</h3>
               <ul>
