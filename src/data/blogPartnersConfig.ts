@@ -39,24 +39,36 @@ export const PARTNER_DOMAIN = 'shortet.com';
 
 /**
  * Validates that a partnered entry uses a shortet.com URL.
- * Returns { ok, message } so the UI can surface a warning chip.
+ * Returns { ok, message, suggestion } so the UI can surface a warning chip
+ * with a one-click suggested correction.
  */
 export function validatePartnerEntry(p: PartnerEntry): {
   ok: boolean;
   message?: string;
+  suggestion?: string;
 } {
   if (!p.partnered) return { ok: true };
   try {
-    const host = new URL(p.url).hostname.replace(/^www\./, '');
+    const u = new URL(p.url);
+    const host = u.hostname.replace(/^www\./, '');
     if (host !== PARTNER_DOMAIN) {
+      const slug = p.id.replace(/^pay-/, '').toLowerCase();
+      const suggestion = `https://${PARTNER_DOMAIN}/${slug}`;
       return {
         ok: false,
-        message: `"${p.name}" is marked as partnered but URL host is "${host}" (expected ${PARTNER_DOMAIN}).`,
+        message: `"${p.name}" is marked as partnered but URL host is "${host}" (expected ${PARTNER_DOMAIN}). Suggested: ${suggestion}`,
+        suggestion,
       };
     }
     return { ok: true };
   } catch {
-    return { ok: false, message: `"${p.name}" has an invalid URL: ${p.url}` };
+    const slug = p.id.replace(/^pay-/, '').toLowerCase();
+    const suggestion = `https://${PARTNER_DOMAIN}/${slug}`;
+    return {
+      ok: false,
+      message: `"${p.name}" has an invalid URL: ${p.url}. Suggested: ${suggestion}`,
+      suggestion,
+    };
   }
 }
 
