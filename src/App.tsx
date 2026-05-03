@@ -51,6 +51,7 @@ import PricingCalculator from "./pages/PricingCalculator";
 import FAQ from "./pages/FAQ";
 import AllPartners from "./pages/AllPartners";
 import ResetPassword from "./pages/ResetPassword";
+import PartnerTrackingTest from "./pages/admin/PartnerTrackingTest";
 import AIChatBot from "./components/AIChatBot";
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 import "./App.css";
@@ -121,6 +122,7 @@ function App() {
                   <Route path="/domain-wishlist" element={<DomainWishlist />} />
                   <Route path="/bulk-domain-inquiry" element={<BulkDomainInquiry />} />
                   <Route path="/dashboard/*" element={<CustomerDashboard />} />
+                  <Route path="/admin/partner-test" element={<PartnerTrackingTest />} />
                   <Route path="/admin/*" element={<AdminDashboard />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
