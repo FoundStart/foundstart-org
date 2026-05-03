@@ -1,17 +1,22 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Switch } from '@/components/ui/switch';
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from '@/components/ui/select';
-import { Download, Trash2, MousePointerClick, AlertTriangle } from 'lucide-react';
+import { Download, Trash2, MousePointerClick, AlertTriangle, Beaker } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
-  getPartnerClicks,
+  getPartnerClicksAsync,
   filterClicksByMonth,
   exportClicksToCSV,
   downloadCSV,
   clearPartnerClicks,
+  setDedupeMode,
+  getDedupeMode,
+  PartnerClickRecord,
 } from '@/utils/partnerClickTracking';
 import {
   blogPartnerCatalogs,
@@ -30,8 +35,14 @@ const BlogPartnerAnalytics: React.FC = () => {
   const [year, setYear] = useState<number>(now.getFullYear());
   const [month, setMonth] = useState<number>(now.getMonth() + 1);
   const [refreshKey, setRefreshKey] = useState(0);
+  const [allClicks, setAllClicks] = useState<PartnerClickRecord[]>([]);
+  const [dedupe, setDedupe] = useState(false);
 
-  const allClicks = useMemo(() => getPartnerClicks(), [refreshKey]);
+  useEffect(() => {
+    setDedupe(getDedupeMode());
+    void getPartnerClicksAsync().then(setAllClicks);
+  }, [refreshKey]);
+
   const monthClicks = useMemo(
     () => filterClicksByMonth(allClicks, year, month),
     [allClicks, year, month],
@@ -130,6 +141,23 @@ const BlogPartnerAnalytics: React.FC = () => {
             <Button variant="outline" onClick={handleClear}>
               <Trash2 className="w-4 h-4 me-2" /> Clear all
             </Button>
+            <Button variant="outline" asChild>
+              <Link to="/admin/partner-test">
+                <Beaker className="w-4 h-4 me-2" /> Test pipeline
+              </Link>
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-3 pt-2">
+            <Switch
+              checked={dedupe}
+              onCheckedChange={(v) => { setDedupe(v); setDedupeMode(v); }}
+              id="analytics-dedupe"
+            />
+            <label htmlFor="analytics-dedupe" className="text-sm">
+              Session dedupe — track only first click per partner per blog
+            </label>
+            <Badge variant={dedupe ? 'default' : 'outline'}>{dedupe ? 'ON' : 'OFF'}</Badge>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 pt-2">
