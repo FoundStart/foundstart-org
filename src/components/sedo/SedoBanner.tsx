@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 const SEDO_LINK = 'https://sedo.com/?language=us&campaignId=336206';
 
@@ -24,9 +24,7 @@ const BANNERS: BannerDef[] = [
 ];
 
 interface SedoBannerProps {
-  /** Filter by ad size. Omit to pick across all. */
   size?: BannerSize;
-  /** Deterministic seed (e.g. blog slug + slot name) so SSR/CSR match and each slot stays stable. */
   seed?: string;
   className?: string;
 }
@@ -38,6 +36,8 @@ const hashSeed = (s: string) => {
 };
 
 const SedoBanner = ({ size, seed, className }: SedoBannerProps) => {
+  const [errored, setErrored] = useState(false);
+
   const banner = useMemo(() => {
     const pool = size ? BANNERS.filter(b => b.size === size) : BANNERS;
     const idx = seed ? hashSeed(seed) % pool.length : Math.floor(Math.random() * pool.length);
@@ -49,19 +49,36 @@ const SedoBanner = ({ size, seed, className }: SedoBannerProps) => {
   return (
     <a
       href={SEDO_LINK}
-      target="_parent"
-      rel="noopener"
-      className={`inline-block ${className ?? ''}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-block relative ${className ?? ''}`}
       aria-label="Sedo domain marketplace"
+      style={{ maxWidth: banner.width, width: '100%' }}
     >
-      <img
-        src={banner.src}
-        width={banner.width}
-        height={banner.height}
-        alt="Sedo — premium domains marketplace"
-        loading="lazy"
-        className="max-w-full h-auto"
-      />
+      {!errored ? (
+        <img
+          src={banner.src}
+          width={banner.width}
+          height={banner.height}
+          alt="Sedo — premium domains marketplace"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={() => setErrored(true)}
+          className="max-w-full h-auto block"
+        />
+      ) : (
+        <div
+          role="img"
+          aria-label="Sedo premium domains marketplace (fallback)"
+          className="flex flex-col items-center justify-center text-center bg-gradient-to-br from-primary/15 via-purple-500/10 to-primary/5 border border-primary/30 rounded-md p-3"
+          style={{ width: '100%', aspectRatio: `${banner.width} / ${banner.height}`, maxWidth: banner.width }}
+        >
+          <div className="text-xs uppercase tracking-wider text-primary font-semibold">Premium Domains</div>
+          <div className="text-sm md:text-base font-bold text-foreground mt-1">Sedo Marketplace</div>
+          <div className="text-[10px] md:text-xs text-muted-foreground mt-1">Click to browse →</div>
+          <div className="text-[10px] text-muted-foreground/70 mt-2">{banner.size}</div>
+        </div>
+      )}
     </a>
   );
 };
