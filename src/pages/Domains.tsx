@@ -16,6 +16,8 @@ import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, categories, hostingProviders } from '@/data/domainsData';
 import { loadBulkDomains, mergeDomains, toCsv, downloadCsv } from '@/utils/domainNormalization';
+import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
+import SedoBanner from '@/components/sedo/SedoBanner';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
