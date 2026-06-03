@@ -37,7 +37,7 @@ const Blog = () => {
           <SedoBanner size="728x90" seed="blog-header" className="hidden md:inline-block" />
           <SedoBanner size="336x280" seed="blog-header-mobile" className="md:hidden" />
           <div className="w-full max-w-2xl">
-            <SedoSearchWidget className="flex justify-center" />
+            <SedoSearchWidget className="flex flex-col items-center" debug />
           </div>
         </div>
       </div>

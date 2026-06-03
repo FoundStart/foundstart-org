@@ -105,7 +105,7 @@ const Domains = () => {
                 Powered by Sedo — check availability across millions of premium domains.
               </p>
             </div>
-            <SedoSearchWidget className="flex justify-center" />
+            <SedoSearchWidget className="flex flex-col items-center" debug />
             <div className="mt-6 flex justify-center">
               <SedoBanner size="728x90" seed="domains-hero" />
             </div>
