@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -505,6 +506,7 @@ const AgencyFormationBlog: React.FC = () => {
       <div className="min-h-screen bg-background">
         <Header />
         
+      <BlogAdStrip position=\"top\" slug=\"agency-formation" />
         <main className="w-full max-w-full overflow-x-hidden">
           {/* Hero Section */}
           <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-background to-purple-500/5">
@@ -703,6 +705,7 @@ const AgencyFormationBlog: React.FC = () => {
           </section>
         </main>
 
+        <BlogAdStrip position=\"bottom\" slug=\"agency-formation\" />
         <Footer />
       </div>
     </>

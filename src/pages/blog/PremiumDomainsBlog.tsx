@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -122,6 +123,7 @@ const PremiumDomainsBlog = () => {
 
       <Header />
       
+      <BlogAdStrip position=\"top\" slug=\"premium-domains" />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/blog">
@@ -248,6 +250,7 @@ const PremiumDomainsBlog = () => {
         </article>
       </div>
 
+      <BlogAdStrip position=\"bottom\" slug=\"premium-domains\" />
       <Footer />
     </div>
   );
