@@ -8,6 +8,8 @@ import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { blogPosts, categories } from '@/data/blogPostsData';
+import SedoBanner from '@/components/sedo/SedoBanner';
+import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
