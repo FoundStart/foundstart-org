@@ -20,7 +20,7 @@ const UKvsUSFormationBlog = () => {
 
       <Header />
       
-      <BlogAdStrip position=\"top\" slug=\"uk-vs-us-formation" />
+      <BlogAdStrip position="top" slug="uk-vs-us-formation" />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/blog">
@@ -181,7 +181,7 @@ const UKvsUSFormationBlog = () => {
         </article>
       </div>
 
-      <BlogAdStrip position=\"bottom\" slug=\"uk-vs-us-formation\" />
+      <BlogAdStrip position="bottom" slug="uk-vs-us-formation" />
       <Footer />
     </div>
   );

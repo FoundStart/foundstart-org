@@ -506,7 +506,7 @@ const AgencyFormationBlog: React.FC = () => {
       <div className="min-h-screen bg-background">
         <Header />
         
-      <BlogAdStrip position=\"top\" slug=\"agency-formation" />
+      <BlogAdStrip position="top" slug="agency-formation" />
         <main className="w-full max-w-full overflow-x-hidden">
           {/* Hero Section */}
           <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-background to-purple-500/5">
@@ -705,7 +705,7 @@ const AgencyFormationBlog: React.FC = () => {
           </section>
         </main>
 
-        <BlogAdStrip position=\"bottom\" slug=\"agency-formation\" />
+        <BlogAdStrip position="bottom" slug="agency-formation" />
         <Footer />
       </div>
     </>
