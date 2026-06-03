@@ -107,8 +107,8 @@ const Blog = () => {
             {/* Blog Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {regularPosts.map((post, idx) => (
-                <>
-                  <Card key={post.id} className="group hover:shadow-lg transition-all duration-300">
+                <React.Fragment key={post.id}>
+                  <Card className="group hover:shadow-lg transition-all duration-300">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="secondary">{post.category}</Badge>
@@ -139,11 +139,12 @@ const Blog = () => {
                     </CardContent>
                   </Card>
                   {idx === 2 && (
-                    <div key={`ad-${post.id}`} className="flex items-center justify-center">
+                    <div className="flex items-center justify-center">
                       <SedoBanner size="336x280" seed={`blog-grid-${idx}`} />
                     </div>
                   )}
-                </>
+                </React.Fragment>
+              ))}
               ))}
             </div>
           </div>
