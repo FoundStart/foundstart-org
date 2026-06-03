@@ -20,7 +20,7 @@ const LLCFormationGuideBlog = () => {
 
       <Header />
       
-      <BlogAdStrip position=\"top\" slug=\"llc-formation-guide" />
+      <BlogAdStrip position="top" slug="llc-formation-guide" />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/blog">
@@ -246,7 +246,7 @@ const LLCFormationGuideBlog = () => {
         </article>
       </div>
 
-      <BlogAdStrip position=\"bottom\" slug=\"llc-formation-guide\" />
+      <BlogAdStrip position="bottom" slug="llc-formation-guide" />
       <Footer />
     </div>
   );

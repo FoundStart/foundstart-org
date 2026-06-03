@@ -38,7 +38,7 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
       <div className="min-h-screen bg-background">
         <Header />
 
-      <BlogAdStrip position=\"top\" slug=\"momoai-en" />
+      <BlogAdStrip position="top" slug="momoai-en" />
         <main className="w-full max-w-full overflow-x-hidden">
           <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-background to-purple-500/5">
             <div className="container mx-auto max-w-4xl">
@@ -207,7 +207,7 @@ const MoMoAIBusinessSetupEN: React.FC = () => {
           </section>
         </main>
 
-        <BlogAdStrip position=\"bottom\" slug=\"momoai-en\" />
+        <BlogAdStrip position="bottom" slug="momoai-en" />
         <Footer />
       </div>
     </>

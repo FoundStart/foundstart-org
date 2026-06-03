@@ -123,7 +123,7 @@ const PremiumDomainsBlog = () => {
 
       <Header />
       
-      <BlogAdStrip position=\"top\" slug=\"premium-domains" />
+      <BlogAdStrip position="top" slug="premium-domains" />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/blog">
@@ -250,7 +250,7 @@ const PremiumDomainsBlog = () => {
         </article>
       </div>
 
-      <BlogAdStrip position=\"bottom\" slug=\"premium-domains\" />
+      <BlogAdStrip position="bottom" slug="premium-domains" />
       <Footer />
     </div>
   );

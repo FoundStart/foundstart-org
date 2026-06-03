@@ -30,7 +30,7 @@ const PremiumDomainsShowcaseBlog = () => {
         <link rel="canonical" href="https://foundstart.org/blog/premium-domains-showcase" />
       </Helmet>
       <Header />
-      <BlogAdStrip position=\"top\" slug=\"premium-domains-showcase" />
+      <BlogAdStrip position="top" slug="premium-domains-showcase" />
       <main className="pb-20 md:pb-0">
         <article className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
@@ -91,7 +91,7 @@ const PremiumDomainsShowcaseBlog = () => {
           </div>
         </article>
       </main>
-      <BlogAdStrip position=\"bottom\" slug=\"premium-domains-showcase\" />
+      <BlogAdStrip position="bottom" slug="premium-domains-showcase" />
       <Footer />
     </div>
   );
