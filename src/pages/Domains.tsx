@@ -16,6 +16,8 @@ import { Link } from 'react-router-dom';
 import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, categories, hostingProviders } from '@/data/domainsData';
 import { loadBulkDomains, mergeDomains, toCsv, downloadCsv } from '@/utils/domainNormalization';
+import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
+import SedoBanner from '@/components/sedo/SedoBanner';
 
 const Domains = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -92,6 +94,23 @@ const Domains = () => {
             </Link>
           </div>
         </PageHero>
+
+        <section className="py-8 px-4 sm:px-6 lg:px-8 border-b border-border/40">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-4">
+              <h2 className="text-xl md:text-2xl font-bold mb-1">
+                Search the <span className="gradient-text">Global Domain Marketplace</span>
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Powered by Sedo — check availability across millions of premium domains.
+              </p>
+            </div>
+            <SedoSearchWidget className="flex justify-center" />
+            <div className="mt-6 flex justify-center">
+              <SedoBanner size="728x90" seed="domains-hero" />
+            </div>
+          </div>
+        </section>
 
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">

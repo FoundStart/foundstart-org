@@ -5,16 +5,29 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calendar, User, Clock, Globe, Building, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SedoBanner from '@/components/sedo/SedoBanner';
+import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
 
 const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      <div className="container mx-auto px-4 py-8">
-        {/* Back to Home Button */}
-        <div className="mb-6">
-          <Link to="/">
+
+      {/* Header banner */}
+      <div className="container mx-auto px-4 pt-6 flex justify-center">
+        <SedoBanner size="728x90" seed="blogpost-header" className="hidden md:inline-block" />
+        <SedoBanner size="336x280" seed="blogpost-header-mobile" className="md:hidden" />
+      </div>
+
+      <div className="container mx-auto px-4 py-8 grid lg:grid-cols-[160px_1fr_160px] gap-8">
+        <aside className="hidden lg:flex justify-center sticky top-24 self-start">
+          <SedoBanner size="160x600" seed="blogpost-left" />
+        </aside>
+
+        <div>
+          {/* Back to Home Button */}
+          <div className="mb-6">
+            <Link to="/">
             <Button variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back to Home
@@ -420,6 +433,23 @@ const BlogPost = () => {
             </section>
           </div>
         </article>
+
+          {/* Inline search + footer banner */}
+          <div className="max-w-4xl mx-auto mt-12 space-y-6">
+            <div className="rounded-xl border border-border/40 bg-card p-6">
+              <h3 className="text-lg font-semibold mb-3 text-center">Looking for a domain for your idea?</h3>
+              <SedoSearchWidget className="flex justify-center" />
+            </div>
+            <div className="flex justify-center">
+              <SedoBanner size="728x90" seed="blogpost-footer" className="hidden md:inline-block" />
+              <SedoBanner size="336x280" seed="blogpost-footer-mobile" className="md:hidden" />
+            </div>
+          </div>
+        </div>
+
+        <aside className="hidden lg:flex justify-center sticky top-24 self-start">
+          <SedoBanner size="160x600" seed="blogpost-right" />
+        </aside>
       </div>
 
       <Footer />

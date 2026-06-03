@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -38,6 +39,7 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
       <div className="min-h-screen bg-background" dir="rtl">
         <Header />
 
+      <BlogAdStrip position=\"top\" slug=\"momoai-ar" />
         <main className="w-full max-w-full overflow-x-hidden">
           <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-background to-emerald-500/5">
             <div className="container mx-auto max-w-4xl">
@@ -198,6 +200,7 @@ const MoMoAIBusinessSetupAR: React.FC = () => {
           </section>
         </main>
 
+        <BlogAdStrip position=\"bottom\" slug=\"momoai-ar\" />
         <Footer />
       </div>
     </>
