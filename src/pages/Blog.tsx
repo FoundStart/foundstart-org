@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { blogPosts, categories } from '@/data/blogPostsData';
 import SedoBanner from '@/components/sedo/SedoBanner';
 import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
