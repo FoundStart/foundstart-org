@@ -145,7 +145,6 @@ const Blog = () => {
                   )}
                 </React.Fragment>
               ))}
-              ))}
             </div>
           </div>
 
