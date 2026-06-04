@@ -5,12 +5,13 @@ import { Badge } from '@/components/ui/badge';
 import PartnerCard from '@/components/partners/PartnerCard';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { freelancerPartnersData } from '@/data/freelancerPartnersData';
 
 const FreelancerPartners = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('All');
 
-  const freelancerPartners = [
+  const freelancerPartners = freelancerPartnersData;
     // Arabic Platforms
     { category: "Freelancer & Earn Money online", platform: "Khamsat", url: "https://khamsat.com/?r=2376622", language: "Arabic" },
     { category: "Freelancer & Earn Money online", platform: "Kafil", url: "https://kafiil.com/ref/325c5ca896", language: "Arabic" },
