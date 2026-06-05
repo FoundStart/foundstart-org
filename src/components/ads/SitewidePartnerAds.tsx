@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { digitalPartnersData } from '@/data/digitalPartnersData';
 import { freelancerPartnersData } from '@/data/freelancerPartnersData';
 import { sisterDomains } from '@/data/sisterPartnersData';
-import { domainsList } from '@/data/domainsData';
+import { domainsData, type Domain } from '@/data/domainsData';
 import { getFaviconUrl, getDomainHost } from '@/utils/favicon';
 
 type AdItem = {
@@ -41,7 +41,7 @@ const SitewidePartnerAds = () => {
       kind: 'sister' as const, platform: name, url: `https://${name}`,
       href: '/sister-partners', tag: 'Sister Brand',
     }));
-    const dom = pickRandom(domainsList.filter(x => x.price && x.price !== 'Not For Sale'), 2).map((d) => ({
+    const dom = pickRandom<Domain>(domainsData.filter((x) => x.price && x.price !== 'Not For Sale'), 2).map((d) => ({
       kind: 'domain' as const, platform: d.name, url: `https://${d.name}`,
       href: '/domains', tag: `Domain ${d.price ? '$' + d.price : ''}`,
     }));

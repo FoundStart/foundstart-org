@@ -54,6 +54,8 @@ import ResetPassword from "./pages/ResetPassword";
 import PartnerTrackingTest from "./pages/admin/PartnerTrackingTest";
 import AIChatBot from "./components/AIChatBot";
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
+import SitewidePartnerAds from "./components/ads/SitewidePartnerAds";
+import ExitIntentPartnerAd from "./components/ads/ExitIntentPartnerAd";
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -128,6 +130,8 @@ function App() {
                 </Routes>
                 <AIChatBot />
                 <MobileBottomNav />
+                <SitewidePartnerAds />
+                <ExitIntentPartnerAd />
               </AuthProvider>
             </BrowserRouter>
           </TooltipProvider>
