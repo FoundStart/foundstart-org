@@ -3,7 +3,14 @@ import PartnerBannerStrip, { BannerAdItem } from './PartnerBannerStrip';
 import PartnerPopAd, { PopAdItem } from './PartnerPopAd';
 import { digitalPartnersData } from '@/data/digitalPartnersData';
 import { freelancerPartnersData } from '@/data/freelancerPartnersData';
-import { countries } from '@/data/countriesData';
+import { countriesData } from '@/data/countriesData';
+
+type CountryPartnerFlat = { country: string; countryId: string; name: string; url: string };
+const countryPartners: CountryPartnerFlat[] = countriesData.flatMap((c: any) =>
+  (c.partners ?? []).map((p: any) => ({
+    country: c.name, countryId: c.id, name: p.name, url: p.url,
+  })),
+);
 
 const PartnerAdsHub = () => {
   const digitalBanner: BannerAdItem[] = useMemo(
@@ -21,10 +28,9 @@ const PartnerAdsHub = () => {
   );
 
   const countryBanner: BannerAdItem[] = useMemo(
-    () => (countries ?? []).map((c: any) => ({
-      platform: c.name ?? c.title ?? 'Country',
-      url: `https://foundstart.org/country/${c.id ?? c.slug ?? ''}`,
-      href: `/country/${c.id ?? c.slug ?? ''}`,
+    () => countryPartners.map((p) => ({
+      platform: `${p.name} · ${p.country}`,
+      url: p.url,
       tag: 'Country Partner',
     })),
     [],
@@ -46,11 +52,10 @@ const PartnerAdsHub = () => {
   );
 
   const countryPop: PopAdItem[] = useMemo(
-    () => (countries ?? []).map((c: any) => ({
-      platform: c.name ?? c.title ?? 'Country',
-      url: `https://foundstart.org/country/${c.id ?? c.slug ?? ''}`,
-      href: `/country/${c.id ?? c.slug ?? ''}`,
-      niche: c.tagline ?? c.description,
+    () => countryPartners.map((p) => ({
+      platform: p.name,
+      url: p.url,
+      niche: `Trusted partner for ${p.country} company formation`,
     })),
     [],
   );
