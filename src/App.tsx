@@ -55,6 +55,9 @@ import PartnerTrackingTest from "./pages/admin/PartnerTrackingTest";
 import AIChatBot from "./components/AIChatBot";
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 import PartnerAdsHub from "./components/ads/PartnerAdsHub";
+import HealthCheckBanner from "./components/HealthCheckBanner";
+import IntegrationSettings from "./pages/IntegrationSettings";
+import EgyptOnePersonCompanyAR from "./pages/blog/EgyptOnePersonCompanyAR";
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -82,6 +85,7 @@ function App() {
             <BrowserRouter>
               <AuthProvider>
                 <ScrollToTop />
+                <HealthCheckBanner />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
@@ -104,6 +108,7 @@ function App() {
                   <Route path="/blog/uk-vs-us-company-formation" element={<UKvsUSFormationBlog />} />
                   <Route path="/blog/momoai-business-setup-guide-en" element={<MoMoAIBusinessSetupEN />} />
                   <Route path="/blog/momoai-business-setup-guide-ar" element={<MoMoAIBusinessSetupAR />} />
+                  <Route path="/blog/egypt-one-person-company-ar" element={<EgyptOnePersonCompanyAR />} />
                   <Route path="/blog/:slug" element={<AgencyFormationBlog />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
@@ -125,6 +130,7 @@ function App() {
                   <Route path="/dashboard/*" element={<CustomerDashboard />} />
                   <Route path="/admin/partner-test" element={<PartnerTrackingTest />} />
                   <Route path="/admin/*" element={<AdminDashboard />} />
+                  <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <AIChatBot />
