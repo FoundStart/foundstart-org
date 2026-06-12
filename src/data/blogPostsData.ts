@@ -14,6 +14,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 202,
+    title: "تأسيس شركة الشخص الواحد في مصر — الدليل الكامل 2026",
+    description: "خطوات تأسيس شركة الشخص الواحد في مصر: المستندات، الهيئة العامة للاستثمار، الشهر العقاري، السجل التجاري والبطاقة الضريبية.",
+    category: "Egypt",
+    author: "FoundStart Team",
+    date: "12 يونيو 2026",
+    readTime: "قراءة 10 دقائق",
+    featured: true,
+    slug: "egypt-one-person-company-ar"
+  },
+  {
     id: 200,
     title: "MoMoAI Business Operations: Complete Setup Guide (Formation, Banking & Payments)",
     description: "The full MoMoAI 2026 playbook — US LLC / UK Ltd / EU formation, Mercury & Wise banking, Stripe & Shopify Payments, and the recommended payment stack by use case.",
