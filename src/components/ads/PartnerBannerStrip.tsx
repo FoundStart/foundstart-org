@@ -76,22 +76,20 @@ const PartnerBannerStrip = ({
     };
   }, []);
 
+  const ad = pool[index];
+  const campaignId = campaign || storageKey;
+
+  // Fire impression once per ad rotation
+  useEffect(() => {
+    if (!ad) return;
+    trackAdEvent({ surface: 'banner', event: 'impression', campaign: campaignId, partner: ad.platform, variant, href: ad.href });
+  }, [ad?.platform, ad?.href, campaignId, variant]);
+
   const hide =
     /^\/(dashboard|admin|auth|reset-password|settings)/.test(location.pathname) ||
     !isLive('partnerAds') ||
     formActive;
   if (hide || !visible || dismissed || pool.length === 0) return null;
-
-  const ad = pool[index];
-  const campaignId = campaign || storageKey;
-
-  // Fire impression once per ad rotation
-  // (effect runs on index change but we keep it minimal)
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    if (!ad) return;
-    trackAdEvent({ surface: 'banner', event: 'impression', campaign: campaignId, partner: ad.platform, variant, href: ad.href });
-  }, [ad?.platform, ad?.href, campaignId, variant]);
 
   const dismiss = () => {
     trackAdEvent({ surface: 'banner', event: 'dismiss', campaign: campaignId, partner: ad.platform, variant });
