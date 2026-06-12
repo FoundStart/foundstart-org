@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Gift } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { getFaviconUrl, getDomainHost } from '@/utils/favicon';
+import { trackAdEvent, getVariant } from '@/utils/adTracking';
+import { isLive } from '@/utils/integrationSettings';
 
 export type PopAdItem = {
   platform: string;
@@ -24,25 +26,33 @@ interface Props {
   storageKey: string;
   badgeLabel: string;
   trigger: Trigger;
+  campaign?: string;
 }
 
-const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger }: Props) => {
+const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Props) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const variant = getVariant(campaign || storageKey);
   const [partner] = useState(() => {
     if (items.length === 0) return null;
     return items[Math.floor(Math.random() * items.length)];
   });
+  const campaignId = campaign || storageKey;
 
   useEffect(() => {
     if (sessionStorage.getItem(storageKey)) return;
-    if (/^\/(dashboard|admin|auth|reset-password)/.test(location.pathname)) return;
+    if (/^\/(dashboard|admin|auth|reset-password|settings)/.test(location.pathname)) return;
+    if (!isLive('partnerAds')) return;
     if (!partner) return;
 
     const fire = () => {
       if (sessionStorage.getItem(storageKey)) return;
+      // Don't pop while user is typing
+      const active = document.activeElement as HTMLElement | null;
+      if (active?.matches?.('input, textarea, select, [contenteditable="true"]')) return;
       sessionStorage.setItem(storageKey, '1');
       setOpen(true);
+      trackAdEvent({ surface: 'pop', event: 'impression', campaign: campaignId, partner: partner.platform, variant, href: partner.href });
     };
 
     if (trigger.type === 'timer') {
@@ -78,6 +88,14 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger }: Props) => {
 
   if (!partner) return null;
 
+  const onDismiss = () => {
+    trackAdEvent({ surface: 'pop', event: 'dismiss', campaign: campaignId, partner: partner.platform, variant });
+    setOpen(false);
+  };
+  const onClick = () => {
+    trackAdEvent({ surface: 'pop', event: 'click', campaign: campaignId, partner: partner.platform, variant, href: partner.href });
+  };
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-md">
@@ -109,17 +127,18 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger }: Props) => {
         )}
 
         <div className="flex gap-2">
-          <Button variant="outline" onClick={() => setOpen(false)} className="flex-1">
+          <Button variant="outline" onClick={onDismiss} className="flex-1">
             No thanks
           </Button>
           {partner.href ? (
-            <Button asChild className="flex-1" onClick={() => setOpen(false)}>
+            <Button asChild className="flex-1" onClick={() => { onClick(); setOpen(false); }}>
               <Link to={partner.href}>Explore</Link>
             </Button>
           ) : (
             <Button
               className="flex-1"
               onClick={() => {
+                onClick();
                 window.open(partner.url, '_blank', 'noopener,noreferrer');
                 setOpen(false);
               }}

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { Youtube, Facebook, Instagram, Linkedin, Twitter, MessageCircle, Download } from 'lucide-react';
+import { Youtube, Facebook, Instagram, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 
 
 const Footer = () => {
@@ -168,31 +167,6 @@ const Footer = () => {
               for company formation, banking, and digital services.
             </p>
             
-            {/* Download Buttons */}
-            <div className="mb-4 space-y-2">
-              <a
-                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT51oaHgrpKbNUUh_1t4ubKyFgQZVXLHQRbA3_EHMc4xDcByOOrnTkyIf63-Gn9AmK2UMF5iXJcKv41/pubhtml"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" size="sm" className="w-full">
-                  <Download className="w-4 h-4 mr-2" />
-                  MoMoAI Business Sheet
-                </Button>
-              </a>
-              <a
-                href="/Business_Sheet_2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-              >
-                <Button variant="outline" size="sm" className="w-full">
-                  <Download className="w-4 h-4 mr-2" />
-                  Digital Partners 2026 (PDF)
-                </Button>
-              </a>
-            </div>
-
             {/* Social Media Links */}
             <div className="grid grid-cols-4 gap-2 mb-4">
               {socialLinks.slice(0, 16).map((social, index) => {
