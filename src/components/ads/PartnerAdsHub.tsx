@@ -12,6 +12,8 @@ const countryPartners: CountryPartnerFlat[] = countriesData.flatMap((c: any) =>
   })),
 );
 
+const partnersFor = (id: string) => countryPartners.filter((p) => p.countryId === id);
+
 const PartnerAdsHub = () => {
   const digitalBanner: BannerAdItem[] = useMemo(
     () => digitalPartnersData.map((p) => ({
@@ -59,6 +61,28 @@ const PartnerAdsHub = () => {
     })),
     [],
   );
+
+  // Per-jurisdiction (US / UK / Canada) campaigns
+  const buildBanner = (cid: string, label: string): BannerAdItem[] =>
+    partnersFor(cid).map((p) => ({
+      platform: `${p.name} · ${label}`,
+      url: p.url,
+      tag: `${label} Partner`,
+    }));
+
+  const buildPop = (cid: string, label: string): PopAdItem[] =>
+    partnersFor(cid).map((p) => ({
+      platform: p.name,
+      url: p.url,
+      niche: `Featured ${label} formation partner — trusted by founders worldwide`,
+    }));
+
+  const usaBanner = useMemo(() => buildBanner('USA', 'USA'), []);
+  const ukBanner = useMemo(() => buildBanner('UK', 'UK'), []);
+  const canadaBanner = useMemo(() => buildBanner('Canada', 'Canada'), []);
+  const usaPop = useMemo(() => buildPop('USA', 'USA'), []);
+  const ukPop = useMemo(() => buildPop('UK', 'UK'), []);
+  const canadaPop = useMemo(() => buildPop('Canada', 'Canada'), []);
 
   return (
     <>
@@ -108,7 +132,75 @@ const PartnerAdsHub = () => {
         storageKey="fs_pop_country"
         badgeLabel="Featured Country Partner"
         trigger={{ type: 'scroll', percent: 65 }}
+        campaign="country-all"
       />
+
+      {/* USA / UK / Canada banners — appear after primary banners */}
+      {usaBanner.length > 0 && (
+        <PartnerBannerStrip
+          items={usaBanner}
+          storageKey="fs_banner_usa"
+          position="bottom-center"
+          accentClassName="bg-blue-600"
+          label="USA Partner"
+          intervalMs={9000}
+          delayMs={14000}
+          campaign="country-USA"
+        />
+      )}
+      {ukBanner.length > 0 && (
+        <PartnerBannerStrip
+          items={ukBanner}
+          storageKey="fs_banner_uk"
+          position="bottom-left"
+          accentClassName="bg-red-600"
+          label="UK Partner"
+          intervalMs={9000}
+          delayMs={20000}
+          campaign="country-UK"
+        />
+      )}
+      {canadaBanner.length > 0 && (
+        <PartnerBannerStrip
+          items={canadaBanner}
+          storageKey="fs_banner_canada"
+          position="bottom-right"
+          accentClassName="bg-rose-500"
+          label="Canada Partner"
+          intervalMs={9000}
+          delayMs={26000}
+          campaign="country-Canada"
+        />
+      )}
+
+      {/* USA / UK / Canada pop ads — staggered triggers */}
+      {usaPop.length > 0 && (
+        <PartnerPopAd
+          items={usaPop}
+          storageKey="fs_pop_usa"
+          badgeLabel="Top USA Formation Partner"
+          trigger={{ type: 'timer', delayMs: 55000 }}
+          campaign="country-USA"
+        />
+      )}
+      {ukPop.length > 0 && (
+        <PartnerPopAd
+          items={ukPop}
+          storageKey="fs_pop_uk"
+          badgeLabel="Top UK Formation Partner"
+          trigger={{ type: 'scroll', percent: 80 }}
+          campaign="country-UK"
+        />
+      )}
+      {canadaPop.length > 0 && (
+        <PartnerPopAd
+          items={canadaPop}
+          storageKey="fs_pop_canada"
+          badgeLabel="Top Canada Formation Partner"
+          trigger={{ type: 'timer', delayMs: 75000 }}
+          campaign="country-Canada"
+        />
+      )}
     </>
   );
 };
