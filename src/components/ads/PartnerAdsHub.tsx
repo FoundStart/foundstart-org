@@ -124,26 +124,65 @@ const PartnerAdsHub = () => {
         delayMs={10000}
       />
 
-      {/* Pop ads — different triggers so they don't all fire at once */}
-      <PartnerPopAd
-        items={digitalPop}
-        storageKey="fs_pop_digital"
-        badgeLabel="Exclusive Digital Partner Offer"
-        trigger={{ type: 'exit-intent' }}
-      />
-      <PartnerPopAd
-        items={freelancerPop}
-        storageKey="fs_pop_freelancer"
-        badgeLabel="Earn With Our Freelancer Partner"
-        trigger={{ type: 'timer', delayMs: 35000 }}
-      />
-      <PartnerPopAd
-        items={countryPop}
-        storageKey="fs_pop_country"
-        badgeLabel="Featured Country Partner"
-        trigger={{ type: 'scroll', percent: 65 }}
-        campaign="country-all"
-      />
+      {/* Pop ads — only ONE on home page; full stack elsewhere */}
+      {isHome ? (
+        <PartnerPopAd
+          items={homePopPool}
+          storageKey="fs_pop_home"
+          badgeLabel="Featured Partner Offer"
+          trigger={{ type: 'exit-intent' }}
+          campaign="home-single"
+        />
+      ) : (
+        <>
+          <PartnerPopAd
+            items={digitalPop}
+            storageKey="fs_pop_digital"
+            badgeLabel="Exclusive Digital Partner Offer"
+            trigger={{ type: 'exit-intent' }}
+          />
+          <PartnerPopAd
+            items={freelancerPop}
+            storageKey="fs_pop_freelancer"
+            badgeLabel="Earn With Our Freelancer Partner"
+            trigger={{ type: 'timer', delayMs: 35000 }}
+          />
+          <PartnerPopAd
+            items={countryPop}
+            storageKey="fs_pop_country"
+            badgeLabel="Featured Country Partner"
+            trigger={{ type: 'scroll', percent: 65 }}
+            campaign="country-all"
+          />
+          {usaPop.length > 0 && (
+            <PartnerPopAd
+              items={usaPop}
+              storageKey="fs_pop_usa"
+              badgeLabel="Top USA Formation Partner"
+              trigger={{ type: 'timer', delayMs: 55000 }}
+              campaign="country-USA"
+            />
+          )}
+          {ukPop.length > 0 && (
+            <PartnerPopAd
+              items={ukPop}
+              storageKey="fs_pop_uk"
+              badgeLabel="Top UK Formation Partner"
+              trigger={{ type: 'scroll', percent: 80 }}
+              campaign="country-UK"
+            />
+          )}
+          {canadaPop.length > 0 && (
+            <PartnerPopAd
+              items={canadaPop}
+              storageKey="fs_pop_canada"
+              badgeLabel="Top Canada Formation Partner"
+              trigger={{ type: 'timer', delayMs: 75000 }}
+              campaign="country-Canada"
+            />
+          )}
+        </>
+      )}
 
       {/* USA / UK / Canada banners — appear after primary banners */}
       {usaBanner.length > 0 && (
