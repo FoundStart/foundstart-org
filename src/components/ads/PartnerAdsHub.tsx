@@ -222,34 +222,6 @@ const PartnerAdsHub = () => {
         />
       )}
 
-      {/* USA / UK / Canada pop ads — staggered triggers */}
-      {usaPop.length > 0 && (
-        <PartnerPopAd
-          items={usaPop}
-          storageKey="fs_pop_usa"
-          badgeLabel="Top USA Formation Partner"
-          trigger={{ type: 'timer', delayMs: 55000 }}
-          campaign="country-USA"
-        />
-      )}
-      {ukPop.length > 0 && (
-        <PartnerPopAd
-          items={ukPop}
-          storageKey="fs_pop_uk"
-          badgeLabel="Top UK Formation Partner"
-          trigger={{ type: 'scroll', percent: 80 }}
-          campaign="country-UK"
-        />
-      )}
-      {canadaPop.length > 0 && (
-        <PartnerPopAd
-          items={canadaPop}
-          storageKey="fs_pop_canada"
-          badgeLabel="Top Canada Formation Partner"
-          trigger={{ type: 'timer', delayMs: 75000 }}
-          campaign="country-Canada"
-        />
-      )}
     </>
   );
 };
