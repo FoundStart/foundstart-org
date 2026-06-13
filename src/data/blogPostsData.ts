@@ -14,6 +14,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 203,
+    title: "How to Get the Best Company Formation for Your Online Business in 2026",
+    description: "MoMoAI's 2026 guide to the best company formation platforms for online founders, freelancers and digital nomads — USA, UK, Estonia, Finland, Sweden, Latvia, Lithuania and Ireland.",
+    category: "Business Setup",
+    author: "MoMoAI",
+    date: "Jun 13, 2026",
+    readTime: "16 min read",
+    featured: true,
+    slug: "best-company-formation-2026"
+  },
+  {
     id: 202,
     title: "تأسيس شركة الشخص الواحد في مصر — الدليل الكامل 2026",
     description: "خطوات تأسيس شركة الشخص الواحد في مصر: المستندات، الهيئة العامة للاستثمار، الشهر العقاري، السجل التجاري والبطاقة الضريبية.",
