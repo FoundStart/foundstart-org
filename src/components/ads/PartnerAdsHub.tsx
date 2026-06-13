@@ -16,6 +16,9 @@ const countryPartners: CountryPartnerFlat[] = countriesData.flatMap((c: any) =>
 const partnersFor = (id: string) => countryPartners.filter((p) => p.countryId === id);
 
 const PartnerAdsHub = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   const digitalBanner: BannerAdItem[] = useMemo(
     () => digitalPartnersData.map((p) => ({
       platform: p.platform, url: p.url, tag: 'Digital Partner', href: '/digital-partners',
@@ -62,6 +65,12 @@ const PartnerAdsHub = () => {
     })),
     [],
   );
+
+  // Single unified pop pool for home page (one random partner from all categories)
+  const homePopPool: PopAdItem[] = useMemo(() => {
+    const all = [...digitalPop, ...freelancerPop, ...countryPop];
+    return all;
+  }, [digitalPop, freelancerPop, countryPop]);
 
   // Per-jurisdiction (US / UK / Canada) campaigns
   const buildBanner = (cid: string, label: string): BannerAdItem[] =>
