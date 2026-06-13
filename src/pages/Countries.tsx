@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowRight, ExternalLink, Search, ArrowLeft, Building, Globe } from 'lucide-react';
+import { ArrowRight, ExternalLink, Search, ArrowLeft, Building, Globe, Link2 } from 'lucide-react';
 import { partnerData } from '@/data/jurisdictionData';
 import { countriesData } from '@/data/countriesData';
 import { Link } from 'react-router-dom';
@@ -52,6 +52,14 @@ const Countries = () => {
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Choose your jurisdiction and formation partner to start your business globally.
               </p>
+              <div className="flex justify-center pt-2">
+                <Button asChild variant="outline" className="gap-2">
+                  <Link to="/company-formation-bio">
+                    <Link2 className="w-4 h-4" />
+                    View Formation Bio Page (All Countries)
+                  </Link>
+                </Button>
+              </div>
             </div>
 
             <Tabs defaultValue="countries" className="w-full">
