@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import PartnerBannerStrip, { BannerAdItem } from './PartnerBannerStrip';
 import PartnerPopAd, { PopAdItem } from './PartnerPopAd';
 import { digitalPartnersData } from '@/data/digitalPartnersData';
