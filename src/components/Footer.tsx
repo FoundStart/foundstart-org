@@ -17,7 +17,7 @@ const Footer = () => {
       href: "/services"
     }, {
       name: "Company Formation",
-      href: "#services"
+      href: "/company-formation-bio"
     }, {
       name: "Banking Setup",
       href: "#services"

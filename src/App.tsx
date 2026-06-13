@@ -58,6 +58,7 @@ import PartnerAdsHub from "./components/ads/PartnerAdsHub";
 import HealthCheckBanner from "./components/HealthCheckBanner";
 import IntegrationSettings from "./pages/IntegrationSettings";
 import EgyptOnePersonCompanyAR from "./pages/blog/EgyptOnePersonCompanyAR";
+import CompanyFormationBio from "./pages/CompanyFormationBio";
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -90,6 +91,7 @@ function App() {
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
                   <Route path="/country/:countryId" element={<CountryPage />} />
+                  <Route path="/company-formation-bio" element={<CompanyFormationBio />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/all-partners" element={<AllPartners />} />
