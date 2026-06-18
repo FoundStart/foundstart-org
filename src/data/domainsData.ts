@@ -8,7 +8,7 @@ export interface Domain {
   buyUrl?: string;
 }
 
-const raw: Domain[] = [
+const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Exitsme.com",
     "hosting": "UD",
