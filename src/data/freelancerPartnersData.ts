@@ -6,120 +6,436 @@ export interface FreelancerPartner {
 }
 
 export const freelancerPartnersData: FreelancerPartner[] = [
-  { category: "Freelancer & Earn Money online", language: "Arabic", platform: "Khamsat", url: "https://khamsat.com/?r=2376622" },
-  { category: "Freelancer & Earn Money online", language: "Arabic", platform: "Kafil", url: "https://shortet.com/Kafil" },
-  { category: "Freelancer & Earn Money online", language: "Arabic", platform: "Frlanso", url: "https://www.forlanso.com/signup?code=mobpbyum" },
-  { category: "Freelancer & Earn Money online", language: "Arabic", platform: "Nafezly", url: "https://nafezly.com/ref/657e29917bb93" },
-  { category: "Freelancer & Earn Money online", language: "Arabic", platform: "Mostaql", url: "mostaql.com/" },
-  { category: "Freelancer & Earn Money online", language: "Arabic", platform: "Elharefa", url: "https://www.elharefa.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "AI Freelancer", url: "https://www.aifreelancer.app/signup?ref=53E962AE" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "People Per Hour", url: "https://www.peopleperhour.com/site/register?rfrd=10583958.5" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Fiverr", url: "https://go.fiverr.com/visit/?bta=819322&brand=fiverrcpa" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "We work remotely", url: "https://weworkremotely.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Upwork", url: "https://www.upwork.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Freelancer", url: "https://www.freelancer.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "flexjobs", url: "https://www.flexjobs.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Remote Tasks", url: "https://www.remotasks.com/es" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Labor X", url: "https://laborx.com?ref=388898" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "hire talents", url: "https://www.hiretalents.com/?rf=1131479" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Sproutgigs", url: "https://sproutgigs.com/?a=73cedb5c" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Toloka", url: "https://we.toloka.ai/promo?referralCode=SGLOCQKT" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Zeerk", url: "https://zeerk.me/qtwWo" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Ysense", url: "https://www.ysense.com/?rb=151276147" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "2Captcha", url: "https://2captcha.com/?from=20034972" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Write Nova", url: "https://writenova.net/ref/Deeemoz" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Worker cash", url: "https://worker.cash/u/418887" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Time Bucks", url: "https://timebucks.com/?refID=223771610" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Tgmpanel", url: "https://eg.tgm.link/UZca945897" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Test IO", url: "https://join.test.io/CXeHrS5emJZS" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Task Rabbit", url: "https://www.taskrabbit.com/s/ckd7x/try?utm_source=trycode" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Swag bucks", url: "https://www.swagbucks.com/profile/r_150942510?rp=1" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "surveyeah", url: "https://panel.surveyeah.com/en/p/4865935?s=share-link" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Survey time", url: "https://surveytime.app/NUGAU1NXcN" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Surveoo", url: "https://www.surveoo.com/?r=574773" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Survbe", url: "https://surfe.be/2656160" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "SOCPublic", url: "https://socpublic.com/?i=8934856&slide=1" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "SerfClick", url: "https://serfclick.net/i/186635" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "SEO Print", url: "https://seosprint.run/?ref=16392529" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Schoolsolver", url: "http//store.onlinejobs.ph/?aid=567662" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Rewardy", url: "https://rewardy.io/?ref=mohamedsayedtel" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "rateglo", url: "https://rateglo.com/?ref=933368" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Qolle", url: "https://qolle.biz/?i=56383" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Publish0x", url: "https://www.publish0x.com/?a=jnegnmB3dw" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "PrizeRebel", url: "https://www.prizerebel.com/index.php?r=14575451" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Peak Arena", url: "http//www.pa2016.vip/code/XSVPDIJU" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "payoutproject", url: "https://writenova.net/ref/Deeemoz" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Paid2Play", url: "https://paid2play.co/share/mohamedsayedtel2007m" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Opinion pioneer", url: "https://opinionpioneer.com/?ref=69889" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "onlinejobs", url: "http//store.onlinejobs.ph/?aid=567662" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Mobrog", url: "https://mobrog.com/?membership_promotion=0&i_invite=20296232-657b62eccffd4&rkm=38" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Market agent", url: "https://panel.marketagent.com/ShortReg/Registration/en?RefUID=4646228" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Loot up", url: "https://lootup.me/?refer=6188713" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Linkjust", url: "https://linkjust.com/ref/109357403972199925407" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Ipweb", url: "https://www.ipweb.pro/?Deeemoz" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Grabpoints", url: "https://grabpoints.com/#/?ref=TITP9N" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "GetPaid to", url: "https://www.getpaidto.com/refer/10933627/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Gamermine", url: "https://gamermine.com/r/deeemoz" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Fun Box", url: "http//www.fun-box.vip/#/?invite_code=PPUBZUIB" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Fruitlab", url: "https://fruitlab.com/ref/willingkey96" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Freeward", url: "https://freeward.net/?ref=adk4m" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Everve", url: "https://everve.net/ref/1494985/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Eearnapp", url: "https://earnapp.com/i/pffXLtbv" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "couponchief", url: "https://www.couponchief.com/users/Deeemoz" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Collect2win", url: "https://collect2win.com/register?ref=dfKFZce28H" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Cointiply", url: "http//cointiply.com/r/9P2V0o" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Adbtc", url: "https://r.adbtc.top/3578765" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "60win", url: "https://www.60win.com/c-Y8BSxXki?lang=en" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Free Cash", url: "https://freecash.com/r/4a3bd498bd" },
-  { category: "Earn money from uploading files", language: "English", platform: "File upload", url: "https://www.file-upload.org/free649021.html" },
-  { category: "Earn money from uploading files", language: "English", platform: "Mega4upload", url: "https://mega4upload.com/free93360.html" },
-  { category: "Earn money from uploading files", language: "English", platform: "Up-4ever", url: "https://www.up-4ever.net/free2433907.html" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Zirtual", url: "https://www.zirtual.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "WellFound", url: "https://wellfound.com/l/2BE3Zt" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "SolidGigs", url: "https://solidgigs.com?via=momo" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "gamersunivers", url: "https://gamersunivers.com/?ref=ZOs05RPDlFEBcObm" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "toptal", url: "https://www.toptal.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Surveyhoney", url: "https://app.surveyhoney.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Study Pool", url: "https://www.studypool.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Rev", url: "https://rev.com" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Remotive", url: "http//remotive.com" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "rapidworkers", url: "https://rapidworkers.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "pushworkers", url: "https://pushworkers.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Odeskwork", url: "https://odeskwork.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Neobux", url: "https://www.neobux.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Mindsumo", url: "https://www.mindsumo.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Indeed", url: "http//indeed.com" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Hivemicro", url: "https://hivemicro.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Guru", url: "https://www.guru.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "designhill", url: "https://www.designhill.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "CareerVault", url: "http//CareerVault.io" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Aviso", url: "https://aviso.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Appen", url: "https://appen.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Limewrite", url: "https://limewrite.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "agigptqt", url: "https://agigptqt.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "EuropelanguageJobs", url: "http//www.europelanguagejobs.com" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "workingnomads", url: "https://www.workingnomads.com/jobs" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "himalayas", url: "https://himalayas.app/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "authenticjobs", url: "https://authenticjobs.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "hubstafftalent", url: "https://hubstafftalent.net/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "dribbble", url: "https://dribbble.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "textbroker", url: "https://www.textbroker.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "humanatic", url: "https://www.humanatic.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "remotejobmatching", url: "http//remotejobmatching.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "Arc.dev", url: "https://arc.dev/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "justremote", url: "https://justremote.co/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "remoteok", url: "https://remoteok.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "hiring cafe", url: "https://hiring.cafe/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "builtin", url: "https://builtin.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "theladders", url: "https://www.theladders.com/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "nodesk", url: "https://nodesk.co/" },
-  { category: "Freelancer & Earn Money online", language: "English", platform: "remote100k", url: "https://remote100k.com/" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "Wmrfast", url: "https://wmrfast.com/?r=2055078" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "Unu", url: "https://unu.im/users/2275736" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "TikTop", url: "https://tiktop-free.com/?ref=Deeemoz" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "Rucombo", url: "https://rucombo.com/?ref=29498" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "Payup", url: "https://payup.video/u/950943" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "Pagazani", url: "https://www.pagazani.com/?ref=2558130" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "teaserfast", url: "https://teaserfast.ru/" },
-  { category: "Freelancer & Earn Money online", language: "RUS", platform: "Bux money", url: "https://bux.money/" },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "Arabic",
+    "platform": "Khamsat",
+    "url": "https://shortet.com/Khamsat"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "Arabic",
+    "platform": "Kafil",
+    "url": "https://shortet.com/Kafil"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "Arabic",
+    "platform": "Frlanso",
+    "url": "https://shortet.com/Frlanso"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "Arabic",
+    "platform": "Nafezly",
+    "url": "https://shortet.com/Nafezly"
+  },
+  {
+    "category": "Freelancers Guide",
+    "language": "English",
+    "platform": "Careeroh",
+    "url": "https://shortet.com/Careeroh"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "AI Freelancer",
+    "url": "https://shortet.com/AI-Freelancer"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "People Per Hour",
+    "url": "https://shortet.com/People-Per-Hour"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Fiverr",
+    "url": "https://shortet.com/Fiverr"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Labor X",
+    "url": "https://shortet.com/Labor-X"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "hire talents",
+    "url": "https://shortet.com/hire-talents"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Sproutgigs",
+    "url": "https://shortet.com/Sproutgigs"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Toloka",
+    "url": "https://shortet.com/Toloka"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Zeerk",
+    "url": "https://shortet.com/Zeerk"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Ysense",
+    "url": "https://shortet.com/Ysense"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "2Captcha",
+    "url": "https://shortet.com/2Captcha"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Write Nova",
+    "url": "https://shortet.com/Write-Nova"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Worker cash",
+    "url": "https://shortet.com/Worker-cash"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Time Bucks",
+    "url": "https://shortet.com/Time-Bucks"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Tgmpanel",
+    "url": "https://shortet.com/Tgmpanel"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Test IO",
+    "url": "https://shortet.com/Test-IO"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Task Rabbit",
+    "url": "https://shortet.com/Task-Rabbit"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Swag bucks",
+    "url": "https://shortet.com/Swag-bucks"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "surveyeah",
+    "url": "https://shortet.com/surveyeah"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Survey time",
+    "url": "https://shortet.com/Survey-time"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Surveoo",
+    "url": "https://shortet.com/Surveoo"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Survbe",
+    "url": "https://shortet.com/Survbe"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "SOCPublic",
+    "url": "https://shortet.com/SOCPublic"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "SerfClick",
+    "url": "https://shortet.com/SerfClick"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "SEO Print",
+    "url": "https://shortet.com/SEO-Print"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Schoolsolver",
+    "url": "http//store.onlinejobs.ph/?aid=567662"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Rewardy",
+    "url": "https://shortet.com/Rewardy"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "rateglo",
+    "url": "https://shortet.com/rateglo"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Qolle",
+    "url": "https://shortet.com/Qolle"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Publish0x",
+    "url": "https://shortet.com/Publish0x"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "PrizeRebel",
+    "url": "https://shortet.com/PrizeRebel"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Peak Arena",
+    "url": "http//www.pa2016.vip/code/XSVPDIJU"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "payoutproject",
+    "url": "https://shortet.com/Write-Nova"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Paid2Play",
+    "url": "https://shortet.com/Paid2Play"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Opinion pioneer",
+    "url": "https://shortet.com/Opinion-pioneer"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "onlinejobs",
+    "url": "http//store.onlinejobs.ph/?aid=567662"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Mobrog",
+    "url": "https://shortet.com/Mobrog"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Market agent",
+    "url": "https://shortet.com/Market-agent"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Loot up",
+    "url": "https://shortet.com/Loot-up"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Linkjust",
+    "url": "https://shortet.com/Linkjust"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Ipweb",
+    "url": "https://shortet.com/Ipweb"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Grabpoints",
+    "url": "https://shortet.com/Grabpoints"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "GetPaid to",
+    "url": "https://shortet.com/GetPaid-to"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Gamermine",
+    "url": "https://shortet.com/Gamermine"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Fun Box",
+    "url": "http//www.fun-box.vip/#/?invite_code=PPUBZUIB"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Fruitlab",
+    "url": "https://shortet.com/Fruitlab"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Freeward",
+    "url": "https://shortet.com/Freeward"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Everve",
+    "url": "https://shortet.com/Everve"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Eearnapp",
+    "url": "https://shortet.com/Eearnapp"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "couponchief",
+    "url": "https://shortet.com/couponchief"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Collect2win",
+    "url": "https://shortet.com/Collect2win"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Cointiply",
+    "url": "http//cointiply.com/r/9P2V0o"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Adbtc",
+    "url": "https://shortet.com/Adbtc"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "60win",
+    "url": "https://shortet.com/60win"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Free Cash",
+    "url": "https://shortet.com/Free-Cash"
+  },
+  {
+    "category": "Earn money from uploading files",
+    "language": "English",
+    "platform": "File upload",
+    "url": "https://shortet.com/File-upload"
+  },
+  {
+    "category": "Earn money from uploading files",
+    "language": "English",
+    "platform": "Mega4upload",
+    "url": "https://shortet.com/Mega4upload"
+  },
+  {
+    "category": "Earn money from uploading files",
+    "language": "English",
+    "platform": "Up-4ever",
+    "url": "https://shortet.com/Up-4ever"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Zirtual",
+    "url": "https://shortet.com/Zirtual"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "WellFound",
+    "url": "https://shortet.com/WellFound"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "SolidGigs",
+    "url": "https://shortet.com/SolidGigs"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "gamersunivers",
+    "url": "https://shortet.com/gamersunivers"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "RUS",
+    "platform": "Wmrfast",
+    "url": "https://shortet.com/Wmrfast"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "RUS",
+    "platform": "Unu",
+    "url": "https://shortet.com/Unu"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "RUS",
+    "platform": "TikTop",
+    "url": "https://shortet.com/TikTop"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "RUS",
+    "platform": "Rucombo",
+    "url": "https://shortet.com/Rucombo"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "RUS",
+    "platform": "Payup",
+    "url": "https://shortet.com/Payup"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "RUS",
+    "platform": "Pagazani",
+    "url": "https://shortet.com/Pagazani"
+  }
 ];

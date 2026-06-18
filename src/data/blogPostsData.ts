@@ -14,6 +14,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 204,
+    title: "Business Automation in 2026: The Founder\u2019s AI & No-Code Toolkit",
+    description: "MoMoAI's 2026 guide to automating your online business \u2014 AI agents, no-code workflows, social schedulers and the formation stack that powers them.",
+    category: "Business Automation",
+    author: "MoMoAI",
+    date: "Jun 18, 2026",
+    readTime: "14 min read",
+    featured: true,
+    slug: "business-automation-2026"
+  },
+  {
     id: 203,
     title: "How to Get the Best Company Formation for Your Online Business in 2026",
     description: "MoMoAI's 2026 guide to the best company formation platforms for online founders, freelancers and digital nomads — USA, UK, Estonia, Finland, Sweden, Latvia, Lithuania and Ireland.",

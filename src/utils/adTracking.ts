@@ -14,6 +14,7 @@ export interface AdEventRecord {
   partner: string;    // partner platform name
   variant: string;    // A/B variant id (e.g. "a", "b")
   href?: string;
+  device?: 'mobile' | 'desktop';
 }
 
 const LS_KEY = 'fs:ad-events';

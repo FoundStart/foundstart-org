@@ -7,6 +7,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { getFaviconUrl, getDomainHost } from '@/utils/favicon';
 import { trackAdEvent, getVariant } from '@/utils/adTracking';
 import { isLive } from '@/utils/integrationSettings';
+import { useIsMobile } from '@/hooks/use-mobile';
+
+const COOLDOWN_MS = 60 * 60 * 1000; // 1 hour
+const cooldownKey = (k: string) => `${k}:cooldownUntil`;
+const dismissedKey = (k: string) => `${k}:dismissed`;
 
 export type PopAdItem = {
   platform: string;
@@ -31,6 +36,7 @@ interface Props {
 
 const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Props) => {
   const location = useLocation();
+  const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
   const variant = getVariant(campaign || storageKey);
   const [partner] = useState(() => {
@@ -38,9 +44,15 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
     return items[Math.floor(Math.random() * items.length)];
   });
   const campaignId = campaign || storageKey;
+  const device: 'mobile' | 'desktop' = isMobile ? 'mobile' : 'desktop';
 
   useEffect(() => {
     if (sessionStorage.getItem(storageKey)) return;
+    // Persistent mobile dismissal — never reopen after user closes
+    if (isMobile && localStorage.getItem(dismissedKey(storageKey)) === '1') return;
+    // 1-hour cooldown across sessions
+    const until = Number(localStorage.getItem(cooldownKey(storageKey)) || 0);
+    if (until && Date.now() < until) return;
     if (/^\/(dashboard|admin|auth|reset-password|settings)/.test(location.pathname)) return;
     if (!isLive('partnerAds')) return;
     if (!partner) return;
@@ -51,8 +63,9 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
       const active = document.activeElement as HTMLElement | null;
       if (active?.matches?.('input, textarea, select, [contenteditable="true"]')) return;
       sessionStorage.setItem(storageKey, '1');
+      try { localStorage.setItem(cooldownKey(storageKey), String(Date.now() + COOLDOWN_MS)); } catch { /* ignore */ }
       setOpen(true);
-      trackAdEvent({ surface: 'pop', event: 'impression', campaign: campaignId, partner: partner.platform, variant, href: partner.href });
+      trackAdEvent({ surface: 'pop', event: 'impression', campaign: `${campaignId}:${device}`, partner: partner.platform, variant, href: partner.href, device });
     };
 
     if (trigger.type === 'timer') {
@@ -84,20 +97,23 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
       document.removeEventListener('mouseleave', onLeave);
       if (mobileFallback) clearTimeout(mobileFallback);
     };
-  }, [location.pathname, partner, storageKey, trigger]);
+  }, [location.pathname, partner, storageKey, trigger, isMobile]);
 
   if (!partner) return null;
 
   const onDismiss = () => {
-    trackAdEvent({ surface: 'pop', event: 'dismiss', campaign: campaignId, partner: partner.platform, variant });
+    trackAdEvent({ surface: 'pop', event: 'dismiss', campaign: `${campaignId}:${device}`, partner: partner.platform, variant, device });
+    if (isMobile) {
+      try { localStorage.setItem(dismissedKey(storageKey), '1'); } catch { /* ignore */ }
+    }
     setOpen(false);
   };
   const onClick = () => {
-    trackAdEvent({ surface: 'pop', event: 'click', campaign: campaignId, partner: partner.platform, variant, href: partner.href });
+    trackAdEvent({ surface: 'pop', event: 'click', campaign: `${campaignId}:${device}`, partner: partner.platform, variant, href: partner.href, device });
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(o) => { if (!o) onDismiss(); else setOpen(true); }}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <Badge variant="secondary" className="w-fit mb-2">
