@@ -126,8 +126,16 @@ const PartnerAdsHub = () => {
         delayMs={10000}
       />
 
-      {/* Pop ads — only ONE on home page; full stack elsewhere */}
-      {isHome ? (
+      {/* Pop ads — mobile always gets ONE; desktop: one on home, full stack elsewhere */}
+      {isMobile ? (
+        <PartnerPopAd
+          items={homePopPool}
+          storageKey="fs_pop_mobile"
+          badgeLabel="Featured Partner Offer"
+          trigger={{ type: 'exit-intent' }}
+          campaign="mobile-single"
+        />
+      ) : isHome ? (
         <PartnerPopAd
           items={homePopPool}
           storageKey="fs_pop_home"
