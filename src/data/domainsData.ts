@@ -8,203 +8,1506 @@ export interface Domain {
   buyUrl?: string;
 }
 
-const raw: Array<[string, Domain['hosting'], string, string, string]> = [
-  ["Tafsirly.com", "UD", "Religious / Islamic", "Not For Sale", "Business"],
-  ["MSA-serv.com", "Hostinger", "B2B / Services", "Not For Sale", "Business"],
-  ["Cartgy.com", "Spaceship", "E-Commerce", "750", "Business"],
-  ["Keepence.com", "UD", "Fintech, SAAS", "1250", "Business"],
-  ["Uniqranks.com", "UD", "SaaS / SEO", "4999", "Business"],
-  ["Heykeyword.com", "Spaceship", "SEO / Marketing", "4999", "Business"],
-  ["Foundstart.org", "Spaceship", "Startup / Venture", "4999", "Business"],
-  ["Namelizer.com", "Godaddy", "SaaS / Branding", "4999", "Business"],
-  ["Shortet.com", "Spaceship", "SaaS / Links", "4999", "Business"],
-  ["TopyPay.com", "UD", "Fintech, Payments & Crypto", "4999", "Business"],
-  ["NameLik.com", "UD", "Branding", "2500", "Business"],
-  ["Deeemoz.shop", "Spaceship", "E-Commerce", "750", "Business"],
-  ["Talaboo.com", "UD", "Grocery / Delivery", "1250", "Business"],
-  ["Careeroh.com", "Spaceship", "HR / Job Board", "1250", "Business"],
-  ["Exitsme.com", "UD", "Startup / M&A", "5000", "Business"],
-  ["Halalye.com", "Spaceship", "Food / Lifestyle", "5000", "Business"],
-  ["MoMoMob.com", "UD", "Mobile / Fintech", "5000", "Business"],
-  ["MoMoNil.com", "UD", "Mobile / Fintech", "5000", "Business"],
-  ["Affillex.com", "UD", "Affiliate Marketing", "5000", "Business"],
-  ["Creativoya.com", "Spaceship", "SaaS / Creative", "750", "Business"],
-  ["Dropoh.com", "UD", "E-Commerce / Dropshipping", "750", "Business"],
-  ["Cardolla.com", "Spaceship", "Fintech / E-Commerce / Automotive", "750", "Business"],
-  ["Shortili.com", "Spaceship", "SaaS / Links", "1250", "Business"],
-  ["Etivago.com", "Spaceship", "Travel / SaaS", "1250", "Business"],
-  ["Assetsium.com", "UD", "Fintech / Asset Management", "2500", "Business"],
-  ["YesShoot.com", "UD", "Photography / Gaming", "5000", "Business"],
-  ["Toolstogethers.com", "UD", "Startups, SaaS & Tech, Food", "499", "Domain"],
-  ["Domianity.com", "UD", "Startups, SaaS & Tech", "499", "Domain"],
-  ["Dealigi.com", "UD", "E-Commerce & Marketplaces, SAAS", "350", "Domain"],
-  ["EstatesChain.com", "UD", "Fintech, Payments & Crypto", "350", "Domain"],
-  ["Societygram.com", "UD", "Startups, SaaS & Tech - Social media services", "350", "Domain"],
-  ["Paybrink.com", "UD", "Fintech, Payments & Crypto", "499", "Domain"],
-  ["Payoha.com", "UD", "Fintech, Payments & Crypto", "499", "Domain"],
-  ["XpanderPay.com", "UD", "Fintech, Payments & Crypto", "499", "Domain"],
-  ["ZohPay.com", "UD", "Fintech, Payments & Crypto", "499", "Domain"],
-  ["Clothecart.com", "Spaceship", "POD-E-Commerce/Fashion", "499", "Domain"],
-  ["Cryptinco.com", "Spaceship", "Fintech, Payments & Crypto", "499", "Domain"],
-  ["Dealago.com", "UD", "E-Commerce & Marketplaces, SAAS", "499", "Domain"],
-  ["Landgage.com", "UD", "Startups, SaaS & Tech", "499", "Domain"],
-  ["LandingKey.com", "UD", "Startups, SaaS & Tech", "499", "Domain"],
-  ["Shopeter.com", "Spaceship", "E-Commerce & Marketplaces", "499", "Domain"],
-  ["Codestia.com", "Spaceship", "SaaS / Tech", "1250", "Domain"],
-  ["Shortoo.com", "UD", "Startups, SaaS & Tech", "499", "Domain"],
-  ["CoinsLite.com", "Spaceship", "Crypto / Fintech", "499", "Domain"],
-  ["Storezly.com", "Spaceship", "E-Commerce", "499", "Domain"],
-  ["EasycheckPay.com", "UD", "Fintech, Payments & Crypto", "500", "Domain"],
-  ["Shofic.com", "Godaddy", "E-Commerce & Marketplaces", "500", "Domain"],
-  ["Investue.com", "Spaceship", "Venture, Community & Brands", "250", "Domain"],
-  ["Existmatch.com", "UD", "Fintech, Payments & Crypto", "1250", "Domain"],
-  ["InstaMackers.com", "UD", "Social Media", "250", "Domain"],
-  ["Uniqranker.com", "UD", "Startups, SaaS & Tech", "1250", "Domain"],
-  ["Hosstec.com", "Spaceship", "Tech / Hosting", "500", "Domain"],
-  ["Payleya.com", "UD", "Fintech, Payments & Crypto", "1250", "Domain"],
-  ["Emboxer.com", "Spaceship", "Startups, SaaS & Tech", "1250", "Domain"],
-  ["Coursaro.com", "Spaceship", "EdTech", "750", "Domain"],
-  ["NixCash.com", "Spaceship", "Fintech, Payments & Crypto", "1250", "Domain"],
-  ["Paylita.com", "Spaceship", "Fintech, Payments & Crypto", "1250", "Domain"],
-  ["Sellerizer.com", "Spaceship", "Startups, SaaS & Tech", "1250", "Domain"],
-  ["Expensol.com", "Spaceship", "Venture, Community & Brands", "1500", "Domain"],
-  ["Finaprise.com", "Spaceship", "Venture, Community & Brands", "499", "Domain"],
-  ["Payort.com", "Spaceship", "Fintech, Payments & Crypto", "2500", "Domain"],
-  ["FoundVC.com", "Spaceship", "Venture, Community & Brands", "2500", "Domain"],
-  ["TakeRides.com", "Spaceship", "Fleet Automotive", "2500", "Domain"],
-  ["MallCanyon.com", "UD", "E-Commerce & Marketplaces - SAAS hub", "500", "Domain"],
-  ["Socialautoposters.com", "UD", "Startups, SaaS & Tech - Social media services", "500", "Domain"],
-  ["Enitsa.com", "Spaceship", "Startups, SaaS & Tech", "500", "Domain"],
-  ["CometCall.com", "Spaceship", "Startups, SaaS & Tech", "250", "Domain"],
-  ["XperaPay.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Fintekly.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["OppaPay.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Autobases.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["BlocksValley.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Chatelly.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Cryptemp.com", "Spaceship", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Ecardera.com", "Spaceship", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Foodievo.com", "Spaceship", "Startups, SaaS & Tech, SAAS", "500", "Domain"],
-  ["Cartdidi.com", "UD", "E-Commerce & Marketplaces", "250", "Domain"],
-  ["Fruitla.com", "Spaceship", "Startups, SaaS & Tech, APP, Grocery", "499", "Domain"],
-  ["BekoMart.com", "Namebright", "E-Commerce & Marketplaces", "100", "Domain"],
-  ["AppWebo.com", "Spaceship", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Buyill.com", "Spaceship", "E-Commerce & Marketplaces", "250", "Domain"],
-  ["Cryptalyzes.com", "Spaceship", "Venture, Community & Brands", "150", "Domain"],
-  ["InfinitiMeta.com", "Spaceship", "Startups, SaaS & Tech", "150", "Domain"],
-  ["InteMeta.com", "Spaceship", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Mediadirect.uk", "Spaceship", "Startups, SaaS & Marketing", "250", "Domain"],
-  ["Metachia.com", "Spaceship", "Startups, SaaS & Tech", "150", "Domain"],
-  ["MetaMany.com", "Spaceship", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Metanta.com", "Spaceship", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Solivid.com", "Spaceship", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Storecho.com", "Spaceship", "E-Commerce & Marketplaces", "300", "Domain"],
-  ["UniqranKing.com", "Spaceship", "Startups, SaaS & Tech", "250", "Domain"],
-  ["365crypt.com", "UD", "Fintech, Payments & Crypto", "50", "Domain"],
-  ["365martly.com", "UD", "E-Commerce & Marketplaces", "50", "Domain"],
-  ["Affivid.com", "UD", "Affiliate Video marketing", "200", "Domain"],
-  ["Afinya.com", "UD", "Startups, SaaS & Tech, Affliate", "250", "Domain"],
-  ["AlternativeClaw.com", "UD", "Niche / Hardware", "200", "Domain"],
-  ["Assetmediator.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["AssetMotive.com", "UD", "Startups, SaaS & Tech", "200", "Domain"],
-  ["AtlanticClaw.com", "UD", "Seafood / Niche", "200", "Domain"],
-  ["Automorize.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Bestofmart.com", "UD", "E-Commerce & Marketplaces", "150", "Domain"],
-  ["Caisho.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Cardido.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Cartburn.com", "UD", "E-Commerce & Marketplaces", "100", "Domain"],
-  ["Carthot.com", "UD", "E-Commerce & Marketplaces", "100", "Domain"],
-  ["Cashzor.com", "UD", "Fintech, Payments & Crypto", "200", "Domain"],
-  ["ChasesGram.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["CitySpain.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["ClauGram.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Cloddi.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Coinaxia.com", "UD", "Startups, SaaS & Tech", "500", "Domain"],
-  ["ComZio.com", "UD", "Startups, SaaS & Tech", "500", "Domain"],
-  ["Dailymr.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Dealello.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Dealiar.com", "UD", "E-Commerce & Marketplaces, SAAS", "50", "Domain"],
-  ["Diroh.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Drobito.com", "UD", "E-Commerce & Marketplaces, SAAS", "50", "Domain"],
-  ["Ecanio.com", "UD", "E-Commerce & Marketplaces / SAAS", "250", "Domain"],
-  ["Ecanro.com", "UD", "E-Commerce & Marketplaces / SAAS", "250", "Domain"],
-  ["Ecardura.com", "UD", "Fintech, Payments & Crypto", "200", "Domain"],
-  ["Emotorsmarket.com", "UD", "Fintech-E-Commerce & Marketplaces / SAAS", "250", "Domain"],
-  ["Estatesa.com", "UD", "Startups, SaaS & Tech", "500", "Domain"],
-  ["ExemPay.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Exitsmena.com", "UD", "Fintech, Payments & Crypto", "500", "Domain"],
-  ["Flowmotic.com", "UD", "AI, Automation, Startups, SaaS & Tech", "250", "Domain"],
-  ["Folkgram.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Giftbed.com", "UD", "E-Commerce & Marketplaces", "250", "Domain"],
-  ["Godemart.com", "UD", "E-Commerce & Marketplaces", "250", "Domain"],
-  ["Goidai.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Grambond.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["GramChase.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Gramger.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Gramout.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["InfiniteGram.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Investicash.com", "UD", "Fintech, Payments & Crypto", "150", "Domain"],
-  ["Jobagy.com", "UD", "Recurements, Freelancer, SAAS", "250", "Domain"],
-  ["Jobigy.com", "UD", "Recurements, Freelancer, SAAS", "250", "Domain"],
-  ["Jumamart.com", "UD", "E-Commerce & Marketplaces", "250", "Domain"],
-  ["Justailawyer.com", "UD", "Legal", "250", "Domain"],
-  ["Laterssocial.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Linkliz.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Loadwhale.com", "UD", "Startups, SaaS & Tech", "300", "Domain"],
-  ["Loverlet.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["MartGem.com", "UD", "Sport SAAS", "200", "Domain"],
-  ["MartlyGram.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Martome.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Marttogo.com", "UD", "E-Commerce & Marketplaces", "150", "Domain"],
-  ["Medianar.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Mediationmarket.com", "UD", "Fintech, Payments & Crypto", "500", "Domain"],
-  ["Mediomy.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Mentelic.com", "UD", "EdTech / Coaching", "200", "Domain"],
-  ["Mistonia.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Nanymart.com", "UD", "Startups, SaaS & Tech, Nany marketplace", "250", "Domain"],
-  ["Payerzy.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Postsocialauto.com", "UD", "Startups, SaaS & Tech - Social media services", "100", "Domain"],
-  ["Rankingmart.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Reallt.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["Rewardial.com", "UD", "E-Commerce & Marketplaces", "250", "Domain"],
-  ["Socialautobest.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["Socialsenders.com", "UD", "Startups, SaaS & Tech - Social media services", "100", "Domain"],
-  ["Stremion.com", "UD", "Startups, SaaS & Stream IPTV. TV", "150", "Domain"],
-  ["Survimart.com", "UD", "Startups, SaaS & Tech", "100", "Domain"],
-  ["syrri.com", "UD", "Startups, SaaS & Tech - tool", "250", "Domain"],
-  ["TechyClaw.com", "UD", "Tech / Niche", "200", "Domain"],
-  ["Teeped.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["TodaysClaw.com", "UD", "Niche", "200", "Domain"],
-  ["Tradoq.com", "UD", "E-Commerce & Marketplaces", "150", "Domain"],
-  ["Trancesend.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["Transacly.com", "UD", "Fintech, Payments & Crypto", "200", "Domain"],
-  ["Transationser.com", "UD", "Fintech, Payments & Crypto", "250", "Domain"],
-  ["Trillionchat.com", "UD", "Startups, SaaS & Tech", "300", "Domain"],
-  ["VestaBroker.com", "UD", "Startups, SaaS & Tech", "150", "Domain"],
-  ["VestaBrokers.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["VisLif.com", "UD", "Startups, SaaS & Tech", "250", "Domain"],
-  ["voucherdeck.com", "UD", "E-Commerce & Marketplaces", "300", "Domain"],
-  ["Walletah.com", "UD", "Fintech, Payments & Crypto", "200", "Domain"],
-  ["ZadAfrica.com", "UD", "Startups, SaaS & Tech, Food", "200", "Domain"],
-  ["ZonFood.com", "UD", "Startups, SaaS & Tech, Food", "300", "Domain"],
-  ["Sociallaters.com", "UD", "Startups, SaaS & Tech", "500", "Domain"],
-  ["Escroy.com", "UD", "Escrow Pay", "500", "Domain"],
-  ["WhenSpend.com", "UD", "Startups, SaaS & Tech", "500", "Domain"],
-  ["Ecardora.com", "UD", "E-Commerce & Marketplaces / SAAS", "750", "Domain"],
-  ["Doscash.com", "UD", "Fintech, Payments & Crypto", "$750", "Domain"],
-  ["llmified.com", "UD", "LLM", "2500", "Domain"],
-  ["Freelinance.com", "UD", "Freelance / Gig Economy", "2500", "Domain"],
-  ["Talabook.com", "UD", "Startups, SaaS & Tech, APP, Grocery", "2500", "Domain"],
+const raw: Domain[] = [
+  {
+    "name": "Exitsme.com",
+    "hosting": "UD",
+    "category": "Grocery / Delivery",
+    "price": "5000",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Exitsme.com"
+  },
+  {
+    "name": "Halalye.com",
+    "hosting": "Spaceship",
+    "category": "HR / Job Board",
+    "price": "5000",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Halalye.com"
+  },
+  {
+    "name": "Foundstart.org",
+    "hosting": "Spaceship",
+    "category": "Startup / Venture",
+    "price": "4999",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.org/en-in/domainsearch/find?domainToCheck=Foundstart.org"
+  },
+  {
+    "name": "Heykeyword.com",
+    "hosting": "Spaceship",
+    "category": "SEO / Marketing",
+    "price": "4999",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Heykeyword.com"
+  },
+  {
+    "name": "Shortet.com",
+    "hosting": "Spaceship",
+    "category": "SaaS / Links",
+    "price": "2500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortet.com"
+  },
+  {
+    "name": "Expensol.com",
+    "hosting": "Spaceship",
+    "category": "Venture, Community & Brands",
+    "price": "1500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Expensol.com"
+  },
+  {
+    "name": "NameLik.com",
+    "hosting": "UD",
+    "category": "B2B / Services",
+    "price": "1500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=NameLik.com"
+  },
+  {
+    "name": "Tafsirly.com",
+    "hosting": "UD",
+    "category": "Religious / Islamic",
+    "price": "1500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Tafsirly.com"
+  },
+  {
+    "name": "Affillex.com",
+    "hosting": "UD",
+    "category": "Mobile / Fintech",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Affillex.com"
+  },
+  {
+    "name": "Keepence.com",
+    "hosting": "UD",
+    "category": "Fintech, SaaS",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Keepence.com"
+  },
+  {
+    "name": "MoMoMob.com",
+    "hosting": "UD",
+    "category": "Startup / M&A",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MoMoMob.com"
+  },
+  {
+    "name": "MoMoNil.com",
+    "hosting": "UD",
+    "category": "Food / Lifestyle",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MoMoNil.com"
+  },
+  {
+    "name": "Namelizer.com",
+    "hosting": "Godaddy",
+    "category": "SaaS / Branding",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Namelizer.com"
+  },
+  {
+    "name": "TopyPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=TopyPay.com"
+  },
+  {
+    "name": "Uniqranks.com",
+    "hosting": "UD",
+    "category": "SaaS / SEO",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Uniqranks.com"
+  },
+  {
+    "name": "YesShoot.com",
+    "hosting": "UD",
+    "category": "Travel / SaaS",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=YesShoot.com"
+  },
+  {
+    "name": "Talaboo.com",
+    "hosting": "UD",
+    "category": "Branding",
+    "price": "1151",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Talaboo.com"
+  },
+  {
+    "name": "Cartgy.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cartgy.com"
+  },
+  {
+    "name": "Etivago.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce / Dropshipping",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Etivago.com"
+  },
+  {
+    "name": "Shortili.com",
+    "hosting": "Spaceship",
+    "category": "SaaS / Links",
+    "price": "450",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortili.com"
+  },
+  {
+    "name": "Cardolla.com",
+    "hosting": "Spaceship",
+    "category": "Affiliate Marketing",
+    "price": "350",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cardolla.com"
+  },
+  {
+    "name": "MSA-serv.com",
+    "hosting": "Hostinger",
+    "category": "Fintech / Asset Management",
+    "price": "350",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MSA-serv.com"
+  },
+  {
+    "name": "Assetsium.com",
+    "hosting": "UD",
+    "category": "Fintech / E-Commerce / Automotive",
+    "price": "250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Assetsium.com"
+  },
+  {
+    "name": "Careeroh.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Careeroh.com"
+  },
+  {
+    "name": "Creativoya.com",
+    "hosting": "Spaceship",
+    "category": "SaaS / Creative",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Creativoya.com"
+  },
+  {
+    "name": "Deeemoz.shop",
+    "hosting": "Spaceship",
+    "category": "Photography / Gaming",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.shop/en-in/domainsearch/find?domainToCheck=Deeemoz.shop"
+  },
+  {
+    "name": "Dropoh.com",
+    "hosting": "UD",
+    "category": "Mobile / Fintech",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Dropoh.com"
+  },
+  {
+    "name": "FoundVC.com",
+    "hosting": "Spaceship",
+    "category": "Venture, Community & Brands",
+    "price": "2500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=FoundVC.com"
+  },
+  {
+    "name": "Freelinance.com",
+    "hosting": "UD",
+    "category": "Freelance / Gig Economy",
+    "price": "2500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Freelinance.com"
+  },
+  {
+    "name": "Agitli.com",
+    "hosting": "UD",
+    "category": "",
+    "price": "500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Agitli.com"
+  },
+  {
+    "name": "Exitsmena.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Exitsmena.com"
+  },
+  {
+    "name": "Foodievo.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Foodievo.com"
+  },
+  {
+    "name": "Hosstec.com",
+    "hosting": "Spaceship",
+    "category": "Tech / Hosting",
+    "price": "500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Hosstec.com"
+  },
+  {
+    "name": "TakeRides.com",
+    "hosting": "Spaceship",
+    "category": "Fleet Automotive",
+    "price": "500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=TakeRides.com"
+  },
+  {
+    "name": "Talabook.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Grocery",
+    "price": "500",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Talabook.com"
+  },
+  {
+    "name": "Codestia.com",
+    "hosting": "Spaceship",
+    "category": "SaaS / Tech",
+    "price": "499",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Codestia.com"
+  },
+  {
+    "name": "Escroy.com",
+    "hosting": "UD",
+    "category": "Escrow Pay",
+    "price": "499",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Escroy.com"
+  },
+  {
+    "name": "Finaprise.com",
+    "hosting": "Spaceship",
+    "category": "Venture, Community & Brands",
+    "price": "499",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Finaprise.com"
+  },
+  {
+    "name": "Fruitla.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech, Grocery",
+    "price": "499",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Fruitla.com"
+  },
+  {
+    "name": "Storezly.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce",
+    "price": "499",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Storezly.com"
+  },
+  {
+    "name": "ZadAfrica.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Food",
+    "price": "436",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ZadAfrica.com"
+  },
+  {
+    "name": "Emboxer.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "400",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Emboxer.com"
+  },
+  {
+    "name": "Nanymart.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Nanny Marketplace",
+    "price": "400",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Nanymart.com"
+  },
+  {
+    "name": "NixCash.com",
+    "hosting": "Spaceship",
+    "category": "Fintech, Payments & Crypto",
+    "price": "400",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=NixCash.com"
+  },
+  {
+    "name": "Paylita.com",
+    "hosting": "Spaceship",
+    "category": "Fintech, Payments & Crypto",
+    "price": "400",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Paylita.com"
+  },
+  {
+    "name": "Trancesend.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "400",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Trancesend.com"
+  },
+  {
+    "name": "Uniqranker.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "400",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Uniqranker.com"
+  },
+  {
+    "name": "Buyill.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce & Marketplaces",
+    "price": "350",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Buyill.com"
+  },
+  {
+    "name": "Clothecart.com",
+    "hosting": "Spaceship",
+    "category": "POD-E-Commerce/Fashion",
+    "price": "350",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Clothecart.com"
+  },
+  {
+    "name": "CoinsLite.com",
+    "hosting": "Spaceship",
+    "category": "Crypto / Fintech",
+    "price": "350",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=CoinsLite.com"
+  },
+  {
+    "name": "EstatesChain.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "350",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=EstatesChain.com"
+  },
+  {
+    "name": "Marttogo.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "350",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Marttogo.com"
+  },
+  {
+    "name": "Societygram.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "350",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Societygram.com"
+  },
+  {
+    "name": "Dealigi.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces, SaaS",
+    "price": "300",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealigi.com"
+  },
+  {
+    "name": "Loadwhale.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "300",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Loadwhale.com"
+  },
+  {
+    "name": "Bestofmart.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "265",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Bestofmart.com"
+  },
+  {
+    "name": "Autobases.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Autobases.com"
+  },
+  {
+    "name": "Caisho.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Caisho.com"
+  },
+  {
+    "name": "Cardido.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cardido.com"
+  },
+  {
+    "name": "Cartdidi.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cartdidi.com"
+  },
+  {
+    "name": "Cloddi.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cloddi.com"
+  },
+  {
+    "name": "Coinaxia.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Coinaxia.com"
+  },
+  {
+    "name": "CometCall.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=CometCall.com"
+  },
+  {
+    "name": "ComZio.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ComZio.com"
+  },
+  {
+    "name": "Coursaro.com",
+    "hosting": "Spaceship",
+    "category": "EdTech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Coursaro.com"
+  },
+  {
+    "name": "Cryptemp.com",
+    "hosting": "Spaceship",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cryptemp.com"
+  },
+  {
+    "name": "Dealago.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces, SaaS",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealago.com"
+  },
+  {
+    "name": "Diroh.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Diroh.com"
+  },
+  {
+    "name": "Domianity.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Domianity.com"
+  },
+  {
+    "name": "Doscash.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "$250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Doscash.com"
+  },
+  {
+    "name": "Ecardera.com",
+    "hosting": "Spaceship",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecardera.com"
+  },
+  {
+    "name": "Ecardora.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces / SaaS",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecardora.com"
+  },
+  {
+    "name": "Emotorsmarket.com",
+    "hosting": "UD",
+    "category": "Fintech-E-Commerce & Marketplaces / SaaS",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com /en-ai/domainsearch/find?domainToCheck=Emotorsmarket.com"
+  },
+  {
+    "name": "Enitsa.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Enitsa.com"
+  },
+  {
+    "name": "Estatesa.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Estatesa.com"
+  },
+  {
+    "name": "Fintekly.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Fintekly.com"
+  },
+  {
+    "name": "Flowmotic.com",
+    "hosting": "UD",
+    "category": "AI, Automation, Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Flowmotic.com"
+  },
+  {
+    "name": "Folkgram.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Folkgram.com"
+  },
+  {
+    "name": "Giftbed.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Giftbed.com"
+  },
+  {
+    "name": "Godemart.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Godemart.com"
+  },
+  {
+    "name": "InfiniteGram.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InfiniteGram.com"
+  },
+  {
+    "name": "InstaMackers.com",
+    "hosting": "UD",
+    "category": "Social Media",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InstaMackers.com"
+  },
+  {
+    "name": "Investue.com",
+    "hosting": "Spaceship",
+    "category": "Venture, Community & Brands",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Investue.com"
+  },
+  {
+    "name": "Jobagy.com",
+    "hosting": "UD",
+    "category": "Recruitments, Freelancer, SaaS",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jobagy.com"
+  },
+  {
+    "name": "Jobigy.com",
+    "hosting": "UD",
+    "category": "Recruitments, Freelancer, SaaS",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jobigy.com"
+  },
+  {
+    "name": "Justailawyer.com",
+    "hosting": "UD",
+    "category": "Legal",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Justailawyer.com"
+  },
+  {
+    "name": "llmified.com",
+    "hosting": "UD",
+    "category": "LLM",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=llmified.com"
+  },
+  {
+    "name": "Loverlet.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Loverlet.com"
+  },
+  {
+    "name": "Martome.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Martome.com"
+  },
+  {
+    "name": "Medianar.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Medianar.com"
+  },
+  {
+    "name": "Mediationmarket.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mediationmarket.com"
+  },
+  {
+    "name": "OppaPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=OppaPay.com"
+  },
+  {
+    "name": "Payleya.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payleya.com"
+  },
+  {
+    "name": "Payoha.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payoha.com"
+  },
+  {
+    "name": "Payort.com",
+    "hosting": "Spaceship",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payort.com"
+  },
+  {
+    "name": "Rankingmart.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Rankingmart.com"
+  },
+  {
+    "name": "Reallt.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Reallt.com"
+  },
+  {
+    "name": "Shofic.com",
+    "hosting": "Godaddy",
+    "category": "E-Commerce & Marketplaces",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Shofic.com"
+  },
+  {
+    "name": "Shortoo.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Shortoo.com"
+  },
+  {
+    "name": "Sociallaters.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Sociallaters.com"
+  },
+  {
+    "name": "Toolstogethers.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Food",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Toolstogethers.com"
+  },
+  {
+    "name": "Trillionchat.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Trillionchat.com"
+  },
+  {
+    "name": "UniqranKing.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=UniqranKing.com"
+  },
+  {
+    "name": "Walletah.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Walletah.com"
+  },
+  {
+    "name": "WhenSpend.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "250",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=WhenSpend.com"
+  },
+  {
+    "name": "Teeped.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "245",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Teeped.com"
+  },
+  {
+    "name": "AlternativeClaw.com",
+    "hosting": "UD",
+    "category": "Niche / Hardware",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AlternativeClaw.com"
+  },
+  {
+    "name": "AtlanticClaw.com",
+    "hosting": "UD",
+    "category": "Seafood / Niche",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AtlanticClaw.com"
+  },
+  {
+    "name": "Cashzor.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cashzor.com"
+  },
+  {
+    "name": "Ecardura.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecardura.com"
+  },
+  {
+    "name": "MartGem.com",
+    "hosting": "UD",
+    "category": "Sport SaaS",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MartGem.com"
+  },
+  {
+    "name": "TechyClaw.com",
+    "hosting": "UD",
+    "category": "Tech / Niche",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=TechyClaw.com"
+  },
+  {
+    "name": "TodaysClaw.com",
+    "hosting": "UD",
+    "category": "Niche",
+    "price": "200",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=TodaysClaw.com"
+  },
+  {
+    "name": "Affivid.com",
+    "hosting": "UD",
+    "category": "Affiliate Video Marketing",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Affivid.com"
+  },
+  {
+    "name": "Automorize.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Automorize.com"
+  },
+  {
+    "name": "BlocksValley.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=BlocksValley.com"
+  },
+  {
+    "name": "Carthot.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Carthot.com"
+  },
+  {
+    "name": "CitySpain.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=CitySpain.com"
+  },
+  {
+    "name": "ClauGram.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ClauGram.com"
+  },
+  {
+    "name": "Dailymr.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dailymr.com"
+  },
+  {
+    "name": "Dealello.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealello.com"
+  },
+  {
+    "name": "Existmatch.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Existmatch.com"
+  },
+  {
+    "name": "GramChase.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=GramChase.com"
+  },
+  {
+    "name": "Gramout.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Gramout.com"
+  },
+  {
+    "name": "InfinitiMeta.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InfinitiMeta.com"
+  },
+  {
+    "name": "InteMeta.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InteMeta.com"
+  },
+  {
+    "name": "Investicash.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Investicash.com"
+  },
+  {
+    "name": "LandingKey.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=LandingKey.com"
+  },
+  {
+    "name": "MallCanyon.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces, SaaS Hub",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MallCanyon.com"
+  },
+  {
+    "name": "Metachia.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Metachia.com"
+  },
+  {
+    "name": "Mistonia.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mistonia.com"
+  },
+  {
+    "name": "Solivid.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Solivid.com"
+  },
+  {
+    "name": "Storecho.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce & Marketplaces",
+    "price": "150",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Storecho.com"
+  },
+  {
+    "name": "Afinya.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Affiliate",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Afinya.com"
+  },
+  {
+    "name": "AppWebo.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AppWebo.com"
+  },
+  {
+    "name": "Assetmediator.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Assetmediator.com"
+  },
+  {
+    "name": "AssetMotive.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AssetMotive.com"
+  },
+  {
+    "name": "Goidai.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Goidai.com"
+  },
+  {
+    "name": "Grambond.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Grambond.com"
+  },
+  {
+    "name": "Gramger.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Gramger.com"
+  },
+  {
+    "name": "MartlyGram.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MartlyGram.com"
+  },
+  {
+    "name": "Mediomy.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mediomy.com"
+  },
+  {
+    "name": "Metanta.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Metanta.com"
+  },
+  {
+    "name": "Rewardial.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Rewardial.com"
+  },
+  {
+    "name": "Socialautoposters.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialautoposters.com"
+  },
+  {
+    "name": "Socialsenders.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialsenders.com"
+  },
+  {
+    "name": "VestaBrokers.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "100",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=VestaBrokers.com"
+  },
+  {
+    "name": "ChasesGram.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ChasesGram.com"
+  },
+  {
+    "name": "Chatelly.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Chatelly.com"
+  },
+  {
+    "name": "Ecanio.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces / SaaS",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecanio.com"
+  },
+  {
+    "name": "Ecanro.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces / SaaS",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecanro.com"
+  },
+  {
+    "name": "Paybrink.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Paybrink.com"
+  },
+  {
+    "name": "Survimart.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Survimart.com"
+  },
+  {
+    "name": "Transacly.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Transacly.com"
+  },
+  {
+    "name": "VestaBroker.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=VestaBroker.com"
+  },
+  {
+    "name": "XperaPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "99",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=XperaPay.com"
+  },
+  {
+    "name": "ExemPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "75",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ExemPay.com"
+  },
+  {
+    "name": "ZohPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "75",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ZohPay.com"
+  },
+  {
+    "name": "BekoMart.com",
+    "hosting": "Namebright",
+    "category": "E-Commerce & Marketplaces",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=BekoMart.com"
+  },
+  {
+    "name": "Cryptinco.com",
+    "hosting": "Spaceship",
+    "category": "Fintech, Payments & Crypto",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cryptinco.com"
+  },
+  {
+    "name": "EasycheckPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=EasycheckPay.com"
+  },
+  {
+    "name": "Jumamart.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jumamart.com"
+  },
+  {
+    "name": "Landgage.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Landgage.com"
+  },
+  {
+    "name": "Laterssocial.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Laterssocial.com"
+  },
+  {
+    "name": "Linkliz.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Linkliz.com"
+  },
+  {
+    "name": "Mediadirect.uk",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Marketing",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.uk/en-ai/domainsearch/find?domainToCheck=Mediadirect.uk"
+  },
+  {
+    "name": "Mentelic.com",
+    "hosting": "UD",
+    "category": "EdTech / Coaching",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mentelic.com"
+  },
+  {
+    "name": "MetaMany.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MetaMany.com"
+  },
+  {
+    "name": "Postsocialauto.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Postsocialauto.com"
+  },
+  {
+    "name": "Sellerizer.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Sellerizer.com"
+  },
+  {
+    "name": "Shopeter.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce & Marketplaces",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Shopeter.com"
+  },
+  {
+    "name": "Socialautobest.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialautobest.com"
+  },
+  {
+    "name": "Stremion.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, IPTV",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Stremion.com"
+  },
+  {
+    "name": "Tradoq.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Tradoq.com"
+  },
+  {
+    "name": "Transationser.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Transationser.com"
+  },
+  {
+    "name": "VisLif.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=VisLif.com"
+  },
+  {
+    "name": "XpanderPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=XpanderPay.com"
+  },
+  {
+    "name": "ZonFood.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Food",
+    "price": "59",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ZonFood.com"
+  },
+  {
+    "name": "365crypt.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=365crypt.com"
+  },
+  {
+    "name": "365martly.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=365martly.com"
+  },
+  {
+    "name": "Cartburn.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cartburn.com"
+  },
+  {
+    "name": "Cryptalyzes.com",
+    "hosting": "Spaceship",
+    "category": "Venture, Community & Brands",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cryptalyzes.com"
+  },
+  {
+    "name": "Dealiar.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces, SaaS",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealiar.com"
+  },
+  {
+    "name": "Drobito.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces, SaaS",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Drobito.com"
+  },
+  {
+    "name": "Payerzy.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payerzy.com"
+  },
+  {
+    "name": "syrri.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech - Tool",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=syrri.com"
+  },
+  {
+    "name": "voucherdeck.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "50",
+    "businessType": "Domain",
+    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=voucherdeck.com"
+  }
 ];
 
-export const domainsData: Domain[] = raw.map(([name, hosting, category, price, businessType], i) => ({
-  id: i + 1,
-  name,
-  hosting,
-  category,
-  price,
-  businessType: (businessType === 'Business' || businessType === 'Domain') ? businessType as 'Business' | 'Domain' : undefined,
-}));
+export const domainsData: Domain[] = raw.map((d, i) => ({ ...d, id: i + 1 }));
 
 export const categories = [
   'All',
