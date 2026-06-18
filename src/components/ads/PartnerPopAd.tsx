@@ -113,7 +113,7 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(o) => { if (!o) onDismiss(); else setOpen(true); }}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <Badge variant="secondary" className="w-fit mb-2">
