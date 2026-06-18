@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
 import PartnerBannerStrip, { BannerAdItem } from './PartnerBannerStrip';
 import PartnerPopAd, { PopAdItem } from './PartnerPopAd';
 import { digitalPartnersData } from '@/data/digitalPartnersData';
@@ -18,6 +19,7 @@ const partnersFor = (id: string) => countryPartners.filter((p) => p.countryId ==
 const PartnerAdsHub = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isMobile = useIsMobile();
 
   const digitalBanner: BannerAdItem[] = useMemo(
     () => digitalPartnersData.map((p) => ({
@@ -124,8 +126,16 @@ const PartnerAdsHub = () => {
         delayMs={10000}
       />
 
-      {/* Pop ads — only ONE on home page; full stack elsewhere */}
-      {isHome ? (
+      {/* Pop ads — mobile always gets ONE; desktop: one on home, full stack elsewhere */}
+      {isMobile ? (
+        <PartnerPopAd
+          items={homePopPool}
+          storageKey="fs_pop_mobile"
+          badgeLabel="Featured Partner Offer"
+          trigger={{ type: 'exit-intent' }}
+          campaign="mobile-single"
+        />
+      ) : isHome ? (
         <PartnerPopAd
           items={homePopPool}
           storageKey="fs_pop_home"
