@@ -19,6 +19,7 @@ const partnersFor = (id: string) => countryPartners.filter((p) => p.countryId ==
 const PartnerAdsHub = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isMobile = useIsMobile();
 
   const digitalBanner: BannerAdItem[] = useMemo(
     () => digitalPartnersData.map((p) => ({
