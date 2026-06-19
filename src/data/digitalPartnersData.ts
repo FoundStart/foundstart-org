@@ -2,8 +2,8 @@ export interface DigitalPartner {
   category: string;
   platform: string;
   url: string;
-  niche?: string;
-  coupon?: string;
+  niche: string;
+  coupon: string;
 }
 
 export const digitalPartnersData: DigitalPartner[] = [

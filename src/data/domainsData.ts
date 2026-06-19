@@ -1508,3 +1508,6 @@ const raw: Omit<Domain, 'id'>[] = [
 ];
 
 export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d }));
+
+export const categories: string[] = Array.from(new Set(domainsData.map(d => d.category))).sort();
+export const hostingProviders: string[] = Array.from(new Set(domainsData.map(d => d.hosting))).sort();
