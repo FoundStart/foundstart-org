@@ -8,7 +8,7 @@ export const countriesData = [
     currency: 'USD',
     ctaUrl: 'https://shortet.com/foundstart',
     videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw',
-    description: 'Form your US company with our trusted partners including FoundStart, Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, Startfleet, and Go Nomad HQ.',
+    description: 'Form your US company with our trusted partners including Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, Startfleet, and Go Nomad HQ.',
     benefits: [
       'Access to US banking and financial services',
       'Global credibility and market access',
@@ -18,7 +18,6 @@ export const countriesData = [
       'Investor attraction and funding opportunities'
     ],
     partners: [
-      { name: 'FoundStart', url: 'https://shortet.com/foundstart', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
       { name: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
       { name: 'ITIN', url: 'https://shortet.com/theitin', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys' },
       { name: 'Clemta', url: 'https://shortet.com/clemta', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
@@ -240,7 +239,6 @@ export const countriesData = [
       'Growing digital economy'
     ],
     partners: [
-      { name: 'FoundStart Legal Team', url: 'https://foundstart.org', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
     ],
     keyStats: { gdp: '$469B', population: '104M', easeOfBusiness: '114th', corporateTax: '22.5%' }
   }

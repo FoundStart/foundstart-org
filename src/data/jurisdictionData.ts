@@ -14,7 +14,6 @@ export const jurisdictionInfo = [
 
 export const partnerData = [
   // Company Formation Partners
-  { category: 'Company Formation', details: 'Company formation in USA, UK & Europe', platform: 'FoundStart', url: 'https://shortet.com/foundstart', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw' },
   { category: 'Company Formation', details: 'Company formation in USA-UK', platform: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'ITIN', url: 'https://shortet.com/theitin', coupon: 'SAYED50', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys' },
   { category: 'Company Formation', details: 'Company formation in USA', platform: 'Clemta', url: 'https://shortet.com/clemta', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA' },
