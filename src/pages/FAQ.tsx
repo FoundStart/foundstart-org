@@ -97,6 +97,22 @@ const FAQ = () => {
                 <WhatsAppButton variant="outline" />
               </div>
             </div>
+
+            <div className="mt-8 text-center p-8 rounded-2xl border bg-gradient-to-br from-primary/10 via-amber-500/10 to-emerald-500/10">
+              <h3 className="text-xl font-semibold mb-2">Explore exclusive country partner offers</h3>
+              <p className="text-muted-foreground mb-4">
+                Discounted company formation deals from our trusted USA, UK, Canada,
+                Estonia, Ireland, Egypt &amp; EU partners.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Button asChild>
+                  <Link to="/countries">Browse Country Partners</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/company-formation-bio">Formation Bio Link</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
