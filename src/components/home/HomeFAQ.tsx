@@ -58,9 +58,14 @@ const HomeFAQ = () => (
           </AccordionItem>
         </Accordion>
         <div className="text-center mt-6">
-          <Button variant="outline" asChild>
-            <Link to="/faq">View All FAQs <ArrowRight className="w-4 h-4 ml-2" /></Link>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button variant="outline" asChild>
+              <Link to="/faq">View All FAQs <ArrowRight className="w-4 h-4 ml-2" /></Link>
+            </Button>
+            <Button asChild>
+              <Link to="/countries">Country Partner Offers <ArrowRight className="w-4 h-4 ml-2" /></Link>
+            </Button>
+          </div>
         </div>
       </motion.div>
     </div>
