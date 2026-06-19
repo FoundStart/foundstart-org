@@ -9,13 +9,6 @@ export interface DigitalPartner {
 export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Business Company Formation",
-    "platform": "FoundStart",
-    "url": "https://shortet.com/foundstart",
-    "niche": "Company formation in USA, UK & Europe",
-    "coupon": ""
-  },
-  {
-    "category": "Business Company Formation",
     "platform": "Doola",
     "url": "https://shortet.com/doola",
     "niche": "Company formation in USA",
