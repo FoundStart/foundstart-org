@@ -98,16 +98,17 @@ const PartnerAdsHub = () => {
 
   return (
     <>
-      {/* Banners — staggered positions so they don't overlap */}
-      <PartnerBannerStrip
+      {/* Banners — staggered positions so they don't overlap. On mobile,
+          hide left/right side strips to avoid covering content. */}
+      {!isMobile && <PartnerBannerStrip
         items={digitalBanner}
         storageKey="fs_banner_digital"
         position="bottom-left"
         accentClassName="bg-primary"
         label="Digital Partner"
         intervalMs={6000}
-      />
-      <PartnerBannerStrip
+      />}
+      {!isMobile && <PartnerBannerStrip
         items={freelancerBanner}
         storageKey="fs_banner_freelancer"
         position="bottom-right"
@@ -115,7 +116,7 @@ const PartnerAdsHub = () => {
         label="Freelancer"
         intervalMs={7000}
         delayMs={4000}
-      />
+      />}
       <PartnerBannerStrip
         items={countryBanner}
         storageKey="fs_banner_country"
@@ -195,7 +196,7 @@ const PartnerAdsHub = () => {
       )}
 
       {/* USA / UK / Canada banners — appear after primary banners */}
-      {usaBanner.length > 0 && (
+      {!isMobile && usaBanner.length > 0 && (
         <PartnerBannerStrip
           items={usaBanner}
           storageKey="fs_banner_usa"
@@ -207,7 +208,7 @@ const PartnerAdsHub = () => {
           campaign="country-USA"
         />
       )}
-      {ukBanner.length > 0 && (
+      {!isMobile && ukBanner.length > 0 && (
         <PartnerBannerStrip
           items={ukBanner}
           storageKey="fs_banner_uk"
@@ -219,7 +220,7 @@ const PartnerAdsHub = () => {
           campaign="country-UK"
         />
       )}
-      {canadaBanner.length > 0 && (
+      {!isMobile && canadaBanner.length > 0 && (
         <PartnerBannerStrip
           items={canadaBanner}
           storageKey="fs_banner_canada"
