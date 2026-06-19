@@ -55,6 +55,7 @@ import PartnerTrackingTest from "./pages/admin/PartnerTrackingTest";
 import AIChatBot from "./components/AIChatBot";
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 import PartnerAdsHub from "./components/ads/PartnerAdsHub";
+import OutboundUtmTagger from "./components/ads/OutboundUtmTagger";
 import HealthCheckBanner from "./components/HealthCheckBanner";
 import IntegrationSettings from "./pages/IntegrationSettings";
 import EgyptOnePersonCompanyAR from "./pages/blog/EgyptOnePersonCompanyAR";
@@ -142,6 +143,7 @@ function App() {
                 <AIChatBot />
                 <MobileBottomNav />
                 <PartnerAdsHub />
+                <OutboundUtmTagger />
               </AuthProvider>
             </BrowserRouter>
           </TooltipProvider>

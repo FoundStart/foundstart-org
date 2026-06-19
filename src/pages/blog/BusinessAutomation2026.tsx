@@ -169,6 +169,8 @@ const BusinessAutomation2026: React.FC = () => {
       <Helmet>
         <title>{TITLE} | FoundStart Blog</title>
         <meta name="description" content={DESCRIPTION} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large" />
         <meta name="keywords" content="business automation 2026, AI agents, no-code automation, n8n, Make, Zapier, company formation, US LLC, UK Ltd" />
         <meta name="author" content="MoMoAI" />
         <meta property="og:type" content="article" />
