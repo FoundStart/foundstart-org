@@ -8,6 +8,7 @@ import { getFaviconUrl, getDomainHost } from '@/utils/favicon';
 import { trackAdEvent, getVariant } from '@/utils/adTracking';
 import { isLive } from '@/utils/integrationSettings';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { withUtm, ga4 } from '@/utils/utm';
 
 const COOLDOWN_MS = 60 * 60 * 1000; // 1 hour
 const cooldownKey = (k: string) => `${k}:cooldownUntil`;
@@ -45,6 +46,9 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
   });
   const campaignId = campaign || storageKey;
   const device: 'mobile' | 'desktop' = isMobile ? 'mobile' : 'desktop';
+  const taggedUrl = partner ? withUtm(partner.url, {
+    source: 'popup', medium: device, campaign: campaignId, content: partner.platform,
+  }) : '';
 
   useEffect(() => {
     if (sessionStorage.getItem(storageKey)) return;
@@ -66,6 +70,10 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
       try { localStorage.setItem(cooldownKey(storageKey), String(Date.now() + COOLDOWN_MS)); } catch { /* ignore */ }
       setOpen(true);
       trackAdEvent({ surface: 'pop', event: 'impression', campaign: `${campaignId}:${device}`, partner: partner.platform, variant, href: partner.href, device });
+      ga4('ad_impression', {
+        ad_surface: 'pop', ad_campaign: campaignId, ad_partner: partner.platform,
+        ad_variant: variant, device,
+      });
     };
 
     if (trigger.type === 'timer') {
@@ -103,6 +111,7 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
 
   const onDismiss = () => {
     trackAdEvent({ surface: 'pop', event: 'dismiss', campaign: `${campaignId}:${device}`, partner: partner.platform, variant, device });
+    ga4('ad_dismiss', { ad_surface: 'pop', ad_campaign: campaignId, ad_partner: partner.platform, ad_variant: variant, device });
     if (isMobile) {
       try { localStorage.setItem(dismissedKey(storageKey), '1'); } catch { /* ignore */ }
     }
@@ -110,6 +119,10 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
   };
   const onClick = () => {
     trackAdEvent({ surface: 'pop', event: 'click', campaign: `${campaignId}:${device}`, partner: partner.platform, variant, href: partner.href, device });
+    ga4('select_ad', {
+      ad_surface: 'pop', ad_campaign: campaignId, ad_partner: partner.platform,
+      ad_variant: variant, device, link_url: taggedUrl,
+    });
   };
 
   return (
@@ -155,7 +168,7 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
               className="flex-1"
               onClick={() => {
                 onClick();
-                window.open(partner.url, '_blank', 'noopener,noreferrer');
+                window.open(taggedUrl, '_blank', 'noopener,noreferrer');
                 setOpen(false);
               }}
             >
