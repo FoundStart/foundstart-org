@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { getFaviconUrl, getDomainHost } from '@/utils/favicon';
 import { trackAdEvent, getVariant } from '@/utils/adTracking';
 import { isLive } from '@/utils/integrationSettings';
+import { withUtm, ga4 } from '@/utils/utm';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export type BannerAdItem = {
   platform: string;
@@ -42,6 +44,8 @@ const PartnerBannerStrip = ({
   campaign,
 }: Props) => {
   const location = useLocation();
+  const isMobile = useIsMobile();
+  const device: 'mobile' | 'desktop' = isMobile ? 'mobile' : 'desktop';
   const [dismissed, setDismissed] = useState(() => sessionStorage.getItem(storageKey) === '1');
   const [visible, setVisible] = useState(delayMs === 0);
   const [index, setIndex] = useState(0);
@@ -82,8 +86,9 @@ const PartnerBannerStrip = ({
   // Fire impression once per ad rotation
   useEffect(() => {
     if (!ad) return;
-    trackAdEvent({ surface: 'banner', event: 'impression', campaign: campaignId, partner: ad.platform, variant, href: ad.href });
-  }, [ad?.platform, ad?.href, campaignId, variant]);
+    trackAdEvent({ surface: 'banner', event: 'impression', campaign: campaignId, partner: ad.platform, variant, href: ad.href, device });
+    ga4('ad_impression', { ad_surface: 'banner', ad_campaign: campaignId, ad_partner: ad.platform, ad_variant: variant, device });
+  }, [ad?.platform, ad?.href, campaignId, variant, device]);
 
   const hide =
     /^\/(dashboard|admin|auth|reset-password|settings)/.test(location.pathname) ||
@@ -92,13 +97,16 @@ const PartnerBannerStrip = ({
   if (hide || !visible || dismissed || pool.length === 0) return null;
 
   const dismiss = () => {
-    trackAdEvent({ surface: 'banner', event: 'dismiss', campaign: campaignId, partner: ad.platform, variant });
+    trackAdEvent({ surface: 'banner', event: 'dismiss', campaign: campaignId, partner: ad.platform, variant, device });
+    ga4('ad_dismiss', { ad_surface: 'banner', ad_campaign: campaignId, ad_partner: ad.platform, ad_variant: variant, device });
     sessionStorage.setItem(storageKey, '1');
     setDismissed(true);
   };
 
+  const taggedUrl = withUtm(ad?.url || '', { source: 'banner', medium: device, campaign: campaignId, content: ad?.platform });
   const onClick = () => {
-    trackAdEvent({ surface: 'banner', event: 'click', campaign: campaignId, partner: ad.platform, variant, href: ad.href });
+    trackAdEvent({ surface: 'banner', event: 'click', campaign: campaignId, partner: ad.platform, variant, href: ad.href, device });
+    ga4('select_ad', { ad_surface: 'banner', ad_campaign: campaignId, ad_partner: ad.platform, ad_variant: variant, device, link_url: taggedUrl });
   };
 
   return (
@@ -125,7 +133,7 @@ const PartnerBannerStrip = ({
           <Button
             size="sm"
             className="h-7 text-xs"
-            onClick={() => { onClick(); window.open(ad.url, '_blank', 'noopener,noreferrer'); }}
+            onClick={() => { onClick(); window.open(taggedUrl, '_blank', 'noopener,noreferrer'); }}
           >
             <ExternalLink className="w-3 h-3 mr-1" />Visit
           </Button>

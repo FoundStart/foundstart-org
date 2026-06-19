@@ -1,489 +1,3258 @@
-export const digitalPartnersData = [
-  // Business Automation
-  { category: "Business Automation", platform: "Shortet", url: "https://Shortet.com", niche: "Short URL, BIO & QR Code for free", coupon: "" },
-  { category: "Business Automation", platform: "Twin", url: "https://shortet.com/Twin", niche: "Automate Anything (the Ai Company Builder)", coupon: "" },
-  { category: "Business Automation", platform: "Flyhermes", url: "https://shortet.com/Flyhermes", niche: "our AI Agent — Zero Setup Required", coupon: "" },
-  { category: "Business Automation", platform: "Cloud Campaign", url: "https://www.cloudcampaign.com/?fpr=deeemoz62", niche: "AI-Powered Social Media Automation", coupon: "" },
-  { category: "Business Automation", platform: "Ocoya", url: "https://www.ocoya.com/?via=momo", niche: "Social media management. Using AI", coupon: "" },
-  { category: "Business Automation", platform: "Chatbase", url: "https://www.chatbase.co/?via=momosa", niche: "AI agents for magical customer experiences", coupon: "" },
-  { category: "Business Automation", platform: "Agent Router", url: "https://shortet.com/agentrouter", niche: "Agent Router", coupon: "" },
-  { category: "Business Automation", platform: "Make", url: "https://www.make.com/en/register?pc=momosa", niche: "AI Automation", coupon: "" },
-  { category: "Business Automation", platform: "Pabbly", url: "https://shortet.com/pabbly", niche: "Busniess Automation", coupon: "" },
-  { category: "Business Automation", platform: "Flowise", url: "https://cloud.flowiseai.com/register?via=momo", niche: "Build AI Agents Visually", coupon: "" },
-  { category: "Business Automation", platform: "Scispace", url: "https://scispace.com/?via=Momo", niche: "Ai researcher Agent", coupon: "" },
-  { category: "Business Automation", platform: "Ottokit", url: "https://ottokit.com/?aff=99725bd0", niche: "Build Automations", coupon: "" },
-  { category: "Business Automation", platform: "Albato", url: "https://albato.com?fpr=mohamed25", niche: "Automate smarter with no-code and AI", coupon: "GIMME20%OFF" },
-  { category: "Business Automation", platform: "Relay", url: "relay.app/?via=momo", niche: "Build AI agents", coupon: "" },
-  { category: "Business Automation", platform: "GHL", url: "https://www.gohighlevel.com/?fp_ref=deeemoz", niche: "Marketing Automation Platform", coupon: "" },
-  { category: "Business Automation", platform: "Axiom", url: "https://axiom.ai/a?afmc=6k", niche: "Automation Platform", coupon: "" },
-  { category: "Business Automation", platform: "Wiza", url: "https://wiza.co/?via=deeemoz", niche: "Automation Platform", coupon: "" },
-  { category: "Business Automation", platform: "Phantombuster", url: "https://shortet.com/phantombuster", niche: "Busniess Automation", coupon: "" },
-  { category: "Business Automation", platform: "FlockSocial", url: "flocksocial.com/?ref=ntjkymu", niche: "Instagram grow real audinces", coupon: "" },
-  { category: "Business Automation", platform: "FlockSocial", url: "https://repurpose.io/?aff=87211", niche: "Repost SMM tool", coupon: "" },
-  { category: "Business Automation", platform: "Postiz", url: "https://postiz.com/?ref=mohamed", niche: "Social schuduling", coupon: "" },
-  { category: "Business Automation", platform: "Post planner", url: "https://www.postplanner.com/?via=momo", niche: "Schedule the best content in your industry", coupon: "" },
-  { category: "Business Automation", platform: "Closer", url: "https://shortet.com/closerx", niche: "Ai calling Sales agent", coupon: "" },
-  { category: "Business Automation", platform: "Blotato", url: "https://blotato.com/?ref=mohamedp5", niche: "Social schuduling", coupon: "" },
-  { category: "Business Automation", platform: "UploadPost", url: "https://shortet.com/upload-post", niche: "Social Media API, One Call, Every Platform", coupon: "" },
-  { category: "Business Automation", platform: "Postiz", url: "https://postiz.com/?ref=mohamedem", niche: "Social media scheduling tool", coupon: "" },
-  { category: "Business Automation", platform: "Akool", url: "https://akool.com/?via=momo-sa", niche: "Premium AI Video & avatar suite for businesses", coupon: "" },
-  { category: "Business Automation", platform: "Typefully", url: "https://typefully.com/?via=momo", niche: "Social media tool", coupon: "" },
-  { category: "Business Automation", platform: "Nuelink", url: "http//nuelink.com/?via=deeemoz", niche: "Social Media Scheduling and Automation Tool", coupon: "" },
-  { category: "Business Automation", platform: "Systeme", url: "https://shortet.com/systeme", niche: "All-In-One Marketing Platform", coupon: "" },
-  { category: "Business Automation", platform: "ShipFast", url: "https://shipfa.st/?via=momo-sa", niche: "Build Your AI Startup", coupon: "" },
-  { category: "Business Automation", platform: "Relevance", url: "relevanceai.com", niche: "Build teams of AI agents", coupon: "" },
-  { category: "Business Automation", platform: "Gumloop", url: "https://www.gumloop.com/", niche: "Automate any workflow with AI", coupon: "" },
-  { category: "Business Automation", platform: "Lexilexi", url: "https://lexilexi.ai/?via=momo", niche: "Run Meta Ads Like a Pro", coupon: "" },
-  { category: "Business Automation", platform: "Markifact", url: "https://www.markifact.com/?via=momo", niche: "AI Automation. Built for Marketers", coupon: "" },
-  { category: "Business Automation", platform: "n8n", url: "https://n8n.io", niche: "AI Automation workflow platform", coupon: "" },
-  { category: "Business Automation", platform: "Mindpal", url: "https://shortet.com/mindpal", niche: "Build Your AI Startup", coupon: "" },
-  { category: "Business Automation", platform: "Zapier", url: "https://zapier.com/", niche: "Build your Ai workforce", coupon: "" },
-  { category: "Business Automation", platform: "Workato", url: "https://www.workato.com/", niche: "AI Automation workflow platform", coupon: "" },
-  { category: "Business Automation", platform: "Uipath", url: "https://uipath.com/", niche: "Enterprise Automation", coupon: "" },
-  { category: "Business Automation", platform: "Power Automate", url: "https://make.powerautomate.com/", niche: "Enterprise Automation", coupon: "" },
-  { category: "Business Automation", platform: "Automation Anywhere", url: "https://www.automationanywhere.com/", niche: "Enterprise Automation", coupon: "" },
-  { category: "Business Automation", platform: "Pipedream", url: "https://pipedream.com/", niche: "AI Automation workflow platform", coupon: "" },
-  { category: "Business Automation", platform: "Tray", url: "https://tray.ai/", niche: "Tray AI", coupon: "" },
-  { category: "Business Automation", platform: "SIM", url: "https://www.SIm.ai/", niche: "SIM AI", coupon: "" },
-  { category: "Business Automation", platform: "Empler", url: "https://www.empler.ai/", niche: "No-code & Multi-agent AI Automation Platform", coupon: "" },
-  { category: "Business Automation", platform: "Twin", url: "https://shortet.com/twin-AI", niche: "Automate Anything (the Ai Company Builder)", coupon: "" },
-  { category: "Business Automation", platform: "Novamira", url: "https://shortet.com/Novamira", niche: "Your AI agent builds inside your WordPress.", coupon: "" },
-  // Vibe Coding
-  { category: "Vibe Coding", platform: "Aitmpl", url: "https://www.aitmpl.com/skills", niche: "Claude code template", coupon: "" },
-  { category: "Vibe Coding", platform: "Andromo", url: "https://builder.andromo.com/?aaii=1591544.17f7e9", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Animapp", url: "https://animaapp.com/", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Appcreatore24", url: "https://www.appcreator24.com/afi/1165836", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "APPGen", url: "https://appgen.com/?ref=momo", niche: "Build full mobile apps with AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Appsgeyser", url: "https://appsgeyser.com/r/nfSXk", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Appypie", url: "https://shortet.com/appypie", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Atoms dev", url: "https://shortet.com/atoms-dev", niche: "Turn ideas into products that sell", coupon: "" },
-  { category: "Vibe Coding", platform: "Augmentcode", url: "https://www.augmentcode.com/", niche: "AI vibe coding", coupon: "" },
-  { category: "Vibe Coding", platform: "Autocoder", url: "https://www.autocoder.cc/", niche: "All-in-One Code Automation", coupon: "" },
-  { category: "Vibe Coding", platform: "Base44", url: "https://base44.pxf.io/c/4204954/2049275/25619?trafcat=base", niche: "build fully-functional apps", coupon: "" },
-  { category: "Vibe Coding", platform: "Blackbox", url: "https://blackboxai.partnerlinks.io/lrhx78gyhw4g", niche: "AI no code APP & web builder", coupon: "" },
-  { category: "Vibe Coding", platform: "blazr", url: "https://blazr.net/?via=momo", niche: "E-Commerce Shop", coupon: "" },
-  { category: "Vibe Coding", platform: "Blink", url: "https://blink.new/sign-up?ref=OS2oNvV2", niche: "Turn any idea into a beautiful, working app in seconds", coupon: "" },
-  { category: "Vibe Coding", platform: "Bolt", url: "https://bolt.new/", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Builder IO", url: "https://builderio.partnerlinks.io/ojlpo5jbmecy", niche: "Visual deployment platform", coupon: "" },
-  { category: "Vibe Coding", platform: "Buildnatively", url: "https://www.buildnatively.com?invite=4zVPyP", niche: "Convert website into a mobile APP", coupon: "" },
-  { category: "Vibe Coding", platform: "Chef Convex", url: "https://chef.convex.dev/", niche: "AI vibe coding", coupon: "" },
-  { category: "Vibe Coding", platform: "Claude", url: "https://claude.ai/referral/kOoRtNzkSg", niche: "Web building free", coupon: "" },
-  { category: "Vibe Coding", platform: "Code design", url: "https://codedesign.ai/?via=momo", niche: "AI Website Builder Build, Host & Export Websites", coupon: "" },
-  { category: "Vibe Coding", platform: "Copycoder", url: "https://copycoder.ai/?ref=momo", niche: "Create powerful prompts for AI coding tools", coupon: "" },
-  { category: "Vibe Coding", platform: "Cursor", url: "https://cursor.com/en", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Deepsite", url: "https://enzostvs-deepsite.hf.space/", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "DreamFlow", url: "https://dreamflow.com/", niche: "AI Full Stack APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Easyorder", url: "https://shortet.com/easy-orders", niche: "Build your store in 5 minutes", coupon: "" },
-  { category: "Vibe Coding", platform: "EasySite", url: "https://www.easysite.ai/?via=Vibecoding", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Emergent", url: "https://app.emergent.sh/?via=momo", niche: "AI Full Stack APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Firbase Studio", url: "https://firebase.studio/", niche: "The full Stack AI workspace", coupon: "" },
-  { category: "Vibe Coding", platform: "FlutterFlow", url: "https://shortet.com/flutterflow", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Fourthwall", url: "https://shortet.com/fourthwall-Cartgy", niche: "E-Commerce Shop (POD-Digital-Physical) building", coupon: "" },
-  { category: "Vibe Coding", platform: "Gadget", url: "https://gadget.dev/", niche: "Build and run web apps in hours, with AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Getmocha", url: "https://getmocha.com/", niche: "Bring your app ideas to life using ai", coupon: "" },
-  { category: "Vibe Coding", platform: "HeyBoss", url: "https://heyboss.ai?ref=2WDFT2GW", niche: "Launch Your Business in 10 Minutes with AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Kimi", url: "https://www.kimi.com/", niche: "AI Full Stack APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Leap", url: "https://leap.new/", niche: "AI Full Stack APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Lovable", url: "https://lovable.dev/?via=momo", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Lovablehtml", url: "https://shortet.com/lovablehtml", niche: "Fix Lovable SEO & Ai visbility", coupon: "" },
-  { category: "Vibe Coding", platform: "Manus", url: "https://manus.im/invitation/XDECAJVSG9VE", niche: "Manus LLMs", coupon: "" },
-  { category: "Vibe Coding", platform: "Medo Dev", url: "https://medo.dev/?invitecode=user-9zvipncfwr28", niche: "Build full stack apps by AI", coupon: "" },
-  { category: "Vibe Coding", platform: "MGX dev", url: "https://mgx.dev", niche: "AI Full Stack Web APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Mobeasy", url: "https://subscribe.mobeasy.com/?ref=7717", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Mobella", url: "https://mobella.app/register?code=QV01139R5I1683751175", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "OnSpace", url: "https://onspace.link/mohamed-sayed", niche: "OnSpace AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Passion", url: "https://passion.io/?_go=deeemoz", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Purelanderas", url: "https://purelanderas.com/a/click.php?refid=s4qXbrSuxy", niche: "CPA Landing page creation", coupon: "" },
-  { category: "Vibe Coding", platform: "Replit", url: "https://replit.com/", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Rocket", url: "https://www.rocket.new/", niche: "AI Full Stack APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Rork", url: "https://rork.com/?ref=mohamedvj", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Softlite", url: "https://softlite.io/?wpam_id=914", niche: "Clone websites to your Page Builders in with AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Softr", url: "https://get.softr.io/bgiafdhexz82", niche: "Create Web,APP from Airtable& Sheets", coupon: "" },
-  { category: "Vibe Coding", platform: "Solid", url: "https://trysolid.com/", niche: "Build real Web Apps with AI, not lovable toys", coupon: "" },
-  { category: "Vibe Coding", platform: "Stacksmarket", url: "https://stacksmarket.co/?ref=AFF-6GH6HO5AF", niche: "Digitize Your Entire-Business with AI in One Click", coupon: "" },
-  { category: "Vibe Coding", platform: "Stunning", url: "https://stunning.so/?via=momo", niche: "Build websites by chatting with AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Tempo", url: "https://www.tempo.new/?via=momo", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "TheWebops", url: "https://thewebops.com/", niche: "Build a Stunning Website in Minutes with AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Tile dev", url: "https://www.tile.dev/", niche: "AI Full Stack APP builder", coupon: "" },
-  { category: "Vibe Coding", platform: "Trae", url: "https://trae.ai", niche: "AI vibe coding", coupon: "" },
-  { category: "Vibe Coding", platform: "Twinr", url: "https://builder.twinr.dev/?affiliate_id=83MoDE16912", niche: "No Code Apps builder", coupon: "" },
-  { category: "Vibe Coding", platform: "V0", url: "https://v0.dev/", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "Vitara", url: "https://vitara.ai/", niche: "AI vibe coding", coupon: "" },
-  { category: "Vibe Coding", platform: "Warp", url: "https://www.warp.dev/", niche: "AI vibe coding", coupon: "" },
-  { category: "Vibe Coding", platform: "Windsurve", url: "https://windsurf.com/", niche: "AI No Code AI-Full stack AI", coupon: "" },
-  { category: "Vibe Coding", platform: "YouWare", url: "https://www.youware.com/?via=momo", niche: "AI Vibe Coding Community", coupon: "" },
-  { category: "Vibe Coding", platform: "Convex", url: "https://shortet.com/convex", niche: "Open-source reactive database for app developers.", coupon: "" },
-  // Business Company Formation
-  { category: "Business Company Formation", platform: "FoundStart", url: "https://shortet.com/foundstart", niche: "Company formation in USA, UK & Europe", coupon: "" },
-  { category: "Business Company Formation", platform: "Privatily", url: "https://shortet.com/privatily", niche: "Company formation in USA-UK", coupon: "" },
-  { category: "Business Company Formation", platform: "ITIN", url: "https://shortet.com/theitin", niche: "Company formation in USA", coupon: "SAYED50" },
-  { category: "Business Company Formation", platform: "Clemta", url: "https://shortet.com/clemta", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Startglobal", url: "https://shortet.com/startglobal", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Doola", url: "https://shortet.com/doola", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Tailorbrands", url: "https://shortet.com/tailorbrands", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "Startfleet", url: "https://shortet.com/startfleet", niche: "Company formation in USA", coupon: "" },
-  { category: "Business Company Formation", platform: "1office", url: "https://shortet.com/1office", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Firstbase", url: "https://shortet.com/firstbase", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "1stFormations", url: "https://shortet.com/1st-formations", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Privatily", url: "https://shortet.com/privatily", niche: "Company formation in USA-UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Rapid Formation", url: "https://shortet.com/rapid-formations", niche: "Company formation in UK", coupon: "" },
-  { category: "Business Company Formation", platform: "Estonia", url: "http://shortet.com/1office", niche: "Company formation in Estonia", coupon: "" },
-  { category: "Business Company Formation", platform: "Finland", url: "https://shortet.com/1office", niche: "Company formation in Finland", coupon: "" },
-  { category: "Business Company Formation", platform: "Sweden", url: "https://shortet.com/1office", niche: "Company formation in Sweden", coupon: "" },
-  { category: "Business Company Formation", platform: "Latvia", url: "https://shortet.com/1office", niche: "Company formation in Latvia", coupon: "" },
-  { category: "Business Company Formation", platform: "Lithuania", url: "https://shortet.com/1office", niche: "Company formation in Lithuania", coupon: "" },
-  { category: "Business Company Formation", platform: "Ireland", url: "https://1office.co?fpr=momo", niche: "Company formation in Ireland", coupon: "" },
-  { category: "Business Company Formation", platform: "Go Nomad HQ", url: "https://shortet.com/Go-Nomad-HQ", niche: "Company formation in USA-UK", coupon: "" },
-  // Telecommunication
-  { category: "Telecommunication", platform: "esim me", url: "https://shortet.com/esim", niche: "eSIM your eSIM anywhare anytime", coupon: "" },
-  { category: "Telecommunication", platform: "SMS Fast", url: "https://shortet.com/smsfast", niche: "Buy a virtual phone number & esim", coupon: "" },
-  { category: "Telecommunication", platform: "Bnesim", url: "https://shortet.com/Bnesim", niche: "Bnesim your eSIM anywhare anytime", coupon: "" },
-  { category: "Telecommunication", platform: "Airalo", url: "https://shortet.com/airalo", niche: "Get EUR 3.00 € off their first purchase", coupon: "MOHAME30889" },
-  // Managements
-  { category: "Managements", platform: "Tally", url: "https://tally.so/?ref=msa", niche: "Form & Survey creation", coupon: "" },
-  { category: "Managements", platform: "Clickup", url: "https://shortet.com/clickup", niche: "One AI workspace for projects, knowledge, chat, and more.", coupon: "" },
-  { category: "Managements", platform: "Fillout", url: "https://www.fillout.com/", niche: "Form & Survey creation", coupon: "" },
-  { category: "Managements", platform: "Airtable", url: "https://airtable.com/invite/r/KAoGUyC4", niche: "WorkFlow/Workspace", coupon: "" },
-  { category: "Managements", platform: "Hive", url: "https://hiveonboard.com/?ref=deeemoz", niche: "WorkFlow/Workspace", coupon: "" },
-  { category: "Managements", platform: "Monday", url: "http//monday.com/", niche: "WorkFlow/Workspace", coupon: "" },
-  { category: "Managements", platform: "Notion", url: "https://notionforms.io/?via=mohamed", niche: "WorkFlow/Workspace", coupon: "" },
-  { category: "Managements", platform: "Startinfinity", url: "https://startinfinity.com/?ref=njm1mtz", niche: "WorkFlow/Workspace", coupon: "" },
-  { category: "Managements", platform: "Lemonsqueezy", url: "https://lemonsqueezy.com/", niche: "Saas Managments", coupon: "" },
-  { category: "Managements", platform: "Clickera", url: "https://msayed.clickera.com/95a381c29d91", niche: "Laning pages Platform", coupon: "" },
-  { category: "Managements", platform: "Task Magic", url: "https://make.taskmagic.com/?via=mohamed-sayed", niche: "Million Task magic", coupon: "" },
-  { category: "Managements", platform: "Contractor Foreman", url: "https://try.contractorforeman.com/zatozgyvw6je", niche: "Construction Software", coupon: "" },
-  { category: "Managements", platform: "Zoho", url: "directory.zoho.com/directory/deeemoz/adminhome#/getting-started", niche: "CRM & Automation", coupon: "" },
-  { category: "Managements", platform: "Tidio", url: "https://get.tidio.net/SHHS", niche: "AI Customer services", coupon: "" },
-  { category: "Managements", platform: "Bing", url: "https://rewards.bing.com/welcome?rh=2B3B2E29", niche: "Earn rewards with Microsoft", coupon: "" },
-  { category: "Managements", platform: "TikTok", url: "https://www.tiktok.com/coin?rc=8FDG5VB4", niche: "Buy & charge coins to send Gifts with tikTok", coupon: "" },
-  { category: "Managements", platform: "Optery", url: "https://get.optery.com/ydav2kr7ra5c", niche: "Remove your home address, phone and other private info from Google, and 640+ sites", coupon: "" },
-  { category: "Managements", platform: "Bright data", url: "https://get.brightdata.com/joddfwf11ee9", niche: "Proxies & web scraping", coupon: "" },
-  { category: "Managements", platform: "Firecrawl", url: "https://firecrawl.link/mohamed-sayed", niche: "Web scraping for devs & agents", coupon: "" },
-  { category: "Managements", platform: "File upload", url: "https://www.file-upload.org/free649021.html", niche: "Earn money from uploading files", coupon: "" },
-  { category: "Managements", platform: "Mega4upload", url: "https://mega4upload.com/free93360.html", niche: "Earn money from uploading files", coupon: "" },
-  { category: "Managements", platform: "Wetracked", url: "https://shortet.com/Wetracked", niche: "Track your ads", coupon: "" },
-  { category: "Managements", platform: "Up-4ever", url: "https://www.up-4ever.net/free2433907.html", niche: "Earn money from uploading files", coupon: "" },
-  // Web Hosting
-  { category: "Web Hosting", platform: "Cloudways", url: "https://www.cloudways.com/en/?id=1986139", niche: "Web cloud hosting", coupon: "" },
-  { category: "Web Hosting", platform: "Nameceap", url: "https://shortet.com/namecheap", niche: "Web, Domain & cloud hosting", coupon: "" },
-  { category: "Web Hosting", platform: "Smarterasp", url: "https://shortet.com/Smarter-ASP", niche: "Professional ASP.NET hosting with unlimited space and bandwidth and email.", coupon: "" },
-  { category: "Web Hosting", platform: "FastComet", url: "https://affiliate.fastcomet.com/scripts/2wc9ym?a_aid=633f9f44789f0", niche: "Web hosting", coupon: "" },
-  { category: "Web Hosting", platform: "SSLS", url: "https://ssls.sjv.io/oNNGJW", niche: "Buy Cheap SSl certificates", coupon: "" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hostinger.com?REFERRALCODE=momosa", niche: "Web & Cloud hosting", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hostinger.com/domain-name-search?REFERRALCODE=momosa", niche: "Business Domain name search", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hpanel.hostinger.com/horizons-list?REFERRALCODE=momosa", niche: "Horizons Go from idea to a web app or site – in minutes", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hpanel.hostinger.com/emails/?REFERRALCODE=momosa", niche: "Business Emails", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hpanel.hostinger.com/vps?REFERRALCODE=momosa", niche: "Build applications, host websites, or play games with VPS", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hpanel.hostinger.com/dark-web-monitor?REFERRALCODE=momosa", niche: "Protect your accounts and websites with dark web monitoring", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://www.hostinger.com/vps/n8n-hosting?REFERRALCODE=momosa", niche: "n8n VPS hosting", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://www.hostinger.com/wordpress-hosting/?REFERRALCODE=momosa", niche: "Up to 75% off Hosting for WordPress", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostinger", url: "https://hpanel.hostinger.com/ai-tools?REFERRALCODE=momosa", niche: "Hostinger AI tools", coupon: "momosa" },
-  { category: "Web Hosting", platform: "Hostingial", url: "https://dash.hostingial.com/affiliates.php", niche: "Establish Your Business Presence On The Internet.", coupon: "" },
-  { category: "Web Hosting", platform: "Plesk", url: "https://try.plesk.com/la8gncfyj9za", niche: "Web hosting", coupon: "" },
-  { category: "Web Hosting", platform: "Strikingly", url: "https://www.strikingly.com/a/YtunJy", niche: "Web domains , hosting & Emails", coupon: "" },
-  { category: "Web Hosting", platform: "Hetacloud", url: "https://hetacloud.com/aff.php?aff=4", niche: "Web domains , hosting & Emails", coupon: "" },
-  { category: "Web Hosting", platform: "Whmcs", url: "https://www.whmcs.com/members/aff.php?aff=44417", niche: "Web domains , hosting & Emails", coupon: "" },
-  { category: "Web Hosting", platform: "Cookieyes", url: "https://www.cookieyes.com/welcome/?ref=m2qzzda", niche: "Web", coupon: "" },
-  { category: "Web Hosting", platform: "Clawcloudrun", url: "https://console.run.claw.cloud/signin?link=7B88USLSWWKR", niche: "VPS Clouds Run & deloy", coupon: "" },
-  { category: "Web Hosting", platform: "RDP Hostings", url: "https://rdphostings.com/rdp/aff.php?aff=2412", niche: "RDP Hosting", coupon: "" },
-  { category: "Web Hosting", platform: "Data base Mart", url: "https://clients.databasemart.com/aff.php?aff=2007", niche: "RDP Hosting", coupon: "" },
-  { category: "Web Hosting", platform: "ExpressVPN", url: "https://shortet.com/expressrefer", niche: "VPN", coupon: "" },
-  { category: "Web Hosting", platform: "Proxy seller", url: "https://proxy-seller.com/?partner=BJLV3W376I4NLQ", niche: "VPN Proxy", coupon: "SELUZB_675610" },
-  { category: "Web Hosting", platform: "Proxy sale", url: "https://proxy-sale.com/?partner_link=IKZvgpF6pz", niche: "VPN Proxy", coupon: "IKZvgpF6pz" },
-  // Domains
-  { category: "Domains", platform: "Sedo", url: "https://shortet.com/sedo", niche: "Find Your Domians", coupon: "" },
-  { category: "Domains", platform: "Atom", url: "https://shortet.com/atom", niche: "Find Your Domians", coupon: "" },
-  { category: "Domains", platform: "Nameshift", url: "https://shortet.com/nameshift", niche: "Find Your Domians", coupon: "" },
-  { category: "Domains", platform: "Namesilo", url: "https://shortet.com/namesilo", niche: "Find Your Domians", coupon: "" },
-  { category: "Domains", platform: "Dynadot", url: "https://www.dynadot.com/domain/search?domain=Domain-Name", niche: "Find Your Domians", coupon: "717uk9N7ewK71" },
-  { category: "Domains", platform: "Dotdb", url: "https://shortet.com/dotdb", niche: "Find Your Domians", coupon: "" },
-  // SMM Panel
-  { category: "SMM Panel", platform: "Onlinker", url: "https://onlinker.net/?ref=ONL-K9J7QW", niche: "Get Leads & Website Traffic on Autopilot", coupon: "" },
-  { category: "SMM Panel", platform: "Flowlinesmm", url: "https://flowlinesmm.com/ref/pv0fn", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Naizop", url: "https://naizop.com/ref/pp4w7", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Peakerr", url: "https://peakerr.com/ref/97z02", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Justanotherpanel", url: "https://justanotherpanel.com/ref/xucs9", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "smmfollows", url: "https://smmfollows.com/ref/s7lz5", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "SMMPakPanel", url: "https://smmpakpanel.com/ref/24aqz", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Growfollows", url: "https://growfollows.com/ref/qbjbc", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Onafollow", url: "https://onafollow.com/ref/6g9q8", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Secsers", url: "https://secsers.com/ref/xj0o0", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Smmino", url: "https://smmino.com/ref/790ae", niche: "Digital marketing SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Soc Panel SMM", url: "https://socpanel.com/ref59274", niche: "Soc Panel SMM", coupon: "" },
-  { category: "SMM Panel", platform: "Minds", url: "https://www.minds.com/?referrer=deeemoz", niche: "Social Media Videos", coupon: "" },
-  { category: "SMM Panel", platform: "Rumble", url: "https://rumble.com/register/Deeemoz/", niche: "Social Media Videos", coupon: "" },
-  // SEO tools - Traffic
-  { category: "SEO tools - Traffic", platform: "HeyKeyword", url: "https://shortet.com/HeyKeyword", niche: "AI brand monitoring & Mention tracking", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Notifier SO", url: "http//notifier.so/?via=momo", niche: "Leads Generation Keyword searching", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "SEO Store", url: "https://panel.seoestore.net/?ref=Deeemoz", niche: "Backlink SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Link Finder", url: "http//link-finder.net/?via=momo699", niche: "Ai find link for your SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "SigmaSEO", url: "https://sigmaseo.io/?ref=mohamed", niche: "SEO content", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Diginius", url: "https://get.diginius.com/681hwqa6bkso", niche: "Sales & marketing", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Babylon", url: "https://www.babylontraffic.com/to/174607", niche: "Website Traffic", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "diib", url: "https://www.diib.com?ref=zmqznwn", niche: "Website Traffic+SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Money Robot SEO SW", url: "https://www.moneyrobot.com/Deeemoz", niche: "Website SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Link Collider", url: "https://www.linkcollider.com/page/register?r=519327&aff=1", niche: "All Traffic", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Peakerr", url: "https://peakerr.com/ref/sw26d", niche: "All Traffic", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "vitasmm", url: "https://vitasmm.store/ref/657ed", niche: "All services", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Traffup", url: "https://traffup.net/free/?rf=417555238", niche: "All Traffic", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "10K Hits", url: "https://www.10khits.com/?ref=710728", niche: "Website Traffic", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Traffic Exchange", url: "https://trafficg.com/my-promotions.php?member=Deeemoz", niche: "Solo Traffic", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Blog Clicker", url: "http//blogclicker.com/?username=Deeemoz", niche: "Solo Blog", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Udimi", url: "https://udimi.com/a/36yh5", niche: "Solo Ads", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "madgicx", url: "https://madgicx.com?fpr=momo82", niche: "AI Media buyer-AI Ads", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "SEO Store", url: "https://panel.seoestore.net/?ref=Deeemoz", niche: "SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "SEOClerks", url: "https://www.seoclerk.com/linkin/2811768", niche: "Digital SEO Marketplace", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Babylon Traffic", url: "https://www.babylontraffic.com/to/174607", niche: "SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "diib", url: "https://www.diib.com?ref=zmqznwn", niche: "SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Udimi", url: "https://udimi.com/a/36yh5", niche: "SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Serpclix", url: "https://serpclix.com/users/referrals/5MMBWPTR1VFMY4JRE1JSDGJ40", niche: "Traffic SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Mangools", url: "https://mangools.com/#a64ce90b76aee08b3f68a3e67", niche: "SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Money Robot", url: "https://www.moneyrobot.com/Deeemoz", niche: "SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Phrasly", url: "https://phrasly.ai/?via=f4ns7", niche: "SEO AI Writing", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "SEOWriting", url: "https://seowriting.ai?fp_ref=mohamed15", niche: "SEO AI Writing", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Brandpush", url: "https://www.brandpush.co/?ref=53410", niche: "Publisher News Platform-Press release", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "EIN Press Wire", url: "https://www.einpresswire.com/pricing?via=io0ed", niche: "Publisher News Platform-Press release", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Monkey Digital", url: "https://www.monkeydigital.org?ref=103530", niche: "Marketing Services & SEO", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Scaleup", url: "https://shortet.com/scalelup", niche: "Drive your site traffic, build Awareness", coupon: "" },
-  { category: "SEO tools - Traffic", platform: "Linqin", url: "https://shortet.com/linqin", niche: "Your AI LinkedIn Agent", coupon: "" },
-  // Learning & Courses
-  { category: "Learning & Courses", platform: "Alison", url: "https://shortet.com/alison", niche: "Courses Platforms", coupon: "" },
-  { category: "Learning & Courses", platform: "Skool", url: "https://shortet.com/skool", niche: "Learning coummunities", coupon: "" },
-  { category: "Learning & Courses", platform: "easyT", url: "https://shortet.com/easyt", niche: "Arabic Courses Platforms", coupon: "" },
-  // HR Managements
-  { category: "HR Managements", platform: "buddypunch", url: "https://try.buddypunch.com/momo", niche: "HR Employee Tracking", coupon: "" },
-  { category: "HR Managements", platform: "Multiplier", url: "https://affiliate.usemultiplier.com/o6vjx1bpd2lm", niche: "HR Managements", coupon: "" },
-  { category: "HR Managements", platform: "Gusto", url: "https://get.gusto.com/efbkizi14i4n", niche: "HR Managements", coupon: "" },
-  { category: "HR Managements", platform: "Buddy Punch", url: "https://try.buddypunch.com/5ueay0w8xj0j", niche: "Employee Time Clock Software", coupon: "" },
-  { category: "HR Managements", platform: "Trainual", url: "https://start.trainual.com/j5xegesmjgqr", niche: "Train employees 2X faster", coupon: "" },
-  { category: "HR Managements", platform: "Workable", url: "https://www.workable.com/", niche: "The future-ready HR platform", coupon: "" },
-  { category: "HR Managements", platform: "deel", url: "https://get.deel.com/wbghwr2xx9gw", niche: "Payroll for global teams", coupon: "" },
-  // Health
-  { category: "Health", platform: "Daily Gem", url: "http//dailygem.co/GEM-A-SFYFCTWH", niche: "Health", coupon: "" },
-  // Fintech
-  { category: "Fintech", platform: "Kast", url: "https://shortet.com/Kast", niche: "Get a USD bank account & Virtual card for free", coupon: "DD3ICNJ4" },
-  { category: "Fintech", platform: "Grey", url: "https://shortet.com/Grey", niche: "Inclusive global banking designed just for you", coupon: "3CYA4J" },
-  { category: "Fintech", platform: "Airtm", url: "https://shortet.com/airtm", niche: "Digital Wallet", coupon: "" },
-  { category: "Fintech", platform: "ByBit", url: "https://shortet.com/bybit", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "RedotPay", url: "https://shortet.com/RedotPay", niche: "Digital Wallet", coupon: "avw8a" },
-  { category: "Fintech", platform: "Stripe", url: "https://stripe.com", niche: "Payment Gateway", coupon: "" },
-  { category: "Fintech", platform: "Wise", url: "https://shortet.com/Wise", niche: "Bank/Wallet", coupon: "" },
-  { category: "Fintech", platform: "Mercury", url: "https://shortet.com/Mercury", niche: "USA Bank", coupon: "" },
-  { category: "Fintech", platform: "WorldFirast", url: "https://shortet.com/Worldfirst", niche: "Global Bank", coupon: "" },
-  { category: "Fintech", platform: "Payeer", url: "https://shortet.com/Payeer", niche: "Digital Wallet", coupon: "" },
-  { category: "Fintech", platform: "Novel bank", url: "https://shortet.com/Novel", niche: "Bank/Wallet", coupon: "" },
-  { category: "Fintech", platform: "Gate", url: "https://shortet.com/Gate", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "Binance", url: "https://shortet.com/binance", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "BingX", url: "https://shortet.com/BingX", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "Bitget", url: "https://shortet.com/Bitget", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "OKX", url: "https://shortet.com/OKX", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "KuCoin", url: "https://shortet.com/Kucoin", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "HTX", url: "https://shortet.com/HTX", niche: "Crypto Wallet - Exchange P2P", coupon: "" },
-  { category: "Fintech", platform: "Trading View", url: "https://shortet.com/Tradingview", niche: "Trading Control Earning platform", coupon: "" },
-  // Email Marketing
-  { category: "Email Marketing", platform: "Instantly", url: "https://shortet.com/Instantly-ai", niche: "Get more clients by chatting to AI", coupon: "" },
-  { category: "Email Marketing", platform: "Kit", url: "https://kit.com/", niche: "Email Marketing", coupon: "" },
-  { category: "Email Marketing", platform: "transpond-capsulecrm", url: "https://get.capsulenow.io/elp9l1lse4le", niche: "Email Marketing CRM", coupon: "" },
-  { category: "Email Marketing", platform: "Apollo", url: "https://shortet.com/apollo", niche: "Outreach - Cold E-mail", coupon: "" },
-  { category: "Email Marketing", platform: "Adoutreach", url: "http//adoutreach.com/", niche: "Outreach - Cold E-mail", coupon: "" },
-  { category: "Email Marketing", platform: "Snov io", url: "https://snov.io?fp_ref=momo92", niche: "Sales Automation, leads, automate outreach", coupon: "" },
-  { category: "Email Marketing", platform: "Emelia", url: "https://emelia.io/?_by=mohamed35", niche: "Outreach - Cold E-mail", coupon: "" },
-  { category: "Email Marketing", platform: "Wiza", url: "https://wiza.co/?via=deeemoz", niche: "Outreach -B2B Database", coupon: "" },
-  { category: "Email Marketing", platform: "Leadswift", url: "https://leadswift.com/account/aff/go/mohamed_ahmed", niche: "automates your outreach,", coupon: "" },
-  { category: "Email Marketing", platform: "Wamy", url: "https://warmy.io?fpr=momo", niche: "Email Deliverability", coupon: "" },
-  // Dropshipping & POD
-  { category: "Dropshipping & POD", platform: "Ecomhunt", url: "https://www.ecomhunt.com/?afmc=41s", niche: "Dropshipping tool wininning products", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Etsy Shop", url: "https://www.etsyshop.ai/?ref=DEEEMOZ", niche: "Etsy product research & seo keyword tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Everbee", url: "https://www.everbee.io/?via=deeemoz", niche: "Etsy product research & seo keyword tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Alura", url: "https://www.alura.io/?via=Deeemoz", niche: "Etsy product research & seo keyword tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Salehoo", url: "https://78b6e0s6rh-j0k1mmgte2l0n2s.hop.clickbank.net/", niche: "Suppliers", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Dropship", url: "https://dropship.io/?fpr=mohamed27", niche: "Dropshipping tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Nichscraper", url: "https://www.nichescraper.com/?ref=deeemoz", niche: "Spy winning product", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Profitl", url: "https://profitl.app/register?via=Deeemoz", niche: "Dropshipping FBA tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Alidropship", url: "https://alidropship.com/?via=19584", niche: "Aliexpress dropshipping", coupon: "" },
-  { category: "Dropshipping & POD", platform: "CJ Dropshipping", url: "https://cjdropshipping.com/?token=444ac085-56bd-423c-88fd-9621f7dbbe36", niche: "Dropshipping tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "AMZ Monitor", url: "https://amzmonitor.com/", niche: "Amazon Products listing ool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Price archeive", url: "https://www.pricearchive.org/", niche: "AliexpressPrices", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Referral Candy", url: "https://try.referralcandy.com/referral-marketing-2023/?ref=mohamed57", niche: "Shopify tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Tiny Einstein", url: "https://www.tinyeinstein.ai/?fpr=deeemoz", niche: "AI Marketing manager Shopify", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Shippo", url: "https://try.shippo.com/9t23gu3f7wvv", niche: "Shipping Software", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Printful", url: "www.printful.com/a/msa", niche: "POD marketplace", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Printify", url: "https://try.printify.com/gkucbh235rb9", niche: "POD marketplace", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Merchdominator", url: "https://merchdominator.com/pricing?ref=zdyxmju", niche: "POD tools", coupon: "" },
-  { category: "Dropshipping & POD", platform: "My Design", url: "https://paykstrt.com/48873/145081", niche: "POD Design", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Minea", url: "https://app.minea.com/en/ads/meta-library?ref=momo54", niche: "Where winning products are found (Meta ads-TikTok-Pinterest)", coupon: "" },
-  { category: "Dropshipping & POD", platform: "CJ Dropshipping Shopify", url: "https://shortet.com/cjdropshipping", niche: "Dropshipping tool", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Listing View", url: "https://listingview.io/?via=momo", niche: "Get Etsy best Seller", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Mydesigns", url: "https://affiliates.mydesigns.io/32714/175050", niche: "Automate your POD & digital products", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Shapo", url: "https://shapo.io/?via=momo", niche: "Collect, manage, and share testimonials effortlessly.", coupon: "" },
-  { category: "Dropshipping & POD", platform: "Kopy", url: "https://kopy.app/?ref=Momo", niche: "Copy and Paste products to your Shopify Store in seconds", coupon: "" },
-  // Digital marketplace
-  { category: "Digital marketplace", platform: "Cartgy", url: "https://shortet.com/cartgy", niche: "Digital products & subscrobtions", coupon: "" },
-  { category: "Digital marketplace", platform: "Flippa", url: "https://shortet.com/Flippa", niche: "Sell & buy digital assets", coupon: "" },
-  { category: "Digital marketplace", platform: "Spplii", url: "https://splii.it/1839478902", niche: "Save on subscriptions by joining the world's largest co-subscription community", coupon: "" },
-  { category: "Digital marketplace", platform: "Gamsgo", url: "https://www.gamsgo.com/share/EqVFn", niche: "Shared premium subscription with lower price", coupon: "" },
-  { category: "Digital marketplace", platform: "A Themes", url: "https://athemes.com/?ref=2547", niche: "Digital WP Themes Marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Pond5", url: "https://www.pond5.com/?ref=mohamedsayedtel763", niche: "Digital Marketplace Videos Library Stock", coupon: "" },
-  { category: "Digital marketplace", platform: "Photosdeposit", url: "https://shortet.com/depositphotos", niche: "Digital Marketplace (Photos-Videos-Audio) Stock", coupon: "" },
-  { category: "Digital marketplace", platform: "Codester", url: "https://www.codester.com/?ref=deeemoz", niche: "Digital marketplace APP-Web-Themes Source code", coupon: "" },
-  { category: "Digital marketplace", platform: "Envato Market", url: "https://1.envato.market/deeemoz2023", niche: "Digital marketplace APP-Web-Themes Source code", coupon: "" },
-  { category: "Digital marketplace", platform: "Envato Elements", url: "https://1.envato.market/deeemoz", niche: "Digital Marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Gamsgo", url: "https://shortet.com/gamsgo", niche: "Digital Marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Envato Placeit", url: "https://1.envato.market/21VJ3G", niche: "Digital Marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Appsumo", url: "https://appsumo.8odi.net/k0JNXv", niche: "Busniess & marketing tools deals", coupon: "" },
-  { category: "Digital marketplace", platform: "Joinsecret", url: "https://www.joinsecret.com/?via=momo", niche: "Software deals Tech Lab SAS", coupon: "" },
-  { category: "Digital marketplace", platform: "Whop", url: "https://whop.com/?a=mortallyinterview3c7b", niche: "S/W & Courses", coupon: "" },
-  { category: "Digital marketplace", platform: "PLR", url: "https://www.plr.me/friends?h=zakGpP", niche: "PLR Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Big Product Store", url: "https://www.bigproductstore.com/dap/a/?a=47815", niche: "PLR Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Masterresellrights", url: "https://www.masterresellrights.com/", niche: "Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Apify", url: "https://shortet.com/apify", niche: "full‑stack platform for web scraping & API", coupon: "" },
-  { category: "Digital marketplace", platform: "ConvertAPI", url: "https://convertapi.com?ref=momo", niche: "High-Performance File Conversion API", coupon: "" },
-  { category: "Digital marketplace", platform: "Aejuice", url: "https://aejuice.com/?ref=Deeemoz", niche: "Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Codentheme", url: "https://codentheme.com?ref=Deeemoz", niche: "Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Creative fabrica", url: "https://www.creativefabrica.com/ref/4049305/", niche: "Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Piecex", url: "https://www.piecex.com?affiliate=669", niche: "Digital marketplace", coupon: "" },
-  { category: "Digital marketplace", platform: "Sellcodes", url: "https://sellcodes.com/s/6xLYFJ", niche: "Digital marketplace", coupon: "" },
-  // Design
-  { category: "Design", platform: "Prome", url: "https://www.promeai.com/?vsource=i_8w5ttqndp7", niche: "AI design", coupon: "" },
-  { category: "Design", platform: "Vondy", url: "https://vondy.com/?via=deeemoz", niche: "AI Apps", coupon: "" },
-  { category: "Design", platform: "Design Beast", url: "https://paykstrt.com/31302/145081", niche: "AI design", coupon: "" },
-  { category: "Design", platform: "Looka", url: "https://looka.partnerlinks.io/xb9ebcz6x26x", niche: "AI Logo creation", coupon: "" },
-  { category: "Design", platform: "Logo", url: "https://www.logoai.com/?coupon=namelizer", niche: "AI Logo creation", coupon: "" },
-  { category: "Design", platform: "Logome", url: "https://logomeai.partnerlinks.io/68grinfhldit", niche: "AI Logo creation", coupon: "" },
-  { category: "Design", platform: "Renderforest", url: "https://renderforest.pxf.io/3JzgJK", niche: "AI (Video-Logo-Website) design", coupon: "" },
-  { category: "Design", platform: "Canva", url: "https://canva.com", niche: "Digital design", coupon: "" },
-  { category: "Design", platform: "Mimicpc", url: "https://mimicpc.com?fpr=mohamed25", niche: "Open-Source AI Platform, Customizable & Affordable", coupon: "" },
-  { category: "Design", platform: "IdeaBuddy", url: "https://ideabuddy.com/?via=mohamed", niche: "AI Start up", coupon: "" },
-  { category: "Design", platform: "Lovart", url: "https://www.lovart.ai/home?referralCode=momo", niche: "Ai gent for design", coupon: "" },
-  { category: "Design", platform: "Open art", url: "openart.ai/home/?via=momo", niche: "Create Art or modify image with AI", coupon: "" },
-  { category: "Design", platform: "Sellerpic", url: "https://app.sellerpic.ai?fpr=momo37", niche: "AI fashion model & image & video generator", coupon: "" },
-  { category: "Design", platform: "Collov", url: "https://shortet.com/collov", niche: "Virtual Ai for Realestate & Homes", coupon: "" },
-  // AI Voices
-  { category: "AI Voices", platform: "Wisprflow", url: "https://ref.wisprflow.ai/mohamed-sayed", niche: "The voice-to-text AI that turns speech into clear, polished writing in every app", coupon: "" },
-  { category: "AI Voices", platform: "PlayHt", url: "https://play.ht/?via=aimomo", niche: "AI Voice Generator & Text to Speech AI Voice Platform", coupon: "" },
-  { category: "AI Voices", platform: "Elevenlabs", url: "https://try.elevenlabs.io/l5ebhi5lt87u", niche: "AI Voice Generator & Text to Speech AI Voice Platform", coupon: "" },
-  { category: "AI Voices", platform: "Vapi", url: "https://vapi.ai/?aff=momo", niche: "AI Voice Generator & Text to Speech AI Voice Platform", coupon: "" },
-  { category: "AI Voices", platform: "Retell", url: "https://www.retellai.com/", niche: "AI Voice Generator & Text to Speech AI Voice Platform", coupon: "" },
-  // Ai Videos & Image
-  { category: "Ai Videos & Image", platform: "Pollo", url: "https://pollo.ai?ref=mdjlzwy", niche: "The ultimate Ai videos & Image creation platform", coupon: "" },
-  { category: "Ai Videos & Image", platform: "Kie", url: "https://shortet.com/KieAi", niche: "Access the Best Video, Image & Music Models in One API", coupon: "" },
-  // AI Videos
-  { category: "AI Videos", platform: "Wayinvideo", url: "https://shortet.com/wayinvideo", niche: "Create & discover AI videos", coupon: "" },
-  { category: "AI Videos", platform: "Faceless Video", url: "https://faceless.video/?ref=mohamedxt", niche: "Create Faceless", coupon: "" },
-  { category: "AI Videos", platform: "Apob", url: "https://app.apob.ai/?via=momo", niche: "Create your Al Influencer", coupon: "" },
-  { category: "AI Videos", platform: "Riverside", url: "https://riverside.sjv.io/K03WBy", niche: "Create your best content yet", coupon: "" },
-  { category: "AI Videos", platform: "Golpoai", url: "https://video.golpoai.com/?via=momosa", niche: "AI-powered whiteboard video", coupon: "" },
-  { category: "AI Videos", platform: "Deepfake Swap", url: "https://deepfakesweb.com/?r=3813931", niche: "Deepfake AI Generator", coupon: "" },
-  { category: "AI Videos", platform: "Claid", url: "https://claid.ai/?via=mohamed55", niche: "AI E-Commerce & fashion photos", coupon: "" },
-  { category: "AI Videos", platform: "Weshop", url: "https://www.weshop.ai/?fpr=mohamed22", niche: "AI E-Commerce Creative Studio", coupon: "" },
-  { category: "AI Videos", platform: "Picjam", url: "https://www.picjam.ai/?via=mohamed-sayed", niche: "AI Physcial product photos & AI fashion", coupon: "" },
-  { category: "AI Videos", platform: "Video Ad Vault", url: "http//deeemoz.monsterrobot.zaxaa.com/s/3616643859792", niche: "AI Video ads", coupon: "" },
-  { category: "AI Videos", platform: "PostedApp", url: "https://app.postedapp.com/?via=mohamed", niche: "AI products video & UGC", coupon: "" },
-  { category: "AI Videos", platform: "Sjinn", url: "https://sjinn.ai/?via=momo", niche: "Your Best Image & Video Agent", coupon: "" },
-  { category: "AI Videos", platform: "Magiclight", url: "https://magiclight.ai/?code=mrkdb6i99", niche: "AI Video maker", coupon: "" },
-  { category: "AI Videos", platform: "Vheer", url: "https://vheer.com/?ref=mohamed85", niche: "Free Online AI Image Generator", coupon: "" },
-  { category: "AI Videos", platform: "Sodamarketing", url: "https://sodamarketing.ai/?ref=momo", niche: "Generate All Your Ads & Social Media Content", coupon: "" },
-  { category: "AI Videos", platform: "Syllabe", url: "https://syllaby.io/?via=momo89", niche: "Video Creation", coupon: "" },
-  { category: "AI Videos", platform: "hypernatural", url: "https://hypernatural.ai/?via=momo", niche: "AI Video creation", coupon: "" },
-  { category: "AI Videos", platform: "Fliki", url: "https://fliki.ai/?via=mohamed-sayed", niche: "AI Video creation", coupon: "" },
-  { category: "AI Videos", platform: "Pictory", url: "https://pictory.ai/?ref=mohamed49", niche: "AI Video creation", coupon: "" },
-  { category: "AI Videos", platform: "Invideo", url: "https://invideo.sjv.io/yqovdV", niche: "AI Avideos", coupon: "" },
-  { category: "AI Videos", platform: "VidIQ", url: "https://vidiq.com/deeemoz", niche: "AI Video optimization tool", coupon: "" },
-  { category: "AI Videos", platform: "Get Munch", url: "https://shortet.com/getmunch", niche: "AI video repurposing platform", coupon: "" },
-  { category: "AI Videos", platform: "Video Robot", url: "https://paykstrt.com/9690/145081", niche: "Video AI tool", coupon: "" },
-  { category: "AI Videos", platform: "Video Creator", url: "https://paykstrt.com/27513/145081", niche: "Video AI tool", coupon: "" },
-  { category: "AI Videos", platform: "ChatterPal", url: "https://paykstrt.com/14753/145081", niche: "ChatterPal", coupon: "" },
-  { category: "AI Videos", platform: "Video Robot VR2", url: "https://paykstrt.com/19004/145081", niche: "Video AI tool", coupon: "" },
-  { category: "AI Videos", platform: "DoodleMaker", url: "https://paykstrt.com/21278/145081", niche: "DoodleMaker", coupon: "" },
-  { category: "AI Videos", platform: "DoodleMaker2", url: "https://paykstrt.com/21462/145081", niche: "DoodleMaker2", coupon: "" },
-  { category: "AI Videos", platform: "Syllaby", url: "https://syllaby.io/?via=momo89", niche: "Turn any Idea into Faceless VideosAI Avatar VideosB-Roll Videos", coupon: "" },
-  { category: "AI Videos", platform: "AvatarBuilder", url: "https://paykstrt.com/24810/145081", niche: "AvatarBuilder", coupon: "" },
-  { category: "AI Videos", platform: "Vidyo", url: "https://vidyo.ai?via=409w3", niche: "AI Video long to short", coupon: "" },
-  { category: "AI Videos", platform: "Quso", url: "https://quso.ai?via=409w3", niche: "AI Video long to short", coupon: "" },
-  { category: "AI Videos", platform: "Videogen", url: "https://videogen.io?fpr=mohamed35", niche: "AI videos", coupon: "" },
-  { category: "AI Videos", platform: "Awesomescreenshot", url: "https://shortet.com/awesomescreenshot", niche: "Video screen recording & Editing", coupon: "" },
-  { category: "AI Videos", platform: "Tella", url: "https://refer.tella.com/mohamed-sayed", niche: "Video screen recording & Editing", coupon: "" },
-  { category: "AI Videos", platform: "OpusClip", url: "https://www.opus.pro/", niche: "Video clip into shorts/ one ong video, 10 viral clips", coupon: "" },
-  { category: "AI Videos", platform: "Captions", url: "captions.ai", niche: "AI videos", coupon: "" },
-  { category: "AI Videos", platform: "Videohunt", url: "https://shortet.com/wayin", niche: "AI videos", coupon: "" },
-  { category: "AI Videos", platform: "Autoshorts", url: "https://autoshorts.ai/?ref=momosa", niche: "AI videos", coupon: "" },
-  { category: "AI Videos", platform: "Renderforest", url: "https://renderforest.pxf.io/3JzgJK", niche: "AI Avideos", coupon: "" },
-  { category: "AI Videos", platform: "Vindoz", url: "https://www.vidnoz.com/?a_aid=686cfe6fa8f02", niche: "AI Avideos", coupon: "" },
-  { category: "AI Videos", platform: "Mootion", url: "https://storyteller.mootion.com/referral?code=eJrc7ggAh1z", niche: "Create motion graphic videos", coupon: "" },
-  { category: "AI Videos", platform: "Vmeg", url: "https://vmeg.ai?rc=zlSW2pNY", niche: "Ai powered video localization", coupon: "" },
-  { category: "AI Videos", platform: "Bith", url: "https://bith.ai/", niche: "Content creation made easy", coupon: "" },
-  // AI UGC
-  { category: "AI UGC", platform: "TagsShop", url: "https://tagshop.ai?via=momo", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Creatify", url: "https://creatify.ai/?via=momo", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Makereels", url: "https://makereels.ai/?via=momo-sa", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Heygen", url: "https://heygen.com/?sid=rewardful&via=momosa", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Topviews", url: "https://www.topview.ai/", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Arcads", url: "https://arcads.ai/?via=mohamed-sayed", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "MakeUGC", url: "https://www.makeugc.ai/?ref=mohamed", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Adcreative", url: "https://free-trial.adcreative.ai/lqp6txbhnoa6", niche: "AI UGC", coupon: "" },
-  { category: "AI UGC", platform: "Veed", url: "https://veed.cello.so/PiYocZYTYQ1", niche: "AI UGC", coupon: "" },
-  // AI Tools
-  { category: "AI Tools", platform: "Skywork", url: "https://shortet.com/skywork", niche: "Skywork Super Agents", coupon: "" },
-  { category: "AI Tools", platform: "Gravitywrite", url: "https://gravitywrite.com/?via=momo", niche: "Create Content 10X Faster", coupon: "" },
-  { category: "AI Tools", platform: "Chatfuel", url: "https://chatfuel.com/?fpr=momo", niche: "AI Agents for automated sales", coupon: "" },
-  { category: "AI Tools", platform: "Wonderchat", url: "https://wonderchat.io/?via=momo", niche: "AI Support Agents chatbot builder for your website", coupon: "" },
-  { category: "AI Tools", platform: "laxis", url: "https://get.laxis.com/l36gor8s8ptl", niche: "AI Sales Copilot", coupon: "" },
-  { category: "AI Tools", platform: "Botnation", url: "https://part.botnation.ai/BN-MGDC0S", niche: "AI Agent Chatbot", coupon: "" },
-  { category: "AI Tools", platform: "Orimon", url: "https://orimon.ai/?ref=ztvmnzb5", niche: "AI chatbot Builders", coupon: "" },
-  { category: "AI Tools", platform: "Wati", url: "https://www.wati.io/?ref=ndvknwz", niche: "AI chatbot Builders", coupon: "" },
-  { category: "AI Tools", platform: "stammer", url: "https://stammer.ai/?via=mohamed", niche: "AI chatbot Builders", coupon: "" },
-  { category: "AI Tools", platform: "Avian", url: "https://avian.io/?via=momo", niche: "AI Data chatbots", coupon: "" },
-  { category: "AI Tools", platform: "Gravitywrite", url: "https://gravitywrite.com/?via=deeemoz", niche: "AI writing assistant", coupon: "" },
-  { category: "AI Tools", platform: "Human Bot Funnel", url: "https://paykstrt.com/45641/145081", niche: "AI Human Bot Funnel", coupon: "" },
-  { category: "AI Tools", platform: "BotSailor", url: "https://2tinyurl.com/?aff_track=3530353136", niche: "AI Chatbot for WhatsApp sales channel", coupon: "" },
-  { category: "AI Tools", platform: "Insightfulpipe", url: "https://insightfulpipe.com?atp=momo", niche: "MCP Servers & Connectors", coupon: "" },
-  { category: "AI Tools", platform: "i10x", url: "https://i10x.ai/", niche: "All your AI Needs in one Place", coupon: "" },
-  { category: "AI Tools", platform: "Claude", url: "https://claude.ai/referral/kOoRtNzkSg", niche: "Claude LLM", coupon: "" },
-  { category: "AI Tools", platform: "Manus", url: "https://manus.im/invitation/XDECAJVSG9VE", niche: "Manus LLMs", coupon: "" },
-  { category: "AI Tools", platform: "A/B Testing", url: "https://abtesting.ai/?via=deeemoz", niche: "AI A/B Testing tool", coupon: "" },
-  { category: "AI Tools", platform: "Art Shop", url: "https://aiartshop.com/?ref=cYmUGbAcUr37IP", niche: "AI Art tool", coupon: "" },
-  { category: "AI Tools", platform: "Sheet", url: "https://sheetai.app/?via=mohamed-sayed", niche: "AI Busniess tool", coupon: "" },
-  { category: "AI Tools", platform: "Pinecobe", url: "http//pinecone.io/", niche: "AI Memory tool", coupon: "" },
-  { category: "AI Tools", platform: "Browse", url: "https://browse.ai/?via=deeemoz", niche: "AI Ropotic bot", coupon: "" },
-  { category: "AI Tools", platform: "Tome Teller", url: "https://ideabuddy.com/?via=mohamed", niche: "AI Storytelling", coupon: "" },
-  { category: "AI Tools", platform: "tools Arena", url: "https://aitoolsarena.com/", niche: "AI Tools blogs", coupon: "" },
-  { category: "AI Tools", platform: "EduBirdie", url: "https://edubirdie.com/referral/516c75652f4e79343355633d", niche: "AI Writing assest", coupon: "" },
-  { category: "AI Tools", platform: "Jasper", url: "https://jasper.ai/?utm_source=partner&fpr=ai-money", niche: "AI writing assistant", coupon: "" },
-  { category: "AI Tools", platform: "WordHero", url: "https://wordhero.co/?via=deeemoz", niche: "AI writing assistant", coupon: "" },
-  { category: "AI Tools", platform: "Writesonic", url: "https://writesonic.com/?via=mohamed33", niche: "AI writing assistant", coupon: "" },
-  { category: "AI Tools", platform: "Descript", url: "https://www.descript.com/?lmref=Rr6Cdw", niche: "AI Audio tool", coupon: "" },
-  { category: "AI Tools", platform: "Gotranscript", url: "https://gotranscript.com/r/4670481", niche: "AI Audio tool", coupon: "" },
-  { category: "AI Tools", platform: "ChatPDF", url: "https://www.chatpdf.com/?via=mohamed-sayed", niche: "AI PDF chatbot", coupon: "" },
-  { category: "AI Tools", platform: "Human talk", url: "https://paykstrt.com/43678/145081", niche: "AI Audio human", coupon: "" },
-  { category: "AI Tools", platform: "Toons ai Funnels", url: "https://paykstrt.com/46773/145081", niche: "AI Animated Videos", coupon: "" },
-  { category: "AI Tools", platform: "SketchGenius Funnel", url: "https://paykstrt.com/33577/145081", niche: "AI SketchGenius Funnel", coupon: "" },
-  { category: "AI Tools", platform: "Sketch Persinalizer", url: "https://paykstrt.com/44740/145081", niche: "AI Sketch Persinalizer", coupon: "" },
-  { category: "AI Tools", platform: "HumanPal Funnel", url: "https://paykstrt.com/41479/145081", niche: "AI HumanPal Funnel", coupon: "" },
-  { category: "AI Tools", platform: "QuillBot", url: "https://try.quillbot.com/cztbzgeudjiq", niche: "Ai detection", coupon: "" },
-  { category: "AI Tools", platform: "Zonkafeedback", url: "https://get.zonkafeedback.com/o9n0i8o9vtx1", niche: "AI Feedback Intelligence", coupon: "" },
-  // Publisher & Advertising
-  { category: "Publisher & Advertising", platform: "Partnerstack", url: "https://try.partnerstack.com/8dtcz1u0lspf", niche: "Affiliates publisher & advertiser Vendors platform", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Vcommission", url: "https://tools.vcommission.com/affiliates/signup?ref=657eab841f92f605f5c6fdaa", niche: "Affiliates publisher & advertiser Vendors platform", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Affiliateprogramdb", url: "https://affiliateprogramdb.goaffpro.com/create-account?ref=U6cah-ejL4za5-", niche: "Affiliates publisher & advertiser Vendors platform", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Saasaffiliate", url: "https://saasaffiliate.com/", niche: "Affiliates publisher & advertiser Vendors platform", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Start App", url: "https://shortet.com/start-app", niche: "Google Admob alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Adcash", url: "https://adcash.myadcash.com/register?prmid=BZUR7FFY6Q", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Adsterra", url: "https://beta.publishers.adsterra.com/referral/yKTXyWw6Z7", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Ezoic", url: "https://ezoic.com/?tap_a=6182-5778c2&tap_s=1686444-442fd0", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Adspyglass", url: "https://app.adspyglass.com/?u=87346", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "hilltopads", url: "https://hilltopads.com/?ref=219879", niche: "Best ad network and traffic monetization platform", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Monetag", url: "https://monetag.com/?ref_id=n5ZH", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Roller ads", url: "https://my.rollerads.com/ref/6a41d7e60-ab1fe7d946d68", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Popcash", url: "https://popcash.net/register/470321", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Linkvertise", url: "https://publisher.linkvertise.com/ac/945564", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Click Adilla", url: "https://publishers.clickadilla.com/signup?ref=7T5hyC", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Evadav", url: "https://refadav.com/?ref=t3JuU-Z4nCRJRUM0SpwwCJfY9kXyCeqh", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Click Adu", url: "https://www.clickadu.com/?rfd=T8tJ", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Popads", url: "https://www.popads.net/users/refer/3440657", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "ZPush", url: "https://zpush.biz/?ref=4c693891", niche: "Google Ads & Adsense alternative", coupon: "" },
-  { category: "Publisher & Advertising", platform: "Amwaly", url: "https://amwaly.com/register", niche: "Google Ads Adsense alternative", coupon: "163893" },
-  // Travel Business
-  { category: "Travel Business", platform: "Travel Code", url: "https://join.travel-code.com/iu0okpm8qtfn", niche: "manage Travel company", coupon: "" },
-  // Travel Affiliates
-  { category: "Travel Affiliates", platform: "Travelpayouts", url: "https://shortet.com/Travelpayouts", niche: "Travel Affiliates Website", coupon: "" },
+export interface DigitalPartner {
+  category: string;
+  platform: string;
+  url: string;
+  niche: string;
+  coupon: string;
+}
+
+export const digitalPartnersData: DigitalPartner[] = [
+  {
+    "category": "Business Company Formation",
+    "platform": "Doola",
+    "url": "https://shortet.com/doola",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Clemta",
+    "url": "https://shortet.com/clemta",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Go Nomad HQ",
+    "url": "https://shortet.com/Go-Nomad-HQ",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "ITIN",
+    "url": "https://shortet.com/theitin",
+    "niche": "Company formation in USA",
+    "coupon": "SAYED50"
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Startglobal",
+    "url": "https://shortet.com/startglobal",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Privatily",
+    "url": "https://shortet.com/privatily",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Tailorbrands",
+    "url": "https://shortet.com/tailorbrands",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Startfleet",
+    "url": "https://shortet.com/startfleet",
+    "niche": "Company formation in USA",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in UK",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Firstbase",
+    "url": "https://shortet.com/firstbase",
+    "niche": "Company formation in UK",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "1stFormations",
+    "url": "https://shortet.com/1st-formations",
+    "niche": "Company formation in UK",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Privatily",
+    "url": "https://shortet.com/privatily",
+    "niche": "Company formation in UK",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Rapid Formation",
+    "url": "https://shortet.com/rapid-formations",
+    "niche": "Company formation in UK",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Go Nomad HQ",
+    "url": "https://shortet.com/Go-Nomad-HQ",
+    "niche": "Company formation in UK",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Estonia - 1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in Estonia",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Finland - 1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in Finland",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Sweden - 1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in Sweden",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Latvia - 1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in Latvia",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Lithuania - 1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in Lithuania",
+    "coupon": ""
+  },
+  {
+    "category": "Business Company Formation",
+    "platform": "Ireland - 1office",
+    "url": "https://shortet.com/1office",
+    "niche": "Company formation in Ireland",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Twin",
+    "url": "https://shortet.com/Twin",
+    "niche": "Automate Anything (the Ai Company Builder)",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Flyhermes",
+    "url": "https://shortet.com/Flyhermes",
+    "niche": "our AI Agent — Zero Setup Required",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Cloud Campaign",
+    "url": "https://shortet.com/Cloud-Campaign",
+    "niche": "AI-Powered Social Media Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Ocoya",
+    "url": "https://shortet.com/Ocoya",
+    "niche": "Social media management. Using AI",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Chatbase",
+    "url": "https://shortet.com/Chatbase",
+    "niche": "AI agents for magical customer experiences",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Agent Router",
+    "url": "https://shortet.com/agentrouter",
+    "niche": "Agent Router",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Make",
+    "url": "https://shortet.com/Make",
+    "niche": "AI Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Pabbly",
+    "url": "https://shortet.com/pabbly",
+    "niche": "Busniess Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Flowise",
+    "url": "https://shortet.com/Flowise",
+    "niche": "Build AI Agents Visually",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Scispace",
+    "url": "https://shortet.com/Scispace",
+    "niche": "Ai researcher Agent",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Ottokit",
+    "url": "https://shortet.com/Ottokit",
+    "niche": "Build Automations",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Albato",
+    "url": "https://shortet.com/yv",
+    "niche": "Automate smarter with no-code and AI",
+    "coupon": "GIMME20%OFF"
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Relay",
+    "url": "https://shortet.com/Relay",
+    "niche": "Build AI agents",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "GHL",
+    "url": "https://shortet.com/GHL",
+    "niche": "Marketing Automation Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Axiom",
+    "url": "https://shortet.com/Axiom",
+    "niche": "Automation Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Wiza",
+    "url": "https://shortet.com/Wiza",
+    "niche": "Automation Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Phantombuster",
+    "url": "https://shortet.com/phantombuster",
+    "niche": "Busniess Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Flocksocial",
+    "url": "https://shortet.com/FlockSocial",
+    "niche": "Instagram grow real audinces",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Repurpose",
+    "url": "https://shortet.com/Repurpose",
+    "niche": "Repost SMM tool",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Postiz",
+    "url": "https://shortet.com/Postiz",
+    "niche": "Social schuduling",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Post planner",
+    "url": "https://shortet.com/Post-planner",
+    "niche": "Schedule the best content in your industry",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Closer",
+    "url": "https://shortet.com/closerx",
+    "niche": "Ai calling Sales agent",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Blotato",
+    "url": "https://shortet.com/Blotato",
+    "niche": "Social schuduling",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "UploadPost",
+    "url": "https://shortet.com/upload-post",
+    "niche": "Social Media API, One Call, Every Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Postiz",
+    "url": "https://shortet.com/Yn",
+    "niche": "Social media scheduling tool",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Akool",
+    "url": "https://shortet.com/Akool",
+    "niche": "Premium AI Video & avatar suite for businesses",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Typefully",
+    "url": "https://shortet.com/Typefully",
+    "niche": "Social media tool",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Nuelink",
+    "url": "http//nuelink.com/?via=deeemoz",
+    "niche": "Social Media Scheduling and Automation Tool",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Systeme",
+    "url": "https://shortet.com/systeme",
+    "niche": "All-In-One Marketing Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "ShipFast",
+    "url": "https://shortet.com/ShipFast",
+    "niche": "Build Your AI Startup",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Lexilexi",
+    "url": "https://shortet.com/Lexilexi",
+    "niche": "Run Meta Ads Like a Pro",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Markifact",
+    "url": "https://shortet.com/Markifact",
+    "niche": "AI Automation. Built for Marketers",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Mindpal",
+    "url": "https://shortet.com/mindpal",
+    "niche": "Build Your AI Startup",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Novamira",
+    "url": "https://shortet.com/Novamira",
+    "niche": "Your AI agent builds inside your WordPress.",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Shortet",
+    "url": "https://Shortet.com",
+    "niche": "Short URL, BIO & QR Code for free & APIs",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Relevance",
+    "url": "https://shortet.com/Relevance",
+    "niche": "Build teams of AI agents",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Gumloop",
+    "url": "https://shortet.com/Gumloop",
+    "niche": "Automate any workflow with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "n8n",
+    "url": "https://shortet.com/n8n",
+    "niche": "AI Automation workflow platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Zapier",
+    "url": "https://shortet.com/Zapier",
+    "niche": "Build your Ai workforce",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Workato",
+    "url": "https://shortet.com/Workato",
+    "niche": "AI Automation workflow platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Uipath",
+    "url": "https://shortet.com/Uipath",
+    "niche": "Enterprise Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Power Automate",
+    "url": "https://shortet.com/Power-Automate",
+    "niche": "Enterprise Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Automation Anywhere",
+    "url": "https://shortet.com/Automation-Anywhere",
+    "niche": "Enterprise Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Pipedream",
+    "url": "https://shortet.com/Pipedream",
+    "niche": "AI Automation workflow platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Tray",
+    "url": "https://shortet.com/Tray",
+    "niche": "Tray AI",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "SIM",
+    "url": "https://shortet.com/SIM",
+    "niche": "SIM AI",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Empler",
+    "url": "https://shortet.com/Empler",
+    "niche": "No-code & Multi-agent AI Automation Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Twin",
+    "url": "https://shortet.com/twin-AI",
+    "niche": "Automate Anything (the Ai Company Builder)",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Emergent",
+    "url": "https://shortet.com/GetEmergen",
+    "niche": "Build Full-Stack Web & Mobile Apps in minutes",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Lovable",
+    "url": "https://shortet.com/Lovable",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Blackbox",
+    "url": "https://shortet.com/Blackbox",
+    "niche": "AI no code APP & web builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Base44",
+    "url": "https://shortet.com/Base44",
+    "niche": "build fully-functional apps",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Atoms dev",
+    "url": "https://shortet.com/atoms-dev",
+    "niche": "Turn ideas into products that sell",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Rork",
+    "url": "https://shortet.com/Rork",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Aitmpl",
+    "url": "https://shortet.com/Aitmpl",
+    "niche": "Claude code template",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "APPGen",
+    "url": "https://shortet.com/APPGen",
+    "niche": "Build full mobile apps with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Blink",
+    "url": "https://shortet.com/Blink",
+    "niche": "Turn any idea into a beautiful, working app in seconds",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Builder IO",
+    "url": "https://shortet.com/Builder-IO",
+    "niche": "Visual deployment platform",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Buildnatively",
+    "url": "https://shortet.com/Buildnatively",
+    "niche": "Convert website into a mobile APP",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "FlutterFlow",
+    "url": "https://shortet.com/flutterflow",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "HeyBoss",
+    "url": "https://shortet.com/HeyBoss",
+    "niche": "Launch Your Business in 10 Minutes with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Medo Dev",
+    "url": "https://shortet.com/Medo-Dev",
+    "niche": "Build full stack apps by AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "OnSpace",
+    "url": "https://shortet.com/OnSpace",
+    "niche": "OnSpace AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Tempo",
+    "url": "https://shortet.com/Tempo",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Twinr",
+    "url": "https://shortet.com/Twinr",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "YouWare",
+    "url": "https://shortet.com/YouWare",
+    "niche": "AI Vibe Coding Community",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Convex",
+    "url": "https://shortet.com/convex",
+    "niche": "Open-source reactive database for app developers.",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Emergent",
+    "url": "https://shortet.com/Emergent",
+    "niche": "AI Full Stack APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Fourthwall",
+    "url": "https://shortet.com/Fourthwall",
+    "niche": "E-Commerce Shop (POD-Digital-Physical) building",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Passion",
+    "url": "https://shortet.com/Passion",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Purelanderas",
+    "url": "https://shortet.com/Purelanderas",
+    "niche": "CPA Landing page creation",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Softlite",
+    "url": "https://shortet.com/Softlite",
+    "niche": "Clone websites to your Page Builders in with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Softr",
+    "url": "https://shortet.com/Softr",
+    "niche": "Create Web,APP from Airtable& Sheets",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Stacksmarket",
+    "url": "https://shortet.com/Stacksmarket",
+    "niche": "Digitize Your Entire-Business with AI in One Click",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Stunning",
+    "url": "https://shortet.com/Stunning",
+    "niche": "Build websites by chatting with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "EasySite",
+    "url": "https://shortet.com/EasySite",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Code design",
+    "url": "https://shortet.com/Code-design",
+    "niche": "AI Website Builder Build, Host & Export Websites",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Copycoder",
+    "url": "https://shortet.com/Copycoder",
+    "niche": "Create powerful prompts for AI coding tools",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Andromo",
+    "url": "https://shortet.com/Andromo",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Appcreatore24",
+    "url": "https://shortet.com/Appcreatore24",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Appsgeyser",
+    "url": "https://shortet.com/Appsgeyser",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Appypie",
+    "url": "https://shortet.com/appypie",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "blazr",
+    "url": "https://shortet.com/blazr",
+    "niche": "E-Commerce Shop",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Claude",
+    "url": "https://shortet.com/Claude",
+    "niche": "Web building free",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Easyorder",
+    "url": "https://shortet.com/easy-orders",
+    "niche": "Build your store in 5 minutes",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Lovablehtml",
+    "url": "https://shortet.com/lovablehtml",
+    "niche": "Fix Lovable SEO & Ai visbility",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Manus",
+    "url": "https://shortet.com/Manus",
+    "niche": "Manus LLMs",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Mobeasy",
+    "url": "https://shortet.com/Mobeasy",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Mobella",
+    "url": "https://shortet.com/Mobella",
+    "niche": "No Code Apps builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Animapp",
+    "url": "https://shortet.com/Animapp",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Augmentcode",
+    "url": "https://shortet.com/Augmentcode",
+    "niche": "AI vibe coding",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Autocoder",
+    "url": "https://shortet.com/Autocoder",
+    "niche": "All-in-One Code Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Bolt",
+    "url": "https://shortet.com/Bolt",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Chef Convex",
+    "url": "https://shortet.com/Chef-Convex",
+    "niche": "AI vibe coding",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Cursor",
+    "url": "https://shortet.com/Cursor",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Deepsite",
+    "url": "https://shortet.com/Deepsite",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "DreamFlow",
+    "url": "https://shortet.com/DreamFlow",
+    "niche": "AI Full Stack APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Firbase Studio",
+    "url": "https://shortet.com/Firbase-Studio",
+    "niche": "The full Stack AI workspace",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Gadget",
+    "url": "https://shortet.com/Gadget",
+    "niche": "Build and run web apps in hours, with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Getmocha",
+    "url": "https://shortet.com/Getmocha",
+    "niche": "Bring your app ideas to life using ai",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Kimi",
+    "url": "https://shortet.com/Kimi",
+    "niche": "AI Full Stack APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Leap",
+    "url": "https://shortet.com/Leap",
+    "niche": "AI Full Stack APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "MGX dev",
+    "url": "https://shortet.com/MGX-dev",
+    "niche": "AI Full Stack Web APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Replit",
+    "url": "https://shortet.com/Replit",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Rocket",
+    "url": "https://shortet.com/Rocket",
+    "niche": "AI Full Stack APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Solid",
+    "url": "https://shortet.com/Solid",
+    "niche": "Build real Web Apps with AI, not lovable toys",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "TheWebops",
+    "url": "https://shortet.com/TheWebops",
+    "niche": "Build a Stunning Website in Minutes with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Tile dev",
+    "url": "https://shortet.com/Tile-dev",
+    "niche": "AI Full Stack APP builder",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Trae",
+    "url": "https://shortet.com/Trae",
+    "niche": "AI vibe coding",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "V0",
+    "url": "https://v0.dev/",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Vitara",
+    "url": "https://shortet.com/Vitara",
+    "niche": "AI vibe coding",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Warp",
+    "url": "https://shortet.com/Warp",
+    "niche": "AI vibe coding",
+    "coupon": ""
+  },
+  {
+    "category": "Vibe Coding",
+    "platform": "Windsurve",
+    "url": "https://shortet.com/Windsurve",
+    "niche": "AI No Code AI-Full stack AI",
+    "coupon": ""
+  },
+  {
+    "category": "Telecommunication",
+    "platform": "esim me",
+    "url": "https://shortet.com/esim",
+    "niche": "eSIM your eSIM anywhare anytime",
+    "coupon": ""
+  },
+  {
+    "category": "Telecommunication",
+    "platform": "SMS Fast",
+    "url": "https://shortet.com/smsfast",
+    "niche": "Buy a virtual phone number & esim",
+    "coupon": ""
+  },
+  {
+    "category": "Telecommunication",
+    "platform": "Bnesim",
+    "url": "https://shortet.com/Bnesim",
+    "niche": "Bnesim your eSIM anywhare anytime",
+    "coupon": ""
+  },
+  {
+    "category": "Telecommunication",
+    "platform": "Airalo",
+    "url": "https://shortet.com/airalo",
+    "niche": "Get EUR 3.00 € off their first purchase",
+    "coupon": "MOHAME30889"
+  },
+  {
+    "category": "Managements",
+    "platform": "Tally",
+    "url": "https://shortet.com/Tally",
+    "niche": "Form & Survey creation",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Clickup",
+    "url": "https://shortet.com/clickup",
+    "niche": "One AI workspace for projects, knowledge, chat, and more.",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Fillout",
+    "url": "https://shortet.com/Fillout",
+    "niche": "Form & Survey creation",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Airtable",
+    "url": "https://shortet.com/Airtable",
+    "niche": "WorkFlow/Workspace",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Hive",
+    "url": "https://shortet.com/Hive",
+    "niche": "WorkFlow/Workspace",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Monday",
+    "url": "http//monday.com/",
+    "niche": "WorkFlow/Workspace",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Notion",
+    "url": "https://shortet.com/Notion",
+    "niche": "WorkFlow/Workspace",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Startinfinity",
+    "url": "https://shortet.com/Startinfinity",
+    "niche": "WorkFlow/Workspace",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Lemonsqueezy",
+    "url": "https://shortet.com/Lemonsqueezy",
+    "niche": "Saas Managments",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Clickera",
+    "url": "https://shortet.com/Clickera",
+    "niche": "Laning pages Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Task Magic",
+    "url": "https://shortet.com/Task-Magic",
+    "niche": "Million Task magic",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Contractor Foreman",
+    "url": "https://shortet.com/Contractor-Foreman",
+    "niche": "Construction Software",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Zoho",
+    "url": "https://shortet.com/Zoho",
+    "niche": "CRM & Automation",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Tidio",
+    "url": "https://shortet.com/Tidio",
+    "niche": "AI Customer services",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Bing",
+    "url": "https://shortet.com/Bing",
+    "niche": "Earn rewards with Microsoft",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "TikTok",
+    "url": "https://shortet.com/TikTok",
+    "niche": "Buy & charge coins to send Gifts with tikTok",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Optery",
+    "url": "https://shortet.com/Optery",
+    "niche": "Remove your home address, phone and other private info from Google, and 640+ sites",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Bright data",
+    "url": "https://shortet.com/Bright-data",
+    "niche": "Proxies & web scraping",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Firecrawl",
+    "url": "https://shortet.com/Firecrawl",
+    "niche": "Web scraping for devs & agents",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "File upload",
+    "url": "https://shortet.com/File-upload",
+    "niche": "Earn money from uploading files",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Mega4upload",
+    "url": "https://shortet.com/Mega4upload",
+    "niche": "Earn money from uploading files",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Wetracked",
+    "url": "https://shortet.com/Wetracked",
+    "niche": "Track your ads",
+    "coupon": ""
+  },
+  {
+    "category": "Managements",
+    "platform": "Up-4ever",
+    "url": "https://shortet.com/Up-4ever",
+    "niche": "Earn money from uploading files",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Cloudways",
+    "url": "https://shortet.com/Cloudways",
+    "niche": "Web cloud hosting",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Nameceap",
+    "url": "https://shortet.com/namecheap",
+    "niche": "Web, Domain & cloud hosting",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Smarterasp",
+    "url": "https://shortet.com/Smarter-ASP",
+    "niche": "Professional ASP.NET hosting with unlimited space and bandwidth and email.",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "FastComet",
+    "url": "https://shortet.com/FastComet",
+    "niche": "Web hosting",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "SSLS",
+    "url": "https://shortet.com/ssls",
+    "niche": "Buy Cheap SSl certificates",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/Hostinger",
+    "niche": "Web & Cloud hosting",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/KR",
+    "niche": "Business Domain name search",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/YM",
+    "niche": "Horizons Go from idea to a web app or site – in minutes",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/uU",
+    "niche": "Business Emails",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/By",
+    "niche": "Build applications, host websites, or play games with VPS",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/KV",
+    "niche": "Protect your accounts and websites with dark web monitoring",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/Hv",
+    "niche": "n8n VPS hosting",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/hZ",
+    "niche": "Up to 75% off Hosting for WordPress",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostinger",
+    "url": "https://shortet.com/mc",
+    "niche": "Hostinger AI tools",
+    "coupon": "momosa"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hostingial",
+    "url": "https://shortet.com/Hostingial",
+    "niche": "Establish Your Business Presence On The Internet.",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Plesk",
+    "url": "https://shortet.com/Plesk",
+    "niche": "Web hosting",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Strikingly",
+    "url": "https://shortet.com/Strikingly",
+    "niche": "Web domains , hosting & Emails",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Hetacloud",
+    "url": "https://shortet.com/Hetacloud",
+    "niche": "Web domains , hosting & Emails",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Whmcs",
+    "url": "https://shortet.com/Whmcs",
+    "niche": "Web domains , hosting & Emails",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Cookieyes",
+    "url": "https://shortet.com/Cookieyes",
+    "niche": "Web",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Clawcloudrun",
+    "url": "https://shortet.com/Clawcloudrun",
+    "niche": "VPS Clouds Run & deloy",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "RDP Hostings",
+    "url": "https://shortet.com/RDP-Hostings",
+    "niche": "RDP Hosting",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Data base Mart",
+    "url": "https://shortet.com/Data-base-Mart",
+    "niche": "RDP Hosting",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "ExpressVPN",
+    "url": "https://shortet.com/expressrefer",
+    "niche": "VPN",
+    "coupon": ""
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Proxy seller",
+    "url": "https://shortet.com/Proxy-seller",
+    "niche": "VPN Proxy",
+    "coupon": "SELUZB_675610"
+  },
+  {
+    "category": "Web Hosting",
+    "platform": "Proxy sale",
+    "url": "https://shortet.com/Proxy-sale",
+    "niche": "VPN Proxy",
+    "coupon": "IKZvgpF6pz"
+  },
+  {
+    "category": "Domains",
+    "platform": "Sedo",
+    "url": "https://shortet.com/sedo",
+    "niche": "Find Your Domians",
+    "coupon": ""
+  },
+  {
+    "category": "Domains",
+    "platform": "Atom",
+    "url": "https://shortet.com/atom",
+    "niche": "Find Your Domians",
+    "coupon": ""
+  },
+  {
+    "category": "Domains",
+    "platform": "Nameshift",
+    "url": "https://shortet.com/nameshift",
+    "niche": "Find Your Domians",
+    "coupon": ""
+  },
+  {
+    "category": "Domains",
+    "platform": "Namesilo",
+    "url": "https://shortet.com/namesilo",
+    "niche": "Find Your Domians",
+    "coupon": ""
+  },
+  {
+    "category": "Domains",
+    "platform": "Dynadot",
+    "url": "https://shortet.com/Dynadot",
+    "niche": "Find Your Domians",
+    "coupon": "717uk9N7ewK71"
+  },
+  {
+    "category": "Domains",
+    "platform": "Dotdb",
+    "url": "https://shortet.com/dotdb",
+    "niche": "Find Your Domians",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Onlinker",
+    "url": "https://shortet.com/Onlinker",
+    "niche": "Get Leads & Website Traffic on Autopilot",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Flowlinesmm",
+    "url": "https://shortet.com/Flowlinesmm",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Naizop",
+    "url": "https://shortet.com/Naizop",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Peakerr",
+    "url": "https://shortet.com/Peakerr",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Justanotherpanel",
+    "url": "https://shortet.com/Justanotherpanel",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "smmfollows",
+    "url": "https://shortet.com/smmfollows",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "SMMPakPanel",
+    "url": "https://shortet.com/SMMPakPanel",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Growfollows",
+    "url": "https://shortet.com/Growfollows",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Onafollow",
+    "url": "https://shortet.com/Onafollow",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Secsers",
+    "url": "https://shortet.com/Secsers",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Smmino",
+    "url": "https://shortet.com/Smmino",
+    "niche": "Digital marketing SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Soc Panel SMM",
+    "url": "https://shortet.com/Soc-Panel-SMM",
+    "niche": "Soc Panel SMM",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Minds",
+    "url": "https://shortet.com/Minds",
+    "niche": "Social Media Videos",
+    "coupon": ""
+  },
+  {
+    "category": "SMM Panel",
+    "platform": "Rumble",
+    "url": "https://shortet.com/Rumble",
+    "niche": "Social Media Videos",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "HeyKeyword",
+    "url": "https://shortet.com/HeyKeyword",
+    "niche": "AI brand monitoring & Mention tracking",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Notifier SO",
+    "url": "http//notifier.so/?via=momo",
+    "niche": "Leads Generation Keyword searching",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "SEO Store",
+    "url": "https://shortet.com/SEO-Store",
+    "niche": "Backlink SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Link Finder",
+    "url": "http//link-finder.net/?via=momo699",
+    "niche": "Ai find link for your SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "SigmaSEO",
+    "url": "https://shortet.com/SigmaSEO",
+    "niche": "SEO content",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Diginius",
+    "url": "https://shortet.com/Diginius",
+    "niche": "Sales & marketing",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Babylon",
+    "url": "https://shortet.com/Babylon-Traffic",
+    "niche": "Website Traffic",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "diib",
+    "url": "https://shortet.com/diib",
+    "niche": "Website Traffic+SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Money Robot SEO SW",
+    "url": "https://shortet.com/Money-Robot",
+    "niche": "Website SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Link Collider",
+    "url": "https://shortet.com/Link-Collider",
+    "niche": "All Traffic",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Peakerr",
+    "url": "https://shortet.com/nq",
+    "niche": "All Traffic",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "vitasmm",
+    "url": "https://vitasmm.store/ref/657ed",
+    "niche": "All services",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Traffup",
+    "url": "https://shortet.com/Traffup",
+    "niche": "All Traffic",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "10K Hits",
+    "url": "https://shortet.com/10K-Hits",
+    "niche": "Website Traffic",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Traffic Exchange",
+    "url": "https://shortet.com/Traffic-Exchange",
+    "niche": "Solo Traffic",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Blog Clicker",
+    "url": "http//blogclicker.com/?username=Deeemoz",
+    "niche": "Solo Blog",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Udimi",
+    "url": "https://shortet.com/Udimi",
+    "niche": "Solo Ads",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "madgicx",
+    "url": "https://shortet.com/madgicx",
+    "niche": "AI Media buyer-AI Ads",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "SEO Store",
+    "url": "https://shortet.com/SEO-Store",
+    "niche": "SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "SEOClerks",
+    "url": "https://shortet.com/SEOClerks",
+    "niche": "Digital SEO Marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Babylon Traffic",
+    "url": "https://shortet.com/Babylon-Traffic",
+    "niche": "SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "diib",
+    "url": "https://shortet.com/diib",
+    "niche": "SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Udimi",
+    "url": "https://shortet.com/Udimi",
+    "niche": "SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Serpclix",
+    "url": "https://shortet.com/Serpclix",
+    "niche": "Traffic SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Mangools",
+    "url": "https://shortet.com/Mangools",
+    "niche": "SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Money Robot",
+    "url": "https://shortet.com/Money-Robot",
+    "niche": "SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Phrasly",
+    "url": "https://shortet.com/Phrasly",
+    "niche": "SEO AI Writing",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "SEOWriting",
+    "url": "https://shortet.com/SEOWriting",
+    "niche": "SEO AI Writing",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Brandpush",
+    "url": "https://shortet.com/Brandpush",
+    "niche": "Publisher News Platform-Press release",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "EIN Press Wire",
+    "url": "https://shortet.com/EIN-Press-Wire",
+    "niche": "Publisher News Platform-Press release",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Monkey Digital",
+    "url": "https://shortet.com/Monkey-Digital",
+    "niche": "Marketing Services & SEO",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Scaleup",
+    "url": "https://shortet.com/scalelup",
+    "niche": "Drive your site traffic, build Awareness",
+    "coupon": ""
+  },
+  {
+    "category": "SEO tools - Traffic",
+    "platform": "Linqin",
+    "url": "https://shortet.com/linqin",
+    "niche": "Your AI LinkedIn Agent",
+    "coupon": ""
+  },
+  {
+    "category": "Learning & Courses",
+    "platform": "Alison",
+    "url": "https://shortet.com/alison",
+    "niche": "Courses Platforms",
+    "coupon": ""
+  },
+  {
+    "category": "Learning & Courses",
+    "platform": "Skool",
+    "url": "https://shortet.com/skool",
+    "niche": "Learning coummunities",
+    "coupon": ""
+  },
+  {
+    "category": "Learning & Courses",
+    "platform": "easyT",
+    "url": "https://shortet.com/easyt",
+    "niche": "Arabic Courses Platforms",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "buddypunch",
+    "url": "https://shortet.com/buddypunch",
+    "niche": "HR Employee Tracking",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "Multiplier",
+    "url": "https://shortet.com/Multiplier",
+    "niche": "HR Managements",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "Gusto",
+    "url": "https://shortet.com/Gusto",
+    "niche": "HR Managements",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "Buddy Punch",
+    "url": "https://shortet.com/Buddy-Punch",
+    "niche": "Employee Time Clock Software",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "Trainual",
+    "url": "https://shortet.com/Trainual",
+    "niche": "Train employees 2X faster",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "Workable",
+    "url": "https://shortet.com/Workable",
+    "niche": "The future-ready HR platform",
+    "coupon": ""
+  },
+  {
+    "category": "HR Managements",
+    "platform": "deel",
+    "url": "https://shortet.com/deel",
+    "niche": "Payroll for global teams",
+    "coupon": ""
+  },
+  {
+    "category": "Health",
+    "platform": "Daily Gem",
+    "url": "http//dailygem.co/GEM-A-SFYFCTWH",
+    "niche": "Health",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Kast",
+    "url": "https://shortet.com/Kast",
+    "niche": "Get a USD bank account & Virtual card for free",
+    "coupon": "DD3ICNJ4"
+  },
+  {
+    "category": "Fintech",
+    "platform": "Grey",
+    "url": "https://shortet.com/Grey",
+    "niche": "Inclusive global banking designed just for you",
+    "coupon": "3CYA4J"
+  },
+  {
+    "category": "Fintech",
+    "platform": "ByBit",
+    "url": "https://shortet.com/bybit",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "RedotPay",
+    "url": "https://shortet.com/RedotPay",
+    "niche": "Digital Wallet",
+    "coupon": "1iz44"
+  },
+  {
+    "category": "Fintech",
+    "platform": "Airtm",
+    "url": "https://shortet.com/airtm",
+    "niche": "Digital Wallet",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Gate",
+    "url": "https://shortet.com/Gate",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Binance",
+    "url": "https://shortet.com/binance",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "BingX",
+    "url": "https://shortet.com/BingX",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Bitget",
+    "url": "https://shortet.com/Bitget",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "OKX",
+    "url": "https://shortet.com/OKX",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Gate",
+    "url": "https://shortet.com/Gate-crypto",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": "1778642196063"
+  },
+  {
+    "category": "Fintech",
+    "platform": "KuCoin",
+    "url": "https://shortet.com/Kucoin",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "BingX",
+    "url": "https://shortet.com/Bingxdao",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": "g_1568148333284118599"
+  },
+  {
+    "category": "Fintech",
+    "platform": "Wise",
+    "url": "https://shortet.com/Wise",
+    "niche": "Bank/Wallet",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Mercury",
+    "url": "https://shortet.com/Mercury",
+    "niche": "USA Bank",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "WorldFirast",
+    "url": "https://shortet.com/Worldfirst",
+    "niche": "Global Bank",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Payeer",
+    "url": "https://shortet.com/Payeer",
+    "niche": "Digital Wallet",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Novel bank",
+    "url": "https://shortet.com/Novel",
+    "niche": "Bank/Wallet",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "HTX",
+    "url": "https://shortet.com/HTX",
+    "niche": "Crypto Wallet - Exchange P2P",
+    "coupon": ""
+  },
+  {
+    "category": "Fintech",
+    "platform": "Trading View",
+    "url": "https://shortet.com/Tradingview",
+    "niche": "Trading Control Earning platform",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Instantly",
+    "url": "https://shortet.com/Instantly-ai",
+    "niche": "Get more clients by chatting to AI",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Kit",
+    "url": "https://shortet.com/Kit",
+    "niche": "Email Marketing",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "transpond-capsulecrm",
+    "url": "https://shortet.com/transpond-capsulecrm",
+    "niche": "Email Marketing CRM",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Apollo",
+    "url": "https://shortet.com/apollo",
+    "niche": "Outreach - Cold E-mail",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Adoutreach",
+    "url": "http//adoutreach.com/",
+    "niche": "Outreach - Cold E-mail",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Snov io",
+    "url": "https://shortet.com/Snov-io",
+    "niche": "Sales Automation, leads, automate outreach",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Emelia",
+    "url": "https://shortet.com/Emelia",
+    "niche": "Outreach - Cold E-mail",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Wiza",
+    "url": "https://shortet.com/Wiza",
+    "niche": "Outreach -B2B Database",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Leadswift",
+    "url": "https://shortet.com/Leadswift",
+    "niche": "automates your outreach,",
+    "coupon": ""
+  },
+  {
+    "category": "Email Marketing",
+    "platform": "Wamy",
+    "url": "https://shortet.com/Wamy",
+    "niche": "Email Deliverability",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Ecomhunt",
+    "url": "https://shortet.com/Ecomhunt",
+    "niche": "Dropshipping tool wininning products",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Etsy Shop",
+    "url": "https://shortet.com/Etsy-Shop",
+    "niche": "Etsy product research & seo keyword tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Everbee",
+    "url": "https://shortet.com/Everbee",
+    "niche": "Etsy product research & seo keyword tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Alura",
+    "url": "https://shortet.com/Alura",
+    "niche": "Etsy product research & seo keyword tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Salehoo",
+    "url": "https://shortet.com/Salehoo",
+    "niche": "Suppliers",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Dropship",
+    "url": "https://shortet.com/Dropship",
+    "niche": "Dropshipping tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Nichscraper",
+    "url": "https://shortet.com/Nichscraper",
+    "niche": "Spy winning product",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Profitl",
+    "url": "https://shortet.com/Profitl",
+    "niche": "Dropshipping FBA tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Alidropship",
+    "url": "https://shortet.com/Alidropship",
+    "niche": "Aliexpress dropshipping",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "CJ Dropshipping",
+    "url": "https://shortet.com/CJ-Dropshipping",
+    "niche": "Dropshipping tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "AMZ Monitor",
+    "url": "https://shortet.com/AMZ-Monitor",
+    "niche": "Amazon Products listing ool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Price archeive",
+    "url": "https://shortet.com/Price-archeive",
+    "niche": "AliexpressPrices",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Referral Candy",
+    "url": "https://shortet.com/Referral-Candy",
+    "niche": "Shopify tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Tiny Einstein",
+    "url": "https://shortet.com/Tiny-Einstein",
+    "niche": "AI Marketing manager Shopify",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Shippo",
+    "url": "https://shortet.com/Shippo",
+    "niche": "Shipping Software",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Printful",
+    "url": "https://shortet.com/Printful",
+    "niche": "POD marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Printify",
+    "url": "https://shortet.com/Printify",
+    "niche": "POD marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Merchdominator",
+    "url": "https://shortet.com/Merchdominator",
+    "niche": "POD tools",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "My Design",
+    "url": "https://shortet.com/My-Design",
+    "niche": "POD Design",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Minea",
+    "url": "https://shortet.com/Minea",
+    "niche": "Where winning products are found (Meta ads-TikTok-Pinterest)",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "CJ Dropshipping Shopify",
+    "url": "https://shortet.com/cjdropshipping",
+    "niche": "Dropshipping tool",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Listing View",
+    "url": "https://shortet.com/Listing-View",
+    "niche": "Get Etsy best Seller",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Mydesigns",
+    "url": "https://shortet.com/Mydesigns",
+    "niche": "Automate your POD & digital products",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Shapo",
+    "url": "https://shortet.com/Shapo",
+    "niche": "Collect, manage, and share testimonials effortlessly.",
+    "coupon": ""
+  },
+  {
+    "category": "Dropshipping & POD",
+    "platform": "Kopy",
+    "url": "https://shortet.com/Kopy",
+    "niche": "Copy and Paste products to your Shopify Store in seconds",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Cartgy",
+    "url": "https://shortet.com/cartgy",
+    "niche": "Digital products & subscrobtions",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Flippa",
+    "url": "https://shortet.com/Flippa",
+    "niche": "Sell & buy digital assets",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Spplii",
+    "url": "https://shortet.com/Spplii",
+    "niche": "Save on subscriptions by joining the world's largest co-subscription community",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Gamsgo",
+    "url": "https://shortet.com/gamsgo",
+    "niche": "Shared premium subscription with lower price",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "A Themes",
+    "url": "https://shortet.com/A-Themes",
+    "niche": "Digital WP Themes Marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Pond5",
+    "url": "https://shortet.com/Pond5",
+    "niche": "Digital Marketplace Videos Library Stock",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Photosdeposit",
+    "url": "https://shortet.com/depositphotos",
+    "niche": "Digital Marketplace (Photos-Videos-Audio) Stock",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Codester",
+    "url": "https://shortet.com/Codester",
+    "niche": "Digital marketplace APP-Web-Themes Source code",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Envato Market",
+    "url": "https://shortet.com/Envato-Market",
+    "niche": "Digital marketplace APP-Web-Themes Source code",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Envato Elements",
+    "url": "https://shortet.com/Envato-Elements",
+    "niche": "Digital Marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Gamsgo",
+    "url": "https://shortet.com/gamsgo",
+    "niche": "Digital Marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Envato Placeit",
+    "url": "https://shortet.com/Envato-Placeit",
+    "niche": "Digital Marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Appsumo",
+    "url": "https://shortet.com/Appsumo",
+    "niche": "Busniess & marketing tools deals",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Joinsecret",
+    "url": "https://shortet.com/Joinsecret",
+    "niche": "Software deals Tech Lab SAS",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Whop",
+    "url": "https://shortet.com/Whop",
+    "niche": "S/W & Courses",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "PLR",
+    "url": "https://shortet.com/PLR",
+    "niche": "PLR Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Big Product Store",
+    "url": "https://shortet.com/Big-Product-Store",
+    "niche": "PLR Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Masterresellrights",
+    "url": "https://shortet.com/Masterresellrights",
+    "niche": "Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Apify",
+    "url": "https://shortet.com/apify",
+    "niche": "full‑stack platform for web scraping & API",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "ConvertAPI",
+    "url": "https://shortet.com/ConvertAPI",
+    "niche": "High-Performance File Conversion API",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Aejuice",
+    "url": "https://shortet.com/Aejuice",
+    "niche": "Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Codentheme",
+    "url": "https://shortet.com/Codentheme",
+    "niche": "Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Creative fabrica",
+    "url": "https://shortet.com/Creative-fabrica",
+    "niche": "Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Piecex",
+    "url": "https://shortet.com/Piecex",
+    "niche": "Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Digital marketplace",
+    "platform": "Sellcodes",
+    "url": "https://shortet.com/Sellcodes",
+    "niche": "Digital marketplace",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Prome",
+    "url": "https://shortet.com/Prome",
+    "niche": "AI design",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Vondy",
+    "url": "https://shortet.com/Vondy",
+    "niche": "AI Apps",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Design Beast",
+    "url": "https://shortet.com/Design-Beast",
+    "niche": "AI design",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Looka",
+    "url": "https://shortet.com/Looka",
+    "niche": "AI Logo creation",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Logo",
+    "url": "https://shortet.com/Logo",
+    "niche": "AI Logo creation",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Logome",
+    "url": "https://shortet.com/Logome",
+    "niche": "AI Logo creation",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Renderforest",
+    "url": "https://shortet.com/Renderforest",
+    "niche": "AI (Video-Logo-Website) design",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Canva",
+    "url": "https://shortet.com/Canva",
+    "niche": "Digital design",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Mimicpc",
+    "url": "https://shortet.com/Mimicpc",
+    "niche": "Open-Source AI Platform, Customizable & Affordable",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "IdeaBuddy",
+    "url": "https://shortet.com/Tome-Teller",
+    "niche": "AI Start up",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Lovart",
+    "url": "https://shortet.com/Lovart",
+    "niche": "Ai gent for design",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Open art",
+    "url": "https://shortet.com/Open-art",
+    "niche": "Create Art or modify image with AI",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Sellerpic",
+    "url": "https://shortet.com/Sellerpic",
+    "niche": "AI fashion model & image & video generator",
+    "coupon": ""
+  },
+  {
+    "category": "Design",
+    "platform": "Collov",
+    "url": "https://shortet.com/collov",
+    "niche": "Virtual Ai for Realestate & Homes",
+    "coupon": ""
+  },
+  {
+    "category": "AI Voices",
+    "platform": "Wisprflow",
+    "url": "https://shortet.com/Wisprflow",
+    "niche": "The voice-to-text AI that turns speech into clear, polished writing in every app",
+    "coupon": ""
+  },
+  {
+    "category": "AI Voices",
+    "platform": "PlayHt",
+    "url": "https://shortet.com/PlayHt",
+    "niche": "AI Voice Generator & Text to Speech AI Voice Platform",
+    "coupon": ""
+  },
+  {
+    "category": "AI Voices",
+    "platform": "Elevenlabs",
+    "url": "https://shortet.com/Elevenlabs",
+    "niche": "AI Voice Generator & Text to Speech AI Voice Platform",
+    "coupon": ""
+  },
+  {
+    "category": "AI Voices",
+    "platform": "Vapi",
+    "url": "https://shortet.com/Vapi",
+    "niche": "AI Voice Generator & Text to Speech AI Voice Platform",
+    "coupon": ""
+  },
+  {
+    "category": "AI Voices",
+    "platform": "Retell",
+    "url": "https://shortet.com/Retell",
+    "niche": "AI Voice Generator & Text to Speech AI Voice Platform",
+    "coupon": ""
+  },
+  {
+    "category": "Ai Videos & Image",
+    "platform": "Pollo",
+    "url": "https://shortet.com/Pollo",
+    "niche": "The ultimate Ai videos & Image creation platform",
+    "coupon": ""
+  },
+  {
+    "category": "Ai Videos & Image",
+    "platform": "Kie",
+    "url": "https://shortet.com/KieAi",
+    "niche": "Access the Best Video, Image & Music Models in One API",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Wayinvideo",
+    "url": "https://shortet.com/wayinvideo",
+    "niche": "Create & discover AI videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Faceless Video",
+    "url": "https://shortet.com/Faceless-Video",
+    "niche": "Create Faceless",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Apob",
+    "url": "https://shortet.com/Apob",
+    "niche": "Create your Al Influencer",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Riverside",
+    "url": "https://shortet.com/Riverside",
+    "niche": "Create your best content yet",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Golpoai",
+    "url": "https://shortet.com/Golpoai",
+    "niche": "AI-powered whiteboard video",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Deepfake Swap",
+    "url": "https://shortet.com/Deepfake-Swap",
+    "niche": "Deepfake AI Generator",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Claid",
+    "url": "https://shortet.com/Claid",
+    "niche": "AI E-Commerce & fashion photos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Weshop",
+    "url": "https://shortet.com/Weshop",
+    "niche": "AI E-Commerce Creative Studio",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Picjam",
+    "url": "https://shortet.com/Picjam",
+    "niche": "AI Physcial product photos & AI fashion",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Video Ad Vault",
+    "url": "http//deeemoz.monsterrobot.zaxaa.com/s/3616643859792",
+    "niche": "AI Video ads",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "PostedApp",
+    "url": "https://shortet.com/PostedApp",
+    "niche": "AI products video & UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Sjinn",
+    "url": "https://shortet.com/Sjinn",
+    "niche": "Your Best Image & Video Agent",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Magiclight",
+    "url": "https://shortet.com/Magiclight",
+    "niche": "AI Video maker",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Vheer",
+    "url": "https://shortet.com/Vheer",
+    "niche": "Free Online AI Image Generator",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Sodamarketing",
+    "url": "https://shortet.com/Sodamarketing",
+    "niche": "Generate All Your Ads & Social Media Content",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Syllabe",
+    "url": "https://shortet.com/Syllaby",
+    "niche": "Video Creation",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "hypernatural",
+    "url": "https://shortet.com/hypernatural",
+    "niche": "AI Video creation",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Fliki",
+    "url": "https://shortet.com/Fliki",
+    "niche": "AI Video creation",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Pictory",
+    "url": "https://shortet.com/Pictory",
+    "niche": "AI Video creation",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Invideo",
+    "url": "https://shortet.com/Invideo",
+    "niche": "AI Avideos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "VidIQ",
+    "url": "https://shortet.com/VidIQ",
+    "niche": "AI Video optimization tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Get Munch",
+    "url": "https://shortet.com/getmunch",
+    "niche": "AI video repurposing platform",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Video Robot",
+    "url": "https://shortet.com/Video-Robot",
+    "niche": "Video AI tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Video Creator",
+    "url": "https://shortet.com/Video-Creator",
+    "niche": "Video AI tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "ChatterPal",
+    "url": "https://shortet.com/ChatterPal",
+    "niche": "ChatterPal",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Video Robot VR2",
+    "url": "https://shortet.com/Video-Robot-VR2",
+    "niche": "Video AI tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "DoodleMaker",
+    "url": "https://shortet.com/DoodleMaker",
+    "niche": "DoodleMaker",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "DoodleMaker2",
+    "url": "https://shortet.com/DoodleMaker2",
+    "niche": "DoodleMaker2",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Syllaby",
+    "url": "https://shortet.com/Syllaby",
+    "niche": "Turn any Idea into Faceless VideosAI Avatar VideosB-Roll Videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "AvatarBuilder",
+    "url": "https://shortet.com/AvatarBuilder",
+    "niche": "AvatarBuilder",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Vidyo",
+    "url": "https://shortet.com/Vidyo",
+    "niche": "AI Video long to short",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Quso",
+    "url": "https://shortet.com/Quso",
+    "niche": "AI Video long to short",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Videogen",
+    "url": "https://shortet.com/Videogen",
+    "niche": "AI videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Awesomescreenshot",
+    "url": "https://shortet.com/awesomescreenshot",
+    "niche": "Video screen recording & Editing",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Tella",
+    "url": "https://shortet.com/Tella",
+    "niche": "Video screen recording & Editing",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "OpusClip",
+    "url": "https://shortet.com/OpusClip",
+    "niche": "Video clip into shorts/ one ong video, 10 viral clips",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Captions",
+    "url": "https://shortet.com/Captions",
+    "niche": "AI videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Videohunt",
+    "url": "https://shortet.com/wayin",
+    "niche": "AI videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Autoshorts",
+    "url": "https://shortet.com/Autoshorts",
+    "niche": "AI videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Renderforest",
+    "url": "https://shortet.com/Renderforest",
+    "niche": "AI Avideos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Vindoz",
+    "url": "https://shortet.com/Vindoz",
+    "niche": "AI Avideos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Mootion",
+    "url": "https://shortet.com/Mootion",
+    "niche": "Create motion graphic videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Vmeg",
+    "url": "https://shortet.com/Vmeg",
+    "niche": "Ai powered video localization",
+    "coupon": ""
+  },
+  {
+    "category": "AI Videos",
+    "platform": "Bith",
+    "url": "https://shortet.com/Bith",
+    "niche": "Content creation made easy",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "TagsShop",
+    "url": "https://shortet.com/TagsShop",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Creatify",
+    "url": "https://shortet.com/Creatify",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Makereels",
+    "url": "https://shortet.com/Makereels",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Heygen",
+    "url": "https://shortet.com/Heygen",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Topviews",
+    "url": "https://shortet.com/Topviews",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Arcads",
+    "url": "https://shortet.com/Arcads",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "MakeUGC",
+    "url": "https://shortet.com/MakeUGC",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Adcreative",
+    "url": "https://shortet.com/Adcreative",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI UGC",
+    "platform": "Veed",
+    "url": "https://shortet.com/Veed",
+    "niche": "AI UGC",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Skywork",
+    "url": "https://shortet.com/skywork",
+    "niche": "Skywork Super Agents",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Gravitywrite",
+    "url": "https://shortet.com/Gravitywrite",
+    "niche": "Create Content 10X Faster",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Chatfuel",
+    "url": "https://shortet.com/Chatfuel",
+    "niche": "AI Agents for automated sales",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Wonderchat",
+    "url": "https://shortet.com/Wonderchat",
+    "niche": "AI Support Agents chatbot builder for your website",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "laxis",
+    "url": "https://shortet.com/laxis",
+    "niche": "AI Sales Copilot",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Botnation",
+    "url": "https://shortet.com/Botnation",
+    "niche": "AI Agent Chatbot",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Orimon",
+    "url": "https://shortet.com/Orimon",
+    "niche": "AI chatbot Builders",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Wati",
+    "url": "https://shortet.com/Wati",
+    "niche": "AI chatbot Builders",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "stammer",
+    "url": "https://shortet.com/stammer",
+    "niche": "AI chatbot Builders",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Avian",
+    "url": "https://shortet.com/Avian",
+    "niche": "AI Data chatbots",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Gravitywrite",
+    "url": "https://shortet.com/Ss",
+    "niche": "AI writing assistant",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Human Bot Funnel",
+    "url": "https://shortet.com/Human-Bot-Funnel",
+    "niche": "AI Human Bot Funnel",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "BotSailor",
+    "url": "https://shortet.com/BotSailor",
+    "niche": "AI Chatbot for WhatsApp sales channel",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Insightfulpipe",
+    "url": "https://shortet.com/Insightfulpipe",
+    "niche": "MCP Servers & Connectors",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "i10x",
+    "url": "https://shortet.com/i10x",
+    "niche": "All your AI Needs in one Place",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Claude",
+    "url": "https://shortet.com/Claude",
+    "niche": "Claude LLM",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Manus",
+    "url": "https://shortet.com/Manus",
+    "niche": "Manus LLMs",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "A/B Testing",
+    "url": "https://shortet.com/A-B-Testing",
+    "niche": "AI A/B Testing tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Art Shop",
+    "url": "https://shortet.com/Art-Shop",
+    "niche": "AI Art tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Sheet",
+    "url": "https://shortet.com/Sheet",
+    "niche": "AI Busniess tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Pinecobe",
+    "url": "http//pinecone.io/",
+    "niche": "AI Memory tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Browse",
+    "url": "https://shortet.com/Browse",
+    "niche": "AI Ropotic bot",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Tome Teller",
+    "url": "https://shortet.com/Tome-Teller",
+    "niche": "AI Storytelling",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "tools Arena",
+    "url": "https://shortet.com/tools-Arena",
+    "niche": "AI Tools blogs",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "EduBirdie",
+    "url": "https://shortet.com/EduBirdie",
+    "niche": "AI Writing assest",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Jasper",
+    "url": "https://shortet.com/Jasper",
+    "niche": "AI writing assistant",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "WordHero",
+    "url": "https://shortet.com/WordHero",
+    "niche": "AI writing assistant",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Writesonic",
+    "url": "https://shortet.com/Writesonic",
+    "niche": "AI writing assistant",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Descript",
+    "url": "https://shortet.com/Descript",
+    "niche": "AI Audio tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Gotranscript",
+    "url": "https://shortet.com/Gotranscript",
+    "niche": "AI Audio tool",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "ChatPDF",
+    "url": "https://shortet.com/ChatPDF",
+    "niche": "AI PDF chatbot",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Human talk",
+    "url": "https://shortet.com/Human-talk",
+    "niche": "AI Audio human",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Toons ai Funnels",
+    "url": "https://shortet.com/Toons-ai-Funnels",
+    "niche": "AI Animated Videos",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "SketchGenius Funnel",
+    "url": "https://shortet.com/SketchGenius-Funnel",
+    "niche": "AI SketchGenius Funnel",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Sketch Persinalizer",
+    "url": "https://shortet.com/Sketch-Persinalizer",
+    "niche": "AI Sketch Persinalizer",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "HumanPal Funnel",
+    "url": "https://shortet.com/HumanPal-Funnel",
+    "niche": "AI HumanPal Funnel",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "QuillBot",
+    "url": "https://shortet.com/QuillBot",
+    "niche": "Ai detection",
+    "coupon": ""
+  },
+  {
+    "category": "AI Tools",
+    "platform": "Zonkafeedback",
+    "url": "https://shortet.com/Zonkafeedback",
+    "niche": "AI Feedback Intelligence",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Partnerstack",
+    "url": "https://shortet.com/Partnerstack",
+    "niche": "Affiliates publisher & advertiser Vendors platform",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Vcommission",
+    "url": "https://shortet.com/Vcommission",
+    "niche": "Affiliates publisher & advertiser Vendors platform",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Affiliateprogramdb",
+    "url": "https://shortet.com/Affiliateprogramdb",
+    "niche": "Affiliates publisher & advertiser Vendors platform",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Saasaffiliate",
+    "url": "https://shortet.com/Saasaffiliate",
+    "niche": "Affiliates publisher & advertiser Vendors platform",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Start App",
+    "url": "https://shortet.com/start-app",
+    "niche": "Google Admob alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Adcash",
+    "url": "https://shortet.com/Adcash",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Adsterra",
+    "url": "https://shortet.com/Adsterra",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Ezoic",
+    "url": "https://shortet.com/Ezoic",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Adspyglass",
+    "url": "https://shortet.com/Adspyglass",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "hilltopads",
+    "url": "https://shortet.com/hilltopads",
+    "niche": "Best ad network and traffic monetization platform",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Monetag",
+    "url": "https://shortet.com/Monetag",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Roller ads",
+    "url": "https://shortet.com/Roller-ads",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Popcash",
+    "url": "https://shortet.com/Popcash",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Linkvertise",
+    "url": "https://shortet.com/Linkvertise",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Click Adilla",
+    "url": "https://shortet.com/Click-Adilla",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Evadav",
+    "url": "https://shortet.com/Evadav",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Click Adu",
+    "url": "https://shortet.com/Click-Adu",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Popads",
+    "url": "https://shortet.com/Popads",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "ZPush",
+    "url": "https://shortet.com/ZPush",
+    "niche": "Google Ads & Adsense alternative",
+    "coupon": ""
+  },
+  {
+    "category": "Publisher & Advertising",
+    "platform": "Amwaly",
+    "url": "https://shortet.com/Amwaly",
+    "niche": "Google Ads Adsense alternative",
+    "coupon": "163893"
+  },
+  {
+    "category": "Travel Business",
+    "platform": "Travel Code",
+    "url": "https://shortet.com/Travel-Code",
+    "niche": "manage Travel company",
+    "coupon": ""
+  },
+  {
+    "category": "Travel Affiliates",
+    "platform": "Travelpayouts",
+    "url": "https://shortet.com/Travelpayouts",
+    "niche": "Travel Affiliates Website",
+    "coupon": ""
+  }
 ];

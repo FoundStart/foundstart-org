@@ -10,22 +10,6 @@ export interface Domain {
 
 const raw: Omit<Domain, 'id'>[] = [
   {
-    "name": "Exitsme.com",
-    "hosting": "UD",
-    "category": "Grocery / Delivery",
-    "price": "5000",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Exitsme.com"
-  },
-  {
-    "name": "Halalye.com",
-    "hosting": "Spaceship",
-    "category": "HR / Job Board",
-    "price": "5000",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Halalye.com"
-  },
-  {
     "name": "Foundstart.org",
     "hosting": "Spaceship",
     "category": "Startup / Venture",
@@ -50,6 +34,14 @@ const raw: Omit<Domain, 'id'>[] = [
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortet.com"
   },
   {
+    "name": "TopyPay.com",
+    "hosting": "UD",
+    "category": "Fintech, Payments & Crypto",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=TopyPay.com"
+  },
+  {
     "name": "Expensol.com",
     "hosting": "Spaceship",
     "category": "Venture, Community & Brands",
@@ -58,9 +50,81 @@ const raw: Omit<Domain, 'id'>[] = [
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Expensol.com"
   },
   {
+    "name": "Keepence.com",
+    "hosting": "UD",
+    "category": "Fintech, SAAS",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Keepence.com"
+  },
+  {
+    "name": "Namelizer.com",
+    "hosting": "Godaddy",
+    "category": "SaaS / Branding",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Namelizer.com"
+  },
+  {
+    "name": "Uniqranks.com",
+    "hosting": "UD",
+    "category": "SaaS / SEO",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Uniqranks.com"
+  },
+  {
+    "name": "Cartgy.com",
+    "hosting": "Spaceship",
+    "category": "E-Commerce",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cartgy.com"
+  },
+  {
+    "name": "Shortili.com",
+    "hosting": "Spaceship",
+    "category": "SaaS / Links",
+    "price": "450",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortili.com"
+  },
+  {
+    "name": "Creativoya.com",
+    "hosting": "Spaceship",
+    "category": "SaaS / Creative",
+    "price": "500",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Creativoya.com"
+  },
+  {
+    "name": "Toolstogethers.com",
+    "hosting": "UD",
+    "category": "Startups, SaaS & Tech, Food",
+    "price": "250",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Toolstogethers.com"
+  },
+  {
+    "name": "Exitsme.com",
+    "hosting": "UD",
+    "category": "Startup / M&A",
+    "price": "5000",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Exitsme.com"
+  },
+  {
+    "name": "Halalye.com",
+    "hosting": "Spaceship",
+    "category": "Food / Lifestyle",
+    "price": "5000",
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Halalye.com"
+  },
+  {
     "name": "NameLik.com",
     "hosting": "UD",
-    "category": "B2B / Services",
+    "category": "Branding",
     "price": "1500",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=NameLik.com"
@@ -76,23 +140,15 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Affillex.com",
     "hosting": "UD",
-    "category": "Mobile / Fintech",
+    "category": "Affiliate Marketing",
     "price": "1250",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Affillex.com"
   },
   {
-    "name": "Keepence.com",
-    "hosting": "UD",
-    "category": "Fintech, SaaS",
-    "price": "1250",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Keepence.com"
-  },
-  {
     "name": "MoMoMob.com",
     "hosting": "UD",
-    "category": "Startup / M&A",
+    "category": "Mobile / Fintech",
     "price": "1250",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MoMoMob.com"
@@ -100,39 +156,15 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "MoMoNil.com",
     "hosting": "UD",
-    "category": "Food / Lifestyle",
+    "category": "Mobile / Fintech",
     "price": "1250",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MoMoNil.com"
   },
   {
-    "name": "Namelizer.com",
-    "hosting": "Godaddy",
-    "category": "SaaS / Branding",
-    "price": "1250",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Namelizer.com"
-  },
-  {
-    "name": "TopyPay.com",
-    "hosting": "UD",
-    "category": "Fintech, Payments & Crypto",
-    "price": "1250",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=TopyPay.com"
-  },
-  {
-    "name": "Uniqranks.com",
-    "hosting": "UD",
-    "category": "SaaS / SEO",
-    "price": "1250",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Uniqranks.com"
-  },
-  {
     "name": "YesShoot.com",
     "hosting": "UD",
-    "category": "Travel / SaaS",
+    "category": "Photography / Gaming",
     "price": "1250",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=YesShoot.com"
@@ -140,39 +172,23 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Talaboo.com",
     "hosting": "UD",
-    "category": "Branding",
+    "category": "Grocery / Delivery",
     "price": "1151",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Talaboo.com"
   },
   {
-    "name": "Cartgy.com",
-    "hosting": "Spaceship",
-    "category": "E-Commerce",
-    "price": "500",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cartgy.com"
-  },
-  {
     "name": "Etivago.com",
     "hosting": "Spaceship",
-    "category": "E-Commerce / Dropshipping",
+    "category": "Travel / SaaS",
     "price": "500",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Etivago.com"
   },
   {
-    "name": "Shortili.com",
-    "hosting": "Spaceship",
-    "category": "SaaS / Links",
-    "price": "450",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortili.com"
-  },
-  {
     "name": "Cardolla.com",
     "hosting": "Spaceship",
-    "category": "Affiliate Marketing",
+    "category": "Fintech / E-Commerce / Automotive",
     "price": "350",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cardolla.com"
@@ -180,7 +196,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "MSA-serv.com",
     "hosting": "Hostinger",
-    "category": "Fintech / Asset Management",
+    "category": "B2B / Services",
     "price": "350",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MSA-serv.com"
@@ -188,7 +204,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Assetsium.com",
     "hosting": "UD",
-    "category": "Fintech / E-Commerce / Automotive",
+    "category": "Fintech / Asset Management",
     "price": "250",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Assetsium.com"
@@ -196,23 +212,15 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Careeroh.com",
     "hosting": "Spaceship",
-    "category": "E-Commerce",
+    "category": "HR / Job Board",
     "price": "500",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Careeroh.com"
   },
   {
-    "name": "Creativoya.com",
-    "hosting": "Spaceship",
-    "category": "SaaS / Creative",
-    "price": "500",
-    "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Creativoya.com"
-  },
-  {
     "name": "Deeemoz.shop",
     "hosting": "Spaceship",
-    "category": "Photography / Gaming",
+    "category": "E-Commerce",
     "price": "500",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.shop/en-in/domainsearch/find?domainToCheck=Deeemoz.shop"
@@ -220,7 +228,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Dropoh.com",
     "hosting": "UD",
-    "category": "Mobile / Fintech",
+    "category": "E-Commerce / Dropshipping",
     "price": "500",
     "businessType": "Business",
     "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Dropoh.com"
@@ -244,7 +252,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Agitli.com",
     "hosting": "UD",
-    "category": "",
+    "category": "Business",
     "price": "500",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Agitli.com"
@@ -260,7 +268,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Foodievo.com",
     "hosting": "Spaceship",
-    "category": "Startups, SaaS & Tech",
+    "category": "Startups, SaaS & Tech, SAAS",
     "price": "500",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Foodievo.com"
@@ -270,8 +278,8 @@ const raw: Omit<Domain, 'id'>[] = [
     "hosting": "Spaceship",
     "category": "Tech / Hosting",
     "price": "500",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Hosstec.com"
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Hosstec.com"
   },
   {
     "name": "TakeRides.com",
@@ -284,7 +292,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Talabook.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech, Grocery",
+    "category": "Startups, SaaS & Tech, APP, Grocery",
     "price": "500",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Talabook.com"
@@ -316,7 +324,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Fruitla.com",
     "hosting": "Spaceship",
-    "category": "Startups, SaaS & Tech, Grocery",
+    "category": "Startups, SaaS & Tech, APP, Grocery",
     "price": "499",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Fruitla.com"
@@ -348,7 +356,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Nanymart.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech, Nanny Marketplace",
+    "category": "Startups, SaaS & Tech, Nany marketplace",
     "price": "400",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Nanymart.com"
@@ -428,7 +436,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Societygram.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech",
+    "category": "Startups, SaaS & Tech - Social media services",
     "price": "350",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Societygram.com"
@@ -436,7 +444,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Dealigi.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces, SaaS",
+    "category": "E-Commerce & Marketplaces, SAAS",
     "price": "300",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealigi.com"
@@ -540,7 +548,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Dealago.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces, SaaS",
+    "category": "E-Commerce & Marketplaces, SAAS",
     "price": "250",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealago.com"
@@ -580,15 +588,15 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Ecardora.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces / SaaS",
+    "category": "E-Commerce & Marketplaces / SAAS",
     "price": "250",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecardora.com"
+    "businessType": "Business",
+    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Ecardora.com"
   },
   {
     "name": "Emotorsmarket.com",
     "hosting": "UD",
-    "category": "Fintech-E-Commerce & Marketplaces / SaaS",
+    "category": "Fintech-E-Commerce & Marketplaces / SAAS",
     "price": "250",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com /en-ai/domainsearch/find?domainToCheck=Emotorsmarket.com"
@@ -676,7 +684,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Jobagy.com",
     "hosting": "UD",
-    "category": "Recruitments, Freelancer, SaaS",
+    "category": "Recurements, Freelancer, SAAS",
     "price": "250",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jobagy.com"
@@ -684,7 +692,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Jobigy.com",
     "hosting": "UD",
-    "category": "Recruitments, Freelancer, SaaS",
+    "category": "Recurements, Freelancer, SAAS",
     "price": "250",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jobigy.com"
@@ -787,7 +795,7 @@ const raw: Omit<Domain, 'id'>[] = [
   },
   {
     "name": "Shofic.com",
-    "hosting": "Godaddy",
+    "hosting": "Spaceship",
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
@@ -808,14 +816,6 @@ const raw: Omit<Domain, 'id'>[] = [
     "price": "250",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Sociallaters.com"
-  },
-  {
-    "name": "Toolstogethers.com",
-    "hosting": "UD",
-    "category": "Startups, SaaS & Tech, Food",
-    "price": "250",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Toolstogethers.com"
   },
   {
     "name": "Trillionchat.com",
@@ -892,7 +892,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "MartGem.com",
     "hosting": "UD",
-    "category": "Sport SaaS",
+    "category": "Sport SAAS",
     "price": "200",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MartGem.com"
@@ -916,7 +916,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Affivid.com",
     "hosting": "UD",
-    "category": "Affiliate Video Marketing",
+    "category": "Affiliate Video marketing",
     "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Affivid.com"
@@ -1036,7 +1036,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "MallCanyon.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces, SaaS Hub",
+    "category": "E-Commerce & Marketplaces - SAAS hub",
     "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MallCanyon.com"
@@ -1076,7 +1076,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Afinya.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech, Affiliate",
+    "category": "Startups, SaaS & Tech, Affliate",
     "price": "100",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Afinya.com"
@@ -1164,7 +1164,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Socialautoposters.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech",
+    "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialautoposters.com"
@@ -1172,7 +1172,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Socialsenders.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech",
+    "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialsenders.com"
@@ -1204,7 +1204,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Ecanio.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces / SaaS",
+    "category": "E-Commerce & Marketplaces / SAAS",
     "price": "99",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecanio.com"
@@ -1212,7 +1212,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Ecanro.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces / SaaS",
+    "category": "E-Commerce & Marketplaces / SAAS",
     "price": "99",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecanro.com"
@@ -1356,7 +1356,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Postsocialauto.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech",
+    "category": "Startups, SaaS & Tech - Social media services",
     "price": "59",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Postsocialauto.com"
@@ -1388,7 +1388,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Stremion.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech, IPTV",
+    "category": "Startups, SaaS & Stream IPTV. TV",
     "price": "59",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Stremion.com"
@@ -1468,7 +1468,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Dealiar.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces, SaaS",
+    "category": "E-Commerce & Marketplaces, SAAS",
     "price": "50",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealiar.com"
@@ -1476,7 +1476,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Drobito.com",
     "hosting": "UD",
-    "category": "E-Commerce & Marketplaces, SaaS",
+    "category": "E-Commerce & Marketplaces, SAAS",
     "price": "50",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Drobito.com"
@@ -1492,7 +1492,7 @@ const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "syrri.com",
     "hosting": "UD",
-    "category": "Startups, SaaS & Tech - Tool",
+    "category": "Startups, SaaS & Tech - tool",
     "price": "50",
     "businessType": "Domain",
     "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=syrri.com"
@@ -1507,29 +1507,7 @@ const raw: Omit<Domain, 'id'>[] = [
   }
 ];
 
-export const domainsData: Domain[] = raw.map((d, i) => ({ ...d, id: i + 1 }));
+export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d }));
 
-export const categories = [
-  'All',
-  'Fintech, Payments & Crypto',
-  'E-Commerce & Marketplaces',
-  'Startups, SaaS & Tech',
-  'Venture, Community & Brands',
-  'Recruitments, Freelancer',
-  'AI & Automation',
-  'Food & Grocery',
-  'Automotive',
-  'Sport',
-  'Marketing',
-  'SAAS & Hosting',
-  'Legal',
-  'Travel',
-  'EdTech',
-  'Branding',
-  'Social Media',
-  'Mobile / Fintech',
-];
-
-export const hostingProviders = ['All', 'UD', 'Spaceship', 'Godaddy', 'Hostinger', 'Namebright'];
-
-export const businessTypes = ['All', 'Business', 'Domain'];
+export const categories: string[] = Array.from(new Set(domainsData.map(d => d.category))).sort();
+export const hostingProviders: string[] = Array.from(new Set(domainsData.map(d => d.hosting))).sort();

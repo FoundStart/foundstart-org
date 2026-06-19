@@ -87,7 +87,6 @@ export function validateCatalog(catalog: PartnerCatalog): string[] {
 
 export const partnerCatalogEN: PartnerCatalog = {
   formation: [
-    { id: 'foundstart', name: 'FoundStart', desc: 'USA, UK & Europe formation', url: 'https://shortet.com/foundstart', partnered: true },
     { id: 'doola', name: 'Doola', desc: 'US LLC + EIN + banking bundle', url: 'https://shortet.com/doola', partnered: true },
     { id: 'clemta', name: 'Clemta', desc: 'US LLC formation', url: 'https://shortet.com/clemta', partnered: true },
     { id: 'startglobal', name: 'Startglobal', desc: 'US LLC formation', url: 'https://shortet.com/startglobal', partnered: true },
@@ -145,7 +144,6 @@ export const partnerCatalogEN: PartnerCatalog = {
 
 export const partnerCatalogAR: PartnerCatalog = {
   formation: [
-    { id: 'foundstart', name: 'FoundStart', desc: 'تأسيس في أمريكا والمملكة المتحدة وأوروبا', url: 'https://shortet.com/foundstart', partnered: true },
     { id: 'doola', name: 'Doola', desc: 'باقة LLC أمريكية + EIN + بنك', url: 'https://shortet.com/doola', partnered: true },
     { id: 'clemta', name: 'Clemta', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/clemta', partnered: true },
     { id: 'startglobal', name: 'Startglobal', desc: 'تأسيس LLC أمريكية', url: 'https://shortet.com/startglobal', partnered: true },
