@@ -8,6 +8,11 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, ExternalLink, Sparkles } from 'lucide-react';
 import heroImg from '@/assets/blog-business-automation-2026.jpg';
+import { withUtm } from '@/utils/utm';
+
+const CAMPAIGN = 'business-automation-2026';
+const tag = (url: string, content: string) =>
+  withUtm(url, { source: 'blog', medium: 'inline', campaign: CAMPAIGN, content });
 
 const TITLE = 'Business Automation in 2026: The Founder\u2019s AI & No-Code Toolkit';
 const DESCRIPTION =
@@ -16,7 +21,6 @@ const DESCRIPTION =
 type Partner = { name: string; url: string; description: string; coupon?: string };
 
 const FORMATION: Partner[] = [
-  { name: 'FoundStart', url: 'https://shortet.com/foundstart', description: 'USA, UK & Europe formation \u2014 best all-rounder.' },
   { name: 'Doola', url: 'https://shortet.com/doola', description: 'US LLC for non-US founders.' },
   { name: 'Clemta', url: 'https://shortet.com/clemta', description: 'US formation + accounting bundle.' },
   { name: 'Go Nomad HQ', url: 'https://shortet.com/Go-Nomad-HQ', description: 'Built for digital nomads.' },
@@ -92,7 +96,7 @@ const PartnerGrid: React.FC<{ items: Partner[] }> = ({ items }) => (
           <div className="flex flex-wrap gap-2 items-center">
             {p.coupon && <Badge variant="destructive">\ud83c\udf9f {p.coupon}</Badge>}
             <Button asChild size="sm">
-              <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">
+              <a href={tag(p.url, p.name)} target="_blank" rel="noopener noreferrer sponsored">
                 Visit <ExternalLink className="w-4 h-4 ml-1.5" />
               </a>
             </Button>
@@ -104,16 +108,85 @@ const PartnerGrid: React.FC<{ items: Partner[] }> = ({ items }) => (
 );
 
 const BusinessAutomation2026: React.FC = () => {
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the best business automation stack in 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A combination of AI agents (Twin, Relevance, Flyhermes), workflow tools (n8n, Make, Zapier) and social schedulers (Ocoya, Blotato, Postiz) covers most online businesses.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do I need to form a company before automating my business?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes — to accept payments globally, sign vendor contracts and use most B2B SaaS, you need a legal entity. Start with a US LLC or UK Ltd via a trusted formation partner.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which automation tool should I start with?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Pick one workflow tool (n8n or Make), one AI agent platform (Twin or Relevance) and one social scheduler (Ocoya or Blotato). Expand from there.',
+        },
+      },
+    ],
+  };
+
+  const howToLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to automate your online business in 2026',
+    description: DESCRIPTION,
+    step: [
+      { '@type': 'HowToStep', name: 'Form your company', text: 'Register a US LLC or UK Ltd using a trusted formation partner.' },
+      { '@type': 'HowToStep', name: 'Pick your automation stack', text: 'Choose an AI agent platform, a workflow tool and a social scheduler.' },
+      { '@type': 'HowToStep', name: 'Automate one workflow', text: 'Start with a single repetitive task — lead intake, posting or onboarding.' },
+      { '@type': 'HowToStep', name: 'Measure & expand', text: 'Track hours saved per week and add the next automation.' },
+    ],
+  };
+
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: TITLE,
+    description: DESCRIPTION,
+    image: [heroImg],
+    datePublished: '2026-06-18',
+    author: { '@type': 'Organization', name: 'MoMoAI' },
+    publisher: { '@type': 'Organization', name: 'FoundStart' },
+    mainEntityOfPage: 'https://foundstart.org/blog/business-automation-2026',
+  };
+
   return (
     <>
       <Helmet>
         <title>{TITLE} | FoundStart Blog</title>
         <meta name="description" content={DESCRIPTION} />
+        <meta name="keywords" content="business automation 2026, AI agents, no-code automation, n8n, Make, Zapier, company formation, US LLC, UK Ltd" />
+        <meta name="author" content="MoMoAI" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="FoundStart" />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:image" content={heroImg} />
+        <meta property="article:published_time" content="2026-06-18" />
+        <meta property="article:author" content="MoMoAI" />
+        <meta property="article:section" content="Business Automation" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content={heroImg} />
         <link rel="canonical" href="https://foundstart.org/blog/business-automation-2026" />
+        <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(howToLd)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -186,7 +259,7 @@ const BusinessAutomation2026: React.FC = () => {
                 <h3 className="text-xl font-bold mb-2">Get the full automation directory</h3>
                 <p className="text-muted-foreground mb-4">All 370+ partners curated by MoMoAI \u2014 formation, AI, social, payments and more.</p>
                 <Button asChild size="lg">
-                  <a href="https://shortet.com/Company-Formation" target="_blank" rel="noopener noreferrer">
+                  <a href={tag('https://shortet.com/Company-Formation', 'directory-cta')} target="_blank" rel="noopener noreferrer sponsored">
                     Explore the directory <ExternalLink className="w-4 h-4 ml-2" />
                   </a>
                 </Button>
