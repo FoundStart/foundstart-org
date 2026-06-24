@@ -11,6 +11,7 @@ import HomeFAQ from '@/components/home/HomeFAQ';
 import HomeServices from '@/components/home/HomeServices';
 import HomeCTA from '@/components/home/HomeCTA';
 import HomeWhyChoose from '@/components/home/HomeWhyChoose';
+import HomeBlogCarousel from '@/components/home/HomeBlogCarousel';
 
 const Index = () => {
   const { t, isRTL, language } = useTranslation();
@@ -21,6 +22,7 @@ const Index = () => {
       
       <main className="pb-20 md:pb-0 w-full max-w-full">
         <Hero />
+        <HomeBlogCarousel />
         <HomeServices language={language} isRTL={isRTL} />
 
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
