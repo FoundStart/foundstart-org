@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -9,6 +11,9 @@ import { blogPosts } from '@/data/blogPostsData';
 
 const HomeBlogCarousel = () => {
   const posts = blogPosts.filter((p) => p.featured).slice(0, 10);
+  const autoplay = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
 
   return (
     <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-muted/20 to-background">
@@ -36,7 +41,12 @@ const HomeBlogCarousel = () => {
           </Button>
         </motion.div>
 
-        <Carousel opts={{ align: 'start', loop: true }} className="w-full">
+        <Carousel
+          opts={{ align: 'start', loop: true, dragFree: true }}
+          plugins={[autoplay.current]}
+          className="w-full"
+          onMouseLeave={() => autoplay.current.play()}
+        >
           <CarouselContent className="-ml-4">
             {posts.map((post) => (
               <CarouselItem key={post.id} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
