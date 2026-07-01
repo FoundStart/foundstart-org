@@ -14,6 +14,28 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 207,
+    title: "Best Payment Gateways in 2026: Stripe, Paddle, Chargebee, Airwallex, Deel & More",
+    description: "The MoMoAI 2026 guide to the best payment gateways and billing platforms for SaaS, subscriptions, marketplaces, digital products and global payouts.",
+    category: "Payments",
+    author: "MoMoAI",
+    date: "Jun 29, 2026",
+    readTime: "13 min read",
+    featured: true,
+    slug: "payment-gateways-2026"
+  },
+  {
+    id: 206,
+    title: "Best Vibe Coding Platforms in 2026: Build Full-Stack Web & Mobile Apps with AI",
+    description: "MoMoAI's 2026 guide to 40+ AI vibe-coding platforms \u2014 Lovable, Emergent, Base44, Blackbox, Rork, Builder.io, FlutterFlow and more.",
+    category: "Vibe Coding",
+    author: "MoMoAI",
+    date: "Jun 28, 2026",
+    readTime: "15 min read",
+    featured: true,
+    slug: "vibe-coding-platforms-2026"
+  },
+  {
     id: 205,
     title: "Best Fintech Solutions in 2026: Virtual Cards, USD Bank Accounts & Crypto Wallets",
     description: "MoMoAI's 2026 guide to the best fintech \u2014 free USD bank accounts, virtual Visa/Mastercard cards, global banking, crypto wallets and P2P exchanges.",

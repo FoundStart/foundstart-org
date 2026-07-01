@@ -62,6 +62,8 @@ import EgyptOnePersonCompanyAR from "./pages/blog/EgyptOnePersonCompanyAR";
 import BestCompanyFormation2026 from "./pages/blog/BestCompanyFormation2026";
 import BusinessAutomation2026 from "./pages/blog/BusinessAutomation2026";
 import FintechVirtualCards2026 from "./pages/blog/FintechVirtualCards2026";
+import VibeCodingPlatforms2026 from "./pages/blog/VibeCodingPlatforms2026";
+import PaymentGateways2026 from "./pages/blog/PaymentGateways2026";
 import CompanyFormationBio from "./pages/CompanyFormationBio";
 import "./App.css";
 
@@ -118,6 +120,8 @@ function App() {
                   <Route path="/blog/best-company-formation-2026" element={<BestCompanyFormation2026 />} />
                   <Route path="/blog/business-automation-2026" element={<BusinessAutomation2026 />} />
                   <Route path="/blog/fintech-virtual-cards-2026" element={<FintechVirtualCards2026 />} />
+                  <Route path="/blog/vibe-coding-platforms-2026" element={<VibeCodingPlatforms2026 />} />
+                  <Route path="/blog/payment-gateways-2026" element={<PaymentGateways2026 />} />
                   <Route path="/blog/:slug" element={<AgencyFormationBlog />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
