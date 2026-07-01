@@ -651,6 +651,48 @@ export type Database = {
           },
         ]
       }
+      sales_inquiries: {
+        Row: {
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          jurisdiction: string | null
+          last_name: string | null
+          message: string
+          package: string | null
+          phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          jurisdiction?: string | null
+          last_name?: string | null
+          message: string
+          package?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          jurisdiction?: string | null
+          last_name?: string | null
+          message?: string
+          package?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       service_catalog: {
         Row: {
           category: string

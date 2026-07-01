@@ -8,6 +8,7 @@ import CompanyManagement from '@/components/admin/CompanyManagement';
 import ServiceManagement from '@/components/admin/ServiceManagement';
 import OrderManagement from '@/components/admin/OrderManagement';
 import DomainInquiryManagement from '@/components/admin/DomainInquiryManagement';
+import SalesInquiryManagement from '@/components/admin/SalesInquiryManagement';
 import DomainAnalyticsDashboard from '@/components/admin/DomainAnalyticsDashboard';
 import AdminAffiliatesManagement from '@/components/admin/AdminAffiliatesManagement';
 import BlogPartnerAnalytics from '@/components/admin/BlogPartnerAnalytics';
@@ -36,6 +37,7 @@ const AdminDashboardContent = () => {
           <Route path="services" element={<ServiceManagement />} />
           <Route path="orders" element={<OrderManagement />} />
           <Route path="domain-inquiries" element={<DomainInquiryManagement />} />
+          <Route path="sales-inquiries" element={<SalesInquiryManagement />} />
           <Route path="domain-analytics" element={<DomainAnalyticsDashboard />} />
           <Route path="prompts" element={<PlaceholderPage title="AI Prompts" />} />
           <Route path="affiliates" element={<AdminAffiliatesManagement />} />
