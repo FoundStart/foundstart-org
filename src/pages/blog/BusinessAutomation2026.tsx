@@ -60,7 +60,7 @@ const AUTOMATION: Partner[] = [
   { name: 'CloserX', url: 'https://shortet.com/closerx', description: 'AI calling sales agent.' },
   { name: 'Blotato', url: 'https://shortet.com/Blotato', description: 'Social scheduling tool.' },
   { name: 'UploadPost', url: 'https://shortet.com/upload-post', description: 'Social Media API \u2014 one call, every platform.' },
-  { name: 'Postiz (Yn)', url: 'https://shortet.com/Yn', description: 'Social media scheduling tool.' },
+  { name: 'Postiz (Yn)', url: 'https://shortet.com/Postiz', description: 'Social media scheduling tool.' },
   { name: 'Akool', url: 'https://shortet.com/Akool', description: 'Premium AI video & avatar suite.' },
   { name: 'Typefully', url: 'https://shortet.com/Typefully', description: 'Social media writing tool.' },
   { name: 'Nuelink', url: 'http://nuelink.com/?via=deeemoz', description: 'Social media scheduling & automation.' },

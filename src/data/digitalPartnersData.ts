@@ -158,7 +158,14 @@ export const digitalPartnersData: DigitalPartner[] = [
     "category": "Business Automation",
     "platform": "Flyhermes",
     "url": "https://shortet.com/Flyhermes",
-    "niche": "our AI Agent — Zero Setup Required",
+    "niche": "our AI Agent \u2014 Zero Setup Required",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Katteb",
+    "url": "https://katteb.com/i/RL9WML5J",
+    "niche": "Katteb AI Agents",
     "coupon": ""
   },
   {
@@ -318,7 +325,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Business Automation",
     "platform": "Postiz",
-    "url": "https://shortet.com/Yn",
+    "url": "https://shortet.com/Postiz",
     "niche": "Social media scheduling tool",
     "coupon": ""
   },
@@ -339,7 +346,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Business Automation",
     "platform": "Nuelink",
-    "url": "http//nuelink.com/?via=deeemoz",
+    "url": "https//nuelink.com/?via=deeemoz",
     "niche": "Social Media Scheduling and Automation Tool",
     "coupon": ""
   },
@@ -387,9 +394,9 @@ export const digitalPartnersData: DigitalPartner[] = [
   },
   {
     "category": "Business Automation",
-    "platform": "Shortet",
-    "url": "https://Shortet.com",
-    "niche": "Short URL, BIO & QR Code for free & APIs",
+    "platform": "Airops",
+    "url": "https://shortet.com/airops",
+    "niche": "The growth platform for AI Search",
     "coupon": ""
   },
   {
@@ -481,6 +488,13 @@ export const digitalPartnersData: DigitalPartner[] = [
     "platform": "Twin",
     "url": "https://shortet.com/twin-AI",
     "niche": "Automate Anything (the Ai Company Builder)",
+    "coupon": ""
+  },
+  {
+    "category": "Business Automation",
+    "platform": "Shortet",
+    "url": "https://Shortet.com",
+    "niche": "Short URL, BIO & QR Code for free & APIs",
     "coupon": ""
   },
   {
@@ -963,7 +977,7 @@ export const digitalPartnersData: DigitalPartner[] = [
     "category": "Telecommunication",
     "platform": "Airalo",
     "url": "https://shortet.com/airalo",
-    "niche": "Get EUR 3.00 € off their first purchase",
+    "niche": "Get EUR 3.00 \u20ac off their first purchase",
     "coupon": "MOHAME30889"
   },
   {
@@ -1180,7 +1194,7 @@ export const digitalPartnersData: DigitalPartner[] = [
     "category": "Web Hosting",
     "platform": "Hostinger",
     "url": "https://shortet.com/YM",
-    "niche": "Horizons Go from idea to a web app or site – in minutes",
+    "niche": "Horizons Go from idea to a web app or site \u2013 in minutes",
     "coupon": "momosa"
   },
   {
@@ -1314,6 +1328,13 @@ export const digitalPartnersData: DigitalPartner[] = [
     "platform": "Sedo",
     "url": "https://shortet.com/sedo",
     "niche": "Find Your Domians",
+    "coupon": ""
+  },
+  {
+    "category": "Domains",
+    "platform": "Nameceap",
+    "url": "https://shortet.com/namecheap",
+    "niche": "Web, Domain & cloud hosting",
     "coupon": ""
   },
   {
@@ -2272,7 +2293,7 @@ export const digitalPartnersData: DigitalPartner[] = [
     "category": "Digital marketplace",
     "platform": "Apify",
     "url": "https://shortet.com/apify",
-    "niche": "full‑stack platform for web scraping & API",
+    "niche": "full\u2011stack platform for web scraping & API",
     "coupon": ""
   },
   {
