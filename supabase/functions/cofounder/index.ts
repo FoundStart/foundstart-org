@@ -166,23 +166,36 @@ serve(async (req) => {
 
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const OPENAI_API_KEY = Deno.env.get("OPENAI_API_KEY");
-    const apiKey = LOVABLE_API_KEY || OPENAI_API_KEY;
-    if (!apiKey) throw new Error("No AI gateway key configured (LOVABLE_API_KEY or OPENAI_API_KEY)");
+    const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+    const apiKey = LOVABLE_API_KEY || OPENAI_API_KEY || GEMINI_API_KEY;
+    if (!apiKey) throw new Error("No AI gateway key configured (LOVABLE_API_KEY, OPENAI_API_KEY or GEMINI_API_KEY)");
     const gatewayUrl = LOVABLE_API_KEY
       ? "https://ai.gateway.lovable.dev/v1/chat/completions"
-      : "https://api.openai.com/v1/chat/completions";
+      : OPENAI_API_KEY
+        ? "https://api.openai.com/v1/chat/completions"
+        : `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${GEMINI_API_KEY}`;
 
     const response = await fetch(gatewayUrl, {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: LOVABLE_API_KEY ? "google/gemini-2.5-flash" : "gpt-4o-mini",
-        messages: [
-          { role: "system", content: systemPrompt },
-          ...messages.map((m: any) => ({ role: m.role, content: m.content?.toString() ?? "" })),
-        ],
-        stream: true,
-      }),
+      body: JSON.stringify(
+        GEMINI_API_KEY && !LOVABLE_API_KEY && !OPENAI_API_KEY
+          ? {
+              system_instruction: { parts: [{ text: systemPrompt }] },
+              contents: messages.map((m: any) => ({
+                role: m.role === "assistant" ? "model" : "user",
+                parts: [{ text: m.content?.toString() ?? "" }],
+              })),
+            }
+          : {
+              model: LOVABLE_API_KEY ? "google/gemini-2.5-flash" : "gpt-4o-mini",
+              messages: [
+                { role: "system", content: systemPrompt },
+                ...messages.map((m: any) => ({ role: m.role, content: m.content?.toString() ?? "" })),
+              ],
+              stream: true,
+            }
+      ),
     });
 
     if (!response.ok) {
@@ -195,21 +208,24 @@ serve(async (req) => {
       });
     }
 
-    // Stream through while buffering the assistant reply for persistence
+    // Stream through while buffering the assistant reply for persistence.
+    // Normalize any upstream format to OpenAI-style SSE deltas for the client.
     const reader = response.body!.getReader();
     const decoder = new TextDecoder();
+    const encoder = new TextEncoder();
     let assistantText = "";
+    let sseBuffer = "";
     const stream = new ReadableStream({
       async pull(controller) {
         const { done, value } = await reader.read();
         if (done) {
+          controller.enqueue(encoder.encode("data: [DONE]\n\n"));
           controller.close();
-          const assistantSdkId = crypto.randomUUID();
           try {
             await admin.from("cofounder_messages").insert({
               thread_id: threadId,
               user_id: user.id,
-              sdk_id: assistantSdkId,
+              sdk_id: crypto.randomUUID(),
               message: { role: "assistant", content: assistantText },
             });
             await admin.from("cofounder_threads").update({ updated_at: new Date().toISOString() }).eq("id", threadId);
@@ -218,15 +234,22 @@ serve(async (req) => {
           }
           return;
         }
-        controller.enqueue(value);
-        const chunk = decoder.decode(value, { stream: true });
-        for (const line of chunk.split("\n")) {
+        sseBuffer += decoder.decode(value, { stream: true });
+        const lines = sseBuffer.split("\n");
+        sseBuffer = lines.pop() ?? "";
+        for (const line of lines) {
           if (!line.startsWith("data:") || line.includes("[DONE]")) continue;
           try {
             const json = JSON.parse(line.slice(5).trim());
-            const delta = json.choices?.[0]?.delta?.content;
-            if (delta) assistantText += delta;
-          } catch { /* partial chunk */ }
+            const delta = json.choices?.[0]?.delta?.content
+              ?? json.candidates?.[0]?.content?.parts?.map((p: any) => p.text ?? "").join("");
+            if (delta) {
+              assistantText += delta;
+              controller.enqueue(encoder.encode(
+                `data: ${JSON.stringify({ choices: [{ delta: { content: delta } }] })}\n\n`
+              ));
+            }
+          } catch { /* partial JSON line */ }
         }
       },
       cancel() { reader.cancel(); },
