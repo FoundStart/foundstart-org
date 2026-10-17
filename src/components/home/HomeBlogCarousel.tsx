@@ -11,7 +11,7 @@ import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react';
 import { blogPosts, type BlogPost } from '@/data/blogPostsData';
 import thumbFintech from '@/assets/blog-fintech-virtual-cards-2026.jpg';
 import thumbAutomation from '@/assets/blog-business-automation-2026.jpg';
-import thumbFormation from '@/assets/blog-best-company-formation-2026.png.asset.json';
+const thumbFormation = '/blog/covers/best-company-formation-2026.jpg';
 import thumbVibe from '@/assets/blog-vibe-coding-2026.jpg';
 import thumbPayments from '@/assets/blog-payment-gateways-2026.jpg';
 import thumbMomoEn from '@/assets/blog-momoai-business-setup-en.jpg';

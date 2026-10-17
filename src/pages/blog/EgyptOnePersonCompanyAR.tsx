@@ -35,6 +35,8 @@ const EgyptOnePersonCompanyAR = () => {
           <span>قراءة 10 دقائق</span>
         </div>
 
+        <img src="/blog/covers/egypt-one-person-company-ar.jpg" alt="egypt one person company ar" className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
+
         <Card>
           <CardContent className="prose prose-invert max-w-none py-8 text-right leading-loose">
             <p>

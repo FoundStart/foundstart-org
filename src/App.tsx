@@ -25,7 +25,7 @@ import PremiumDomainsBlog from "./pages/blog/PremiumDomainsBlog";
 import PremiumDomainsShowcaseBlog from "./pages/blog/PremiumDomainsShowcaseBlog";
 import LLCFormationGuideBlog from "./pages/blog/LLCFormationGuideBlog";
 import UKvsUSFormationBlog from "./pages/blog/UKvsUSFormationBlog";
-import AgencyFormationBlog from "./pages/blog/AgencyFormationBlog";
+import { BlogSlugDispatcher } from "./pages/blog/ArticleBlog";
 import MoMoAIBusinessSetupEN from "./pages/blog/MoMoAIBusinessSetupEN";
 import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
 import Press from "./pages/Press";
@@ -125,7 +125,7 @@ function App() {
                   <Route path="/blog/fintech-virtual-cards-2026" element={<FintechVirtualCards2026 />} />
                   <Route path="/blog/vibe-coding-platforms-2026" element={<VibeCodingPlatforms2026 />} />
                   <Route path="/blog/payment-gateways-2026" element={<PaymentGateways2026 />} />
-                  <Route path="/blog/:slug" element={<AgencyFormationBlog />} />
+                  <Route path="/blog/:slug" element={<BlogSlugDispatcher />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
                   <Route path="/tutorials" element={<Tutorials />} />

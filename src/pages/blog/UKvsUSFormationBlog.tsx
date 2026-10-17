@@ -62,6 +62,8 @@ const UKvsUSFormationBlog = () => {
             </div>
           </header>
 
+                        <img src="/blog/covers/uk-vs-us-company-formation.jpg" alt="uk vs us company formation" className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
+
           <div className="prose prose-lg max-w-none space-y-8">
             <section>
               <h2 className="text-3xl font-bold mb-4">Overview</h2>

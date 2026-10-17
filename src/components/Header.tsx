@@ -57,7 +57,8 @@ const Header = () => {
         <div className={`flex h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
           <div className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
-            <Link to="/" className="flex items-center" aria-label="FoundStart Home">
+            <Link to="/" className="flex items-center gap-2" aria-label="FoundStart Home">
+              <img src="/logo-mark.png" alt="FoundStart logo" className="h-8 w-auto" />
               <span className="text-xl font-bold gradient-text">FoundStart</span>
             </Link>
           </div>

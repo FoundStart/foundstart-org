@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, ExternalLink, CheckCircle, Globe } from 'lucide-react';
-import heroAsset from '@/assets/blog-best-company-formation-2026.png.asset.json';
 
 const TITLE = 'How to Get the Best Company Formation for Your Online Business in 2026';
 const DESCRIPTION =
@@ -82,7 +81,7 @@ const BestCompanyFormation2026: React.FC = () => {
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={heroAsset.url} />
+        <meta property="og:image" content={"/blog/covers/best-company-formation-2026.jpg"} />
         <link rel="canonical" href="https://foundstart.org/blog/best-company-formation-2026" />
       </Helmet>
 
@@ -118,7 +117,7 @@ const BestCompanyFormation2026: React.FC = () => {
           <section className="px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-4xl">
               <img
-                src={heroAsset.url}
+                src={"/blog/covers/best-company-formation-2026.jpg"}
                 alt="Company Formation Services — Start your business anywhere in the world (USA, UK, Estonia, Finland, Sweden, Latvia, Lithuania, Ireland)"
                 width={1536}
                 height={1024}

@@ -160,7 +160,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <span className="text-lg font-bold gradient-text">FoundStart</span>
+              <span className="flex items-center gap-2"><img src="/logo-mark.png" alt="FoundStart logo" className="h-7 w-auto" /><span className="text-lg font-bold gradient-text">FoundStart</span></span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
               Launch your business in minutes, not months. The all-in-one platform 

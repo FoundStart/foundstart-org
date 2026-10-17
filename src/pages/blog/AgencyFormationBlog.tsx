@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, CheckCircle, ArrowRight, Building2, Globe, Shield, DollarSign } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { oldArticleCovers } from '@/data/oldArticleCovers';
 
 interface BlogContent {
   title: string;
@@ -492,6 +493,7 @@ const getDefaultBlogContent = (slug: string): BlogContent => ({
 const AgencyFormationBlog: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const content = blogContents[slug || ''] || getDefaultBlogContent(slug || '');
+  const heroImg = content.heroImage || (slug ? oldArticleCovers[slug] : undefined);
 
   return (
     <>
@@ -501,6 +503,7 @@ const AgencyFormationBlog: React.FC = () => {
         <meta property="og:title" content={content.title} />
         <meta property="og:description" content={content.description} />
         <meta property="og:type" content="article" />
+        {heroImg && <meta property="og:image" content={`https://www.foundstart.org${heroImg}`} />}
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -546,6 +549,10 @@ const AgencyFormationBlog: React.FC = () => {
           {/* Content Section */}
           <section className="py-12 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-4xl">
+              {heroImg && (
+                <img src={heroImg} alt={content.title} className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
+              )}
+
               <div className="prose prose-lg dark:prose-invert max-w-none">
                 {content.sections.map((section, index) => (
                   <div key={index} className="mb-12">

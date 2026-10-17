@@ -68,6 +68,11 @@ const Blog = () => {
             {featuredPosts.map((post) => (
               <Card key={post.id} className="mb-12 overflow-hidden border-2 border-primary/20">
                 <div className="grid md:grid-cols-2 gap-6">
+                  {post.image ? (
+                    <Link to={`/blog/${post.slug}`} className="block min-h-[220px]">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
+                    </Link>
+                  ) : (
                   <div className="bg-gradient-to-br from-primary/10 to-purple-600/10 p-6 md:p-8 flex items-center justify-center">
                     <div className="text-center">
                       <Badge className="mb-4">Featured Post</Badge>
@@ -75,6 +80,7 @@ const Blog = () => {
                       <p className="text-muted-foreground text-sm md:text-base">{post.description}</p>
                     </div>
                   </div>
+                  )}
                   <CardContent className="p-6 md:p-8">
                     <div className="flex flex-wrap items-center gap-4 mb-4">
                       <Badge variant="secondary">{post.category}</Badge>
@@ -108,7 +114,12 @@ const Blog = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {regularPosts.map((post, idx) => (
                 <React.Fragment key={post.id}>
-                  <Card className="group hover:shadow-lg transition-all duration-300">
+                  <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    {post.image && (
+                      <Link to={`/blog/${post.slug}`}>
+                        <img src={post.image} alt={post.title} className="w-full h-40 object-cover" loading="lazy" />
+                      </Link>
+                    )}
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="secondary">{post.category}</Badge>

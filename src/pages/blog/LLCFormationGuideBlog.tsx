@@ -64,6 +64,8 @@ const LLCFormationGuideBlog = () => {
             </div>
           </header>
 
+                        <img src="/blog/covers/llc-formation-guide.jpg" alt="llc formation guide" className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
+
           <div className="prose prose-lg max-w-none space-y-8">
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
               <CardContent className="p-0">

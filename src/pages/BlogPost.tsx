@@ -70,6 +70,8 @@ const BlogPost = () => {
           </header>
 
           {/* Article Content */}
+                        <img src="/blog/covers/digital-nomad-guide.jpg" alt="digital nomad guide" className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
+
           <div className="prose prose-lg max-w-none space-y-8">
             
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">

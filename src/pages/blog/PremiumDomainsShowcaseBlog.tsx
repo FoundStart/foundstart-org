@@ -52,6 +52,8 @@ const PremiumDomainsShowcaseBlog = () => {
               </div>
             </div>
 
+            <img src="/blog/covers/premium-domains-showcase.jpg" alt="premium domains showcase" className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
+
             {grouped.map(([category, list]) => (
               <section key={category} className="mb-12">
                 <h2 className="text-2xl font-bold mb-2">{category}</h2>
