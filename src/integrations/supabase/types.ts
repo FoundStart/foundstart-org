@@ -226,6 +226,89 @@ export type Database = {
           },
         ]
       }
+      cofounder_gateway_state: {
+        Row: {
+          created_at: string
+          id: string
+          reason: string
+          status: number
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          reason: string
+          status: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          reason?: string
+          status?: number
+        }
+        Relationships: []
+      }
+      cofounder_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: Json
+          sdk_id: string
+          thread_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: Json
+          sdk_id: string
+          thread_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: Json
+          sdk_id?: string
+          thread_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cofounder_messages_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "cofounder_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cofounder_threads: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       companies: {
         Row: {
           admin_notes: string | null
