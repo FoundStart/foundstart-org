@@ -28,6 +28,7 @@ import {
   Package,
   Briefcase,
   Tag,
+  Sparkles,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Button } from '@/components/ui/button';
@@ -43,6 +44,7 @@ const servicesMenuItems = [
   { title: 'Services Marketplace', icon: ShoppingCart, href: '/dashboard/services' },
   { title: 'Domain Search', icon: Globe, href: '/dashboard/domains' },
   { title: 'AI Assistant', icon: Bot, href: '/dashboard/ai-assistant' },
+  { title: 'AI Co-founder', icon: Sparkles, href: '/cofounder' },
 ];
 
 const accountMenuItems = [

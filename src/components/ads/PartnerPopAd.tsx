@@ -57,7 +57,7 @@ const PartnerPopAd = ({ items, storageKey, badgeLabel, trigger, campaign }: Prop
     // 1-hour cooldown across sessions
     const until = Number(localStorage.getItem(cooldownKey(storageKey)) || 0);
     if (until && Date.now() < until) return;
-    if (/^\/(dashboard|admin|auth|reset-password|settings)/.test(location.pathname)) return;
+    if (/^\/(dashboard|admin|auth|reset-password|cofounder|settings)/.test(location.pathname)) return;
     if (!isLive('partnerAds')) return;
     if (!partner) return;
 

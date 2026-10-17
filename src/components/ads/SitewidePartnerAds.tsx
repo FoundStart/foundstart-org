@@ -55,7 +55,7 @@ const SitewidePartnerAds = () => {
   }, [dismissed, ads.length]);
 
   // Hide on dashboard/admin/auth routes
-  const hide = /^\/(dashboard|admin|auth|reset-password)/.test(location.pathname);
+  const hide = /^\/(dashboard|admin|auth|reset-password|cofounder)/.test(location.pathname);
   if (hide || dismissed || ads.length === 0) return null;
 
   const ad = ads[index];

@@ -91,7 +91,7 @@ const PartnerBannerStrip = ({
   }, [ad?.platform, ad?.href, campaignId, variant, device]);
 
   const hide =
-    /^\/(dashboard|admin|auth|reset-password|settings)/.test(location.pathname) ||
+    /^\/(dashboard|admin|auth|reset-password|cofounder|settings)/.test(location.pathname) ||
     !isLive('partnerAds') ||
     formActive;
   if (hide || !visible || dismissed || pool.length === 0) return null;

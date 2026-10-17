@@ -20,7 +20,7 @@ const ExitIntentPartnerAd = () => {
 
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY)) return;
-    if (/^\/(dashboard|admin|auth|reset-password)/.test(location.pathname)) return;
+    if (/^\/(dashboard|admin|auth|reset-password|cofounder)/.test(location.pathname)) return;
 
     const onLeave = (e: MouseEvent) => {
       if (e.clientY <= 0 && !sessionStorage.getItem(SESSION_KEY)) {

@@ -1,0 +1,67 @@
+{
+  "formation": {
+    "title": "Company Formation Playbook",
+    "steps": [
+      "Pick the jurisdiction that fits the goal: USA (LLC for online business, Stripe/Mercury access), UK (Ltd, fast and cheap), Estonia (e-Residency, EU), Egypt (local operations, Kashier/Paymob).",
+      "Choose entity type: LLC for most online founders; C-Corp only if raising US venture money.",
+      "Order formation through a partner service; you receive incorporation documents, registered agent and EIN/tax number.",
+      "Open banking (Mercury/Wise for US, local bank for Egypt) once documents arrive.",
+      "Set up payments (Stripe needs a US/UK/EU entity; Kashier/Paymob/Fawry for Egypt).",
+      "Calendar the compliance dates: annual report, registered agent renewal, tax filings."
+    ]
+  },
+  "no-code": {
+    "title": "No-Code / Vibe-Coding Product Playbook",
+    "steps": [
+      "Write a one-paragraph product spec: who it serves, the one job it does, the data it stores.",
+      "Build the first version in a vibe-coding platform (Lovable, Emergent, Base44 and similar) - describe screens, iterate in chat.",
+      "Connect the built-in backend (auth, database) before adding features.",
+      "Add payments only after the core loop works manually.",
+      "Publish on the platform's hosting first; move to custom hosting only when traffic justifies it.",
+      "Collect 5 real users before polishing design."
+    ]
+  },
+  "fly-hermes": {
+    "title": "Example Venture Playbook (travel niche)",
+    "steps": [
+      "Validate the niche: pick one traveler segment and one painful problem.",
+      "Name and domain: short, pronounceable, available .com or strong TLD.",
+      "Form the legal entity only after first revenue signal; start as a landing page plus waitlist.",
+      "Build the MVP with vibe-coding tools; use travel inventory partners rather than building supply.",
+      "Monetize with partner offers first (booking, insurance, eSIM), own product later.",
+      "Track everything with a simple dashboard from day one."
+    ]
+  },
+  "freelance": {
+    "title": "Freelance Earning Playbook",
+    "steps": [
+      "Pick one sellable skill you can deliver this week (writing, design, video editing, data entry, translation).",
+      "Create profiles on two marketplaces that match your language (Arabic: Khamsat, Kafiil; English: PeoplePerHour and similar).",
+      "Publish 3 small fixed-price services instead of one big vague one.",
+      "Deliver the first 5 orders fast and over-communicate; reviews compound.",
+      "Raise prices after 10 reviews; add AI tools to deliver faster.",
+      "Move repeat clients to a direct contract when the platform allows."
+    ]
+  },
+  "vibe-marketing": {
+    "title": "AI Marketing Playbook",
+    "steps": [
+      "Pick one channel you can sustain (short video, SEO blog, or email).",
+      "Generate creatives with AI video/image and voice tools; keep one consistent visual style.",
+      "Publish daily for 30 days before judging results.",
+      "Reuse every piece across languages (EN + AR doubles reach).",
+      "Send traffic to one landing page, not a homepage.",
+      "Measure clicks-to-signup weekly and kill what does not convert."
+    ]
+  },
+  "ai-operations": {
+    "title": "Run Your Work With AI Playbook",
+    "steps": [
+      "List your weekly repeated tasks; automate the top 3 first.",
+      "Use an AI assistant for drafting (emails, docs, posts) and review before sending.",
+      "Wire no-code automation between your tools (forms to sheets to email).",
+      "Keep a single source of truth for tasks and money in a management tool.",
+      "Review automations monthly; delete the ones nobody uses."
+    ]
+  }
+}

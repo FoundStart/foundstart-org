@@ -44,6 +44,32 @@ const Index = () => {
           </div>
         </section>
 
+        <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-5xl">
+            <div className="grid gap-6 md:grid-cols-2">
+              <Link to="/guides" className="group rounded-xl border bg-card p-8 transition-shadow hover:shadow-lg">
+                <h3 className="mb-2 text-2xl font-bold">
+                  {language === 'ar' ? 'أدلة المؤسسين المجانية' : 'Free Founder Guides'}
+                </h3>
+                <p className="text-muted-foreground">
+                  {language === 'ar'
+                    ? 'تعلّم تأسيس الشركات، البناء بالذكاء الاصطناعي، التسويق وإدارة العمل - خطوة بخطوة.'
+                    : 'Learn company formation, AI building, marketing and operations - step by step.'}
+                </p>
+              </Link>
+              <Link to="/cofounder" className="group rounded-xl border bg-card p-8 transition-shadow hover:shadow-lg">
+                <h3 className="mb-2 text-2xl font-bold">
+                  {language === 'ar' ? 'الشريك المؤسس بالذكاء الاصطناعي' : 'AI Co-founder'}
+                </h3>
+                <p className="text-muted-foreground">
+                  {language === 'ar'
+                    ? 'اسأل شريكك المؤسس أي حاجة - بيفتكر محادثاتكم وبيرشح الأدوات المناسبة.'
+                    : 'Ask your co-founder anything - it remembers your conversations and recommends the right tools.'}
+                </p>
+              </Link>
+            </div>
+          </div>
+        </section>
         <HomeCTA />
         <HomeWhyChoose />
         <HomeFAQ />
