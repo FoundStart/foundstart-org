@@ -1,4 +1,6 @@
  import { useParams, Link } from 'react-router-dom';
+import { SHOW_REGISTRATION } from '@/config/features';
+import { useTranslation } from '@/contexts/TranslationContext';
  import Header from '@/components/Header';
  import Footer from '@/components/Footer';
  import { Button } from '@/components/ui/button';
@@ -9,6 +11,7 @@
  import { countriesData } from '@/data/countriesData';
  
  const CountryPage = () => {
+  const { isRTL } = useTranslation();
    const { countryId } = useParams<{ countryId: string }>();
    const country = countriesData.find(c => c.id.toLowerCase() === countryId?.toLowerCase());
  
@@ -53,8 +56,14 @@
                    <Badge variant="secondary" className="text-lg px-4 py-2">{country.timeframe}</Badge>
                  </div>
                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                   <Button size="lg" asChild className="text-lg px-8"><Link to={`/auth?country=${country.id}`}>Sign Up & Start Formation</Link></Button>
-                   <Button size="lg" variant="outline" asChild className="text-lg px-8"><Link to="/auth">Already have an account? Sign In</Link></Button>
+                   {SHOW_REGISTRATION ? (
+                     <>
+                       <Button size="lg" asChild className="text-lg px-8"><Link to={`/auth?country=${country.id}`}>Sign Up & Start Formation</Link></Button>
+                       <Button size="lg" variant="outline" asChild className="text-lg px-8"><Link to="/auth">Already have an account? Sign In</Link></Button>
+                     </>
+                   ) : (
+                     <Button size="lg" asChild className="text-lg px-8"><a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a></Button>
+                   )}
                  </div>
                </CardContent>
              </Card>
@@ -87,7 +96,7 @@
                </CardContent>
              </Card>
 
-             <Card className="glass-card mb-12">
+             <Card id="partners" className="glass-card mb-12 scroll-mt-24">
                <CardHeader>
                  <CardTitle className="text-xl flex items-center gap-2"><Building className="w-5 h-5" />Formation Partners</CardTitle>
                </CardHeader>
@@ -97,17 +106,13 @@
                      <Button
                        key={index}
                        variant="outline"
+                       asChild
                        className="h-auto py-4 hover:bg-primary hover:text-primary-foreground"
-                       onClick={() => {
-                         if (partner.url.startsWith('/')) {
-                           window.location.href = partner.url;
-                         } else {
-                           window.open(partner.url, '_blank');
-                         }
-                       }}
                      >
-                       {partner.name}
-                       <ExternalLink className="w-4 h-4 ml-2" />
+                       <a href={partner.url} target={partner.url.startsWith('/') ? undefined : '_blank'} rel="noopener noreferrer">
+                         {partner.name}
+                         <ExternalLink className="w-4 h-4 mx-2" />
+                       </a>
                      </Button>
                    ))}
                  </div>
@@ -116,10 +121,16 @@
 
              <div className="text-center py-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl">
                <h2 className="text-3xl font-bold mb-4">Ready to Start Your {country.name} Business?</h2>
-               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Join thousands of entrepreneurs who have successfully formed their companies with FoundStart.</p>
+               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{isRTL ? 'اختر شريك تأسيس موثوقًا وابدأ شركتك اليوم.' : 'Pick a formation partner and start your company today.'}</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                 <Button size="lg" asChild className="text-lg px-8"><Link to={`/auth?country=${country.id}`}>Register & Start Now</Link></Button>
-                 <Button size="lg" variant="outline" asChild><Link to="/pricing-calculator">Calculate Your Costs</Link></Button>
+                 {SHOW_REGISTRATION ? (
+                   <>
+                     <Button size="lg" asChild className="text-lg px-8"><Link to={`/auth?country=${country.id}`}>Register & Start Now</Link></Button>
+                     <Button size="lg" variant="outline" asChild><Link to="/pricing-calculator">Calculate Your Costs</Link></Button>
+                   </>
+                 ) : (
+                   <Button size="lg" asChild className="text-lg px-8"><a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a></Button>
+                 )}
                </div>
              </div>
            </div>
