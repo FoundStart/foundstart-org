@@ -67,7 +67,11 @@ const norm = (t: string) =>
     .replace(/[ً-ْٰ]/g, '')
     .replace(/[أإآٱ]/g, 'ا')
     .replace(/ى/g, 'ي')
-    .replace(/ة/g, 'ه');
+    .replace(/ة/g, '');
+
+// Teh-marbuta is dropped by norm; tolerate a trailing ه in user spelling (شركه).
+const hit = (blob: string, token: string): boolean =>
+  blob.includes(token) || (token.endsWith('ه') && token.length > 2 && blob.includes(token.slice(0, -1)));
 
 const buildIndex = (): SearchItem[] => {
   const items: SearchItem[] = [];
@@ -113,8 +117,8 @@ const search = (index: SearchItem[], query: string): SearchItem[] => {
     .map((item) => {
       let score = 0;
       for (const t of tokens) {
-        if (norm(item.title).includes(t)) score += 3;
-        if (item.blob.includes(t)) score += 1;
+        if (hit(norm(item.title), t)) score += 3;
+        if (hit(item.blob, t)) score += 1;
       }
       return { item, score };
     })
