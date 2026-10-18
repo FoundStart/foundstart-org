@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 // Turn bare URLs in bot/agent replies into markdown links so they render as tappable cards.
 export const linkify = (text: string): string =>
@@ -24,7 +24,11 @@ export const chatMdComponents = {
       className="my-1 flex items-center justify-between gap-2 rounded-lg border bg-card px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/5"
     >
       <span className="truncate">{children}</span>
-      <ExternalLink className="h-4 w-4 shrink-0" />
+      {href?.startsWith('/') ? (
+        <ArrowRight className="h-4 w-4 shrink-0 rtl:-scale-x-100" />
+      ) : (
+        <ExternalLink className="h-4 w-4 shrink-0" />
+      )}
     </a>
   ),
   p: ({ children }: { children?: ReactNode }) => <p className="mb-2 last:mb-0">{children}</p>,
