@@ -22,8 +22,9 @@ const Blog = () => {
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
 
-  const featuredPosts = filteredPosts.filter(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
+  // Newest first everywhere: the top 3 newest are the lead cards, the rest follow in date order.
+  const featuredPosts = filteredPosts.slice(0, 3);
+  const regularPosts = filteredPosts.slice(3);
 
   return (
     <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
