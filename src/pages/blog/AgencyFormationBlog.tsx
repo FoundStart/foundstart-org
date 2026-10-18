@@ -9,6 +9,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, CheckCircle, ArrowRight, Building2, Globe, Shield, DollarSign } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { oldArticleCovers } from '@/data/oldArticleCovers';
+import { arAgencyContents } from '@/data/foundstartAr2';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 interface BlogContent {
   title: string;
@@ -492,7 +494,10 @@ const getDefaultBlogContent = (slug: string): BlogContent => ({
 
 const AgencyFormationBlog: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const content = blogContents[slug || ''] || getDefaultBlogContent(slug || '');
+  const { language, setLanguage } = useTranslation();
+  const isArPost = !!slug && !!arAgencyContents[slug];
+  React.useEffect(() => { if (isArPost && language !== 'ar') setLanguage('ar'); }, [isArPost]);
+  const content = blogContents[slug || ''] || (arAgencyContents[slug || ''] as BlogContent | undefined) || getDefaultBlogContent(slug || '');
   const heroImg = content.heroImage || (slug ? oldArticleCovers[slug] : undefined);
 
   return (
@@ -506,7 +511,7 @@ const AgencyFormationBlog: React.FC = () => {
         {heroImg && <meta property="og:image" content={`https://www.foundstart.org${heroImg}`} />}
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background" dir={isArPost ? "rtl" : undefined}>
         <Header />
         
       <BlogAdStrip position="top" slug="agency-formation" />
@@ -692,7 +697,7 @@ const AgencyFormationBlog: React.FC = () => {
                 <h3 className="text-xl font-bold mb-6">Related Articles</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {content.relatedSlugs.map((relatedSlug) => {
-                    const related = blogContents[relatedSlug] || getDefaultBlogContent(relatedSlug);
+                    const related = blogContents[relatedSlug] || (arAgencyContents[relatedSlug] as BlogContent | undefined) || getDefaultBlogContent(relatedSlug);
                     return (
                       <Link 
                         key={relatedSlug}

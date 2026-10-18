@@ -26,6 +26,17 @@ import PremiumDomainsShowcaseBlog from "./pages/blog/PremiumDomainsShowcaseBlog"
 import LLCFormationGuideBlog from "./pages/blog/LLCFormationGuideBlog";
 import UKvsUSFormationBlog from "./pages/blog/UKvsUSFormationBlog";
 import { BlogSlugDispatcher } from "./pages/blog/ArticleBlog";
+import PaymentGateways2026AR from "./pages/blog/PaymentGateways2026AR";
+import VibeCodingPlatforms2026AR from "./pages/blog/VibeCodingPlatforms2026AR";
+import FintechVirtualCards2026AR from "./pages/blog/FintechVirtualCards2026AR";
+import BusinessAutomation2026AR from "./pages/blog/BusinessAutomation2026AR";
+import BestCompanyFormation2026AR from "./pages/blog/BestCompanyFormation2026AR";
+import PremiumDomainsBlogAR from "./pages/blog/PremiumDomainsBlogAR";
+import PremiumDomainsShowcaseBlogAR from "./pages/blog/PremiumDomainsShowcaseBlogAR";
+import LLCFormationGuideBlogAR from "./pages/blog/LLCFormationGuideBlogAR";
+import UKvsUSFormationBlogAR from "./pages/blog/UKvsUSFormationBlogAR";
+import ArWrap from "./pages/blog/ArWrap";
+
 import MoMoAIBusinessSetupEN from "./pages/blog/MoMoAIBusinessSetupEN";
 import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
 import Press from "./pages/Press";
@@ -125,6 +136,15 @@ function App() {
                   <Route path="/blog/fintech-virtual-cards-2026" element={<FintechVirtualCards2026 />} />
                   <Route path="/blog/vibe-coding-platforms-2026" element={<VibeCodingPlatforms2026 />} />
                   <Route path="/blog/payment-gateways-2026" element={<PaymentGateways2026 />} />
+                  <Route path="/blog/payment-gateways-2026-ar" element={<ArWrap><PaymentGateways2026AR /></ArWrap>} />
+                  <Route path="/blog/vibe-coding-platforms-2026-ar" element={<ArWrap><VibeCodingPlatforms2026AR /></ArWrap>} />
+                  <Route path="/blog/fintech-virtual-cards-2026-ar" element={<ArWrap><FintechVirtualCards2026AR /></ArWrap>} />
+                  <Route path="/blog/business-automation-2026-ar" element={<ArWrap><BusinessAutomation2026AR /></ArWrap>} />
+                  <Route path="/blog/best-company-formation-2026-ar" element={<ArWrap><BestCompanyFormation2026AR /></ArWrap>} />
+                  <Route path="/blog/premium-domains-for-sale-ar" element={<ArWrap><PremiumDomainsBlogAR /></ArWrap>} />
+                  <Route path="/blog/premium-domains-showcase-ar" element={<ArWrap><PremiumDomainsShowcaseBlogAR /></ArWrap>} />
+                  <Route path="/blog/llc-formation-guide-ar" element={<ArWrap><LLCFormationGuideBlogAR /></ArWrap>} />
+                  <Route path="/blog/uk-vs-us-company-formation-ar" element={<ArWrap><UKvsUSFormationBlogAR /></ArWrap>} />
                   <Route path="/blog/:slug" element={<BlogSlugDispatcher />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />

@@ -15,10 +15,12 @@ export interface BlogPost {
 
 import { foundstartBlogPosts } from './foundstartArticles';
 import { shortetArBlogPosts } from './shortetArticlesAr';
+import { arExtraPosts } from './foundstartAr2';
 
 export const blogPosts: BlogPost[] = [
   ...(foundstartBlogPosts as BlogPost[]),
   ...(shortetArBlogPosts as BlogPost[]),
+  ...(arExtraPosts as BlogPost[]),
   {"id": 320, "title": "Shortet 2.0 Launches on Product Hunt: Short Links, Bio Pages and QR Codes in One Platform", "description": "Shortet 2.0 is launching on Product Hunt. Create short links, link-in-bio pages and QR codes from one dashboard. Watch the video and support the launch.", "category": "Business", "author": "Mohamed Sayed", "date": "Oct 17, 2026", "readTime": "9 min read", "slug": "shortet-2-0-launches-on-product-hunt-short-links-bio-pages-and-qr-codes-in-one-platform", "image": "/blog/shortet-2-0-launches-on-product-hunt-short-links-bio-pages-and-qr-codes-in-one-platform-fbdd5603.png"},
   {"id": 319, "title": "Online company formation: questions to answer before choosing a service", "description": "Compare formation scope with ongoing obligations. Explore Clemta and GoNomad examples and prepare questions on filings, renewals and banking eligibility.", "category": "Business", "author": "Mohamed Sayed", "date": "Oct 16, 2026", "readTime": "10 min read", "slug": "company-formation-checklist", "image": "/blog/company-formation-checklist-02813472.jpg"},
   {"id": 318, "title": "Company formation services compared: US, UK and EU routes", "description": "Compare company formation services for US LLCs, UK limited companies and EU entities. Verified examples, cost questions and a pre-payment checklist.", "category": "Business", "author": "Mohamed Sayed", "date": "Oct 16, 2026", "readTime": "13 min read", "slug": "company-formation-guide", "image": "/blog/company-formation-guide-01dc7278.jpg"},
