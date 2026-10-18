@@ -54,7 +54,20 @@ const strings = {
   },
 };
 
-const norm = (t: string) => t.toLowerCase().replace(/[ً-ْٰ]/g, '');
+const STOPWORDS = new Set([
+  'the', 'a', 'an', 'for', 'and', 'or', 'to', 'of', 'in', 'on', 'with', 'how', 'what', 'which',
+  'best', 'top', 'is', 'are', 'do', 'does', 'i', 'my', 'me', 'you', 'your', 'need', 'want',
+  'get', 'can', 'it', 'this', 'that', 'give', 'show', 'find',
+  'في', 'من', 'علي', 'الي', 'عن', 'ما', 'ماذا', 'كيف', 'ازاي', 'عايز', 'عاوز', 'احسن', 'افضل', 'لي', 'ده', 'دي', 'بتاع',
+]);
+
+const norm = (t: string) =>
+  t
+    .toLowerCase()
+    .replace(/[ً-ْٰ]/g, '')
+    .replace(/[أإآٱ]/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .replace(/ة/g, 'ه');
 
 const buildIndex = (): SearchItem[] => {
   const items: SearchItem[] = [];
@@ -92,7 +105,9 @@ const buildIndex = (): SearchItem[] => {
 };
 
 const search = (index: SearchItem[], query: string): SearchItem[] => {
-  const tokens = norm(query).split(/[^\p{L}\p{N}]+/u).filter((t) => t.length > 1);
+  const tokens = norm(query)
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter((t) => t.length > 1 && !STOPWORDS.has(t));
   if (tokens.length === 0) return [];
   return index
     .map((item) => {
