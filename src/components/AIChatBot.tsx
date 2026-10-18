@@ -21,6 +21,8 @@ interface SearchItem {
   href: string;
   external: boolean;
   blob: string;
+  slug?: string;
+  titleBlob?: string;
 }
 
 const strings = {
@@ -61,6 +63,11 @@ const STOPWORDS = new Set([
   'في', 'من', 'علي', 'الي', 'عن', 'ما', 'ماذا', 'كيف', 'ازاي', 'عايز', 'عاوز', 'احسن', 'افضل', 'لي', 'ده', 'دي', 'بتاع',
 ]);
 
+const COUNTRY_AR: Record<string, string> = {
+  USA: 'امريكا الولايات المتحده', UK: 'بريطانيا انجلترا', Canada: 'كندا', Estonia: 'استونيا',
+  Finland: 'فنلندا', Sweden: 'السويد', Latvia: 'لاتفيا', Lithuania: 'ليتوانيا', Egypt: 'مصر',
+};
+
 const norm = (t: string) =>
   t
     .toLowerCase()
@@ -82,6 +89,8 @@ const buildIndex = (): SearchItem[] => {
       desc: a.tagline.en,
       href: `/agents/${a.slug}`,
       external: false,
+      slug: a.slug,
+      titleBlob: norm(`${a.name.en} ${a.name.ar}`),
       blob: norm(`${a.name.en} ${a.name.ar} ${a.tagline.en} ${a.tagline.ar} ${a.slug}`),
     });
     for (const p of agentPartners[a.slug] ?? []) {
@@ -102,7 +111,7 @@ const buildIndex = (): SearchItem[] => {
       desc: (c.description ?? '').slice(0, 90),
       href: `/country/${c.id.toLowerCase()}`,
       external: false,
-      blob: norm(`${c.name} ${c.id} ${c.description ?? ''}`),
+      blob: norm(`${c.name} ${c.id} ${COUNTRY_AR[c.id] ?? ''} ${c.description ?? ''}`),
     });
   }
   return items;
@@ -117,7 +126,7 @@ const search = (index: SearchItem[], query: string): SearchItem[] => {
     .map((item) => {
       let score = 0;
       for (const t of tokens) {
-        if (hit(norm(item.title), t)) score += 3;
+        if (hit(item.titleBlob ?? norm(item.title), t)) score += 3;
         if (hit(item.blob, t)) score += 1;
       }
       return { item, score };
@@ -129,7 +138,17 @@ const search = (index: SearchItem[], query: string): SearchItem[] => {
 
 const compose = (results: SearchItem[], s: (typeof strings)['en']): string => {
   const agents = results.filter((r) => r.kind === 'agent').slice(0, 2);
-  const partners = results.filter((r) => r.kind === 'partner').slice(0, 5);
+  const seen = new Set(results.map((r) => r.href));
+  const agentPartnersFlat: SearchItem[] = [];
+  for (const a of agents) {
+    if (!a.slug) continue;
+    for (const p of (agentPartners[a.slug] ?? []).slice(0, 3)) {
+      if (seen.has(p.url)) continue;
+      seen.add(p.url);
+      agentPartnersFlat.push({ kind: 'partner', title: p.name, desc: p.niche, href: p.url, external: true, blob: '' });
+    }
+  }
+  const partners = [...results.filter((r) => r.kind === 'partner'), ...agentPartnersFlat].slice(0, 5);
   const countries = results.filter((r) => r.kind === 'country').slice(0, 2);
   if (agents.length + partners.length + countries.length === 0) return s.fallback;
   const parts: string[] = [];
