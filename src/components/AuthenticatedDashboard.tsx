@@ -1,3 +1,4 @@
+import { SHOW_REGISTRATION } from '@/config/features';
 
 import { useAuth } from '@/contexts/AuthProvider';
 import { Card, CardContent } from '@/components/ui/card';
@@ -54,9 +55,11 @@ const AuthenticatedDashboard = () => {
                   </Link>
                 </Button>
                 
-                <Button variant="outline" className="w-full" size="lg" asChild>
-                  <Link to="/auth">Create Account</Link>
-                </Button>
+                {SHOW_REGISTRATION && (
+                  <Button variant="outline" className="w-full" size="lg" asChild>
+                    <Link to="/auth">Create Account</Link>
+                  </Button>
+                )}
               </div>
 
               <p className="text-xs text-muted-foreground">

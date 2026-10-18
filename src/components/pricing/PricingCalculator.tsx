@@ -1,3 +1,4 @@
+import { SHOW_REGISTRATION } from '@/config/features';
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -298,14 +299,14 @@ const PricingCalculator: React.FC = () => {
                       {calculation.currency} • One-time payment
                     </div>
 
-                    <Button 
+                    {(user || SHOW_REGISTRATION) && <Button 
                       className="w-full mt-4" 
                       size="lg"
                       onClick={handleGetStarted}
                     >
                       {user ? 'Continue to Dashboard' : 'Sign Up to Continue'}
                       {user ? <ArrowRight className="ml-2 h-4 w-4" /> : <Lock className="ml-2 h-4 w-4" />}
-                    </Button>
+                    </Button>}
                     
                     {!user && (
                       <p className="text-xs text-center text-muted-foreground mt-2">

@@ -1,3 +1,4 @@
+import { SHOW_REGISTRATION } from '@/config/features';
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
@@ -201,9 +202,7 @@ const AgentChat = () => {
                 <Button asChild>
                   <Link to="/auth">{s.signIn}</Link>
                 </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/auth">{s.getStarted}</Link>
-                </Button>
+                {SHOW_REGISTRATION && (<Button variant="outline" asChild><Link to="/auth">{s.getStarted}</Link></Button>)}
               </div>
             </div>
           ) : (

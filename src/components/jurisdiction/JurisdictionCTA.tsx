@@ -1,3 +1,4 @@
+import { SHOW_REGISTRATION } from '@/config/features';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,25 +18,25 @@ const JurisdictionCTA = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <Card className="hover:shadow-lg transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <UserPlus className="w-5 h-5 mr-2 text-primary" />
-              Sign Up to Dashboard
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground mb-4">
-              Access your personalized business formation dashboard and track your progress.
-            </p>
-            <Link to="/auth">
-              <Button className="w-full group">
-                Sign Up Now
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
+        {SHOW_REGISTRATION && (        <Card className="hover:shadow-lg transition-all duration-300">
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <UserPlus className="w-5 h-5 mr-2 text-primary" />
+                Sign Up to Dashboard
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                Access your personalized business formation dashboard and track your progress.
+              </p>
+              <Link to="/auth">
+                <Button className="w-full group">
+                  Sign Up Now
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>)}
 
         <Card className="hover:shadow-lg transition-all duration-300">
           <CardHeader>

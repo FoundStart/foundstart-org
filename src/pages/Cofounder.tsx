@@ -1,3 +1,4 @@
+import { SHOW_REGISTRATION } from '@/config/features';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Loader2, MessageSquarePlus, Sparkles } from 'lucide-react';
@@ -206,9 +207,7 @@ const Cofounder = () => {
             <Button asChild>
               <Link to="/auth">{s.signIn}</Link>
             </Button>
-            <Button variant="outline" asChild>
-              <Link to="/auth">{s.getStarted}</Link>
-            </Button>
+            {SHOW_REGISTRATION && (<Button variant="outline" asChild><Link to="/auth">{s.getStarted}</Link></Button>)}
           </div>
         </main>
         <Footer />
