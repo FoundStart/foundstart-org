@@ -24,8 +24,8 @@ User-agent: WhatsApp
 Allow: /
 
 # Sitemap locations
-Sitemap: https://foundstart.com/sitemap.xml
-Sitemap: https://foundstart.com/sitemap.txt
+Sitemap: https://www.foundstart.org/sitemap.xml
+Sitemap: https://www.foundstart.org/sitemap.txt
 
 # Crawl delay for bots
 Crawl-delay: 1
