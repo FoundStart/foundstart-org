@@ -1,6 +1,8 @@
 import type { ShortetArticle } from './shortetArticlesData';
 
 export const foundstartArticleOrder: string[] = [
+  "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company",
+  "five-free-guides-company-to-ai-company-ar",
   "what-is-foundstart",
   "what-is-foundstart-ar",
   "register-your-company-step-by-step",
@@ -12,6 +14,26 @@ export const foundstartArticleOrder: string[] = [
 ];
 
 export const foundstartArticles: Record<string, ShortetArticle> = {
+  "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company": {
+      "title": "USA vs UK vs Estonia vs Egypt: Where Should You Register Your Company?",
+      "description": "A practical comparison of four routes founders use: USA, UK, Estonia and Egypt, and three questions to pick the right one.",
+      "category": "Business",
+      "author": "Mohamed Sayed",
+      "date": "Oct 18, 2026",
+      "readTime": "4 min read",
+      "heroImage": "/blog/company-formation-guide-01dc7278.jpg",
+      "html": "<p>Picking a country for your company is not a paperwork detail. It decides your taxes, your banking options, how investors see you, and how much admin you carry every year. Here is a practical comparison of four popular routes founders actually use.</p><h2>USA - the default for global startups</h2><p>A US LLC (Wyoming, Delaware and New Mexico are the common picks) gives you a familiar legal structure, easy access to Stripe and US banking, and credibility with American customers. It suits founders selling to the US market or raising from US investors. The trade-offs: annual state reports, a registered agent, and US tax filings even when you live abroad.</p><h2>UK - fast and cheap to maintain</h2><p>A UK Limited company can be registered online in about a day with modest annual costs. It works well for service businesses and founders selling into Europe and the Commonwealth. Banking is straightforward, and the admin burden is lighter than the US for small companies.</p><h2>Estonia - built for remote founders</h2><p>Estonia's e-Residency program lets you run an EU company fully online: digital signatures, online tax filing, EU market access. It fits location-independent founders who want an EU entity without relocating. Corporate tax is only due when you distribute profits, which helps if you reinvest earnings.</p><h2>Egypt - for founders operating locally</h2><p>If your clients, team and revenue are in Egypt, a local entity keeps you compliant and lets you invoice Egyptian companies properly. Egypt also allows a one-person company structure, which suits solo founders who want limited liability without partners.</p><h2>How to decide</h2><p>Ask three questions: Where are my customers? Where will I bank? What admin can I realistically keep up with? The cheapest registration is not always the cheapest company to run.</p><p>We built step-by-step registration guides for all four of these routes - plus Canada, Finland, Sweden, Latvia, Lithuania and Ireland - on FoundStart, free, in English and Arabic: <a href=\"https://www.foundstart.org\">https://www.foundstart.org</a></p>"
+  },
+  "five-free-guides-company-to-ai-company-ar": {
+      "title": "٥ أدلة مجانية لكل مؤسس: من تأسيس الشركة لبناء شركة ذكاء اصطناعي",
+      "description": "٥ أدلة مجانية على FoundStart تغطي الطريق كله من تأسيس الشركة إلى بناء شركة بالذكاء الاصطناعي.",
+      "category": "Business",
+      "author": "محمد سيد",
+      "date": "Oct 18, 2026",
+      "readTime": "4 دقائق قراءة",
+      "heroImage": "",
+      "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><p>لو بتفكر تبدأ مشروعك، أكبر مشكلة مش الفكرة - المشكلة إن المعلومة متقطعة في ألف مكان. عشان كده عملنا ٥ أدلة مجانية على FoundStart بتغطي الطريق كله من أول \"عايز أعمل شركة\" لحد \"شغال بذكاء اصطناعي\".</p><h2>١. دليل تأسيس الشركة</h2><p>خطوة بخطوة: تختار نوع الشركة إزاي، إيه الأوراق المطلوبة، وإيه اللي بيحصل بعد التسجيل. الدليل بيغطي ١٠ دول - أمريكا، بريطانيا، كندا، إستونيا، فنلندا، السويد، لاتفيا، ليتوانيا، أيرلندا، ومصر - فهتلاقي الخطوات الخاصة بالبلد اللي تناسبك.</p><h2>٢. دليل بناء شركة ذكاء اصطناعي</h2><p>إزاي تبني منتج أو خدمة معتمدة على الذكاء الاصطناعي من غير ما تكون مبرمج محترف: اختيار الفكرة، الأدوات، وأول نسخة تطلع بيها للناس.</p><h2>٣. دليل الـ Vibe Coding</h2><p>البرمجة بالوصف بدل الكود: إزاي توصف اللي عايزه للأدوات الذكية وتطلع بنتيجة شغالة، وإمتى الطريقة دي مناسبة وإمتى لأ.</p><h2>٤. دليل الـ Vibe Marketing</h2><p>التسويق بنفس الأسلوب: محتوى، إعلانات، وصفحات هبوط بتتعمل بسرعة بمساعدة الذكاء الاصطناعي، مع الحفاظ على صوت براندك.</p><h2>٥. دليل إدارة العمل بالذكاء الاصطناعي</h2><p>تنظيم المهام والمتابعة والتقارير - إزاي تخلي الأدوات الذكية تشيل عنك الشغل المتكرر وتركز أنت على القرارات.</p><p>كل الأدلة مجانية ومتاحة بالعربي والإنجليزي، ومعاها مساعد ذكاء اصطناعي على الموقع يجاوب على أسئلتك عن التأسيس والأدوات. ابدأ من هنا: <a href=\"https://www.foundstart.org\">https://www.foundstart.org</a></p></div>"
+  },
   "what-is-foundstart": {
     "title": "What Is FoundStart? A Free Guide for Founders, Freelancers and Entrepreneurs",
     "description": "FoundStart is a free, bilingual (English and Arabic) guide to registering a company, building with AI tools and running your business. Here is what you can use today.",
@@ -95,6 +117,28 @@ export const foundstartArticles: Record<string, ShortetArticle> = {
 };
 
 export const foundstartBlogPosts = [
+  {
+      "id": 338,
+      "title": "USA vs UK vs Estonia vs Egypt: Where Should You Register Your Company?",
+      "description": "A practical comparison of four routes founders use: USA, UK, Estonia and Egypt, and three questions to pick the right one.",
+      "category": "Business",
+      "author": "Mohamed Sayed",
+      "date": "Oct 18, 2026",
+      "readTime": "4 min read",
+      "slug": "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company",
+      "image": "/blog/company-formation-guide-01dc7278.jpg"
+  },
+  {
+      "id": 339,
+      "title": "٥ أدلة مجانية لكل مؤسس: من تأسيس الشركة لبناء شركة ذكاء اصطناعي",
+      "description": "٥ أدلة مجانية على FoundStart تغطي الطريق كله من تأسيس الشركة إلى بناء شركة بالذكاء الاصطناعي.",
+      "category": "Business",
+      "author": "محمد سيد",
+      "date": "Oct 18, 2026",
+      "readTime": "4 دقائق قراءة",
+      "slug": "five-free-guides-company-to-ai-company-ar",
+      "image": "/blog/company-formation-guide-01dc7278.jpg"
+  },
   {
     "id": 330,
     "title": "What Is FoundStart? A Free Guide for Founders, Freelancers and Entrepreneurs",
