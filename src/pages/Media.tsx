@@ -17,7 +17,7 @@ const labels: Record<MediaCategory, { en: string; ar: string }> = {
   books: { en: 'Books & Guides', ar: 'الكتب والأدلة' },
   shorts: { en: 'Shorts', ar: 'فيديوهات قصيرة' },
 };
-const order: MediaCategory[] = ['course-dt', 'course-dp', 'course-aff', 'affiliate', 'products', 'books', 'shorts'];
+const order: MediaCategory[] = ['affiliate', 'products', 'books', 'shorts'];
 
 const ui = {
   en: {
@@ -57,7 +57,7 @@ const Media = () => {
   const [cat, setCat] = useState<'all' | MediaCategory>('all');
   const [playing, setPlaying] = useState<MediaVideo | null>(null);
 
-  const inLang = useMemo(() => mediaVideos.filter((v) => v.lang === language), [language]);
+  const inLang = useMemo(() => mediaVideos.filter((v) => v.lang === language && !v.category.startsWith('course-')), [language]);
   const cats = order.filter((c) => inLang.some((v) => v.category === c));
   const shown = useMemo(() => {
     const term = q.trim().toLowerCase();

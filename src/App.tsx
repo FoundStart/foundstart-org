@@ -42,6 +42,7 @@ import MoMoAIBusinessSetupEN from "./pages/blog/MoMoAIBusinessSetupEN";
 import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
 import Press from "./pages/Press";
 import Media from "./pages/Media";
+import Learning from "./pages/Learning";
 import Tutorials from "./pages/Tutorials";
 import ContactSales from "./pages/ContactSales";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -150,6 +151,7 @@ function App() {
                   <Route path="/blog/:slug" element={<BlogSlugDispatcher />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
+                  <Route path="/learning" element={<Learning />} />
                   <Route path="/tutorials" element={<Tutorials />} />
                   <Route path="/affiliate-dashboard" element={<Navigate to="/" replace />} />
                   <Route path="/seo-management" element={<Navigate to="/" replace />} />

@@ -42,6 +42,7 @@ const Footer = () => {
     links: [
       { name: L("Blog", "المدونة"), href: "/blog" },
       { name: L("Press & News", "الأخبار والصحافة"), href: "/press" },
+      { name: L("Learning", "التعلم"), href: "/learning" },
       { name: L("Media & Videos", "الوسائط والفيديو"), href: "/media" },
       { name: L("Tutorials", "الشروحات"), href: "/tutorials" },
       { name: L("Digital Nomad Visas", "تأشيرات الرحّالة الرقميين"), href: "/digital-nomad-visas" }
