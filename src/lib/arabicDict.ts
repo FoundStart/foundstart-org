@@ -915,5 +915,14 @@ export const arabicDict: Record<string, string> = {
 "© 2026 FoundStart. All rights reserved": "© 2026 FoundStart. جميع الحقوق محفوظة",
 "Language": "اللغة",
 "English": "الإنجليزية",
+"539 Partners": "539 شريكاً",
+"539 Trusted Partners": "539 شريكاً موثوقاً",
+"Built for founders worldwide": "صُمم للمؤسسين حول العالم",
+"Start your business with FoundStart.": "ابدأ شركتك مع FoundStart.",
+"Digital Partners Join the FoundStart Ecosystem": "شركاء رقميون ينضمون إلى منظومة FoundStart",
+"187 domains": "187 نطاقاً",
+"Browse 187 premium domains or search 16+ platforms": "تصفح 187 نطاقاً مميزاً أو ابحث في 16+ منصة",
+"467 Digital": "467 رقمي",
+"467 Trusted Partners": "467 شريكاً موثوقاً",
 "© 2026 FoundStart. All rights reserved, MoMoAI": "© 2026 FoundStart. جميع الحقوق محفوظة، MoMoAI"
 };

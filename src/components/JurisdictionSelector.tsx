@@ -29,7 +29,7 @@ const JurisdictionSelector = () => {
             <span className="gradient-text">Option 1:</span> Quick Setup with Trusted Partners
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get started immediately with our 400+ vetted formation partners. 
+            Get started immediately with our vetted formation partners. 
             Click any platform to begin your business setup process instantly.
           </p>
         </div>

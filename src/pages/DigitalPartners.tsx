@@ -35,7 +35,7 @@ const DigitalPartners = () => {
       
       <main>
         <PageHero
-          title="600+ Digital"
+          title="467 Digital"
           highlight="Partners"
           subtitle={`Access exclusive deals and partnerships to grow your business. Showing ${filteredPartners.length} partners across ${categories.length - 1} categories.`}
         />

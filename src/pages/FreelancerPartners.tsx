@@ -34,7 +34,7 @@ const FreelancerPartners = () => {
                 Freelancer <span className="gradient-text">Partners</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Connect with 100+ freelancer platforms across multiple languages to find the perfect talent for your projects.
+                Connect with 72 freelancer platforms across multiple languages to find the perfect talent for your projects.
               </p>
             </div>
 

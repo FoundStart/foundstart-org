@@ -113,7 +113,7 @@ const Pricing = () => {
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4">Ready to Start Your Business?</h3>
                   <p className="text-muted-foreground mb-6">
-                    Join 10,000+ entrepreneurs who have successfully launched their businesses with FoundStart.
+                    Start your business with FoundStart.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg">Choose Your Country</Button>

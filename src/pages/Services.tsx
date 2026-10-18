@@ -29,7 +29,7 @@ const Services = () => {
     {
       category: "Business Formation Solutions", icon: <Building className="w-6 h-6" />,
       items: [
-        { name: "Option 1: Quick Setup with Partners", price: "From $199", description: "Instant access to 400+ vetted formation partners across 10 countries", action: "partners", actionText: "View Partners" },
+        { name: "Option 1: Quick Setup with Partners", price: "From $199", description: "Instant access to vetted formation partners across 10 countries", action: "partners", actionText: "View Partners" },
         { name: "Custom Formation Service", price: "Custom Quote", description: "Personalized business formation with dedicated support and dashboard access", action: "quote", actionText: "Get Quote" },
         { name: "USA Company Formation", price: "From $299", description: "Delaware LLC with EIN, registered agent, and banking setup" },
         { name: "UK Company Formation", price: "From £199", description: "Companies House registration with London address and UTR application" },

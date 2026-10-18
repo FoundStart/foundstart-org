@@ -28,7 +28,7 @@ const serviceCategories = [
   {
     title: "Digital Presence",
     services: [
-      { icon: Globe, title: "Premium Domains", desc: "170+ domains from $59", link: "/domains", gradient: "from-cyan-500 to-blue-600" },
+      { icon: Globe, title: "Premium Domains", desc: "187 domains", link: "/domains", gradient: "from-cyan-500 to-blue-600" },
       { icon: Server, title: "Web Hosting", desc: "99.9% uptime cloud hosting", link: "/services", gradient: "from-purple-500 to-pink-600" },
       { icon: Mail, title: "Business Email", desc: "Professional email accounts", link: "/services", gradient: "from-orange-500 to-red-500" },
       { icon: TrendingUp, title: "Website Platform", desc: "SaaS-ready & e-commerce", link: "/services", gradient: "from-pink-500 to-rose-600" },

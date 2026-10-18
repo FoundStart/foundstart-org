@@ -26,7 +26,7 @@ const HomeCTA = () => (
         {[
           { icon: Building2, title: "Start Your Company", desc: "Form LLC or Corp in USA, UK, or Europe in minutes", link: "/countries", cta: "Get Started", variant: "default" as const, gradient: "from-blue-500 to-indigo-600" },
           { icon: Link2, title: "Formation Bio Link", desc: "One shareable link to all country formations", link: "/company-formation-bio", cta: "View Bio Page", variant: "outline" as const, gradient: "from-fuchsia-500 to-purple-600" },
-          { icon: Globe, title: "Find Your Domain", desc: "Browse 170+ premium domains or search 16+ platforms", link: "/domains", cta: "Browse Domains", variant: "outline" as const, gradient: "from-cyan-500 to-blue-600" },
+          { icon: Globe, title: "Find Your Domain", desc: "Browse 187 premium domains or search 16+ platforms", link: "/domains", cta: "Browse Domains", variant: "outline" as const, gradient: "from-cyan-500 to-blue-600" },
           { icon: Briefcase, title: "Calculate Pricing", desc: "Get exact pricing for your company formation needs", link: "/pricing-calculator", cta: "Calculate Now", variant: "outline" as const, gradient: "from-emerald-500 to-teal-600" },
         ].map((card, i) => (
           <motion.div key={i} variants={scaleIn} transition={{ duration: 0.5, type: 'spring', bounce: 0.25 }} className="h-full">

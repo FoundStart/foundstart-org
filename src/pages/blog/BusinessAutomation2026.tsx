@@ -259,7 +259,7 @@ const BusinessAutomation2026: React.FC = () => {
 
               <div className="not-prose my-10 p-6 rounded-xl bg-primary/10 border border-primary/30 text-center">
                 <h3 className="text-xl font-bold mb-2">Get the full automation directory</h3>
-                <p className="text-muted-foreground mb-4">All 370+ partners curated by MoMoAI \u2014 formation, AI, social, payments and more.</p>
+                <p className="text-muted-foreground mb-4">All 539 partners curated by MoMoAI \u2014 formation, AI, social, payments and more.</p>
                 <Button asChild size="lg">
                   <a href={tag('https://shortet.com/Company-Formation', 'directory-cta')} target="_blank" rel="noopener noreferrer sponsored">
                     Explore the directory <ExternalLink className="w-4 h-4 ml-2" />

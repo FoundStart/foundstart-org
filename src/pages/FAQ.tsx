@@ -21,7 +21,7 @@ const faqData = [
   {
     category: "Domains & Hosting",
     questions: [
-      { q: "How many premium domains do you have for sale?", a: "We currently have 190+ premium domains across categories like Fintech, E-Commerce, SaaS, AI, and more." },
+      { q: "How many premium domains do you have for sale?", a: "We currently have 187 premium domains across categories like Fintech, E-Commerce, SaaS, AI, and more." },
       { q: "Can I search for domains across multiple platforms?", a: "Yes! Our Domain Global Marketplace lets you search across 16+ platforms including Spaceship, GoDaddy, Hostinger, Sedo, Dynadot, and more — all from one search bar." },
       { q: "Do you offer hosting services?", a: "Yes, we offer premium cloud hosting with 99.9% uptime, free SSL certificates, automatic backups, and professional email accounts with custom domains." },
       { q: "How do I transfer a domain I purchase?", a: "We provide full support during the domain transfer process. After purchase, our team guides you through the transfer with 24/7 assistance." },
@@ -30,7 +30,7 @@ const faqData = [
   {
     category: "Partners & Services",
     questions: [
-      { q: "How many digital partners do you have?", a: "We have 600+ verified digital partners across 30+ categories, including hosting, design, marketing, development, and more. Each partner is vetted for quality and reliability." },
+      { q: "How many digital partners do you have?", a: "We have 467 digital partners across many categories, including hosting, design, marketing, development, and more. Each partner is vetted for quality and reliability." },
       { q: "Do you offer affiliate programs?", a: "Yes! Join our affiliate program to earn commissions by referring clients. We offer competitive commission rates with real-time tracking through your dashboard." },
       { q: "What banking solutions do you offer?", a: "We partner with Mercury, Wise, WorldFirst, Kast, Grey, and other neo-banking solutions to provide business banking, virtual cards, and payment processing." },
       { q: "Can you help with SEO and digital marketing?", a: "Absolutely! We offer comprehensive SEO services including traditional SEO, local SEO, LLM optimization (LLMO), Answer Engine Optimization (AEO), and Geographic Engine Optimization (GEO)." },

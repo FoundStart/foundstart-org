@@ -19,7 +19,7 @@ const Press = () => {
     },
     {
       id: 2,
-      title: "230+ Digital Partners Join FoundStart Ecosystem",
+      title: "Digital Partners Join the FoundStart Ecosystem",
       excerpt: "Comprehensive partner network now includes banking, crypto, AI tools, and automation platforms.",
       date: "2024-12-10",
       author: "Partnership Team",

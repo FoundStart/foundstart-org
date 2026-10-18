@@ -17,10 +17,10 @@ const partnerSections = [
   },
   {
     title: "Digital Partners",
-    description: "600+ verified digital service providers across 30+ categories",
+    description: "467 digital service providers across many categories",
     icon: Globe,
     link: "/digital-partners",
-    count: "600+",
+    count: "467",
     color: "bg-green-500"
   },
   {
@@ -53,7 +53,7 @@ const AllPartners = () => {
                 Our <span className="gradient-text">Partner Network</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Access our comprehensive network of 700+ partners across formation services, digital solutions, freelancers, and strategic alliances.
+                Access our comprehensive network of 539 partners across formation services, digital solutions, freelancers, and strategic alliances.
               </p>
             </div>
 

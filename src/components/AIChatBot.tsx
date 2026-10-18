@@ -33,7 +33,7 @@ const AIChatBot = () => {
       features: ['Registered Agent', 'EIN Number', 'Operating Agreement', 'Business Address']
     },
     'domains': {
-      total: '170+ premium domains available',
+      total: '187 premium domains available',
       categories: ['Startups & SaaS', 'E-Commerce', 'Fintech & Crypto', 'Social Media', 'AI & Automation'],
       platforms: ['Spaceship', 'GoDaddy', 'Hostinger', 'Unstoppable Domains', 'Sedo', 'Dynadot', 'Atom', 'Namesilo', 'Saw', 'Namebright', 'Dropcatch', 'Porkbun', 'Nameclub', 'Nameshift', 'Namebase', 'Namecheap'],
       pricing: 'Domains from $59 to $2,500'
@@ -57,7 +57,7 @@ const AIChatBot = () => {
     },
     'hiring': {
       services: ['Virtual Assistants', 'Data Entry', 'Customer Support', 'Content Writing', 'Graphic Design', 'Video Editing', 'Translation', 'Social Media Management', 'Lead Generation', 'Bookkeeping', 'Web Development', 'SEO & Link Building'],
-      platforms: '100+ freelancer platforms'
+      platforms: '72 freelancer platforms'
     }
   };
 
@@ -152,10 +152,10 @@ const AIChatBot = () => {
     }
     
     if (message.includes('hello') || message.includes('hi') || message.includes('help') || message.includes('hey')) {
-      return `👋 Hello! Welcome to FoundStart!\n\nI can help you with:\n\n🏢 Company Formation (9 countries)\n🌐 Domain Search (170+ domains, 16 platforms)\n💻 Web Services (hosting, email, apps)\n🏦 Banking Solutions\n📈 SEO & Marketing\n👥 Remote Hiring\n🌍 Digital Nomad Services\n\nWhat would you like to know more about?`;
+      return `👋 Hello! Welcome to FoundStart!\n\nI can help you with:\n\n🏢 Company Formation (9 countries)\n🌐 Domain Search (187 domains, 16 platforms)\n💻 Web Services (hosting, email, apps)\n🏦 Banking Solutions\n📈 SEO & Marketing\n👥 Remote Hiring\n🌍 Digital Nomad Services\n\nWhat would you like to know more about?`;
     }
     
-    return `I understand you're asking about "${userMessage}".\n\n**FoundStart offers:**\n• Company formation in 9 countries\n• 170+ premium domains\n• 16+ domain search platforms\n• Web hosting & email\n• Banking solutions\n• SEO & marketing\n• Remote hiring services\n\nCould you be more specific about what you need? I'm here to help! 🚀`;
+    return `I understand you're asking about "${userMessage}".\n\n**FoundStart offers:**\n• Company formation in 9 countries\n• 187 premium domains\n• 16+ domain search platforms\n• Web hosting & email\n• Banking solutions\n• SEO & marketing\n• Remote hiring services\n\nCould you be more specific about what you need? I'm here to help! 🚀`;
   };
 
   const handleSendMessage = () => {

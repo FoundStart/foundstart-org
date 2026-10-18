@@ -42,7 +42,7 @@ const HomeFAQ = () => (
           </AccordionItem>
           <AccordionItem value="3">
             <AccordionTrigger>How many premium domains do you offer?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">180+ premium domains across Fintech, E-Commerce, SaaS, AI, and more. Prices from $59.</AccordionContent>
+            <AccordionContent className="text-muted-foreground">187 premium domains across Fintech, E-Commerce, SaaS, AI, and more. Prices from $59.</AccordionContent>
           </AccordionItem>
           <AccordionItem value="4">
             <AccordionTrigger>What payment methods do you accept?</AccordionTrigger>
