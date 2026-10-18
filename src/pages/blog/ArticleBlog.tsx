@@ -9,23 +9,28 @@ import { ArrowLeft, Calendar, User, Clock, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { shortetArticles as baseArticles, shortetArticleOrder as baseOrder } from '@/data/shortetArticlesData';
 import { foundstartArticles, foundstartArticleOrder } from '@/data/foundstartArticles';
+import { shortetArticlesAr, shortetArticlesArOrder } from '@/data/shortetArticlesAr';
 
-const shortetArticles = { ...baseArticles, ...foundstartArticles };
-const shortetArticleOrder = [...foundstartArticleOrder, ...baseOrder];
+const shortetArticles = { ...baseArticles, ...foundstartArticles, ...shortetArticlesAr };
+const shortetArticleOrder = [...foundstartArticleOrder, ...shortetArticlesArOrder, ...baseOrder];
 import AgencyFormationBlog from './AgencyFormationBlog';
 
 const ArticleBlog: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const content = slug ? shortetArticles[slug] : undefined;
   const { language, setLanguage } = useTranslation();
-  const arPost = !!slug && slug.endsWith('-ar') && !!foundstartArticles[slug];
+  const arPost = !!slug && slug.endsWith('-ar') && !!shortetArticles[slug];
   useEffect(() => { if (arPost && language !== 'ar') setLanguage('ar'); }, [arPost]);
+
+  if (language === 'ar' && slug && !slug.endsWith('-ar') && shortetArticles[slug + '-ar']) {
+    return <Navigate to={`/blog/${slug}-ar`} replace />;
+  }
 
   if (!content) {
     return <Navigate to="/blog" replace />;
   }
 
-  const isAr = !!slug && slug.endsWith('-ar') && !!foundstartArticles[slug];
+  const isAr = !!slug && slug.endsWith('-ar') && !!shortetArticles[slug];
   const related = shortetArticleOrder
     .filter((s) => s !== slug && (!isAr || s.endsWith('-ar')) && (isAr || !s.endsWith('-ar')))
     .sort((a, b) => {

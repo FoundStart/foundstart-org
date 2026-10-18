@@ -7,11 +7,17 @@ import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import { blogPosts, categories } from '@/data/blogPostsData';
+import { blogPosts as allPosts, categories } from '@/data/blogPostsData';
+import { useTranslation } from '@/contexts/TranslationContext';
 import SedoBanner from '@/components/sedo/SedoBanner';
 import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
 
 const Blog = () => {
+  const { language } = useTranslation();
+  const slugs = new Set(allPosts.map(p => p.slug));
+  const blogPosts = allPosts.filter(p => language === 'ar'
+    ? (p.slug.endsWith('-ar') || !slugs.has(p.slug + '-ar'))
+    : !(p.slug.endsWith('-ar') && slugs.has(p.slug.slice(0, -3))));
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredPosts = selectedCategory === "All" 
