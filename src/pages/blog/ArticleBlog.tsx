@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -16,6 +17,9 @@ import AgencyFormationBlog from './AgencyFormationBlog';
 const ArticleBlog: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const content = slug ? shortetArticles[slug] : undefined;
+  const { language, setLanguage } = useTranslation();
+  const arPost = !!slug && slug.endsWith('-ar') && !!foundstartArticles[slug];
+  useEffect(() => { if (arPost && language !== 'ar') setLanguage('ar'); }, [arPost]);
 
   if (!content) {
     return <Navigate to="/blog" replace />;
