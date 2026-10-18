@@ -62,13 +62,13 @@ const Header = () => {
           <div className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
             <Link to="/" className="flex items-center gap-2" aria-label="FoundStart Home">
               <img src="/logo-mark.png" alt="FoundStart logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold gradient-text">FoundStart</span>
+              <span className="text-xl font-bold gradient-text hidden 2xl:inline">FoundStart</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav 
-            className={`hidden lg:flex items-center space-x-2 xl:space-x-4 ${isRTL ? 'space-x-reverse ml-6' : 'ml-6'}`}
+            className={`hidden lg:flex items-center space-x-2 xl:space-x-4 ${isRTL ? 'space-x-reverse mx-3 xl:mx-6' : 'mx-3 xl:mx-6'}`}
             role="navigation"
             aria-label="Main navigation"
           >
@@ -129,7 +129,7 @@ const Header = () => {
 
           {/* Desktop Controls */}
           <div className={`hidden lg:flex items-center space-x-2 ${isRTL ? 'space-x-reverse' : ''}`}>
-            <CurrencySelector />
+            <div className="hidden xl:block"><CurrencySelector /></div>
             <LanguageToggle />
             <ThemeToggle />
             <AuthButton />
