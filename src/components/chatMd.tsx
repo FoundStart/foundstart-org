@@ -5,6 +5,8 @@ import { ExternalLink } from 'lucide-react';
 export const linkify = (text: string): string =>
   text
     .replace(/(?<!\])\(\s*(https?:\/\/[^\s)]+)\s*\)/g, '$1')
+    .replace(/(?<!\])\(\s*(\/[a-z0-9][a-z0-9\/-]*)\s*\)/gi, '$1')
+    .replace(/(?<!\]\()\s(\/[a-z][a-z0-9\/-]*[a-z0-9])(?=[\s.,;:!?)]|$)/gi, (m, p) => ` [${p}](${p})`)
     .replace(/(?<!\]\()(https?:\/\/[^\s)>\]]+)/g, (u) => {
       let label = u;
       try {
@@ -18,8 +20,7 @@ export const chatMdComponents = {
   a: ({ href, children }: { href?: string; children?: ReactNode }) => (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(href?.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
       className="my-1 flex items-center justify-between gap-2 rounded-lg border bg-card px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/5"
     >
       <span className="truncate">{children}</span>

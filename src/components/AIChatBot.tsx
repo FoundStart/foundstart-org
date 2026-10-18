@@ -23,6 +23,8 @@ interface SearchItem {
   blob: string;
   slug?: string;
   titleBlob?: string;
+  titleAr?: string;
+  descAr?: string;
 }
 
 const strings = {
@@ -86,7 +88,9 @@ const buildIndex = (): SearchItem[] => {
     items.push({
       kind: 'agent',
       title: `${a.name.en} Agent`,
+      titleAr: `وكيل ${a.name.ar}`,
       desc: a.tagline.en,
+      descAr: a.tagline.ar,
       href: `/agents/${a.slug}`,
       external: false,
       slug: a.slug,
@@ -136,7 +140,7 @@ const search = (index: SearchItem[], query: string): SearchItem[] => {
     .map((r) => r.item);
 };
 
-const compose = (results: SearchItem[], s: (typeof strings)['en']): string => {
+const compose = (results: SearchItem[], s: (typeof strings)['en'], ar: boolean): string => {
   const agents = results.filter((r) => r.kind === 'agent').slice(0, 2);
   const seen = new Set(results.map((r) => r.href));
   const agentPartnersFlat: SearchItem[] = [];
@@ -154,7 +158,7 @@ const compose = (results: SearchItem[], s: (typeof strings)['en']): string => {
   const parts: string[] = [];
   if (agents.length) {
     parts.push(s.foundAgents);
-    for (const a of agents) parts.push(`**${a.title}** - ${a.desc}\n(${a.href})`);
+    for (const a of agents) parts.push(`**${(ar && a.titleAr) || a.title}** - ${(ar && a.descAr) || a.desc}\n(${a.href})`);
   }
   if (partners.length) {
     parts.push(s.foundPartners);
@@ -180,7 +184,7 @@ const AIChatBot = () => {
     const text = raw.trim();
     if (!text) return;
     const userMsg: Message = { id: String(idRef.current++), text, isBot: false };
-    const reply = compose(search(index, text), s);
+    const reply = compose(search(index, text), s, language === 'ar');
     const botMsg: Message = { id: String(idRef.current++), text: reply, isBot: true };
     setMessages((prev) => [...prev, userMsg, botMsg]);
     setInputValue('');
