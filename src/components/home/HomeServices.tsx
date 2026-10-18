@@ -35,7 +35,6 @@ const serviceCategories = [
     services: [
       { icon: Building2, title: "Company Formation", desc: "LLC, Corp, Ltd in 9 jurisdictions", link: "/agents/company-formation", gradient: "from-blue-500 to-indigo-600" },
       { icon: FileText, title: "AI Documents", desc: "Business plans, contracts & legal docs", link: "/agents/ai-documents", gradient: "from-violet-500 to-purple-600" },
-      { icon: Shield, title: "Compliance", desc: "EIN, registered agent, annual filings", link: "/agents/compliance", gradient: "from-emerald-500 to-teal-600" },
     ]
   },
   agentCategory,
@@ -59,7 +58,7 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
       >
         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
           <Zap className="w-4 h-4 mr-2" />
-          {language === 'ar' ? '28 وكيل ذكاء اصطناعي' : '28 AI Agents'}
+          {language === 'ar' ? '25 وكيلاً بالذكاء الاصطناعي' : '25 AI Agents'}
         </div>
         <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
           {language === 'ar' ? 'كل ما تحتاجه' : 'Everything You Need to'}{' '}
