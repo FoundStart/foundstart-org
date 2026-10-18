@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Loader2, SendHorizonal, Sparkles } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Loader2, SendHorizonal, Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import AgentAvatar from '@/components/AgentAvatar';
 import { Streamdown } from 'streamdown';
