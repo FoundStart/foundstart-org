@@ -1,128 +1,64 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from '@/contexts/TranslationContext';
+import LegalPage from '@/components/legal/LegalPage';
 
-const PrivacyPolicy = () => {
-  const { isRTL } = useTranslation();
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Back Button */}
-          <div className="mb-8">
-            <Button variant="outline" asChild>
-              <Link to="/">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Link>
-            </Button>
-          </div>
-          
-          <div className={`max-w-4xl mx-auto ${isRTL ? 'text-right' : ''}`}>
-            <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-            
-            <div className="prose prose-lg max-w-none dark:prose-invert">
-              <p className="text-muted-foreground mb-6">
-                Last updated: January 12, 2025
-              </p>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">1. Information We Collect</h2>
-                <p className="mb-4">
-                  At FoundStart, we collect information you provide directly to us, such as when you create an account, 
-                  use our services, or contact us for support. This may include:
-                </p>
-                <ul className="list-disc pl-6 mb-4">
-                  <li>Personal information (name, email address, phone number)</li>
-                  <li>Business information (company name, industry, formation details)</li>
-                  <li>Payment information (processed securely through third-party providers)</li>
-                  <li>Usage data and analytics</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">2. How We Use Your Information</h2>
-                <p className="mb-4">We use the information we collect to:</p>
-                <ul className="list-disc pl-6 mb-4">
-                  <li>Provide, maintain, and improve our services</li>
-                  <li>Process transactions and send related information</li>
-                  <li>Send technical notices, updates, and support messages</li>
-                  <li>Respond to your comments and questions</li>
-                  <li>Analyze usage patterns to improve user experience</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">3. Information Sharing</h2>
-                <p className="mb-4">
-                  We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, 
-                  except in the following circumstances:
-                </p>
-                <ul className="list-disc pl-6 mb-4">
-                  <li>With service providers who assist in our operations</li>
-                  <li>To comply with legal obligations</li>
-                  <li>To protect our rights and the safety of our users</li>
-                  <li>In connection with a business transaction (merger, acquisition, etc.)</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">4. Data Security</h2>
-                <p className="mb-4">
-                  We implement appropriate security measures to protect your personal information against unauthorized access, 
-                  alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">5. Your Rights</h2>
-                <p className="mb-4">You have the right to:</p>
-                <ul className="list-disc pl-6 mb-4">
-                  <li>Access your personal information</li>
-                  <li>Correct inaccurate information</li>
-                  <li>Delete your personal information</li>
-                  <li>Object to processing of your information</li>
-                  <li>Data portability</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">6. Third-Party Services</h2>
-                <p className="mb-4">
-                  We work with trusted third-party partners to provide comprehensive business formation services. 
-                  These partners may collect information separately according to their own privacy policies.
-                </p>
-                <ul className="list-disc pl-6 mb-4">
-                  <li>Payment processors (Stripe, PayPal)</li>
-                  <li>Formation service providers</li>
-                  <li>Banking partners</li>
-                  <li>Analytics providers (Google Analytics)</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">7. Contact Us</h2>
-                <p className="mb-4">
-                  If you have any questions about this Privacy Policy, please contact us at:
-                </p>
-                <p className="mb-2">Email: privacy@foundstart.com</p>
-                <p className="mb-2">WhatsApp: <a href="https://wa.me/message/UQZ6STBLDXKPD1" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Chat with us</a></p>
-                <p className="mb-2">Address: FoundStart LLC, Business Formation Services</p>
-              </section>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  );
-};
+const PrivacyPolicy = () => (
+  <LegalPage
+    path="/privacy-policy"
+    title={['Privacy Policy', 'سياسة الخصوصية']}
+    updated={['Last updated: October 18, 2026', 'آخر تحديث: 18 أكتوبر 2026']}
+    intro={[
+      'This policy explains what personal data FoundStart collects when you use foundstart.org, why we collect it, who we share it with, and the choices you have.',
+      'توضح هذه السياسة البيانات الشخصية التي يجمعها FoundStart عند استخدامك موقع foundstart.org، ولماذا نجمعها، ومع من نشاركها، وما الخيارات المتاحة لك.'
+    ]}
+    sections={[
+      { title: ['Information we collect', 'المعلومات التي نجمعها'],
+        paras: [['We collect only what we need to run the site and the services you ask for.', 'نجمع فقط ما نحتاجه لتشغيل الموقع وتقديم الخدمات التي تطلبها.']],
+        items: [
+          ['Account data: name, email address and sign-in details when you create an account.', 'بيانات الحساب: الاسم والبريد الإلكتروني وبيانات تسجيل الدخول عند إنشاء حساب.'],
+          ['Messages and requests: what you send through our contact form, inquiry forms or WhatsApp.', 'الرسائل والطلبات: ما ترسله عبر نموذج التواصل أو نماذج الاستفسار أو واتساب.'],
+          ['Business details you choose to enter, such as company name, country and the service you want.', 'بيانات النشاط التجاري التي تختار إدخالها، مثل اسم الشركة والدولة والخدمة المطلوبة.'],
+          ['Technical data: browser type, device, pages visited and approximate location from your IP address.', 'بيانات تقنية: نوع المتصفح والجهاز والصفحات التي زرتها والموقع التقريبي من عنوان IP.'],
+          ['Payment status: if you pay for a service, the payment provider handles your card details. We do not store full card numbers.', 'حالة الدفع: عند دفع قيمة خدمة، يتولى مزوّد الدفع بيانات بطاقتك. نحن لا نخزّن أرقام البطاقات كاملة.']
+        ] },
+      { title: ['How we use your information', 'كيف نستخدم معلوماتك'],
+        items: [
+          ['To provide and improve the site and our services.', 'لتقديم الموقع وخدماتنا وتحسينهما.'],
+          ['To answer your messages and requests.', 'للرد على رسائلك وطلباتك.'],
+          ['To process payments and send service-related notices.', 'لمعالجة المدفوعات وإرسال إشعارات تخص الخدمة.'],
+          ['To keep the site secure and prevent abuse.', 'للحفاظ على أمان الموقع ومنع إساءة الاستخدام.'],
+          ['To understand which pages are useful so we can improve them.', 'لفهم الصفحات المفيدة وتحسينها.']
+        ] },
+      { title: ['Who we share it with', 'مع من نشاركها'],
+        paras: [['We do not sell your personal data. We share it only with providers that help us run the site, under their own terms and privacy policies:', 'نحن لا نبيع بياناتك الشخصية. نشاركها فقط مع مزوّدين يساعدوننا في تشغيل الموقع، وفق شروطهم وسياسات الخصوصية الخاصة بهم:']],
+        items: [
+          ['Hosting and infrastructure (Vercel).', 'الاستضافة والبنية التحتية (Vercel).'],
+          ['Database and sign-in (Supabase).', 'قاعدة البيانات وتسجيل الدخول (Supabase).'],
+          ['Payment providers, when you pay for a service.', 'مزوّدو الدفع، عند دفع قيمة خدمة.'],
+          ['Advertising partner (Google AdSense), which may use cookies. See our Cookie Policy.', 'شريك الإعلانات (Google AdSense) وقد يستخدم الكوكيز. راجع سياسة الكوكيز.'],
+          ['Partner companies you choose to start a service with, only as needed for that request.', 'الشركات الشريكة التي تختار بدء خدمة معها، وبالقدر اللازم لطلبك فقط.'],
+          ['Authorities, when the law requires it.', 'الجهات الرسمية، عندما يفرض القانون ذلك.']
+        ] },
+      { title: ['Partner and third-party sites', 'مواقع الشركاء والأطراف الثالثة'],
+        paras: [['Our pages link to partner and third-party websites. They have their own privacy practices, and this policy does not cover them. Please read their policies before sharing data with them.', 'تحتوي صفحاتنا على روابط لمواقع شركاء وأطراف ثالثة. لهذه المواقع ممارسات خصوصية خاصة بها ولا تشملها هذه السياسة. يُرجى قراءة سياساتها قبل مشاركة بياناتك معها.']] },
+      { title: ['How long we keep data', 'مدة الاحتفاظ بالبيانات'],
+        paras: [['We keep data only as long as needed for the purpose it was collected, or as the law requires. You can ask us to delete your data at any time.', 'نحتفظ بالبيانات للمدة اللازمة لغرض جمعها فقط، أو بحسب ما يقتضيه القانون. يمكنك طلب حذف بياناتك في أي وقت.']] },
+      { title: ['Security', 'الأمان'],
+        paras: [['We use reasonable technical measures, including encrypted connections (HTTPS) and access controls. No system is completely secure, so we cannot guarantee absolute security.', 'نستخدم إجراءات تقنية معقولة، منها الاتصال المشفّر (HTTPS) وضوابط الوصول. لا يوجد نظام آمن بالكامل، لذلك لا يمكننا ضمان أمان مطلق.']] },
+      { title: ['Your rights', 'حقوقك'],
+        paras: [['Depending on where you live, you may have the right to:', 'حسب بلد إقامتك، قد يكون لك الحق في:']],
+        items: [
+          ['Access the personal data we hold about you.', 'الاطلاع على بياناتك الشخصية لدينا.'],
+          ['Correct data that is wrong.', 'تصحيح البيانات غير الصحيحة.'],
+          ['Ask us to delete your data.', 'طلب حذف بياناتك.'],
+          ['Object to or limit how we use it.', 'الاعتراض على استخدامها أو تقييده.'],
+          ['Receive a copy of your data.', 'الحصول على نسخة من بياناتك.']
+        ] },
+      { title: ['Children', 'الأطفال'],
+        paras: [['The site is not meant for people under 18, and we do not knowingly collect their data.', 'الموقع غير موجّه لمن هم دون 18 عامًا، ولا نجمع بياناتهم عن علم.']] },
+      { title: ['Changes to this policy', 'تغييرات السياسة'],
+        paras: [['We may update this policy. The date at the top shows the latest version. Continued use of the site means you accept the updated policy.', 'قد نحدّث هذه السياسة. يوضح التاريخ في أعلى الصفحة آخر نسخة. استمرارك في استخدام الموقع يعني موافقتك على السياسة المحدّثة.']] }
+    ]}
+    note={['For privacy questions or to use any of the rights above, send us a message through the contact page or WhatsApp.', 'لأي استفسار عن الخصوصية أو لممارسة أي من الحقوق أعلاه، أرسل لنا رسالة عبر صفحة التواصل أو واتساب.']}
+  />
+);
 
 export default PrivacyPolicy;

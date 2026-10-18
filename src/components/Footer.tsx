@@ -1,164 +1,61 @@
 import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
-import { Youtube, Facebook, Instagram, Linkedin, Twitter, MessageCircle } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 
 const Footer = () => {
+  const { isRTL } = useTranslation();
+  const L = (en: string, ar: string) => (isRTL ? ar : en);
   const footerSections = [{
-    title: "Services",
-    links: [{
-      name: "All Services",
-      href: "/services"
-    }, {
-      name: "Countries & Jurisdictions", 
-      href: "/countries"
-    }, {
-      name: "AI Agents",
-      href: "/agents"
-    }, {
-      name: "Company Formation",
-      href: "/company-formation-bio"
-    }, {
-      name: "Banking Setup",
-      href: "#services"
-    }, {
-      name: "AI Automation",
-      href: "/services"
-    }]
+    title: L("Services", "الخدمات"),
+    links: [
+      { name: L("All Services", "كل الخدمات"), href: "/services" },
+      { name: L("Company Formation", "تأسيس الشركات"), href: "/company-formation-bio" },
+      { name: L("AI Agents", "وكلاء الذكاء الاصطناعي"), href: "/agents" },
+      { name: L("Premium Domains", "الدومينات المميزة"), href: "/domains" },
+      { name: L("Pricing", "الأسعار"), href: "/pricing" }
+    ]
   }, {
-    title: "Countries",
-    links: [{
-      name: "🇺🇸 United States",
-      href: "/countries"
-    }, {
-      name: "🇬🇧 United Kingdom",
-      href: "/countries"
-    }, {
-      name: "🇨🇦 Canada",
-      href: "/countries"
-    }, {
-      name: "🇪🇪 Estonia",
-      href: "/countries"
-    }, {
-      name: "🇫🇮 Finland",
-      href: "/countries"
-    }, {
-      name: "🇸🇪 Sweden",
-      href: "/countries"
-    }, {
-      name: "🇱🇻 Latvia",
-      href: "/countries"
-    }, {
-      name: "🇱🇹 Lithuania",
-      href: "/countries"
-    }]
+    title: L("Countries", "الدول"),
+    links: [
+      { name: L("🇺🇸 United States", "🇺🇸 الولايات المتحدة"), href: "/country/USA" },
+      { name: L("🇬🇧 United Kingdom", "🇬🇧 المملكة المتحدة"), href: "/country/UK" },
+      { name: L("🇨🇦 Canada", "🇨🇦 كندا"), href: "/country/CA" },
+      { name: L("🇪🇪 Estonia", "🇪🇪 إستونيا"), href: "/country/EE" },
+      { name: L("🇫🇮 Finland", "🇫🇮 فنلندا"), href: "/country/FI" },
+      { name: L("🇸🇪 Sweden", "🇸🇪 السويد"), href: "/country/SE" },
+      { name: L("🇱🇻 Latvia", "🇱🇻 لاتفيا"), href: "/country/LV" },
+      { name: L("🇱🇹 Lithuania", "🇱🇹 ليتوانيا"), href: "/country/LT" },
+      { name: L("All Countries", "كل الدول"), href: "/countries" }
+    ]
   }, {
-    title: "Partners",
-    links: [{
-      name: "All Partners",
-      href: "/all-partners"
-    }, {
-      name: "Formation Partners",
-      href: "/partners"
-    }, {
-      name: "Digital Partners",
-      href: "/digital-partners"
-    }, {
-      name: "Freelancer Partners",
-      href: "/freelancer-partners"
-    }, {
-      name: "Premium Domains",
-      href: "/domains"
-    }, {
-      name: "AI Agents",
-      href: "/agents"
-    }, {
-      name: "Success Stories",
-      href: "/press"
-    }]
+    title: L("Partners", "الشركاء"),
+    links: [
+      { name: L("All Partners", "كل الشركاء"), href: "/all-partners" },
+      { name: L("Formation Partners", "شركاء التأسيس"), href: "/partners" },
+      { name: L("Digital Partners", "الشركاء الرقميون"), href: "/digital-partners" },
+      { name: L("Freelancer Partners", "شركاء المستقلين"), href: "/freelancer-partners" }
+    ]
   }, {
-    title: "Resources",
-    links: [{
-      name: "Press & Blogs",
-      href: "/blog"
-    }, {
-      name: "Media & Videos",
-      href: "/media"
-    }, {
-      name: "Tutorials",
-      href: "/tutorials"
-    }, {
-      name: "Case Studies",
-      href: "/press"
-    }, {
-      name: "Company News",
-      href: "/press"
-    }, {
-      name: "Industry Insights",
-      href: "/press"
-    }]
+    title: L("Resources", "المصادر"),
+    links: [
+      { name: L("Blog", "المدونة"), href: "/blog" },
+      { name: L("Press & News", "الأخبار والصحافة"), href: "/press" },
+      { name: L("Media & Videos", "الوسائط والفيديو"), href: "/media" },
+      { name: L("Tutorials", "الشروحات"), href: "/tutorials" },
+      { name: L("Digital Nomad Visas", "تأشيرات الرحّالة الرقميين"), href: "/digital-nomad-visas" }
+    ]
   }, {
-    title: "Support",
-    links: [{
-      name: "Help Center",
-      href: "#"
-    }, {
-      name: "Contact Us",
-      href: "/contact-us"
-    }, {
-      name: "Live Chat",
-      href: "#"
-    }, {
-      name: "Documentation",
-      href: "#"
-    }, {
-      name: "SEO Suite",
-      href: "/seo-management"
-    }, {
-      name: "Affiliate System",
-      href: "/affiliate-dashboard"
-    }]
-  }, {
-    title: "Company",
-    links: [{
-      name: "Pricing & Country Tiers",
-      href: "/pricing#country-tiers"
-    }, {
-      name: "Who We Are",
-      href: "/who-we-are"
-    }, {
-      name: "FAQ",
-      href: "/faq"
-    }, {
-      name: "Privacy Policy",
-      href: "/privacy-policy"
-    }, {
-      name: "Terms of Service",
-      href: "/terms-of-service"
-    }, {
-      name: "Cookie Policy",
-      href: "/cookie-policy"
-    }]
+    title: L("Support", "الدعم"),
+    links: [
+      { name: L("FAQ", "الأسئلة الشائعة"), href: "/faq" },
+      { name: L("Contact Us", "تواصل معنا"), href: "/contact-us" },
+      { name: L("Live Chat (WhatsApp)", "دردشة مباشرة (واتساب)"), href: "https://wa.me/message/UQZ6STBLDXKPD1", external: true },
+      { name: L("Who We Are", "من نحن"), href: "/who-we-are" }
+    ]
   }];
 
-  const socialLinks = [
-    { name: "Facebook", href: "https://www.facebook.com/momoaiearab", icon: Facebook },
-    { name: "WhatsApp", href: "https://wa.me/message/UQZ6STBLDXKPD1", icon: MessageCircle },
-    { name: "Instagram", href: "https://www.instagram.com/momoaiar/", icon: Instagram },
-    { name: "Threads", href: "https://www.threads.com/@momoaiar", icon: MessageCircle },
-    { name: "YouTube", href: "http://www.youtube.com/@momoai-momo", icon: Youtube },
-    { name: "TikTok", href: "http://tiktok.com/@momoaiar", icon: MessageCircle },
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/mohamed-sayed-6b2a38226/", icon: Linkedin },
-    { name: "Reddit", href: "https://www.reddit.com/user/Exotic_Researcher688/", icon: MessageCircle },
-    { name: "Quora", href: "https://momoai.quora.com/", icon: MessageCircle },
-    { name: "X", href: "https://x.com/MSAGoldgroup", icon: Twitter },
-    { name: "Pinterest", href: "https://pin.it/2GSKpcQur", icon: MessageCircle },
-    { name: "Minds", href: "https://www.minds.com/momoai/", icon: MessageCircle },
-    { name: "Rumble", href: "https://rumble.com/user/Deeemoz", icon: MessageCircle },
-    { name: "Medium", href: "https://medium.com/@Deeemoz", icon: MessageCircle },
-    { name: "Beehiiv", href: "https://deeemoz.beehiiv.com/", icon: MessageCircle },
-    { name: "Substack", href: "https://substack.com/@deeemoz", icon: MessageCircle },
-  ];
+
 
   return (
     <footer className="bg-card border-t border-border">
@@ -169,31 +66,22 @@ const Footer = () => {
               <span className="flex items-center gap-2"><img src="/logo-mark.png" alt="FoundStart logo" className="h-7 w-auto" /><span className="text-lg font-bold gradient-text">FoundStart</span></span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
-              Launch your business in minutes, not months. The all-in-one platform 
-              for company formation, banking, and digital services.
+              {L("Launch your business in minutes, not months. The all-in-one platform for company formation, banking, and digital services.","أطلق شركتك في دقائق لا شهور. منصة واحدة لتأسيس الشركات والبنوك والخدمات الرقمية.")}
             </p>
             
-            {/* Social Media Links */}
-            <div className="grid grid-cols-4 gap-2 mb-4">
-              {socialLinks.slice(0, 16).map((social, index) => {
-              const Icon = social.icon;
-              return <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-muted/50" aria-label={social.name} title={social.name}>
-                    <Icon className="w-4 h-4" />
-                  </a>;
-            })}
-            </div>
             
-            <div className="text-xs text-muted-foreground">© 2026 FoundStart. All rights reserved, MoMoAI</div>
+            
+            <div className="text-xs text-muted-foreground">{L("© 2026 FoundStart. All rights reserved, MoMoAI","© 2026 FoundStart. جميع الحقوق محفوظة، MoMoAI")}</div>
           </div>
 
-          {footerSections.filter(section => section.title !== "Company").map((section, index) => (
+          {footerSections.map((section, index) => (
             <div key={index}>
               <h4 className="font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    {link.href.startsWith('#') ? (
-                      <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    {(link as any).external ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                         {link.name}
                       </a>
                     ) : (
@@ -211,13 +99,10 @@ const Footer = () => {
         <Separator className="my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex space-x-6 text-sm text-muted-foreground">
-            <Link to="/who-we-are" className="hover:text-foreground transition-colors">Who We Are</Link>
-            <Link to="/contact-us" className="hover:text-foreground transition-colors">Contact Us</Link>
-            <Link to="/digital-nomad-visas" className="hover:text-foreground transition-colors">Digital Nomad Visas</Link>
-            <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
-            <Link to="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <Link to="/privacy-policy" className="hover:text-foreground transition-colors">{L("Privacy Policy", "سياسة الخصوصية")}</Link>
+            <Link to="/terms-of-service" className="hover:text-foreground transition-colors">{L("Terms of Service", "شروط الخدمة")}</Link>
+            <Link to="/cookie-policy" className="hover:text-foreground transition-colors">{L("Cookie Policy", "سياسة الكوكيز")}</Link>
           </div>
 
         </div>

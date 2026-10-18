@@ -43,8 +43,6 @@ import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
 import Press from "./pages/Press";
 import Media from "./pages/Media";
 import Tutorials from "./pages/Tutorials";
-import AffiliateDashboard from "./pages/AffiliateDashboard";
-import SEOManagement from "./pages/SEOManagement";
 import ContactSales from "./pages/ContactSales";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -153,8 +151,8 @@ function App() {
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />
                   <Route path="/tutorials" element={<Tutorials />} />
-                  <Route path="/affiliate-dashboard" element={<AffiliateDashboard />} />
-                  <Route path="/seo-management" element={<SEOManagement />} />
+                  <Route path="/affiliate-dashboard" element={<Navigate to="/" replace />} />
+                  <Route path="/seo-management" element={<Navigate to="/" replace />} />
                   <Route path="/contact-sales" element={<ContactSales />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-of-service" element={<TermsOfService />} />
