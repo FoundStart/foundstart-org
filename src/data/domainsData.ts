@@ -349,7 +349,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "ZadAfrica.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech, Food",
-    "price": "",
+    "price": "5000",
     "businessType": "Domain",
     "buyUrl": ""
   },
