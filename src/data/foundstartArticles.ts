@@ -1,6 +1,7 @@
 import type { ShortetArticle } from './shortetArticlesData';
 
 export const foundstartArticleOrder: string[] = [
+  "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company-ar",
   "five-free-guides-company-to-ai-company",
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company",
   "five-free-guides-company-to-ai-company-ar",
@@ -15,6 +16,16 @@ export const foundstartArticleOrder: string[] = [
 ];
 
 export const foundstartArticles: Record<string, ShortetArticle> = {
+  "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company-ar": {
+      "title": "الولايات المتحدة أم بريطانيا أم إستونيا أم مصر: أين تسجّل شركتك؟",
+      "description": "مقارنة عملية بين أربعة مسارات يستخدمها رواد الأعمال: الولايات المتحدة وبريطانيا وإستونيا ومصر، وثلاثة أسئلة تساعدك على الاختيار.",
+      "category": "Business",
+      "author": "محمد سيد",
+      "date": "Oct 18, 2026",
+      "readTime": "4 دقائق قراءة",
+      "heroImage": "",
+      "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><h2>الولايات المتحدة - الخيار الافتراضي للشركات الناشئة العالمية</h2><p>شركة LLC أمريكية (ووايومنغ وديلاوير ونيو مكسيكو من أكثر الولايات اختياراً) تمنحك هيكلاً قانونياً مألوفاً، وسهولة في الوصول إلى Stripe والبنوك الأمريكية، ومصداقية أمام العملاء الأمريكيين. تناسب من يبيع للسوق الأمريكي أو يجمع تمويلاً من مستثمرين أمريكيين. أما المقابل فهو التقارير السنوية للولاية، ووكيل مسجّل، والإقرارات الضريبية الأمريكية حتى لو كنت تعيش خارج البلاد.</p><h2>المملكة المتحدة - سريعة وقليلة التكلفة في الإدارة</h2><p>يمكن تسجيل شركة محدودة بريطانية عبر الإنترنت في نحو يوم واحد، وبتكاليف سنوية متواضعة. تناسب الأعمال الخدمية ومن يبيع لأوروبا ودول الكومنولث. الخدمات المصرفية سهلة، والعبء الإداري على الشركات الصغيرة أخف منه في الولايات المتحدة.</p><h2>إستونيا - مصممة لرواد الأعمال عن بُعد</h2><p>يتيح برنامج الإقامة الإلكترونية في إستونيا إدارة شركة أوروبية بالكامل عبر الإنترنت: توقيع رقمي، وإقرارات ضريبية إلكترونية، ووصول إلى السوق الأوروبية. تناسب من لا يرتبط بمكان معين ويريد كياناً أوروبياً دون الانتقال للعيش هناك. وضريبة الشركات لا تُستحق إلا عند توزيع الأرباح، وهذا يفيد من يعيد استثمار أرباحه.</p><h2>مصر - لمن يعمل داخل السوق المحلي</h2><p>إذا كان عملاؤك وفريقك وإيراداتك في مصر، فإن الكيان المحلي يحفظ التزامك القانوني ويتيح لك إصدار فواتير للشركات المصرية بشكل سليم. كما تتيح مصر هيكل شركة الشخص الواحد، وهو مناسب لمن يعمل منفرداً ويريد مسؤولية محدودة دون شركاء.</p><h2>كيف تقرر؟</h2><p>اسأل نفسك ثلاثة أسئلة: أين عملائي؟ وأين سأفتح حسابي البنكي؟ وما حجم العمل الإداري الذي أستطيع الالتزام به فعلاً؟ أرخص تسجيل ليس دائماً أرخص شركة في التشغيل.</p><p>أعددنا في FoundStart أدلة تسجيل خطوة بخطوة لهذه المسارات الأربعة، إضافة إلى كندا وفنلندا والسويد ولاتفيا وليتوانيا وأيرلندا، مجاناً وبالعربية والإنجليزية: <a href=\"https://www.foundstart.org\">https://www.foundstart.org</a></p></div>"
+  },
   "five-free-guides-company-to-ai-company": {
       "title": "5 Free Guides for Every Founder: From Company Formation to Building an AI Company",
       "description": "Five free guides on FoundStart that cover the whole road from registering a company to building and running it with AI.",
@@ -128,6 +139,17 @@ export const foundstartArticles: Record<string, ShortetArticle> = {
 };
 
 export const foundstartBlogPosts = [
+  {
+      "id": 451,
+      "title": "الولايات المتحدة أم بريطانيا أم إستونيا أم مصر: أين تسجّل شركتك؟",
+      "description": "مقارنة عملية بين أربعة مسارات يستخدمها رواد الأعمال: الولايات المتحدة وبريطانيا وإستونيا ومصر، وثلاثة أسئلة تساعدك على الاختيار.",
+      "category": "Business",
+      "author": "محمد سيد",
+      "date": "Oct 18, 2026",
+      "readTime": "4 دقائق قراءة",
+      "slug": "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company-ar",
+      "image": "/blog/company-formation-guide-01dc7278.jpg"
+  },
   {
       "id": 340,
       "title": "5 Free Guides for Every Founder: From Company Formation to Building an AI Company",
