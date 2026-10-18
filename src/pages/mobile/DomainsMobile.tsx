@@ -16,6 +16,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { domainsData as premiumDomains } from '@/data/domainsData';
+
 interface Domain {
   name: string;
   category: string;
@@ -25,32 +27,39 @@ interface Domain {
   buyUrl: string;
 }
 
-// Sample domains data (you'd import the full list)
-const domainsData: Domain[] = [
-  { name: 'Namelizer.com', category: 'Startups, SaaS & Tech', hosting: 'Godaddy', price: 11.99, businessType: 'Business', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Namelizer.com' },
-  { name: 'Shofic.com', category: 'E-Commerce & Marketplaces', hosting: 'Godaddy', price: 11.99, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shofic.com' },
-  { name: 'Deeemoz.com', category: 'Startups, SaaS & Tech', hosting: 'Hostinger', price: 11.99, businessType: 'Business', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Deeemoz.com' },
-  { name: 'AppWebo.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', price: 11.99, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=AppWebo.com' },
-  { name: 'NixCash.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', price: 11.99, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=NixCash.com' },
-  { name: 'Affillex.com', category: 'Startups, SaaS & Tech, Affiliate', hosting: 'UD', price: 5.99, businessType: 'Business', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Affillex.com' },
-  { name: 'CarDolla.com', category: 'Fintech - E-commerce-Automotive', hosting: 'Spaceship', price: 11.99, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=CarDolla.com' },
-  { name: 'ClotheCart.com', category: 'E-Commerce & Marketplaces', hosting: 'Spaceship', price: 11.99, businessType: 'Business', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=ClotheCart.com' },
-  { name: 'Talaboo.com', category: 'Startups, SaaS & Tech, APP, Grocery', hosting: 'UD', price: 5.99, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Talaboo.com' },
-  { name: 'Paylita.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', price: 11.99, businessType: 'Domain', buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Paylita.com' },
-];
+const domainsData: Domain[] = premiumDomains.map(d => ({
+  name: d.name,
+  category: d.category,
+  hosting: d.hosting,
+  price: parseFloat(d.price || '0'),
+  businessType: d.businessType || 'Domain',
+  buyUrl: d.buyUrl || '',
+}));
 
-const categories = [
-  'All',
-  'Startups, SaaS & Tech',
-  'E-Commerce & Marketplaces',
-  'Fintech, Payments & Crypto',
-];
+const categoryCounts = new Map<string, number>();
+domainsData.forEach(d => {
+  const main = d.category.split(/[,/]/)[0].trim();
+  if (main) categoryCounts.set(main, (categoryCounts.get(main) || 0) + 1);
+});
+const categories = ['All', ...Array.from(categoryCounts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([name]) => name)];
 
 const priceFilters = [
   { label: 'All Prices', value: 'all' },
-  { label: '$5.99', value: '5.99' },
-  { label: '$11.99', value: '11.99' },
+  { label: 'Under $100', value: 'lt100' },
+  { label: '$100 - $499', value: '100-499' },
+  { label: '$500 - $999', value: '500-999' },
+  { label: '$1,000+', value: 'gte1000' },
 ];
+
+const matchesPriceFilter = (price: number, filter: string) => {
+  switch (filter) {
+    case 'lt100': return price < 100;
+    case '100-499': return price >= 100 && price < 500;
+    case '500-999': return price >= 500 && price < 1000;
+    case 'gte1000': return price >= 1000;
+    default: return true;
+  }
+};
 
 const DomainsMobile = () => {
   const { favorites, toggleFavorite } = useDomainFavorites();
@@ -64,7 +73,7 @@ const DomainsMobile = () => {
       const matchesSearch = domain.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            domain.category.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || domain.category.includes(selectedCategory);
-      const matchesPrice = selectedPrice === 'all' || domain.price.toString() === selectedPrice;
+      const matchesPrice = matchesPriceFilter(domain.price, selectedPrice);
       return matchesSearch && matchesCategory && matchesPrice;
     });
   }, [searchTerm, selectedCategory, selectedPrice]);

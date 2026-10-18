@@ -8,38 +8,54 @@ export interface Domain {
   buyUrl?: string;
 }
 
+export interface SoldDomain {
+  name: string;
+  platform: 'Spaceship' | 'Afternic' | 'Sedo';
+  soldDate: string; // ISO date, from Mohamed's own sales records
+  soldPrice: string; // USD
+}
+
+export const soldDomains: SoldDomain[] = [
+  { name: 'Shortoo.com', platform: 'Afternic', soldDate: '2026-06-26', soldPrice: '250' },
+  { name: 'Shofic.com', platform: 'Afternic', soldDate: '2026-07-05', soldPrice: '250' },
+  { name: 'Codestia.com', platform: 'Sedo', soldDate: '2026-08-02', soldPrice: '499' },
+  { name: 'Caisho.com', platform: 'Spaceship', soldDate: '2026-08-23', soldPrice: '250' },
+  { name: 'Flowmotic.com', platform: 'Afternic', soldDate: '2026-09-02', soldPrice: '250' },
+  { name: 'CoinsLite.com', platform: 'Spaceship', soldDate: '2026-10-14', soldPrice: '250' },
+];
+
 const raw: Omit<Domain, 'id'>[] = [
   {
     "name": "Foundstart.org",
     "hosting": "Spaceship",
     "category": "Startup / Venture",
-    "price": "4999",
+    "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.org/en-in/domainsearch/find?domainToCheck=Foundstart.org"
+    "buyUrl": ""
   },
   {
     "name": "Heykeyword.com",
     "hosting": "Spaceship",
     "category": "SEO / Marketing",
-    "price": "4999",
+    "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Heykeyword.com"
+    "buyUrl": ""
   },
   {
     "name": "Shortet.com",
     "hosting": "Spaceship",
     "category": "SaaS / Links",
-    "price": "2500",
+    "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortet.com"
+    "buyUrl": ""
   },
   {
     "name": "TopyPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "1250",
+    "price": "499",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=TopyPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/topypay.com"
   },
   {
     "name": "Expensol.com",
@@ -47,7 +63,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Venture, Community & Brands",
     "price": "1500",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Expensol.com"
+    "buyUrl": "https://www.atom.com/name/Expensol"
   },
   {
     "name": "Keepence.com",
@@ -55,15 +71,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, SAAS",
     "price": "1250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Keepence.com"
+    "buyUrl": "https://unstoppabledomains.com/d/keepence.com"
   },
   {
     "name": "Namelizer.com",
     "hosting": "Godaddy",
     "category": "SaaS / Branding",
-    "price": "1250",
+    "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Namelizer.com"
+    "buyUrl": ""
   },
   {
     "name": "Uniqranks.com",
@@ -71,15 +87,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "SaaS / SEO",
     "price": "1250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Uniqranks.com"
+    "buyUrl": ""
   },
   {
     "name": "Cartgy.com",
     "hosting": "Spaceship",
     "category": "E-Commerce",
-    "price": "500",
+    "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cartgy.com"
+    "buyUrl": ""
   },
   {
     "name": "Shortili.com",
@@ -87,7 +103,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "SaaS / Links",
     "price": "450",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Shortili.com"
+    "buyUrl": "https://shortili.com"
   },
   {
     "name": "Creativoya.com",
@@ -95,7 +111,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "SaaS / Creative",
     "price": "500",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Creativoya.com"
+    "buyUrl": ""
   },
   {
     "name": "Toolstogethers.com",
@@ -103,7 +119,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Food",
     "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Toolstogethers.com"
+    "buyUrl": "https://unstoppabledomains.com/d/toolstogethers.com"
   },
   {
     "name": "Exitsme.com",
@@ -111,7 +127,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startup / M&A",
     "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Exitsme.com"
+    "buyUrl": "https://unstoppabledomains.com/d/exitsme.com"
   },
   {
     "name": "Halalye.com",
@@ -119,7 +135,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Food / Lifestyle",
     "price": "5000",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Halalye.com"
+    "buyUrl": "https://halalye.com"
   },
   {
     "name": "NameLik.com",
@@ -127,15 +143,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Branding",
     "price": "1500",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=NameLik.com"
+    "buyUrl": ""
   },
   {
     "name": "Tafsirly.com",
     "hosting": "UD",
     "category": "Religious / Islamic",
-    "price": "1500",
+    "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Tafsirly.com"
+    "buyUrl": ""
   },
   {
     "name": "Affillex.com",
@@ -143,7 +159,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Affiliate Marketing",
     "price": "1250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Affillex.com"
+    "buyUrl": "https://affillex.com"
   },
   {
     "name": "MoMoMob.com",
@@ -151,7 +167,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Mobile / Fintech",
     "price": "1250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MoMoMob.com"
+    "buyUrl": "https://unstoppabledomains.com/d/momomob.com"
   },
   {
     "name": "MoMoNil.com",
@@ -159,7 +175,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Mobile / Fintech",
     "price": "1250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MoMoNil.com"
+    "buyUrl": "https://unstoppabledomains.com/d/momonil.com"
   },
   {
     "name": "YesShoot.com",
@@ -167,7 +183,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Photography / Gaming",
     "price": "1250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=YesShoot.com"
+    "buyUrl": ""
   },
   {
     "name": "Talaboo.com",
@@ -175,7 +191,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Grocery / Delivery",
     "price": "1151",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Talaboo.com"
+    "buyUrl": "https://unstoppabledomains.com/d/talaboo.com"
   },
   {
     "name": "Etivago.com",
@@ -183,7 +199,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Travel / SaaS",
     "price": "500",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Etivago.com"
+    "buyUrl": "https://etivago.com"
   },
   {
     "name": "Cardolla.com",
@@ -191,7 +207,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech / E-Commerce / Automotive",
     "price": "350",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Cardolla.com"
+    "buyUrl": "https://cardolla.com"
   },
   {
     "name": "MSA-serv.com",
@@ -199,7 +215,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "B2B / Services",
     "price": "350",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=MSA-serv.com"
+    "buyUrl": ""
   },
   {
     "name": "Assetsium.com",
@@ -207,23 +223,23 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech / Asset Management",
     "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Assetsium.com"
+    "buyUrl": ""
   },
   {
     "name": "Careeroh.com",
     "hosting": "Spaceship",
     "category": "HR / Job Board",
-    "price": "500",
+    "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Careeroh.com"
+    "buyUrl": "https://careeroh.com"
   },
   {
     "name": "Deeemoz.shop",
     "hosting": "Spaceship",
     "category": "E-Commerce",
-    "price": "500",
+    "price": "100",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.shop/en-in/domainsearch/find?domainToCheck=Deeemoz.shop"
+    "buyUrl": "https://deeemoz.shop"
   },
   {
     "name": "Dropoh.com",
@@ -231,7 +247,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce / Dropshipping",
     "price": "500",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Dropoh.com"
+    "buyUrl": "https://unstoppabledomains.com/d/dropoh.com"
   },
   {
     "name": "FoundVC.com",
@@ -239,15 +255,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Venture, Community & Brands",
     "price": "2500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=FoundVC.com"
+    "buyUrl": "https://foundvc.com"
   },
   {
     "name": "Freelinance.com",
     "hosting": "UD",
     "category": "Freelance / Gig Economy",
-    "price": "2500",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Freelinance.com"
+    "buyUrl": "https://unstoppabledomains.com/d/freelinance.com"
   },
   {
     "name": "Agitli.com",
@@ -255,7 +271,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Business",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Agitli.com"
+    "buyUrl": "https://unstoppabledomains.com/d/agitli.com"
   },
   {
     "name": "Exitsmena.com",
@@ -263,7 +279,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Exitsmena.com"
+    "buyUrl": "https://unstoppabledomains.com/d/exitsmena.com"
   },
   {
     "name": "Foodievo.com",
@@ -271,15 +287,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, SAAS",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Foodievo.com"
+    "buyUrl": "https://foodievo.com"
   },
   {
     "name": "Hosstec.com",
     "hosting": "Spaceship",
     "category": "Tech / Hosting",
-    "price": "500",
+    "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Hosstec.com"
+    "buyUrl": "https://hosstec.com"
   },
   {
     "name": "TakeRides.com",
@@ -287,7 +303,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fleet Automotive",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=TakeRides.com"
+    "buyUrl": "https://www.atom.com/name/TakeRides"
   },
   {
     "name": "Talabook.com",
@@ -295,15 +311,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, APP, Grocery",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Talabook.com"
-  },
-  {
-    "name": "Codestia.com",
-    "hosting": "Spaceship",
-    "category": "SaaS / Tech",
-    "price": "499",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Codestia.com"
+    "buyUrl": "https://unstoppabledomains.com/d/talabook.com"
   },
   {
     "name": "Escroy.com",
@@ -311,7 +319,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Escrow Pay",
     "price": "499",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Escroy.com"
+    "buyUrl": "https://unstoppabledomains.com/d/escroy.com"
   },
   {
     "name": "Finaprise.com",
@@ -319,7 +327,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Venture, Community & Brands",
     "price": "499",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Finaprise.com"
+    "buyUrl": "https://www.atom.com/name/FinaPrise"
   },
   {
     "name": "Fruitla.com",
@@ -327,7 +335,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, APP, Grocery",
     "price": "499",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Fruitla.com"
+    "buyUrl": "https://fruitla.com"
   },
   {
     "name": "Storezly.com",
@@ -335,7 +343,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce",
     "price": "499",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Storezly.com"
+    "buyUrl": "https://storezly.com"
   },
   {
     "name": "ZadAfrica.com",
@@ -343,7 +351,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Food",
     "price": "436",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ZadAfrica.com"
+    "buyUrl": ""
   },
   {
     "name": "Emboxer.com",
@@ -351,7 +359,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Emboxer.com"
+    "buyUrl": ""
   },
   {
     "name": "Nanymart.com",
@@ -359,7 +367,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Nany marketplace",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Nanymart.com"
+    "buyUrl": "https://unstoppabledomains.com/d/nanymart.com"
   },
   {
     "name": "NixCash.com",
@@ -367,7 +375,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=NixCash.com"
+    "buyUrl": "https://www.atom.com/name/NixCash"
   },
   {
     "name": "Paylita.com",
@@ -375,7 +383,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Paylita.com"
+    "buyUrl": "https://www.atom.com/name/Paylita"
   },
   {
     "name": "Trancesend.com",
@@ -383,15 +391,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Trancesend.com"
+    "buyUrl": "https://unstoppabledomains.com/d/trancesend.com"
   },
   {
     "name": "Uniqranker.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "400",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Uniqranker.com"
+    "buyUrl": "https://unstoppabledomains.com/d/uniqranker.com"
   },
   {
     "name": "Buyill.com",
@@ -399,7 +407,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Buyill.com"
+    "buyUrl": "https://buyill.com"
   },
   {
     "name": "Clothecart.com",
@@ -407,15 +415,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "POD-E-Commerce/Fashion",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Clothecart.com"
-  },
-  {
-    "name": "CoinsLite.com",
-    "hosting": "Spaceship",
-    "category": "Crypto / Fintech",
-    "price": "350",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=CoinsLite.com"
+    "buyUrl": ""
   },
   {
     "name": "EstatesChain.com",
@@ -423,7 +423,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=EstatesChain.com"
+    "buyUrl": "https://unstoppabledomains.com/d/estateschain.com"
   },
   {
     "name": "Marttogo.com",
@@ -431,7 +431,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Marttogo.com"
+    "buyUrl": "https://unstoppabledomains.com/d/marttogo.com"
   },
   {
     "name": "Societygram.com",
@@ -439,7 +439,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Societygram.com"
+    "buyUrl": "https://unstoppabledomains.com/d/societygram.com"
   },
   {
     "name": "Dealigi.com",
@@ -447,7 +447,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces, SAAS",
     "price": "300",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealigi.com"
+    "buyUrl": "https://domains.atom.com/lpd/name/dealigi.com"
   },
   {
     "name": "Loadwhale.com",
@@ -455,7 +455,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "300",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Loadwhale.com"
+    "buyUrl": "https://www.atom.com/name/Loadwhale"
   },
   {
     "name": "Bestofmart.com",
@@ -463,7 +463,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "265",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Bestofmart.com"
+    "buyUrl": "https://unstoppabledomains.com/d/bestofmart.com"
   },
   {
     "name": "Autobases.com",
@@ -471,15 +471,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Autobases.com"
-  },
-  {
-    "name": "Caisho.com",
-    "hosting": "UD",
-    "category": "Startups, SaaS & Tech",
-    "price": "250",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Caisho.com"
+    "buyUrl": "https://unstoppabledomains.com/d/autobases.com"
   },
   {
     "name": "Cardido.com",
@@ -487,7 +479,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cardido.com"
+    "buyUrl": "https://www.atom.com/name/Cardido"
   },
   {
     "name": "Cartdidi.com",
@@ -495,7 +487,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cartdidi.com"
+    "buyUrl": "https://unstoppabledomains.com/d/cartdidi.com"
   },
   {
     "name": "Cloddi.com",
@@ -503,7 +495,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cloddi.com"
+    "buyUrl": "https://unstoppabledomains.com/d/cloddi.com"
   },
   {
     "name": "Coinaxia.com",
@@ -511,7 +503,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Coinaxia.com"
+    "buyUrl": "https://unstoppabledomains.com/d/coinaxia.com"
   },
   {
     "name": "CometCall.com",
@@ -519,7 +511,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=CometCall.com"
+    "buyUrl": "https://www.atom.com/name/CometCall"
   },
   {
     "name": "ComZio.com",
@@ -527,7 +519,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ComZio.com"
+    "buyUrl": "https://unstoppabledomains.com/d/comzio.com"
   },
   {
     "name": "Coursaro.com",
@@ -535,7 +527,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "EdTech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Coursaro.com"
+    "buyUrl": "https://coursaro.com"
   },
   {
     "name": "Cryptemp.com",
@@ -543,7 +535,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cryptemp.com"
+    "buyUrl": "https://cryptemp.com"
   },
   {
     "name": "Dealago.com",
@@ -551,7 +543,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces, SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealago.com"
+    "buyUrl": "https://www.atom.com/name/Dealago"
   },
   {
     "name": "Diroh.com",
@@ -559,7 +551,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Diroh.com"
+    "buyUrl": ""
   },
   {
     "name": "Domianity.com",
@@ -567,15 +559,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Domianity.com"
+    "buyUrl": ""
   },
   {
     "name": "Doscash.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "$250",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Doscash.com"
+    "buyUrl": "https://unstoppabledomains.com/d/doscash.com"
   },
   {
     "name": "Ecardera.com",
@@ -583,7 +575,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecardera.com"
+    "buyUrl": "https://ecardera.com"
   },
   {
     "name": "Ecardora.com",
@@ -591,7 +583,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces / SAAS",
     "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://www.godaddy.com/en-in/domainsearch/find?domainToCheck=Ecardora.com"
+    "buyUrl": ""
   },
   {
     "name": "Emotorsmarket.com",
@@ -599,15 +591,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech-E-Commerce & Marketplaces / SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com /en-ai/domainsearch/find?domainToCheck=Emotorsmarket.com"
+    "buyUrl": ""
   },
   {
     "name": "Enitsa.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "250",
+    "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Enitsa.com"
+    "buyUrl": "https://enitsa.com"
   },
   {
     "name": "Estatesa.com",
@@ -615,7 +607,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Estatesa.com"
+    "buyUrl": "https://unstoppabledomains.com/d/estatesa.com"
   },
   {
     "name": "Fintekly.com",
@@ -623,15 +615,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Fintekly.com"
-  },
-  {
-    "name": "Flowmotic.com",
-    "hosting": "UD",
-    "category": "AI, Automation, Startups, SaaS & Tech",
-    "price": "250",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Flowmotic.com"
+    "buyUrl": "https://unstoppabledomains.com/d/fintekly.com"
   },
   {
     "name": "Folkgram.com",
@@ -639,7 +623,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Folkgram.com"
+    "buyUrl": "https://unstoppabledomains.com/d/folkgram.com"
   },
   {
     "name": "Giftbed.com",
@@ -647,7 +631,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Giftbed.com"
+    "buyUrl": "https://unstoppabledomains.com/d/giftbed.com"
   },
   {
     "name": "Godemart.com",
@@ -655,7 +639,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Godemart.com"
+    "buyUrl": "https://unstoppabledomains.com/d/godemart.com"
   },
   {
     "name": "InfiniteGram.com",
@@ -663,7 +647,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InfiniteGram.com"
+    "buyUrl": "https://unstoppabledomains.com/d/infinitegram.com"
   },
   {
     "name": "InstaMackers.com",
@@ -671,7 +655,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Social Media",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InstaMackers.com"
+    "buyUrl": "https://unstoppabledomains.com/d/instamackers.com"
   },
   {
     "name": "Investue.com",
@@ -679,7 +663,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Venture, Community & Brands",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Investue.com"
+    "buyUrl": "https://investue.com"
   },
   {
     "name": "Jobagy.com",
@@ -687,7 +671,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Recurements, Freelancer, SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jobagy.com"
+    "buyUrl": "https://unstoppabledomains.com/d/jobagy.com"
   },
   {
     "name": "Jobigy.com",
@@ -695,7 +679,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Recurements, Freelancer, SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jobigy.com"
+    "buyUrl": "https://unstoppabledomains.com/d/jobigy.com"
   },
   {
     "name": "Justailawyer.com",
@@ -703,7 +687,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Legal",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Justailawyer.com"
+    "buyUrl": "https://unstoppabledomains.com/d/justailawyer.com"
   },
   {
     "name": "llmified.com",
@@ -711,7 +695,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "LLM",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=llmified.com"
+    "buyUrl": "https://www.atom.com/name/LLMified"
   },
   {
     "name": "Loverlet.com",
@@ -719,7 +703,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Loverlet.com"
+    "buyUrl": "https://unstoppabledomains.com/d/loverlet.com"
   },
   {
     "name": "Martome.com",
@@ -727,7 +711,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Martome.com"
+    "buyUrl": "https://unstoppabledomains.com/d/martome.com"
   },
   {
     "name": "Medianar.com",
@@ -735,7 +719,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Medianar.com"
+    "buyUrl": "https://unstoppabledomains.com/d/medianar.com"
   },
   {
     "name": "Mediationmarket.com",
@@ -743,7 +727,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mediationmarket.com"
+    "buyUrl": "https://www.atom.com/name/MediationMarket"
   },
   {
     "name": "OppaPay.com",
@@ -751,7 +735,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=OppaPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/oppapay.com"
   },
   {
     "name": "Payleya.com",
@@ -759,7 +743,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payleya.com"
+    "buyUrl": "https://unstoppabledomains.com/d/payleya.com"
   },
   {
     "name": "Payoha.com",
@@ -767,7 +751,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payoha.com"
+    "buyUrl": "https://unstoppabledomains.com/d/payoha.com"
   },
   {
     "name": "Payort.com",
@@ -775,7 +759,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payort.com"
+    "buyUrl": "https://payort.com"
   },
   {
     "name": "Rankingmart.com",
@@ -783,7 +767,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Rankingmart.com"
+    "buyUrl": "https://unstoppabledomains.com/d/rankingmart.com"
   },
   {
     "name": "Reallt.com",
@@ -791,23 +775,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Reallt.com"
-  },
-  {
-    "name": "Shofic.com",
-    "hosting": "Spaceship",
-    "category": "E-Commerce & Marketplaces",
-    "price": "250",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Shofic.com"
-  },
-  {
-    "name": "Shortoo.com",
-    "hosting": "UD",
-    "category": "Startups, SaaS & Tech",
-    "price": "250",
-    "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Shortoo.com"
+    "buyUrl": "https://unstoppabledomains.com/d/reallt.com"
   },
   {
     "name": "Sociallaters.com",
@@ -815,7 +783,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Sociallaters.com"
+    "buyUrl": ""
   },
   {
     "name": "Trillionchat.com",
@@ -823,7 +791,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Trillionchat.com"
+    "buyUrl": "https://unstoppabledomains.com/d/trillionchat.com"
   },
   {
     "name": "UniqranKing.com",
@@ -831,7 +799,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=UniqranKing.com"
+    "buyUrl": "https://uniqranking.com"
   },
   {
     "name": "Walletah.com",
@@ -839,7 +807,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Walletah.com"
+    "buyUrl": "https://unstoppabledomains.com/d/walletah.com"
   },
   {
     "name": "WhenSpend.com",
@@ -847,7 +815,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=WhenSpend.com"
+    "buyUrl": "https://unstoppabledomains.com/d/whenspend.com"
   },
   {
     "name": "Teeped.com",
@@ -855,7 +823,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "245",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Teeped.com"
+    "buyUrl": "https://unstoppabledomains.com/d/teeped.com"
   },
   {
     "name": "AlternativeClaw.com",
@@ -863,7 +831,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Niche / Hardware",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AlternativeClaw.com"
+    "buyUrl": "https://unstoppabledomains.com/d/alternativeclaw.com"
   },
   {
     "name": "AtlanticClaw.com",
@@ -871,7 +839,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Seafood / Niche",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AtlanticClaw.com"
+    "buyUrl": "https://unstoppabledomains.com/d/atlanticclaw.com"
   },
   {
     "name": "Cashzor.com",
@@ -879,7 +847,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cashzor.com"
+    "buyUrl": "https://unstoppabledomains.com/d/cashzor.com"
   },
   {
     "name": "Ecardura.com",
@@ -887,7 +855,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecardura.com"
+    "buyUrl": "https://unstoppabledomains.com/d/ecardura.com"
   },
   {
     "name": "MartGem.com",
@@ -895,7 +863,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Sport SAAS",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MartGem.com"
+    "buyUrl": "https://unstoppabledomains.com/d/martgem.com"
   },
   {
     "name": "TechyClaw.com",
@@ -903,7 +871,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Tech / Niche",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=TechyClaw.com"
+    "buyUrl": "https://unstoppabledomains.com/d/techyclaw.com"
   },
   {
     "name": "TodaysClaw.com",
@@ -911,7 +879,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Niche",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=TodaysClaw.com"
+    "buyUrl": "https://unstoppabledomains.com/d/todaysclaw.com"
   },
   {
     "name": "Affivid.com",
@@ -919,7 +887,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Affiliate Video marketing",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Affivid.com"
+    "buyUrl": "https://unstoppabledomains.com/d/affivid.com"
   },
   {
     "name": "Automorize.com",
@@ -927,7 +895,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Automorize.com"
+    "buyUrl": "https://unstoppabledomains.com/d/automorize.com"
   },
   {
     "name": "BlocksValley.com",
@@ -935,7 +903,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=BlocksValley.com"
+    "buyUrl": "https://unstoppabledomains.com/d/blocksvalley.com"
   },
   {
     "name": "Carthot.com",
@@ -943,7 +911,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Carthot.com"
+    "buyUrl": ""
   },
   {
     "name": "CitySpain.com",
@@ -951,7 +919,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=CitySpain.com"
+    "buyUrl": "https://unstoppabledomains.com/d/cityspain.com"
   },
   {
     "name": "ClauGram.com",
@@ -959,7 +927,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ClauGram.com"
+    "buyUrl": "https://unstoppabledomains.com/d/claugram.com"
   },
   {
     "name": "Dailymr.com",
@@ -967,7 +935,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dailymr.com"
+    "buyUrl": "https://unstoppabledomains.com/d/dailymr.com"
   },
   {
     "name": "Dealello.com",
@@ -975,7 +943,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealello.com"
+    "buyUrl": "https://unstoppabledomains.com/d/dealello.com"
   },
   {
     "name": "Existmatch.com",
@@ -983,7 +951,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Existmatch.com"
+    "buyUrl": "https://unstoppabledomains.com/d/existmatch.com"
   },
   {
     "name": "GramChase.com",
@@ -991,7 +959,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=GramChase.com"
+    "buyUrl": "https://unstoppabledomains.com/d/gramchase.com"
   },
   {
     "name": "Gramout.com",
@@ -999,7 +967,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Gramout.com"
+    "buyUrl": "https://unstoppabledomains.com/d/gramout.com"
   },
   {
     "name": "InfinitiMeta.com",
@@ -1007,7 +975,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InfinitiMeta.com"
+    "buyUrl": "https://infinitimeta.com"
   },
   {
     "name": "InteMeta.com",
@@ -1015,15 +983,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=InteMeta.com"
+    "buyUrl": "https://intemeta.com"
   },
   {
     "name": "Investicash.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "150",
+    "price": "2500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Investicash.com"
+    "buyUrl": "https://www.atom.com/name/Investicash"
   },
   {
     "name": "LandingKey.com",
@@ -1031,7 +999,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=LandingKey.com"
+    "buyUrl": "https://www.atom.com/name/LandingKey"
   },
   {
     "name": "MallCanyon.com",
@@ -1039,7 +1007,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces - SAAS hub",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MallCanyon.com"
+    "buyUrl": "https://unstoppabledomains.com/d/mallcanyon.com"
   },
   {
     "name": "Metachia.com",
@@ -1047,7 +1015,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Metachia.com"
+    "buyUrl": "https://metachia.com"
   },
   {
     "name": "Mistonia.com",
@@ -1055,7 +1023,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mistonia.com"
+    "buyUrl": "https://unstoppabledomains.com/d/mistonia.com"
   },
   {
     "name": "Solivid.com",
@@ -1063,7 +1031,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Solivid.com"
+    "buyUrl": "https://solivid.com"
   },
   {
     "name": "Storecho.com",
@@ -1071,7 +1039,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Storecho.com"
+    "buyUrl": "https://storecho.com"
   },
   {
     "name": "Afinya.com",
@@ -1079,7 +1047,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Affliate",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Afinya.com"
+    "buyUrl": "https://unstoppabledomains.com/d/afinya.com"
   },
   {
     "name": "AppWebo.com",
@@ -1087,7 +1055,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AppWebo.com"
+    "buyUrl": "https://appwebo.com"
   },
   {
     "name": "Assetmediator.com",
@@ -1095,7 +1063,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Assetmediator.com"
+    "buyUrl": "https://www.atom.com/name/AssetMediator"
   },
   {
     "name": "AssetMotive.com",
@@ -1103,7 +1071,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=AssetMotive.com"
+    "buyUrl": "https://unstoppabledomains.com/d/assetmotive.com"
   },
   {
     "name": "Goidai.com",
@@ -1111,7 +1079,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Goidai.com"
+    "buyUrl": "https://unstoppabledomains.com/d/goidai.com"
   },
   {
     "name": "Grambond.com",
@@ -1119,7 +1087,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Grambond.com"
+    "buyUrl": "https://unstoppabledomains.com/d/grambond.com"
   },
   {
     "name": "Gramger.com",
@@ -1127,7 +1095,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Gramger.com"
+    "buyUrl": "https://unstoppabledomains.com/d/gramger.com"
   },
   {
     "name": "MartlyGram.com",
@@ -1135,7 +1103,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MartlyGram.com"
+    "buyUrl": "https://unstoppabledomains.com/d/martlygram.com"
   },
   {
     "name": "Mediomy.com",
@@ -1143,7 +1111,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mediomy.com"
+    "buyUrl": "https://unstoppabledomains.com/d/mediomy.com"
   },
   {
     "name": "Metanta.com",
@@ -1151,15 +1119,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Metanta.com"
+    "buyUrl": "https://metanta.com"
   },
   {
     "name": "Rewardial.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "100",
+    "price": "2500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Rewardial.com"
+    "buyUrl": "https://www.atom.com/name/Rewardial"
   },
   {
     "name": "Socialautoposters.com",
@@ -1167,7 +1135,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialautoposters.com"
+    "buyUrl": "https://unstoppabledomains.com/d/socialautoposters.com"
   },
   {
     "name": "Socialsenders.com",
@@ -1175,7 +1143,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialsenders.com"
+    "buyUrl": "https://unstoppabledomains.com/d/socialsenders.com"
   },
   {
     "name": "VestaBrokers.com",
@@ -1183,328 +1151,344 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=VestaBrokers.com"
+    "buyUrl": "https://www.atom.com/name/VestaBrokers"
   },
   {
     "name": "ChasesGram.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ChasesGram.com"
+    "buyUrl": "https://unstoppabledomains.com/d/chasesgram.com"
   },
   {
     "name": "Chatelly.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Chatelly.com"
+    "buyUrl": "https://www.atom.com/name/Chatelly"
   },
   {
     "name": "Ecanio.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces / SAAS",
-    "price": "99",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecanio.com"
+    "buyUrl": ""
   },
   {
     "name": "Ecanro.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces / SAAS",
-    "price": "99",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Ecanro.com"
+    "buyUrl": "https://unstoppabledomains.com/d/ecanro.com"
   },
   {
     "name": "Paybrink.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Paybrink.com"
+    "buyUrl": "https://unstoppabledomains.com/d/paybrink.com"
   },
   {
     "name": "Survimart.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Survimart.com"
+    "buyUrl": "https://unstoppabledomains.com/d/survimart.com"
   },
   {
     "name": "Transacly.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Transacly.com"
+    "buyUrl": "https://www.atom.com/name/Transacly"
   },
   {
     "name": "VestaBroker.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=VestaBroker.com"
+    "buyUrl": "https://unstoppabledomains.com/d/vestabroker.com"
   },
   {
     "name": "XperaPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "99",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=XperaPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/xperapay.com"
   },
   {
     "name": "ExemPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "75",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ExemPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/exempay.com"
   },
   {
     "name": "ZohPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "75",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ZohPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/zohpay.com"
   },
   {
     "name": "BekoMart.com",
     "hosting": "Namebright",
     "category": "E-Commerce & Marketplaces",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=BekoMart.com"
+    "buyUrl": ""
   },
   {
     "name": "Cryptinco.com",
     "hosting": "Spaceship",
     "category": "Fintech, Payments & Crypto",
-    "price": "59",
+    "price": "299",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cryptinco.com"
+    "buyUrl": "https://cryptinco.com"
   },
   {
     "name": "EasycheckPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=EasycheckPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/easycheckpay.com"
   },
   {
     "name": "Jumamart.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "59",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Jumamart.com"
+    "buyUrl": "https://unstoppabledomains.com/d/jumamart.com"
   },
   {
     "name": "Landgage.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Landgage.com"
+    "buyUrl": "https://unstoppabledomains.com/d/landgage.com"
   },
   {
     "name": "Laterssocial.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Laterssocial.com"
+    "buyUrl": "https://laterssocial.com"
   },
   {
     "name": "Linkliz.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Linkliz.com"
+    "buyUrl": "https://unstoppabledomains.com/d/linkliz.com"
   },
   {
     "name": "Mediadirect.uk",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Marketing",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.uk/en-ai/domainsearch/find?domainToCheck=Mediadirect.uk"
+    "buyUrl": "https://mediadirect.uk"
   },
   {
     "name": "Mentelic.com",
     "hosting": "UD",
     "category": "EdTech / Coaching",
-    "price": "59",
+    "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Mentelic.com"
+    "buyUrl": "https://www.atom.com/name/Mentelic"
   },
   {
     "name": "MetaMany.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=MetaMany.com"
+    "buyUrl": "https://metamany.com"
   },
   {
     "name": "Postsocialauto.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech - Social media services",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Postsocialauto.com"
+    "buyUrl": "https://unstoppabledomains.com/d/postsocialauto.com"
   },
   {
     "name": "Sellerizer.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "2500",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Sellerizer.com"
+    "buyUrl": "https://www.atom.com/name/Sellerizer"
   },
   {
     "name": "Shopeter.com",
     "hosting": "Spaceship",
     "category": "E-Commerce & Marketplaces",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Shopeter.com"
+    "buyUrl": "https://shopeter.com"
   },
   {
     "name": "Socialautobest.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Socialautobest.com"
+    "buyUrl": "https://unstoppabledomains.com/d/socialautobest.com"
   },
   {
     "name": "Stremion.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Stream IPTV. TV",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Stremion.com"
+    "buyUrl": "https://unstoppabledomains.com/d/stremion.com"
   },
   {
     "name": "Tradoq.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Tradoq.com"
+    "buyUrl": "https://unstoppabledomains.com/d/tradoq.com"
   },
   {
     "name": "Transationser.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Transationser.com"
+    "buyUrl": "https://unstoppabledomains.com/d/transationser.com"
   },
   {
     "name": "VisLif.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=VisLif.com"
+    "buyUrl": "https://unstoppabledomains.com/d/vislif.com"
   },
   {
     "name": "XpanderPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=XpanderPay.com"
+    "buyUrl": "https://unstoppabledomains.com/d/xpanderpay.com"
   },
   {
     "name": "ZonFood.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech, Food",
-    "price": "59",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=ZonFood.com"
+    "buyUrl": "https://unstoppabledomains.com/d/zonfood.com"
   },
   {
     "name": "365crypt.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=365crypt.com"
+    "buyUrl": ""
   },
   {
     "name": "365martly.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=365martly.com"
+    "buyUrl": "https://unstoppabledomains.com/d/365martly.com"
   },
   {
     "name": "Cartburn.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cartburn.com"
+    "buyUrl": "https://unstoppabledomains.com/d/cartburn.com"
   },
   {
     "name": "Cryptalyzes.com",
     "hosting": "Spaceship",
     "category": "Venture, Community & Brands",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Cryptalyzes.com"
+    "buyUrl": "https://cryptalyzes.com"
   },
   {
     "name": "Dealiar.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces, SAAS",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Dealiar.com"
+    "buyUrl": "https://unstoppabledomains.com/d/dealiar.com"
   },
   {
     "name": "Drobito.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces, SAAS",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Drobito.com"
+    "buyUrl": "https://unstoppabledomains.com/d/drobito.com"
   },
   {
     "name": "Payerzy.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=Payerzy.com"
+    "buyUrl": "https://unstoppabledomains.com/d/payerzy.com"
   },
   {
     "name": "syrri.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech - tool",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=syrri.com"
+    "buyUrl": "https://unstoppabledomains.com/d/syrri.com"
   },
   {
     "name": "voucherdeck.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "50",
+    "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.godaddy.com/en-ai/domainsearch/find?domainToCheck=voucherdeck.com"
-  }
+    "buyUrl": "https://www.atom.com/name/VoucherDeck"
+  },
+  {
+    "name": "Kufya.com",
+    "hosting": "UD",
+    "category": "E-Commerce & Marketplaces",
+    "price": "499",
+    "businessType": "Business",
+    "buyUrl": "https://unstoppabledomains.com/d/kufya.com"
+  },
+  {
+    "name": "Shortst.com",
+    "hosting": "UD",
+    "category": "SaaS / Links",
+    "price": "1250",
+    "businessType": "Business",
+    "buyUrl": ""
+  },
 ];
 
 export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d }));

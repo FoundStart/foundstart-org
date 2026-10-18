@@ -93,6 +93,38 @@ export interface Translations {
   gafiRegistration: string;
   companyStructures: string;
   foreignOwnership: string;
+
+  // Domains Hub
+  domainHubTitle: string;
+  domainHubHighlight: string;
+  domainHubSubtitle: string;
+  myWishlist: string;
+  bulkInquiry: string;
+  marketplaceSearchTitle: string;
+  marketplaceSearchHighlight: string;
+  marketplaceSearchSubtitle: string;
+  premiumDomainsTab: string;
+  searchMarketplaceTab: string;
+  soldTab: string;
+  collectionTitle: string;
+  collectionHighlight: string;
+  exportCsv: string;
+  searchByNameOrCategory: string;
+  categoryFilter: string;
+  hostingFilter: string;
+  allFilter: string;
+  showingDomains: string;
+  domainCol: string;
+  priceCol: string;
+  actionsCol: string;
+  buyBtn: string;
+  inquireBtn: string;
+  soldTitle: string;
+  soldSubtitle: string;
+  platformCol: string;
+  dateCol: string;
+  salePriceCol: string;
+  soldBadge: string;
 }
 
 const englishTranslations: Translations = {
@@ -185,7 +217,39 @@ const englishTranslations: Translations = {
   techHubAccess: "Tech hub access",
   gafiRegistration: "GAFI registration",
   companyStructures: "6 company structures",
-  foreignOwnership: "100% foreign ownership*"
+  foreignOwnership: "100% foreign ownership*",
+
+  // Domains Hub
+  domainHubTitle: "Domain",
+  domainHubHighlight: "Hub",
+  domainHubSubtitle: "Browse our curated premium domains or search across 16+ registrars and marketplaces — all in one place.",
+  myWishlist: "My Wishlist",
+  bulkInquiry: "Bulk Inquiry",
+  marketplaceSearchTitle: "Search the",
+  marketplaceSearchHighlight: "Global Domain Marketplace",
+  marketplaceSearchSubtitle: "Powered by Sedo — check availability across millions of premium domains.",
+  premiumDomainsTab: "Premium Domains",
+  searchMarketplaceTab: "Search Marketplace",
+  soldTab: "Sold",
+  collectionTitle: "Our",
+  collectionHighlight: "Domain Collection",
+  exportCsv: "Export CSV",
+  searchByNameOrCategory: "Search by name or category...",
+  categoryFilter: "Category",
+  hostingFilter: "Hosting",
+  allFilter: "All",
+  showingDomains: "Showing {x} of {y} domains",
+  domainCol: "Domain",
+  priceCol: "Price",
+  actionsCol: "Actions",
+  buyBtn: "Buy",
+  inquireBtn: "Inquire",
+  soldTitle: "Sold Domains",
+  soldSubtitle: "Recently sold from our portfolio. Buyer details stay private.",
+  platformCol: "Platform",
+  dateCol: "Date",
+  salePriceCol: "Sale Price",
+  soldBadge: "Sold"
 };
 
 const arabicTranslations: Translations = {
@@ -278,7 +342,39 @@ const arabicTranslations: Translations = {
   techHubAccess: "الوصول لمركز التكنولوجيا",
   gafiRegistration: "تسجيل الهيئة العامة للاستثمار",
   companyStructures: "6 هياكل شركات",
-  foreignOwnership: "ملكية أجنبية 100%*"
+  foreignOwnership: "ملكية أجنبية 100%*",
+
+  // Domains Hub
+  domainHubTitle: "مركز",
+  domainHubHighlight: "الدومينات",
+  domainHubSubtitle: "تصفح دوميناتنا المميزة المختارة أو ابحث في أكثر من 16 ريجسترار وسوق دومينات - كلها في مكان واحد.",
+  myWishlist: "قائمتي المفضلة",
+  bulkInquiry: "استفسار جملة",
+  marketplaceSearchTitle: "ابحث في",
+  marketplaceSearchHighlight: "سوق الدومينات العالمي",
+  marketplaceSearchSubtitle: "مدعوم من Sedo - تحقق من توفر ملايين الدومينات المميزة.",
+  premiumDomainsTab: "دومينات مميزة",
+  searchMarketplaceTab: "ابحث في السوق",
+  soldTab: "اتباعت",
+  collectionTitle: "مجموعتنا من",
+  collectionHighlight: "الدومينات",
+  exportCsv: "تصدير CSV",
+  searchByNameOrCategory: "ابحث بالاسم أو الفئة...",
+  categoryFilter: "الفئة",
+  hostingFilter: "المنصة",
+  allFilter: "الكل",
+  showingDomains: "عرض {x} من {y} دومين",
+  domainCol: "الدومين",
+  priceCol: "السعر",
+  actionsCol: "إجراءات",
+  buyBtn: "شراء",
+  inquireBtn: "استفسر",
+  soldTitle: "دومينات اتباعت",
+  soldSubtitle: "دومينات اتباعت مؤخراً من محفظتنا. بيانات المشتري سرية.",
+  platformCol: "المنصة",
+  dateCol: "التاريخ",
+  salePriceCol: "سعر البيع",
+  soldBadge: "اتباع"
 };
 
 interface TranslationContextType {

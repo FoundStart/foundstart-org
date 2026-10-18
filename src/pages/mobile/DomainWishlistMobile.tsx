@@ -10,15 +10,16 @@ import MobileLayout from '@/components/mobile/MobileLayout';
 import MobileDomainCard from '@/components/mobile/MobileDomainCard';
 import { cn } from '@/lib/utils';
 
-// Import domains data
-const domainsData = [
-  { name: 'Namelizer.com', category: 'Startups, SaaS & Tech', hosting: 'Godaddy', price: 11.99, businessType: 'Business' as const, buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Namelizer.com' },
-  { name: 'Shofic.com', category: 'E-Commerce & Marketplaces', hosting: 'Godaddy', price: 11.99, businessType: 'Domain' as const, buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Shofic.com' },
-  { name: 'Deeemoz.com', category: 'Startups, SaaS & Tech', hosting: 'Hostinger', price: 11.99, businessType: 'Business' as const, buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Deeemoz.com' },
-  { name: 'AppWebo.com', category: 'Startups, SaaS & Tech', hosting: 'Spaceship', price: 11.99, businessType: 'Domain' as const, buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=AppWebo.com' },
-  { name: 'NixCash.com', category: 'Fintech, Payments & Crypto', hosting: 'Spaceship', price: 11.99, businessType: 'Domain' as const, buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=NixCash.com' },
-  { name: 'Affillex.com', category: 'Startups, SaaS & Tech, Affiliate', hosting: 'UD', price: 5.99, businessType: 'Business' as const, buyUrl: 'https://www.godaddy.com/en/domainsearch/find?domainToCheck=Affillex.com' },
-];
+import { domainsData as premiumDomains } from '@/data/domainsData';
+
+const domainsData = premiumDomains.map(d => ({
+  name: d.name,
+  category: d.category,
+  hosting: d.hosting,
+  price: parseFloat(d.price || '0'),
+  businessType: d.businessType || ('Domain' as const),
+  buyUrl: d.buyUrl || '',
+}));
 
 const DomainWishlistMobile = () => {
   const { user, loading: authLoading } = useAuth();
