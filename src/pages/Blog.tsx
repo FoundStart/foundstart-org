@@ -22,9 +22,8 @@ const Blog = () => {
     const t = i >= 0 ? Date.UTC(+m![3], i, +m![1]) : Date.parse(d + ' UTC');
     return isNaN(t) ? 0 : t;
   };
-  const blogPosts = allPosts.filter(p => language === 'ar'
-    ? (p.slug.endsWith('-ar') || !slugs.has(p.slug + '-ar'))
-    : !(p.slug.endsWith('-ar') && slugs.has(p.slug.slice(0, -3))))
+  const isAr = (p: { title: string; slug: string }) => /[\u0600-\u06FF]/.test(p.title) || p.slug.endsWith('-ar');
+  const blogPosts = allPosts.filter(p => language === 'ar' ? isAr(p) : !isAr(p))
     .map((p, i) => ({ p, i }))
     .sort((a, b) => ts(b.p.date) - ts(a.p.date) || a.i - b.i)
     .map(x => x.p);
