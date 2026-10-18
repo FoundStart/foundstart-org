@@ -1,3 +1,4 @@
+import { waLink } from "@/lib/whatsapp";
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -251,7 +252,7 @@ const EgyptFormationGuide = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/201002905764" 
+              href={waLink(document.documentElement.lang === "ar")} 
               target="_blank" 
               rel="noopener noreferrer"
             >

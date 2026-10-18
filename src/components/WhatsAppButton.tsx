@@ -1,3 +1,5 @@
+import { waLink } from '@/lib/whatsapp';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -8,8 +10,9 @@ interface WhatsAppButtonProps {
 }
 
 const WhatsAppButton = ({ variant = 'default', size = 'default', className = '' }: WhatsAppButtonProps) => {
+  const { isRTL } = useTranslation();
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/201002905764', '_blank');
+    window.open(waLink(isRTL), '_blank');
   };
 
   return (

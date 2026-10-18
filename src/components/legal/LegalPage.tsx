@@ -1,3 +1,4 @@
+import { waLink } from '@/lib/whatsapp';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -61,7 +62,7 @@ const LegalPage = ({ path, title, intro, updated, sections, note }: Props) => {
               <div className="flex flex-wrap gap-3">
                 <Button asChild><Link to="/contact-us">{isRTL ? 'صفحة التواصل' : 'Contact page'}</Link></Button>
                 <Button variant="outline" asChild>
-                  <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                  <a href={waLink(isRTL)} target="_blank" rel="noopener noreferrer">WhatsApp</a>
                 </Button>
               </div>
             </section>
