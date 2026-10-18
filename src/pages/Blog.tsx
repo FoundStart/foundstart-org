@@ -15,9 +15,13 @@ import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
 const Blog = () => {
   const { language } = useTranslation();
   const slugs = new Set(allPosts.map(p => p.slug));
+  const ts = (d: string) => { const t = Date.parse(d); return isNaN(t) ? 0 : t; };
   const blogPosts = allPosts.filter(p => language === 'ar'
     ? (p.slug.endsWith('-ar') || !slugs.has(p.slug + '-ar'))
-    : !(p.slug.endsWith('-ar') && slugs.has(p.slug.slice(0, -3))));
+    : !(p.slug.endsWith('-ar') && slugs.has(p.slug.slice(0, -3))))
+    .map((p, i) => ({ p, i }))
+    .sort((a, b) => ts(b.p.date) - ts(a.p.date) || a.i - b.i)
+    .map(x => x.p);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredPosts = selectedCategory === "All" 
