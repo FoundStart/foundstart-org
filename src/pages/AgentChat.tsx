@@ -17,6 +17,14 @@ import {
 import { getAgent } from '@/data/agentsData';
 import { agentPartners } from '@/data/agentPartners';
 
+// Click-time attribution: params pass through shortet.com to the partner (verified).
+// Appended in the href only - nothing fires until a visitor actually clicks.
+const trackUrl = (url: string, source: string): string => {
+  if (!url.startsWith('https://shortet.com/')) return url;
+  const sep = url.includes('?') ? '&' : '?';
+  return `${url}${sep}utm_source=foundstart&utm_medium=${source}`;
+};
+
 interface ChatMessage {
   id: string;
   role: 'user' | 'assistant';
@@ -276,7 +284,7 @@ const AgentChat = () => {
               {partners.map((pt) => (
                 <a
                   key={pt.url}
-                  href={pt.url}
+                  href={trackUrl(pt.url, `agent-${agent.slug}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start justify-between gap-3 rounded-lg border bg-card p-4 transition-colors hover:border-primary/60"
