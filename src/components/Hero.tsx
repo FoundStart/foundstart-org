@@ -10,24 +10,24 @@ const Hero = () => {
   const { t, language } = useTranslation();
 
   const jurisdictions = [
-    { name: t.usa, flag: "🇺🇸" },
-    { name: t.uk, flag: "🇬🇧" },
-    { name: t.canada, flag: "🇨🇦" },
-    { name: t.estonia, flag: "🇪🇪" },
-    { name: t.finland, flag: "🇫🇮" },
-    { name: t.sweden, flag: "🇸🇪" },
-    { name: t.latvia, flag: "🇱🇻" },
-    { name: t.lithuania, flag: "🇱🇹" },
-    { name: language === 'ar' ? 'أيرلندا' : 'Ireland', flag: "🇮🇪" },
-    { name: t.egypt, flag: "🇪🇬" },
+    { id: "USA", name: t.usa, flag: "🇺🇸" },
+    { id: "UK", name: t.uk, flag: "🇬🇧" },
+    { id: "CA", name: t.canada, flag: "🇨🇦" },
+    { id: "EE", name: t.estonia, flag: "🇪🇪" },
+    { id: "FI", name: t.finland, flag: "🇫🇮" },
+    { id: "SE", name: t.sweden, flag: "🇸🇪" },
+    { id: "LV", name: t.latvia, flag: "🇱🇻" },
+    { id: "LT", name: t.lithuania, flag: "🇱🇹" },
+    { id: 'IE', name: language === 'ar' ? 'أيرلندا' : 'Ireland', flag: "🇮🇪" },
+    { id: "EG", name: t.egypt, flag: "🇪🇬" },
   ];
 
-  const quickActions = [
-    'Form a US LLC',
-    'UK Company Formation',
-    'Estonia e-Residency',
-    'Ireland Low-Tax Setup',
-    'Premium Domains',
+  const quickActions: { label: string; to: string }[] = [
+    { label: 'Form a US LLC', to: '/country/USA' },
+    { label: 'UK Company Formation', to: '/country/UK' },
+    { label: 'Estonia e-Residency', to: '/country/EE' },
+    { label: 'Ireland Low-Tax Setup', to: '/country/IE' },
+    { label: 'Premium Domains', to: '/domains' },
   ];
 
   return (
@@ -104,11 +104,11 @@ const Hero = () => {
         >
           {quickActions.map((action) => (
             <Link
-              key={action}
-              to="/countries"
+              key={action.label}
+              to={action.to}
               className="px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-white/70 text-sm hover:bg-white/10 hover:text-white transition-all"
             >
-              {action}
+              {action.label}
             </Link>
           ))}
         </motion.div>
@@ -123,7 +123,7 @@ const Hero = () => {
           {jurisdictions.map((j) => (
             <Link
               key={j.name}
-              to="/countries"
+              to={`/country/${j.id}`}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-white/80 text-xs hover:bg-white/10 hover:scale-105 transition-all"
             >
               <span className="text-base">{j.flag}</span>
