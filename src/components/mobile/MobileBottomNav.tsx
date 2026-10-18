@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Globe, Users, Globe2, UserPlus } from 'lucide-react';
+import { Home, Globe, Users, Globe2, UserPlus, BookOpen } from 'lucide-react';
+import { SHOW_REGISTRATION } from '@/config/features';
 import { cn } from '@/lib/utils';
 
 const MobileBottomNav = () => {
@@ -31,12 +32,9 @@ const MobileBottomNav = () => {
       href: '/domains', 
       isActive: location.pathname.includes('/domain')
     },
-    { 
-      icon: UserPlus, 
-      label: 'Register', 
-      href: '/auth', 
-      isActive: location.pathname === '/auth',
-    },
+    SHOW_REGISTRATION
+      ? { icon: UserPlus, label: 'Register', href: '/auth', isActive: location.pathname === '/auth' }
+      : { icon: BookOpen, label: 'Blog', href: '/blog', isActive: location.pathname.startsWith('/blog') },
   ];
 
   return (

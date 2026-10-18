@@ -1,3 +1,4 @@
+import { SHOW_REGISTRATION } from '@/config/features';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
@@ -60,9 +61,11 @@ const AuthButton = () => {
       <Button variant="ghost" size="sm" asChild>
         <Link to="/auth">Sign In</Link>
       </Button>
-      <Button size="sm" asChild>
-        <Link to="/auth">Get Started</Link>
-      </Button>
+      {SHOW_REGISTRATION && (
+        <Button size="sm" asChild>
+          <Link to="/auth">Get Started</Link>
+        </Button>
+      )}
     </div>
   );
 };
