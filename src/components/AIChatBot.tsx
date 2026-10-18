@@ -1,284 +1,233 @@
-import { useState } from 'react';
-import { MessageSquare, Send, Mic, MicOff, X, Minimize2 } from 'lucide-react';
+import { useMemo, useRef, useState } from 'react';
+import { MessageSquare, Send, X, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { Streamdown } from 'streamdown';
+import { linkify, chatMdComponents } from '@/components/chatMd';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { aiAgents } from '@/data/agentsData';
+import { agentPartners } from '@/data/agentPartners';
+import { countriesData } from '@/data/countriesData';
 
 interface Message {
   id: string;
   text: string;
   isBot: boolean;
-  timestamp: Date;
 }
 
+interface SearchItem {
+  kind: 'agent' | 'partner' | 'country';
+  title: string;
+  desc: string;
+  href: string;
+  external: boolean;
+  blob: string;
+}
+
+const strings = {
+  en: {
+    title: 'FoundStart AI',
+    subtitle: 'Answers from the whole site',
+    placeholder: 'Ask about partners, agents, countries...',
+    send: 'Send',
+    welcome:
+      "Hi! I know every agent, partner and country on FoundStart. Ask me anything - for example **best eSIM for Europe** or **how do I form a US LLC**.",
+    foundAgents: 'Talk to a specialist agent:',
+    foundPartners: 'Matching partners:',
+    foundCountries: 'Country guides:',
+    fallback:
+      "I could not find an exact match. Try naming a service (hosting, eSIM, banking...), a partner, or a country - or browse all agents below.\n(/agents)",
+    chips: ['Form a US LLC', 'Best eSIM for travel', 'Business banking', 'Build an app with AI'],
+  },
+  ar: {
+    title: 'FoundStart AI',
+    subtitle: 'بيجاوب من كل بيانات الموقع',
+    placeholder: 'اسأل عن شركاء أو وكلاء أو دول...',
+    send: 'إرسال',
+    welcome:
+      'أهلاً! أنا عارف كل الوكلاء والشركاء والدول على FoundStart. اسألني أي حاجة - مثلاً **أحسن eSIM لأوروبا** أو **أعمل شركة أمريكية إزاي**.',
+    foundAgents: 'كلم الوكيل المتخصص:',
+    foundPartners: 'شركاء مناسبين:',
+    foundCountries: 'أدلة الدول:',
+    fallback:
+      'مش لاقي نتيجة مطابقة. جرّب تكتب اسم خدمة (استضافة، eSIM، بنوك...) أو شريك أو دولة - أو تصفح كل الوكلاء من هنا.\n(/agents)',
+    chips: ['أعمل شركة أمريكية', 'أحسن eSIM للسفر', 'حساب بنكي للبيزنس', 'أعمل تطبيق بالـ AI'],
+  },
+};
+
+const norm = (t: string) => t.toLowerCase().replace(/[ً-ْٰ]/g, '');
+
+const buildIndex = (): SearchItem[] => {
+  const items: SearchItem[] = [];
+  for (const a of aiAgents) {
+    items.push({
+      kind: 'agent',
+      title: `${a.name.en} Agent`,
+      desc: a.tagline.en,
+      href: `/agents/${a.slug}`,
+      external: false,
+      blob: norm(`${a.name.en} ${a.name.ar} ${a.tagline.en} ${a.tagline.ar} ${a.slug}`),
+    });
+    for (const p of agentPartners[a.slug] ?? []) {
+      items.push({
+        kind: 'partner',
+        title: p.name,
+        desc: p.niche,
+        href: p.url,
+        external: true,
+        blob: norm(`${p.name} ${p.niche} ${a.name.en} ${a.name.ar} ${a.slug.replace(/-/g, ' ')}`),
+      });
+    }
+  }
+  for (const c of countriesData as { id: string; name: string; description?: string }[]) {
+    items.push({
+      kind: 'country',
+      title: c.name,
+      desc: (c.description ?? '').slice(0, 90),
+      href: `/country/${c.id.toLowerCase()}`,
+      external: false,
+      blob: norm(`${c.name} ${c.id} ${c.description ?? ''}`),
+    });
+  }
+  return items;
+};
+
+const search = (index: SearchItem[], query: string): SearchItem[] => {
+  const tokens = norm(query).split(/[^\p{L}\p{N}]+/u).filter((t) => t.length > 1);
+  if (tokens.length === 0) return [];
+  return index
+    .map((item) => {
+      let score = 0;
+      for (const t of tokens) {
+        if (norm(item.title).includes(t)) score += 3;
+        if (item.blob.includes(t)) score += 1;
+      }
+      return { item, score };
+    })
+    .filter((r) => r.score >= 2)
+    .sort((a, b) => b.score - a.score)
+    .map((r) => r.item);
+};
+
+const compose = (results: SearchItem[], s: (typeof strings)['en']): string => {
+  const agents = results.filter((r) => r.kind === 'agent').slice(0, 2);
+  const partners = results.filter((r) => r.kind === 'partner').slice(0, 5);
+  const countries = results.filter((r) => r.kind === 'country').slice(0, 2);
+  if (agents.length + partners.length + countries.length === 0) return s.fallback;
+  const parts: string[] = [];
+  if (agents.length) {
+    parts.push(s.foundAgents);
+    for (const a of agents) parts.push(`**${a.title}** - ${a.desc}\n(${a.href})`);
+  }
+  if (partners.length) {
+    parts.push(s.foundPartners);
+    for (const p of partners) parts.push(`**${p.title}** - ${p.desc}\n(${p.href})`);
+  }
+  if (countries.length) {
+    parts.push(s.foundCountries);
+    for (const c of countries) parts.push(`**${c.title}**\n(${c.href})`);
+  }
+  return parts.join('\n\n');
+};
+
 const AIChatBot = () => {
+  const { language, isRTL } = useTranslation();
+  const s = strings[language as 'en' | 'ar'] ?? strings.en;
+  const index = useMemo(buildIndex, []);
   const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Hello! I\'m your FoundStart AI assistant. I can help you with company formation, domain search, digital services, and more. How can I help you today?',
-      isBot: true,
-      timestamp: new Date()
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([{ id: '1', text: s.welcome, isBot: true }]);
   const [inputValue, setInputValue] = useState('');
-  const [isListening, setIsListening] = useState(false);
+  const idRef = useRef(2);
 
-  const servicesData = {
-    'company formation': {
-      countries: ['USA ($299-$599)', 'UK (£199-£399)', 'Canada (CAD $399)', 'Estonia (€300)', 'Finland (€350)', 'Sweden (SEK 3,500)', 'Latvia (€250)', 'Lithuania (€280)', 'Egypt (Custom Quote)'],
-      entities: ['LLC', 'C-Corp', 'S-Corp', 'Ltd', 'GmbH', 'BV', 'SAS'],
-      features: ['Registered Agent', 'EIN Number', 'Operating Agreement', 'Business Address']
-    },
-    'domains': {
-      total: '187 premium domains available',
-      categories: ['Startups & SaaS', 'E-Commerce', 'Fintech & Crypto', 'Social Media', 'AI & Automation'],
-      platforms: ['Spaceship', 'GoDaddy', 'Hostinger', 'Unstoppable Domains', 'Sedo', 'Dynadot', 'Atom', 'Namesilo', 'Saw', 'Namebright', 'Dropcatch', 'Porkbun', 'Nameclub', 'Nameshift', 'Namebase', 'Namecheap'],
-      pricing: 'Domains from $59 to $2,500'
-    },
-    'digital services': {
-      hosting: 'Premium web hosting with 99.9% uptime',
-      email: 'Professional business email',
-      website: 'SAAS-ready website platforms',
-      mobile: 'Android, iOS & Harmony apps',
-      virtualCards: 'Visa & Mastercard virtual cards',
-      esim: 'Global eSIM connectivity',
-      giftCards: 'Digital gift card platform'
-    },
-    'banking': {
-      partners: ['Mercury (USA)', 'Wise (Multi-currency)', 'Redotpay (Virtual Cards)', 'WorldFirst', 'Payoneer'],
-      features: 'US banking, multi-currency accounts, virtual cards'
-    },
-    'seo': {
-      services: ['Traditional SEO', 'Local SEO', 'LLM Optimization (LLMO)', 'Answer Engine Optimization (AEO)', 'Geographic Optimization (GEO)', 'App Store Optimization (ASO)', 'Search Engine Marketing (SEM)'],
-      description: 'Complete search visibility solutions'
-    },
-    'hiring': {
-      services: ['Virtual Assistants', 'Data Entry', 'Customer Support', 'Content Writing', 'Graphic Design', 'Video Editing', 'Translation', 'Social Media Management', 'Lead Generation', 'Bookkeeping', 'Web Development', 'SEO & Link Building'],
-      platforms: '72 freelancer platforms'
-    }
-  };
-
-  const countriesInfo = {
-    'usa': 'USA company formation: LLC from $299, C-Corp from $399. Benefits: US banking access, global credibility, flexible structures, tax advantages. Formation time: 5-7 business days.',
-    'uk': 'UK company formation: Ltd from £199. Benefits: EU market gateway, strong legal framework, UK banking access. Formation time: 24-48 hours.',
-    'canada': 'Canada business formation: CAD $399. Benefits: Stable economy, NAFTA/USMCA access, skilled workforce, innovation incentives. Formation time: 7-10 days.',
-    'estonia': 'Estonia company: €300. Benefits: e-Residency program, digital infrastructure, EU access, no tax on retained earnings. Formation time: 3-5 days.',
-    'finland': 'Finland company: €350. Benefits: Innovative environment, educated workforce, R&D incentives, EU access. Formation time: 5-7 days.',
-    'sweden': 'Sweden business: SEK 3,500. Benefits: Innovation leadership, skilled workforce, EU access, sustainability focus. Formation time: 5-7 days.',
-    'latvia': 'Latvia company: €250. Benefits: Strategic Baltic location, cost-effective operations, EU access. Formation time: 3-5 days.',
-    'lithuania': 'Lithuania business: €280. Benefits: Growing economy, competitive costs, strong fintech sector. Formation time: 3-5 days.',
-    'egypt': 'Egypt company formation with expert guidance. 6 company structures under Investment Law 72/2017, 100% foreign ownership allowed, gateway to MENA region.'
-  };
-
-  const getAIResponse = (userMessage: string): string => {
-    const message = userMessage.toLowerCase();
-    
-    // Domain-specific queries
-    if (message.includes('domain') && (message.includes('search') || message.includes('find') || message.includes('buy'))) {
-      return `**Domain Search**\n\nWe offer:\n• ${servicesData.domains.total}\n• Search across ${servicesData.domains.platforms.length} platforms: ${servicesData.domains.platforms.slice(0, 6).join(', ')}, and more\n• Categories: ${servicesData.domains.categories.join(', ')}\n• ${servicesData.domains.pricing}\n\nVisit /domains to search or browse our collection!`;
-    }
-
-    if (message.includes('domain') && (message.includes('price') || message.includes('cost'))) {
-      return `**Domain Pricing**\n\n• Standard domains: From $59\n• Premium business domains: From $2,500\n• Registration: $5.99 - $11.99/year depending on hosting\n\nWe have domains on UD, Spaceship, GoDaddy, Hostinger, and Namebright.`;
-    }
-
-    // Country-specific queries
-    if (message.includes('usa') || message.includes('america') || message.includes('united states') || message.includes('us company')) {
-      return countriesInfo.usa;
-    }
-    if (message.includes('uk') || message.includes('britain') || message.includes('united kingdom') || message.includes('england')) {
-      return countriesInfo.uk;
-    }
-    if (message.includes('canada')) {
-      return countriesInfo.canada;
-    }
-    if (message.includes('estonia')) {
-      return countriesInfo.estonia;
-    }
-    if (message.includes('finland')) {
-      return countriesInfo.finland;
-    }
-    if (message.includes('sweden')) {
-      return countriesInfo.sweden;
-    }
-    if (message.includes('latvia')) {
-      return countriesInfo.latvia;
-    }
-    if (message.includes('lithuania')) {
-      return countriesInfo.lithuania;
-    }
-    if (message.includes('egypt')) {
-      return countriesInfo.egypt;
-    }
-    
-    // Service-specific queries
-    if (message.includes('company') || message.includes('formation') || message.includes('llc') || message.includes('corp')) {
-      return `**Company Formation**\n\nWe offer formation in 9 countries:\n${servicesData['company formation'].countries.join('\n')}\n\nEntity types: ${servicesData['company formation'].entities.join(', ')}\n\nAdd-ons: ${servicesData['company formation'].features.join(', ')}\n\nUse our pricing calculator at /pricing-calculator for exact costs!`;
-    }
-    
-    if (message.includes('seo') || message.includes('llmo') || message.includes('optimization')) {
-      return `**SEO & Optimization Services**\n\n${servicesData.seo.description}\n\nServices:\n• ${servicesData.seo.services.join('\n• ')}\n\nVisit /seo-management for more details!`;
-    }
-
-    if (message.includes('bank') || message.includes('payment') || message.includes('mercury') || message.includes('wise')) {
-      return `**Banking Solutions**\n\nPartners: ${servicesData.banking.partners.join(', ')}\n\n${servicesData.banking.features}\n\nWe help you open business bank accounts after company formation.`;
-    }
-    
-    if (message.includes('virtual card') || message.includes('esim') || message.includes('gift card')) {
-      return `**Digital Services**\n\n• Virtual Cards: ${servicesData['digital services'].virtualCards}\n• eSIM: ${servicesData['digital services'].esim}\n• Gift Cards: ${servicesData['digital services'].giftCards}\n\nPerfect for digital nomads and remote businesses!`;
-    }
-    
-    if (message.includes('hosting') || message.includes('website') || message.includes('email')) {
-      return `**Web Services**\n\n• Hosting: ${servicesData['digital services'].hosting}\n• Email: ${servicesData['digital services'].email}\n• Website: ${servicesData['digital services'].website}\n• Mobile Apps: ${servicesData['digital services'].mobile}`;
-    }
-
-    if (message.includes('hire') || message.includes('freelance') || message.includes('virtual assistant') || message.includes('remote')) {
-      return `**Remote Hiring Services**\n\n${servicesData.hiring.platforms}\n\nServices available:\n• ${servicesData.hiring.services.join('\n• ')}\n\nVisit /freelancer-partners to explore!`;
-    }
-    
-    if (message.includes('pricing') || message.includes('cost') || message.includes('price') || message.includes('how much')) {
-      return `**Pricing Overview**\n\n• Company Formation: $199 - $599\n• Premium Domains: $59 - $2,500\n• Web Hosting: From $9.99/month\n• Virtual Cards: From $2.99/month\n• eSIM: From $4.99\n\nUse our pricing calculator at /pricing-calculator for detailed quotes!`;
-    }
-    
-    if (message.includes('digital nomad') || message.includes('visa') || message.includes('travel')) {
-      return `**Digital Nomad Services**\n\nWe provide guidance for Digital Nomad Visas in 73+ countries including Spain, Portugal, Estonia, Croatia, Greece, and more.\n\nAlso offering:\n• Global eSIM connectivity\n• Virtual business addresses\n• Remote banking solutions\n\nVisit /digital-nomad-visas for details!`;
-    }
-    
-    if (message.includes('dashboard') || message.includes('account') || message.includes('login')) {
-      return `**Your Dashboard**\n\nAccess your dashboard at /dashboard for:\n• Company management\n• Service orders\n• Document center\n• AI assistant\n• Billing & payments\n• Affiliate program\n\nSign up at /auth to get started!`;
-    }
-    
-    if (message.includes('hello') || message.includes('hi') || message.includes('help') || message.includes('hey')) {
-      return `Hello! Welcome to FoundStart!\n\nI can help you with:\n\n🏢 Company Formation (9 countries)\n🌐 Domain Search (187 domains, 16 platforms)\n💻 Web Services (hosting, email, apps)\n🏦 Banking Solutions\n📈 SEO & Marketing\n👥 Remote Hiring\n🌍 Digital Nomad Services\n\nWhat would you like to know more about?`;
-    }
-    
-    return `I understand you're asking about "${userMessage}".\n\n**FoundStart offers:**\n• Company formation in 9 countries\n• 187 premium domains\n• 16+ domain search platforms\n• Web hosting & email\n• Banking solutions\n• SEO & marketing\n• Remote hiring services\n\nCould you be more specific about what you need? I'm here to help!`;
-  };
-
-  const handleSendMessage = () => {
-    if (!inputValue.trim()) return;
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: inputValue,
-      isBot: false,
-      timestamp: new Date()
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    
-    // Simulate AI response
-    setTimeout(() => {
-      const botResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        text: getAIResponse(inputValue),
-        isBot: true,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, botResponse]);
-    }, 800);
-
+  const send = (raw: string) => {
+    const text = raw.trim();
+    if (!text) return;
+    const userMsg: Message = { id: String(idRef.current++), text, isBot: false };
+    const reply = compose(search(index, text), s);
+    const botMsg: Message = { id: String(idRef.current++), text: reply, isBot: true };
+    setMessages((prev) => [...prev, userMsg, botMsg]);
     setInputValue('');
-  };
-
-  const toggleVoice = () => {
-    setIsListening(!isListening);
   };
 
   if (!isOpen) {
     return (
-      <Button
+      <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-20 lg:bottom-6 right-6 w-14 h-14 rounded-full shadow-lg z-50"
-        size="lg"
+        aria-label={s.title}
+        className="fixed bottom-20 lg:bottom-6 right-4 lg:right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg ring-4 ring-primary/20 transition-transform hover:scale-105"
       >
-        <MessageSquare className="w-6 h-6" />
-      </Button>
+        <MessageSquare className="h-6 w-6" />
+      </button>
     );
   }
 
   return (
-    <Card className="fixed bottom-20 lg:bottom-6 right-6 w-80 lg:w-96 h-[500px] max-h-[calc(100vh-140px)] lg:max-h-[500px] shadow-xl z-50 flex flex-col mx-2 lg:mx-0">
-      <CardHeader className="pb-3">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-lg flex items-center gap-2">
-            <MessageSquare className="w-5 h-5" />
-            FoundStart AI
-          </CardTitle>
-          <div className="flex gap-1">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMinimized(!isMinimized)}
-              className="h-8 w-8"
-            >
-              <Minimize2 className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(false)}
-              className="h-8 w-8"
-            >
-              <X className="w-4 h-4" />
-            </Button>
+    <div
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className="fixed bottom-20 lg:bottom-6 right-4 left-4 sm:left-auto sm:right-6 sm:w-96 z-50 flex h-[520px] max-h-[calc(100vh-140px)] flex-col overflow-hidden rounded-2xl border bg-card shadow-2xl"
+    >
+      <div className="flex items-center justify-between border-b px-4 py-3">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <Sparkles className="h-5 w-5" />
+          </span>
+          <div>
+            <p className="text-sm font-bold leading-tight">{s.title}</p>
+            <p className="text-xs text-muted-foreground leading-tight">{s.subtitle}</p>
           </div>
         </div>
-      </CardHeader>
+        <button onClick={() => setIsOpen(false)} aria-label="Close" className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted">
+          <X className="h-4 w-4" />
+        </button>
+      </div>
 
-      {!isMinimized && (
-        <>
-          <CardContent className="flex-1 p-0">
-            <ScrollArea className="h-full px-4">
-              <div className="space-y-4 pb-4">
-                {messages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
-                  >
-                    <div
-                      className={`max-w-[85%] rounded-lg p-3 text-sm whitespace-pre-line ${
-                        message.isBot
-                          ? 'bg-muted text-muted-foreground'
-                          : 'bg-primary text-primary-foreground'
-                      }`}
-                    >
-                      {message.text}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
-          </CardContent>
-
-          <div className="p-4 border-t">
-            <div className="flex gap-2">
-              <Input
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Ask about services, domains, formation..."
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                className="flex-1"
-              />
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={toggleVoice}
-                className={isListening ? 'bg-red-500 text-white' : ''}
-              >
-                {isListening ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
-              </Button>
-              <Button onClick={handleSendMessage} size="icon">
-                <Send className="w-4 h-4" />
-              </Button>
+      <div className="flex-1 space-y-3 overflow-y-auto p-3">
+        {messages.map((m) => (
+          <div key={m.id} className={`flex ${m.isBot ? 'justify-start' : 'justify-end'}`}>
+            <div
+              className={`max-w-[88%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
+                m.isBot ? 'bg-muted text-foreground' : 'whitespace-pre-wrap bg-primary text-primary-foreground'
+              }`}
+            >
+              {m.isBot ? (
+                <Streamdown mode="static" components={chatMdComponents}>{linkify(m.text)}</Streamdown>
+              ) : (
+                m.text
+              )}
             </div>
           </div>
-        </>
-      )}
-    </Card>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-1.5 px-3 pb-2">
+        {s.chips.map((c) => (
+          <button
+            key={c}
+            onClick={() => send(c)}
+            className="rounded-full border px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:bg-muted"
+          >
+            {c}
+          </button>
+        ))}
+      </div>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          send(inputValue);
+        }}
+        className="flex items-center gap-2 border-t p-3"
+      >
+        <input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder={s.placeholder}
+          className="h-10 flex-1 rounded-lg border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-primary/40"
+        />
+        <Button type="submit" size="icon" aria-label={s.send} className="h-10 w-10 shrink-0">
+          <Send className="h-4 w-4 rtl:-scale-x-100" />
+        </Button>
+      </form>
+    </div>
   );
 };
 

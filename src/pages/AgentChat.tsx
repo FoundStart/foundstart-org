@@ -1,8 +1,11 @@
+import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Loader2, SendHorizonal, Sparkles } from 'lucide-react';
+import { ArrowLeft, Loader2, SendHorizonal, Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import AgentAvatar from '@/components/AgentAvatar';
+import { Streamdown } from 'streamdown';
+import { linkify, chatMdComponents } from '@/components/chatMd';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -25,6 +28,7 @@ const trackUrl = (url: string, source: string): string => {
   const sep = url.includes('?') ? '&' : '?';
   return `${url}${sep}utm_source=foundstart&utm_medium=${source}`;
 };
+
 
 interface ChatMessage {
   id: string;
@@ -237,6 +241,8 @@ const AgentChat = () => {
                           <span className="flex items-center gap-2 text-muted-foreground">
                             <Loader2 className="h-4 w-4 animate-spin" /> {s.thinking}...
                           </span>
+                        ) : m.role === 'assistant' ? (
+                          <Streamdown mode="streaming" components={chatMdComponents}>{linkify(m.content)}</Streamdown>
                         ) : (
                           m.content
                         )}

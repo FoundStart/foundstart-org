@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -96,6 +97,13 @@ function ScrollToTop() {
   return null;
 }
 
+// Hide floating promos/chatbot on chat pages (agent chats, co-founder)
+const ChatPageExclusions = ({ children }: { children: ReactNode }) => {
+  const { pathname } = useLocation();
+  if (pathname.startsWith('/agents') || pathname.startsWith('/cofounder')) return null;
+  return <>{children}</>;
+};
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -178,9 +186,9 @@ function App() {
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <AIChatBot />
+                <ChatPageExclusions><AIChatBot /></ChatPageExclusions>
                 <MobileBottomNav />
-                <PartnerAdsHub />
+                <ChatPageExclusions><PartnerAdsHub /></ChatPageExclusions>
                 <OutboundUtmTagger />
               </AuthProvider>
             </BrowserRouter>
