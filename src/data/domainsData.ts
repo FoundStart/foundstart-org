@@ -149,7 +149,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Tafsirly.com",
     "hosting": "UD",
     "category": "Religious / Islamic",
-    "price": "250",
+    "price": "",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -181,7 +181,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "YesShoot.com",
     "hosting": "UD",
     "category": "Photography / Gaming",
-    "price": "1250",
+    "price": "",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -349,7 +349,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "ZadAfrica.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech, Food",
-    "price": "436",
+    "price": "",
     "businessType": "Domain",
     "buyUrl": ""
   },
