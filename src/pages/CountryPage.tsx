@@ -8,7 +8,9 @@ import { useTranslation } from '@/contexts/TranslationContext';
  import { Badge } from '@/components/ui/badge';
  import { ArrowLeft, Building, TrendingUp, Users, Globe, ExternalLink, CheckCircle } from 'lucide-react';
  import VideoThumbnail from '@/components/VideoThumbnail';
- import { countriesData } from '@/data/countriesData';
+ import EgyptCountryDetails from '@/components/countries/EgyptCountryDetails';
+import { waEgyptLink } from '@/lib/whatsapp';
+import { countriesData } from '@/data/countriesData';
  
  const CountryPage = () => {
   const { isRTL } = useTranslation();
@@ -52,7 +54,7 @@ import { useTranslation } from '@/contexts/TranslationContext';
                <CardHeader className="text-center"><CardTitle className="text-2xl">Formation Package</CardTitle></CardHeader>
                <CardContent className="text-center space-y-6">
                  <div className="flex justify-center items-center gap-4">
-                   <Badge variant="default" className="text-2xl px-6 py-3">Starting from {country.price}</Badge>
+                   <Badge variant="default" className="text-2xl px-6 py-3">{country.id === 'EG' ? (isRTL ? 'اطلب عرض سعر' : 'Get a quote') : <>Starting from {country.price}</>}</Badge>
                    <Badge variant="secondary" className="text-lg px-4 py-2">{country.timeframe}</Badge>
                  </div>
                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -62,7 +64,9 @@ import { useTranslation } from '@/contexts/TranslationContext';
                        <Button size="lg" variant="outline" asChild className="text-lg px-8"><Link to="/auth">Already have an account? Sign In</Link></Button>
                      </>
                    ) : (
-                     <Button size="lg" asChild className="text-lg px-8"><a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a></Button>
+                     <Button size="lg" asChild className="text-lg px-8">{country.id === 'EG'
+                       ? <a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a>
+                       : <a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a>}</Button>
                    )}
                  </div>
                </CardContent>
@@ -96,7 +100,9 @@ import { useTranslation } from '@/contexts/TranslationContext';
                </CardContent>
              </Card>
 
-             <Card id="partners" className="glass-card mb-12 scroll-mt-24">
+             {country.id === 'EG' && <EgyptCountryDetails />}
+
+             {country.partners.length > 0 && <Card id="partners" className="glass-card mb-12 scroll-mt-24">
                <CardHeader>
                  <CardTitle className="text-xl flex items-center gap-2"><Building className="w-5 h-5" />Formation Partners</CardTitle>
                </CardHeader>
@@ -117,7 +123,7 @@ import { useTranslation } from '@/contexts/TranslationContext';
                    ))}
                  </div>
                </CardContent>
-             </Card>
+             </Card>}
 
              <div className="text-center py-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl">
                <h2 className="text-3xl font-bold mb-4">Ready to Start Your {country.name} Business?</h2>
@@ -129,7 +135,9 @@ import { useTranslation } from '@/contexts/TranslationContext';
                      <Button size="lg" variant="outline" asChild><Link to="/pricing-calculator">Calculate Your Costs</Link></Button>
                    </>
                  ) : (
-                   <Button size="lg" asChild className="text-lg px-8"><a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a></Button>
+                   <Button size="lg" asChild className="text-lg px-8">{country.id === 'EG'
+                       ? <a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a>
+                       : <a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a>}</Button>
                  )}
                </div>
              </div>
