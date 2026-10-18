@@ -164,6 +164,9 @@ serve(async (req) => {
       );
     }
 
+    const GEMINI_MODELS = ["gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3-flash-preview"];
+    const gemUrl = (m: string) =>
+      `https://generativelanguage.googleapis.com/v1beta/models/${m}:streamGenerateContent?alt=sse&key=${Deno.env.get("GEMINI_API_KEY")}`;
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const OPENAI_API_KEY = Deno.env.get("OPENAI_API_KEY");
     const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
@@ -173,9 +176,9 @@ serve(async (req) => {
       ? "https://ai.gateway.lovable.dev/v1/chat/completions"
       : OPENAI_API_KEY
         ? "https://api.openai.com/v1/chat/completions"
-        : `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${GEMINI_API_KEY}`;
+        : gemUrl(GEMINI_MODELS[0]);
 
-    const response = await fetch(gatewayUrl, {
+    const reqInit: RequestInit = {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify(
@@ -196,7 +199,14 @@ serve(async (req) => {
               stream: true,
             }
       ),
-    });
+    };
+    let response = await fetch(gatewayUrl, reqInit);
+    if (!response.ok && GEMINI_API_KEY && !LOVABLE_API_KEY && !OPENAI_API_KEY) {
+      for (const m of GEMINI_MODELS.slice(1)) {
+        response = await fetch(gemUrl(m), reqInit);
+        if (response.ok) break;
+      }
+    }
 
     if (!response.ok) {
       const status = response.status;
