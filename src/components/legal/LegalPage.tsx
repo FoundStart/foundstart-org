@@ -28,7 +28,7 @@ const LegalPage = ({ path, title, intro, updated, sections, note }: Props) => {
   return (
     <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Helmet>
-        <title>{title[i]} | FoundStart</title>
+        <title>{`${title[i]} | FoundStart`}</title>
         <meta name="description" content={intro[i].slice(0, 155)} />
         <link rel="canonical" href={`https://www.foundstart.org${path}`} />
       </Helmet>
