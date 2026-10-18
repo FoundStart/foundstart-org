@@ -133,6 +133,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.foundstart.org/digital-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.foundstart.org/digital-nomad-visas</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>

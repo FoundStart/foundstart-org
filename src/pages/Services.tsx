@@ -107,6 +107,9 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
             <Button size="lg" className="bg-white text-black hover:bg-white/90">Get Started Today</Button>
             <WhatsAppButton size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10" />
+            <Link to="/digital-services">
+              <Button variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10">Digital Services</Button>
+            </Link>
             <Link to="/countries">
               <Button variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10">View Countries</Button>
             </Link>

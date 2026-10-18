@@ -12,6 +12,7 @@ const Footer = () => {
     links: [
       { name: L("All Services", "كل الخدمات"), href: "/services" },
       { name: L("Company Formation", "تأسيس الشركات"), href: "/company-formation-bio" },
+      { name: L("Digital Services", "خدمات رقمية"), href: "/digital-services" },
       { name: L("AI Agents", "وكلاء الذكاء الاصطناعي"), href: "/agents" },
       { name: L("Premium Domains", "الدومينات المميزة"), href: "/domains" },
       { name: L("Pricing", "الأسعار"), href: "/pricing" }

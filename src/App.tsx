@@ -13,6 +13,7 @@ import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import Index from "./pages/Index";
 import Countries from "./pages/Countries";
 import CountryPage from "./pages/CountryPage";
+import DigitalServices from "./pages/DigitalServices";
 import Services from "./pages/Services";
 import Partners from "./pages/Partners";
 import Auth from "./pages/Auth";
@@ -123,6 +124,7 @@ function App() {
                   <Route path="/country/:countryId" element={<CountryPage />} />
                   <Route path="/company-formation-bio" element={<CompanyFormationBio />} />
                   <Route path="/services" element={<Services />} />
+                  <Route path="/digital-services" element={<DigitalServices />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/all-partners" element={<AllPartners />} />
                   <Route path="/pricing" element={<Pricing />} />
