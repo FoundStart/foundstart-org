@@ -1,4 +1,5 @@
 
+import { setArabicDom } from '@/lib/arabicDom';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export interface Translations {
@@ -290,7 +291,19 @@ interface TranslationContextType {
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
 
 export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<'en' | 'ar'>('en');
+  const [language, setLanguageState] = useState<'en' | 'ar'>(() => {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'ar' || q === 'en') return q;
+      const saved = window.localStorage.getItem('fs_lang');
+      if (saved === 'ar' || saved === 'en') return saved;
+    } catch {}
+    return 'en';
+  });
+  const setLanguage = (lang: 'en' | 'ar') => {
+    setLanguageState(lang);
+    try { window.localStorage.setItem('fs_lang', lang); } catch {}
+  };
   
   const translations = {
     en: englishTranslations,
@@ -303,6 +316,7 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ c
     // Apply RTL direction to document
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
+    setArabicDom(language === 'ar');
   }, [language, isRTL]);
 
   const value = {

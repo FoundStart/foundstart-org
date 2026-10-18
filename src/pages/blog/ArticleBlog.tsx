@@ -6,7 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calendar, User, Clock, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { shortetArticles, shortetArticleOrder } from '@/data/shortetArticlesData';
+import { shortetArticles as baseArticles, shortetArticleOrder as baseOrder } from '@/data/shortetArticlesData';
+import { foundstartArticles, foundstartArticleOrder } from '@/data/foundstartArticles';
+
+const shortetArticles = { ...baseArticles, ...foundstartArticles };
+const shortetArticleOrder = [...foundstartArticleOrder, ...baseOrder];
 import AgencyFormationBlog from './AgencyFormationBlog';
 
 const ArticleBlog: React.FC = () => {
@@ -17,8 +21,9 @@ const ArticleBlog: React.FC = () => {
     return <Navigate to="/blog" replace />;
   }
 
+  const isAr = !!slug && slug.endsWith('-ar') && !!foundstartArticles[slug];
   const related = shortetArticleOrder
-    .filter((s) => s !== slug)
+    .filter((s) => s !== slug && (!isAr || s.endsWith('-ar')) && (isAr || !s.endsWith('-ar')))
     .sort((a, b) => {
       const ca = shortetArticles[a].category === content.category ? 0 : 1;
       const cb = shortetArticles[b].category === content.category ? 0 : 1;
@@ -37,7 +42,7 @@ const ArticleBlog: React.FC = () => {
         {content.heroImage && <meta property="og:image" content={`https://www.foundstart.org${content.heroImage}`} />}
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background" dir={isAr ? "rtl" : undefined}>
         <Header />
         <main className="w-full max-w-full overflow-x-hidden">
           {/* Hero Section */}

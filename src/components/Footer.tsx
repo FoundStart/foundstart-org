@@ -177,7 +177,7 @@ const Footer = () => {
             })}
             </div>
             
-            <div className="text-xs text-muted-foreground">© 2025 FoundStart. All rights reserved, MoMoAI</div>
+            <div className="text-xs text-muted-foreground">© 2026 FoundStart. All rights reserved, MoMoAI</div>
           </div>
 
           {footerSections.filter(section => section.title !== "Company").map((section, index) => (
