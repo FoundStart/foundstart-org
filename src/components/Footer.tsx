@@ -13,8 +13,8 @@ const Footer = () => {
       name: "Countries & Jurisdictions", 
       href: "/countries"
     }, {
-      name: "AI Chat Bots",
-      href: "/services"
+      name: "AI Agents",
+      href: "/agents"
     }, {
       name: "Company Formation",
       href: "/company-formation-bio"
@@ -55,6 +55,12 @@ const Footer = () => {
   }, {
     title: "Partners",
     links: [{
+      name: "All Partners",
+      href: "/all-partners"
+    }, {
+      name: "Formation Partners",
+      href: "/partners"
+    }, {
       name: "Digital Partners",
       href: "/digital-partners"
     }, {
@@ -64,8 +70,8 @@ const Footer = () => {
       name: "Premium Domains",
       href: "/domains"
     }, {
-      name: "Partner Directory",
-      href: "/digital-partners"
+      name: "AI Agents",
+      href: "/agents"
     }, {
       name: "Success Stories",
       href: "/press"

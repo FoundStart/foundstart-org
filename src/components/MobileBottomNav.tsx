@@ -15,9 +15,9 @@ const MobileBottomNav = () => {
     { 
       icon: Users, 
       label: 'Partners', 
-      href: '/digital-partners', 
-      isActive: location.pathname.includes('/digital-partners'),
-      badge: '375+'
+      href: '/all-partners', 
+      isActive: ['/all-partners', '/digital-partners', '/partners', '/freelancer-partners', '/sister-partners'].some(p => location.pathname.startsWith(p)),
+      badge: '520+'
     },
     { 
       icon: Globe2, 

@@ -46,7 +46,8 @@ const Header = () => {
   ];
 
   const partnersDropdownItems = [
-    { name: "Countries & Partners", href: '/countries' },
+    { name: language === 'ar' ? "كل الشركاء" : "All Partners", href: '/all-partners' },
+    { name: language === 'ar' ? "الدول والشركاء" : "Countries & Partners", href: '/countries' },
     { name: t.digitalPartners, href: '/digital-partners' },
     { name: "Freelancer", href: '/freelancer-partners' },
     { name: "Sister Partners", href: '/sister-partners' },
