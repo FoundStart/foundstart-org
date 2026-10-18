@@ -2,9 +2,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
   ArrowRight, Building2, Globe, Shield, CreditCard, Mail, Server, 
-  Smartphone, Wifi, Gift, Search, Brain, Target, TrendingUp, FileText, Users2, Zap
+  Smartphone, Wifi, Gift, Search, Brain, Target, TrendingUp, FileText, Users2, Zap, Code2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { aiAgents } from '@/data/agentsData';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -16,16 +17,34 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
+const agentIcons: Record<string, typeof Building2> = {
+  'building-2': Building2, 'code-2': Code2, megaphone: Target, mail: Mail,
+  briefcase: Users2, workflow: Zap, clapperboard: CreditCard, sparkles: Brain,
+  'trending-up': TrendingUp, server: Server, 'shopping-cart': Gift, store: Globe,
+  'kanban-square': FileText, landmark: CreditCard, 'dollar-sign': CreditCard, palette: Brain,
+  users: Users2, video: Smartphone, 'user-check': Shield, globe: Globe, mic: Wifi,
+  smartphone: Smartphone, 'graduation-cap': FileText, plane: Globe,
+};
+
+const agentGradients = [
+  "from-blue-500 to-indigo-600", "from-violet-500 to-purple-600", "from-fuchsia-500 to-purple-600",
+  "from-orange-500 to-red-500", "from-emerald-500 to-teal-600", "from-cyan-500 to-blue-600",
+  "from-pink-500 to-rose-600", "from-green-500 to-emerald-600", "from-sky-500 to-cyan-600",
+  "from-amber-500 to-orange-600", "from-lime-500 to-green-600", "from-red-500 to-pink-600",
+];
+
 const agentCategory = {
   title: "AI Agents",
   titleAr: "وكلاء الذكاء الاصطناعي",
-  services: [
-    { icon: Building2, title: "Company Formation Agent", titleAr: "وكيل تأسيس الشركات", desc: "Tells you which provider fits your country & budget", descAr: "يرشحلك أنسب مقدم خدمة حسب الدولة والميزانية", link: "/agents/company-formation", gradient: "from-blue-500 to-indigo-600" },
-    { icon: Brain, title: "Vibe Coding Agent", titleAr: "وكيل البرمجة بالوصف", desc: "Matches you with the right AI builder for your app", descAr: "يرشحلك أنسب أداة AI لبناء تطبيقك", link: "/agents/vibe-coding", gradient: "from-violet-500 to-purple-600" },
-    { icon: Target, title: "Vibe Marketing Agent", titleAr: "وكيل التسويق بالوصف", desc: "Ads, social, email & traffic tools for your goal", descAr: "أدوات إعلانات وسوشيال وإيميلات تناسب هدفك", link: "/agents/vibe-marketing", gradient: "from-fuchsia-500 to-purple-600" },
-    { icon: Mail, title: "Email Marketing Agent", titleAr: "وكيل التسويق بالإيميل", desc: "Picks the right email platform & automation", descAr: "يختارلك منصة الإيميلات والأتمتة المناسبة", link: "/agents/email-marketing", gradient: "from-orange-500 to-red-500" },
-    { icon: Zap, title: "All 24 AI Agents", titleAr: "كل وكلاء الذكاء الاصطناعي الـ 24", desc: "One specialist agent per category", descAr: "وكيل متخصص لكل مجال", link: "/agents", gradient: "from-emerald-500 to-teal-600" },
-  ],
+  services: aiAgents.map((a, i) => ({
+    icon: agentIcons[a.icon] ?? Brain,
+    title: `${a.name.en} Agent`,
+    titleAr: `وكيل ${a.name.ar}`,
+    desc: a.tagline.en,
+    descAr: a.tagline.ar,
+    link: `/agents/${a.slug}`,
+    gradient: agentGradients[i % agentGradients.length],
+  })),
 };
 
 const serviceCategories = [
@@ -33,8 +52,8 @@ const serviceCategories = [
     title: "Formation & Legal",
     services: [
       { icon: Building2, title: "Company Formation", desc: "LLC, Corp, Ltd in 9 jurisdictions", link: "/agents/company-formation", gradient: "from-blue-500 to-indigo-600" },
-      { icon: FileText, title: "AI Documents", desc: "Business plans, contracts & legal docs", link: "/dashboard/ai-assistant", gradient: "from-violet-500 to-purple-600" },
-      { icon: Shield, title: "Compliance", desc: "EIN, registered agent, annual filings", link: "/services", gradient: "from-emerald-500 to-teal-600" },
+      { icon: FileText, title: "AI Documents", desc: "Business plans, contracts & legal docs", link: "/agents/ai-documents", gradient: "from-violet-500 to-purple-600" },
+      { icon: Shield, title: "Compliance", desc: "EIN, registered agent, annual filings", link: "/agents/compliance", gradient: "from-emerald-500 to-teal-600" },
     ]
   },
   agentCategory,
@@ -43,7 +62,7 @@ const serviceCategories = [
     services: [
       { icon: Globe, title: "Premium Domains", desc: "187 domains", link: "/agents/domains", gradient: "from-cyan-500 to-blue-600" },
       { icon: Server, title: "Web Hosting", desc: "99.9% uptime cloud hosting", link: "/agents/web-hosting", gradient: "from-purple-500 to-pink-600" },
-      { icon: Mail, title: "Business Email", desc: "Professional email accounts", link: "/services", gradient: "from-orange-500 to-red-500" },
+      { icon: Mail, title: "Business Email", desc: "Professional email accounts", link: "/agents/business-email", gradient: "from-orange-500 to-red-500" },
       { icon: TrendingUp, title: "Website Platform", desc: "SaaS-ready & e-commerce", link: "/agents/vibe-coding", gradient: "from-pink-500 to-rose-600" },
       { icon: Smartphone, title: "Mobile Apps", desc: "Android, iOS & Harmony", link: "/agents/vibe-coding", gradient: "from-indigo-500 to-blue-600" },
     ]
@@ -62,7 +81,7 @@ const serviceCategories = [
       { icon: CreditCard, title: "Business Banking", desc: "Mercury, Wise, WorldFirst & Neo", link: "/agents/fintech", gradient: "from-sky-500 to-cyan-600" },
       { icon: CreditCard, title: "Virtual Cards", desc: "Visa & Mastercard virtual cards", link: "/agents/fintech", gradient: "from-teal-500 to-green-600" },
       { icon: Wifi, title: "eSIM Cards", desc: "Global connectivity for nomads", link: "/agents/telecom-esim", gradient: "from-lime-500 to-green-600" },
-      { icon: Gift, title: "Gift Cards", desc: "Digital gift card platform", link: "/services", gradient: "from-red-500 to-pink-600" },
+      { icon: Gift, title: "Gift Cards", desc: "Digital gift card platform", link: "/agents/gift-cards", gradient: "from-red-500 to-pink-600" },
       { icon: Users2, title: "Remote Hiring", desc: "VAs, support & data entry", link: "/agents/hr", gradient: "from-blue-500 to-violet-600" },
     ]
   },

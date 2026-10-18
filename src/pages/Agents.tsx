@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Building2, Code2, Megaphone, Mail, Briefcase, Workflow, Clapperboard, Sparkles,
   TrendingUp, Server, ShoppingCart, Store, KanbanSquare, Landmark, DollarSign, Palette,
-  Users, Video, UserCheck, Globe, Mic, Smartphone, GraduationCap, Plane, Bot,
+  Users, Video, UserCheck, Globe, Mic, Smartphone, GraduationCap, Plane, Bot, FileText, Shield, AtSign, Gift,
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -19,6 +19,7 @@ const iconMap: Record<string, typeof Bot> = {
   'kanban-square': KanbanSquare, landmark: Landmark, 'dollar-sign': DollarSign, palette: Palette,
   users: Users, video: Video, 'user-check': UserCheck, globe: Globe, mic: Mic,
   smartphone: Smartphone, 'graduation-cap': GraduationCap, plane: Plane,
+  'file-text': FileText, shield: Shield, 'at-sign': AtSign, gift: Gift,
 };
 
 const strings = {

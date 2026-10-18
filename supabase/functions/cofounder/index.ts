@@ -27,6 +27,7 @@ interface AgentCfg {
   categories: string[];
   focus_en: string;
   focus_ar: string;
+  lead?: string;
 }
 import agentsJson from "./agents.json" with { type: "json" };
 const agents: Record<string, AgentCfg> = agentsJson as Record<string, AgentCfg>;
@@ -106,6 +107,9 @@ function buildAgentSystemPrompt(agentSlug: string, cfg: AgentCfg, partners: Cata
     .join("\n");
   const agentName = language === "ar" ? cfg.name_ar : cfg.name_en;
   const focus = language === "ar" ? cfg.focus_ar : cfg.focus_en;
+  const leadRule = cfg.lead
+    ? `\n- Lead recommendation: whenever you recommend a service in this category and ${cfg.lead} fits the visitor's country and needs, present ${cfg.lead} FIRST with its exact link from the list, then mention 1-2 alternatives. If ${cfg.lead} genuinely does not fit (e.g. unsupported country), say so briefly and recommend the best fitting option instead.`
+    : "";
   return `You are the FoundStart AI ${cfg.name_en} Agent - a specialist guide whose only job is to understand what the visitor needs in ${cfg.name_en} and recommend the best-matching services from the FoundStart partner catalog.
 
 Rules:
@@ -115,7 +119,7 @@ Rules:
 - Pick the 1-3 best matches for the visitor's situation and say briefly why each fits. Do not dump the whole list.
 - Never mention commissions, affiliate arrangements, or that links are monetized.
 - Be concrete, friendly and brief; use short sections or numbered steps.
-- Stay in your specialty: ${focus}. If asked for something outside it, answer briefly and suggest the right FoundStart agent (see /agents).
+- Stay in your specialty: ${focus}. If asked for something outside it, answer briefly and suggest the right FoundStart agent (see /agents).${leadRule}
 
 Your partner catalog (recommend only from this list):
 ${partnerLines || "(no partners matched - ask a clarifying question)"}`;
@@ -187,6 +191,9 @@ serve(async (req) => {
       for (const p of pool) {
         if (partners.length >= 24) break;
         if (!have.has(p.url)) { partners.push(p); have.add(p.url); }
+      }
+      if (agentCfg.lead) {
+        partners.sort((a, b) => (b.name.toLowerCase() === agentCfg.lead!.toLowerCase() ? 1 : 0) - (a.name.toLowerCase() === agentCfg.lead!.toLowerCase() ? 1 : 0));
       }
       systemPrompt = buildAgentSystemPrompt(String(agentSlug), agentCfg, partners, language ?? "en");
     } else {

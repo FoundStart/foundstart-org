@@ -6,7 +6,8 @@
       "Business Company Formation"
     ],
     "focus_en": "company formation and registration providers by country and budget",
-    "focus_ar": "company formation and registration providers by country and budget"
+    "focus_ar": "company formation and registration providers by country and budget",
+    "lead": "Doola"
   },
   "vibe-coding": {
     "name_en": "Vibe Coding",
@@ -220,5 +221,35 @@
     ],
     "focus_en": "travel business platforms and partner programs",
     "focus_ar": "travel business platforms and partner programs"
+  },
+  "ai-documents": {
+    "name_en": "AI Documents",
+    "name_ar": "المستندات بالـ AI",
+    "categories": [
+      "AI Tools"
+    ],
+    "focus_en": "creating business documents with AI: business plans, contracts and legal docs",
+    "focus_ar": "إنشاء مستندات البيزنس بالـ AI: خطط عمل وعقود ومستندات قانونية"
+  },
+  "compliance": {
+    "name_en": "Compliance",
+    "name_ar": "الامتثال القانوني",
+    "categories": [],
+    "focus_en": "company compliance basics: EIN, registered agent, annual filings - give general guidance and suggest consulting a professional; you currently have no partner services to recommend",
+    "focus_ar": "أساسيات الامتثال: الرقم الضريبي والوكيل المسجل والتقارير السنوية - قدّم إرشاد عام وانصح باستشارة مختص؛ مفيش خدمات شريكة حاليا"
+  },
+  "business-email": {
+    "name_en": "Business Email",
+    "name_ar": "الإيميل الرسمي",
+    "categories": [],
+    "focus_en": "setting up professional business email (custom domain mailboxes) - give general guidance; you currently have no partner services to recommend",
+    "focus_ar": "إعداد إيميل رسمي احترافي على الدومين - قدّم إرشاد عام؛ مفيش خدمات شريكة حاليا"
+  },
+  "gift-cards": {
+    "name_en": "Gift Cards",
+    "name_ar": "كروت الهدايا",
+    "categories": [],
+    "focus_en": "digital gift cards: buying and using them for business - give general guidance; you currently have no partner services to recommend",
+    "focus_ar": "كروت الهدايا الرقمية: شراؤها واستخدامها - قدّم إرشاد عام؛ مفيش خدمات شريكة حاليا"
   }
 }

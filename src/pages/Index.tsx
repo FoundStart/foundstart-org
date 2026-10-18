@@ -22,8 +22,8 @@ const Index = () => {
       
       <main className="pb-20 md:pb-0 w-full max-w-full">
         <Hero />
-        <HomeBlogCarousel />
         <HomeServices language={language} isRTL={isRTL} />
+        <HomeBlogCarousel />
 
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
           <div className="container mx-auto max-w-4xl">
