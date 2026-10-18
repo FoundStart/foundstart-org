@@ -31,7 +31,7 @@ const CompanyFormationBio = () => {
       <Helmet>
         <title>Company Formation Bio Page — All Countries | FoundStart</title>
         <meta name="description" content="One bio link to start your company formation in 10+ countries. Access all FoundStart's trusted formation partners worldwide." />
-        <link rel="canonical" href="https://foundstart-org.lovable.app/company-formation-bio" />
+        <link rel="canonical" href="https://foundstart.org/company-formation-bio" />
       </Helmet>
       <Header />
       <main className="pb-20 lg:pb-0">
