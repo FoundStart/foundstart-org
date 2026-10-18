@@ -69,7 +69,7 @@ const EgyptPricingSection: React.FC = () => {
                 
                 <Button asChild className="w-full group-hover:bg-primary/90">
                   <a 
-                    href="https://wa.me/201501556629" 
+                    href="https://wa.me/201002905764" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center"
@@ -93,7 +93,7 @@ const EgyptPricingSection: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <a href="https://wa.me/201501556629" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
                 تواصل معنا على الواتساب
               </a>
             </Button>

@@ -251,7 +251,7 @@ const EgyptFormationGuide = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/message/UQZ6STBLDXKPD1" 
+              href="https://wa.me/201002905764" 
               target="_blank" 
               rel="noopener noreferrer"
             >

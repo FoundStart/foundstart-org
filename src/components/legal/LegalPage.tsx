@@ -61,7 +61,7 @@ const LegalPage = ({ path, title, intro, updated, sections, note }: Props) => {
               <div className="flex flex-wrap gap-3">
                 <Button asChild><Link to="/contact-us">{isRTL ? 'صفحة التواصل' : 'Contact page'}</Link></Button>
                 <Button variant="outline" asChild>
-                  <a href="https://wa.me/message/UQZ6STBLDXKPD1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                  <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                 </Button>
               </div>
             </section>

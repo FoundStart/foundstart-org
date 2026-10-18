@@ -75,7 +75,7 @@ const handler = async (req: Request): Promise<Response> => {
     const safeDomains = domains.map(d => escapeHtml(d));
     // For href values, also strip anything outside expected character set
     const emailHref = encodeURIComponent(email);
-    const phoneDigits = (phone || '').replace(/\D/g, '').slice(0, 20) || '21002905764';
+    const phoneDigits = (phone || '').replace(/\D/g, '').slice(0, 20) || '201002905764';
 
     const emailHtml = `
       <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f8fafc;">

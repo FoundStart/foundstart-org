@@ -101,7 +101,7 @@ const MobileDomainCard = ({
           </Link>
         </Button>
         <Button variant="outline" size="icon" className="h-10 w-10 touch-manipulation" asChild>
-          <a href="https://wa.me/21002905764" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
             <MessageCircle className="w-4 h-4 text-green-500" />
           </a>
         </Button>

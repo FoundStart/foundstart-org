@@ -96,7 +96,8 @@ const ContactUs = () => {
                     <MessageCircle className="w-6 h-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold">WhatsApp</h3>
-                      <a href="https://wa.me/message/UQZ6STBLDXKPD1" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Chat with us on WhatsApp</a>
+                      <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{isRTL ? 'تواصل معنا على واتساب' : 'Chat with us on WhatsApp'}</a>
+                      <p className="text-muted-foreground mt-1" dir="ltr">+20 100 290 5764</p>
                     </div>
                   </div>
                   

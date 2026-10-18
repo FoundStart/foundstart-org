@@ -159,7 +159,7 @@ const DomainWishlist = () => {
                       </Button>
                       <div className="flex gap-2">
                         <Button variant="outline" size="sm" className="flex-1" asChild>
-                          <a href="https://wa.me/21002905764" target="_blank" rel="noopener noreferrer">
+                          <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
                             <MessageCircle className="w-4 h-4" />
                           </a>
                         </Button>

@@ -604,7 +604,7 @@ const AgencyFormationBlog: React.FC = () => {
                       </Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild>
-                      <a href="https://wa.me/201501556629" target="_blank" rel="noopener noreferrer">
+                      <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
                         Contact Us on WhatsApp
                       </a>
                     </Button>

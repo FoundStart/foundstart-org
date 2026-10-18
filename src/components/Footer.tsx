@@ -50,7 +50,7 @@ const Footer = () => {
     links: [
       { name: L("FAQ", "الأسئلة الشائعة"), href: "/faq" },
       { name: L("Contact Us", "تواصل معنا"), href: "/contact-us" },
-      { name: L("Live Chat (WhatsApp)", "دردشة مباشرة (واتساب)"), href: "https://wa.me/message/UQZ6STBLDXKPD1", external: true },
+      { name: L("Live Chat (WhatsApp)", "دردشة مباشرة (واتساب)"), href: "https://wa.me/201002905764", external: true },
       { name: L("Who We Are", "من نحن"), href: "/who-we-are" }
     ]
   }];

@@ -105,7 +105,7 @@ const DomainInquiry = () => {
                     </Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href="https://wa.me/21002905764" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="w-4 h-4 mr-2" />
                       Contact via WhatsApp
                     </a>
@@ -229,7 +229,7 @@ const DomainInquiry = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <a 
-                    href="https://wa.me/21002905764" 
+                    href="https://wa.me/201002905764" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 rounded-lg bg-green-500/10 hover:bg-green-500/20 transition-colors"

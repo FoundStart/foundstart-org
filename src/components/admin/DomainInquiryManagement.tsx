@@ -246,7 +246,7 @@ const DomainInquiryManagement = () => {
                             size="icon" 
                             asChild
                           >
-                            <a href={`https://wa.me/21002905764?text=${encodeURIComponent(`Regarding domain: ${inquiry.domain_name}`)}`} target="_blank" rel="noopener noreferrer">
+                            <a href={`https://wa.me/201002905764?text=${encodeURIComponent(`Regarding domain: ${inquiry.domain_name}`)}`} target="_blank" rel="noopener noreferrer">
                               <MessageCircle className="w-4 h-4 text-green-500" />
                             </a>
                           </Button>
@@ -337,7 +337,7 @@ const DomainInquiryManagement = () => {
                   </Button>
                   <Button variant="outline" asChild>
                     <a 
-                      href={`https://wa.me/${selectedInquiry.phone?.replace(/\D/g, '') || '21002905764'}`} 
+                      href={`https://wa.me/${selectedInquiry.phone?.replace(/\D/g, '') || '201002905764'}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
