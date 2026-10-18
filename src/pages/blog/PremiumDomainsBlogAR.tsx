@@ -105,7 +105,7 @@ const PremiumDomainsBlogAR = () => {
         <title>نطاقات مميزة للبيع 2025 – جاهزة لعلامتك التجارية وقابلة للنمو | FoundStart</title>
         <meta name="description" content="اكتشف أكثر من 50 نطاقاً مميزاً مناسباً كعلامات تجارية للشركات الناشئة والـ SaaS والتكنولوجيا المالية والتجارة الإلكترونية والذكاء الاصطناعي. بأسعار تنافسية تبدأ من $99 إلى $10,000 مع ضمان النقل السريع." />
         <meta name="keywords" content="نطاقات مميزة, نطاقات للبيع, شراء دومين, دومينات شركات ناشئة, دومينات SaaS, دومينات فينتك, دومينات كريبتو, أسماء علامات تجارية" />
-        <link rel="canonical" href="https://foundstart.com/blog/premium-domains-for-sale" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/premium-domains-for-sale-ar" />
         <meta property="og:title" content="نطاقات مميزة للبيع 2025 – جاهزة لعلامتك التجارية وقابلة للنمو" />
         <meta property="og:description" content="محفظة مختارة تضم أكثر من 50 نطاقاً مميزاً للشركات الناشئة وSaaS والتجارة الإلكترونية وغيرها. الأسعار تبدأ من $99." />
         <meta property="og:type" content="article" />

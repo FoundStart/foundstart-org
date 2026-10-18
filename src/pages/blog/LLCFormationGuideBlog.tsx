@@ -15,7 +15,7 @@ const LLCFormationGuideBlog = () => {
         <title>Complete Guide to LLC Formation in 2024 | FoundStart</title>
         <meta name="description" content="Everything you need to know about forming an LLC in 2024. Learn about choosing a state, filing paperwork, compliance requirements, and tax benefits." />
         <meta name="keywords" content="LLC formation, form LLC, LLC guide, business formation, Delaware LLC, Wyoming LLC" />
-        <link rel="canonical" href="https://foundstart.com/blog/llc-formation-guide" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/llc-formation-guide" />
       </Helmet>
 
       <Header />

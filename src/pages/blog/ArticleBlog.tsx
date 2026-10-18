@@ -14,6 +14,7 @@ import { shortetArticlesAr, shortetArticlesArOrder } from '@/data/shortetArticle
 const shortetArticles = { ...baseArticles, ...foundstartArticles, ...shortetArticlesAr };
 const shortetArticleOrder = [...foundstartArticleOrder, ...shortetArticlesArOrder, ...baseOrder];
 import AgencyFormationBlog from './AgencyFormationBlog';
+import { postTime } from '@/lib/blogSort';
 
 const ArticleBlog: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -36,7 +37,7 @@ const ArticleBlog: React.FC = () => {
     .sort((a, b) => {
       const ca = shortetArticles[a].category === content.category ? 0 : 1;
       const cb = shortetArticles[b].category === content.category ? 0 : 1;
-      return ca - cb;
+      return ca - cb || postTime(shortetArticles[b].date) - postTime(shortetArticles[a].date);
     })
     .slice(0, 3);
 
@@ -48,6 +49,17 @@ const ArticleBlog: React.FC = () => {
         <meta property="og:title" content={content.title} />
         <meta property="og:description" content={content.description} />
         <meta property="og:type" content="article" />
+        <link rel="canonical" href={`https://www.foundstart.org/blog/${slug}`} />
+        {(() => {
+          const enSlug = isAr ? slug!.slice(0, -3) : slug!;
+          const arSlug = isAr ? slug! : `${slug}-ar`;
+          return shortetArticles[enSlug] && shortetArticles[arSlug] ? (
+            <>
+              <link rel="alternate" hrefLang="en" href={`https://www.foundstart.org/blog/${enSlug}`} />
+              <link rel="alternate" hrefLang="ar" href={`https://www.foundstart.org/blog/${arSlug}`} />
+            </>
+          ) : null;
+        })()}
         {content.heroImage && <meta property="og:image" content={`https://www.foundstart.org${content.heroImage}`} />}
       </Helmet>
 

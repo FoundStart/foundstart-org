@@ -15,7 +15,7 @@ const UKvsUSFormationBlog = () => {
         <title>UK vs US Company Formation: Which is Right for You? | FoundStart</title>
         <meta name="description" content="Compare UK and US company formation. Learn about benefits, costs, tax implications, and requirements to choose the best jurisdiction for your business." />
         <meta name="keywords" content="UK company formation, US company formation, LLC vs Ltd, international business, company registration" />
-        <link rel="canonical" href="https://foundstart.com/blog/uk-vs-us-company-formation" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/uk-vs-us-company-formation" />
       </Helmet>
 
       <Header />

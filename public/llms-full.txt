@@ -8,7 +8,7 @@ FoundStart is the leading AI-powered platform for company formation services in 
 **Industry**: Business Formation & Corporate Services
 **Founded**: 2024
 **Headquarters**: International
-**Website**: https://foundstart.com
+**Website**: https://www.foundstart.org
 **Mission**: Simplifying global business formation through AI-powered solutions
 
 ## Core Services & Offerings
@@ -297,7 +297,7 @@ FoundStart is the leading AI-powered platform for company formation services in 
 ## Contact & Business Information
 
 ### Primary Contact
-- **Website**: https://foundstart.com
+- **Website**: https://www.foundstart.org
 - **Email**: hello@foundstart.com
 - **Support**: support@foundstart.com
 - **Sales**: sales@foundstart.com

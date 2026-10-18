@@ -105,7 +105,7 @@ const PremiumDomainsBlog = () => {
         <title>Premium Domains for Sale 2025 – Brand-Ready & Scalable | FoundStart</title>
         <meta name="description" content="Discover 50+ premium, brandable domains perfect for startups, SaaS, fintech, e-commerce, AI projects & crypto. Competitively priced from $99 to $10,000. Fast transfer guaranteed." />
         <meta name="keywords" content="premium domains, domains for sale, brandable domains, startup domains, SaaS domains, fintech domains, crypto domains, buy domain" />
-        <link rel="canonical" href="https://foundstart.com/blog/premium-domains-for-sale" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/premium-domains-for-sale" />
         <meta property="og:title" content="Premium Domains for Sale 2025 – Brand-Ready & Scalable" />
         <meta property="og:description" content="Curated portfolio of 50+ premium domains for startups, SaaS, fintech, e-commerce & more. Prices from $99." />
         <meta property="og:type" content="article" />

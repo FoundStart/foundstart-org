@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react';
 import { blogPosts, type BlogPost } from '@/data/blogPostsData';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { postsForLanguage } from '@/lib/blogSort';
 import thumbFintech from '@/assets/blog-fintech-virtual-cards-2026.jpg';
 import thumbAutomation from '@/assets/blog-business-automation-2026.jpg';
 const thumbFormation = '/blog/covers/best-company-formation-2026.jpg';
@@ -63,6 +65,7 @@ const SkeletonCard = () => (
 );
 
 const HomeBlogCarousel = () => {
+  const { language } = useTranslation();
   const [ready, setReady] = useState(false);
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const autoplay = useRef(
@@ -72,11 +75,11 @@ const HomeBlogCarousel = () => {
   useEffect(() => {
     // Simulate async load so skeletons render on first paint — prevents layout shift.
     const t = setTimeout(() => {
-      setPosts(blogPosts.filter((p) => p.featured).slice(0, 10));
+      setPosts(postsForLanguage(blogPosts, language).slice(0, 10));
       setReady(true);
     }, 250);
     return () => clearTimeout(t);
-  }, []);
+  }, [language]);
 
   return (
     <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-muted/20 to-background">
@@ -118,7 +121,7 @@ const HomeBlogCarousel = () => {
                   </CarouselItem>
                 ))
               : posts.map((post) => {
-                  const thumb = THUMBS[post.slug];
+                  const thumb = THUMBS[post.slug] || post.image;
                   return (
                     <CarouselItem key={post.id} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                       <Link to={`/blog/${post.slug}`} className="block h-full group">

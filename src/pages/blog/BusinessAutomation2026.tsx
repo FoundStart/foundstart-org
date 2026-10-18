@@ -47,7 +47,7 @@ const AUTOMATION: Partner[] = [
   { name: 'Flowise', url: 'https://shortet.com/Flowise', description: 'Build AI agents visually.' },
   { name: 'Scispace', url: 'https://shortet.com/Scispace', description: 'AI researcher agent.' },
   { name: 'Ottokit', url: 'https://shortet.com/Ottokit', description: 'Build automations fast.' },
-  { name: 'Albato', url: 'https://shortet.com/yv', coupon: 'GIMME20%OFF', description: 'Automate smarter with no-code and AI.' },
+  { name: 'Albato', url: 'https://shortet.com/Albato', coupon: 'GIMME20%OFF', description: 'Automate smarter with no-code and AI.' },
   { name: 'Relay', url: 'https://shortet.com/Relay', description: 'Build AI agents.' },
   { name: 'GHL (GoHighLevel)', url: 'https://shortet.com/GHL', description: 'All-in-one marketing automation platform.' },
   { name: 'Axiom', url: 'https://shortet.com/Axiom', description: 'Browser automation platform.' },

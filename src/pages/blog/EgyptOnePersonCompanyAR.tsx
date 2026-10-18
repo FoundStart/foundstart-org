@@ -16,7 +16,7 @@ const EgyptOnePersonCompanyAR = () => {
           content="دليل شامل لتأسيس شركة الشخص الواحد في مصر: المستندات المطلوبة، مراحل التأسيس بالهيئة العامة للاستثمار، الشهر العقاري، السجل التجاري والبطاقة الضريبية."
         />
         <meta property="og:title" content="تأسيس شركة الشخص الواحد في مصر — الدليل الكامل" />
-        <link rel="canonical" href="https://foundstart.com/blog/egypt-one-person-company-ar" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/egypt-one-person-company-ar" />
       </Helmet>
 
       <Header />

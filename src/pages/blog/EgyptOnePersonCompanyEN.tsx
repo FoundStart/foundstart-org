@@ -16,7 +16,7 @@ const EgyptOnePersonCompanyEN = () => {
           content="A comprehensive guide to establishing a one-person company in Egypt: required documents, incorporation stages at GAFI, real estate registration, commercial registry, and tax card."
         />
         <meta property="og:title" content="Establishing a One-Person Company in Egypt — The Complete Guide" />
-        <link rel="canonical" href="https://foundstart.com/blog/egypt-one-person-company-en" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/egypt-one-person-company" />
       </Helmet>
 
       <Header />

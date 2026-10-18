@@ -15,7 +15,7 @@ const LLCFormationGuideBlogAR = () => {
         <title>الدليل الشامل لتأسيس شركة LLC في 2024 | FoundStart</title>
         <meta name="description" content="كل ما تحتاج لمعرفته حول تأسيس شركة LLC في عام 2024. تعرف على كيفية اختيار الولاية، وتقديم الأوراق، ومتطلبات الامتثال، والمزايا الضريبية." />
         <meta name="keywords" content="تأسيس شركة LLC، إنشاء شركة LLC، دليل LLC، تأسيس الشركات، Delaware LLC، Wyoming LLC" />
-        <link rel="canonical" href="https://foundstart.com/blog/llc-formation-guide" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/llc-formation-guide-ar" />
       </Helmet>
 
       <Header />

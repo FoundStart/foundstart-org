@@ -15,7 +15,7 @@ const UKvsUSFormationBlogAR = () => {
         <title>تأسيس الشركة في المملكة المتحدة مقابل الولايات المتحدة: أيّهما الأنسب لك؟ | FoundStart</title>
         <meta name="description" content="قارن بين تأسيس الشركات في المملكة المتحدة والولايات المتحدة. تعرّف على المزايا، والتكاليف، والآثار الضريبية، والمتطلبات لاختيار الولاية القضائية الأنسب لنشاطك التجاري." />
         <meta name="keywords" content="تأسيس شركة في المملكة المتحدة, تأسيس شركة في أمريكا, LLC vs Ltd, التجارة الدولية, تسجيل الشركات" />
-        <link rel="canonical" href="https://foundstart.com/blog/uk-vs-us-company-formation" />
+        <link rel="canonical" href="https://www.foundstart.org/blog/uk-vs-us-company-formation-ar" />
       </Helmet>
 
       <Header />
