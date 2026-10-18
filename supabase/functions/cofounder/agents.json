@@ -1,0 +1,224 @@
+{
+  "company-formation": {
+    "name_en": "Company Formation",
+    "name_ar": "تأسيس الشركات",
+    "categories": [
+      "Business Company Formation"
+    ],
+    "focus_en": "company formation and registration providers by country and budget",
+    "focus_ar": "company formation and registration providers by country and budget"
+  },
+  "vibe-coding": {
+    "name_en": "Vibe Coding",
+    "name_ar": "البرمجة بالوصف",
+    "categories": [
+      "Vibe Coding"
+    ],
+    "focus_en": "AI builders and no-code / vibe-coding platforms",
+    "focus_ar": "AI builders and no-code / vibe-coding platforms"
+  },
+  "vibe-marketing": {
+    "name_en": "Vibe Marketing",
+    "name_ar": "التسويق بالوصف",
+    "categories": [
+      "SMM Panel",
+      "Publisher & Advertising",
+      "Email Marketing",
+      "SEO tools - Traffic"
+    ],
+    "focus_en": "marketing: ads networks, social growth, email and SEO/traffic tools",
+    "focus_ar": "marketing: ads networks, social growth, email and SEO/traffic tools"
+  },
+  "email-marketing": {
+    "name_en": "Email Marketing",
+    "name_ar": "التسويق بالإيميل",
+    "categories": [
+      "Email Marketing"
+    ],
+    "focus_en": "email marketing platforms, newsletters and automation",
+    "focus_ar": "email marketing platforms, newsletters and automation"
+  },
+  "freelancing": {
+    "name_en": "Freelancing & Earning",
+    "name_ar": "الفريلانس والربح أونلاين",
+    "categories": [
+      "Freelancer & Earn Money online",
+      "Freelancers Guide"
+    ],
+    "focus_en": "freelance platforms, micro-jobs and online earning",
+    "focus_ar": "freelance platforms, micro-jobs and online earning"
+  },
+  "business-automation": {
+    "name_en": "Business Automation",
+    "name_ar": "أتمتة البيزنس",
+    "categories": [
+      "Business Automation"
+    ],
+    "focus_en": "workflow automation and integrations",
+    "focus_ar": "workflow automation and integrations"
+  },
+  "ai-video": {
+    "name_en": "AI Video Creation",
+    "name_ar": "صناعة الفيديو بالـ AI",
+    "categories": [
+      "AI Videos",
+      "Ai Videos & Image"
+    ],
+    "focus_en": "AI video generation, avatars and image/video models",
+    "focus_ar": "AI video generation, avatars and image/video models"
+  },
+  "ai-tools": {
+    "name_en": "AI Tools",
+    "name_ar": "أدوات الذكاء الاصطناعي",
+    "categories": [
+      "AI Tools"
+    ],
+    "focus_en": "general AI tools: writing, images, productivity",
+    "focus_ar": "general AI tools: writing, images, productivity"
+  },
+  "seo-traffic": {
+    "name_en": "SEO & Traffic",
+    "name_ar": "السيو والزيارات",
+    "categories": [
+      "SEO tools - Traffic"
+    ],
+    "focus_en": "SEO, keyword research and traffic analytics",
+    "focus_ar": "SEO, keyword research and traffic analytics"
+  },
+  "web-hosting": {
+    "name_en": "Web Hosting",
+    "name_ar": "الاستضافة",
+    "categories": [
+      "Web Hosting"
+    ],
+    "focus_en": "web hosting and website infrastructure",
+    "focus_ar": "web hosting and website infrastructure"
+  },
+  "ecommerce-dropshipping": {
+    "name_en": "E-commerce & Dropshipping",
+    "name_ar": "التجارة الإلكترونية",
+    "categories": [
+      "Dropshipping & POD"
+    ],
+    "focus_en": "e-commerce, dropshipping and print-on-demand",
+    "focus_ar": "e-commerce, dropshipping and print-on-demand"
+  },
+  "digital-marketplaces": {
+    "name_en": "Digital Marketplaces",
+    "name_ar": "المنصات الرقمية",
+    "categories": [
+      "Digital marketplace"
+    ],
+    "focus_en": "digital marketplaces for selling products, designs and services",
+    "focus_ar": "digital marketplaces for selling products, designs and services"
+  },
+  "work-management": {
+    "name_en": "Work Management",
+    "name_ar": "إدارة العمل",
+    "categories": [
+      "Managements"
+    ],
+    "focus_en": "project, task and team management",
+    "focus_ar": "project, task and team management"
+  },
+  "fintech": {
+    "name_en": "Fintech & Payments",
+    "name_ar": "الفينتك والمدفوعات",
+    "categories": [
+      "Fintech"
+    ],
+    "focus_en": "business banking, virtual cards and payments",
+    "focus_ar": "business banking, virtual cards and payments"
+  },
+  "advertising": {
+    "name_en": "Ads & Monetization",
+    "name_ar": "الإعلانات وتحقيق الربح",
+    "categories": [
+      "Publisher & Advertising"
+    ],
+    "focus_en": "ad networks and publisher monetization",
+    "focus_ar": "ad networks and publisher monetization"
+  },
+  "design": {
+    "name_en": "Design",
+    "name_ar": "التصميم",
+    "categories": [
+      "Design"
+    ],
+    "focus_en": "design tools for logos, graphics and brand assets",
+    "focus_ar": "design tools for logos, graphics and brand assets"
+  },
+  "smm": {
+    "name_en": "Social Media Growth",
+    "name_ar": "تنمية السوشيال ميديا",
+    "categories": [
+      "SMM Panel"
+    ],
+    "focus_en": "social media growth and SMM panels",
+    "focus_ar": "social media growth and SMM panels"
+  },
+  "ai-ugc": {
+    "name_en": "AI UGC",
+    "name_ar": "محتوى UGC بالـ AI",
+    "categories": [
+      "AI UGC"
+    ],
+    "focus_en": "AI UGC ads and creator-style content",
+    "focus_ar": "AI UGC ads and creator-style content"
+  },
+  "hr": {
+    "name_en": "HR & Hiring",
+    "name_ar": "الموارد البشرية",
+    "categories": [
+      "HR Managements"
+    ],
+    "focus_en": "HR, hiring and paying remote teams",
+    "focus_ar": "HR, hiring and paying remote teams"
+  },
+  "domains": {
+    "name_en": "Domains",
+    "name_ar": "الدومينات",
+    "categories": [
+      "Domains"
+    ],
+    "focus_en": "domain marketplaces, search and trading tools",
+    "focus_ar": "domain marketplaces, search and trading tools"
+  },
+  "ai-voice": {
+    "name_en": "AI Voice",
+    "name_ar": "الصوت بالـ AI",
+    "categories": [
+      "AI Voices"
+    ],
+    "focus_en": "text-to-speech, voice agents and voice AI",
+    "focus_ar": "text-to-speech, voice agents and voice AI"
+  },
+  "telecom-esim": {
+    "name_en": "eSIM & Virtual Numbers",
+    "name_ar": "الشرائح والأرقام الافتراضية",
+    "categories": [
+      "Telecommunication"
+    ],
+    "focus_en": "eSIMs and virtual phone numbers",
+    "focus_ar": "eSIMs and virtual phone numbers"
+  },
+  "learning-courses": {
+    "name_en": "Learning & Courses",
+    "name_ar": "التعلم والكورسات",
+    "categories": [
+      "Learning & Courses"
+    ],
+    "focus_en": "online courses and learning platforms",
+    "focus_ar": "online courses and learning platforms"
+  },
+  "travel": {
+    "name_en": "Travel Business",
+    "name_ar": "بيزنس السفر",
+    "categories": [
+      "Travel Business",
+      "Travel Affiliates"
+    ],
+    "focus_en": "travel business platforms and partner programs",
+    "focus_ar": "travel business platforms and partner programs"
+  }
+}

@@ -39,6 +39,7 @@ const Header = () => {
     { name: "Services", href: '/services' },
     { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
     { name: language === 'ar' ? "الشريك المؤسس" : "AI Co-founder", href: '/cofounder' },
+    { name: language === 'ar' ? "الوكلاء" : "AI Agents", href: '/agents' },
     { name: "Pricing", href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },

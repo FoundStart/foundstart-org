@@ -15,12 +15,21 @@ interface CatalogEntry {
   source: string;
 }
 
-const catalog: CatalogEntry[] = JSON.parse(
-  await Deno.readTextFile(new URL("./catalog.json", import.meta.url))
-);
-const playbooks: Record<string, { title: string; steps: string[] }> = JSON.parse(
-  await Deno.readTextFile(new URL("./playbooks.json", import.meta.url))
-);
+// JSON data is imported (inlined at bundle time) because the deploy ships only this file.
+import catalogJson from "./catalog.json" with { type: "json" };
+import playbooksJson from "./playbooks.json" with { type: "json" };
+const catalog: CatalogEntry[] = catalogJson as CatalogEntry[];
+const playbooks: Record<string, { title: string; steps: string[] }> = playbooksJson;
+
+interface AgentCfg {
+  name_en: string;
+  name_ar: string;
+  categories: string[];
+  focus_en: string;
+  focus_ar: string;
+}
+import agentsJson from "./agents.json" with { type: "json" };
+const agents: Record<string, AgentCfg> = agentsJson as Record<string, AgentCfg>;
 
 const STOPWORDS = new Set([
   "the","a","an","and","or","to","of","in","for","on","with","how","i","my","me","is","are","do",
@@ -35,10 +44,10 @@ function scorePartner(p: CatalogEntry, terms: string[]): number {
   return s;
 }
 
-function retrievePartners(query: string, limit = 12): CatalogEntry[] {
+function retrievePartners(query: string, limit = 12, pool: CatalogEntry[] = catalog): CatalogEntry[] {
   const terms = query.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter((t) => t && !STOPWORDS.has(t));
   if (!terms.length) return [];
-  return catalog
+  return pool
     .map((p) => ({ p, s: scorePartner(p, terms) }))
     .filter((x) => x.s > 0)
     .sort((a, b) => b.s - a.s)
@@ -91,6 +100,27 @@ ${partnerLines || "(no specific partners matched - give general guidance and ask
 ${playbookText ? `Relevant playbooks to draw steps from:\n${playbookText}` : ""}`;
 }
 
+function buildAgentSystemPrompt(agentSlug: string, cfg: AgentCfg, partners: CatalogEntry[], language: string): string {
+  const partnerLines = partners
+    .map((p) => `- ${p.name}${p.niche ? " (" + p.niche + ")" : ""}: ${p.url}`)
+    .join("\n");
+  const agentName = language === "ar" ? cfg.name_ar : cfg.name_en;
+  const focus = language === "ar" ? cfg.focus_ar : cfg.focus_en;
+  return `You are the FoundStart AI ${cfg.name_en} Agent - a specialist guide whose only job is to understand what the visitor needs in ${cfg.name_en} and recommend the best-matching services from the FoundStart partner catalog.
+
+Rules:
+- Reply in the SAME language the user writes in (Arabic -> Egyptian-friendly Modern Arabic, English -> English). Your display name: ${agentName}. Default language hint: ${language}.
+- If the visitor's need is not specific yet, ask ONE short clarifying question first (for example: which country and budget for company formation, or what exactly they want to build).
+- Recommend ONLY services from the list below and ALWAYS include their exact URL from the list. Never invent names or URLs.
+- Pick the 1-3 best matches for the visitor's situation and say briefly why each fits. Do not dump the whole list.
+- Never mention commissions, affiliate arrangements, or that links are monetized.
+- Be concrete, friendly and brief; use short sections or numbered steps.
+- Stay in your specialty: ${focus}. If asked for something outside it, answer briefly and suggest the right FoundStart agent (see /agents).
+
+Your partner catalog (recommend only from this list):
+${partnerLines || "(no partners matched - ask a clarifying question)"}`;
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
@@ -111,7 +141,7 @@ serve(async (req) => {
       });
     }
 
-    const { thread_id, kind, title, messages, language } = await req.json();
+    const { thread_id, kind, title, messages, language, agent: agentSlug } = await req.json();
     if (!Array.isArray(messages) || messages.length === 0) {
       return new Response(JSON.stringify({ error: "messages required" }), {
         status: 400,
@@ -137,7 +167,7 @@ serve(async (req) => {
       if (!threadId) {
         const { data: created, error: tErr } = await admin
           .from("cofounder_threads")
-          .insert({ user_id: user.id, kind: threadKind, title: title ?? "New venture" })
+          .insert({ user_id: user.id, kind: threadKind, title: (agentSlug && agents[String(agentSlug)] ? `[${agents[String(agentSlug)].name_en}] ` : "") + (title ?? "New venture") })
           .select("id")
           .single();
         if (tErr) throw tErr;
@@ -147,9 +177,23 @@ serve(async (req) => {
 
     const lastUser = [...messages].reverse().find((m: any) => m.role === "user");
     const lastUserText: string = (lastUser?.content ?? "").toString();
-    const partners = retrievePartners(lastUserText);
-    const playbookKeys = detectPlaybooks(lastUserText);
-    const systemPrompt = buildSystemPrompt(partners, playbookKeys, language ?? "en");
+    const agentCfg = agentSlug ? agents[String(agentSlug)] : undefined;
+    let systemPrompt: string;
+    if (agentCfg) {
+      const pool = catalog.filter((p) => agentCfg.categories.includes(p.category));
+      const matched = retrievePartners(lastUserText, 18, pool);
+      const partners = [...matched];
+      const have = new Set(partners.map((p) => p.url));
+      for (const p of pool) {
+        if (partners.length >= 24) break;
+        if (!have.has(p.url)) { partners.push(p); have.add(p.url); }
+      }
+      systemPrompt = buildAgentSystemPrompt(String(agentSlug), agentCfg, partners, language ?? "en");
+    } else {
+      const partners = retrievePartners(lastUserText);
+      const playbookKeys = detectPlaybooks(lastUserText);
+      systemPrompt = buildSystemPrompt(partners, playbookKeys, language ?? "en");
+    }
 
     // Persist the user message before generating
     if (lastUser) {
@@ -164,7 +208,7 @@ serve(async (req) => {
       );
     }
 
-    const GEMINI_MODELS = ["gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3-flash-preview"];
+    const GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"];
     const gemUrl = (m: string) =>
       `https://generativelanguage.googleapis.com/v1beta/models/${m}:streamGenerateContent?alt=sse&key=${Deno.env.get("GEMINI_API_KEY")}`;
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
@@ -178,9 +222,11 @@ serve(async (req) => {
         ? "https://api.openai.com/v1/chat/completions"
         : gemUrl(GEMINI_MODELS[0]);
 
+    const geminiOnly = !!GEMINI_API_KEY && !LOVABLE_API_KEY && !OPENAI_API_KEY;
     const reqInit: RequestInit = {
       method: "POST",
-      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      // Gemini authenticates via ?key= and rejects a Bearer header with 401.
+      headers: geminiOnly ? { "Content-Type": "application/json" } : { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify(
         GEMINI_API_KEY && !LOVABLE_API_KEY && !OPENAI_API_KEY
           ? {

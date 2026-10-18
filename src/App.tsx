@@ -59,6 +59,8 @@ import DomainWishlist from "./pages/DomainWishlist";
 import BulkDomainInquiry from "./pages/BulkDomainInquiry";
 import CustomerDashboard from "./pages/saas/CustomerDashboard";
 import Cofounder from "./pages/Cofounder";
+import Agents from "./pages/Agents";
+import AgentChat from "./pages/AgentChat";
 import GuidesIndex from "./pages/guides/GuidesIndex";
 import GuidePage from "./pages/guides/GuidePage";
 import AdminDashboard from "./pages/saas/AdminDashboard";
@@ -167,6 +169,8 @@ function App() {
                   <Route path="/bulk-domain-inquiry" element={<BulkDomainInquiry />} />
                   <Route path="/dashboard/*" element={<CustomerDashboard />} />
                   <Route path="/cofounder" element={<Cofounder />} />
+                  <Route path="/agents" element={<Agents />} />
+                  <Route path="/agents/:slug" element={<AgentChat />} />
                   <Route path="/guides" element={<GuidesIndex />} />
                   <Route path="/guides/:slug" element={<GuidePage />} />
                   <Route path="/admin/partner-test" element={<PartnerTrackingTest />} />
