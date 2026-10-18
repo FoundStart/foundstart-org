@@ -16,41 +16,54 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
+const agentCategory = {
+  title: "AI Agents",
+  titleAr: "وكلاء الذكاء الاصطناعي",
+  services: [
+    { icon: Building2, title: "Company Formation Agent", titleAr: "وكيل تأسيس الشركات", desc: "Tells you which provider fits your country & budget", descAr: "يرشحلك أنسب مقدم خدمة حسب الدولة والميزانية", link: "/agents/company-formation", gradient: "from-blue-500 to-indigo-600" },
+    { icon: Brain, title: "Vibe Coding Agent", titleAr: "وكيل البرمجة بالوصف", desc: "Matches you with the right AI builder for your app", descAr: "يرشحلك أنسب أداة AI لبناء تطبيقك", link: "/agents/vibe-coding", gradient: "from-violet-500 to-purple-600" },
+    { icon: Target, title: "Vibe Marketing Agent", titleAr: "وكيل التسويق بالوصف", desc: "Ads, social, email & traffic tools for your goal", descAr: "أدوات إعلانات وسوشيال وإيميلات تناسب هدفك", link: "/agents/vibe-marketing", gradient: "from-fuchsia-500 to-purple-600" },
+    { icon: Mail, title: "Email Marketing Agent", titleAr: "وكيل التسويق بالإيميل", desc: "Picks the right email platform & automation", descAr: "يختارلك منصة الإيميلات والأتمتة المناسبة", link: "/agents/email-marketing", gradient: "from-orange-500 to-red-500" },
+    { icon: Zap, title: "All 24 AI Agents", titleAr: "كل وكلاء الذكاء الاصطناعي الـ 24", desc: "One specialist agent per category", descAr: "وكيل متخصص لكل مجال", link: "/agents", gradient: "from-emerald-500 to-teal-600" },
+  ],
+};
+
 const serviceCategories = [
   {
     title: "Formation & Legal",
     services: [
-      { icon: Building2, title: "Company Formation", desc: "LLC, Corp, Ltd in 9 jurisdictions", link: "/countries", gradient: "from-blue-500 to-indigo-600" },
+      { icon: Building2, title: "Company Formation", desc: "LLC, Corp, Ltd in 9 jurisdictions", link: "/agents/company-formation", gradient: "from-blue-500 to-indigo-600" },
       { icon: FileText, title: "AI Documents", desc: "Business plans, contracts & legal docs", link: "/dashboard/ai-assistant", gradient: "from-violet-500 to-purple-600" },
       { icon: Shield, title: "Compliance", desc: "EIN, registered agent, annual filings", link: "/services", gradient: "from-emerald-500 to-teal-600" },
     ]
   },
+  agentCategory,
   {
     title: "Digital Presence",
     services: [
-      { icon: Globe, title: "Premium Domains", desc: "187 domains", link: "/domains", gradient: "from-cyan-500 to-blue-600" },
-      { icon: Server, title: "Web Hosting", desc: "99.9% uptime cloud hosting", link: "/services", gradient: "from-purple-500 to-pink-600" },
+      { icon: Globe, title: "Premium Domains", desc: "187 domains", link: "/agents/domains", gradient: "from-cyan-500 to-blue-600" },
+      { icon: Server, title: "Web Hosting", desc: "99.9% uptime cloud hosting", link: "/agents/web-hosting", gradient: "from-purple-500 to-pink-600" },
       { icon: Mail, title: "Business Email", desc: "Professional email accounts", link: "/services", gradient: "from-orange-500 to-red-500" },
-      { icon: TrendingUp, title: "Website Platform", desc: "SaaS-ready & e-commerce", link: "/services", gradient: "from-pink-500 to-rose-600" },
-      { icon: Smartphone, title: "Mobile Apps", desc: "Android, iOS & Harmony", link: "/services", gradient: "from-indigo-500 to-blue-600" },
+      { icon: TrendingUp, title: "Website Platform", desc: "SaaS-ready & e-commerce", link: "/agents/vibe-coding", gradient: "from-pink-500 to-rose-600" },
+      { icon: Smartphone, title: "Mobile Apps", desc: "Android, iOS & Harmony", link: "/agents/vibe-coding", gradient: "from-indigo-500 to-blue-600" },
     ]
   },
   {
     title: "Growth & Marketing",
     services: [
-      { icon: Search, title: "SEO & SEM", desc: "Search engine optimization & marketing", link: "/seo-management", gradient: "from-green-500 to-emerald-600" },
-      { icon: Brain, title: "AI & LLMO", desc: "LLM optimization for AI visibility", link: "/seo-management", gradient: "from-fuchsia-500 to-purple-600" },
-      { icon: Target, title: "GEO & AEO", desc: "Geographic & Answer Engine optimization", link: "/seo-management", gradient: "from-amber-500 to-orange-600" },
+      { icon: Search, title: "SEO & SEM", desc: "Search engine optimization & marketing", link: "/agents/seo-traffic", gradient: "from-green-500 to-emerald-600" },
+      { icon: Brain, title: "AI & LLMO", desc: "LLM optimization for AI visibility", link: "/agents/ai-tools", gradient: "from-fuchsia-500 to-purple-600" },
+      { icon: Target, title: "GEO & AEO", desc: "Geographic & Answer Engine optimization", link: "/agents/seo-traffic", gradient: "from-amber-500 to-orange-600" },
     ]
   },
   {
     title: "Fintech & Payments",
     services: [
-      { icon: CreditCard, title: "Business Banking", desc: "Mercury, Wise, WorldFirst & Neo", link: "/services", gradient: "from-sky-500 to-cyan-600" },
-      { icon: CreditCard, title: "Virtual Cards", desc: "Visa & Mastercard virtual cards", link: "/services", gradient: "from-teal-500 to-green-600" },
-      { icon: Wifi, title: "eSIM Cards", desc: "Global connectivity for nomads", link: "/digital-nomad-visas", gradient: "from-lime-500 to-green-600" },
+      { icon: CreditCard, title: "Business Banking", desc: "Mercury, Wise, WorldFirst & Neo", link: "/agents/fintech", gradient: "from-sky-500 to-cyan-600" },
+      { icon: CreditCard, title: "Virtual Cards", desc: "Visa & Mastercard virtual cards", link: "/agents/fintech", gradient: "from-teal-500 to-green-600" },
+      { icon: Wifi, title: "eSIM Cards", desc: "Global connectivity for nomads", link: "/agents/telecom-esim", gradient: "from-lime-500 to-green-600" },
       { icon: Gift, title: "Gift Cards", desc: "Digital gift card platform", link: "/services", gradient: "from-red-500 to-pink-600" },
-      { icon: Users2, title: "Remote Hiring", desc: "VAs, support & data entry", link: "/freelancer-partners", gradient: "from-blue-500 to-violet-600" },
+      { icon: Users2, title: "Remote Hiring", desc: "VAs, support & data entry", link: "/agents/hr", gradient: "from-blue-500 to-violet-600" },
     ]
   },
 ];
@@ -98,7 +111,7 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
               transition={{ duration: 0.4 }}
             >
               <span className="h-px flex-1 bg-border" />
-              {category.title}
+              {language === 'ar' && (category as { titleAr?: string }).titleAr ? (category as { titleAr?: string }).titleAr : category.title}
               <span className="h-px flex-1 bg-border" />
             </motion.h3>
             <motion.div
@@ -123,8 +136,8 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
                           <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                             <Icon className="w-5 h-5 text-white" />
                           </div>
-                          <h4 className="font-bold text-sm mb-1.5 group-hover:text-primary transition-colors">{service.title}</h4>
-                          <p className="text-xs text-muted-foreground leading-relaxed">{service.desc}</p>
+                          <h4 className="font-bold text-sm mb-1.5 group-hover:text-primary transition-colors">{language === 'ar' && (service as { titleAr?: string }).titleAr ? (service as { titleAr?: string }).titleAr : service.title}</h4>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{language === 'ar' && (service as { descAr?: string }).descAr ? (service as { descAr?: string }).descAr : service.desc}</p>
                           <ArrowRight className="w-4 h-4 text-primary mt-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                         </CardContent>
                       </Card>
