@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Loader2, SendHorizonal, Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
+import AgentAvatar from '@/components/AgentAvatar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -178,8 +179,13 @@ const AgentChat = () => {
             <Link to="/agents" className="mb-1 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
               <ArrowLeft className="h-3 w-3 rtl:-scale-x-100" /> {s.allAgents}
             </Link>
-            <h1 className="font-bold">FoundStart AI {agent.name[language]}</h1>
-            <p className="text-xs text-muted-foreground">{agent.tagline[language]}</p>
+            <div className="flex items-center gap-3">
+              <AgentAvatar slug={agent.slug} icon={agent.icon} className="h-11 w-11 shrink-0" iconClassName="h-5 w-5" />
+              <div className="min-w-0">
+                <h1 className="font-bold">FoundStart AI {agent.name[language]}</h1>
+                <p className="text-xs text-muted-foreground">{agent.tagline[language]}</p>
+              </div>
+            </div>
           </div>
 
           {!user ? (

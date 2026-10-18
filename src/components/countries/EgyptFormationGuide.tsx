@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CheckCircle, AlertTriangle, FileText, Users, Scale, Building, ExternalLink } from 'lucide-react';
+import { CheckCircle, AlertTriangle, FileText, Users, Scale, Building, ExternalLink, Check } from 'lucide-react';
 import { egyptFormationTypes, egyptLegalFramework, egyptFormationServices } from '@/data/egyptFormationData';
 import { Link } from 'react-router-dom';
 import EgyptPricingSection from './EgyptPricingSection';
@@ -271,8 +271,10 @@ const EgyptFormationGuide = () => {
               </Button>
             </Link>
           </div>
-          <div className="text-sm text-muted-foreground">
-            ✅ Free consultation • ✅ GAFI registered agents • ✅ 100% compliance guaranteed
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-600" /> Free consultation</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-600" /> GAFI registered agents</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-600" /> 100% compliance guaranteed</span>
           </div>
         </CardContent>
       </Card>

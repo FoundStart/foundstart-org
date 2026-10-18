@@ -31,7 +31,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[hsl(222,84%,4.9%)]">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[hsl(222,84%,4.9%)]">
       {/* Gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
@@ -39,7 +39,7 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-[80px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

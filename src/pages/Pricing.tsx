@@ -5,7 +5,7 @@ import CountryPricingTiers from '@/components/pricing/PricingTiers';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Globe, ExternalLink } from 'lucide-react';
+import { CheckCircle, Globe, ExternalLink, ShieldCheck } from 'lucide-react';
 
 const Pricing = () => {
   const countryPricing = [
@@ -43,8 +43,8 @@ const Pricing = () => {
           highlight="Pricing"
           subtitle="Choose your jurisdiction and get started with our comprehensive business formation packages. No hidden fees, no surprises."
         >
-          <Badge className="text-lg px-6 py-2 animate-pulse mt-2">
-            💰 30-Day Money-Back Guarantee
+          <Badge className="inline-flex items-center gap-2 text-lg px-6 py-2 animate-pulse mt-2">
+            <ShieldCheck className="h-5 w-5" /> 30-Day Money-Back Guarantee
           </Badge>
         </PageHero>
 

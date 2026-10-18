@@ -1,11 +1,9 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  ArrowRight, Building2, Globe, Shield, CreditCard, Mail, Server, 
-  Smartphone, Wifi, Gift, Search, Brain, Target, TrendingUp, FileText, Users2, Zap, Code2
-} from 'lucide-react';
+import { ArrowRight, Building2, Shield, Brain, FileText, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { aiAgents } from '@/data/agentsData';
+import AgentAvatar from '@/components/AgentAvatar';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -17,33 +15,17 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const agentIcons: Record<string, typeof Building2> = {
-  'building-2': Building2, 'code-2': Code2, megaphone: Target, mail: Mail,
-  briefcase: Users2, workflow: Zap, clapperboard: CreditCard, sparkles: Brain,
-  'trending-up': TrendingUp, server: Server, 'shopping-cart': Gift, store: Globe,
-  'kanban-square': FileText, landmark: CreditCard, 'dollar-sign': CreditCard, palette: Brain,
-  users: Users2, video: Smartphone, 'user-check': Shield, globe: Globe, mic: Wifi,
-  smartphone: Smartphone, 'graduation-cap': FileText, plane: Globe,
-};
-
-const agentGradients = [
-  "from-blue-500 to-indigo-600", "from-violet-500 to-purple-600", "from-fuchsia-500 to-purple-600",
-  "from-orange-500 to-red-500", "from-emerald-500 to-teal-600", "from-cyan-500 to-blue-600",
-  "from-pink-500 to-rose-600", "from-green-500 to-emerald-600", "from-sky-500 to-cyan-600",
-  "from-amber-500 to-orange-600", "from-lime-500 to-green-600", "from-red-500 to-pink-600",
-];
-
 const agentCategory = {
   title: "AI Agents",
   titleAr: "وكلاء الذكاء الاصطناعي",
-  services: aiAgents.map((a, i) => ({
-    icon: agentIcons[a.icon] ?? Brain,
+  services: aiAgents.map((a) => ({
+    icon: Brain,
     title: `${a.name.en} Agent`,
     titleAr: `وكيل ${a.name.ar}`,
     desc: a.tagline.en,
     descAr: a.tagline.ar,
     link: `/agents/${a.slug}`,
-    gradient: agentGradients[i % agentGradients.length],
+    gradient: "from-blue-500 to-indigo-600",
   })),
 };
 
@@ -57,34 +39,6 @@ const serviceCategories = [
     ]
   },
   agentCategory,
-  {
-    title: "Digital Presence",
-    services: [
-      { icon: Globe, title: "Premium Domains", desc: "187 domains", link: "/agents/domains", gradient: "from-cyan-500 to-blue-600" },
-      { icon: Server, title: "Web Hosting", desc: "99.9% uptime cloud hosting", link: "/agents/web-hosting", gradient: "from-purple-500 to-pink-600" },
-      { icon: Mail, title: "Business Email", desc: "Professional email accounts", link: "/agents/business-email", gradient: "from-orange-500 to-red-500" },
-      { icon: TrendingUp, title: "Website Platform", desc: "SaaS-ready & e-commerce", link: "/agents/vibe-coding", gradient: "from-pink-500 to-rose-600" },
-      { icon: Smartphone, title: "Mobile Apps", desc: "Android, iOS & Harmony", link: "/agents/vibe-coding", gradient: "from-indigo-500 to-blue-600" },
-    ]
-  },
-  {
-    title: "Growth & Marketing",
-    services: [
-      { icon: Search, title: "SEO & SEM", desc: "Search engine optimization & marketing", link: "/agents/seo-traffic", gradient: "from-green-500 to-emerald-600" },
-      { icon: Brain, title: "AI & LLMO", desc: "LLM optimization for AI visibility", link: "/agents/ai-tools", gradient: "from-fuchsia-500 to-purple-600" },
-      { icon: Target, title: "GEO & AEO", desc: "Geographic & Answer Engine optimization", link: "/agents/seo-traffic", gradient: "from-amber-500 to-orange-600" },
-    ]
-  },
-  {
-    title: "Fintech & Payments",
-    services: [
-      { icon: CreditCard, title: "Business Banking", desc: "Mercury, Wise, WorldFirst & Neo", link: "/agents/fintech", gradient: "from-sky-500 to-cyan-600" },
-      { icon: CreditCard, title: "Virtual Cards", desc: "Visa & Mastercard virtual cards", link: "/agents/fintech", gradient: "from-teal-500 to-green-600" },
-      { icon: Wifi, title: "eSIM Cards", desc: "Global connectivity for nomads", link: "/agents/telecom-esim", gradient: "from-lime-500 to-green-600" },
-      { icon: Gift, title: "Gift Cards", desc: "Digital gift card platform", link: "/agents/gift-cards", gradient: "from-red-500 to-pink-600" },
-      { icon: Users2, title: "Remote Hiring", desc: "VAs, support & data entry", link: "/agents/hr", gradient: "from-blue-500 to-violet-600" },
-    ]
-  },
 ];
 
 interface HomeServicesProps {
@@ -93,10 +47,10 @@ interface HomeServicesProps {
 }
 
 const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
-  <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+  <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
     <div className="container mx-auto max-w-7xl">
       <motion.div
-        className="text-center mb-16"
+        className="text-center mb-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -105,7 +59,7 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
       >
         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
           <Zap className="w-4 h-4 mr-2" />
-          {language === 'ar' ? '15+ خدمة متكاملة' : '15+ Integrated Services'}
+          {language === 'ar' ? '28 وكيل ذكاء اصطناعي' : '28 AI Agents'}
         </div>
         <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
           {language === 'ar' ? 'كل ما تحتاجه' : 'Everything You Need to'}{' '}
@@ -118,7 +72,7 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
         </p>
       </motion.div>
 
-      <div className="space-y-16">
+      <div className="space-y-10">
         {serviceCategories.map((category, catIdx) => (
           <div key={catIdx}>
             <motion.h3
@@ -142,6 +96,8 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
             >
               {category.services.map((service, idx) => {
                 const Icon = service.icon;
+                const agentSlug = service.link.startsWith('/agents/') ? service.link.slice('/agents/'.length) : null;
+                const agentCfg = agentSlug ? aiAgents.find((a) => a.slug === agentSlug) : undefined;
                 return (
                   <motion.div
                     key={idx}
@@ -152,9 +108,13 @@ const HomeServices = ({ language, isRTL }: HomeServicesProps) => (
                       <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden relative">
                         <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                         <CardContent className="p-5 relative">
-                          <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                            <Icon className="w-5 h-5 text-white" />
-                          </div>
+                          {agentCfg ? (
+                            <AgentAvatar slug={agentCfg.slug} icon={agentCfg.icon} className="w-11 h-11 mb-4 group-hover:scale-110 transition-transform duration-300" iconClassName="w-5 h-5" />
+                          ) : (
+                            <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                              <Icon className="w-5 h-5 text-white" />
+                            </div>
+                          )}
                           <h4 className="font-bold text-sm mb-1.5 group-hover:text-primary transition-colors">{language === 'ar' && (service as { titleAr?: string }).titleAr ? (service as { titleAr?: string }).titleAr : service.title}</h4>
                           <p className="text-xs text-muted-foreground leading-relaxed">{language === 'ar' && (service as { descAr?: string }).descAr ? (service as { descAr?: string }).descAr : service.desc}</p>
                           <ArrowRight className="w-4 h-4 text-primary mt-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />

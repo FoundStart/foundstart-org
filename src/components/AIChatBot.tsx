@@ -78,11 +78,11 @@ const AIChatBot = () => {
     
     // Domain-specific queries
     if (message.includes('domain') && (message.includes('search') || message.includes('find') || message.includes('buy'))) {
-      return `🔍 **Domain Search**\n\nWe offer:\n• ${servicesData.domains.total}\n• Search across ${servicesData.domains.platforms.length} platforms: ${servicesData.domains.platforms.slice(0, 6).join(', ')}, and more\n• Categories: ${servicesData.domains.categories.join(', ')}\n• ${servicesData.domains.pricing}\n\nVisit /domains to search or browse our collection!`;
+      return `**Domain Search**\n\nWe offer:\n• ${servicesData.domains.total}\n• Search across ${servicesData.domains.platforms.length} platforms: ${servicesData.domains.platforms.slice(0, 6).join(', ')}, and more\n• Categories: ${servicesData.domains.categories.join(', ')}\n• ${servicesData.domains.pricing}\n\nVisit /domains to search or browse our collection!`;
     }
 
     if (message.includes('domain') && (message.includes('price') || message.includes('cost'))) {
-      return `💰 **Domain Pricing**\n\n• Standard domains: From $59\n• Premium business domains: From $2,500\n• Registration: $5.99 - $11.99/year depending on hosting\n\nWe have domains on UD, Spaceship, GoDaddy, Hostinger, and Namebright.`;
+      return `**Domain Pricing**\n\n• Standard domains: From $59\n• Premium business domains: From $2,500\n• Registration: $5.99 - $11.99/year depending on hosting\n\nWe have domains on UD, Spaceship, GoDaddy, Hostinger, and Namebright.`;
     }
 
     // Country-specific queries
@@ -116,46 +116,46 @@ const AIChatBot = () => {
     
     // Service-specific queries
     if (message.includes('company') || message.includes('formation') || message.includes('llc') || message.includes('corp')) {
-      return `🏢 **Company Formation**\n\nWe offer formation in 9 countries:\n${servicesData['company formation'].countries.join('\n')}\n\nEntity types: ${servicesData['company formation'].entities.join(', ')}\n\nAdd-ons: ${servicesData['company formation'].features.join(', ')}\n\nUse our pricing calculator at /pricing-calculator for exact costs!`;
+      return `**Company Formation**\n\nWe offer formation in 9 countries:\n${servicesData['company formation'].countries.join('\n')}\n\nEntity types: ${servicesData['company formation'].entities.join(', ')}\n\nAdd-ons: ${servicesData['company formation'].features.join(', ')}\n\nUse our pricing calculator at /pricing-calculator for exact costs!`;
     }
     
     if (message.includes('seo') || message.includes('llmo') || message.includes('optimization')) {
-      return `📈 **SEO & Optimization Services**\n\n${servicesData.seo.description}\n\nServices:\n• ${servicesData.seo.services.join('\n• ')}\n\nVisit /seo-management for more details!`;
+      return `**SEO & Optimization Services**\n\n${servicesData.seo.description}\n\nServices:\n• ${servicesData.seo.services.join('\n• ')}\n\nVisit /seo-management for more details!`;
     }
 
     if (message.includes('bank') || message.includes('payment') || message.includes('mercury') || message.includes('wise')) {
-      return `🏦 **Banking Solutions**\n\nPartners: ${servicesData.banking.partners.join(', ')}\n\n${servicesData.banking.features}\n\nWe help you open business bank accounts after company formation.`;
+      return `**Banking Solutions**\n\nPartners: ${servicesData.banking.partners.join(', ')}\n\n${servicesData.banking.features}\n\nWe help you open business bank accounts after company formation.`;
     }
     
     if (message.includes('virtual card') || message.includes('esim') || message.includes('gift card')) {
-      return `💳 **Digital Services**\n\n• Virtual Cards: ${servicesData['digital services'].virtualCards}\n• eSIM: ${servicesData['digital services'].esim}\n• Gift Cards: ${servicesData['digital services'].giftCards}\n\nPerfect for digital nomads and remote businesses!`;
+      return `**Digital Services**\n\n• Virtual Cards: ${servicesData['digital services'].virtualCards}\n• eSIM: ${servicesData['digital services'].esim}\n• Gift Cards: ${servicesData['digital services'].giftCards}\n\nPerfect for digital nomads and remote businesses!`;
     }
     
     if (message.includes('hosting') || message.includes('website') || message.includes('email')) {
-      return `🌐 **Web Services**\n\n• Hosting: ${servicesData['digital services'].hosting}\n• Email: ${servicesData['digital services'].email}\n• Website: ${servicesData['digital services'].website}\n• Mobile Apps: ${servicesData['digital services'].mobile}`;
+      return `**Web Services**\n\n• Hosting: ${servicesData['digital services'].hosting}\n• Email: ${servicesData['digital services'].email}\n• Website: ${servicesData['digital services'].website}\n• Mobile Apps: ${servicesData['digital services'].mobile}`;
     }
 
     if (message.includes('hire') || message.includes('freelance') || message.includes('virtual assistant') || message.includes('remote')) {
-      return `👥 **Remote Hiring Services**\n\n${servicesData.hiring.platforms}\n\nServices available:\n• ${servicesData.hiring.services.join('\n• ')}\n\nVisit /freelancer-partners to explore!`;
+      return `**Remote Hiring Services**\n\n${servicesData.hiring.platforms}\n\nServices available:\n• ${servicesData.hiring.services.join('\n• ')}\n\nVisit /freelancer-partners to explore!`;
     }
     
     if (message.includes('pricing') || message.includes('cost') || message.includes('price') || message.includes('how much')) {
-      return `💵 **Pricing Overview**\n\n• Company Formation: $199 - $599\n• Premium Domains: $59 - $2,500\n• Web Hosting: From $9.99/month\n• Virtual Cards: From $2.99/month\n• eSIM: From $4.99\n\nUse our pricing calculator at /pricing-calculator for detailed quotes!`;
+      return `**Pricing Overview**\n\n• Company Formation: $199 - $599\n• Premium Domains: $59 - $2,500\n• Web Hosting: From $9.99/month\n• Virtual Cards: From $2.99/month\n• eSIM: From $4.99\n\nUse our pricing calculator at /pricing-calculator for detailed quotes!`;
     }
     
     if (message.includes('digital nomad') || message.includes('visa') || message.includes('travel')) {
-      return `🌍 **Digital Nomad Services**\n\nWe provide guidance for Digital Nomad Visas in 73+ countries including Spain, Portugal, Estonia, Croatia, Greece, and more.\n\nAlso offering:\n• Global eSIM connectivity\n• Virtual business addresses\n• Remote banking solutions\n\nVisit /digital-nomad-visas for details!`;
+      return `**Digital Nomad Services**\n\nWe provide guidance for Digital Nomad Visas in 73+ countries including Spain, Portugal, Estonia, Croatia, Greece, and more.\n\nAlso offering:\n• Global eSIM connectivity\n• Virtual business addresses\n• Remote banking solutions\n\nVisit /digital-nomad-visas for details!`;
     }
     
     if (message.includes('dashboard') || message.includes('account') || message.includes('login')) {
-      return `🎛️ **Your Dashboard**\n\nAccess your dashboard at /dashboard for:\n• Company management\n• Service orders\n• Document center\n• AI assistant\n• Billing & payments\n• Affiliate program\n\nSign up at /auth to get started!`;
+      return `**Your Dashboard**\n\nAccess your dashboard at /dashboard for:\n• Company management\n• Service orders\n• Document center\n• AI assistant\n• Billing & payments\n• Affiliate program\n\nSign up at /auth to get started!`;
     }
     
     if (message.includes('hello') || message.includes('hi') || message.includes('help') || message.includes('hey')) {
-      return `👋 Hello! Welcome to FoundStart!\n\nI can help you with:\n\n🏢 Company Formation (9 countries)\n🌐 Domain Search (187 domains, 16 platforms)\n💻 Web Services (hosting, email, apps)\n🏦 Banking Solutions\n📈 SEO & Marketing\n👥 Remote Hiring\n🌍 Digital Nomad Services\n\nWhat would you like to know more about?`;
+      return `Hello! Welcome to FoundStart!\n\nI can help you with:\n\n🏢 Company Formation (9 countries)\n🌐 Domain Search (187 domains, 16 platforms)\n💻 Web Services (hosting, email, apps)\n🏦 Banking Solutions\n📈 SEO & Marketing\n👥 Remote Hiring\n🌍 Digital Nomad Services\n\nWhat would you like to know more about?`;
     }
     
-    return `I understand you're asking about "${userMessage}".\n\n**FoundStart offers:**\n• Company formation in 9 countries\n• 187 premium domains\n• 16+ domain search platforms\n• Web hosting & email\n• Banking solutions\n• SEO & marketing\n• Remote hiring services\n\nCould you be more specific about what you need? I'm here to help! 🚀`;
+    return `I understand you're asking about "${userMessage}".\n\n**FoundStart offers:**\n• Company formation in 9 countries\n• 187 premium domains\n• 16+ domain search platforms\n• Web hosting & email\n• Banking solutions\n• SEO & marketing\n• Remote hiring services\n\nCould you be more specific about what you need? I'm here to help!`;
   };
 
   const handleSendMessage = () => {

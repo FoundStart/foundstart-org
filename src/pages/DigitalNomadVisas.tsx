@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, MapPin, Clock, DollarSign, FileText, Globe, Users, Plane } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, DollarSign, FileText, Globe, Users, Plane, Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface DigitalNomadVisa {
@@ -325,7 +325,7 @@ const DigitalNomadVisas = () => {
                   <div className="flex items-center gap-1">
                     <FileText className="h-3 w-3 text-purple-500" />
                     <span className="text-sm">
-                      Apply remotely: {visa.applyRemotely ? "✅ Yes" : "❌ No"}
+                      Apply remotely: {visa.applyRemotely ? <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400"><Check className="h-4 w-4" /> Yes</span> : <span className="inline-flex items-center gap-1 text-muted-foreground"><X className="h-4 w-4" /> No</span>}
                     </span>
                   </div>
                 </div>

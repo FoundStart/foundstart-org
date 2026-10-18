@@ -158,7 +158,7 @@ const LLCFormationGuideBlog = () => {
                 </Card>
                 
                 <Card className="p-4 border-l-4 border-green-500">
-                  <h4 className="font-semibold mb-2">🦬 Wyoming</h4>
+                  <h4 className="font-semibold mb-2">Wyoming</h4>
                   <p className="text-sm text-muted-foreground mb-2">
                     No state income tax, strong privacy protections, and low annual fees. 
                     Perfect for single-member LLCs and privacy-conscious business owners.
@@ -167,7 +167,7 @@ const LLCFormationGuideBlog = () => {
                 </Card>
                 
                 <Card className="p-4 border-l-4 border-purple-500">
-                  <h4 className="font-semibold mb-2">🌴 Florida</h4>
+                  <h4 className="font-semibold mb-2">Florida</h4>
                   <p className="text-sm text-muted-foreground mb-2">
                     No state income tax and great for businesses operating primarily in Florida.
                   </p>

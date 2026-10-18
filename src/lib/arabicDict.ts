@@ -618,7 +618,7 @@ export const arabicDict: Record<string, string> = {
 "Learn how one e-commerce startup used our platform to expand internationally.": "تعرف على كيفية استخدام إحدى الشركات الناشئة في التجارة الإلكترونية لمنصتنا للتوسع دولياً.",
 "Transparent": "شفافية",
 "Choose your jurisdiction and get started with our comprehensive business formation packages. No hidden fees, no surprises.": "اختر ولايتك القضائية وابدأ مع باقات تأسيس الشركات الشاملة لدينا. بدون أي رسوم خفية أو مفاجآت.",
-"💰 30-Day Money-Back Guarantee": "💰 ضمان استرداد الأموال لمدة 30 يومًا",
+"30-Day Money-Back Guarantee": "ضمان استرداد الأموال لمدة 30 يومًا",
 "Formation by Country": "التأسيس حسب الدولة",
 "Start your business in any of our 10 supported jurisdictions with our trusted formation partners.": "ابدأ عملك في أي من الـ 10 ولايات قضائية المدعومة من خلال شركائنا الموثوقين في التأسيس.",
 "What's Included in Every Package": "ما تتضمنه كل باقة",

@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 interface SedoSearchWidgetProps {
@@ -88,10 +89,10 @@ const SedoSearchWidget = ({
           <strong>Sedo widget debug:</strong>{' '}
           {status === 'loading' && <span>Loading script…</span>}
           {status === 'loaded' && <span className="text-amber-600">Script loaded, waiting for widget render…</span>}
-          {status === 'rendered' && <span className="text-emerald-600">✓ Widget rendered</span>}
+          {status === 'rendered' && <span className="inline-flex items-center gap-1 text-emerald-600"><Check className="h-3.5 w-3.5" /> Widget rendered</span>}
           {status === 'error' && (
             <span className="text-red-600">
-              ✗ Script blocked or failed to render (likely an ad blocker). Fallback link shown above.
+              Script blocked or failed to render (likely an ad blocker). Fallback link shown above.
             </span>
           )}
         </div>

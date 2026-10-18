@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Ticket } from 'lucide-react';
 import { getFaviconUrl, getDomainHost } from '@/utils/favicon';
 import PartnerPreviewModal from './PartnerPreviewModal';
 
@@ -45,7 +45,7 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
           <div className="flex items-center gap-2 flex-wrap mt-2">
             <Badge variant="secondary" className="rounded-sm text-xs">{partner.category}</Badge>
             {partner.coupon && (
-              <Badge variant="destructive" className="text-xs">🎟 {partner.coupon}</Badge>
+              <Badge variant="destructive" className="inline-flex items-center gap-1 text-xs"><Ticket className="h-3 w-3" /> {partner.coupon}</Badge>
             )}
           </div>
           {partner.niche && (

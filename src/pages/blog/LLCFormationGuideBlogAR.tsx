@@ -152,7 +152,7 @@ const LLCFormationGuideBlogAR = () => {
                 </Card>
                 
                 <Card className="p-4 border-l-4 border-green-500">
-                  <h4 className="font-semibold mb-2">🦬 Wyoming</h4>
+                  <h4 className="font-semibold mb-2">Wyoming</h4>
                   <p className="text-sm text-muted-foreground mb-2">
                     لا توجد ضريبة دخل على مستوى الولاية، وتوفر حماية قوية للخصوصية، ورسوم سنوية منخفضة. مثالية لشركات LLC ذات العضو الواحد وأصحاب الأعمال المهتمين بالخصوصية.
                   </p>
@@ -160,7 +160,7 @@ const LLCFormationGuideBlogAR = () => {
                 </Card>
                 
                 <Card className="p-4 border-l-4 border-purple-500">
-                  <h4 className="font-semibold mb-2">🌴 Florida</h4>
+                  <h4 className="font-semibold mb-2">Florida</h4>
                   <p className="text-sm text-muted-foreground mb-2">
                     لا توجد ضريبة دخل على مستوى الولاية، وهي رائعة للشركات التي تعمل بشكل أساسي في Florida.
                   </p>

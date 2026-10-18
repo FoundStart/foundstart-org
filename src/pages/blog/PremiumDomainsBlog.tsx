@@ -4,7 +4,7 @@ import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calendar, User, Clock, Globe, CheckCircle, ShoppingCart, Sparkles, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Globe, CheckCircle, ShoppingCart, Sparkles, Tag, Briefcase, CreditCard, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -12,7 +12,7 @@ const PremiumDomainsBlog = () => {
   const domainCategories = [
     {
       title: "Business, SaaS & Startups",
-      emoji: "💼",
+      emoji: <Briefcase className="h-5 w-5 text-primary" />,
       domains: [
         { name: "Namelizer.com", price: "$4,000" },
         { name: "FoundVC.com", price: "$6,500" },
@@ -26,7 +26,7 @@ const PremiumDomainsBlog = () => {
     },
     {
       title: "E-Commerce & Marketplaces",
-      emoji: "🛒",
+      emoji: <ShoppingCart className="h-5 w-5 text-primary" />,
       domains: [
         { name: "Shopeter.com", price: "$3,000" },
         { name: "Storezly.com", price: "$2,500" },
@@ -39,7 +39,7 @@ const PremiumDomainsBlog = () => {
     },
     {
       title: "Fintech, Payments & Crypto",
-      emoji: "💳",
+      emoji: <CreditCard className="h-5 w-5 text-primary" />,
       domains: [
         { name: "OppaPay.com", price: "$2,500" },
         { name: "Paylita.com", price: "$4,999" },
@@ -53,7 +53,7 @@ const PremiumDomainsBlog = () => {
     },
     {
       title: "Tech, AI & Digital Products",
-      emoji: "🤖",
+      emoji: <Sparkles className="h-5 w-5 text-primary" />,
       domains: [
         { name: "CometCall.com", price: "$3,500" },
         { name: "HeyKeyword.com", price: "$3,500" },
@@ -65,7 +65,7 @@ const PremiumDomainsBlog = () => {
     },
     {
       title: "Brandable & Creative Names",
-      emoji: "🌍",
+      emoji: <Globe className="h-5 w-5 text-primary" />,
       domains: [
         { name: "Talaboo.com", price: "$4,000" },
         { name: "Transacly.com", price: "$1,300" },
@@ -80,7 +80,7 @@ const PremiumDomainsBlog = () => {
     },
     {
       title: "Budget & Entry-Level Domains",
-      emoji: "⚡",
+      emoji: <Zap className="h-5 w-5 text-primary" />,
       domains: [
         { name: "Deeemoz.com", price: "$750" },
         { name: "Deeemoz.fun", price: "$99" },
@@ -192,7 +192,7 @@ const PremiumDomainsBlog = () => {
               {domainCategories.map((category, idx) => (
                 <div key={idx} className="mb-8">
                   <h3 className="text-2xl font-semibold mb-4">
-                    {category.emoji} {category.title}
+                    <span className="inline-flex items-center gap-2">{category.emoji} {category.title}</span>
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     {category.domains.map((domain, domainIdx) => (

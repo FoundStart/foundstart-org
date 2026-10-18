@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowRight, Globe, Server, Mail, Smartphone } from 'lucide-react';
+import { CheckCircle, ArrowRight, Globe, Server, Mail, Smartphone, ShieldCheck } from 'lucide-react';
 
 const PricingTiers = () => {
   const plans = [
@@ -235,7 +235,7 @@ const PricingTiers = () => {
         <div className="mt-16 text-center">
           <Card className="max-w-md mx-auto glass-card animate-glow">
             <CardContent className="p-6">
-              <div className="text-2xl mb-2">💰</div>
+              <ShieldCheck className="h-7 w-7 mb-2 mx-auto text-primary" />
               <h4 className="font-semibold mb-2">Money-Back Guarantee</h4>
               <p className="text-sm text-muted-foreground">
                 Not satisfied? Get a full refund within 30 days, no questions asked.

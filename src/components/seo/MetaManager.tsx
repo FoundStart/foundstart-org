@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { FileText, Image, Tag, Globe } from 'lucide-react';
+import { FileText, Image, Tag, Globe, Check } from 'lucide-react';
 
 const MetaManager = () => {
   return (
@@ -123,7 +123,7 @@ const MetaManager = () => {
                 <Image className="h-4 w-4 text-purple-500" />
                 <h3 className="font-semibold">OG Image</h3>
               </div>
-              <div className="text-2xl font-bold text-purple-600">✓</div>
+              <Check className="h-6 w-6 text-purple-600" />
               <Badge variant="secondary">Set</Badge>
             </Card>
             

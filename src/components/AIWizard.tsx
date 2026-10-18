@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, MessageSquare, CheckCircle } from 'lucide-react';
+import { ArrowRight, MessageSquare, CheckCircle, Target } from 'lucide-react';
 
 const AIWizard = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -185,7 +185,7 @@ const AIWizard = () => {
 
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-6 text-center">
-                <div className="text-2xl mb-2">🎯</div>
+                <Target className="h-7 w-7 mb-2 mx-auto text-primary" />
                 <h4 className="font-semibold mb-2">Perfect Match Guarantee</h4>
                 <p className="text-sm text-muted-foreground">
                   Our AI considers 50+ factors to find your optimal setup. 

@@ -94,7 +94,7 @@ const PartnerGrid: React.FC<{ items: Partner[] }> = ({ items }) => (
           <h4 className="font-semibold text-base">{p.name}</h4>
           <p className="text-sm text-muted-foreground">{p.description}</p>
           <div className="flex flex-wrap gap-2 items-center">
-            {p.coupon && <Badge variant="destructive">🎟️ {p.coupon}</Badge>}
+            {p.coupon && <Badge variant="destructive" className="inline-flex items-center gap-1"><Ticket className="h-3 w-3" /> {p.coupon}</Badge>}
             <Button asChild size="sm">
               <a href={tag(p.url, p.name)} target="_blank" rel="noopener noreferrer sponsored">
                 زيارة الموقع <ExternalLink className="w-4 h-4 ml-1.5" />

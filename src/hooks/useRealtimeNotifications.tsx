@@ -49,7 +49,7 @@ export function useRealtimeNotifications() {
 
           // Show toast notification
           toast({
-            title: "🌐 New Domain Inquiry!",
+            title: "New Domain Inquiry!",
             description: `${newInquiry.name} inquired about ${newInquiry.domain_name}`,
           });
 

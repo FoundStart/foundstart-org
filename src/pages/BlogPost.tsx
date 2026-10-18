@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calendar, User, Clock, Globe, Building, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Globe, Building, CheckCircle, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SedoBanner from '@/components/sedo/SedoBanner';
 import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
@@ -400,7 +400,7 @@ const BlogPost = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <Card className="p-4">
-                  <h4 className="font-semibold mb-2">🚀 Quick Start Package</h4>
+                  <h4 className="font-semibold mb-2 flex items-center gap-2"><Rocket className="h-4 w-4 text-primary" /> Quick Start Package</h4>
                   <ul className="text-sm space-y-1">
                     <li>• Delaware LLC formation</li>
                     <li>• EIN application</li>
@@ -410,7 +410,7 @@ const BlogPost = () => {
                 </Card>
                 
                 <Card className="p-4">
-                  <h4 className="font-semibold mb-2">🌍 Premium Nomad Setup</h4>
+                  <h4 className="font-semibold mb-2 flex items-center gap-2"><Globe className="h-4 w-4 text-primary" /> Premium Nomad Setup</h4>
                   <ul className="text-sm space-y-1">
                     <li>• Multi-jurisdiction analysis</li>
                     <li>• Tax optimization strategy</li>

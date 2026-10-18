@@ -52,7 +52,7 @@ const MyCompanies = () => {
       spain: '🇪🇸',
       france: '🇫🇷',
     };
-    return flags[countryCode || ''] || '🌍';
+    return flags[countryCode || ''] || '';
   };
 
   if (isLoading) {

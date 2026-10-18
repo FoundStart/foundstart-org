@@ -54,7 +54,7 @@ const PartnerList: React.FC<{ items: Partner[] }> = ({ items }) => (
           <h4 className="font-semibold text-base leading-snug">{p.name}</h4>
           {p.note && <p className="text-sm text-muted-foreground">{p.note}</p>}
           <div className="flex flex-wrap gap-2">
-            {p.coupon && <Badge variant="destructive">🎟 {p.coupon}</Badge>}
+            {p.coupon && <Badge variant="destructive" className="inline-flex items-center gap-1"><Ticket className="h-3 w-3" /> {p.coupon}</Badge>}
             <Button asChild size="sm">
               <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">
                 Form via this partner <ExternalLink className="w-4 h-4 ml-1.5" />
