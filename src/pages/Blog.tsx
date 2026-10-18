@@ -15,7 +15,13 @@ import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
 const Blog = () => {
   const { language } = useTranslation();
   const slugs = new Set(allPosts.map(p => p.slug));
-  const ts = (d: string) => { const t = Date.parse(d); return isNaN(t) ? 0 : t; };
+  const arM = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  const ts = (d: string) => {
+    const m = d.match(/^(\d{1,2})\s+(\S+)\s+(\d{4})$/);
+    const i = m ? arM.indexOf(m[2]) : -1;
+    const t = i >= 0 ? Date.UTC(+m![3], i, +m![1]) : Date.parse(d + ' UTC');
+    return isNaN(t) ? 0 : t;
+  };
   const blogPosts = allPosts.filter(p => language === 'ar'
     ? (p.slug.endsWith('-ar') || !slugs.has(p.slug + '-ar'))
     : !(p.slug.endsWith('-ar') && slugs.has(p.slug.slice(0, -3))))
