@@ -66,22 +66,14 @@ serve(async (req) => {
       }
     )
 
-    // Get Kashier credentials from environment
+    // Kashier credentials (mode-scoped: test keys only work in test mode, live in live)
     const kashierApiKey = Deno.env.get('KASHIER_API_KEY')
-    const kashierSecretKey = Deno.env.get('KASHIER_SECRET_KEY')
-
-    console.log('Kashier credentials check:', {
-      apiKey: !!kashierApiKey,
-      secretKey: !!kashierSecretKey,
-    })
-
-    if (!kashierApiKey || !kashierSecretKey) {
+    const kashierMid = Deno.env.get('KASHIER_MERCHANT_ID')
+    const kashierMode = (Deno.env.get('KASHIER_MODE') ?? 'live') === 'test' ? 'test' : 'live'
+    if (!kashierApiKey || !kashierMid) {
       console.error('Missing Kashier credentials')
       return new Response(
-        JSON.stringify({ 
-          error: 'Payment gateway configuration error',
-          details: 'Missing required Kashier credentials'
-        }),
+        JSON.stringify({ error: 'Payment configuration error' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
@@ -200,79 +192,35 @@ serve(async (req) => {
 
     console.log('Transaction created successfully:', transaction.id)
 
-    // Create Kashier payment order
-    const currentUrl = req.url.replace('/functions/v1/create-payment', '')
-    const baseUrl = currentUrl || `https://tylancgjmllwhuzptlxh.supabase.co`
-    
-    const kashierData = {
-      merchant_order_id: orderId,
-      amount: amount,
-      currency: currency || 'USD',
-      customer: {
-        name: customer.name || customer.email,
-        email: customer.email,
-        phone: customer.phone || ''
-      },
-      success_url: `${baseUrl}/dashboard`,
-      failure_url: `${baseUrl}/dashboard/billing`,
-      webhook_url: `${baseUrl}/functions/v1/payment-webhook`
-    }
+    // Build Kashier hosted payment page (HPP) URL. Hash = HMAC-SHA256(apiKey, /?payment=mid.orderId.amount.currency)
+    const siteUrl = Deno.env.get('SITE_URL') ?? 'https://www.foundstart.org'
+    const cur = (currency || 'USD').toUpperCase()
+    const amt = String(amount)
+    const enc = new TextEncoder()
+    const hk = await crypto.subtle.importKey('raw', enc.encode(kashierApiKey), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'])
+    const sig = await crypto.subtle.sign('HMAC', hk, enc.encode(`/?payment=${kashierMid}.${orderId}.${amt}.${cur}`))
+    const hash = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('')
 
-    // Generate hash for Kashier
-    const encoder = new TextEncoder()
-    const hashString = `${orderId}${amount}${currency || 'USD'}${kashierSecretKey}`
-    console.log('Hash string components:', { orderId, amount, currency: currency || 'USD' })
-    
-    const hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(hashString))
-    const hashArray = Array.from(new Uint8Array(hashBuffer))
-    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
-    
-    kashierData.hash = hash
-    console.log('Generated hash for Kashier')
-
-    console.log('Sending request to Kashier API...')
-
-    const kashierResponse = await fetch('https://checkout.kashier.io/api/v1/orders', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${kashierApiKey}`
-      },
-      body: JSON.stringify(kashierData)
+    const params = new URLSearchParams({
+      merchantId: kashierMid,
+      orderId,
+      amount: amt,
+      currency: cur,
+      hash,
+      mode: kashierMode,
+      merchantRedirect: `${siteUrl}/dashboard`,
+      failureRedirect: 'true',
+      serverWebhook: `${Deno.env.get('SUPABASE_URL')}/functions/v1/payment-webhook`,
+      display: 'en',
     })
+    const paymentUrl = `https://payments.kashier.io/?${params.toString()}`
 
-    console.log('Kashier response status:', kashierResponse.status)
-    const kashierResult = await kashierResponse.json()
-    console.log('Kashier response:', JSON.stringify(kashierResult, null, 2))
+    await supabaseClient.from('payment_transactions').update({ payment_url: paymentUrl }).eq('id', transaction.id)
 
-    if (kashierResponse.ok && kashierResult.checkout_url) {
-      // Update transaction with Kashier order details
-      const { error: updateError } = await supabaseClient
-        .from('payment_transactions')
-        .update({
-          kashier_order_id: kashierResult.order_id,
-          payment_url: kashierResult.checkout_url
-        })
-        .eq('id', transaction.id)
-
-      if (updateError) {
-        console.error('Error updating transaction:', updateError)
-      }
-
-      console.log('Payment order created successfully')
-      return new Response(
-        JSON.stringify({
-          success: true,
-          orderId,
-          paymentUrl: kashierResult.checkout_url,
-          transaction: transaction
-        }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      )
-    } else {
-      console.error('Kashier API error:', kashierResult)
-      throw new Error(kashierResult.message || 'Payment creation failed with Kashier')
-    }
+    return new Response(
+      JSON.stringify({ success: true, orderId, paymentUrl, transaction }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    )
 
   } catch (error) {
     // Log detailed error server-side only for debugging
