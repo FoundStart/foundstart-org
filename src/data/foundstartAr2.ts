@@ -1768,5 +1768,6 @@ export const arExtraPosts = [
   "readTime": "6 دقائق قراءة",
   "slug": "uk-vs-us-company-formation-ar",
   "image": "/blog/covers/uk-vs-us-company-formation.jpg"
- }
+ },
+ {"id": 450, "title": "Establishing a One-Person Company in Egypt - The Complete 2026 Guide", "description": "Steps to set up a one-person company in Egypt: documents, GAFI, the notary, the commercial register and the tax card.", "category": "Egypt", "author": "FoundStart Team", "date": "Jun 12, 2026", "readTime": "10 min read", "slug": "egypt-one-person-company", "image": "/blog/covers/egypt-one-person-company-ar.jpg"}
 ];

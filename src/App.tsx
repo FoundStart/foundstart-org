@@ -36,6 +36,7 @@ import PremiumDomainsShowcaseBlogAR from "./pages/blog/PremiumDomainsShowcaseBlo
 import LLCFormationGuideBlogAR from "./pages/blog/LLCFormationGuideBlogAR";
 import UKvsUSFormationBlogAR from "./pages/blog/UKvsUSFormationBlogAR";
 import ArWrap from "./pages/blog/ArWrap";
+import EgyptOnePersonCompanyEN from "./pages/blog/EgyptOnePersonCompanyEN";
 
 import MoMoAIBusinessSetupEN from "./pages/blog/MoMoAIBusinessSetupEN";
 import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
@@ -145,6 +146,7 @@ function App() {
                   <Route path="/blog/premium-domains-showcase-ar" element={<ArWrap><PremiumDomainsShowcaseBlogAR /></ArWrap>} />
                   <Route path="/blog/llc-formation-guide-ar" element={<ArWrap><LLCFormationGuideBlogAR /></ArWrap>} />
                   <Route path="/blog/uk-vs-us-company-formation-ar" element={<ArWrap><UKvsUSFormationBlogAR /></ArWrap>} />
+                  <Route path="/blog/egypt-one-person-company" element={<EgyptOnePersonCompanyEN />} />
                   <Route path="/blog/:slug" element={<BlogSlugDispatcher />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />

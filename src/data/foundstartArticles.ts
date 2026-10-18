@@ -1,6 +1,7 @@
 import type { ShortetArticle } from './shortetArticlesData';
 
 export const foundstartArticleOrder: string[] = [
+  "five-free-guides-company-to-ai-company",
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company",
   "five-free-guides-company-to-ai-company-ar",
   "what-is-foundstart",
@@ -14,6 +15,16 @@ export const foundstartArticleOrder: string[] = [
 ];
 
 export const foundstartArticles: Record<string, ShortetArticle> = {
+  "five-free-guides-company-to-ai-company": {
+      "title": "5 Free Guides for Every Founder: From Company Formation to Building an AI Company",
+      "description": "Five free guides on FoundStart that cover the whole road from registering a company to building and running it with AI.",
+      "category": "Business",
+      "author": "Mohamed Sayed",
+      "date": "Oct 18, 2026",
+      "readTime": "4 min read",
+      "heroImage": "/blog/company-formation-guide-01dc7278.jpg",
+      "html": "<p>If you are thinking about starting a business, the biggest problem is not the idea. It is that the information is scattered across a thousand places. So we built 5 free guides on FoundStart that cover the whole road, from \"I want to start a company\" to \"I run on AI\".</p><h2>1. The company formation guide</h2><p>Step by step: how to choose a company type, which documents you need, and what happens after registration. The guide covers 10 countries - the USA, the UK, Canada, Estonia, Finland, Sweden, Latvia, Lithuania, Ireland and Egypt - so you will find the steps for the country that suits you.</p><h2>2. The guide to building an AI company</h2><p>How to build an AI-based product or service without being a professional developer: choosing the idea, the tools, and the first version you put in front of people.</p><h2>3. The Vibe Coding guide</h2><p>Programming by description instead of code: how to tell smart tools what you want and end up with something that works, and when this approach fits and when it does not.</p><h2>4. The Vibe Marketing guide</h2><p>Marketing in the same style: content, ads and landing pages made quickly with the help of AI, while keeping your brand voice.</p><h2>5. The guide to running your work with AI</h2><p>Organizing tasks, follow-ups and reports - how to let smart tools take the repetitive work off you so you can focus on decisions.</p><p>All the guides are free and available in Arabic and English, with an AI assistant on the site that answers your questions about company formation and tools. Start here: <a href=\"https://www.foundstart.org\">https://www.foundstart.org</a></p>"
+  },
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company": {
       "title": "USA vs UK vs Estonia vs Egypt: Where Should You Register Your Company?",
       "description": "A practical comparison of four routes founders use: USA, UK, Estonia and Egypt, and three questions to pick the right one.",
@@ -117,6 +128,17 @@ export const foundstartArticles: Record<string, ShortetArticle> = {
 };
 
 export const foundstartBlogPosts = [
+  {
+      "id": 340,
+      "title": "5 Free Guides for Every Founder: From Company Formation to Building an AI Company",
+      "description": "Five free guides on FoundStart that cover the whole road from registering a company to building and running it with AI.",
+      "category": "Business",
+      "author": "Mohamed Sayed",
+      "date": "Oct 18, 2026",
+      "readTime": "4 min read",
+      "slug": "five-free-guides-company-to-ai-company",
+      "image": "/blog/company-formation-guide-01dc7278.jpg"
+  },
   {
       "id": 338,
       "title": "USA vs UK vs Estonia vs Egypt: Where Should You Register Your Company?",

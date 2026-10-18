@@ -11,14 +11,14 @@ import { ArrowLeft, Calendar, User, Clock, ExternalLink, CheckCircle, Globe } fr
 
 const TITLE = 'كيف تختار أفضل منصة لتأسيس شركتك عبر الإنترنت في عام 2026';
 const DESCRIPTION =
-  'دليل عام 2026 لأفضل منصات تأسيس الشركات للمؤسسين والمستقلين والرحالة الرقميين — يغطي الولايات المتحدة، المملكة المتحدة، إستونيا، فنلندا، السويد، لاتفيا، ليتوانيا وأيرلندا.';
+  'دليل عام 2026 لأفضل منصات تأسيس الشركات للمؤسسين والمستقلين والرحالة الرقميين — يغطي الولايات المتحدة، المملكة المتحدة، إستونيا، فنلندا، السويد، لاتفيا، ليتوانيا، وأيرلندا.';
 const BIO_URL = 'https://shortet.com/Company-Formation';
 
 type Partner = { name: string; url: string; coupon?: string; videoUrl?: string; note?: string };
 
 const USA: Partner[] = [
   { name: 'FoundStart — الأفضل بشكل عام (الولايات المتحدة، المملكة المتحدة وأوروبا)', url: 'https://shortet.com/Company-Formation', videoUrl: 'https://www.youtube.com/watch?v=dvyjdyrKFUw', note: 'للمؤسسين الذين يبحثون عن المرونة في أسواق متعددة.' },
-  { name: 'Doola — الأفضل للمؤسسين من خارج الولايات المتحدة', url: 'https://shortet.com/doola', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ', note: 'للمقيمين خارج أمريكا الراغبين في تأسيس شركة LLC في Delaware مع حساب بنكي في Mercury.' },
+  { name: 'Doola — الأفضل للمؤسسين من خارج الولايات المتحدة', url: 'https://shortet.com/doola', videoUrl: 'https://www.youtube.com/watch?v=Kl2Drv4TiKQ', note: 'للمقيمين خارج أمريكا الراغبين في تأسيس شركة LLC في ولاية Delaware مع حساب بنكي في Mercury.' },
   { name: 'Clemta — باقة التأسيس والمحاسبة', url: 'https://shortet.com/clemta', videoUrl: 'https://www.youtube.com/watch?v=f0bHXjz-sRA', note: 'للمؤسسين الذين يريدون التأسيس والمحاسبة المستمرة في اشتراك واحد.' },
   { name: 'Go Nomad HQ — مصممة للرحالة الرقميين', url: 'https://shortet.com/Go-Nomad-HQ', videoUrl: 'https://www.youtube.com/watch?v=TAV2pxr0yuw', note: 'للرحالة الرقميين والمؤسسين الذين يعملون عن بُعد بشكل كامل.' },
   { name: 'ITIN — احصل على رقم تعريف ضريبي أمريكي بسرعة', url: 'https://shortet.com/theitin', coupon: 'SAYED50', videoUrl: 'https://www.youtube.com/watch?v=irNk9U4seys', note: 'للمؤسسين من خارج أمريكا الذين يحتاجون لرقم ضريبي. استخدم كود SAYED50 للحصول على خصم 50%.' },
@@ -153,7 +153,7 @@ const BestCompanyFormation2026AR: React.FC = () => {
 
               <h2>🇬🇧 تأسيس الشركات في المملكة المتحدة</h2>
               <p>
-                تفتح شركة محدودة (Ltd) في المملكة المتحدة أبواباً للخدمات البنكية الأوروبية، والمصداقية العالمية، والامتثال القانوني المباشر — وغالباً ما يتم التأسيس في أقل من 24 ساعة.
+                تأسيس شركة محدودة (Ltd) في المملكة المتحدة يفتح أبواباً للخدمات البنكية الأوروبية، والمصداقية العالمية، والامتثال القانوني المباشر — وغالباً ما يتم التأسيس في أقل من 24 ساعة.
               </p>
               <PartnerListAR items={UK} />
 
