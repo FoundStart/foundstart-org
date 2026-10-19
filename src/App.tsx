@@ -87,6 +87,24 @@ import "./App.css";
 
 const queryClient = new QueryClient();
 
+// Loads the AdSense Auto Ads script only on blog routes (/blog and /blog/*).
+// ads.txt stays at the site root; no ad units exist outside the blog.
+const ADSENSE_SRC = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4631793934289134";
+function AdSenseLoader() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (!pathname.startsWith("/blog")) return;
+    if (document.querySelector('script[data-foundstart-adsense]')) return;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = ADSENSE_SRC;
+    s.crossOrigin = "anonymous";
+    s.dataset.foundstartAdsense = "1";
+    document.head.appendChild(s);
+  }, [pathname]);
+  return null;
+}
+
 // Scroll to top component
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
@@ -128,6 +146,7 @@ function App() {
             <BrowserRouter>
               <AuthProvider>
                 <ScrollToTop />
+                <AdSenseLoader />
                 <HealthCheckBanner />
                 <Routes>
                   <Route path="/" element={<Index />} />
