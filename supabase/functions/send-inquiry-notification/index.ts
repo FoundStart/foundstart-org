@@ -1,5 +1,3 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -62,7 +60,6 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const resend = new Resend(resendApiKey);
     const { inquiryType, name, email, phone, domains, message } = body;
 
     const isBulk = inquiryType === 'bulk' || domains.length > 1;
@@ -147,14 +144,19 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const subjectName = safeName.slice(0, 100);
-    const emailResponse = await resend.emails.send({
-      from: "FoundStart <onboarding@resend.dev>",
-      to: ["momo@foundstart.org"],
-      subject: isBulk
-        ? `[Bulk Inquiry] ${domains.length} domains from ${subjectName}`
-        : `[Domain Inquiry] ${safeDomains[0]} from ${subjectName}`,
-      html: emailHtml,
+    const emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${resendApiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: "FoundStart <no-reply@foundstart.org>",
+        to: ["momo@foundstart.org"],
+        subject: isBulk
+          ? `[Bulk Inquiry] ${domains.length} domains from ${subjectName}`
+          : `[Domain Inquiry] ${safeDomains[0]} from ${subjectName}`,
+        html: emailHtml,
+      }),
     });
+    if (!emailResponse.ok) throw new Error(`Resend send failed: ${emailResponse.status}`);
 
     console.log("Email sent successfully");
 
@@ -171,4 +173,4 @@ const handler = async (req: Request): Promise<Response> => {
   }
 };
 
-serve(handler);
+Deno.serve(handler);
