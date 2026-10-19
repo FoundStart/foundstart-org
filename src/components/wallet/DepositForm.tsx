@@ -18,6 +18,7 @@ const DepositForm = () => {
 
   const paymentMethods = [
     { id: 'kashier', name: 'Credit/Debit Card (Kashier)', icon: CreditCard, fee: '2.9%' },
+    { id: 'lemonsqueezy', name: 'Credit/Debit Card (International)', icon: CreditCard, fee: 'card fees apply' },
     { id: 'bank_transfer', name: 'Bank Transfer', icon: Building, fee: '$0.50' },
     { id: 'paypal', name: 'PayPal', icon: Smartphone, fee: '3.4%' },
     { id: 'crypto', name: 'Cryptocurrency', icon: Bitcoin, fee: '1.5%' }
@@ -45,7 +46,29 @@ const DepositForm = () => {
     setIsLoading(true);
     
     try {
-      if (paymentMethod === 'kashier') {
+      if (paymentMethod === 'lemonsqueezy') {
+        // Lemon Squeezy hosted checkout (international cards)
+        const { data, error } = await supabase.functions.invoke('ls-create-payment', {
+          body: {
+            amount: parseFloat(amount),
+            currency: 'USD',
+            customer: {
+              name: user.email,
+              email: user.email,
+              phone: ''
+            },
+            planId: 'wallet-deposit'
+          }
+        });
+
+        if (error) throw error;
+
+        if (data.success && data.paymentUrl) {
+          window.location.href = data.paymentUrl;
+        } else {
+          throw new Error('Failed to create payment order');
+        }
+      } else if (paymentMethod === 'kashier') {
         // Use Kashier for credit card payments
         const { data, error } = await supabase.functions.invoke('create-payment', {
           body: {
