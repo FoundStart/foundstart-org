@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation, Navigate, useNavigationType } from "react-router-dom";
+import { useEffect, useLayoutEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
@@ -89,11 +89,22 @@ const queryClient = new QueryClient();
 
 // Scroll to top component
 function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
+  const { pathname, search, hash } = useLocation();
+  const navType = useNavigationType();
+  // POP (back/forward): leave scroll alone - the browser restores it natively.
+  // PUSH/REPLACE with #anchor: jump to the anchor after paint.
+  // Everything else: open the page at the top, before paint.
+  useLayoutEffect(() => {
+    if (navType === "POP") return;
+    if (hash) {
+      requestAnimationFrame(() => {
+        const el = document.getElementById(hash.slice(1));
+        if (el) el.scrollIntoView(); else window.scrollTo(0, 0);
+      });
+      return;
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, search, hash, navType]);
 
   return null;
 }
