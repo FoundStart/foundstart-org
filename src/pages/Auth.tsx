@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { useL } from '@/hooks/useL';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -48,6 +49,7 @@ const Auth = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const location = useLocation();
+  const L = useL();
   
   // Get redirect info from state
   const redirectTo = (location.state as any)?.redirectTo || '/dashboard';
@@ -90,8 +92,8 @@ const Auth = () => {
     if (lockoutUntil && Date.now() < lockoutUntil) {
       const secondsRemaining = Math.ceil((lockoutUntil - Date.now()) / 1000);
       toast({
-        title: "Too many attempts",
-        description: `Please wait ${secondsRemaining} seconds before trying again.`,
+        title: L('Too many attempts','محاولات كثيرة'),
+        description: L(`Please wait ${secondsRemaining} seconds before trying again.`,`انتظر ${secondsRemaining} ثانية قبل المحاولة مرة أخرى.`),
         variant: "destructive",
       });
       return;
@@ -110,16 +112,16 @@ const Auth = () => {
         result = await signUp(email, password, fullName);
         if (!result.error) {
           toast({
-            title: "Account created successfully!",
-            description: "Please check your email to verify your account.",
+            title: L('Account created successfully!','تم إنشاء الحساب بنجاح!'),
+            description: L('Please check your email to verify your account.','تحقق من بريدك الإلكتروني لتأكيد حسابك.'),
           });
         }
       } else {
         result = await signIn(email, password);
         if (!result.error) {
           toast({
-            title: "Welcome back!",
-            description: "You have been signed in successfully.",
+            title: L('Welcome back!','أهلاً بعودتك!'),
+            description: L('You have been signed in successfully.','تم تسجيل الدخول بنجاح.'),
           });
         }
       }
@@ -133,13 +135,13 @@ const Auth = () => {
           setLockoutUntil(Date.now() + RATE_LIMIT_WINDOW_MS);
           setAttempts(0);
           toast({
-            title: "Too many failed attempts",
-            description: "Please wait 1 minute before trying again.",
+            title: L('Too many failed attempts','محاولات فاشلة كثيرة'),
+            description: L('Please wait 1 minute before trying again.','انتظر دقيقة قبل المحاولة مرة أخرى.'),
             variant: "destructive",
           });
         } else {
           toast({
-            title: "Authentication Error",
+            title: L('Authentication Error','خطأ في المصادقة'),
             description: result.error.message,
             variant: "destructive",
           });
@@ -151,8 +153,8 @@ const Auth = () => {
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        title: L('Error','خطأ'),
+        description: L('An unexpected error occurred. Please try again.','حدث خطأ غير متوقع. حاول مرة أخرى.'),
         variant: "destructive",
       });
     } finally {
@@ -169,11 +171,11 @@ const Auth = () => {
           <Card>
             <CardHeader className="text-center">
               <CardTitle className="text-2xl font-bold">
-                {isSignUp ? 'Create Account' : 'Welcome Back'}
+                {isSignUp ? L('Create Account','إنشاء حساب') : L('Welcome Back','أهلاً بعودتك')}
               </CardTitle>
               <CardDescription>
                 {isSignUp 
-                  ? 'Sign up to get started with FoundStart' 
+                  ? L('Sign up to get started with FoundStart','سجّل لتبدأ مع FoundStart') 
                   : 'Sign in to your FoundStart account'
                 }
               </CardDescription>
@@ -183,7 +185,7 @@ const Auth = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {isSignUp && (
                   <div>
-                    <Label htmlFor="fullName">Full Name</Label>
+                    <Label htmlFor="fullName">{L('Full Name','الاسم الكامل')}</Label>
                     <Input
                       id="fullName"
                       type="text"
@@ -239,7 +241,7 @@ const Auth = () => {
                   )}
                   {isSignUp && !errors.password && (
                     <p className="text-xs text-muted-foreground mt-1">
-                      Must be 8+ characters with uppercase, lowercase, and number
+                      {L('Must be 8+ characters with uppercase, lowercase, and number','8 أحرف على الأقل مع حرف كبير وحرف صغير ورقم')}
                     </p>
                   )}
                 </div>
@@ -252,16 +254,16 @@ const Auth = () => {
                       className="text-sm px-0 h-auto"
                       onClick={async () => {
                         if (!email) {
-                          toast({ title: 'Enter your email first', description: 'Please enter your email address above.', variant: 'destructive' });
+                          toast({ title: L('Enter your email first','أدخل بريدك الإلكتروني أولاً'), description: L('Please enter your email address above.','أدخل بريدك الإلكتروني في الحقل أعلاه.'), variant: 'destructive' });
                           return;
                         }
                         const { error } = await supabase.auth.resetPasswordForEmail(email, {
                           redirectTo: `${window.location.origin}/reset-password`
                         });
                         if (error) {
-                          toast({ title: 'Error', description: error.message, variant: 'destructive' });
+                          toast({ title: L('Error','خطأ'), description: error.message, variant: 'destructive' });
                         } else {
-                          toast({ title: 'Check your email', description: 'Password reset link has been sent.' });
+                          toast({ title: L('Check your email','تحقق من بريدك'), description: L('Password reset link has been sent.','تم إرسال رابط إعادة تعيين كلمة المرور.') });
                         }
                       }}
                     >
@@ -278,10 +280,10 @@ const Auth = () => {
                   {isLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      {isSignUp ? 'Creating Account...' : 'Signing In...'}
+                      {isSignUp ? L('Creating Account...','جارٍ إنشاء الحساب...') : L('Signing In...','جارٍ تسجيل الدخول...')}
                     </>
                   ) : (
-                    isSignUp ? 'Create Account' : 'Sign In'
+                    isSignUp ? L('Create Account','إنشاء حساب') : L('Sign In','تسجيل الدخول')
                   )}
                 </Button>
               </form>
