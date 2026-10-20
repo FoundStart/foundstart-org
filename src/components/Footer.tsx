@@ -111,12 +111,6 @@ const Footer = () => {
             <Link to="/terms-of-service" className="hover:text-foreground transition-colors">{L("Terms of Service", "شروط الخدمة")}</Link>
             <Link to="/cookie-policy" className="hover:text-foreground transition-colors">{L("Cookie Policy", "سياسة الكوكيز")}</Link>
           </div>
-
-          <div className="flex items-center">
-            <a href="https://launchbuff.com/products/foundstart-1mmzs2" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff">
-              <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="128" height="40" loading="lazy" className="opacity-80 hover:opacity-100 transition-opacity" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
