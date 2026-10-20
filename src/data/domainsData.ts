@@ -61,7 +61,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Expensol.com",
     "hosting": "Spaceship",
     "category": "Venture, Community & Brands",
-    "price": "1500",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://www.atom.com/name/Expensol"
   },
@@ -69,7 +69,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Keepence.com",
     "hosting": "UD",
     "category": "Fintech, SAAS",
-    "price": "1250",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/keepence.com"
   },
@@ -85,7 +85,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Uniqranks.com",
     "hosting": "UD",
     "category": "SaaS / SEO",
-    "price": "1250",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -125,7 +125,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Exitsme.com",
     "hosting": "UD",
     "category": "Startup / M&A",
-    "price": "5000",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/exitsme.com"
   },
@@ -133,7 +133,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Halalye.com",
     "hosting": "Spaceship",
     "category": "Food / Lifestyle",
-    "price": "5000",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://halalye.com"
   },
@@ -141,7 +141,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "NameLik.com",
     "hosting": "UD",
     "category": "Branding",
-    "price": "1500",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -157,7 +157,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Affillex.com",
     "hosting": "UD",
     "category": "Affiliate Marketing",
-    "price": "1250",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://affillex.com"
   },
@@ -165,7 +165,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "MoMoMob.com",
     "hosting": "UD",
     "category": "Mobile / Fintech",
-    "price": "1250",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/momomob.com"
   },
@@ -173,7 +173,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "MoMoNil.com",
     "hosting": "UD",
     "category": "Mobile / Fintech",
-    "price": "1250",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/momonil.com"
   },
@@ -189,7 +189,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Talaboo.com",
     "hosting": "UD",
     "category": "Grocery / Delivery",
-    "price": "1151",
+    "price": "400",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/talaboo.com"
   },
@@ -213,7 +213,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "MSA-serv.com",
     "hosting": "Hostinger",
     "category": "B2B / Services",
-    "price": "350",
+    "price": "2500",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -237,7 +237,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Deeemoz.shop",
     "hosting": "Spaceship",
     "category": "E-Commerce",
-    "price": "100",
+    "price": "150",
     "businessType": "Business",
     "buyUrl": "https://deeemoz.shop"
   },
@@ -253,7 +253,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "FoundVC.com",
     "hosting": "Spaceship",
     "category": "Venture, Community & Brands",
-    "price": "2500",
+    "price": "400",
     "businessType": "Domain",
     "buyUrl": "https://foundvc.com"
   },
@@ -493,7 +493,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Cloddi.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "250",
+    "price": "450",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/cloddi.com"
   },
@@ -693,7 +693,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "llmified.com",
     "hosting": "UD",
     "category": "LLM",
-    "price": "250",
+    "price": "400",
     "businessType": "Domain",
     "buyUrl": "https://www.atom.com/name/LLMified"
   },
@@ -989,7 +989,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Investicash.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "2500",
+    "price": "400",
     "businessType": "Domain",
     "buyUrl": "https://www.atom.com/name/Investicash"
   },
@@ -1045,7 +1045,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Afinya.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech, Affliate",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/afinya.com"
   },
@@ -1053,7 +1053,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "AppWebo.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://appwebo.com"
   },
@@ -1125,7 +1125,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Rewardial.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "2500",
+    "price": "400",
     "businessType": "Domain",
     "buyUrl": "https://www.atom.com/name/Rewardial"
   },
@@ -1165,7 +1165,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Chatelly.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://www.atom.com/name/Chatelly"
   },
@@ -1205,7 +1205,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Transacly.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://www.atom.com/name/Transacly"
   },
@@ -1213,7 +1213,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "VestaBroker.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/vestabroker.com"
   },
@@ -1237,7 +1237,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "ZohPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/zohpay.com"
   },
@@ -1317,7 +1317,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "MetaMany.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://metamany.com"
   },
@@ -1333,7 +1333,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Sellerizer.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "2500",
+    "price": "400",
     "businessType": "Domain",
     "buyUrl": "https://www.atom.com/name/Sellerizer"
   },
@@ -1341,7 +1341,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Shopeter.com",
     "hosting": "Spaceship",
     "category": "E-Commerce & Marketplaces",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://shopeter.com"
   },
@@ -1389,7 +1389,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "ZonFood.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech, Food",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/zonfood.com"
   },
@@ -1421,7 +1421,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Cryptalyzes.com",
     "hosting": "Spaceship",
     "category": "Venture, Community & Brands",
-    "price": "100",
+    "price": "150",
     "businessType": "Domain",
     "buyUrl": "https://cryptalyzes.com"
   },
@@ -1469,7 +1469,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Kufya.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces",
-    "price": "499",
+    "price": "500",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/kufya.com"
   },
@@ -1477,7 +1477,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Shortst.com",
     "hosting": "UD",
     "category": "SaaS / Links",
-    "price": "1250",
+    "price": "4500",
     "businessType": "Business",
     "buyUrl": ""
   },
