@@ -283,7 +283,7 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
   );
 
   const steps: [string, string][] = [
-    [t("1. Join", "1. انضم"), t("Create an account, apply, and get your personal link and code.", "اعمل حساب وقدّم طلبك واحصل على رابطك وكودك.")],
+    [t("1. Join", "1. انضم"), t("Create a free account. Your personal link and code are ready right away, no application.", "اعمل حساب مجاني. رابطك وكودك جاهزين فورا بدون تقديم.")],
     [t("2. Share", "2. شارك"), t("Share the link or the videos from your media kit. We count clicks and signups.", "شارك الرابط أو الفيديوهات من الميديا كيت. بنحسب النقرات والتسجيلات.")],
     [t("3. Earn", "3. اكسب"), t("You earn a commission on paid purchases from the people you refer. Payouts are reviewed and sent by us.", "بتكسب عمولة على مشتريات الناس اللي تحيلهم. السحب بنراجعه ونحوله بأنفسنا.")],
   ];
@@ -294,10 +294,10 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
   );
 
   const Join = (
-    <Card id="join"><CardHeader><CardTitle className="text-lg" dir={dir}>{t("Apply to join", "قدّم للانضمام")}</CardTitle></CardHeader><CardContent className="space-y-3" dir={dir}>
+    <Card id="join"><CardHeader><CardTitle className="text-lg" dir={dir}>{t("Join the affiliate program", "انضم لبرنامج الأفلييت")}</CardTitle></CardHeader><CardContent className="space-y-3" dir={dir}>
       {a.authLoading || me === undefined ? <div className="space-y-2"><p className="text-sm text-muted-foreground">{t("Loading...", "جاري التحميل...")}</p>{slow && <div className="flex gap-2 flex-wrap"><Button variant="outline" onClick={() => window.location.reload()}>{t("Reload", "إعادة تحميل")}</Button><Button onClick={a.goSignIn}>{t("Sign in / create account", "تسجيل الدخول / إنشاء حساب")}</Button></div>}</div> : loadErr ? <div className="space-y-2"><p className="text-sm text-red-600">{t("Could not load your account. Please try again.", "تعذر تحميل حسابك. حاول مرة أخرى.")}</p><Button variant="outline" onClick={load}>{t("Retry", "إعادة المحاولة")}</Button></div> : !a.user ? (
         <div className="space-y-3">
-          <p className="text-sm text-muted-foreground">{t(`Sign in to your ${a.site.name} account (or create one) to apply.`, `سجل دخولك في ${a.site.name} (أو اعمل حساب) للتقديم.`)}</p>
+          <p className="text-sm text-muted-foreground">{t(`Sign in or create a free ${a.site.name} account. Your affiliate link is ready instantly.`, `سجل دخولك أو اعمل حساب مجاني في ${a.site.name}. رابط الأفلييت بتاعك جاهز فورا.`)}</p>
           {a.emailSignIn ? (
             sent ? <p className="text-sm text-emerald-600">{t("Check your email for the sign-in link, then come back to this page.", "راجع إيميلك لرابط الدخول ثم ارجع لهذه الصفحة.")}</p> : (
               <div className="flex gap-2"><Input type="email" placeholder="you@example.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} dir="ltr" /><Button disabled={!/.+@.+\..+/.test(form.email) || busy} onClick={async () => { setBusy(true); try { await a.emailSignIn!(form.email.trim()); setSent(true); } catch { setMsg(t("Could not send the link.", "تعذر إرسال الرابط.")); } setBusy(false); }}>{t("Email me a link", "ابعتلي رابط")}</Button></div>
