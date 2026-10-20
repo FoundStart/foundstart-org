@@ -4,87 +4,90 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation, Navigate, useNavigationType } from "react-router-dom";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, lazy, Suspense } from "react";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/contexts/AuthProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 
 import Index from "./pages/Index";
-import Countries from "./pages/Countries";
-import CountryPage from "./pages/CountryPage";
-import DigitalServices from "./pages/DigitalServices";
-import Services from "./pages/Services";
-import Partners from "./pages/Partners";
+const Countries = lazy(() => import("./pages/Countries"));
+const CountryPage = lazy(() => import("./pages/CountryPage"));
+const DigitalServices = lazy(() => import("./pages/DigitalServices"));
+const Services = lazy(() => import("./pages/Services"));
+const Partners = lazy(() => import("./pages/Partners"));
 import Auth from "./pages/Auth";
-import DigitalPartners from "./pages/DigitalPartners";
-import FreelancerPartners from "./pages/FreelancerPartners";
-import SisterPartners from "./pages/SisterPartners";
-import Pricing from "./pages/Pricing";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import PremiumDomainsBlog from "./pages/blog/PremiumDomainsBlog";
-import PremiumDomainsShowcaseBlog from "./pages/blog/PremiumDomainsShowcaseBlog";
-import LLCFormationGuideBlog from "./pages/blog/LLCFormationGuideBlog";
-import UKvsUSFormationBlog from "./pages/blog/UKvsUSFormationBlog";
-import { BlogSlugDispatcher } from "./pages/blog/ArticleBlog";
-import PaymentGateways2026AR from "./pages/blog/PaymentGateways2026AR";
-import VibeCodingPlatforms2026AR from "./pages/blog/VibeCodingPlatforms2026AR";
-import FintechVirtualCards2026AR from "./pages/blog/FintechVirtualCards2026AR";
-import BusinessAutomation2026AR from "./pages/blog/BusinessAutomation2026AR";
-import BestCompanyFormation2026AR from "./pages/blog/BestCompanyFormation2026AR";
-import PremiumDomainsBlogAR from "./pages/blog/PremiumDomainsBlogAR";
-import PremiumDomainsShowcaseBlogAR from "./pages/blog/PremiumDomainsShowcaseBlogAR";
-import LLCFormationGuideBlogAR from "./pages/blog/LLCFormationGuideBlogAR";
-import UKvsUSFormationBlogAR from "./pages/blog/UKvsUSFormationBlogAR";
-import ArWrap from "./pages/blog/ArWrap";
-import EgyptOnePersonCompanyEN from "./pages/blog/EgyptOnePersonCompanyEN";
+const DigitalPartners = lazy(() => import("./pages/DigitalPartners"));
+const FreelancerPartners = lazy(() => import("./pages/FreelancerPartners"));
+const SisterPartners = lazy(() => import("./pages/SisterPartners"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const PremiumDomainsBlog = lazy(() => import("./pages/blog/PremiumDomainsBlog"));
+const PremiumDomainsShowcaseBlog = lazy(() => import("./pages/blog/PremiumDomainsShowcaseBlog"));
+const LLCFormationGuideBlog = lazy(() => import("./pages/blog/LLCFormationGuideBlog"));
+const UKvsUSFormationBlog = lazy(() => import("./pages/blog/UKvsUSFormationBlog"));
+const BlogSlugDispatcher = lazy(() => import("./pages/blog/ArticleBlog").then(m => ({ default: m.BlogSlugDispatcher })));
+const PaymentGateways2026AR = lazy(() => import("./pages/blog/PaymentGateways2026AR"));
+const VibeCodingPlatforms2026AR = lazy(() => import("./pages/blog/VibeCodingPlatforms2026AR"));
+const FintechVirtualCards2026AR = lazy(() => import("./pages/blog/FintechVirtualCards2026AR"));
+const BusinessAutomation2026AR = lazy(() => import("./pages/blog/BusinessAutomation2026AR"));
+const BestCompanyFormation2026AR = lazy(() => import("./pages/blog/BestCompanyFormation2026AR"));
+const PremiumDomainsBlogAR = lazy(() => import("./pages/blog/PremiumDomainsBlogAR"));
+const PremiumDomainsShowcaseBlogAR = lazy(() => import("./pages/blog/PremiumDomainsShowcaseBlogAR"));
+const LLCFormationGuideBlogAR = lazy(() => import("./pages/blog/LLCFormationGuideBlogAR"));
+const UKvsUSFormationBlogAR = lazy(() => import("./pages/blog/UKvsUSFormationBlogAR"));
+const ArWrap = lazy(() => import("./pages/blog/ArWrap"));
+const EgyptOnePersonCompanyEN = lazy(() => import("./pages/blog/EgyptOnePersonCompanyEN"));
 
-import MoMoAIBusinessSetupEN from "./pages/blog/MoMoAIBusinessSetupEN";
-import MoMoAIBusinessSetupAR from "./pages/blog/MoMoAIBusinessSetupAR";
-import Press from "./pages/Press";
-import Media from "./pages/Media";
-import Learning from "./pages/Learning";
-import Tutorials from "./pages/Tutorials";
-import ContactSales from "./pages/ContactSales";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import CookiePolicy from "./pages/CookiePolicy";
-import WhoWeAre from "./pages/WhoWeAre";
-import ContactUs from "./pages/ContactUs";
+const MoMoAIBusinessSetupEN = lazy(() => import("./pages/blog/MoMoAIBusinessSetupEN"));
+const MoMoAIBusinessSetupAR = lazy(() => import("./pages/blog/MoMoAIBusinessSetupAR"));
+const Press = lazy(() => import("./pages/Press"));
+const Media = lazy(() => import("./pages/Media"));
+const Learning = lazy(() => import("./pages/Learning"));
+const Tutorials = lazy(() => import("./pages/Tutorials"));
+const ContactSales = lazy(() => import("./pages/ContactSales"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
+const WhoWeAre = lazy(() => import("./pages/WhoWeAre"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
 import NotFound from "./pages/NotFound";
-import DigitalNomadVisas from "./pages/DigitalNomadVisas";
-import Domains from "./pages/Domains";
-import DomainInquiry from "./pages/DomainInquiry";
-import DomainWishlist from "./pages/DomainWishlist";
-import BulkDomainInquiry from "./pages/BulkDomainInquiry";
-import CustomerDashboard from "./pages/saas/CustomerDashboard";
-import Cofounder from "./pages/Cofounder";
-import Agents from "./pages/Agents";
-import AgentChat from "./pages/AgentChat";
-import GuidesIndex from "./pages/guides/GuidesIndex";
-import GuidePage from "./pages/guides/GuidePage";
-import AdminDashboard from "./pages/saas/AdminDashboard";
-import PricingCalculator from "./pages/PricingCalculator";
-import FAQ from "./pages/FAQ";
-import AllPartners from "./pages/AllPartners";
-import ResetPassword from "./pages/ResetPassword";
-import PartnerTrackingTest from "./pages/admin/PartnerTrackingTest";
-import AIChatBot from "./components/AIChatBot";
+const DigitalNomadVisas = lazy(() => import("./pages/DigitalNomadVisas"));
+const Domains = lazy(() => import("./pages/Domains"));
+const DomainInquiry = lazy(() => import("./pages/DomainInquiry"));
+const DomainWishlist = lazy(() => import("./pages/DomainWishlist"));
+const BulkDomainInquiry = lazy(() => import("./pages/BulkDomainInquiry"));
+const CustomerDashboard = lazy(() => import("./pages/saas/CustomerDashboard"));
+const Cofounder = lazy(() => import("./pages/Cofounder"));
+const Agents = lazy(() => import("./pages/Agents"));
+const AgentChat = lazy(() => import("./pages/AgentChat"));
+const GuidesIndex = lazy(() => import("./pages/guides/GuidesIndex"));
+const GuidePage = lazy(() => import("./pages/guides/GuidePage"));
+const AdminDashboard = lazy(() => import("./pages/saas/AdminDashboard"));
+const PricingCalculator = lazy(() => import("./pages/PricingCalculator"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const AllPartners = lazy(() => import("./pages/AllPartners"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword"));
+const PartnerTrackingTest = lazy(() => import("./pages/admin/PartnerTrackingTest"));
+const AIChatBot = lazy(() => import("./components/AIChatBot"));
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
-import PartnerAdsHub from "./components/ads/PartnerAdsHub";
+const PartnerAdsHub = lazy(() => import("./components/ads/PartnerAdsHub"));
 import OutboundUtmTagger from "./components/ads/OutboundUtmTagger";
 import HealthCheckBanner from "./components/HealthCheckBanner";
-import IntegrationSettings from "./pages/IntegrationSettings";
-import EgyptOnePersonCompanyAR from "./pages/blog/EgyptOnePersonCompanyAR";
-import BestCompanyFormation2026 from "./pages/blog/BestCompanyFormation2026";
-import BusinessAutomation2026 from "./pages/blog/BusinessAutomation2026";
-import FintechVirtualCards2026 from "./pages/blog/FintechVirtualCards2026";
-import VibeCodingPlatforms2026 from "./pages/blog/VibeCodingPlatforms2026";
-import PaymentGateways2026 from "./pages/blog/PaymentGateways2026";
-import CompanyFormationBio from "./pages/CompanyFormationBio";
+const IntegrationSettings = lazy(() => import("./pages/IntegrationSettings"));
+const EgyptOnePersonCompanyAR = lazy(() => import("./pages/blog/EgyptOnePersonCompanyAR"));
+const BestCompanyFormation2026 = lazy(() => import("./pages/blog/BestCompanyFormation2026"));
+const BusinessAutomation2026 = lazy(() => import("./pages/blog/BusinessAutomation2026"));
+const FintechVirtualCards2026 = lazy(() => import("./pages/blog/FintechVirtualCards2026"));
+const VibeCodingPlatforms2026 = lazy(() => import("./pages/blog/VibeCodingPlatforms2026"));
+const PaymentGateways2026 = lazy(() => import("./pages/blog/PaymentGateways2026"));
+const CompanyFormationBio = lazy(() => import("./pages/CompanyFormationBio"));
 import "./App.css";
-import { AffiliatesRoute, AffiliateAdminRoute, VideosRoute, AffiliateTrackerMount } from "@/affiliate/site";
+import { AffiliateTrackerMount } from "@/affiliate/site";
+const AffiliatesRoute = lazy(() => import("@/affiliate/site").then(m => ({ default: m.AffiliatesRoute })));
+const AffiliateAdminRoute = lazy(() => import("@/affiliate/site").then(m => ({ default: m.AffiliateAdminRoute })));
+const VideosRoute = lazy(() => import("@/affiliate/site").then(m => ({ default: m.VideosRoute })));
 
 const queryClient = new QueryClient();
 
@@ -158,7 +161,7 @@ function App() {
                 <AffiliateTrackerMount />
                 <AdSenseLoader />
                 <HealthCheckBanner />
-                <Routes>
+                <Suspense fallback={<div className="min-h-screen bg-background" />}><Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
                   <Route path="/country/:countryId" element={<CountryPage />} />
@@ -233,10 +236,10 @@ function App() {
                   <Route path="/admin/*" element={<AdminDashboard />} />
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
-                </Routes>
-                <ChatPageExclusions><AIChatBot /></ChatPageExclusions>
+                </Routes></Suspense>
+                <ChatPageExclusions><Suspense fallback={null}><AIChatBot /></Suspense></ChatPageExclusions>
                 <MobileBottomNav />
-                <PartnerPagesOnly><PartnerAdsHub /></PartnerPagesOnly>
+                <PartnerPagesOnly><Suspense fallback={null}><PartnerAdsHub /></Suspense></PartnerPagesOnly>
                 <OutboundUtmTagger />
               </AuthProvider>
             </BrowserRouter>

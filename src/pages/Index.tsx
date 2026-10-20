@@ -13,7 +13,8 @@ import HomeHowItWorks from '@/components/home/HomeHowItWorks';
 import HomeTwoOptions from '@/components/home/HomeTwoOptions';
 import HomeCTA from '@/components/home/HomeCTA';
 import HomeWhyChoose from '@/components/home/HomeWhyChoose';
-import HomeBlogCarousel from '@/components/home/HomeBlogCarousel';
+import { lazy, Suspense } from 'react';
+const HomeBlogCarousel = lazy(() => import('@/components/home/HomeBlogCarousel'));
 
 const Index = () => {
   const { t, isRTL, language } = useTranslation();
@@ -27,7 +28,7 @@ const Index = () => {
         <HomeTwoOptions language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />
         <HomeServices language={language} isRTL={isRTL} />
-        <HomeBlogCarousel />
+        <Suspense fallback={null}><HomeBlogCarousel /></Suspense>
 
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
           <div className="container mx-auto max-w-4xl">
