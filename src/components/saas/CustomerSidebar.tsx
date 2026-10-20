@@ -139,7 +139,11 @@ const CustomerSidebar = () => {
             variant="ghost"
             size="sm"
             className="justify-start"
-            onClick={async () => { await signOut(); window.location.replace('/'); }}
+            onClick={() => {
+              try { signOut().catch(() => {}); } catch {}
+              try { Object.keys(localStorage).filter(k => k.startsWith('sb-')).forEach(k => localStorage.removeItem(k)); } catch {}
+              setTimeout(() => window.location.replace('/'), 150);
+            }}
           >
             <LogOut className="mr-2 h-4 w-4" />
             {L('Sign Out', 'تسجيل الخروج')}

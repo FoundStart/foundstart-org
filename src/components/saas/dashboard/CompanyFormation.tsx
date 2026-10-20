@@ -61,11 +61,11 @@ const FormationWizard = () => {
   const selectedEntity = selectedCountry?.entities.find(e => e.code === formData.entityType);
 
   const handleNext = () => {
-    if (currentStep < 5) setCurrentStep(currentStep + 1);
+    if (currentStep < 5) setCurrentStep(currentStep === 3 ? 5 : currentStep + 1);
   };
 
   const handleBack = () => {
-    if (currentStep > 1) setCurrentStep(currentStep - 1);
+    if (currentStep > 1) setCurrentStep(currentStep === 5 ? 3 : currentStep - 1);
   };
 
   const addOwner = () => {
@@ -95,27 +95,41 @@ const FormationWizard = () => {
 
   const calculateTotal = () => {
     const basePrice = selectedEntity?.price ?? 0;
-    const addonsTotal = addons
-      .filter(a => formData.addons.includes(a.id))
-      .reduce((sum, a) => sum + a.price, 0);
+    const addonsTotal = 0;
     return basePrice + addonsTotal;
   };
 
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      const { data, error } = await supabase.functions.invoke('create-formation-order', {
-        body: {
-          country: formData.country,
-          entityType: formData.entityType,
-          companyName: formData.companyName,
-          businessAddress: formData.businessAddress,
-          businessDescription: formData.businessDescription,
-          owners: formData.owners,
-          addons: formData.addons,
-        },
-      });
-      if (error) throw error;
+      const withTimeout = <T,>(p: Promise<T>, ms: number) => Promise.race([p, new Promise<T>((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]);
+      let token: string | undefined;
+      try { token = (await withTimeout(supabase.auth.getSession(), 8000)).data.session?.access_token; } catch {}
+      if (!token) {
+        try { Object.keys(localStorage).filter(k => k.startsWith('sb-')).forEach(k => { const v = JSON.parse(localStorage.getItem(k) || '{}'); if (v?.access_token) token = v.access_token; }); } catch {}
+      }
+      if (!token) throw new Error(L('Your session expired. Please sign in again.', 'انتهت الجلسة. سجل الدخول مرة أخرى.'));
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 30000);
+      let data: any;
+      try {
+        const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-formation-order`, {
+          method: 'POST',
+          signal: ctrl.signal,
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY },
+          body: JSON.stringify({
+            country: formData.country,
+            entityType: formData.entityType,
+            companyName: formData.companyName,
+            businessAddress: formData.businessAddress,
+            businessDescription: formData.businessDescription,
+            owners: formData.owners,
+            addons: [],
+          }),
+        });
+        data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data?.error || data?.message || `HTTP ${res.status}`);
+      } finally { clearTimeout(timer); }
       if (data?.paymentUrl) {
         window.location.href = data.paymentUrl;
         return;
@@ -142,7 +156,7 @@ const FormationWizard = () => {
 
       {/* Progress Steps */}
       <div className="flex items-center justify-between">
-        {steps.map((step, index) => (
+        {steps.filter(st => st.id !== 4).map((step, index) => (
           <React.Fragment key={step.id}>
             <div className="flex flex-col items-center">
               <div
@@ -160,7 +174,7 @@ const FormationWizard = () => {
               </div>
               <span className="mt-2 text-xs font-medium hidden sm:block">{L(step.title, ({ Country: 'الدولة', 'Entity Type': 'نوع الكيان', 'Business Details': 'بيانات النشاط', 'Add-ons': 'إضافات', 'Review & Pay': 'مراجعة ودفع' } as Record<string,string>)[step.title])}</span>
             </div>
-            {index < steps.length - 1 && (
+            {index < steps.length - 2 && (
               <div className={`h-0.5 flex-1 mx-2 ${currentStep > step.id ? 'bg-primary' : 'bg-muted'}`} />
             )}
           </React.Fragment>
