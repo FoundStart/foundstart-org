@@ -64,6 +64,7 @@ const PricingCalculator = lazy(() => import("./pages/PricingCalculator"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const BusinessNameGenerator = lazy(() => import("./pages/BusinessNameGenerator"));
 const AllPartners = lazy(() => import("./pages/AllPartners"));
+const PartnerDetail = lazy(() => import("./pages/PartnerDetail"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const PartnerTrackingTest = lazy(() => import("./pages/admin/PartnerTrackingTest"));
 const FormationHelper = lazy(() => import("./components/FormationHelper"));
@@ -138,7 +139,7 @@ const ChatPageExclusions = ({ children, hideOnDashboard = false }: { children: R
 // Partner ads belong to the standalone partner pages only, not the main FoundStart flow.
 const PartnerPagesOnly = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
-  const on = ['/all-partners', '/partners', '/digital-partners', '/freelancer-partners', '/sister-partners'].some(p => pathname === p || pathname.startsWith(p + '/'));
+  const on = ['/all-partners', '/partner', '/partners', '/digital-partners', '/freelancer-partners', '/sister-partners'].some(p => pathname === p || pathname.startsWith(p + '/'));
   return on ? <>{children}</> : null;
 };
 
@@ -166,6 +167,7 @@ function App() {
                   <Route path="/digital-services" element={<DigitalServices />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/all-partners" element={<AllPartners />} />
+                  <Route path="/partner/:slug" element={<PartnerDetail />} />
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/pricing-calculator" element={<PricingCalculator />} />
                   <Route path="/auth" element={<Auth />} />
