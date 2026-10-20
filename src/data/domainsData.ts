@@ -1362,14 +1362,6 @@ const raw: Omit<Domain, 'id'>[] = [
     "buyUrl": "https://unstoppabledomains.com/d/stremion.com"
   },
   {
-    "name": "Tradoq.com",
-    "hosting": "UD",
-    "category": "E-Commerce & Marketplaces",
-    "price": "100",
-    "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/tradoq.com"
-  },
-  {
     "name": "Transationser.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
