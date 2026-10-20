@@ -81,7 +81,7 @@ const DomainWishlistMobile = () => {
               </p>
               <div className="flex flex-col gap-3">
                 <Button asChild size="lg" className="h-12">
-                  <Link to="/auth">Sign In</Link>
+                  <Link to="/auth?mode=signin">Sign In</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild className="h-12">
                   <Link to="/domains">

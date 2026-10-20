@@ -59,11 +59,11 @@ const AuthButton = () => {
   return (
     <div className="flex items-center space-x-2">
       <Button variant="ghost" size="sm" asChild>
-        <Link to="/auth">Sign In</Link>
+        <Link to="/auth?mode=signin">Sign In</Link>
       </Button>
       {SHOW_REGISTRATION && (
         <Button size="sm" asChild>
-          <Link to="/auth">Get Started</Link>
+          <Link to="/auth">Register Free</Link>
         </Button>
       )}
     </div>

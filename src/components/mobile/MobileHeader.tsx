@@ -57,7 +57,7 @@ const MobileHeader = ({ title, showBack = false }: MobileHeaderProps) => {
               asChild
               className="touch-manipulation"
             >
-              <Link to="/auth">Sign In</Link>
+              <Link to="/auth?mode=signin">Sign In</Link>
             </Button>
           )}
         </div>

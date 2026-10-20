@@ -2,10 +2,12 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Globe, Briefcase, Globe2, UserPlus, BookOpen } from 'lucide-react';
 import { SHOW_REGISTRATION } from '@/config/features';
+import { useAuth } from '@/contexts/AuthProvider';
 import { cn } from '@/lib/utils';
 
 const MobileBottomNav = () => {
   const location = useLocation();
+  const { user } = useAuth();
 
   const navItems = [
     { 
@@ -33,7 +35,7 @@ const MobileBottomNav = () => {
       isActive: location.pathname.startsWith('/services')
     },
     SHOW_REGISTRATION
-      ? { icon: UserPlus, label: 'Register', href: '/auth', isActive: location.pathname === '/auth' }
+      ? (user ? { icon: Briefcase, label: 'Dashboard', href: '/dashboard', isActive: location.pathname.startsWith('/dashboard') } : { icon: UserPlus, label: 'Register', href: '/auth', isActive: location.pathname === '/auth' })
       : { icon: BookOpen, label: 'Blog', href: '/blog', isActive: location.pathname.startsWith('/blog') },
   ];
 

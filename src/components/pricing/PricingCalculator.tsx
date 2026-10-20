@@ -311,7 +311,7 @@ const PricingCalculator: React.FC = () => {
                     {!user && (
                       <p className="text-xs text-center text-muted-foreground mt-2">
                         Already have an account?{' '}
-                        <Link to="/auth" className="text-primary hover:underline">Sign in</Link>
+                        <Link to="/auth?mode=signin" className="text-primary hover:underline">Sign in</Link>
                       </p>
                     )}
                   </>

@@ -200,7 +200,7 @@ const AgentChat = () => {
               <p className="mx-auto mb-6 max-w-md text-muted-foreground">{s.signInBody}</p>
               <div className="flex justify-center gap-3">
                 <Button asChild>
-                  <Link to="/auth">{s.signIn}</Link>
+                  <Link to="/auth?mode=signin">{s.signIn}</Link>
                 </Button>
                 {SHOW_REGISTRATION && (<Button variant="outline" asChild><Link to="/auth">{s.getStarted}</Link></Button>)}
               </div>
