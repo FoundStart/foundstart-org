@@ -17,7 +17,8 @@ const DepositForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const paymentMethods = [
-    { id: 'lemonsqueezy', name: 'Credit/Debit Card', icon: CreditCard, fee: 'card fees apply' }
+    { id: 'stripe', name: 'Credit/Debit Card (Stripe)', icon: CreditCard, fee: 'card fees apply' },
+    { id: 'lemonsqueezy', name: 'Credit/Debit Card (Lemon Squeezy)', icon: CreditCard, fee: 'card fees apply' }
   ];
 
   const handleDeposit = async () => {
@@ -42,8 +43,9 @@ const DepositForm = () => {
     setIsLoading(true);
 
     try {
-      // Lemon Squeezy hosted checkout (card payments)
-      const { data, error } = await supabase.functions.invoke('ls-create-payment', {
+      // Hosted card checkout via the selected provider (Stripe or Lemon Squeezy)
+      const fnName = paymentMethod === 'stripe' ? 'stripe-create-payment' : 'ls-create-payment';
+      const { data, error } = await supabase.functions.invoke(fnName, {
         body: {
           amount: parseFloat(amount),
           currency: 'USD',
