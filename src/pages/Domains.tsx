@@ -75,7 +75,7 @@ const Domains = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pb-20 md:pb-0">
+      <main className="pb-0">
         <PageHero
           title={t.domainHubTitle}
           highlight={t.domainHubHighlight}

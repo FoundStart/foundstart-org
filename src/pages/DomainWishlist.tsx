@@ -34,7 +34,7 @@ const DomainWishlist = () => {
     return (
       <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
         <Header />
-        <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+        <main className="flex-1 pt-20 pb-12 md:pt-24">
           <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto text-center">
             <div className="animate-pulse">Loading...</div>
           </div>
@@ -48,7 +48,7 @@ const DomainWishlist = () => {
     return (
       <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
         <Header />
-        <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+        <main className="flex-1 pt-20 pb-12 md:pt-24">
           <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto md:max-w-2xl">
             <Card className="text-center">
               <CardContent className="pt-12 pb-8">
@@ -82,7 +82,7 @@ const DomainWishlist = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background w-full max-w-full overflow-x-hidden">
       <Header />
-      <main className="flex-1 pt-20 pb-24 md:pt-24 md:pb-12">
+      <main className="flex-1 pt-20 pb-12 md:pt-24">
         <div className="w-full max-w-full px-3 sm:px-4 md:container md:mx-auto">
           <Link
             to="/domains" 

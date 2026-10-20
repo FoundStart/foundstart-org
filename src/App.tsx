@@ -71,7 +71,6 @@ import AllPartners from "./pages/AllPartners";
 import ResetPassword from "./pages/ResetPassword";
 import PartnerTrackingTest from "./pages/admin/PartnerTrackingTest";
 import AIChatBot from "./components/AIChatBot";
-import MobileBottomNav from "./components/mobile/MobileBottomNav";
 import PartnerAdsHub from "./components/ads/PartnerAdsHub";
 import OutboundUtmTagger from "./components/ads/OutboundUtmTagger";
 import HealthCheckBanner from "./components/HealthCheckBanner";
@@ -220,7 +219,6 @@ function App() {
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <ChatPageExclusions><AIChatBot /></ChatPageExclusions>
-                <MobileBottomNav />
                 <ChatPageExclusions hideOnDashboard><PartnerAdsHub /></ChatPageExclusions>
                 <OutboundUtmTagger />
               </AuthProvider>
