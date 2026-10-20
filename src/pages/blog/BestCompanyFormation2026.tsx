@@ -7,7 +7,7 @@ import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Calendar, User, Clock, ExternalLink, CheckCircle, Globe } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, ExternalLink, CheckCircle, Globe, Ticket } from 'lucide-react';
 
 const TITLE = 'How to Get the Best Company Formation for Your Online Business in 2026';
 const DESCRIPTION =
