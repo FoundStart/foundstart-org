@@ -101,7 +101,7 @@ const DashboardHome = () => {
     { icon: Building2, label: 'Form a Company', link: '/dashboard/formation', gradient: 'from-blue-500 to-indigo-600' },
     { icon: ShoppingCart, label: 'Browse Services', link: '/dashboard/services', gradient: 'from-emerald-500 to-green-600' },
     { icon: Bot, label: 'AI Assistant', link: '/dashboard/ai-assistant', gradient: 'from-violet-500 to-purple-600' },
-    { icon: Globe, label: 'Domains', link: '/domains', gradient: 'from-cyan-500 to-blue-600' },
+    { icon: Globe, label: 'Domains', link: '/dashboard/domains', gradient: 'from-cyan-500 to-blue-600' },
     { icon: Wallet, label: 'Wallet', link: '/dashboard/wallet', gradient: 'from-amber-500 to-orange-600' },
     { icon: ArrowRight, label: 'Get Support', link: '/dashboard/support', gradient: 'from-rose-500 to-pink-600' },
   ];

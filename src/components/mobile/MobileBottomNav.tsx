@@ -33,6 +33,8 @@ const MobileBottomNav = () => {
       : { icon: BookOpen, label: 'Blog', href: '/blog', isActive: location.pathname.startsWith('/blog') },
   ];
 
+  if (location.pathname.startsWith('/dashboard')) return null;
+
   return (
     <nav 
       className="lg:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-lg border-t border-border z-50 safe-area-bottom"

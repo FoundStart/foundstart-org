@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -112,9 +113,11 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
           </div>
 
           <div className="text-center pt-6">
-            <Button size="lg" className="hover-scale group" onClick={() => country.ctaUrl && window.open(country.ctaUrl, '_blank')}>
-              Start Formation in {country.name}
-              <ExternalLink className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
+            <Button size="lg" className="hover-scale group" asChild>
+              <Link to={`/country/${country.id.toLowerCase()}`}>
+                Start Formation in {country.name}
+                <ExternalLink className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
+              </Link>
             </Button>
           </div>
         </CardContent>

@@ -12,6 +12,7 @@ import { ArrowRight, ExternalLink, Search, ArrowLeft, Building, Globe, Link2 } f
 import { partnerData } from '@/data/jurisdictionData';
 import { countriesData } from '@/data/countriesData';
 import { Link } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthProvider';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import VideoThumbnail from '@/components/VideoThumbnail';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -21,6 +22,7 @@ const Countries = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const { t, isRTL } = useTranslation();
+  const { user } = useAuth();
 
   const selectedCountryData = countriesData.find(c => c.id === selectedCountry) || countriesData[0];
 
@@ -128,9 +130,11 @@ const Countries = () => {
                     </div>
 
                     <div className="text-center">
-                      <Button size="lg" onClick={() => selectedCountryData.ctaUrl && window.open(selectedCountryData.ctaUrl, '_blank')}>
-                        Start Formation in {selectedCountryData.name}
-                        <ArrowRight className="w-5 h-5 ml-2" />
+                      <Button size="lg" asChild>
+                        <Link to={user ? `/dashboard/formation?country=${selectedCountryData.id.toLowerCase()}` : '/auth'} state={{ redirectTo: `/dashboard/formation?country=${selectedCountryData.id.toLowerCase()}` }}>
+                          Start Formation in {selectedCountryData.name}
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>

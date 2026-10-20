@@ -180,6 +180,7 @@ const FormationWizard = () => {
                   <Label
                     key={country.code}
                     htmlFor={country.code}
+                    onClick={() => setFormData(f => ({ ...f, country: country.code, entityType: f.country === country.code ? f.entityType : '' }))}
                     className={`flex cursor-pointer items-center gap-3 rounded-lg border-2 p-4 transition-colors ${
                       formData.country === country.code
                         ? 'border-primary bg-primary/5'
@@ -217,6 +218,7 @@ const FormationWizard = () => {
                   <Label
                     key={entity.code}
                     htmlFor={entity.code}
+                    onClick={() => setFormData(f => ({ ...f, entityType: entity.code }))}
                     className={`flex cursor-pointer flex-col gap-2 rounded-lg border-2 p-4 transition-colors ${
                       formData.entityType === entity.code
                         ? 'border-primary bg-primary/5'
