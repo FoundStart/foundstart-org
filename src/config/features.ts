@@ -2,4 +2,4 @@
 export const SHOW_REGISTRATION = true;
 
 // Flip to true once the Google provider (client id + secret) is enabled in the FoundStart Supabase project.
-export const GOOGLE_AUTH_ENABLED = false;
+export const GOOGLE_AUTH_ENABLED = true;
