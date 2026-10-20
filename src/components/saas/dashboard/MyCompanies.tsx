@@ -68,6 +68,7 @@ const MyCompanies = () => {
     enabled: !!user?.id,
   });
 
+  const effStatus = (c: any) => (c.formation_status && c.formation_status !== 'draft' ? c.formation_status : (c.status && c.status !== 'draft' ? c.status : 'submitted'));
   const getStatusBadge = (status: string | null) => {
     const statusConfig: Record<string, { variant: 'default' | 'secondary' | 'destructive' | 'outline'; label: string }> = {
       draft: { variant: 'outline', label: L('Draft','مسودة') },
@@ -183,7 +184,7 @@ const MyCompanies = () => {
                       <TableCell>
                         <span className="uppercase text-sm">{company.entity_type || company.company_type || '-'}</span>
                       </TableCell>
-                      <TableCell>{getStatusBadge(company.formation_status && company.formation_status !== 'draft' ? company.formation_status : (company.status && company.status !== 'draft' ? company.status : 'submitted'))}</TableCell>
+                      <TableCell>{getStatusBadge(effStatus(company))}</TableCell>
                       <TableCell>
                         {company.created_at ? format(new Date(company.created_at), 'MMM d, yyyy') : '-'}
                       </TableCell>
@@ -239,7 +240,7 @@ const MyCompanies = () => {
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">
-                {companies.filter(c => c.formation_status === 'completed').length}
+                {companies.filter(c => effStatus(c) === 'completed').length}
               </div>
               <p className="text-sm text-muted-foreground">{L('Active', 'نشطة')}</p>
             </CardContent>
@@ -247,7 +248,7 @@ const MyCompanies = () => {
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">
-                {companies.filter(c => c.formation_status === 'in_progress').length}
+                {companies.filter(c => effStatus(c) === 'in_progress').length}
               </div>
               <p className="text-sm text-muted-foreground">{L('In Progress', 'قيد التنفيذ')}</p>
             </CardContent>
@@ -255,9 +256,9 @@ const MyCompanies = () => {
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">
-                {companies.filter(c => c.formation_status === 'draft').length}
+                {companies.filter(c => effStatus(c) === 'submitted').length}
               </div>
-              <p className="text-sm text-muted-foreground">{L('Drafts', 'مسودات')}</p>
+              <p className="text-sm text-muted-foreground">{L('Submitted', 'تم الإرسال')}</p>
             </CardContent>
           </Card>
         </div>
