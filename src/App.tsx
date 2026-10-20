@@ -157,7 +157,7 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/digital-services" element={<DigitalServices />} />
                   <Route path="/partners" element={<Partners />} />
-                  <Route path="/all-partners" element={<AllPartners />} />
+                  <Route path="/all-partners" element={<Navigate to="/countries" replace />} />
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/pricing-calculator" element={<PricingCalculator />} />
                   <Route path="/auth" element={<Auth />} />

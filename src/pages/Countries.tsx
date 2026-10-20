@@ -63,14 +63,6 @@ const Countries = () => {
             </div>
 
             <Tabs defaultValue="countries" className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-                <TabsTrigger value="countries" className="flex items-center gap-2">
-                  <Globe className="w-4 h-4" />Jurisdictions
-                </TabsTrigger>
-                <TabsTrigger value="partners" className="flex items-center gap-2">
-                  <Building className="w-4 h-4" />All Partners
-                </TabsTrigger>
-              </TabsList>
 
               <TabsContent value="countries">
                 {/* Country Selector */}
@@ -195,63 +187,6 @@ const Countries = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="partners">
-                {/* Search and Filter */}
-                <div className="flex flex-col md:flex-row gap-4 mb-8">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                    <Input placeholder="Search partners..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-10" />
-                  </div>
-                  <div className="flex gap-2 flex-wrap">
-                    {categories.map((cat) => (
-                      <Button key={cat} variant={selectedCategory === cat ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(cat)}>
-                        {cat}
-                      </Button>
-                    ))}
-                  </div>
-                </div>
-
-                <Badge variant="outline" className="mb-6 block w-fit mx-auto text-sm px-4 py-1">
-                  {filteredPartners.length} Partners Found
-                </Badge>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredPartners.map((partner, index) => (
-                    <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <CardHeader className="pb-4">
-                        <div className="flex items-center justify-between">
-                          <CardTitle className="text-lg">{partner.platform}</CardTitle>
-                          <Badge variant="secondary">{partner.category}</Badge>
-                        </div>
-                        {(partner as any).coupon && (
-                          <Badge variant="destructive" className="text-xs w-fit">Coupon: {(partner as any).coupon}</Badge>
-                        )}
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground mb-4">{partner.details}</p>
-                        <div className="flex flex-col gap-2">
-                          <Button className="w-full group" onClick={() => window.open(partner.url, '_blank')}>
-                            Visit {partner.platform}
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                          {(partner as any).videoUrl && (
-                            <Button variant="outline" className="w-full" onClick={() => window.open((partner as any).videoUrl, '_blank')}>
-                              Watch Demo
-                            </Button>
-                          )}
-                          <WhatsAppButton variant="outline" className="w-full" />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                {filteredPartners.length === 0 && (
-                  <div className="text-center py-12">
-                    <p className="text-muted-foreground">No partners found.</p>
-                  </div>
-                )}
-              </TabsContent>
             </Tabs>
           </div>
         </section>
