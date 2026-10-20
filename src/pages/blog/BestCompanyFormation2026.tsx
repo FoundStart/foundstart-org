@@ -228,7 +228,7 @@ const BestCompanyFormation2026: React.FC = () => {
               <ul>
                 <li><strong>Wyoming vs. Delaware:</strong> Delaware is better for VC-backed startups; Wyoming is better for bootstrapped founders who want privacy and zero state income tax.</li>
                 <li><strong>UK + US combo:</strong> Many MENA founders form both a UK Ltd and a US LLC..</li>
-                <li><strong>Estonia e-Residency:</strong> Apply for your card first (€100–120), then form your OÜ through 1office. Timing depends on the registry.</li>
+                <li><strong>Estonia e-Residency:</strong> Apply for your card first, then register your company online in the Estonian e-Business Register. You also need a legal address or a licensed contact person service. Check current fees and timing on the official e-Residency site.</li>
                 <li><strong>Use coupons:</strong> The ITIN service includes a <code>SAYED50</code> coupon for 50% off — always check for active promo codes.</li>
                 <li><strong>Annual compliance matters:</strong> Budget $0–$300/year for ongoing compliance.</li>
               </ul>
