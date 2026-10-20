@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Building, TrendingUp, Users, Globe, ExternalLink, CheckCircle, Handshake, CreditCard } from 'lucide-react';
+import { getCountryVideoUrl } from '@/data/countryVideos';
 import VideoThumbnail from '@/components/VideoThumbnail';
 import EgyptCountryDetails from '@/components/countries/EgyptCountryDetails';
 import { waEgyptLink } from '@/lib/whatsapp';
@@ -94,10 +95,10 @@ const CountryPage = () => {
               </CardContent>
             </Card>
 
-            {country.videoUrl && (
+            {getCountryVideoUrl(country.id, isRTL, country.videoUrl) && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-4 text-center">Watch Formation Demo</h2>
-                <VideoThumbnail videoUrl={country.videoUrl} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />
+                <h2 className="text-2xl font-bold mb-4 text-center">{isRTL ? 'شاهد فيديو التأسيس' : 'Watch Formation Demo'}</h2>
+                <VideoThumbnail videoUrl={getCountryVideoUrl(country.id, isRTL, country.videoUrl)!} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />
               </div>
             )}
 
