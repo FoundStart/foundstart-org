@@ -1,5 +1,5 @@
 // Formation catalog mirrored by the create-formation-order edge function (server is the source of truth for prices).
-// Prices are FoundStart service fees in USD. Government/notary fees are separate and confirmed per order.
+// Prices are FoundStart service fees in USD, set at the highest partner price per country + 25% (Oct 2026 research). Egypt confirmed by owner. Government/notary fees are separate and confirmed per order.
 export interface FormationEntity {
   code: string;
   name: string;
@@ -28,19 +28,19 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'usa', name: 'United States', flag: '🇺🇸',
     entities: [
-      { code: 'llc', name: 'LLC', price: 299, requirements: [
+      { code: 'llc', name: 'LLC', price: 1375, requirements: [
         'Valid passport or ID for each owner',
         'No US residency or citizenship required',
         'Registered agent in the formation state (available as add-on)',
         'Operating agreement recommended (available as add-on)',
       ] },
-      { code: 'c_corp', name: 'C-Corporation', price: 299, requirements: [
+      { code: 'c_corp', name: 'C-Corporation', price: 1375, requirements: [
         'Valid passport or ID for each founder',
         'No US residency or citizenship required',
         'Registered agent in the formation state (available as add-on)',
         'Bylaws and initial board resolutions prepared for you',
       ] },
-      { code: 's_corp', name: 'S-Corporation', price: 299, requirements: [
+      { code: 's_corp', name: 'S-Corporation', price: 1375, requirements: [
         'All shareholders must be US citizens or permanent residents',
         'Maximum 100 shareholders, one class of stock',
         'IRS Form 2553 election filed after formation',
@@ -51,13 +51,13 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'uk', name: 'United Kingdom', flag: '🇬🇧',
     entities: [
-      { code: 'ltd', name: 'LTD', price: 199, requirements: [
+      { code: 'ltd', name: 'LTD', price: 500, requirements: [
         'At least 1 director and 1 shareholder (can be the same person)',
         'Valid passport or ID',
         'UK registered office address (we can provide)',
         'No UK residency requirement',
       ] },
-      { code: 'llp', name: 'LLP', price: 199, requirements: [
+      { code: 'llp', name: 'LLP', price: 500, requirements: [
         'At least 2 designated members',
         'Valid passport or ID for each member',
         'UK registered office address (we can provide)',
@@ -68,7 +68,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'ca', name: 'Canada', flag: '🇨🇦',
     entities: [
-      { code: 'corp', name: 'Corporation', price: 399, requirements: [
+      { code: 'corp', name: 'Corporation', price: 700, requirements: [
         'At least 1 director',
         'Valid passport or ID',
         'Canadian registered address (we can provide)',
@@ -79,7 +79,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'ee', name: 'Estonia', flag: '🇪🇪',
     entities: [
-      { code: 'ou', name: 'OÜ', price: 300, requirements: [
+      { code: 'ou', name: 'OÜ', price: 335, requirements: [
         'Valid passport',
         'Estonian e-Residency card, or notarized documents via power of attorney',
         'Estonian legal address and licensed contact person (we provide)',
@@ -90,7 +90,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'fi', name: 'Finland', flag: '🇫🇮',
     entities: [
-      { code: 'oy', name: 'Oy', price: 350, requirements: [
+      { code: 'oy', name: 'Oy', price: 530, requirements: [
         'Valid passport or ID',
         'Registered address in Finland (we can provide)',
         'At least 1 board member',
@@ -101,7 +101,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'se', name: 'Sweden', flag: '🇸🇪',
     entities: [
-      { code: 'ab', name: 'AB', price: 350, requirements: [
+      { code: 'ab', name: 'AB', price: 575, requirements: [
         'Valid passport or ID',
         'Registered address in Sweden (we can provide)',
         'Minimum share capital SEK 25,000',
@@ -112,7 +112,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'lv', name: 'Latvia', flag: '🇱🇻',
     entities: [
-      { code: 'sia', name: 'SIA', price: 250, requirements: [
+      { code: 'sia', name: 'SIA', price: 1610, requirements: [
         'Valid passport or ID',
         'Legal address in Latvia (we can provide)',
         'At least 1 shareholder and 1 board member',
@@ -123,7 +123,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'lt', name: 'Lithuania', flag: '🇱🇹',
     entities: [
-      { code: 'uab', name: 'UAB', price: 280, requirements: [
+      { code: 'uab', name: 'UAB', price: 1610, requirements: [
         'Valid passport or ID',
         'Registered address in Lithuania (we can provide)',
         'At least 1 shareholder and 1 director',
@@ -134,7 +134,7 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'ie', name: 'Ireland', flag: '🇮🇪',
     entities: [
-      { code: 'ltd', name: 'LTD', price: 350, requirements: [
+      { code: 'ltd', name: 'LTD', price: 1215, requirements: [
         'At least 1 director and 1 company secretary',
         'EEA-resident director, or a surety bond (we arrange)',
         'Registered office in Ireland (we can provide)',

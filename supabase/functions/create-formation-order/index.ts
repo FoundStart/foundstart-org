@@ -7,38 +7,38 @@ const corsHeaders = {
 };
 const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { ...corsHeaders, "Content-Type": "application/json" } });
 
-// Provisional formation service fees (USD) per country + entity type, pending owner confirmation.
+// Formation service fees (USD) per country + entity type: highest listed partner price per country + 25% (owner instruction, Oct 2026). Egypt prices confirmed by owner.
 // Government/notary fees are separate and confirmed per order (noted on the site for Egypt).
 const COUNTRIES: Record<string, { name: string; entities: Record<string, { name: string; price: number }> }> = {
   usa: { name: "United States", entities: {
-    llc: { name: "LLC", price: 299 },
-    c_corp: { name: "C-Corporation", price: 299 },
-    s_corp: { name: "S-Corporation", price: 299 },
+    llc: { name: "LLC", price: 1375 },
+    c_corp: { name: "C-Corporation", price: 1375 },
+    s_corp: { name: "S-Corporation", price: 1375 },
   } },
   uk: { name: "United Kingdom", entities: {
-    ltd: { name: "LTD", price: 199 },
-    llp: { name: "LLP", price: 199 },
+    ltd: { name: "LTD", price: 500 },
+    llp: { name: "LLP", price: 500 },
   } },
   ca: { name: "Canada", entities: {
-    corp: { name: "Corporation", price: 399 },
+    corp: { name: "Corporation", price: 700 },
   } },
   ee: { name: "Estonia", entities: {
-    ou: { name: "OU", price: 300 },
+    ou: { name: "OU", price: 335 },
   } },
   fi: { name: "Finland", entities: {
-    oy: { name: "Oy", price: 350 },
+    oy: { name: "Oy", price: 530 },
   } },
   se: { name: "Sweden", entities: {
-    ab: { name: "AB", price: 350 },
+    ab: { name: "AB", price: 575 },
   } },
   lv: { name: "Latvia", entities: {
-    sia: { name: "SIA", price: 250 },
+    sia: { name: "SIA", price: 1610 },
   } },
   lt: { name: "Lithuania", entities: {
-    uab: { name: "UAB", price: 280 },
+    uab: { name: "UAB", price: 1610 },
   } },
   ie: { name: "Ireland", entities: {
-    ltd: { name: "LTD", price: 350 },
+    ltd: { name: "LTD", price: 1215 },
   } },
   eg: { name: "Egypt", entities: {
     sole_est: { name: "Sole Establishment", price: 249 },
