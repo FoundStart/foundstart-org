@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Building2, Plus, Eye, FileText, MoreVertical, Loader2 } from 'lucide-react';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
+import { startOrderPayment } from '@/lib/payOrder';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { format } from 'date-fns';
 
@@ -24,30 +25,15 @@ const MyCompanies = () => {
   const { data: unpaid = [] } = useQuery({
     queryKey: ['unpaid-orders', user?.id],
     queryFn: async () => {
-      const { data } = await supabase.from('orders').select('id, total_price, created_at, metadata').eq('user_id', user!.id).eq('order_type', 'company_formation').eq('status', 'pending').order('created_at', { ascending: false }).limit(3);
+      const { data } = await supabase.from('orders').select('id, company_id, total_price, created_at, metadata').eq('user_id', user!.id).eq('order_type', 'company_formation').eq('status', 'pending').order('created_at', { ascending: false });
       return (data || []) as any[];
     },
     enabled: !!user?.id,
   });
   const payNow = async (o: any) => {
     setPaying(o.id);
-    try {
-      const { data: sess } = await supabase.auth.getSession();
-      const token = sess.session?.access_token;
-      if (!token) throw new Error(L('Your session expired. Please sign in again.', 'انتهت الجلسة. سجل الدخول مرة أخرى.'));
-      const m = o.metadata || {};
-      const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-formation-order`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY },
-        body: JSON.stringify({ country: m.country, entityType: m.entityType, companyName: m.companyName, businessAddress: m.businessAddress, businessDescription: m.businessDescription, owners: m.owners || [], addons: [] }),
-      });
-      const d = await res.json().catch(() => ({}));
-      if (!res.ok || !d?.paymentUrl) throw new Error(d?.error || `HTTP ${res.status}`);
-      window.location.href = d.paymentUrl;
-    } catch (e: any) {
-      toast({ title: L('Could not start payment', 'تعذر بدء الدفع'), description: e?.message, variant: 'destructive' });
-      setPaying(null);
-    }
+    try { await startOrderPayment(o, L('Your session expired. Please sign in again.', 'انتهت الجلسة. سجل الدخول مرة أخرى.')); }
+    catch (e: any) { toast({ title: L('Could not start payment', 'تعذر بدء الدفع'), description: e?.message, variant: 'destructive' }); setPaying(null); }
   };
 
   const { data: companies, isLoading, error } = useQuery({
@@ -61,17 +47,17 @@ const MyCompanies = () => {
         .order('created_at', { ascending: false });
       
       if (error) throw error;
-      const { data: po } = await supabase.from('orders').select('company_id').eq('user_id', user.id).in('status', ['paid','processing','completed']);
-      const paid = new Set((po || []).map((o: any) => o.company_id));
-      return (data || []).filter((c: any) => paid.has(c.id) || (c.formation_status && c.formation_status !== 'draft'));
+      return data || [];
     },
     enabled: !!user?.id,
   });
 
-  const effStatus = (c: any) => (c.formation_status && c.formation_status !== 'draft' ? c.formation_status : (c.status && c.status !== 'draft' ? c.status : 'submitted'));
+  const unpaidFor = (c: any) => unpaid.find((o: any) => o.company_id === c.id);
+  const effStatus = (c: any) => (unpaidFor(c) && (!c.formation_status || c.formation_status === 'draft') ? 'unpaid' : c.formation_status && c.formation_status !== 'draft' ? c.formation_status : (c.status && c.status !== 'draft' ? c.status : 'submitted'));
   const getStatusBadge = (status: string | null) => {
     const statusConfig: Record<string, { variant: 'default' | 'secondary' | 'destructive' | 'outline'; label: string }> = {
       draft: { variant: 'outline', label: L('Draft','مسودة') },
+      unpaid: { variant: 'outline', label: L('Unpaid','غير مدفوع') },
       submitted: { variant: 'secondary', label: L('Submitted','تم الإرسال') },
       in_progress: { variant: 'default', label: L('In Progress','قيد التنفيذ') },
       pending_documents: { variant: 'secondary', label: L('Pending Documents','بانتظار المستندات') },
@@ -132,25 +118,6 @@ const MyCompanies = () => {
         </Button>
       </div>
 
-      {unpaid.length > 0 && (
-        <Card className="border-amber-500/40">
-          <CardHeader className="pb-2"><CardTitle className="text-base">{L('Complete your payment', 'أكمل الدفع')}</CardTitle></CardHeader>
-          <CardContent className="space-y-3">
-            {unpaid.map((o) => (
-              <div key={o.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <div className="font-medium">{o.metadata?.companyName || L('Company formation', 'تأسيس شركة')}</div>
-                  <div className="text-sm text-muted-foreground">${Number(o.total_price)} · {L('Not paid yet', 'لم يتم الدفع بعد')}</div>
-                </div>
-                <Button onClick={() => payNow(o)} disabled={paying === o.id}>
-                  {paying === o.id ? L('Opening checkout...', 'جارٍ فتح الدفع...') : L('Pay now', 'ادفع الآن')}
-                </Button>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      )}
-
       {companies && companies.length > 0 ? (
         <Card>
           <CardContent className="p-0">
@@ -189,6 +156,11 @@ const MyCompanies = () => {
                         {company.created_at ? format(new Date(company.created_at), 'MMM d, yyyy') : '-'}
                       </TableCell>
                       <TableCell className="text-right">
+                        {unpaidFor(company) && (
+                          <Button size="sm" className="mr-2" disabled={paying === unpaidFor(company).id} onClick={() => payNow(unpaidFor(company))}>
+                            {paying === unpaidFor(company).id ? '...' : L('Pay now', 'ادفع الآن')}
+                          </Button>
+                        )}
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
                             <Button variant="ghost" size="icon">
@@ -196,6 +168,12 @@ const MyCompanies = () => {
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
+                            {unpaidFor(company) && (
+                              <DropdownMenuItem onClick={() => payNow(unpaidFor(company))}>
+                                <FileText className="w-4 h-4 mr-2" />
+                                {L('Pay now', 'ادفع الآن')}
+                              </DropdownMenuItem>
+                            )}
                             <DropdownMenuItem onClick={() => navigate('/dashboard/documents')}>
                               <FileText className="w-4 h-4 mr-2" />
                               {L('Documents', 'المستندات')}
@@ -256,9 +234,9 @@ const MyCompanies = () => {
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">
-                {companies.filter(c => effStatus(c) === 'submitted').length}
+                {companies.filter(c => effStatus(c) === 'submitted' || effStatus(c) === 'unpaid').length}
               </div>
-              <p className="text-sm text-muted-foreground">{L('Submitted', 'تم الإرسال')}</p>
+              <p className="text-sm text-muted-foreground">{L('Submitted / unpaid', 'مرسلة / غير مدفوعة')}</p>
             </CardContent>
           </Card>
         </div>

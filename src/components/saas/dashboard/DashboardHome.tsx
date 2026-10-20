@@ -24,9 +24,7 @@ const DashboardHome = () => {
       if (!user?.id) return [];
       const { data, error } = await supabase.from('companies').select('*').eq('user_id', user.id).order('created_at', { ascending: false });
       if (error) throw error;
-      const { data: po } = await supabase.from('orders').select('company_id').eq('user_id', user.id).in('status', ['paid','processing','completed']);
-      const paid = new Set((po || []).map((o: any) => o.company_id));
-      return (data || []).filter((c: any) => paid.has(c.id) || (c.formation_status && c.formation_status !== 'draft'));
+      return data || [];
     },
     enabled: !!user?.id,
   });
@@ -46,7 +44,7 @@ const DashboardHome = () => {
     queryKey: ['user-orders', user?.id],
     queryFn: async () => {
       if (!user?.id) return [];
-      const { data, error } = await supabase.from('orders').select('*').eq('user_id', user.id).in('status', ['paid','processing','completed']).order('created_at', { ascending: false });
+      const { data, error } = await supabase.from('orders').select('*').eq('user_id', user.id).order('created_at', { ascending: false });
       if (error) throw error;
       return data || [];
     },
@@ -109,7 +107,7 @@ const DashboardHome = () => {
   ];
 
   const statusLabel = (st: string | null) => {
-    const m: Record<string, [string, string]> = { draft: ['Draft','مسودة'], submitted: ['Submitted','تم الإرسال'], in_progress: ['In progress','قيد التنفيذ'], pending_documents: ['Pending documents','بانتظار المستندات'], completed: ['Completed','مكتملة'], rejected: ['Rejected','مرفوضة'], pending: ['Pending','قيد الدفع'], paid: ['Paid','مدفوع'], processing: ['Processing','قيد المعالجة'] };
+    const m: Record<string, [string, string]> = { draft: ['Draft','مسودة'], submitted: ['Submitted','تم الإرسال'], in_progress: ['In progress','قيد التنفيذ'], pending_documents: ['Pending documents','بانتظار المستندات'], completed: ['Completed','مكتملة'], rejected: ['Rejected','مرفوضة'], pending: ['Unpaid','غير مدفوع'], paid: ['Paid','مدفوع'], processing: ['Processing','قيد المعالجة'] };
     const x = m[st || 'draft']; return x ? L(x[0], x[1]) : (st || '');
   };
 

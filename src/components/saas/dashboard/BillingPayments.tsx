@@ -1,5 +1,8 @@
 import { useL } from '@/hooks/useL';
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
+import { startOrderPayment } from '@/lib/payOrder';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthProvider';
@@ -46,6 +49,7 @@ type TxRow = {
 const BillingPayments = () => {
   const L = useL();
   const { user } = useAuth();
+  const { toast } = useToast();
 
   const { data: orders, isLoading: loadingOrders } = useQuery({
     queryKey: ['billing-orders', user?.id],
@@ -54,7 +58,6 @@ const BillingPayments = () => {
         .from('orders')
         .select('id, order_type, status, total_price, currency, created_at, metadata')
         .eq('user_id', user!.id)
-        .in('status', ['paid','processing','completed'])
         .order('created_at', { ascending: false });
       if (error) throw error;
       return (data || []) as OrderRow[];
@@ -75,6 +78,13 @@ const BillingPayments = () => {
     },
     enabled: !!user?.id,
   });
+
+  const [paying, setPaying] = useState<string | null>(null);
+  const payNow = async (o: OrderRow) => {
+    setPaying(o.id);
+    try { await startOrderPayment(o, L('Your session expired. Please sign in again.', 'انتهت الجلسة. سجل الدخول مرة أخرى.')); }
+    catch (e: any) { toast({ title: L('Could not start payment', 'تعذر بدء الدفع'), description: e?.message, variant: 'destructive' }); setPaying(null); }
+  };
 
   const paidTotal = (orders || []).filter(o => ['paid', 'processing', 'completed'].includes(o.status || '')).reduce((s, o) => s + Number(o.total_price), 0)
     ;
@@ -97,7 +107,7 @@ const BillingPayments = () => {
         return (
           <Badge className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
             <Clock className="mr-1 h-3 w-3" />
-            {L('Pending', 'قيد الدفع')}
+            {L('Unpaid', 'غير مدفوع')}
           </Badge>
         );
       case 'failed':
@@ -141,7 +151,7 @@ const BillingPayments = () => {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{L('Pending', 'قيد الدفع')}</CardTitle>
+            <CardTitle className="text-sm font-medium">{L('Unpaid', 'غير مدفوع')}</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -168,6 +178,7 @@ const BillingPayments = () => {
                   <TableHead>{L('Amount', 'المبلغ')}</TableHead>
                   <TableHead>{L('Status', 'الحالة')}</TableHead>
                   <TableHead>{L('Date', 'التاريخ')}</TableHead>
+                  <TableHead></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -177,6 +188,13 @@ const BillingPayments = () => {
                     <TableCell>${Number(o.total_price).toFixed(2)} {o.currency || 'USD'}</TableCell>
                     <TableCell>{getStatusBadge(o.status)}</TableCell>
                     <TableCell>{new Date(o.created_at).toLocaleDateString()}</TableCell>
+                    <TableCell>
+                      {o.status === 'pending' && o.order_type === 'company_formation' && (
+                        <Button size="sm" disabled={paying === o.id} onClick={() => payNow(o)}>
+                          {paying === o.id ? '...' : L('Pay now', 'ادفع الآن')}
+                        </Button>
+                      )}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
