@@ -28,7 +28,7 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-20 pb-0">
+      <main className="pt-20 pb-20 lg:pb-0">
         <section className="section-padding px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
             {/* Back Button */}

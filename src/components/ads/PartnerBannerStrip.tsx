@@ -27,9 +27,9 @@ interface Props {
 }
 
 const positionClasses: Record<NonNullable<Props['position']>, string> = {
-  'bottom-left': 'bottom-4 left-4',
-  'bottom-right': 'bottom-4 right-4',
-  'bottom-center': 'bottom-20 left-1/2 -translate-x-1/2',
+  'bottom-left': 'bottom-20 lg:bottom-4 left-4',
+  'bottom-right': 'bottom-20 lg:bottom-4 right-4',
+  'bottom-center': 'bottom-32 lg:bottom-20 left-1/2 -translate-x-1/2',
   'top-center': 'top-20 left-1/2 -translate-x-1/2',
 };
 

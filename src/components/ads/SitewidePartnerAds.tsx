@@ -61,7 +61,7 @@ const SitewidePartnerAds = () => {
   const ad = ads[index];
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-2xl pointer-events-auto">
+    <div className="fixed bottom-16 lg:bottom-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-2xl pointer-events-auto">
       <div className="flex items-center gap-3 bg-card/95 backdrop-blur border shadow-2xl rounded-full pl-3 pr-2 py-2 animate-fade-in">
         <Sparkles className="w-4 h-4 text-primary shrink-0" />
         <img

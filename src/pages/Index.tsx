@@ -22,7 +22,7 @@ const Index = () => {
     <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Header />
       
-      <main className="pb-0 w-full max-w-full">
+      <main className="pb-20 md:pb-0 w-full max-w-full">
         <Hero />
         <HomeTwoOptions language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />

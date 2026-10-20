@@ -195,7 +195,7 @@ const AIChatBot = () => {
       <button
         onClick={() => setIsOpen(true)}
         aria-label={s.title}
-        className="fixed bottom-6 right-4 lg:right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg ring-4 ring-primary/20 transition-transform hover:scale-105"
+        className="fixed bottom-20 lg:bottom-6 right-4 lg:right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg ring-4 ring-primary/20 transition-transform hover:scale-105"
       >
         <MessageSquare className="h-6 w-6" />
       </button>
@@ -205,7 +205,7 @@ const AIChatBot = () => {
   return (
     <div
       dir={isRTL ? 'rtl' : 'ltr'}
-      className="fixed bottom-6 right-4 left-4 sm:left-auto sm:right-6 sm:w-96 z-50 flex h-[520px] max-h-[calc(100vh-140px)] flex-col overflow-hidden rounded-2xl border bg-card shadow-2xl"
+      className="fixed bottom-20 lg:bottom-6 right-4 left-4 sm:left-auto sm:right-6 sm:w-96 z-50 flex h-[520px] max-h-[calc(100vh-140px)] flex-col overflow-hidden rounded-2xl border bg-card shadow-2xl"
     >
       <div className="flex items-center justify-between border-b px-4 py-3">
         <div className="flex items-center gap-2.5">

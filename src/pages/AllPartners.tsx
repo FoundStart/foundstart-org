@@ -45,7 +45,7 @@ const AllPartners = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pb-0">
+      <main className="pb-20 md:pb-0">
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">

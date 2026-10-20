@@ -34,7 +34,7 @@ const CompanyFormationBio = () => {
         <link rel="canonical" href="https://foundstart.org/company-formation-bio" />
       </Helmet>
       <Header />
-      <main className="pb-0">
+      <main className="pb-20 lg:pb-0">
         <PageHero
           title="Company Formation"
           highlight="Bio Link"

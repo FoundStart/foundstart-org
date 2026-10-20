@@ -31,7 +31,7 @@ const PremiumDomainsShowcaseBlogAR = () => {
       </Helmet>
       <Header />
       <BlogAdStrip position="top" slug="premium-domains-showcase" />
-      <main className="pb-0">
+      <main className="pb-20 md:pb-0">
         <article className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
             <Button variant="outline" asChild className="mb-6">

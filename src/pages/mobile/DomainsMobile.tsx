@@ -227,7 +227,7 @@ const DomainsMobile = () => {
               </p>
             </div>
           ) : (
-            <div className="space-y-3 pb-4">
+            <div className="space-y-3 pb-20">
               {filteredDomains.map((domain) => (
                 <MobileDomainCard
                   key={domain.name}
