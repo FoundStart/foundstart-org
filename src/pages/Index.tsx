@@ -10,6 +10,7 @@ import BusinessNameWidget from '@/components/BusinessNameWidget';
 import HomeFAQ from '@/components/home/HomeFAQ';
 import HomeServices from '@/components/home/HomeServices';
 import HomeHowItWorks from '@/components/home/HomeHowItWorks';
+import HomeTwoOptions from '@/components/home/HomeTwoOptions';
 import HomeCTA from '@/components/home/HomeCTA';
 import HomeWhyChoose from '@/components/home/HomeWhyChoose';
 import HomeBlogCarousel from '@/components/home/HomeBlogCarousel';
@@ -23,6 +24,7 @@ const Index = () => {
       
       <main className="pb-20 md:pb-0 w-full max-w-full">
         <Hero />
+        <HomeTwoOptions language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />
         <HomeServices language={language} isRTL={isRTL} />
         <HomeBlogCarousel />

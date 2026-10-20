@@ -54,6 +54,24 @@ const Header = () => {
     { name: "Sister Partners", href: '/sister-partners' },
   ];
 
+  const mobileItems = [
+    { name: language === 'ar' ? "الدول" : "Countries", href: '/countries' },
+    { name: language === 'ar' ? "كل الشركاء" : "All Partners", href: '/all-partners' },
+    { name: language === 'ar' ? "التأسيس عبر لوحة FoundStart" : "Formation Dashboard", href: '/dashboard/formation' },
+    { name: t.digitalPartners, href: '/digital-partners' },
+    { name: "Freelancer", href: '/freelancer-partners' },
+    { name: "Sister Partners", href: '/sister-partners' },
+    { name: "Services", href: '/services' },
+    { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
+    { name: language === 'ar' ? "التعلم" : "Learning", href: '/learning' },
+    { name: language === 'ar' ? "الشريك المؤسس" : "AI Co-founder", href: '/cofounder' },
+    { name: language === 'ar' ? "الوكلاء" : "AI Agents", href: '/agents' },
+    { name: "Premium Domains", href: '/domains' },
+    { name: "Pricing", href: '/pricing-calculator' },
+    { name: t.blog, href: '/blog' },
+    { name: t.contact, href: '/contact-sales' },
+  ];
+
   return (
     <header className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`} role="banner">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
@@ -157,25 +175,9 @@ const Header = () => {
           <div className="lg:hidden absolute left-0 right-0 top-full bg-background/95 backdrop-blur border-b shadow-lg" role="dialog" aria-modal="true" aria-label="Mobile menu">
             <div className={`max-w-7xl mx-auto px-3 py-4 ${isRTL ? 'text-right' : ''}`}>
               <nav className="space-y-1" role="navigation" aria-label="Mobile navigation">
-              {/* Mobile Partners Section */}
-              <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                {t.partners}
-              </div>
-              {partnersDropdownItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="block px-6 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all duration-200 touch-manipulation"
-                  onClick={() => setIsMenuOpen(false)}
-                  aria-label={item.name}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="border-t border-border my-2" />
-                {navigationItems.map((item, index) => (
+              {mobileItems.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.href}
                     to={item.href}
                     className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all duration-200 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
