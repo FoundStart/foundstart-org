@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -30,53 +32,7 @@ import {
   Bot,
 } from 'lucide-react';
 
-const documents = [
-  {
-    id: '1',
-    name: 'TechStart LLC - Articles of Organization',
-    type: 'legal',
-    company: 'TechStart LLC',
-    createdAt: '2024-01-15',
-    size: '245 KB',
-    isAiGenerated: false,
-  },
-  {
-    id: '2',
-    name: 'Operating Agreement',
-    type: 'legal',
-    company: 'TechStart LLC',
-    createdAt: '2024-01-15',
-    size: '128 KB',
-    isAiGenerated: true,
-  },
-  {
-    id: '3',
-    name: 'EIN Confirmation Letter',
-    type: 'tax',
-    company: 'TechStart LLC',
-    createdAt: '2024-01-20',
-    size: '89 KB',
-    isAiGenerated: false,
-  },
-  {
-    id: '4',
-    name: 'Business Description',
-    type: 'marketing',
-    company: null,
-    createdAt: '2024-01-22',
-    size: '45 KB',
-    isAiGenerated: true,
-  },
-  {
-    id: '5',
-    name: 'GlobalTech Ltd - Certificate of Incorporation',
-    type: 'legal',
-    company: 'GlobalTech Ltd',
-    createdAt: '2024-02-01',
-    size: '312 KB',
-    isAiGenerated: false,
-  },
-];
+type Doc = { id: string; name: string; type: string; company: string | null; createdAt: string; size: string; isAiGenerated: boolean };
 
 const categories = [
   { id: 'all', name: 'All Documents', icon: Folder },
@@ -86,6 +42,16 @@ const categories = [
 ];
 
 const DocumentsCenter = () => {
+  const [documents, setDocuments] = useState<Doc[]>([]);
+  useEffect(() => {
+    (supabase as any).from('documents').select('id, name, document_type, file_size, is_ai_generated, created_at').order('created_at', { ascending: false })
+      .then(({ data }: any) => setDocuments((data ?? []).map((d: any) => ({
+        id: d.id, name: d.name, type: d.document_type, company: null,
+        createdAt: d.created_at ? new Date(d.created_at).toLocaleDateString() : '-',
+        size: d.file_size ? `${Math.max(1, Math.round(d.file_size / 1024))} KB` : '-',
+        isAiGenerated: !!d.is_ai_generated,
+      }))));
+  }, []);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -111,10 +77,6 @@ const DocumentsCenter = () => {
           <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Documents</h1>
           <p className="text-muted-foreground">Manage your business documents</p>
         </div>
-        <Button>
-          <Upload className="mr-2 h-4 w-4" />
-          Upload Document
-        </Button>
       </div>
 
       {/* Stats */}

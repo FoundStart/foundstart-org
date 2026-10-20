@@ -34,6 +34,7 @@ function useAdapter(layout: AffAdapter["Layout"] = Layout): AffAdapter {
   };
 }
 export const AffiliatesRoute = ({ view }: { view?: "program" | "dashboard" | "terms" }) => <AffiliatesPage a={useAdapter()} view={view} />;
+export const AffiliatesEmbedded = () => <AffiliatesPage a={useAdapter(Bare)} view="dashboard" />;
 export const AffiliateAdminRoute = () => <AffiliateAdminPage a={useAdapter()} />;
 export const AffiliateAdminEmbedded = () => <AffiliateAdminPage a={useAdapter(Bare)} />;
 export const VideosRoute = () => <ProductVideosPage a={useAdapter()} />;

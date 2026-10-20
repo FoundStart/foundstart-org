@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { AffiliatesEmbedded } from '@/affiliate/site';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import DashboardHome from './dashboard/DashboardHome';
 import MyCompanies from './dashboard/MyCompanies';
@@ -33,16 +34,11 @@ const CustomerDashboardContent = () => {
         <Routes>
           <Route index element={<DashboardHome />} />
           <Route path="companies" element={<MyCompanies />} />
-          <Route path="my-services" element={<MyServicesPage />} />
           <Route path="formation/*" element={<CompanyFormation />} />
-          <Route path="services/*" element={<ServicesMarketplace />} />
-          <Route path="domains" element={<DashboardDomains />} />
-          <Route path="ai-assistant" element={<AIAssistant />} />
           <Route path="documents" element={<DocumentsCenter />} />
-          <Route path="wallet" element={<WalletDashboard />} />
           <Route path="billing" element={<BillingPayments />} />
-          <Route path="pricing" element={<PricingPlans />} />
-          <Route path="affiliates" element={<AffiliatesDashboard />} />
+          <Route path="affiliates" element={<AffiliatesEmbedded />} />
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
           <Route path="support/*" element={<SupportCenter />} />
           <Route path="settings" element={<AccountSettings />} />
         </Routes>

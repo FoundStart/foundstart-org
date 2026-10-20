@@ -35,23 +35,16 @@ import { Button } from '@/components/ui/button';
 
 const mainMenuItems = [
   { title: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
-  { title: 'My Companies', icon: Building2, href: '/dashboard/companies' },
-  { title: 'My Services', icon: Package, href: '/dashboard/my-services' },
   { title: 'New Formation', icon: Briefcase, href: '/dashboard/formation' },
+  { title: 'My Companies', icon: Building2, href: '/dashboard/companies' },
+  { title: 'Documents', icon: FileText, href: '/dashboard/documents' },
 ];
 
-const servicesMenuItems = [
-  { title: 'Services Marketplace', icon: ShoppingCart, href: '/dashboard/services' },
-  { title: 'Domain Search', icon: Globe, href: '/dashboard/domains' },
-  { title: 'AI Assistant', icon: Bot, href: '/dashboard/ai-assistant' },
-];
+const servicesMenuItems: typeof mainMenuItems = [];
 
 const accountMenuItems = [
-  { title: 'Documents', icon: FileText, href: '/dashboard/documents' },
-  { title: 'Wallet', icon: Wallet, href: '/dashboard/wallet' },
   { title: 'Billing', icon: CreditCard, href: '/dashboard/billing' },
-  { title: 'Pricing Plans', icon: Tag, href: '/dashboard/pricing' },
-  { title: 'Affiliates', icon: Users, href: '/dashboard/affiliates' },
+  { title: 'Affiliate', icon: Users, href: '/dashboard/affiliates' },
   { title: 'Support', icon: HelpCircle, href: '/dashboard/support' },
   { title: 'Settings', icon: Settings, href: '/dashboard/settings' },
 ];
@@ -97,7 +90,7 @@ const CustomerSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup>
+        {servicesMenuItems.length > 0 && <SidebarGroup>
           <SidebarGroupLabel>Services</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -113,7 +106,7 @@ const CustomerSidebar = () => {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
-        </SidebarGroup>
+        </SidebarGroup>}
 
         <SidebarGroup>
           <SidebarGroupLabel>Account</SidebarGroupLabel>

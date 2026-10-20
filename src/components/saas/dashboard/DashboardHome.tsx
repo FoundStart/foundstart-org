@@ -78,7 +78,7 @@ const DashboardHome = () => {
 
   const stats = [
     { title: 'Companies', value: companies.length.toString(), subtitle: `${completedCompanies} completed`, icon: Building2, color: 'from-blue-500 to-indigo-600' },
-    { title: 'Active Services', value: activeServices.toString(), subtitle: `${services.length} total`, icon: ShoppingCart, color: 'from-emerald-500 to-green-600' },
+    { title: 'Orders', value: orders.length.toString(), subtitle: `${orders.filter(o => ['paid','processing','completed'].includes(o.status || '')).length} paid`, icon: ShoppingCart, color: 'from-emerald-500 to-green-600' },
     { title: 'Documents', value: documents.length.toString(), subtitle: 'AI & uploaded', icon: FileText, color: 'from-violet-500 to-purple-600' },
     { title: 'Pending', value: `$${pendingPayments}`, subtitle: `${orders.filter(o => o.status === 'pending').length} orders`, icon: CreditCard, color: 'from-amber-500 to-orange-600' },
   ];
@@ -99,10 +99,8 @@ const DashboardHome = () => {
 
   const quickActions = [
     { icon: Building2, label: 'Form a Company', link: '/dashboard/formation', gradient: 'from-blue-500 to-indigo-600' },
-    { icon: ShoppingCart, label: 'Browse Services', link: '/dashboard/services', gradient: 'from-emerald-500 to-green-600' },
-    { icon: Bot, label: 'AI Assistant', link: '/dashboard/ai-assistant', gradient: 'from-violet-500 to-purple-600' },
-    { icon: Globe, label: 'Domains', link: '/dashboard/domains', gradient: 'from-cyan-500 to-blue-600' },
-    { icon: Wallet, label: 'Wallet', link: '/dashboard/wallet', gradient: 'from-amber-500 to-orange-600' },
+    { icon: Building2, label: 'My Companies', link: '/dashboard/companies', gradient: 'from-emerald-500 to-green-600' },
+    { icon: ArrowRight, label: 'Affiliate', link: '/dashboard/affiliates', gradient: 'from-amber-500 to-orange-600' },
     { icon: ArrowRight, label: 'Get Support', link: '/dashboard/support', gradient: 'from-rose-500 to-pink-600' },
   ];
 
@@ -139,9 +137,9 @@ const DashboardHome = () => {
               </Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link to="/dashboard/services">
+              <Link to="/dashboard/affiliates">
                 <ShoppingCart className="mr-2 h-4 w-4" />
-                Services
+                Affiliate
               </Link>
             </Button>
           </div>
@@ -168,7 +166,7 @@ const DashboardHome = () => {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {quickActions.map((action) => (
           <Link
             key={action.label}
@@ -275,7 +273,7 @@ const DashboardHome = () => {
                   </div>
                   <p className="text-sm text-muted-foreground">No orders yet</p>
                   <Button asChild variant="outline" size="sm" className="mt-3">
-                    <Link to="/dashboard/services">Browse Services</Link>
+                    <Link to="/dashboard/formation">Form a Company</Link>
                   </Button>
                 </div>
               )}
