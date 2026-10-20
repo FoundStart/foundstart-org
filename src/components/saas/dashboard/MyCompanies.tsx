@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Building2, Plus, Eye, FileText, MoreVertical, Loader2 } from 'lucide-react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { format } from 'date-fns';
 
@@ -17,6 +18,37 @@ const MyCompanies = () => {
   const { user } = useAuth();
   const [searchParams] = useSearchParams();
   const orderSuccess = searchParams.get('order') === 'success';
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [paying, setPaying] = React.useState<string | null>(null);
+  const { data: unpaid = [] } = useQuery({
+    queryKey: ['unpaid-orders', user?.id],
+    queryFn: async () => {
+      const { data } = await supabase.from('orders').select('id, total_price, created_at, metadata').eq('user_id', user!.id).eq('order_type', 'company_formation').eq('status', 'pending').order('created_at', { ascending: false }).limit(3);
+      return (data || []) as any[];
+    },
+    enabled: !!user?.id,
+  });
+  const payNow = async (o: any) => {
+    setPaying(o.id);
+    try {
+      const { data: sess } = await supabase.auth.getSession();
+      const token = sess.session?.access_token;
+      if (!token) throw new Error(L('Your session expired. Please sign in again.', 'انتهت الجلسة. سجل الدخول مرة أخرى.'));
+      const m = o.metadata || {};
+      const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-formation-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY },
+        body: JSON.stringify({ country: m.country, entityType: m.entityType, companyName: m.companyName, businessAddress: m.businessAddress, businessDescription: m.businessDescription, owners: m.owners || [], addons: [] }),
+      });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok || !d?.paymentUrl) throw new Error(d?.error || `HTTP ${res.status}`);
+      window.location.href = d.paymentUrl;
+    } catch (e: any) {
+      toast({ title: L('Could not start payment', 'تعذر بدء الدفع'), description: e?.message, variant: 'destructive' });
+      setPaying(null);
+    }
+  };
 
   const { data: companies, isLoading, error } = useQuery({
     queryKey: ['my-companies', user?.id],
@@ -99,6 +131,25 @@ const MyCompanies = () => {
         </Button>
       </div>
 
+      {unpaid.length > 0 && (
+        <Card className="border-amber-500/40">
+          <CardHeader className="pb-2"><CardTitle className="text-base">{L('Complete your payment', 'أكمل الدفع')}</CardTitle></CardHeader>
+          <CardContent className="space-y-3">
+            {unpaid.map((o) => (
+              <div key={o.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div className="font-medium">{o.metadata?.companyName || L('Company formation', 'تأسيس شركة')}</div>
+                  <div className="text-sm text-muted-foreground">${Number(o.total_price)} · {L('Not paid yet', 'لم يتم الدفع بعد')}</div>
+                </div>
+                <Button onClick={() => payNow(o)} disabled={paying === o.id}>
+                  {paying === o.id ? L('Opening checkout...', 'جارٍ فتح الدفع...') : L('Pay now', 'ادفع الآن')}
+                </Button>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
+
       {companies && companies.length > 0 ? (
         <Card>
           <CardContent className="p-0">
@@ -132,7 +183,7 @@ const MyCompanies = () => {
                       <TableCell>
                         <span className="uppercase text-sm">{company.entity_type || company.company_type || '-'}</span>
                       </TableCell>
-                      <TableCell>{getStatusBadge(company.formation_status)}</TableCell>
+                      <TableCell>{getStatusBadge(company.formation_status && company.formation_status !== 'draft' ? company.formation_status : (company.status && company.status !== 'draft' ? company.status : 'submitted'))}</TableCell>
                       <TableCell>
                         {company.created_at ? format(new Date(company.created_at), 'MMM d, yyyy') : '-'}
                       </TableCell>
@@ -144,11 +195,7 @@ const MyCompanies = () => {
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
-                            <DropdownMenuItem>
-                              <Eye className="w-4 h-4 mr-2" />
-                              {L('View Details', 'عرض التفاصيل')}
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => navigate('/dashboard/documents')}>
                               <FileText className="w-4 h-4 mr-2" />
                               {L('Documents', 'المستندات')}
                             </DropdownMenuItem>
