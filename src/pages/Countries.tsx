@@ -154,8 +154,10 @@ const Countries = () => {
                           <div className="text-3xl">{c.flag}</div>
                           <div className="font-semibold text-sm">{c.name}</div>
                           <div className="text-xs text-primary font-medium">{c.price}</div>
-                          <Button size="sm" className="w-full mt-2" onClick={(e) => { e.stopPropagation(); setSelectedCountry(c.id); }}>
-                            Form Company <ArrowRight className="w-3 h-3 ml-1" />
+                          <Button size="sm" className="w-full mt-2" asChild onClick={(e) => e.stopPropagation()}>
+                            <Link to={user ? `/dashboard/formation?country=${c.id.toLowerCase()}` : '/auth'} state={{ redirectTo: `/dashboard/formation?country=${c.id.toLowerCase()}` }}>
+                              Form Company <ArrowRight className="w-3 h-3 ml-1" />
+                            </Link>
                           </Button>
                         </CardContent>
                       </Card>

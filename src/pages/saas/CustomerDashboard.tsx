@@ -21,7 +21,7 @@ const CustomerDashboard = () => {
   }
 
   return (
-    <SidebarProvider>
+    <SidebarProvider dir="ltr">
       <div className="flex min-h-screen w-full bg-background">
         <CustomerSidebar />
         <main className="flex-1 overflow-auto">
