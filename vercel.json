@@ -1,5 +1,325 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin/partner-test",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliate",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliate-dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliates",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliates/admin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliates/dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliates/terms",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/agents",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/agents/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/all-partners",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/auth",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/best-company-formation-2026",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/best-company-formation-2026-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/business-automation-2026",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/business-automation-2026-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/digital-agency-uk",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/digital-agency-uk-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/digital-nomad-guide",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/egypt-one-person-company",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/egypt-one-person-company-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/fintech-virtual-cards-2026",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/fintech-virtual-cards-2026-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/llc-formation-guide",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/llc-formation-guide-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/marketing-agency-usa",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/marketing-agency-usa-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/meet-the-foundstart-ai-cofounder",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/meet-the-foundstart-ai-cofounder-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/momoai-business-setup-guide-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/momoai-business-setup-guide-en",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/payment-gateways-2026",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/payment-gateways-2026-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/premium-domains-for-sale",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/premium-domains-for-sale-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/premium-domains-showcase",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/premium-domains-showcase-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/uk-vs-us-company-formation",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/uk-vs-us-company-formation-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/vibe-coding-platforms-2026",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/vibe-coding-platforms-2026-ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bulk-domain-inquiry",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/business-name-generator",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cofounder",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/company-formation-bio",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact-sales",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/countries",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/country/:countryId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/digital-nomad-visas",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/digital-partners",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/digital-services",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/domain-inquiry",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/domain-wishlist",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/domains",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/freelancer-partners",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/guides/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/learning",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/media",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/partner/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/partners",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/press",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pricing-calculator",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/seo-management",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/integrations",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/sister-partners",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tutorials",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/videos",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/who-we-are",
+      "destination": "/index.html"
+    }
   ]
 }

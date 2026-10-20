@@ -81,7 +81,7 @@ export const foundstartArticles: Record<string, ShortetArticle> = {
     "author": "Mohamed Sayed",
     "date": "Oct 18, 2026",
     "readTime": "5 min read",
-    "heroImage": "/blog/company-formation-checklist-02813472.jpg",
+    "heroImage": "/blog/company-formation-checklist-02813472.webp",
     "html": "<h2>1. Pick your jurisdiction</h2><p>For an online business, many founders choose a US LLC for Stripe access, Mercury banking and global trust, a UK Ltd for a fast and low-cost setup, or Estonia for an EU presence. If you operate locally in Egypt, an Egyptian entity lets you use local gateways such as Kashier, Paymob and Fawry.</p><h2>2. Order formation through a partner</h2><p>A formation partner handles the filing, the registered agent and your company documents. You fill in one form, they do the paperwork and send your incorporation documents and, for US companies, your EIN.</p><h2>3. Set up banking and payments</h2><p>With your documents ready, open a business account (Mercury or Wise are common for US entities) and connect Stripe for card payments. For Egypt, connect Kashier or Paymob instead.</p><h2>4. Stay compliant</h2><p>Put the annual report, the registered agent renewal and your tax dates in your calendar from day one. Missing them can cost more than the formation itself.</p><h2>Read the full guide</h2><p>The complete walkthrough with partner links is in the <a href=\"/guides/register-company\">Register Your Company guide</a>.</p>"
   },
   "register-your-company-step-by-step-ar": {
@@ -192,7 +192,7 @@ export const foundstartBlogPosts = [
     "date": "Oct 18, 2026",
     "readTime": "5 min read",
     "slug": "register-your-company-step-by-step",
-    "image": "/blog/company-formation-checklist-02813472.jpg"
+    "image": "/blog/company-formation-checklist-02813472.webp"
   },
   {
     "id": 333,
@@ -203,7 +203,7 @@ export const foundstartBlogPosts = [
     "date": "Oct 18, 2026",
     "readTime": "5 دقائق قراءة",
     "slug": "register-your-company-step-by-step-ar",
-    "image": "/blog/company-formation-checklist-02813472.jpg"
+    "image": "/blog/company-formation-checklist-02813472.webp"
   },
   {
     "id": 336,

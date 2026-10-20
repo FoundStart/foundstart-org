@@ -1,0 +1,15 @@
+{
+ "site": "https://www.foundstart.org",
+ "name": "FoundStart",
+ "sitemapExclude": [
+  "/partner/",
+  "/domain-wishlist"
+ ],
+ "extraRoutes": [
+  "/blog/marketing-agency-usa",
+  "/blog/marketing-agency-usa-ar",
+  "/blog/digital-agency-uk",
+  "/blog/digital-agency-uk-ar",
+  "/dashboard/:path*"
+ ]
+}
