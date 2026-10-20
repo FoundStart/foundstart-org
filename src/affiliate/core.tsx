@@ -220,16 +220,19 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
   const [path, setPath] = useState("/");
   const [isAdm, setIsAdm] = useState(false);
   const [loadErr, setLoadErr] = useState("");
+  const [slow, setSlow] = useState(false);
+  useEffect(() => { const id = setTimeout(() => setSlow(true), 5000); return () => clearTimeout(id); }, []);
   const seq = useRef(0);
   const load = useCallback(async () => {
     const my = ++seq.current;
     setLoadErr("");
     try {
-      const { data: st } = await a.supabase.from("aff_settings").select("*").eq("id", 1).maybeSingle();
+      const withTimeout = <T,>(p: PromiseLike<T>, ms = 12000) => Promise.race([Promise.resolve(p), new Promise<T>((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]);
+      const { data: st } = await withTimeout(a.supabase.from("aff_settings").select("*").eq("id", 1).maybeSingle());
       if (my !== seq.current) return;
       setS(st);
       if (a.user) {
-        const { data, error } = await a.supabase.rpc("aff_me");
+        const { data, error } = await withTimeout(a.supabase.rpc("aff_me"));
         if (my !== seq.current) return;
         if (error) throw error;
         setMe(data ?? null);
@@ -292,7 +295,7 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
 
   const Join = (
     <Card id="join"><CardHeader><CardTitle className="text-lg" dir={dir}>{t("Apply to join", "قدّم للانضمام")}</CardTitle></CardHeader><CardContent className="space-y-3" dir={dir}>
-      {a.authLoading || me === undefined ? <p className="text-sm text-muted-foreground">{t("Loading...", "جاري التحميل...")}</p> : loadErr ? <div className="space-y-2"><p className="text-sm text-red-600">{t("Could not load your account. Please try again.", "تعذر تحميل حسابك. حاول مرة أخرى.")}</p><Button variant="outline" onClick={load}>{t("Retry", "إعادة المحاولة")}</Button></div> : !a.user ? (
+      {a.authLoading || me === undefined ? <div className="space-y-2"><p className="text-sm text-muted-foreground">{t("Loading...", "جاري التحميل...")}</p>{slow && <div className="flex gap-2 flex-wrap"><Button variant="outline" onClick={() => window.location.reload()}>{t("Reload", "إعادة تحميل")}</Button><Button onClick={a.goSignIn}>{t("Sign in / create account", "تسجيل الدخول / إنشاء حساب")}</Button></div>}</div> : loadErr ? <div className="space-y-2"><p className="text-sm text-red-600">{t("Could not load your account. Please try again.", "تعذر تحميل حسابك. حاول مرة أخرى.")}</p><Button variant="outline" onClick={load}>{t("Retry", "إعادة المحاولة")}</Button></div> : !a.user ? (
         <div className="space-y-3">
           <p className="text-sm text-muted-foreground">{t(`Sign in to your ${a.site.name} account (or create one) to apply.`, `سجل دخولك في ${a.site.name} (أو اعمل حساب) للتقديم.`)}</p>
           {a.emailSignIn ? (
