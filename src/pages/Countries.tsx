@@ -1,4 +1,5 @@
 
+import { getCountryVideoUrl } from '@/data/countryVideos';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -96,9 +97,9 @@ const Countries = () => {
                   <CardContent className="space-y-6">
                     <p className="text-muted-foreground text-center">{selectedCountryData.description}</p>
 
-                    {selectedCountryData.videoUrl && (
+                    {selectedCountryData && (
                       <VideoThumbnail
-                        videoUrl={selectedCountryData.videoUrl}
+                        videoUrl={getCountryVideoUrl(selectedCountryData.id, isRTL)}
                         title={`${selectedCountryData.name} Formation Demo`}
                         className="w-full h-48 md:h-72"
                       />

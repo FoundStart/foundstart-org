@@ -1,3 +1,5 @@
+import { getCountryVideoUrl } from '@/data/countryVideos';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { Link } from 'react-router-dom';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,6 +39,7 @@ interface CountryDetailsProps {
 }
 
 const CountryDetails = ({ country }: CountryDetailsProps) => {
+  const { isRTL } = useTranslation();
   return (
     <div className="mt-12 animate-fade-in">
       <Card className="glass-card hover:shadow-xl transition-all duration-500 animate-scale-in">
@@ -51,9 +54,9 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
         <CardContent className="space-y-8">
           <p className="text-lg text-muted-foreground text-center leading-relaxed">{country.description}</p>
 
-          {country.videoUrl && (
+          {country && (
             <div className="animate-fade-in">
-              <VideoThumbnail videoUrl={country.videoUrl} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />
+              <VideoThumbnail videoUrl={getCountryVideoUrl(country.id, isRTL)} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />
             </div>
           )}
 
