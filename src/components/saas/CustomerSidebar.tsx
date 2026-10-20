@@ -44,7 +44,6 @@ const servicesMenuItems = [
   { title: 'Services Marketplace', icon: ShoppingCart, href: '/dashboard/services' },
   { title: 'Domain Search', icon: Globe, href: '/dashboard/domains' },
   { title: 'AI Assistant', icon: Bot, href: '/dashboard/ai-assistant' },
-  { title: 'AI Co-founder', icon: Sparkles, href: '/cofounder' },
 ];
 
 const accountMenuItems = [
@@ -71,7 +70,7 @@ const CustomerSidebar = () => {
   return (
     <Sidebar className="border-r border-border">
       <SidebarHeader className="border-b border-border p-4">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/dashboard" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
             F
           </div>
@@ -144,7 +143,7 @@ const CustomerSidebar = () => {
             variant="ghost"
             size="sm"
             className="justify-start"
-            onClick={signOut}
+            onClick={async () => { await signOut(); window.location.replace('/'); }}
           >
             <LogOut className="mr-2 h-4 w-4" />
             Sign Out
