@@ -222,7 +222,7 @@ export const countriesData = [
     id: 'EG',
     flag: '🇪🇬',
     name: 'Egypt',
-    price: 'Get Quote',
+    price: '$249',
     timeframe: '14-21 business days',
     currency: 'EGP',
     ctaUrl: 'https://foundstart.org',

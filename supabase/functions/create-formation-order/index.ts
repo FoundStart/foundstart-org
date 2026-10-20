@@ -7,17 +7,48 @@ const corsHeaders = {
 };
 const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { ...corsHeaders, "Content-Type": "application/json" } });
 
-// Provisional formation prices (USD), pending owner confirmation per country.
-const COUNTRIES: Record<string, { name: string; base: number }> = {
-  usa: { name: "United States", base: 299 },
-  uk: { name: "United Kingdom", base: 199 },
-  ca: { name: "Canada", base: 399 },
-  ee: { name: "Estonia", base: 300 },
-  fi: { name: "Finland", base: 350 },
-  se: { name: "Sweden", base: 350 },
-  lv: { name: "Latvia", base: 250 },
-  lt: { name: "Lithuania", base: 280 },
-  ie: { name: "Ireland", base: 350 },
+// Provisional formation service fees (USD) per country + entity type, pending owner confirmation.
+// Government/notary fees are separate and confirmed per order (noted on the site for Egypt).
+const COUNTRIES: Record<string, { name: string; entities: Record<string, { name: string; price: number }> }> = {
+  usa: { name: "United States", entities: {
+    llc: { name: "LLC", price: 299 },
+    c_corp: { name: "C-Corporation", price: 299 },
+    s_corp: { name: "S-Corporation", price: 299 },
+  } },
+  uk: { name: "United Kingdom", entities: {
+    ltd: { name: "LTD", price: 199 },
+    llp: { name: "LLP", price: 199 },
+  } },
+  ca: { name: "Canada", entities: {
+    corp: { name: "Corporation", price: 399 },
+  } },
+  ee: { name: "Estonia", entities: {
+    ou: { name: "OU", price: 300 },
+  } },
+  fi: { name: "Finland", entities: {
+    oy: { name: "Oy", price: 350 },
+  } },
+  se: { name: "Sweden", entities: {
+    ab: { name: "AB", price: 350 },
+  } },
+  lv: { name: "Latvia", entities: {
+    sia: { name: "SIA", price: 250 },
+  } },
+  lt: { name: "Lithuania", entities: {
+    uab: { name: "UAB", price: 280 },
+  } },
+  ie: { name: "Ireland", entities: {
+    ltd: { name: "LTD", price: 350 },
+  } },
+  eg: { name: "Egypt", entities: {
+    sole_est: { name: "Sole Establishment", price: 249 },
+    opc: { name: "One-Person Company", price: 349 },
+    llc: { name: "Limited Liability Company", price: 449 },
+    jsc: { name: "Joint Stock Company", price: 899 },
+    branch: { name: "Branch of a Foreign Company", price: 999 },
+    rep_office: { name: "Representative Office", price: 899 },
+    free_zone: { name: "Free Zone Company", price: 1499 },
+  } },
 };
 const ADDONS: Record<string, { name: string; price: number }> = {
   registered_agent: { name: "Registered Agent", price: 149 },
@@ -56,8 +87,9 @@ Deno.serve(async (req) => {
   const cdef = COUNTRIES[country];
   if (!cdef) return json({ error: "unknown country" }, 400);
   const entityType = (body?.entityType ?? "").trim().slice(0, 40);
+  const edef = cdef.entities[entityType];
+  if (!edef) return json({ error: "unknown entity type for this country" }, 400);
   const companyName = (body?.companyName ?? "").trim();
-  if (!entityType) return json({ error: "entity type required" }, 400);
   if (companyName.length < 2 || companyName.length > 120) return json({ error: "company name required" }, 400);
   const addons = Array.isArray(body?.addons) ? body!.addons!.filter((a) => ADDONS[a]) : [];
   const owners = Array.isArray(body?.owners)
@@ -65,7 +97,7 @@ Deno.serve(async (req) => {
     : [];
 
   const addonsTotal = addons.reduce((s, a) => s + ADDONS[a].price, 0);
-  const total = cdef.base + addonsTotal;
+  const total = edef.price + addonsTotal;
 
   const u = await fetch(`${Deno.env.get("SUPABASE_URL")}/auth/v1/user`, {
     headers: { apikey: Deno.env.get("SUPABASE_ANON_KEY") ?? auth.slice(7), Authorization: auth },
@@ -103,7 +135,7 @@ Deno.serve(async (req) => {
         businessDescription: String(body?.businessDescription ?? "").slice(0, 1000),
         owners,
         addons: addons.map((a) => ({ id: a, name: ADDONS[a].name, price: ADDONS[a].price })),
-        basePrice: cdef.base,
+        basePrice: edef.price, entityName: edef.name,
       },
     }]),
   });
@@ -125,7 +157,7 @@ Deno.serve(async (req) => {
   form.set("line_items[0][quantity]", "1");
   form.set("line_items[0][price_data][currency]", "usd");
   form.set("line_items[0][price_data][unit_amount]", String(Math.round(total * 100)));
-  form.set("line_items[0][price_data][product_data][name]", `Company formation - ${cdef.name} (${entityType.toUpperCase()})`);
+  form.set("line_items[0][price_data][product_data][name]", `Company formation - ${cdef.name} (${edef.name})`);
   if (addons.length) {
     form.set("line_items[0][price_data][product_data][description]", `Includes: ${addons.map((a) => ADDONS[a].name).join(", ")}`);
   }

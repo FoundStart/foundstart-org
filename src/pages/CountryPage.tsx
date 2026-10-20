@@ -59,38 +59,38 @@ const CountryPage = () => {
               <CardHeader className="text-center"><CardTitle className="text-2xl">Formation Package</CardTitle></CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex justify-center items-center gap-4">
-                  <Badge variant="default" className="text-2xl px-6 py-3">{isEgypt ? (isRTL ? 'اطلب عرض سعر' : 'Get a quote') : <>Starting from {country.price}</>}</Badge>
+                  <Badge variant="default" className="text-2xl px-6 py-3">{isEgypt ? (isRTL ? 'يبدأ من $249' : 'Starting from $249') : <>Starting from {country.price}</>}</Badge>
                   <Badge variant="secondary" className="text-lg px-4 py-2">{country.timeframe}</Badge>
                 </div>
 
-                {isEgypt ? (
-                  <div className="flex justify-center">
-                    <Button size="lg" asChild className="text-lg px-8">
-                      <a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a>
+                <div className="grid md:grid-cols-2 gap-4 text-left">
+                  <div className="rounded-xl border p-5 flex flex-col gap-3">
+                    <h3 className="font-semibold text-lg flex items-center gap-2"><Handshake className="w-5 h-5 text-primary" />Open it with a formation partner</h3>
+                    <p className="text-sm text-muted-foreground flex-1">
+                      {isEgypt
+                        ? (isRTL ? 'تحدث مع فريقنا على واتساب للحصول على استشارة تأسيس مباشرة.' : 'Talk to our team on WhatsApp for a direct formation consultation.')
+                        : `Compare trusted formation partners for ${country.name} and open your company directly with the one you pick.`}
+                    </p>
+                    <Button size="lg" variant="outline" asChild className="w-full">
+                      {isEgypt ? (
+                        <a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a>
+                      ) : (
+                        <a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a>
+                      )}
                     </Button>
                   </div>
-                ) : (
-                  <div className="grid md:grid-cols-2 gap-4 text-left">
-                    <div className="rounded-xl border p-5 flex flex-col gap-3">
-                      <h3 className="font-semibold text-lg flex items-center gap-2"><Handshake className="w-5 h-5 text-primary" />Open it with a formation partner</h3>
-                      <p className="text-sm text-muted-foreground flex-1">
-                        Compare trusted formation partners for {country.name} and open your company directly with the one you pick.
-                      </p>
-                      <Button size="lg" variant="outline" asChild className="w-full">
-                        <a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a>
-                      </Button>
-                    </div>
-                    <div className="rounded-xl border border-primary/50 p-5 flex flex-col gap-3">
-                      <h3 className="font-semibold text-lg flex items-center gap-2"><CreditCard className="w-5 h-5 text-primary" />Let FoundStart form it for you</h3>
-                      <p className="text-sm text-muted-foreground flex-1">
-                        Register to your dashboard, pay securely online, and track every step while we establish your company.
-                      </p>
-                      <Button size="lg" asChild className="w-full">
-                        <Link to={user ? formationPath : '/auth'} state={registerState}>{isRTL ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}</Link>
-                      </Button>
-                    </div>
+                  <div className="rounded-xl border border-primary/50 p-5 flex flex-col gap-3">
+                    <h3 className="font-semibold text-lg flex items-center gap-2"><CreditCard className="w-5 h-5 text-primary" />Let FoundStart form it for you</h3>
+                    <p className="text-sm text-muted-foreground flex-1">
+                      {isEgypt
+                        ? (isRTL ? 'سجل في لوحة التحكم، ادفع بأمان أونلاين، وتابع كل خطوة أثناء تأسيس شركتك. رسوم الخدمة تبدأ من $249 والرسوم الحكومية منفصلة.' : 'Register to your dashboard, pay securely online, and track every step while we establish your company. Service fees from $249; government fees separate.')
+                        : 'Register to your dashboard, pay securely online, and track every step while we establish your company.'}
+                    </p>
+                    <Button size="lg" asChild className="w-full">
+                      <Link to={user ? formationPath : '/auth'} state={registerState}>{isRTL ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}</Link>
+                    </Button>
                   </div>
-                )}
+                </div>
               </CardContent>
             </Card>
 
@@ -151,17 +151,15 @@ const CountryPage = () => {
               <h2 className="text-3xl font-bold mb-4">Ready to Start Your {country.name} Business?</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{isRTL ? 'اختر شريك تأسيس موثوقًا أو دع FoundStart تؤسس شركتك.' : 'Pick a formation partner, or let FoundStart establish your company for you.'}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" asChild className="text-lg px-8">
+                  <Link to={user ? formationPath : '/auth'} state={registerState}>{isRTL ? 'سجل وابدأ الآن' : 'Register & Start Now'}</Link>
+                </Button>
                 {isEgypt ? (
-                  <Button size="lg" asChild className="text-lg px-8">
+                  <Button size="lg" variant="outline" asChild>
                     <a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a>
                   </Button>
                 ) : (
-                  <>
-                    <Button size="lg" asChild className="text-lg px-8">
-                      <Link to={user ? formationPath : '/auth'} state={registerState}>Register & Start Now</Link>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild><Link to="/pricing-calculator">Calculate Your Costs</Link></Button>
-                  </>
+                  <Button size="lg" variant="outline" asChild><Link to="/pricing-calculator">Calculate Your Costs</Link></Button>
                 )}
               </div>
             </div>

@@ -23,32 +23,7 @@ import {
   Loader2,
 } from 'lucide-react';
 
-// Base prices mirror the server-side catalog in the create-formation-order function (USD).
-const countries = [
-  { code: 'usa', name: 'United States', flag: '🇺🇸', base: 299, entities: ['llc', 'c_corp', 's_corp'] },
-  { code: 'uk', name: 'United Kingdom', flag: '🇬🇧', base: 199, entities: ['ltd', 'llp'] },
-  { code: 'ca', name: 'Canada', flag: '🇨🇦', base: 399, entities: ['corp'] },
-  { code: 'ee', name: 'Estonia', flag: '🇪🇪', base: 300, entities: ['ou'] },
-  { code: 'fi', name: 'Finland', flag: '🇫🇮', base: 350, entities: ['oy'] },
-  { code: 'se', name: 'Sweden', flag: '🇸🇪', base: 350, entities: ['ab'] },
-  { code: 'lv', name: 'Latvia', flag: '🇱🇻', base: 250, entities: ['sia'] },
-  { code: 'lt', name: 'Lithuania', flag: '🇱🇹', base: 280, entities: ['uab'] },
-  { code: 'ie', name: 'Ireland', flag: '🇮🇪', base: 350, entities: ['ltd'] },
-];
-
-const entityTypes: Record<string, { name: string; description: string }> = {
-  llc: { name: 'LLC', description: 'Limited Liability Company - Flexible structure with pass-through taxation' },
-  c_corp: { name: 'C-Corporation', description: 'Standard corporation with separate taxation' },
-  s_corp: { name: 'S-Corporation', description: 'Pass-through taxation with corporate structure' },
-  ltd: { name: 'LTD', description: 'Private Limited Company - Standard limited company structure' },
-  llp: { name: 'LLP', description: 'Limited Liability Partnership' },
-  corp: { name: 'Corporation', description: 'Standard Canadian corporation' },
-  ou: { name: 'OÜ', description: 'Osaühing - Estonian private limited company' },
-  oy: { name: 'Oy', description: 'Osakeyhtiö - Finnish limited company' },
-  ab: { name: 'AB', description: 'Aktiebolag - Swedish limited company' },
-  sia: { name: 'SIA', description: 'Sabiedrība ar ierobežotu atbildību - Latvian limited company' },
-  uab: { name: 'UAB', description: 'Uždaroji akcinė bendrovė - Lithuanian limited company' },
-};
+import { formationCountries, formationAddons, minPrice } from '@/data/formationCatalog';
 
 const steps = [
   { id: 1, title: 'Country', icon: MapPin },
@@ -58,22 +33,16 @@ const steps = [
   { id: 5, title: 'Review & Pay', icon: CreditCard },
 ];
 
-const addons = [
-  { id: 'registered_agent', name: 'Registered Agent', price: 149, description: 'Required for most states' },
-  { id: 'virtual_office', name: 'Virtual Office', price: 199, description: 'Professional business address' },
-  { id: 'ein', name: 'EIN Registration', price: 99, description: 'Federal Tax ID number' },
-  { id: 'bank_assist', name: 'Bank Account Assistance', price: 249, description: 'Help opening a business bank account' },
-  { id: 'operating_agreement', name: 'Operating Agreement', price: 79, description: 'Custom legal document' },
-];
+const addons = formationAddons;
 
 const FormationWizard = () => {
   const [searchParams] = useSearchParams();
   const preselect = (searchParams.get('country') ?? '').toLowerCase();
   const cancelled = searchParams.get('order') === 'cancelled';
-  const [currentStep, setCurrentStep] = useState(countries.some(c => c.code === preselect) ? 2 : 1);
+  const [currentStep, setCurrentStep] = useState(formationCountries.some(c => c.code === preselect) ? 2 : 1);
   const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    country: countries.some(c => c.code === preselect) ? preselect : '',
+    country: formationCountries.some(c => c.code === preselect) ? preselect : '',
     entityType: '',
     companyName: '',
     businessAddress: '',
@@ -82,7 +51,8 @@ const FormationWizard = () => {
     addons: [] as string[],
   });
 
-  const selectedCountry = countries.find(c => c.code === formData.country);
+  const selectedCountry = formationCountries.find(c => c.code === formData.country);
+  const selectedEntity = selectedCountry?.entities.find(e => e.code === formData.entityType);
 
   const handleNext = () => {
     if (currentStep < 5) setCurrentStep(currentStep + 1);
@@ -118,7 +88,7 @@ const FormationWizard = () => {
   };
 
   const calculateTotal = () => {
-    const basePrice = selectedCountry?.base ?? 0;
+    const basePrice = selectedEntity?.price ?? 0;
     const addonsTotal = addons
       .filter(a => formData.addons.includes(a.id))
       .reduce((sum, a) => sum + a.price, 0);
@@ -206,7 +176,7 @@ const FormationWizard = () => {
                 onValueChange={(value) => setFormData({ ...formData, country: value, entityType: '' })}
                 className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
               >
-                {countries.map((country) => (
+                {formationCountries.map((country) => (
                   <Label
                     key={country.code}
                     htmlFor={country.code}
@@ -220,13 +190,13 @@ const FormationWizard = () => {
                     <span className="text-3xl">{country.flag}</span>
                     <span>
                       <span className="font-medium block">{country.name}</span>
-                      <span className="text-xs text-muted-foreground">from ${country.base}</span>
+                      <span className="text-xs text-muted-foreground">from ${minPrice(country)}</span>
                     </span>
                   </Label>
                 ))}
               </RadioGroup>
               <p className="text-center text-sm text-muted-foreground pt-2">
-                Egypt formations are quoted individually - contact us from the Egypt country page.
+                Prices are FoundStart service fees. Government and notary fees are separate and confirmed in your quote before work starts.
               </p>
             </div>
           )}
@@ -243,25 +213,36 @@ const FormationWizard = () => {
                 onValueChange={(value) => setFormData({ ...formData, entityType: value })}
                 className="grid gap-4 sm:grid-cols-2"
               >
-                {selectedCountry?.entities.map((entityCode) => {
-                  const entity = entityTypes[entityCode];
-                  return (
-                    <Label
-                      key={entityCode}
-                      htmlFor={entityCode}
-                      className={`flex cursor-pointer flex-col gap-2 rounded-lg border-2 p-4 transition-colors ${
-                        formData.entityType === entityCode
-                          ? 'border-primary bg-primary/5'
-                          : 'border-border hover:border-primary/50'
-                      }`}
-                    >
-                      <RadioGroupItem value={entityCode} id={entityCode} className="sr-only" />
+                {selectedCountry?.entities.map((entity) => (
+                  <Label
+                    key={entity.code}
+                    htmlFor={entity.code}
+                    className={`flex cursor-pointer flex-col gap-2 rounded-lg border-2 p-4 transition-colors ${
+                      formData.entityType === entity.code
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                  >
+                    <RadioGroupItem value={entity.code} id={entity.code} className="sr-only" />
+                    <span className="flex items-baseline justify-between gap-2">
                       <span className="font-semibold">{entity.name}</span>
-                      <span className="text-sm text-muted-foreground">{entity.description}</span>
-                    </Label>
-                  );
-                })}
+                      <span className="font-semibold text-primary">${entity.price}</span>
+                    </span>
+                    {entity.localName && (
+                      <span className="text-sm text-muted-foreground">{entity.localName}</span>
+                    )}
+                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide pt-1">What you need to provide</span>
+                    <ul className="list-disc pl-4 space-y-1">
+                      {entity.requirements.map((req, i) => (
+                        <li key={i} className="text-sm text-muted-foreground">{req}</li>
+                      ))}
+                    </ul>
+                  </Label>
+                ))}
               </RadioGroup>
+              {selectedCountry?.note && (
+                <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{selectedCountry.note}</p>
+              )}
             </div>
           )}
 
@@ -416,7 +397,7 @@ const FormationWizard = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Entity Type</span>
-                  <span className="font-medium">{entityTypes[formData.entityType]?.name}</span>
+                  <span className="font-medium">{selectedEntity?.name}{selectedEntity?.localName ? ` (${selectedEntity.localName})` : ''}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Company Name</span>
@@ -429,8 +410,8 @@ const FormationWizard = () => {
 
                 <div className="border-t pt-4 mt-4">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Formation Fee ({selectedCountry?.name})</span>
-                    <span className="font-medium">${selectedCountry?.base}</span>
+                    <span className="text-muted-foreground">Formation Fee - {selectedEntity?.name} ({selectedCountry?.name})</span>
+                    <span className="font-medium">${selectedEntity?.price}</span>
                   </div>
                   {formData.addons.map((addonId) => {
                     const addon = addons.find(a => a.id === addonId);
@@ -448,6 +429,9 @@ const FormationWizard = () => {
                 </div>
               </div>
 
+              {selectedCountry?.note && (
+                <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{selectedCountry.note}</p>
+              )}
               <p className="text-center text-sm text-muted-foreground">
                 Secure card payment via Stripe. Your company appears in your dashboard right after payment.
               </p>
@@ -495,7 +479,7 @@ const CompanyFormation = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Company Formation</h1>
-        <p className="text-muted-foreground">Start your business in the USA, UK, Canada, or Europe</p>
+        <p className="text-muted-foreground">Start your business in the USA, UK, Canada, Europe, or Egypt</p>
       </div>
 
       <FormationWizard />

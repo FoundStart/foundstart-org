@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Building, CheckCircle, MessageCircle } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { waEgyptLink } from '@/lib/whatsapp';
+import { Link } from 'react-router-dom';
 
 const types: [string, string][] = [
   ['Sole Proprietorship', 'منشأة فردية'],
@@ -42,7 +43,12 @@ const EgyptCountryDetails = () => {
             {isRTL ? 'تواصل معنا مباشرة وسنرد عليك بالتفاصيل والتكلفة المناسبة لحالتك.' : 'Message us directly and we will reply with the details and the cost that fits your case.'}
           </p>
           <div className="flex flex-col items-center gap-3">
-            {cta}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button size="lg" asChild className="text-lg px-8">
+                <Link to="/dashboard/formation?country=eg">{isRTL ? 'ابدأ أونلاين من لوحة التحكم' : 'Start online in your dashboard'}</Link>
+              </Button>
+              {cta}
+            </div>
             <a dir="ltr" href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-primary hover:underline">+20 100 290 5764</a>
           </div>
         </CardContent>
@@ -62,7 +68,9 @@ const EgyptCountryDetails = () => {
             ))}
           </div>
           <p className="text-sm text-muted-foreground mt-4">
-            {isRTL ? 'شروط كل نوع تختلف حسب النشاط والملكية. نؤكدها معك على واتساب قبل البدء.' : 'Requirements for each type depend on the activity and ownership. We confirm them with you on WhatsApp before you start.'}
+            {isRTL
+              ? 'رسوم الخدمة تبدأ من $249 (منشأة فردية) حتى $1,499 (شركة منطقة حرة)، والرسوم الحكومية منفصلة. الأسعار الدقيقة ومتطلبات كل نوع موجودة في معالج التأسيس داخل لوحة التحكم.'
+              : 'Service fees range from $249 (sole establishment) to $1,499 (free zone company); government fees are separate. Exact per-type prices and requirements are listed in the formation wizard in your dashboard.'}
           </p>
         </CardContent>
       </Card>
