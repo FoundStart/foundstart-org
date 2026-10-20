@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, PlayCircle, Tag } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Tag } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -51,11 +51,6 @@ const PartnerDetail = () => {
                 <Button asChild size="lg" className="flex-1">
                   <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{L(`Visit ${p.name}`, `زيارة ${p.name}`)}<ExternalLink className="w-4 h-4 ms-2" /></a>
                 </Button>
-                {p.videoUrl && (
-                  <Button asChild size="lg" variant="outline" className="flex-1">
-                    <a href={p.videoUrl} target="_blank" rel="noopener noreferrer"><PlayCircle className="w-4 h-4 me-2" />{L('Watch the video', 'شاهد الفيديو')}</a>
-                  </Button>
-                )}
               </div>
             </div>
 

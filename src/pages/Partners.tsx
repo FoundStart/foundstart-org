@@ -112,15 +112,6 @@ const Partners = () => {
                          Visit {partner.platform}
                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                        </Button>
-                       {partner.videoUrl && (
-                         <Button 
-                           variant="outline"
-                           className="w-full" 
-                           onClick={() => window.open(partner.videoUrl, '_blank')}
-                         >
-                           Watch Demo
-                         </Button>
-                       )}
                        <WhatsAppButton variant="outline" className="w-full" />
                      </div>
                   </CardContent>
