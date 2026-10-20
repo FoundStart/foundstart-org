@@ -1,22 +1,19 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { DollarSign, TrendingUp, Eye, EyeOff } from 'lucide-react';
+import { DollarSign, Eye, EyeOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useWalletData } from './useWalletData';
 
 const WalletBalance = () => {
   const [showBalance, setShowBalance] = useState(true);
   
-  // Mock data - will be replaced with real data from Supabase
-  const balance = 1250.75;
-  const availableBalance = 1200.00;
-  const pendingAmount = 50.75;
-  const monthlyGrowth = 12.5;
+  const { balance, pending: pendingAmount } = useWalletData();
+  const availableBalance = balance;
 
   return (
     <div className="grid md:grid-cols-3 gap-6">
-      <Card className="md:col-span-2">
+      <Card className="md:col-span-3">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="flex items-center">
             <DollarSign className="w-5 h-5 mr-2" />
@@ -36,10 +33,6 @@ const WalletBalance = () => {
               <span className="text-3xl font-bold">
                 ${showBalance ? balance.toFixed(2) : '***.**'}
               </span>
-              <Badge variant="secondary" className="text-green-600">
-                <TrendingUp className="w-3 h-3 mr-1" />
-                +{monthlyGrowth}%
-              </Badge>
             </div>
             <p className="text-muted-foreground">Total Balance</p>
           </div>
@@ -61,27 +54,6 @@ const WalletBalance = () => {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-sm">Account Status</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-sm">Verification</span>
-              <Badge variant="default">Verified</Badge>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm">Daily Limit</span>
-              <span className="text-sm font-medium">$5,000</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm">Monthly Limit</span>
-              <span className="text-sm font-medium">$50,000</span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 };

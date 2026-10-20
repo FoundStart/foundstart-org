@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ArrowUpRight, ArrowDownLeft, Clock, CheckCircle, XCircle, Search } from 'lucide-react';
 import { useState } from 'react';
+import { useWalletData } from './useWalletData';
 
 interface Transaction {
   id: string;
@@ -21,45 +22,12 @@ const TransactionHistory = () => {
   const [filterStatus, setFilterStatus] = useState('all');
   const [filterType, setFilterType] = useState('all');
 
-  // Mock transaction data - will be replaced with Supabase data
-  const transactions: Transaction[] = [
-    {
-      id: '1',
-      type: 'deposit',
-      amount: 500.00,
-      status: 'completed',
-      method: 'Credit Card',
-      date: '2024-01-15T10:30:00Z',
-      description: 'Deposit via Credit Card'
-    },
-    {
-      id: '2',
-      type: 'withdrawal',
-      amount: 200.00,
-      status: 'pending',
-      method: 'Bank Transfer',
-      date: '2024-01-14T15:45:00Z',
-      description: 'Withdrawal to Bank Account'
-    },
-    {
-      id: '3',
-      type: 'deposit',
-      amount: 1000.00,
-      status: 'completed',
-      method: 'Bank Transfer',
-      date: '2024-01-12T09:15:00Z',
-      description: 'Deposit via Bank Transfer'
-    },
-    {
-      id: '4',
-      type: 'withdrawal',
-      amount: 150.00,
-      status: 'failed',
-      method: 'PayPal',
-      date: '2024-01-10T14:20:00Z',
-      description: 'Withdrawal to PayPal'
-    }
-  ];
+  const { txs, loading } = useWalletData();
+  const transactions: Transaction[] = txs.map(t => ({
+    id: t.id, type: 'deposit', amount: t.amount,
+    status: (['completed','paid','success','succeeded'].includes(t.status) ? 'completed' : t.status === 'pending' ? 'pending' : 'failed') as Transaction['status'],
+    method: t.method, date: t.date, description: 'Wallet deposit',
+  }));
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -141,7 +109,7 @@ const TransactionHistory = () => {
       <CardContent>
         {filteredTransactions.length === 0 ? (
           <div className="text-center py-8">
-            <p className="text-muted-foreground">No transactions found</p>
+            <p className="text-muted-foreground">{loading ? 'Loading...' : 'No transactions yet'}</p>
           </div>
         ) : (
           <div className="space-y-4">
