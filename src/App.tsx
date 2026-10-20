@@ -128,8 +128,9 @@ function ScrollToTop() {
 }
 
 // Hide floating promos/chatbot on chat pages (agent chats, co-founder)
-const ChatPageExclusions = ({ children }: { children: ReactNode }) => {
+const ChatPageExclusions = ({ children, hideOnDashboard = false }: { children: ReactNode; hideOnDashboard?: boolean }) => {
   const { pathname } = useLocation();
+  if (hideOnDashboard && (pathname.startsWith('/dashboard') || pathname.startsWith('/admin'))) return null;
   if (pathname.startsWith('/agents') || pathname.startsWith('/cofounder')) return null;
   return <>{children}</>;
 };
@@ -220,7 +221,7 @@ function App() {
                 </Routes>
                 <ChatPageExclusions><AIChatBot /></ChatPageExclusions>
                 <MobileBottomNav />
-                <ChatPageExclusions><PartnerAdsHub /></ChatPageExclusions>
+                <ChatPageExclusions hideOnDashboard><PartnerAdsHub /></ChatPageExclusions>
                 <OutboundUtmTagger />
               </AuthProvider>
             </BrowserRouter>

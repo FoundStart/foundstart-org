@@ -56,11 +56,7 @@ const Header = () => {
 
   const mobileItems = [
     { name: language === 'ar' ? "الدول" : "Countries", href: '/countries' },
-    { name: language === 'ar' ? "كل الشركاء" : "All Partners", href: '/all-partners' },
     { name: language === 'ar' ? "التأسيس عبر لوحة FoundStart" : "Formation Dashboard", href: '/dashboard/formation' },
-    { name: t.digitalPartners, href: '/digital-partners' },
-    { name: "Freelancer", href: '/freelancer-partners' },
-    { name: "Sister Partners", href: '/sister-partners' },
     { name: "Services", href: '/services' },
     { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
     { name: language === 'ar' ? "التعلم" : "Learning", href: '/learning' },
