@@ -18,14 +18,14 @@ const steps = [
   {
     icon: Scale,
     link: '/agents/company-formation',
-    en: ['Compare vetted partners', 'See the full partner list for your category and pick who fits you.'],
-    ar: ['قارن شركاء موثوقين', 'شوف القائمة الكاملة لشركاء المجال واختار الأنسب ليك.'],
+    en: ['Pick your country and company type', 'See the requirements and the FoundStart price before you pay.'],
+    ar: ['اختر الدولة ونوع الشركة', 'شوف المتطلبات وسعر FoundStart قبل ما تدفع.'],
   },
   {
     icon: Rocket,
     link: '/auth',
-    en: ['Start your company', 'Sign up free and launch with the partner you chose.'],
-    ar: ['ابدأ شركتك', 'سجّل مجاناً وابدأ مع الشريك اللي اخترته.'],
+    en: ['Start your company', 'Register, pay securely online, and FoundStart forms your company.'],
+    ar: ['ابدأ شركتك', 'سجّل، ادفع أونلاين بأمان، وFoundStart تؤسس شركتك.'],
   },
 ];
 

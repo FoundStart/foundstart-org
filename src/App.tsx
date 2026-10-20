@@ -136,6 +136,13 @@ const ChatPageExclusions = ({ children, hideOnDashboard = false }: { children: R
   return <>{children}</>;
 };
 
+// Partner ads belong to the standalone partner pages only, not the main FoundStart flow.
+const PartnerPagesOnly = ({ children }: { children: ReactNode }) => {
+  const { pathname } = useLocation();
+  const on = ['/all-partners', '/partners', '/digital-partners', '/freelancer-partners', '/sister-partners'].some(p => pathname === p || pathname.startsWith(p + '/'));
+  return on ? <>{children}</> : null;
+};
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -159,7 +166,7 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/digital-services" element={<DigitalServices />} />
                   <Route path="/partners" element={<Partners />} />
-                  <Route path="/all-partners" element={<Navigate to="/countries" replace />} />
+                  <Route path="/all-partners" element={<AllPartners />} />
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/pricing-calculator" element={<PricingCalculator />} />
                   <Route path="/auth" element={<Auth />} />
@@ -229,7 +236,7 @@ function App() {
                 </Routes>
                 <ChatPageExclusions><AIChatBot /></ChatPageExclusions>
                 <MobileBottomNav />
-                <ChatPageExclusions hideOnDashboard><PartnerAdsHub /></ChatPageExclusions>
+                <PartnerPagesOnly><PartnerAdsHub /></PartnerPagesOnly>
                 <OutboundUtmTagger />
               </AuthProvider>
             </BrowserRouter>

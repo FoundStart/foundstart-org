@@ -36,7 +36,7 @@ const Countries = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pb-20 lg:pb-0">
-        <PageHero title="Company Formation" highlight="Worldwide" subtitle="Form your business in 10+ jurisdictions with trusted partners" />
+        <PageHero title="Company Formation" highlight="Worldwide" subtitle="Open your company with FoundStart in 10+ jurisdictions" />
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
             <div className="mb-8">
@@ -47,10 +47,10 @@ const Countries = () => {
 
             <div className={`text-center space-y-4 mb-12 ${isRTL ? 'text-right' : ''}`}>
               <h1 className="text-3xl md:text-4xl font-bold">
-                Countries & <span className="gradient-text">Formation Partners</span>
+                Countries & <span className="gradient-text">FoundStart Formation</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Choose your jurisdiction and formation partner to start your business globally.
+                Choose your country and open your company with FoundStart.
               </p>
               <div className="flex justify-center pt-2">
                 <Button asChild variant="outline" className="gap-2">
@@ -102,29 +102,6 @@ const Countries = () => {
                       />
                     )}
 
-                    {/* Formation Partners for this country (deduped) */}
-                    <div>
-                      <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                        <Building className="w-5 h-5 text-primary" />
-                        Formation Partners
-                      </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        {Array.from(
-                          new Map(selectedCountryData.partners.map(p => [p.name.toLowerCase(), p])).values()
-                        ).map((partner, i) => (
-                          <Button
-                            key={i}
-                            variant="outline"
-                            className="group hover:bg-primary hover:text-primary-foreground"
-                            onClick={() => window.open(partner.url, '_blank')}
-                          >
-                            {partner.name}
-                            <ExternalLink className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-
                     {/* Key Stats */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {[
@@ -163,8 +140,7 @@ const Countries = () => {
                 <h2 className="text-2xl font-bold text-center mb-6">All Supported Countries</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
                   {countriesData.map((c) => {
-                    const uniquePartners = Array.from(new Map(c.partners.map(p => [p.name.toLowerCase(), p])).values());
-                    return (
+                                        return (
                       <Card
                         key={c.id}
                         className="text-center hover:shadow-lg transition-all cursor-pointer hover:scale-105 flex flex-col"
@@ -174,9 +150,6 @@ const Countries = () => {
                           <div className="text-3xl">{c.flag}</div>
                           <div className="font-semibold text-sm">{c.name}</div>
                           <div className="text-xs text-primary font-medium">{c.price}</div>
-                          <Badge variant="outline" className="text-xs">
-                            {uniquePartners.length} Partner{uniquePartners.length > 1 ? 's' : ''}
-                          </Badge>
                           <Button size="sm" className="w-full mt-2" onClick={(e) => { e.stopPropagation(); setSelectedCountry(c.id); }}>
                             Form Company <ArrowRight className="w-3 h-3 ml-1" />
                           </Button>

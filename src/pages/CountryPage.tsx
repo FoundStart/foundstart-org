@@ -64,33 +64,17 @@ const CountryPage = () => {
                   <Badge variant="secondary" className="text-lg px-4 py-2">{country.timeframe}</Badge>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 text-left">
-                  <div className="rounded-xl border p-5 flex flex-col gap-3">
-                    <h3 className="font-semibold text-lg flex items-center gap-2"><Handshake className="w-5 h-5 text-primary" />Open it with a formation partner</h3>
-                    <p className="text-sm text-muted-foreground flex-1">
-                      {isEgypt
-                        ? (isRTL ? 'تحدث مع فريقنا على واتساب للحصول على استشارة تأسيس مباشرة.' : 'Talk to our team on WhatsApp for a direct formation consultation.')
-                        : `Compare trusted formation partners for ${country.name} and open your company directly with the one you pick.`}
-                    </p>
-                    <Button size="lg" variant="outline" asChild className="w-full">
-                      {isEgypt ? (
-                        <a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a>
-                      ) : (
-                        <a href="#partners">{isRTL ? 'اختر شريك التأسيس' : 'Choose a Formation Partner'}</a>
-                      )}
-                    </Button>
-                  </div>
-                  <div className="rounded-xl border border-primary/50 p-5 flex flex-col gap-3">
-                    <h3 className="font-semibold text-lg flex items-center gap-2"><CreditCard className="w-5 h-5 text-primary" />Let FoundStart form it for you</h3>
-                    <p className="text-sm text-muted-foreground flex-1">
-                      {isEgypt
-                        ? (isRTL ? 'سجل في لوحة التحكم، ادفع بأمان أونلاين، وتابع كل خطوة أثناء تأسيس شركتك. رسوم الخدمة تبدأ من $249 والرسوم الحكومية منفصلة.' : 'Register to your dashboard, pay securely online, and track every step while we establish your company. Service fees from $249; government fees separate.')
-                        : 'Register to your dashboard, pay securely online, and track every step while we establish your company.'}
-                    </p>
-                    <Button size="lg" asChild className="w-full">
-                      <Link to={user ? formationPath : '/auth'} state={registerState}>{isRTL ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}</Link>
-                    </Button>
-                  </div>
+                <div className="rounded-xl border border-primary/50 p-5 flex flex-col gap-3 text-left max-w-xl mx-auto">
+                  <h3 className="font-semibold text-lg flex items-center gap-2"><CreditCard className="w-5 h-5 text-primary" />{isRTL ? `افتح شركتك في ${country.name} مع FoundStart` : `Open your ${country.name} company with FoundStart`}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {isEgypt
+                      ? (isRTL ? 'سجل في لوحة التحكم، ادفع بأمان أونلاين، وتابع كل خطوة أثناء تأسيس شركتك. رسوم الخدمة تبدأ من $249 والرسوم الحكومية منفصلة.' : 'Register to your dashboard, pay securely online, and track every step while we establish your company. Service fee starts from $249; government fees are separate.')
+                      : (isRTL ? 'سجل في لوحة التحكم، شوف متطلبات الدولة والسعر، ادفع بأمان أونلاين، وتابع كل خطوة أثناء تأسيس شركتك.' : "Register to your dashboard, see the country's requirements and price, pay securely online, and track every step while we establish your company.")}
+                  </p>
+                  <Button size="lg" asChild className="w-full">
+                    <Link to={user ? formationPath : '/auth'} state={registerState}>{isRTL ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}</Link>
+                  </Button>
+                  {isEgypt && <Button size="lg" variant="outline" asChild className="w-full"><a href={waEgyptLink(isRTL)} target="_blank" rel="noopener noreferrer">{isRTL ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}</a></Button>}
                 </div>
               </CardContent>
             </Card>
@@ -125,32 +109,11 @@ const CountryPage = () => {
 
             {isEgypt && <EgyptCountryDetails />}
 
-            {country.partners.length > 0 && <Card id="partners" className="glass-card mb-12 scroll-mt-24">
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-2"><Building className="w-5 h-5" />Formation Partners</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {country.partners.map((partner, index) => (
-                    <Button
-                      key={index}
-                      variant="outline"
-                      asChild
-                      className="h-auto py-4 hover:bg-primary hover:text-primary-foreground"
-                    >
-                      <a href={partner.url} target={partner.url.startsWith('/') ? undefined : '_blank'} rel="noopener noreferrer">
-                        {partner.name}
-                        <ExternalLink className="w-4 h-4 mx-2" />
-                      </a>
-                    </Button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>}
+            
 
             <div className="text-center py-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl">
               <h2 className="text-3xl font-bold mb-4">Ready to Start Your {country.name} Business?</h2>
-              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{isRTL ? 'اختر شريك تأسيس موثوقًا أو دع FoundStart تؤسس شركتك.' : 'Pick a formation partner, or let FoundStart establish your company for you.'}</p>
+              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{isRTL ? 'دع FoundStart تؤسس شركتك.' : 'Let FoundStart establish your company for you.'}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild className="text-lg px-8">
                   <Link to={user ? formationPath : '/auth'} state={registerState}>{isRTL ? 'سجل وابدأ الآن' : 'Register & Start Now'}</Link>

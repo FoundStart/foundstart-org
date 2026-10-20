@@ -58,9 +58,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6"
         >
-          {language === 'ar' ? 'أسس شركتك' : 'Build Your Business'}{' '}
+          {language === 'ar' ? 'افتح شركتك مع FoundStart' : 'Open Your Company with FoundStart'}{' '}
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            {language === 'ar' ? 'عالمياً' : 'Globally'}
+            {language === 'ar' ? 'في أي دولة' : 'Anywhere'}
           </span>
         </motion.h1>
 
@@ -72,8 +72,8 @@ const Hero = () => {
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10"
         >
           {language === 'ar'
-            ? 'FoundStart يساعدك على تأسيس شركتك في أمريكا وأوروبا والشرق الأوسط بسهولة.'
-            : 'FoundStart helps you form companies in USA, UK, Europe & Middle East with trusted partners.'}
+            ? 'FoundStart شركة تؤسس لك شركتك في أي دولة بأسعارنا: سجل، ادفع أونلاين، وتابع كل خطوة من لوحة التحكم.'
+            : 'FoundStart forms your company in any country at our own prices: register, pay online, and track every step from your dashboard.'}
         </motion.p>
 
         {/* Search-style CTA bar */}
@@ -166,7 +166,6 @@ const Hero = () => {
           <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />{t.noHiddenFees}</span>
           <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />{t.support24}</span>
           <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />10+ Jurisdictions</span>
-          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />539 Partners</span>
         </motion.div>
       </div>
 

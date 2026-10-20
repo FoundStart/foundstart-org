@@ -63,7 +63,7 @@ const HomeFAQ = () => (
               <Link to="/faq">View All FAQs <ArrowRight className="w-4 h-4 ml-2" /></Link>
             </Button>
             <Button asChild>
-              <Link to="/countries">Country Partner Offers <ArrowRight className="w-4 h-4 ml-2" /></Link>
+              <Link to="/countries">Countries & Prices <ArrowRight className="w-4 h-4 ml-2" /></Link>
             </Button>
           </div>
         </div>
