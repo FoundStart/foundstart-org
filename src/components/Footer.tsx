@@ -47,6 +47,7 @@ const Footer = () => {
       { name: L("Media & Videos", "الوسائط والفيديو"), href: "/media" },
       { name: L("Affiliate Program", "برنامج الأفلييت"), href: "/affiliates" },
       { name: L("Tutorials", "الشروحات"), href: "/tutorials" },
+      { name: L("Business Name Generator", "مولّد أسماء الشركات"), href: "/business-name-generator" },
       { name: L("Digital Nomad Visas", "تأشيرات الرحّالة الرقميين"), href: "/digital-nomad-visas" }
     ]
   }, {

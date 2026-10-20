@@ -62,6 +62,7 @@ const GuidePage = lazy(() => import("./pages/guides/GuidePage"));
 const AdminDashboard = lazy(() => import("./pages/saas/AdminDashboard"));
 const PricingCalculator = lazy(() => import("./pages/PricingCalculator"));
 const FAQ = lazy(() => import("./pages/FAQ"));
+const BusinessNameGenerator = lazy(() => import("./pages/BusinessNameGenerator"));
 const AllPartners = lazy(() => import("./pages/AllPartners"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const PartnerTrackingTest = lazy(() => import("./pages/admin/PartnerTrackingTest"));
@@ -229,6 +230,7 @@ function App() {
                   <Route path="/agents" element={<Navigate to="/faq" replace />} />
                   <Route path="/agents/:slug" element={<Navigate to="/faq" replace />} />
                   <Route path="/guides" element={<GuidesIndex />} />
+                  <Route path="/business-name-generator" element={<BusinessNameGenerator />} />
                   <Route path="/guides/:slug" element={<GuidePage />} />
                   <Route path="/admin/partner-test" element={<PartnerTrackingTest />} />
                   <Route path="/admin/*" element={<AdminDashboard />} />

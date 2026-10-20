@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
-import BusinessNameWidget from '@/components/BusinessNameWidget';
 import HomeFAQ from '@/components/home/HomeFAQ';
 import HomeHowItWorks from '@/components/home/HomeHowItWorks';
 import HomeTwoOptions from '@/components/home/HomeTwoOptions';
@@ -27,25 +26,6 @@ const Index = () => {
         <HomeTwoOptions language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />
         <Suspense fallback={null}><HomeBlogCarousel /></Suspense>
-
-        <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-          <div className="container mx-auto max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className={`space-y-4 mb-10 ${isRTL ? 'text-right' : 'text-center'}`}>
-                <h2 className="text-2xl md:text-4xl font-extrabold">
-                  {t.findPerfectName} <span className="gradient-text">{t.businessName}</span>
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.businessNameDescription}</p>
-              </div>
-              <BusinessNameWidget />
-            </motion.div>
-          </div>
-        </section>
 
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
