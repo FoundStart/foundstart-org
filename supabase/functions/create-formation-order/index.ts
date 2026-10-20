@@ -11,9 +11,9 @@ const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: 
 // Government/notary fees are separate and confirmed per order (noted on the site for Egypt).
 const COUNTRIES: Record<string, { name: string; entities: Record<string, { name: string; price: number }> }> = {
   usa: { name: "United States", entities: {
-    llc: { name: "LLC", price: 1375 },
-    c_corp: { name: "C-Corporation", price: 1375 },
-    s_corp: { name: "S-Corporation", price: 1375 },
+    llc: { name: "LLC", price: 500 },
+    c_corp: { name: "C-Corporation", price: 500 },
+    s_corp: { name: "S-Corporation", price: 500 },
   } },
   uk: { name: "United Kingdom", entities: {
     ltd: { name: "LTD", price: 500 },
