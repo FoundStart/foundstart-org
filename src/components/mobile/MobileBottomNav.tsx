@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Globe, Briefcase, Globe2, UserPlus, BookOpen } from 'lucide-react';
+import { Home, Globe, Briefcase, UserPlus, BookOpen } from 'lucide-react';
 import { SHOW_REGISTRATION } from '@/config/features';
 import { useAuth } from '@/contexts/AuthProvider';
 import { cn } from '@/lib/utils';
@@ -21,12 +21,6 @@ const MobileBottomNav = () => {
       label: 'Countries', 
       href: '/countries', 
       isActive: location.pathname === '/countries' || location.pathname.startsWith('/country/')
-    },
-    { 
-      icon: Globe2, 
-      label: 'Domains', 
-      href: '/domains', 
-      isActive: location.pathname.includes('/domain')
     },
     { 
       icon: Briefcase, 
