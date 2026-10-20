@@ -45,7 +45,6 @@ const PremiumDomainsBlog = () => {
         { name: "Paylita.com", price: "$400" },
         { name: "Payort.com", price: "$250" },
         { name: "NixCash.com", price: "$400" },
-        { name: "CoinsLite.com", price: "$4,500" },
         { name: "Cryptinco.com", price: "$299" },
         { name: "Cryptalyzes.com", price: "$150" },
         { name: "Cryptemp.com", price: "$250" },
