@@ -86,26 +86,6 @@ const Header = () => {
             role="navigation"
             aria-label="Main navigation"
           >
-            {/* Partners Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap outline-none">
-                {t.partners}
-                <ChevronDown className="ml-1 h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-48">
-                {partnersDropdownItems.map((item) => (
-                  <DropdownMenuItem key={item.name} asChild>
-                    <Link
-                      to={item.href}
-                      className="w-full cursor-pointer"
-                    >
-                      {item.name}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
             {/* Domains Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap outline-none">
