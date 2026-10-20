@@ -60,6 +60,7 @@ Deno.serve(async (req) => {
   form.set("cancel_url", `${site}/dashboard?deposit=cancelled`);
   form.set("customer_email", body?.customer?.email || user.email || "");
   form.set("client_reference_id", orderId);
+  form.set("metadata[kind]", "wallet_deposit");
   form.set("metadata[order_id]", orderId);
   form.set("metadata[user_id]", user.id);
   form.set("line_items[0][quantity]", "1");

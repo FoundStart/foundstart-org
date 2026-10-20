@@ -7,12 +7,14 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Building2, Plus, Eye, FileText, MoreVertical, Loader2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { format } from 'date-fns';
 
 const MyCompanies = () => {
   const { user } = useAuth();
+  const [searchParams] = useSearchParams();
+  const orderSuccess = searchParams.get('order') === 'success';
 
   const { data: companies, isLoading, error } = useQuery({
     queryKey: ['my-companies', user?.id],
@@ -75,6 +77,11 @@ const MyCompanies = () => {
 
   return (
     <div className="space-y-6">
+      {orderSuccess && (
+        <div className="rounded-lg border border-green-300 bg-green-50 dark:border-green-900 dark:bg-green-950 p-4 text-sm">
+          Payment received. Your company formation order is confirmed and its status will update here as we work on it.
+        </div>
+      )}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-2xl font-bold">My Companies</h1>

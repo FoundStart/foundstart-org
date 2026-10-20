@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useSearchParams } from 'react-router-dom';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Progress } from '@/components/ui/progress';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from '@/hooks/use-toast';
 import {
   Building2,
   MapPin,
@@ -20,28 +20,34 @@ import {
   Check,
   Plus,
   Trash2,
+  Loader2,
 } from 'lucide-react';
 
+// Base prices mirror the server-side catalog in the create-formation-order function (USD).
 const countries = [
-  { code: 'usa', name: 'United States', flag: '🇺🇸', entities: ['llc', 'c_corp', 's_corp'] },
-  { code: 'uk', name: 'United Kingdom', flag: '🇬🇧', entities: ['ltd', 'llp'] },
-  { code: 'germany', name: 'Germany', flag: '🇩🇪', entities: ['gmbh'] },
-  { code: 'netherlands', name: 'Netherlands', flag: '🇳🇱', entities: ['bv'] },
-  { code: 'spain', name: 'Spain', flag: '🇪🇸', entities: ['sl'] },
-  { code: 'france', name: 'France', flag: '🇫🇷', entities: ['sarl', 'sas'] },
+  { code: 'usa', name: 'United States', flag: '🇺🇸', base: 299, entities: ['llc', 'c_corp', 's_corp'] },
+  { code: 'uk', name: 'United Kingdom', flag: '🇬🇧', base: 199, entities: ['ltd', 'llp'] },
+  { code: 'ca', name: 'Canada', flag: '🇨🇦', base: 399, entities: ['corp'] },
+  { code: 'ee', name: 'Estonia', flag: '🇪🇪', base: 300, entities: ['ou'] },
+  { code: 'fi', name: 'Finland', flag: '🇫🇮', base: 350, entities: ['oy'] },
+  { code: 'se', name: 'Sweden', flag: '🇸🇪', base: 350, entities: ['ab'] },
+  { code: 'lv', name: 'Latvia', flag: '🇱🇻', base: 250, entities: ['sia'] },
+  { code: 'lt', name: 'Lithuania', flag: '🇱🇹', base: 280, entities: ['uab'] },
+  { code: 'ie', name: 'Ireland', flag: '🇮🇪', base: 350, entities: ['ltd'] },
 ];
 
 const entityTypes: Record<string, { name: string; description: string }> = {
   llc: { name: 'LLC', description: 'Limited Liability Company - Flexible structure with pass-through taxation' },
   c_corp: { name: 'C-Corporation', description: 'Standard corporation with separate taxation' },
   s_corp: { name: 'S-Corporation', description: 'Pass-through taxation with corporate structure' },
-  ltd: { name: 'LTD', description: 'Private Limited Company - Standard UK business structure' },
+  ltd: { name: 'LTD', description: 'Private Limited Company - Standard limited company structure' },
   llp: { name: 'LLP', description: 'Limited Liability Partnership' },
-  gmbh: { name: 'GmbH', description: 'Gesellschaft mit beschränkter Haftung - German LLC equivalent' },
-  bv: { name: 'BV', description: 'Besloten Vennootschap - Dutch private limited company' },
-  sl: { name: 'SL', description: 'Sociedad Limitada - Spanish limited company' },
-  sarl: { name: 'SARL', description: 'Société à responsabilité limitée - French LLC equivalent' },
-  sas: { name: 'SAS', description: 'Société par actions simplifiée - Simplified joint-stock company' },
+  corp: { name: 'Corporation', description: 'Standard Canadian corporation' },
+  ou: { name: 'OÜ', description: 'Osaühing - Estonian private limited company' },
+  oy: { name: 'Oy', description: 'Osakeyhtiö - Finnish limited company' },
+  ab: { name: 'AB', description: 'Aktiebolag - Swedish limited company' },
+  sia: { name: 'SIA', description: 'Sabiedrība ar ierobežotu atbildību - Latvian limited company' },
+  uab: { name: 'UAB', description: 'Uždaroji akcinė bendrovė - Lithuanian limited company' },
 };
 
 const steps = [
@@ -49,14 +55,25 @@ const steps = [
   { id: 2, title: 'Entity Type', icon: Building2 },
   { id: 3, title: 'Business Details', icon: Users },
   { id: 4, title: 'Add-ons', icon: FileCheck },
-  { id: 5, title: 'Review', icon: CreditCard },
+  { id: 5, title: 'Review & Pay', icon: CreditCard },
+];
+
+const addons = [
+  { id: 'registered_agent', name: 'Registered Agent', price: 149, description: 'Required for most states' },
+  { id: 'virtual_office', name: 'Virtual Office', price: 199, description: 'Professional business address' },
+  { id: 'ein', name: 'EIN Registration', price: 99, description: 'Federal Tax ID number' },
+  { id: 'bank_assist', name: 'Bank Account Assistance', price: 249, description: 'Help opening a business bank account' },
+  { id: 'operating_agreement', name: 'Operating Agreement', price: 79, description: 'Custom legal document' },
 ];
 
 const FormationWizard = () => {
-  const navigate = useNavigate();
-  const [currentStep, setCurrentStep] = useState(1);
+  const [searchParams] = useSearchParams();
+  const preselect = (searchParams.get('country') ?? '').toLowerCase();
+  const cancelled = searchParams.get('order') === 'cancelled';
+  const [currentStep, setCurrentStep] = useState(countries.some(c => c.code === preselect) ? 2 : 1);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    country: '',
+    country: countries.some(c => c.code === preselect) ? preselect : '',
     entityType: '',
     companyName: '',
     businessAddress: '',
@@ -67,39 +84,21 @@ const FormationWizard = () => {
 
   const selectedCountry = countries.find(c => c.code === formData.country);
 
-  const addons = [
-    { id: 'registered_agent', name: 'Registered Agent', price: 149, description: 'Required for most states' },
-    { id: 'virtual_office', name: 'Virtual Office', price: 199, description: 'Professional business address' },
-    { id: 'ein', name: 'EIN Registration', price: 99, description: 'Federal Tax ID number' },
-    { id: 'bank_assist', name: 'Bank Account Assistance', price: 249, description: 'Help opening a business bank account' },
-    { id: 'operating_agreement', name: 'Operating Agreement', price: 79, description: 'Custom legal document' },
-  ];
-
   const handleNext = () => {
-    if (currentStep < 5) {
-      setCurrentStep(currentStep + 1);
-    }
+    if (currentStep < 5) setCurrentStep(currentStep + 1);
   };
 
   const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
-    }
+    if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
   const addOwner = () => {
-    setFormData({
-      ...formData,
-      owners: [...formData.owners, { name: '', email: '', ownership: '' }],
-    });
+    setFormData({ ...formData, owners: [...formData.owners, { name: '', email: '', ownership: '' }] });
   };
 
   const removeOwner = (index: number) => {
     if (formData.owners.length > 1) {
-      setFormData({
-        ...formData,
-        owners: formData.owners.filter((_, i) => i !== index),
-      });
+      setFormData({ ...formData, owners: formData.owners.filter((_, i) => i !== index) });
     }
   };
 
@@ -119,21 +118,52 @@ const FormationWizard = () => {
   };
 
   const calculateTotal = () => {
-    const basePrice = 299;
+    const basePrice = selectedCountry?.base ?? 0;
     const addonsTotal = addons
       .filter(a => formData.addons.includes(a.id))
       .reduce((sum, a) => sum + a.price, 0);
     return basePrice + addonsTotal;
   };
 
-  const handleSubmit = () => {
-    // TODO: Submit to API
-    console.log('Submitting:', formData);
-    navigate('/dashboard/formation');
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('create-formation-order', {
+        body: {
+          country: formData.country,
+          entityType: formData.entityType,
+          companyName: formData.companyName,
+          businessAddress: formData.businessAddress,
+          businessDescription: formData.businessDescription,
+          owners: formData.owners,
+          addons: formData.addons,
+        },
+      });
+      if (error) throw error;
+      if (data?.paymentUrl) {
+        window.location.href = data.paymentUrl;
+        return;
+      }
+      throw new Error(data?.error || 'Failed to create payment');
+    } catch (e: any) {
+      console.error('Formation order error:', e);
+      toast({
+        title: 'Could not start payment',
+        description: e?.message || 'Please try again or contact support.',
+        variant: 'destructive',
+      });
+      setSubmitting(false);
+    }
   };
 
   return (
     <div className="space-y-6">
+      {cancelled && (
+        <div className="rounded-lg border border-yellow-300 bg-yellow-50 dark:border-yellow-900 dark:bg-yellow-950 p-4 text-sm">
+          Payment was cancelled - no charge was made. Review your details and try again when ready.
+        </div>
+      )}
+
       {/* Progress Steps */}
       <div className="flex items-center justify-between">
         {steps.map((step, index) => (
@@ -188,10 +218,16 @@ const FormationWizard = () => {
                   >
                     <RadioGroupItem value={country.code} id={country.code} className="sr-only" />
                     <span className="text-3xl">{country.flag}</span>
-                    <span className="font-medium">{country.name}</span>
+                    <span>
+                      <span className="font-medium block">{country.name}</span>
+                      <span className="text-xs text-muted-foreground">from ${country.base}</span>
+                    </span>
                   </Label>
                 ))}
               </RadioGroup>
+              <p className="text-center text-sm text-muted-foreground pt-2">
+                Egypt formations are quoted individually - contact us from the Egypt country page.
+              </p>
             </div>
           )}
 
@@ -236,7 +272,7 @@ const FormationWizard = () => {
                 <h2 className="text-xl font-semibold">Business Details</h2>
                 <p className="text-muted-foreground">Provide information about your company</p>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="companyName">Company Name</Label>
@@ -278,7 +314,7 @@ const FormationWizard = () => {
                       Add Owner
                     </Button>
                   </div>
-                  
+
                   {formData.owners.map((owner, index) => (
                     <div key={index} className="grid gap-4 rounded-lg border p-4 sm:grid-cols-3">
                       <div className="space-y-2">
@@ -335,7 +371,7 @@ const FormationWizard = () => {
                 <h2 className="text-xl font-semibold">Additional Services</h2>
                 <p className="text-muted-foreground">Select optional services to add to your formation</p>
               </div>
-              
+
               <div className="grid gap-4">
                 {addons.map((addon) => (
                   <Label
@@ -365,7 +401,7 @@ const FormationWizard = () => {
             </div>
           )}
 
-          {/* Step 5: Review */}
+          {/* Step 5: Review & Pay */}
           {currentStep === 5 && (
             <div className="space-y-6">
               <div className="text-center mb-6">
@@ -390,11 +426,11 @@ const FormationWizard = () => {
                   <span className="text-muted-foreground">Owners</span>
                   <span className="font-medium">{formData.owners.length}</span>
                 </div>
-                
+
                 <div className="border-t pt-4 mt-4">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Formation Fee</span>
-                    <span className="font-medium">$299</span>
+                    <span className="text-muted-foreground">Formation Fee ({selectedCountry?.name})</span>
+                    <span className="font-medium">${selectedCountry?.base}</span>
                   </div>
                   {formData.addons.map((addonId) => {
                     const addon = addons.find(a => a.id === addonId);
@@ -411,6 +447,10 @@ const FormationWizard = () => {
                   </div>
                 </div>
               </div>
+
+              <p className="text-center text-sm text-muted-foreground">
+                Secure card payment via Stripe. Your company appears in your dashboard right after payment.
+              </p>
             </div>
           )}
         </CardContent>
@@ -421,12 +461,12 @@ const FormationWizard = () => {
         <Button
           variant="outline"
           onClick={handleBack}
-          disabled={currentStep === 1}
+          disabled={currentStep === 1 || submitting}
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back
         </Button>
-        
+
         {currentStep < 5 ? (
           <Button
             onClick={handleNext}
@@ -440,9 +480,9 @@ const FormationWizard = () => {
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         ) : (
-          <Button onClick={handleSubmit}>
-            <CreditCard className="mr-2 h-4 w-4" />
-            Proceed to Payment
+          <Button onClick={handleSubmit} disabled={submitting}>
+            {submitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CreditCard className="mr-2 h-4 w-4" />}
+            {submitting ? 'Opening secure checkout...' : 'Pay with Stripe'}
           </Button>
         )}
       </div>
@@ -455,9 +495,9 @@ const CompanyFormation = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Company Formation</h1>
-        <p className="text-muted-foreground">Start your business in USA, UK, or Europe</p>
+        <p className="text-muted-foreground">Start your business in the USA, UK, Canada, or Europe</p>
       </div>
-      
+
       <FormationWizard />
     </div>
   );
