@@ -25,7 +25,7 @@ const PartnerDetail = () => {
         <link rel="canonical" href={`https://www.foundstart.org/partner/${p.slug}`} />
       </Helmet>
       <Header />
-      <main className="pb-20 md:pb-0">
+      <main className="">
         <section className="py-10 md:py-16 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-3xl space-y-6">
             <Link to="/all-partners" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">

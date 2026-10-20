@@ -37,7 +37,7 @@ const Countries = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pb-20 lg:pb-0">
+      <main className="">
         <PageHero title="Company Formation" highlight="Worldwide" subtitle="Open your company with FoundStart in 10+ jurisdictions" />
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">

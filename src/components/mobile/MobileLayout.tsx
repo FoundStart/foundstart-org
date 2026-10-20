@@ -1,7 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import MobileHeader from './MobileHeader';
-import MobileBottomNav from './MobileBottomNav';
 
 interface MobileLayoutProps {
   children: React.ReactNode;
@@ -22,12 +21,11 @@ const MobileLayout = ({
     <div className="min-h-screen bg-background flex flex-col">
       <MobileHeader title={title} showBack={showBack} />
       <main className={cn(
-        "flex-1 pt-16 pb-20 lg:pb-0 overflow-x-hidden",
+        "flex-1 pt-16 overflow-x-hidden",
         className
       )}>
         {children}
       </main>
-      {showBottomNav && <MobileBottomNav />}
     </div>
   );
 };

@@ -68,7 +68,6 @@ const PartnerDetail = lazy(() => import("./pages/PartnerDetail"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const PartnerTrackingTest = lazy(() => import("./pages/admin/PartnerTrackingTest"));
 const FormationHelper = lazy(() => import("./components/FormationHelper"));
-import MobileBottomNav from "./components/mobile/MobileBottomNav";
 const PartnerAdsHub = lazy(() => import("./components/ads/PartnerAdsHub"));
 import OutboundUtmTagger from "./components/ads/OutboundUtmTagger";
 import HealthCheckBanner from "./components/HealthCheckBanner";
@@ -240,7 +239,6 @@ function App() {
                   <Route path="*" element={<NotFound />} />
                 </Routes></Suspense>
                 <Suspense fallback={null}><FormationHelper /></Suspense>
-                <MobileBottomNav />
                 <PartnerPagesOnly><Suspense fallback={null}><PartnerAdsHub /></Suspense></PartnerPagesOnly>
                 <OutboundUtmTagger />
               </AuthProvider>

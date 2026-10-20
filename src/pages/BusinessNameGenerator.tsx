@@ -30,7 +30,7 @@ const BusinessNameGenerator = () => {
         <link rel="canonical" href="https://www.foundstart.org/business-name-generator" />
       </Helmet>
       <Header />
-      <main className="pb-20 md:pb-0">
+      <main className="">
         <PageHero
           title={L('Find the Perfect', 'اعثر على')}
           highlight={L('Business Name', 'اسم شركتك')}

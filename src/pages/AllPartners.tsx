@@ -40,7 +40,7 @@ const AllPartners = () => {
         <link rel="canonical" href="https://www.foundstart.org/all-partners" />
       </Helmet>
       <Header />
-      <main className="pb-20 md:pb-0">
+      <main className="">
         <PageHero
           title={L('Our', 'شبكة')}
           highlight={L('Partner Network', 'شركائنا')}
