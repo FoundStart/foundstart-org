@@ -5,27 +5,27 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     icon: Compass,
-    link: '/agents/company-formation',
-    en: ['Tell us what you need', 'Pick your country or goal - formation, banking, marketing and more.'],
-    ar: ['قولنا محتاج إيه', 'اختار بلدك أو هدفك - تأسيس شركة، بنك، تسويق وأكتر.'],
-  },
-  {
-    icon: MessagesSquare,
-    link: '/agents',
-    en: ['Meet your AI agent', 'A dedicated agent answers your questions and understands your case.'],
-    ar: ['قابل وكيلك الذكي', 'وكيل مخصص يجاوب على أسئلتك ويفهم حالتك.'],
+    link: '/auth?mode=signup',
+    en: ['Register', 'Create your free FoundStart account.'],
+    ar: ['سجّل', 'أنشئ حسابك المجاني في FoundStart.'],
   },
   {
     icon: Scale,
-    link: '/agents/company-formation',
+    link: '/countries',
     en: ['Pick your country and company type', 'See the requirements and the FoundStart price before you pay.'],
     ar: ['اختر الدولة ونوع الشركة', 'شوف المتطلبات وسعر FoundStart قبل ما تدفع.'],
   },
   {
     icon: Rocket,
     link: '/auth',
-    en: ['Start your company', 'Register, pay securely online, and FoundStart forms your company.'],
-    ar: ['ابدأ شركتك', 'سجّل، ادفع أونلاين بأمان، وFoundStart تؤسس شركتك.'],
+    en: ['Pay online', 'Secure card checkout. One clear fee, no add-ons.'],
+    ar: ['ادفع أونلاين', 'دفع آمن بالبطاقة. رسوم واحدة واضحة، بدون إضافات.'],
+  },
+  {
+    icon: MessagesSquare,
+    link: '/dashboard',
+    en: ['Track every step', 'Upload documents and follow your company in the dashboard.'],
+    ar: ['تابع كل خطوة', 'ارفع المستندات وتابع شركتك من لوحة التحكم.'],
   },
 ];
 

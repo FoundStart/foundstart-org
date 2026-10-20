@@ -8,7 +8,6 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import BusinessNameWidget from '@/components/BusinessNameWidget';
 import HomeFAQ from '@/components/home/HomeFAQ';
-import HomeServices from '@/components/home/HomeServices';
 import HomeHowItWorks from '@/components/home/HomeHowItWorks';
 import HomeTwoOptions from '@/components/home/HomeTwoOptions';
 import HomeCTA from '@/components/home/HomeCTA';
@@ -27,7 +26,6 @@ const Index = () => {
         <Hero />
         <HomeTwoOptions language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />
-        <HomeServices language={language} isRTL={isRTL} />
         <Suspense fallback={null}><HomeBlogCarousel /></Suspense>
 
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">

@@ -59,8 +59,6 @@ const DomainInquiry = lazy(() => import("./pages/DomainInquiry"));
 const DomainWishlist = lazy(() => import("./pages/DomainWishlist"));
 const BulkDomainInquiry = lazy(() => import("./pages/BulkDomainInquiry"));
 const CustomerDashboard = lazy(() => import("./pages/saas/CustomerDashboard"));
-const Agents = lazy(() => import("./pages/Agents"));
-const AgentChat = lazy(() => import("./pages/AgentChat"));
 const GuidesIndex = lazy(() => import("./pages/guides/GuidesIndex"));
 const GuidePage = lazy(() => import("./pages/guides/GuidePage"));
 const AdminDashboard = lazy(() => import("./pages/saas/AdminDashboard"));
@@ -69,7 +67,6 @@ const FAQ = lazy(() => import("./pages/FAQ"));
 const AllPartners = lazy(() => import("./pages/AllPartners"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const PartnerTrackingTest = lazy(() => import("./pages/admin/PartnerTrackingTest"));
-const AIChatBot = lazy(() => import("./components/AIChatBot"));
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 const PartnerAdsHub = lazy(() => import("./components/ads/PartnerAdsHub"));
 import OutboundUtmTagger from "./components/ads/OutboundUtmTagger";
@@ -229,8 +226,8 @@ function App() {
                   <Route path="/cofounder" element={<Navigate to="/" replace />} />
                   <Route path="/blog/meet-the-foundstart-ai-cofounder" element={<Navigate to="/blog" replace />} />
                   <Route path="/blog/meet-the-foundstart-ai-cofounder-ar" element={<Navigate to="/blog" replace />} />
-                  <Route path="/agents" element={<Agents />} />
-                  <Route path="/agents/:slug" element={<AgentChat />} />
+                  <Route path="/agents" element={<Navigate to="/faq" replace />} />
+                  <Route path="/agents/:slug" element={<Navigate to="/faq" replace />} />
                   <Route path="/guides" element={<GuidesIndex />} />
                   <Route path="/guides/:slug" element={<GuidePage />} />
                   <Route path="/admin/partner-test" element={<PartnerTrackingTest />} />
@@ -238,7 +235,6 @@ function App() {
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes></Suspense>
-                <ChatPageExclusions hideOnDashboard><Suspense fallback={null}><AIChatBot /></Suspense></ChatPageExclusions>
                 <MobileBottomNav />
                 <PartnerPagesOnly><Suspense fallback={null}><PartnerAdsHub /></Suspense></PartnerPagesOnly>
                 <OutboundUtmTagger />
