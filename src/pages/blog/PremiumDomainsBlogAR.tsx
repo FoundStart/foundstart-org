@@ -56,7 +56,6 @@ const PremiumDomainsBlogAR = () => {
       domains: [
         { name: "CometCall.com", price: "$250" },
         { name: "HeyKeyword.com", price: "$5,000" },
-        { name: "Codestia.com", price: "$2,495" },
         { name: "Solivid.com", price: "$150" },
         { name: "Expensol.com", price: "$400" },
         { name: "Hosstec.com", price: "$250" },
@@ -81,9 +80,6 @@ const PremiumDomainsBlogAR = () => {
       title: "نطاقات اقتصادية وبأسعار في المتناول",
       emoji: <Zap className="h-5 w-5 text-primary" />,
       domains: [
-        { name: "Deeemoz.com", price: "$750" },
-        { name: "Deeemoz.fun", price: "$99" },
-        { name: "GoldenStoreSeg.com", price: "$500" },
         { name: "MSA-Serv.com", price: "$2,500" },
         { name: "UniqranKing.com", price: "$250" },
       ]
