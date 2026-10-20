@@ -9,8 +9,6 @@ export const foundstartArticleOrder: string[] = [
   "what-is-foundstart-ar",
   "register-your-company-step-by-step",
   "register-your-company-step-by-step-ar",
-  "meet-the-foundstart-ai-cofounder",
-  "meet-the-foundstart-ai-cofounder-ar",
   "five-free-founder-guides",
   "five-free-founder-guides-ar"
 ];
@@ -95,26 +93,6 @@ export const foundstartArticles: Record<string, ShortetArticle> = {
     "readTime": "5 دقائق قراءة",
     "heroImage": "",
     "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><h2>١. اختر الدولة</h2><p>للعمل أونلاين يختار كثير من المؤسسين شركة LLC أمريكية للوصول إلى Stripe وبنك Mercury والثقة العالمية، أو شركة Ltd بريطانية لإعداد سريع ومنخفض التكلفة، أو إستونيا لتواجد في الاتحاد الأوروبي. وإذا كنت تعمل محلياً في مصر، يتيح لك كيان مصري استخدام بوابات الدفع المحلية مثل كاشير وباي موب وفوري.</p><h2>٢. اطلب التأسيس من شريك</h2><p>يتولى شريك التأسيس التقديم والوكيل المسجل وأوراق الشركة. تملأ نموذجاً واحداً ويقوم الشريك بالإجراءات ويرسل لك مستندات التأسيس، ولشركات أمريكا الرقم الضريبي EIN.</p><h2>٣. جهّز البنك والمدفوعات</h2><p>بعد جاهزية المستندات افتح حساباً بنكياً للشركة (Mercury أو Wise شائعان للشركات الأمريكية) واربط Stripe لقبول الدفع بالبطاقات. في مصر اربط كاشير أو باي موب بدلاً منه.</p><h2>٤. حافظ على الالتزام</h2><p>سجّل موعد التقرير السنوي وتجديد الوكيل المسجل والمواعيد الضريبية في تقويمك من اليوم الأول. التأخر فيها قد يكلف أكثر من التأسيس نفسه.</p><h2>اقرأ الدليل الكامل</h2><p>الشرح الكامل مع روابط الشركاء في <a href=\"/guides/register-company\">دليل تسجيل شركتك</a>.</p></div>"
-  },
-  "meet-the-foundstart-ai-cofounder": {
-    "title": "Meet the FoundStart AI Co-founder: Ask, Compare and Get Pointed to the Right Tool",
-    "description": "The AI Co-founder is a free chat assistant in English and Arabic. It helps with formation, AI tools, vibe coding, marketing and operations.",
-    "category": "Business",
-    "author": "Mohamed Sayed",
-    "date": "Oct 18, 2026",
-    "readTime": "4 min read",
-    "heroImage": "/blog/business-automation-guide-11e99571.jpg",
-    "html": "<h2>What it is</h2><p>The AI Co-founder is a chat assistant built into FoundStart. It answers questions about forming a company, building with AI, coding, marketing and running operations, and it recommends services from the partner catalog on the platform, which lists more than 500 partners.</p><h2>How to use it</h2><ul><li>Open the <a href=\"/cofounder\">AI Co-founder</a> page and type your question in English or Arabic.</li><li>Describe your situation: where you live, what you sell and what you need first.</li><li>Sign in to keep your conversations saved and come back to them later.</li></ul><h2>Good questions to start with</h2><ul><li>Which jurisdiction fits an online service business?</li><li>What do I need to open a business bank account after formation?</li><li>Which tools help me build and launch a first version quickly?</li></ul><h2>A note on advice</h2><p>The Co-founder is a starting point for research. For legal or tax decisions, confirm the details with the partner or a qualified professional in your jurisdiction.</p>"
-  },
-  "meet-the-foundstart-ai-cofounder-ar": {
-    "title": "تعرّف على الشريك المؤسس الذكي في FoundStart: اسأل وقارن واعرف الأداة المناسبة",
-    "description": "الشريك المؤسس الذكي مساعد محادثة مجاني بالعربية والإنجليزية، يساعد في التأسيس وأدوات الذكاء الاصطناعي والبرمجة بالوصف والتسويق والعمليات.",
-    "category": "Business",
-    "author": "محمد سيد",
-    "date": "Oct 18, 2026",
-    "readTime": "4 دقائق قراءة",
-    "heroImage": "",
-    "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><h2>ما هو</h2><p>الشريك المؤسس الذكي مساعد محادثة مدمج في FoundStart. يجيب عن أسئلة تأسيس الشركات والبناء بالذكاء الاصطناعي والبرمجة والتسويق وإدارة العمليات، ويرشّح خدمات من قائمة الشركاء على المنصة، وتضم أكثر من 500 شريك.</p><h2>كيف تستخدمه</h2><ul><li>افتح صفحة <a href=\"/cofounder\">الشريك المؤسس الذكي</a> واكتب سؤالك بالعربية أو الإنجليزية.</li><li>اشرح وضعك: أين تعيش وماذا تبيع وما أول ما تحتاجه.</li><li>سجّل الدخول لتحفظ محادثاتك وتعود إليها لاحقاً.</li></ul><h2>أسئلة مناسبة للبداية</h2><ul><li>ما الدولة المناسبة لشركة خدمات أونلاين؟</li><li>ماذا أحتاج لفتح حساب بنكي للشركة بعد التأسيس؟</li><li>ما الأدوات التي تساعدني على بناء نسخة أولى وإطلاقها بسرعة؟</li></ul><h2>ملاحظة عن النصيحة</h2><p>الشريك المؤسس نقطة بداية للبحث. للقرارات القانونية أو الضريبية، تأكد من التفاصيل مع الشريك أو مختص مؤهل في دولتك.</p></div>"
   },
   "five-free-founder-guides": {
     "title": "The Five Free Founder Guides on FoundStart",
@@ -226,28 +204,6 @@ export const foundstartBlogPosts = [
     "readTime": "5 دقائق قراءة",
     "slug": "register-your-company-step-by-step-ar",
     "image": "/blog/company-formation-checklist-02813472.jpg"
-  },
-  {
-    "id": 334,
-    "title": "Meet the FoundStart AI Co-founder: Ask, Compare and Get Pointed to the Right Tool",
-    "description": "The AI Co-founder is a free chat assistant in English and Arabic. It helps with formation, AI tools, vibe coding, marketing and operations.",
-    "category": "Business",
-    "author": "Mohamed Sayed",
-    "date": "Oct 18, 2026",
-    "readTime": "4 min read",
-    "slug": "meet-the-foundstart-ai-cofounder",
-    "image": "/blog/business-automation-guide-11e99571.jpg"
-  },
-  {
-    "id": 335,
-    "title": "تعرّف على الشريك المؤسس الذكي في FoundStart: اسأل وقارن واعرف الأداة المناسبة",
-    "description": "الشريك المؤسس الذكي مساعد محادثة مجاني بالعربية والإنجليزية، يساعد في التأسيس وأدوات الذكاء الاصطناعي والبرمجة بالوصف والتسويق والعمليات.",
-    "category": "Business",
-    "author": "محمد سيد",
-    "date": "Oct 18, 2026",
-    "readTime": "4 دقائق قراءة",
-    "slug": "meet-the-foundstart-ai-cofounder-ar",
-    "image": "/blog/business-automation-guide-11e99571.jpg"
   },
   {
     "id": 336,

@@ -62,16 +62,6 @@ const Index = () => {
                     : 'Learn company formation, AI building, marketing and operations - step by step.'}
                 </p>
               </Link>
-              <Link to="/cofounder" className="group rounded-xl border bg-card p-8 transition-shadow hover:shadow-lg">
-                <h3 className="mb-2 text-2xl font-bold">
-                  {language === 'ar' ? 'الشريك المؤسس بالذكاء الاصطناعي' : 'AI Co-founder'}
-                </h3>
-                <p className="text-muted-foreground">
-                  {language === 'ar'
-                    ? 'اسأل شريكك المؤسس أي حاجة - بيفتكر محادثاتكم وبيرشح الأدوات المناسبة.'
-                    : 'Ask your co-founder anything - it remembers your conversations and recommends the right tools.'}
-                </p>
-              </Link>
             </div>
           </div>
         </section>

@@ -65,12 +65,12 @@ const GuidePage = () => {
         <div className="mt-14 rounded-lg border bg-muted/30 p-6 text-center">
           <p className="mb-4 text-lg font-semibold">
             {language === 'ar'
-              ? 'عايز حد يمشي معاك خطوة بخطوة؟'
-              : 'Want someone to walk you through it?'}
+              ? 'جاهز تفتح شركتك؟'
+              : 'Ready to open your company?'}
           </p>
           <Button asChild>
-            <Link to="/cofounder">
-              {language === 'ar' ? 'اسأل الشريك المؤسس بالذكاء الاصطناعي' : 'Ask the AI Co-founder'}
+            <Link to="/countries">
+              {language === 'ar' ? 'الدول والأسعار' : 'Countries & prices'}
             </Link>
           </Button>
         </div>

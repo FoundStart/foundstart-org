@@ -59,7 +59,6 @@ const DomainInquiry = lazy(() => import("./pages/DomainInquiry"));
 const DomainWishlist = lazy(() => import("./pages/DomainWishlist"));
 const BulkDomainInquiry = lazy(() => import("./pages/BulkDomainInquiry"));
 const CustomerDashboard = lazy(() => import("./pages/saas/CustomerDashboard"));
-const Cofounder = lazy(() => import("./pages/Cofounder"));
 const Agents = lazy(() => import("./pages/Agents"));
 const AgentChat = lazy(() => import("./pages/AgentChat"));
 const GuidesIndex = lazy(() => import("./pages/guides/GuidesIndex"));
@@ -227,7 +226,9 @@ function App() {
                   <Route path="/domain-wishlist" element={<DomainWishlist />} />
                   <Route path="/bulk-domain-inquiry" element={<BulkDomainInquiry />} />
                   <Route path="/dashboard/*" element={<CustomerDashboard />} />
-                  <Route path="/cofounder" element={<Cofounder />} />
+                  <Route path="/cofounder" element={<Navigate to="/" replace />} />
+                  <Route path="/blog/meet-the-foundstart-ai-cofounder" element={<Navigate to="/blog" replace />} />
+                  <Route path="/blog/meet-the-foundstart-ai-cofounder-ar" element={<Navigate to="/blog" replace />} />
                   <Route path="/agents" element={<Agents />} />
                   <Route path="/agents/:slug" element={<AgentChat />} />
                   <Route path="/guides" element={<GuidesIndex />} />

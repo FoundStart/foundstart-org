@@ -25,7 +25,6 @@ https://www.foundstart.org/domains
 https://www.foundstart.org/domain-inquiry
 https://www.foundstart.org/domain-wishlist
 https://www.foundstart.org/bulk-domain-inquiry
-https://www.foundstart.org/cofounder
 https://www.foundstart.org/guides
 https://www.foundstart.org/blog
 https://www.foundstart.org/blog/digital-nomad-guide
@@ -45,8 +44,6 @@ https://www.foundstart.org/blog/what-is-foundstart
 https://www.foundstart.org/blog/what-is-foundstart-ar
 https://www.foundstart.org/blog/register-your-company-step-by-step
 https://www.foundstart.org/blog/register-your-company-step-by-step-ar
-https://www.foundstart.org/blog/meet-the-foundstart-ai-cofounder
-https://www.foundstart.org/blog/meet-the-foundstart-ai-cofounder-ar
 https://www.foundstart.org/blog/five-free-founder-guides
 https://www.foundstart.org/blog/five-free-founder-guides-ar
 https://www.foundstart.org/blog/shortet-2-0-launches-on-product-hunt-short-links-bio-pages-and-qr-codes-in-one-platform-ar

@@ -24,7 +24,7 @@ function useAdapter(layout: AffAdapter["Layout"] = Layout): AffAdapter {
     site: {
       key: "foundstart", name: "FoundStart", url: "https://www.foundstart.org", product: "foundstart",
       whatTheySell: { en: "FoundStart helps founders register a company in 10 countries and find the right tools and partners.", ar: "FoundStart بيساعد المؤسسين يسجلوا شركة في 10 دول ويلاقوا الأدوات والشركاء المناسبين." },
-      paths: [{ en: "Home", ar: "الرئيسية", path: "/" }, { en: "Countries", ar: "الدول", path: "/countries" }, { en: "Pricing", ar: "الأسعار", path: "/pricing" }, { en: "Services", ar: "الخدمات", path: "/services" }, { en: "AI Co-founder", ar: "المؤسس المشارك AI", path: "/cofounder" }, { en: "Blog", ar: "المدونة", path: "/blog" }],
+      paths: [{ en: "Home", ar: "الرئيسية", path: "/" }, { en: "Countries", ar: "الدول", path: "/countries" }, { en: "Pricing", ar: "الأسعار", path: "/pricing" }, { en: "Services", ar: "الخدمات", path: "/services" }, { en: "Blog", ar: "المدونة", path: "/blog" }],
     },
     lang: language === "ar" ? "ar" : "en",
     user: user ? { id: user.id, email: user.email } : null,

@@ -168,12 +168,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.foundstart.org/cofounder</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.foundstart.org/guides</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -283,18 +277,6 @@
   </url>
   <url>
     <loc>https://www.foundstart.org/blog/register-your-company-step-by-step-ar</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.foundstart.org/blog/meet-the-foundstart-ai-cofounder</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.foundstart.org/blog/meet-the-foundstart-ai-cofounder-ar</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
