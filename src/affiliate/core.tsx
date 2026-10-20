@@ -166,6 +166,7 @@ const errMsg = (e: any, t: (a: string, b: string) => string) => {
     below_minimum: ["Your approved balance is below the minimum payout.", "رصيدك المعتمد أقل من الحد الأدنى للسحب."],
     payout_method_missing: ["Add a payout method and details first.", "أضف طريقة الدفع وبياناتها أولا."],
     payout_open: ["You already have an open payout request.", "عندك طلب سحب مفتوح بالفعل."],
+    terms_not_accepted: ["Please accept the affiliate terms first.", "من فضلك وافق على شروط الأفلييت أولا."],
     not_approved: ["Your affiliate account is not approved yet.", "حساب الأفلييت لم تتم الموافقة عليه بعد."],
     bad_code_format: ["Use 3 to 24 letters, numbers, dash or underscore.", "استخدم من 3 إلى 24 حرف أو رقم أو - أو _."],
     code_reserved: ["That name is not allowed. Pick another.", "الاسم ده غير مسموح. اختار غيره."],
@@ -258,6 +259,8 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
     if (error) setMsg(errMsg(error, t)); else await load();
   };
   const requestPayout = async () => { setBusy(true); setMsg(""); const { error } = await a.supabase.rpc("aff_request_payout"); setBusy(false); if (error) setMsg(errMsg(error, t)); else { setMsg(t("Payout requested. We review and send it manually.", "تم طلب السحب. هنراجعه ونحوله يدويا.")); load(); } };
+  const [termsOk, setTermsOk] = useState(false);
+  const acceptTerms = async () => { setBusy(true); setMsg(""); const { error } = await a.supabase.rpc("aff_accept_terms"); setBusy(false); if (error) setMsg(errMsg(error, t)); else { setMsg(t("Terms accepted.", "تمت الموافقة على الشروط.")); load(); } };
   const saveMethod = async () => { if (!method) return; setBusy(true); setMsg(""); const { error } = await a.supabase.rpc("aff_update_payout", { p_method: method.m, p_details: method.d }); setBusy(false); setMsg(error ? errMsg(error, t) : t("Saved.", "تم الحفظ.")); load(); };
   const maxDaily = Math.max(1, ...((me?.daily_clicks as any[]) || []).map((x) => x.n));
   const methods: string[] = s?.payout_methods || [];
@@ -356,7 +359,11 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
         <TabsContent value="payouts" className="space-y-4">
           <Card><CardHeader><CardTitle className="text-base">{t("Payout details", "بيانات السحب")}</CardTitle></CardHeader><CardContent className="space-y-3">
             <div className="grid gap-3 sm:grid-cols-2"><select className={sel} value={method?.m || ""} onChange={(e) => setMethod({ m: e.target.value, d: method?.d || "" })}><option value="">{t("Choose method", "اختر الطريقة")}</option>{methods.map((m) => <option key={m} value={m}>{mlabel(m, a.lang)}</option>)}</select><Input dir="ltr" maxLength={300} placeholder={t("Email / IBAN / phone number", "إيميل / IBAN / رقم")} value={method?.d || ""} onChange={(e) => setMethod({ m: method?.m || "", d: e.target.value })} /></div>
-            <div className="flex gap-2 flex-wrap"><Button variant="outline" disabled={busy} onClick={saveMethod}>{t("Save", "حفظ")}</Button><Button disabled={busy || aff.status !== "approved" || me.approved_cents < (s?.min_payout_cents ?? 0) || me.approved_cents <= 0} onClick={requestPayout}>{t(`Request payout (${money(me.approved_cents, s?.currency)})`, `اطلب السحب (${money(me.approved_cents, s?.currency)})`)}</Button></div>
+            {aff.accepted_terms_at ? <p className="text-xs text-muted-foreground">{t("Affiliate terms accepted on ", "تمت الموافقة على شروط الأفلييت في ")}{new Date(aff.accepted_terms_at).toLocaleDateString(a.lang === "ar" ? "ar-EG" : "en-US")}. <Link className="underline" to="/affiliates/terms">{t("View terms", "عرض الشروط")}</Link></p> : (
+              <div className="rounded-md border border-amber-500/40 bg-amber-500/10 p-3 space-y-2"><p className="text-sm">{t("Payout requests are locked until you agree to the affiliate terms.", "طلبات السحب مقفلة حتى توافق على شروط الأفلييت.")}</p>
+                <label className="flex items-start gap-2 text-sm"><input type="checkbox" className="mt-1" checked={termsOk} onChange={(e) => setTermsOk(e.target.checked)} /><span>{t("I agree to the ", "أوافق على ")}<Link className="underline" to="/affiliates/terms" target="_blank">{t("affiliate terms", "شروط الأفلييت")}</Link>.</span></label>
+                <Button size="sm" disabled={!termsOk || busy} onClick={acceptTerms}>{t("Accept terms", "موافقة على الشروط")}</Button></div>)}
+            <div className="flex gap-2 flex-wrap"><Button variant="outline" disabled={busy} onClick={saveMethod}>{t("Save", "حفظ")}</Button><Button disabled={busy || !aff.accepted_terms_at || aff.status !== "approved" || me.approved_cents < (s?.min_payout_cents ?? 0) || me.approved_cents <= 0} onClick={requestPayout}>{t(`Request payout (${money(me.approved_cents, s?.currency)})`, `اطلب السحب (${money(me.approved_cents, s?.currency)})`)}</Button></div>
             <p className="text-xs text-muted-foreground">{t(`Minimum payout ${money(s?.min_payout_cents ?? 0, s?.currency)}. Payouts are reviewed and sent manually. Nothing is automatic.`, `أقل سحب ${money(s?.min_payout_cents ?? 0, s?.currency)}. السحب بيتراجع ويتحول يدويا. لا يوجد دفع تلقائي.`)}</p>
           </CardContent></Card>
           <Card><CardContent className="p-0 overflow-x-auto">{me.payouts.length === 0 ? <p className="p-5 text-sm text-muted-foreground">{t("No payout requests yet.", "لا طلبات سحب بعد.")}</p> : <table className="w-full text-sm"><tbody>{me.payouts.map((p: any) => <tr key={p.id} className="border-t border-border first:border-0"><td className="p-3">{dt(p.requested_at)}</td><td className="p-3 font-medium">{money(p.amount_cents, s?.currency)}</td><td className="p-3">{mlabel(p.method, a.lang)}</td><td className="p-3"><StatusPill s={p.status} /></td><td className="p-3 text-muted-foreground" dir="ltr">{p.reference || ""}</td></tr>)}</tbody></table>}</CardContent></Card>

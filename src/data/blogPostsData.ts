@@ -17,7 +17,9 @@ import { foundstartBlogPosts } from './foundstartArticles';
 import { shortetArBlogPosts } from './shortetArticlesAr';
 import { arExtraPosts } from './foundstartAr2';
 
-export const blogPosts: BlogPost[] = [
+// Posts with unverified market figures: redirected to /blog, hidden from the index (no hard delete).
+export const HIDDEN_BLOG_SLUGS = new Set(["uk-vs-us-company-formation","uk-vs-us-company-formation-ar","marketing-agency-usa","marketing-agency-usa-ar","digital-agency-uk","digital-agency-uk-ar"]);
+const allBlogPosts: BlogPost[] = [
   ...(foundstartBlogPosts as BlogPost[]),
   ...(shortetArBlogPosts as BlogPost[]),
   ...(arExtraPosts as BlogPost[]),
@@ -451,6 +453,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/covers/delaware-vs-wyoming-llc.jpg"
   }
 ];
+export const blogPosts: BlogPost[] = allBlogPosts.filter((p) => !HIDDEN_BLOG_SLUGS.has(p.slug));
 
 export const categories = [
   "All", 

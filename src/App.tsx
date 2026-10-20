@@ -26,7 +26,6 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const PremiumDomainsBlog = lazy(() => import("./pages/blog/PremiumDomainsBlog"));
 const PremiumDomainsShowcaseBlog = lazy(() => import("./pages/blog/PremiumDomainsShowcaseBlog"));
 const LLCFormationGuideBlog = lazy(() => import("./pages/blog/LLCFormationGuideBlog"));
-const UKvsUSFormationBlog = lazy(() => import("./pages/blog/UKvsUSFormationBlog"));
 const BlogSlugDispatcher = lazy(() => import("./pages/blog/ArticleBlog").then(m => ({ default: m.BlogSlugDispatcher })));
 const PaymentGateways2026AR = lazy(() => import("./pages/blog/PaymentGateways2026AR"));
 const VibeCodingPlatforms2026AR = lazy(() => import("./pages/blog/VibeCodingPlatforms2026AR"));
@@ -36,7 +35,6 @@ const BestCompanyFormation2026AR = lazy(() => import("./pages/blog/BestCompanyFo
 const PremiumDomainsBlogAR = lazy(() => import("./pages/blog/PremiumDomainsBlogAR"));
 const PremiumDomainsShowcaseBlogAR = lazy(() => import("./pages/blog/PremiumDomainsShowcaseBlogAR"));
 const LLCFormationGuideBlogAR = lazy(() => import("./pages/blog/LLCFormationGuideBlogAR"));
-const UKvsUSFormationBlogAR = lazy(() => import("./pages/blog/UKvsUSFormationBlogAR"));
 const ArWrap = lazy(() => import("./pages/blog/ArWrap"));
 const EgyptOnePersonCompanyEN = lazy(() => import("./pages/blog/EgyptOnePersonCompanyEN"));
 
@@ -179,7 +177,7 @@ function App() {
                   <Route path="/blog/premium-domains-for-sale" element={<PremiumDomainsBlog />} />
                   <Route path="/blog/premium-domains-showcase" element={<PremiumDomainsShowcaseBlog />} />
                   <Route path="/blog/llc-formation-guide" element={<LLCFormationGuideBlog />} />
-                  <Route path="/blog/uk-vs-us-company-formation" element={<UKvsUSFormationBlog />} />
+                  <Route path="/blog/uk-vs-us-company-formation" element={<Navigate to="/blog" replace />} />
                   <Route path="/blog/momoai-business-setup-guide-en" element={<MoMoAIBusinessSetupEN />} />
                   <Route path="/blog/momoai-business-setup-guide-ar" element={<MoMoAIBusinessSetupAR />} />
                   <Route path="/blog/egypt-one-person-company-ar" element={<EgyptOnePersonCompanyAR />} />
@@ -196,7 +194,8 @@ function App() {
                   <Route path="/blog/premium-domains-for-sale-ar" element={<ArWrap><PremiumDomainsBlogAR /></ArWrap>} />
                   <Route path="/blog/premium-domains-showcase-ar" element={<ArWrap><PremiumDomainsShowcaseBlogAR /></ArWrap>} />
                   <Route path="/blog/llc-formation-guide-ar" element={<ArWrap><LLCFormationGuideBlogAR /></ArWrap>} />
-                  <Route path="/blog/uk-vs-us-company-formation-ar" element={<ArWrap><UKvsUSFormationBlogAR /></ArWrap>} />
+                  <Route path="/blog/uk-vs-us-company-formation-ar" element={<Navigate to="/blog" replace />} />
+                  {["marketing-agency-usa","marketing-agency-usa-ar","digital-agency-uk","digital-agency-uk-ar"].map((sl) => <Route key={sl} path={`/blog/${sl}`} element={<Navigate to="/blog" replace />} />)}
                   <Route path="/blog/egypt-one-person-company" element={<EgyptOnePersonCompanyEN />} />
                   <Route path="/blog/:slug" element={<BlogSlugDispatcher />} />
                   <Route path="/press" element={<Press />} />
