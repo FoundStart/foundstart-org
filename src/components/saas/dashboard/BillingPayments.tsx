@@ -54,6 +54,7 @@ const BillingPayments = () => {
         .from('orders')
         .select('id, order_type, status, total_price, currency, created_at, metadata')
         .eq('user_id', user!.id)
+        .in('status', ['paid','processing','completed'])
         .order('created_at', { ascending: false });
       if (error) throw error;
       return (data || []) as OrderRow[];

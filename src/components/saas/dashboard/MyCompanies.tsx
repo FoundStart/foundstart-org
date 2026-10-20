@@ -29,7 +29,9 @@ const MyCompanies = () => {
         .order('created_at', { ascending: false });
       
       if (error) throw error;
-      return data || [];
+      const { data: po } = await supabase.from('orders').select('company_id').eq('user_id', user.id).in('status', ['paid','processing','completed']);
+      const paid = new Set((po || []).map((o: any) => o.company_id));
+      return (data || []).filter((c: any) => paid.has(c.id) || (c.formation_status && c.formation_status !== 'draft'));
     },
     enabled: !!user?.id,
   });
