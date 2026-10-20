@@ -28,19 +28,19 @@ export const formationCountries: FormationCountry[] = [
   {
     code: 'usa', name: 'United States', flag: '🇺🇸',
     entities: [
-      { code: 'llc', name: 'LLC', price: 500, requirements: [
+      { code: 'llc', name: 'LLC', price: 450, requirements: [
         'Valid passport or ID for each owner',
         'No US residency or citizenship required',
         'Registered agent in the formation state (available as add-on)',
         'Operating agreement recommended (available as add-on)',
       ] },
-      { code: 'c_corp', name: 'C-Corporation', price: 500, requirements: [
+      { code: 'c_corp', name: 'C-Corporation', price: 550, requirements: [
         'Valid passport or ID for each founder',
         'No US residency or citizenship required',
         'Registered agent in the formation state (available as add-on)',
         'Bylaws and initial board resolutions prepared for you',
       ] },
-      { code: 's_corp', name: 'S-Corporation', price: 500, requirements: [
+      { code: 's_corp', name: 'S-Corporation', price: 750, requirements: [
         'All shareholders must be US citizens or permanent residents',
         'Maximum 100 shareholders, one class of stock',
         'IRS Form 2553 election filed after formation',

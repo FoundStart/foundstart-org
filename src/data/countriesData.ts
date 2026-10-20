@@ -3,7 +3,7 @@ export const countriesData = [
     id: 'USA',
     flag: '🇺🇸',
     name: 'United States',
-    price: '$500',
+    price: '$450',
     timeframe: '5-7 business days',
     currency: 'USD',
     ctaUrl: 'https://shortet.com/foundstart',
