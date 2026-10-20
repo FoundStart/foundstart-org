@@ -11,6 +11,13 @@ export interface MediaVideo {
   seconds: number;
 }
 export const mediaVideos: MediaVideo[] = [
+  {"id": "n9dU3EPPFVs", "lang": "en", "category": "products", "title": "Shortet: Simplify Your Links, Amplify Your Reach", "seconds": 21},
+  {"id": "MWIvbLO9fL0", "lang": "ar", "category": "products", "title": "كارتجي: جولة كاملة - أدلة خطوة بخطوة لتجارة الدومينات والدخل من الإنترنت", "seconds": 184},
+  {"id": "eshc2aeS3kA", "lang": "ar", "category": "products", "title": "ناميلايزر: ولّد أسماء دومينات، افحص توفرها، وأدر مبيعاتها في مكان واحد", "seconds": 96},
+  {"id": "wciBpGjclt8", "lang": "ar", "category": "shorts", "title": "ولّد اسم دومينك القادم في ثوان | ناميلايزر", "seconds": 0},
+  {"id": "zSjrk81fPvc", "lang": "ar", "category": "shorts", "title": "كيف تحصل على Bio Page و QR Code مجانا 2026؟", "seconds": 0},
+  {"id": "JY4uivH0q6U", "lang": "ar", "category": "shorts", "title": "استمتع بكل الادوات والمنصات الخاصة بالبيزنيس والتسويق", "seconds": 0},
+  {"id": "jlNCKnpr3g0", "lang": "ar", "category": "shorts", "title": "افتح شركتك وانت فى مكانك واستمتع بكل ادوات البيزنيس والفرى لانسر فى مكان واحد", "seconds": 0},
   {"id": "MA5vm7SfhIU", "lang": "en", "category": "walkthrough", "title": "Open a Company in Any Country with FoundStart | Full Walkthrough (US LLC $450)", "seconds": 103},
   {"id": "mOATHoFuoXc", "lang": "ar", "category": "walkthrough", "title": "افتح شركتك في أي دولة مع FoundStart | شرح كامل خطوة بخطوة", "seconds": 121},
   {"id": "yafJFcf8CQc", "lang": "en", "category": "walkthrough", "title": "Open a Company in Any Country with FoundStart (US LLC $450)", "seconds": 0},
