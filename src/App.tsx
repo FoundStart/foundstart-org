@@ -67,6 +67,7 @@ const FAQ = lazy(() => import("./pages/FAQ"));
 const AllPartners = lazy(() => import("./pages/AllPartners"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const PartnerTrackingTest = lazy(() => import("./pages/admin/PartnerTrackingTest"));
+const FormationHelper = lazy(() => import("./components/FormationHelper"));
 import MobileBottomNav from "./components/mobile/MobileBottomNav";
 const PartnerAdsHub = lazy(() => import("./components/ads/PartnerAdsHub"));
 import OutboundUtmTagger from "./components/ads/OutboundUtmTagger";
@@ -235,6 +236,7 @@ function App() {
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes></Suspense>
+                <Suspense fallback={null}><FormationHelper /></Suspense>
                 <MobileBottomNav />
                 <PartnerPagesOnly><Suspense fallback={null}><PartnerAdsHub /></Suspense></PartnerPagesOnly>
                 <OutboundUtmTagger />
