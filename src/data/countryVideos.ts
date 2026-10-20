@@ -7,7 +7,9 @@ export const countryVideos: Record<string, CountryVideo> = {
   FI: { en: 'auhn3ZxmidA' },
   SE: { en: 'swzSiHgDGfg' },
   LV: { en: 'Qf_kXuZPCvc' },
-  // LT: { en: '' }, IE: { en: '' }, EG: { en: '' },  (pending uploads)
+  LT: { en: 'm2b6P4Cq8pQ' },
+  IE: { en: 'xkePfgv5ST4' },
+  EG: { en: '7JcQLG2-GKM' },
 };
 
 export const getCountryVideoUrl = (countryId: string, isRTL: boolean, fallback?: string): string | undefined => {
