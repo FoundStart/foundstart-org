@@ -184,7 +184,7 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "category": "Freelancer & Earn Money online",
     "language": "English",
     "platform": "Schoolsolver",
-    "url": "http//store.onlinejobs.ph/?aid=567662"
+    "url": "http://store.onlinejobs.ph/?aid=567662"
   },
   {
     "category": "Freelancer & Earn Money online",
@@ -220,7 +220,7 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "category": "Freelancer & Earn Money online",
     "language": "English",
     "platform": "Peak Arena",
-    "url": "http//www.pa2016.vip/code/XSVPDIJU"
+    "url": "http://www.pa2016.vip/code/XSVPDIJU"
   },
   {
     "category": "Freelancer & Earn Money online",
@@ -244,7 +244,7 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "category": "Freelancer & Earn Money online",
     "language": "English",
     "platform": "onlinejobs",
-    "url": "http//store.onlinejobs.ph/?aid=567662"
+    "url": "http://store.onlinejobs.ph/?aid=567662"
   },
   {
     "category": "Freelancer & Earn Money online",
@@ -298,7 +298,7 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "category": "Freelancer & Earn Money online",
     "language": "English",
     "platform": "Fun Box",
-    "url": "http//www.fun-box.vip/#/?invite_code=PPUBZUIB"
+    "url": "http://www.fun-box.vip/#/?invite_code=PPUBZUIB"
   },
   {
     "category": "Freelancer & Earn Money online",
@@ -340,7 +340,7 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "category": "Freelancer & Earn Money online",
     "language": "English",
     "platform": "Cointiply",
-    "url": "http//cointiply.com/r/9P2V0o"
+    "url": "http://cointiply.com/r/9P2V0o"
   },
   {
     "category": "Freelancer & Earn Money online",

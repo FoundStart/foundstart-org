@@ -346,7 +346,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Business Automation",
     "platform": "Nuelink",
-    "url": "https//nuelink.com/?via=deeemoz",
+    "url": "https://nuelink.com/?via=deeemoz",
     "niche": "Social Media Scheduling and Automation Tool",
     "coupon": ""
   },
@@ -1018,7 +1018,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Managements",
     "platform": "Monday",
-    "url": "http//monday.com/",
+    "url": "http://monday.com/",
     "niche": "WorkFlow/Workspace",
     "coupon": ""
   },
@@ -1480,7 +1480,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "SEO tools - Traffic",
     "platform": "Notifier SO",
-    "url": "http//notifier.so/?via=momo",
+    "url": "http://notifier.so/?via=momo",
     "niche": "Leads Generation Keyword searching",
     "coupon": ""
   },
@@ -1494,7 +1494,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "SEO tools - Traffic",
     "platform": "Link Finder",
-    "url": "http//link-finder.net/?via=momo699",
+    "url": "http://link-finder.net/?via=momo699",
     "niche": "Ai find link for your SEO",
     "coupon": ""
   },
@@ -1578,7 +1578,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "SEO tools - Traffic",
     "platform": "Blog Clicker",
-    "url": "http//blogclicker.com/?username=Deeemoz",
+    "url": "http://blogclicker.com/?username=Deeemoz",
     "niche": "Solo Blog",
     "coupon": ""
   },
@@ -1774,7 +1774,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Health",
     "platform": "Daily Gem",
-    "url": "http//dailygem.co/GEM-A-SFYFCTWH",
+    "url": "http://dailygem.co/GEM-A-SFYFCTWH",
     "niche": "Health",
     "coupon": ""
   },
@@ -1949,7 +1949,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Email Marketing",
     "platform": "Adoutreach",
-    "url": "http//adoutreach.com/",
+    "url": "http://adoutreach.com/",
     "niche": "Outreach - Cold E-mail",
     "coupon": ""
   },
@@ -2551,7 +2551,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "AI Videos",
     "platform": "Video Ad Vault",
-    "url": "http//deeemoz.monsterrobot.zaxaa.com/s/3616643859792",
+    "url": "http://deeemoz.monsterrobot.zaxaa.com/s/3616643859792",
     "niche": "AI Video ads",
     "coupon": ""
   },
@@ -2999,7 +2999,7 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "AI Tools",
     "platform": "Pinecobe",
-    "url": "http//pinecone.io/",
+    "url": "http://pinecone.io/",
     "niche": "AI Memory tool",
     "coupon": ""
   },
