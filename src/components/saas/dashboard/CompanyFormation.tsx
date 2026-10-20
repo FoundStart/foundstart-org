@@ -158,7 +158,7 @@ const FormationWizard = () => {
                   <step.icon className="h-5 w-5" />
                 )}
               </div>
-              <span className="mt-2 text-xs font-medium hidden sm:block">{step.title}</span>
+              <span className="mt-2 text-xs font-medium hidden sm:block">{L(step.title, ({ Country: 'الدولة', 'Entity Type': 'نوع الكيان', 'Business Details': 'بيانات النشاط', 'Add-ons': 'إضافات', 'Review & Pay': 'مراجعة ودفع' } as Record<string,string>)[step.title])}</span>
             </div>
             {index < steps.length - 1 && (
               <div className={`h-0.5 flex-1 mx-2 ${currentStep > step.id ? 'bg-primary' : 'bg-muted'}`} />
