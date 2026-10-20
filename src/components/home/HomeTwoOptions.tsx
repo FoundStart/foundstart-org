@@ -22,6 +22,11 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
               : 'Pick a trusted formation partner, or let us handle it: register, pay online, and track every step from your dashboard.'}
           </p>
         </div>
+        <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-8">
+          {language === 'ar'
+            ? 'FoundStart منصة متكاملة لتأسيس الشركات وخدماتها: لوحة عميل مثل كبرى شركات التأسيس، خدمات إضافية، ومتطلبات كل دولة تظهر لك داخل اللوحة.'
+            : "FoundStart is a complete platform for company formation and services: a client dashboard like the big formation companies, add-on services, and each country's requirements shown to you inside the dashboard."}
+        </p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-6">
