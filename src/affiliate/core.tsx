@@ -167,6 +167,10 @@ const errMsg = (e: any, t: (a: string, b: string) => string) => {
     payout_method_missing: ["Add a payout method and details first.", "أضف طريقة الدفع وبياناتها أولا."],
     payout_open: ["You already have an open payout request.", "عندك طلب سحب مفتوح بالفعل."],
     not_approved: ["Your affiliate account is not approved yet.", "حساب الأفلييت لم تتم الموافقة عليه بعد."],
+    bad_code_format: ["Use 3 to 24 letters, numbers, dash or underscore.", "استخدم من 3 إلى 24 حرف أو رقم أو - أو _."],
+    code_reserved: ["That name is not allowed. Pick another.", "الاسم ده غير مسموح. اختار غيره."],
+    code_taken: ["That name is already taken.", "الاسم ده مستخدم بالفعل."],
+    code_changes_limit: ["You reached the limit of link changes.", "وصلت للحد الأقصى لتغيير الرابط."],
     program_closed: ["The program is closed for new affiliates right now.", "البرنامج مغلق للمسجلين الجدد حاليا."],
   };
   for (const k of Object.keys(map)) if (m.includes(k)) return t(...map[k]);
@@ -211,13 +215,31 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
   const [msg, setMsg] = useState("");
   const [form, setForm] = useState({ name: "", site: "", promo: "", method: "", details: "", ok: false, email: "" });
   const [sent, setSent] = useState(false);
+  const [newCode, setNewCode] = useState<string | null>(null);
   const [method, setMethod] = useState<{ m: string; d: string } | null>(null);
   const [path, setPath] = useState("/");
   const [isAdm, setIsAdm] = useState(false);
+  const [loadErr, setLoadErr] = useState("");
+  const seq = useRef(0);
   const load = useCallback(async () => {
-    const { data: st } = await a.supabase.from("aff_settings").select("*").eq("id", 1).maybeSingle();
-    setS(st);
-    if (a.user) { const { data } = await a.supabase.rpc("aff_me"); setMe(data); const r = await a.supabase.rpc("aff_is_admin"); setIsAdm(!!r.data); } else { setMe(null); setIsAdm(false); }
+    const my = ++seq.current;
+    setLoadErr("");
+    try {
+      const { data: st } = await a.supabase.from("aff_settings").select("*").eq("id", 1).maybeSingle();
+      if (my !== seq.current) return;
+      setS(st);
+      if (a.user) {
+        const { data, error } = await a.supabase.rpc("aff_me");
+        if (my !== seq.current) return;
+        if (error) throw error;
+        setMe(data ?? null);
+        const r = await a.supabase.rpc("aff_is_admin");
+        if (my === seq.current) setIsAdm(!!r.data);
+      } else { setMe(null); setIsAdm(false); }
+    } catch (e: any) {
+      if (my !== seq.current) return;
+      setMe(null); setLoadErr(String(e?.message || e || "error"));
+    }
   }, [a.supabase, a.user?.id]);
   useEffect(() => { if (!a.authLoading) load(); }, [a.authLoading, load]);
   useEffect(() => { document.title = `${t("Affiliate program", "برنامج الأفلييت")} | ${a.site.name}`; }, [a.lang]);
@@ -270,7 +292,7 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
 
   const Join = (
     <Card id="join"><CardHeader><CardTitle className="text-lg" dir={dir}>{t("Apply to join", "قدّم للانضمام")}</CardTitle></CardHeader><CardContent className="space-y-3" dir={dir}>
-      {a.authLoading || me === undefined ? <p className="text-sm text-muted-foreground">...</p> : !a.user ? (
+      {a.authLoading || me === undefined ? <p className="text-sm text-muted-foreground">{t("Loading...", "جاري التحميل...")}</p> : loadErr ? <div className="space-y-2"><p className="text-sm text-red-600">{t("Could not load your account. Please try again.", "تعذر تحميل حسابك. حاول مرة أخرى.")}</p><Button variant="outline" onClick={load}>{t("Retry", "إعادة المحاولة")}</Button></div> : !a.user ? (
         <div className="space-y-3">
           <p className="text-sm text-muted-foreground">{t(`Sign in to your ${a.site.name} account (or create one) to apply.`, `سجل دخولك في ${a.site.name} (أو اعمل حساب) للتقديم.`)}</p>
           {a.emailSignIn ? (
@@ -305,6 +327,9 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
       {aff.status !== "approved" && <div className="rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm">{aff.status === "pending" ? t("Your application is waiting for approval. Your link already tracks clicks and signups; payouts need approval.", "طلبك في انتظار الموافقة. رابطك بيتتبع النقرات والتسجيلات بالفعل؛ السحب يحتاج موافقة.") : t(`Your affiliate account is ${aff.status}.`, `حساب الأفلييت الخاص بك: ${aff.status}.`)}</div>}
       <Card><CardHeader><CardTitle className="text-base">{t("Your referral link", "رابط الإحالة الخاص بك")}</CardTitle></CardHeader><CardContent className="space-y-3">
         <CopyField lang={a.lang} value={path === "/" ? link : `${a.site.url}${path}${path.includes("?") ? "&" : "?"}ref=${aff.code}`} />
+        <div className="space-y-1"><label className="text-xs text-muted-foreground">{t("Customize your link name (3-24 letters, numbers, - or _). Old links keep working.", "خصص اسم رابطك (3-24 حرف أو رقم أو - أو _). الروابط القديمة تفضل شغالة.")}</label>
+          <div className="flex gap-2"><Input dir="ltr" value={newCode ?? aff.code} maxLength={24} onChange={(e) => setNewCode(e.target.value.toLowerCase().replace(/[^a-z0-9_-]/g, ""))} />
+          <Button variant="outline" disabled={busy || !newCode || newCode === aff.code} onClick={async () => { setBusy(true); setMsg(""); const { error } = await a.supabase.rpc("aff_set_code", { p_code: newCode }); setBusy(false); if (error) setMsg(errMsg(error, t)); else { setMsg(t("Link updated.", "تم تحديث الرابط.")); setNewCode(null); await load(); } }}>{t("Save name", "احفظ الاسم")}</Button></div></div>
         <div className="flex flex-wrap gap-2 items-center text-xs"><span className="text-muted-foreground">{t("Link to page:", "رابط لصفحة:")}</span>
           {a.site.paths.map((p) => <button key={p.path} className={`px-2.5 py-1 rounded-full border ${path === p.path ? "bg-primary text-primary-foreground border-primary" : "border-border hover:bg-muted"}`} onClick={() => setPath(p.path)}>{t(p.en, p.ar)}</button>)}</div>
         <div className="text-xs text-muted-foreground">{t("Your code:", "الكود:")} <span className="font-mono font-semibold text-foreground">{aff.code}</span> · {t("Commission rate:", "نسبة العمولة:")} <b className="text-foreground">{me.effective_rate}%</b>{s?.provisional ? ` (${t("provisional", "مبدئية")})` : ""}</div>
