@@ -15,9 +15,10 @@ const labels: Record<MediaCategory, { en: string; ar: string }> = {
   affiliate: { en: 'Tools & Platforms', ar: 'المنصات والأدوات' },
   products: { en: 'Products & Launches', ar: 'المنتجات والإطلاقات' },
   books: { en: 'Books & Guides', ar: 'الكتب والأدلة' },
+  walkthrough: { en: 'FoundStart Walkthrough', ar: 'شرح FoundStart' },
   shorts: { en: 'Shorts', ar: 'فيديوهات قصيرة' },
 };
-const order: MediaCategory[] = ['affiliate', 'products', 'books', 'shorts'];
+const order: MediaCategory[] = ['walkthrough', 'affiliate', 'products', 'books', 'shorts'];
 
 const ui = {
   en: {
@@ -46,7 +47,7 @@ const Thumb = ({ v, onPlay, label }: { v: MediaVideo; onPlay: () => void; label:
     <span className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors">
       <span className="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg"><Play className="w-6 h-6 text-primary ml-0.5" fill="currentColor" /></span>
     </span>
-    <span className="absolute bottom-2 right-2 rounded bg-black/80 px-1.5 py-0.5 text-xs font-medium text-white" dir="ltr">{fmt(v.seconds)}</span>
+    {v.seconds > 0 && <span className="absolute bottom-2 right-2 rounded bg-black/80 px-1.5 py-0.5 text-xs font-medium text-white" dir="ltr">{fmt(v.seconds)}</span>}
   </button>
 );
 

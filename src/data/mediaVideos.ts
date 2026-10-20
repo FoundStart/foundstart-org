@@ -1,7 +1,7 @@
 // Video library for /media. Only videos that are live (public) on YouTube belong here.
 // To add a video: append one entry. lang decides which language view shows it.
 export type MediaLang = 'en' | 'ar';
-export type MediaCategory = 'course-dt' | 'course-dp' | 'course-aff' | 'affiliate' | 'products' | 'books' | 'shorts';
+export type MediaCategory = 'course-dt' | 'course-dp' | 'course-aff' | 'affiliate' | 'products' | 'books' | 'shorts' | 'walkthrough';
 export interface MediaVideo {
   id: string; // YouTube video id
   lang: MediaLang;
@@ -11,6 +11,10 @@ export interface MediaVideo {
   seconds: number;
 }
 export const mediaVideos: MediaVideo[] = [
+  {"id": "MA5vm7SfhIU", "lang": "en", "category": "walkthrough", "title": "Open a Company in Any Country with FoundStart | Full Walkthrough (US LLC $450)", "seconds": 103},
+  {"id": "mOATHoFuoXc", "lang": "ar", "category": "walkthrough", "title": "افتح شركتك في أي دولة مع FoundStart | شرح كامل خطوة بخطوة", "seconds": 121},
+  {"id": "yafJFcf8CQc", "lang": "en", "category": "walkthrough", "title": "Open a Company in Any Country with FoundStart (US LLC $450)", "seconds": 0},
+  {"id": "PlRoCKsP6nY", "lang": "ar", "category": "walkthrough", "title": "افتح شركتك في أي دولة مع FoundStart (أسعار حقيقية)", "seconds": 0},
   {"id":"tZKxBhR6dhU","lang":"en","category":"affiliate","title":"18 Domain and Web Hosting Platforms for Your Website","seconds":112},
   {"id":"nLfL6bhj2gc","lang":"ar","category":"affiliate","title":"١٨ منصة دومينات واستضافة لموقعك","seconds":122},
   {"id":"HoHHXCl9Aec","lang":"en","category":"affiliate","title":"22 Work and Team Management Tools","seconds":129},
