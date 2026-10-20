@@ -171,63 +171,6 @@ const PricingCalculator: React.FC = () => {
             </CardContent>
           </Card>
 
-          {/* Add-ons Selection */}
-          <Card className={`border-2 transition-all ${!selectedEntityType ? 'opacity-50 pointer-events-none' : 'hover:border-primary/50'}`}>
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Package className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Add-on Services</CardTitle>
-                  <CardDescription>Enhance your formation package</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              {countryPricing && selectedEntityType ? (
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {countryPricing.addOns.map((addon) => (
-                    <div
-                      key={addon.id}
-                      onClick={() => handleAddOnToggle(addon.id)}
-                      className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                        selectedAddOns.includes(addon.id)
-                          ? 'border-primary bg-primary/5'
-                          : 'border-border hover:border-primary/50 hover:bg-accent/50'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <Checkbox 
-                          checked={selectedAddOns.includes(addon.id)}
-                          className="mt-0.5"
-                        />
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <h4 className="font-medium text-sm">{addon.name}</h4>
-                            {addon.popular && (
-                              <Badge variant="secondary" className="text-xs">
-                                <Sparkles className="h-3 w-3 mr-1" />
-                                Popular
-                              </Badge>
-                            )}
-                          </div>
-                          <p className="text-xs text-muted-foreground mt-1">{addon.description}</p>
-                          <div className="mt-2 font-semibold text-primary">
-                            +{formatPrice(addon.price, countryPricing.currencySymbol)}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-muted-foreground text-center py-4">
-                  Please select an entity type first
-                </p>
-              )}
-            </CardContent>
-          </Card>
         </div>
 
         {/* Right Column - Summary */}

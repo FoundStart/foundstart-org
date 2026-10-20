@@ -9,7 +9,7 @@ import { Globe, Users, UserCheck, Building2, ArrowRight } from 'lucide-react';
 const partnerSections = [
   {
     title: "Formation Partners",
-    description: "Trusted partners for company formation across 9+ jurisdictions worldwide",
+    description: "Trusted partners for company formation across 10 countries",
     icon: Building2,
     link: "/partners",
     count: "50+",
@@ -90,7 +90,7 @@ const AllPartners = () => {
             <div className="mt-16">
               <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold mb-2">Partner Countries & Jurisdictions</h2>
-                <p className="text-muted-foreground">Company formation available in 9+ countries</p>
+                <p className="text-muted-foreground">Company formation available in 10 countries</p>
               </div>
               <div className="flex flex-wrap justify-center gap-3">
                 {['🇺🇸 USA', '🇬🇧 UK', '🇨🇦 Canada', '🇪🇪 Estonia', '🇫🇮 Finland', '🇸🇪 Sweden', '🇱🇻 Latvia', '🇱🇹 Lithuania', '🇪🇬 Egypt'].map((country) => (

@@ -29,12 +29,12 @@ const Services = () => {
     {
       category: "Business Formation Solutions", icon: <Building className="w-6 h-6" />,
       items: [
-        { name: "Option 1: Quick Setup with Partners", price: "From $199", description: "Instant access to vetted formation partners across 10 countries", action: "partners", actionText: "View Partners" },
+        { name: "Company Formation with FoundStart", price: "From $249", description: "Open your company in 10 countries. Register and pay online", action: "partners", actionText: "View Countries" },
         { name: "Custom Formation Service", price: "Custom Quote", description: "Personalized business formation with dedicated support and dashboard access", action: "quote", actionText: "Get Quote" },
-        { name: "USA Company Formation", price: "From $299", description: "Delaware LLC with EIN, registered agent, and banking setup" },
-        { name: "UK Company Formation", price: "From £199", description: "Companies House registration with London address and UTR application" },
-        { name: "Canada Company Formation", price: "From CAD $399", description: "Federal incorporation with business number and Toronto office" },
-        { name: "EU Company Formation", price: "From €250", description: "Estonia, Finland, Sweden, Latvia, Lithuania, Ireland - EU market access" }
+        { name: "USA Company Formation", price: "From $450", description: "US LLC, C-Corporation or S-Corporation. Register and pay online" },
+        { name: "UK Company Formation", price: "From $500", description: "UK LTD or LLP. Register and pay online" },
+        { name: "Canada Company Formation", price: "From $700", description: "Canadian corporation. Register and pay online" },
+        { name: "EU Company Formation", price: "From $335", description: "Estonia, Finland, Sweden, Latvia, Lithuania, Ireland" }
       ]
     },
     {

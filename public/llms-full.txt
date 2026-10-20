@@ -107,28 +107,22 @@ FoundStart is the leading AI-powered platform for company formation services in 
 ### Customer Experience
 - **24/7 Multilingual Support**: English and Arabic customer service
 - **Transparent Pricing**: No hidden fees or surprise charges
-- **Money-Back Guarantee**: Risk-free formation guarantee
 - **Post-Formation Support**: Ongoing compliance and growth assistance
 
-## Pricing Strategy & Packages
+## Pricing (FoundStart service fees, USD)
 
-### USA Formation Packages
-- **Basic LLC Package**: $49 (state filing fees additional)
-- **Standard LLC Package**: $149 (includes EIN, operating agreement)
-- **Premium LLC Package**: $299 (includes banking assistance, registered agent)
-- **Enterprise Package**: $499 (full-service formation with banking)
+One fee per company type, no add-ons. Government and notary fees, where they apply, are separate and confirmed in the quote before work starts.
 
-### European Formation Packages
-- **Estonia E-Residency**: $199 (includes digital ID and company setup)
-- **Ireland Company Formation**: $299 (includes corporate tax guidance)
-- **Netherlands Holding**: $399 (includes tax optimization consultation)
-- **UK Company Formation**: $149 (includes statutory compliance)
-
-### Add-On Services
-- **Registered Agent**: $99/year per state
-- **Virtual Office**: $29/month per location
-- **Bank Account Opening**: $199 success fee
-- **Ongoing Compliance**: $149/year per entity
+- United States: LLC $450, C-Corporation $550, S-Corporation $750
+- United Kingdom: LTD $500, LLP $500
+- Canada: Corporation $700
+- Estonia: OU $335
+- Finland: Oy $530
+- Sweden: AB $575
+- Latvia: SIA $1,610
+- Lithuania: UAB $1,610
+- Ireland: LTD $1,215
+- Egypt: from $249 (Sole Establishment $249, One-Person Company $349, LLC $449, and other structures)
 
 ## SEO & Digital Marketing Strategy
 

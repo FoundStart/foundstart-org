@@ -10,7 +10,7 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
   const items = [
     { icon: LayoutDashboard, t: ar ? 'لوحة عميل كاملة' : 'A full client dashboard', d: ar ? 'تابع شركتك ومستنداتك ومدفوعاتك من مكان واحد، مثل كبرى شركات التأسيس.' : 'Track your company, documents and payments in one place, like the big formation companies.' },
     { icon: ClipboardCheck, t: ar ? 'متطلبات كل دولة' : "Each country's requirements", d: ar ? 'شوف المتطلبات والسعر داخل اللوحة قبل ما تدفع.' : 'See the requirements and the price inside the dashboard before you pay.' },
-    { icon: Package, t: ar ? 'خدمات إضافية' : 'Add-on services', d: ar ? 'أضف الخدمات اللي تحتاجها لشركتك بعد التأسيس.' : 'Add the services your company needs after formation.' },
+    { icon: Package, t: ar ? 'سعر واضح واحد' : 'One clear price', d: ar ? 'رسوم FoundStart واحدة لكل نوع شركة، بدون خدمات إضافية.' : 'One FoundStart fee per company type, no add-ons.' },
   ];
   return (
     <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8" dir={isRTL ? 'rtl' : 'ltr'}>

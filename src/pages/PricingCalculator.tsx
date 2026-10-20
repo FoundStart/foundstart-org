@@ -12,7 +12,7 @@ const PricingCalculatorPage: React.FC = () => {
         <title>Pricing Calculator - FoundStart | Company Formation Cost Estimator</title>
         <meta 
           name="description" 
-          content="Calculate your company formation costs instantly. Select your country, entity type, and add-on services to get a transparent price estimate for your business setup." 
+          content="Calculate your company formation costs instantly. Select your country and entity type to see the exact FoundStart formation fee for your business setup." 
         />
         <meta name="keywords" content="company formation cost, LLC pricing, business setup calculator, formation fees, startup costs" />
         <link rel="canonical" href="https://foundstart.org/pricing-calculator" />
@@ -31,8 +31,8 @@ const PricingCalculatorPage: React.FC = () => {
               Company Formation <span className="text-primary">Pricing Calculator</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Get an instant estimate for your company formation. Select your country, 
-              entity type, and add-on services to see your total cost.
+              See the exact FoundStart fee for your company formation. Select your country
+              and entity type to see your total cost.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ const PricingCalculatorPage: React.FC = () => {
                 <Globe className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-1">1. Choose Country</h3>
-              <p className="text-sm text-muted-foreground">Select from 9+ jurisdictions worldwide</p>
+              <p className="text-sm text-muted-foreground">Select from 10 countries</p>
             </div>
             <div className="flex flex-col items-center text-center p-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
@@ -56,8 +56,8 @@ const PricingCalculatorPage: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                 <CreditCard className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-semibold mb-1">3. Add Services</h3>
-              <p className="text-sm text-muted-foreground">Customize with optional add-ons</p>
+              <h3 className="font-semibold mb-1">3. See Your Price</h3>
+              <p className="text-sm text-muted-foreground">One clear fee, no add-ons</p>
             </div>
           </div>
 

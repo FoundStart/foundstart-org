@@ -1,75 +1,61 @@
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
-import CountryPricingTiers from '@/components/pricing/PricingTiers';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Globe, ExternalLink, ShieldCheck } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
+import { useL } from '@/hooks/useL';
+import { formationCountries, minPrice } from '@/data/formationCatalog';
+import { catalogT } from '@/data/formationCatalogAr';
+import { useTranslation } from '@/contexts/TranslationContext';
 
+// Prices come straight from the formation catalog, so this page always matches checkout.
 const Pricing = () => {
-  const countryPricing = [
-    { flag: '🇺🇸', name: 'United States', price: '$299', currency: 'USD', partners: ['Privatily', 'ITIN', 'Clemta', 'Startglobal', 'doola'] },
-    { flag: '🇬🇧', name: 'United Kingdom', price: '£199', currency: 'GBP', partners: ['Firstbase', '1stFormations', 'Privatily', 'Rapid Formation'] },
-    { flag: '🇨🇦', name: 'Canada', price: 'CAD $399', currency: 'CAD', partners: ['Privatily'] },
-    { flag: '🇪🇪', name: 'Estonia', price: '€300', currency: 'EUR', partners: ['1office'] },
-    { flag: '🇫🇮', name: 'Finland', price: '€350', currency: 'EUR', partners: ['1office'] },
-    { flag: '🇸🇪', name: 'Sweden', price: 'SEK 3,500', currency: 'SEK', partners: ['1office'] },
-    { flag: '🇱🇻', name: 'Latvia', price: '€250', currency: 'EUR', partners: ['1office'] },
-    { flag: '🇱🇹', name: 'Lithuania', price: '€280', currency: 'EUR', partners: ['1office'] },
-    { flag: '🇮🇪', name: 'Ireland', price: '€350', currency: 'EUR', partners: ['1office'] },
-  ];
+  const L = useL();
+  const { language } = useTranslation();
+  const ct = (s: string) => catalogT(s, language);
 
-  const option2Services = [
-    'AI-powered business formation',
-    'Multi-jurisdiction support (10 countries)',
-    'Automated compliance monitoring',
-    'Digital partner ecosystem access',
-    'Banking and payment setup',
-    'Website and mobile app creation',
-    'Email and hosting services',
-    'Marketing automation tools',
-    '24/7 customer support',
-    'Money-back guarantee'
+  const included = [
+    L('Register your company online in a few steps', 'سجل شركتك أونلاين في خطوات بسيطة'),
+    L('Pay securely by card through Stripe', 'ادفع بأمان بالبطاقة عبر Stripe'),
+    L('Track every step from your FoundStart dashboard', 'تابع كل خطوة من لوحة تحكم FoundStart'),
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       <main>
         <PageHero
-          title="Transparent"
-          highlight="Pricing"
-          subtitle="Choose your jurisdiction and get started with our comprehensive business formation packages. No hidden fees, no surprises."
-        >
-          <Badge className="inline-flex items-center gap-2 text-lg px-6 py-2 animate-pulse mt-2">
-            <ShieldCheck className="h-5 w-5" /> 30-Day Money-Back Guarantee
-          </Badge>
-        </PageHero>
+          title={L('Transparent', 'أسعار')}
+          highlight={L('Pricing', 'واضحة')}
+          subtitle={L(
+            'One clear FoundStart fee per company type. No add-ons, no surprises.',
+            'رسوم FoundStart واضحة لكل نوع شركة. بدون خدمات إضافية وبدون مفاجآت.'
+          )}
+        />
 
-        {/* Country-Based Pricing */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="gradient-text">Formation by Country</span>
+                <span className="gradient-text">{L('Formation by Country', 'التأسيس حسب الدولة')}</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Start your business in any of our 10 supported jurisdictions with our trusted formation partners.
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                {L('Open your company in any of our 10 countries. Prices are FoundStart service fees in USD.', 'افتح شركتك في أي من دولنا العشر. الأسعار هي رسوم خدمة FoundStart بالدولار.')}
               </p>
             </div>
 
-            <Card className="mb-12 glass-card">
+            <Card className="mb-10 glass-card">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">What's Included in Every Package</CardTitle>
+                <CardTitle className="text-xl">{L('How it works', 'كيف يعمل')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {option2Services.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {included.map((s, i) => (
+                    <div key={i} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span>{service}</span>
+                      <span>{s}</span>
                     </div>
                   ))}
                 </div>
@@ -77,59 +63,40 @@ const Pricing = () => {
             </Card>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {countryPricing.map((country, index) => (
-                <Card key={index} className="hover:shadow-xl transition-all duration-500 glass-card">
-                  <CardHeader className="text-center pb-4">
-                    <div className="text-4xl mb-2">{country.flag}</div>
-                    <CardTitle className="text-lg">{country.name}</CardTitle>
-                    <div className="text-3xl font-bold gradient-text">{country.price}</div>
-                    <Badge variant="outline">{country.currency}</Badge>
+              {formationCountries.map((c) => (
+                <Card key={c.code} className="glass-card">
+                  <CardHeader className="text-center pb-3">
+                    <div className="text-4xl mb-2">{c.flag}</div>
+                    <CardTitle className="text-lg">{ct(c.name)}</CardTitle>
+                    <div className="text-sm text-muted-foreground">{L('from', 'من')} <span className="text-2xl font-bold gradient-text">${minPrice(c)}</span></div>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold mb-2 flex items-center gap-2">
-                        <Globe className="w-4 h-4" />
-                        Formation Partners
-                      </h4>
-                      <div className="space-y-1">
-                        {country.partners.map((partner, pIndex) => (
-                          <div key={pIndex} className="text-sm text-muted-foreground">
-                            • {partner}
-                          </div>
-                        ))}
-                      </div>
+                    <div className="space-y-1">
+                      {c.entities.map((e) => (
+                        <div key={e.code} className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">{ct(e.name)}</span>
+                          <span className="font-medium">${e.price}</span>
+                        </div>
+                      ))}
                     </div>
-                    <Button className="w-full group">
-                      Start in {country.name}
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
+                    {c.note && <p className="text-xs text-muted-foreground">{L('Government, notary and registry fees are separate and confirmed in your quote before work starts.', 'الرسوم الحكومية ورسوم التوثيق والسجل منفصلة ويتم تأكيدها في عرض السعر قبل بدء العمل.')}</p>}
+                    <Button asChild className="w-full">
+                      <Link to={`/dashboard/formation?country=${c.code}`}>
+                        {L('Start in', 'ابدأ في')} {ct(c.name)}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
-            <div className="text-center mt-16">
-              <Card className="max-w-2xl mx-auto glass-card">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">Ready to Start Your Business?</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Start your business with FoundStart.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button size="lg">Choose Your Country</Button>
-                    <Button size="lg" variant="outline">View All Services</Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <p className="text-center text-sm text-muted-foreground mt-10">
+              {L('Prices are FoundStart service fees. Government and notary fees, where they apply, are separate and confirmed in your quote before work starts.', 'الأسعار هي رسوم خدمة FoundStart. الرسوم الحكومية ورسوم التوثيق، إن وجدت، منفصلة ويتم تأكيدها في عرض السعر قبل بدء العمل.')}
+            </p>
           </div>
         </section>
-
-        <section id="country-tiers">
-          <CountryPricingTiers />
-        </section>
       </main>
-
       <Footer />
     </div>
   );

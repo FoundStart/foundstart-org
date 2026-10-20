@@ -11,7 +11,7 @@ const faqData = [
   {
     category: "Company Formation",
     questions: [
-      { q: "How long does it take to form a company?", a: "Most company formations are completed within 5-10 minutes for initial filing. Full processing depends on the jurisdiction: USA (1-3 business days), UK (24-48 hours), Estonia (1-2 weeks), and other European countries (1-4 weeks)." },
+      { q: "How long does it take to form a company?", a: "Timing depends on the country and its registry. After you pay, you can follow every step and status from your FoundStart dashboard." },
       { q: "What types of companies can I form?", a: "We support LLC, C-Corp, S-Corp (USA), Ltd, LLP (UK), GmbH (Germany), BV (Netherlands), SL (Spain), SARL/SAS (France), and more across 10+ jurisdictions." },
       { q: "Do I need to be a resident to form a company?", a: "No! Non-residents can form companies in most of our supported jurisdictions. We handle all paperwork including registered agent services, EIN applications, and compliance requirements." },
       { q: "What documents do I need to get started?", a: "Typically you need a valid ID/passport, proof of address, and basic business information. Our AI assistant can help you prepare all required documents." },
@@ -42,7 +42,7 @@ const faqData = [
       { q: "How much does company formation cost?", a: "Pricing varies by jurisdiction. Use our Pricing Calculator for exact costs. Basic LLC formation in the USA starts from $149, UK Ltd from £99, and European companies from €299." },
       { q: "What payment methods do you accept?", a: "We accept credit/debit cards (Visa, Mastercard) via Stripe, bank transfers, and digital payment solutions." },
       { q: "Are there any hidden fees?", a: "No hidden fees. Our pricing is transparent and includes all government filing fees, registered agent services (where applicable), and basic compliance support." },
-      { q: "Do you offer refunds?", a: "We offer a money-back guarantee on domain purchases and service cancellations within the specified period. Government filing fees are non-refundable once submitted." },
+      { q: "Do you offer refunds?", a: "For any payment question, contact support from your dashboard. Government filing fees are non-refundable once submitted." },
     ]
   },
   {

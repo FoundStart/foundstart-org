@@ -1,5 +1,6 @@
+import { formationCountries, minPrice } from './formationCatalog';
 
-export const jurisdictionInfo = [
+const jurisdictionBase = [
   { flag: "🇺🇸", name: "USA", description: "Delaware, Wyoming, Nevada formations", timeframe: "3-5 days", partners: 8, price: "From $299", benefits: ["EIN included", "Registered Agent", "US Bank Account options"] },
   { flag: "🇬🇧", name: "UK", description: "England, Scotland, Wales formations", timeframe: "1-3 days", partners: 5, price: "From £199", benefits: ["Company House filing", "Registered Office", "VAT Registration"] },
   { flag: "🇨🇦", name: "Canada", description: "Federal and Provincial formations", timeframe: "5-10 days", partners: 1, price: "From CAD $399", benefits: ["Business Number", "Registered Office", "Banking assistance"] },
@@ -11,6 +12,15 @@ export const jurisdictionInfo = [
   { flag: "🇮🇪", name: "Ireland", description: "EU English-speaking gateway", timeframe: "5-7 days", partners: 1, price: "From €350", benefits: ["Low corporate tax", "EU access", "English-speaking"] },
   { flag: "🇪🇬", name: "Egypt", description: "Middle East & Africa gateway", timeframe: "14-21 days", partners: 1, price: "Get Quote", benefits: ["GAFI registration", "6 company structures", "100% foreign ownership*"] }
 ];
+
+const catalogCodeByName: Record<string, string> = { USA: 'usa', UK: 'uk', Canada: 'ca', Estonia: 'ee', Finland: 'fi', Sweden: 'se', Latvia: 'lv', Lithuania: 'lt', Ireland: 'ie', Egypt: 'eg' };
+const addOnLike = /registered (agent|office)|EIN|VAT|bank|business number/i;
+
+// Prices come from the formation catalog (USD service fees). Benefits that implied paid add-ons are dropped.
+export const jurisdictionInfo = jurisdictionBase.map((j) => {
+  const c = formationCountries.find((x) => x.code === catalogCodeByName[j.name]);
+  return { ...j, price: c ? `From $${minPrice(c)}` : j.price, benefits: j.benefits.filter((b) => !addOnLike.test(b)) };
+});
 
 export const partnerData = [
   // Company Formation Partners
