@@ -72,8 +72,8 @@ const Hero = () => {
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10"
         >
           {language === 'ar'
-            ? 'FoundStart شركة تؤسس لك شركتك في أي دولة بأسعارنا: سجل، ادفع أونلاين، وتابع كل خطوة من لوحة التحكم.'
-            : 'FoundStart forms your company in any country at our own prices: register, pay online, and track every step from your dashboard.'}
+            ? 'للفريلانسرز وأصحاب التجارة الإلكترونية وشركات SaaS وكل من يحتاج شركة لاستقبال المدفوعات. FoundStart تفتح لك شركتك في أي دولة بأسعارنا: سجل، ادفع أونلاين، وتابع كل خطوة.'
+            : 'For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. FoundStart opens your company in any country at our own prices: register, pay online, and track every step.'}
         </motion.p>
 
         {/* Search-style CTA bar */}

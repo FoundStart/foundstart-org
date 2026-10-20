@@ -23,6 +23,9 @@ import {
   Loader2,
 } from 'lucide-react';
 
+import { useL } from '@/hooks/useL';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { catalogT } from '@/data/formationCatalogAr';
 import { formationCountries, formationAddons, minPrice } from '@/data/formationCatalog';
 
 const steps = [
@@ -36,6 +39,9 @@ const steps = [
 const addons = formationAddons;
 
 const FormationWizard = () => {
+  const L = useL();
+  const { language } = useTranslation();
+  const ct = (x?: string) => catalogT(x, language);
   const [searchParams] = useSearchParams();
   const preselect = (searchParams.get('country') ?? '').toLowerCase();
   const cancelled = searchParams.get('order') === 'cancelled';
@@ -118,8 +124,8 @@ const FormationWizard = () => {
     } catch (e: any) {
       console.error('Formation order error:', e);
       toast({
-        title: 'Could not start payment',
-        description: e?.message || 'Please try again or contact support.',
+        title: L('Could not start payment', 'تعذر بدء الدفع'),
+        description: e?.message || L('Please try again or contact support.', 'حاول مرة أخرى أو تواصل مع الدعم.'),
         variant: 'destructive',
       });
       setSubmitting(false);
@@ -130,7 +136,7 @@ const FormationWizard = () => {
     <div className="space-y-6">
       {cancelled && (
         <div className="rounded-lg border border-yellow-300 bg-yellow-50 dark:border-yellow-900 dark:bg-yellow-950 p-4 text-sm">
-          Payment was cancelled - no charge was made. Review your details and try again when ready.
+          {L('Payment was cancelled - no charge was made. Review your details and try again when ready.', 'تم إلغاء الدفع - لم يتم خصم أي مبلغ. راجع بياناتك وحاول مرة أخرى عندما تكون جاهزاً.')}
         </div>
       )}
 
@@ -168,8 +174,8 @@ const FormationWizard = () => {
           {currentStep === 1 && (
             <div className="space-y-4">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-semibold">Choose Your Country</h2>
-                <p className="text-muted-foreground">Select where you want to form your company</p>
+                <h2 className="text-xl font-semibold">{L('Choose Your Country', 'اختر دولتك')}</h2>
+                <p className="text-muted-foreground">{L('Select where you want to form your company', 'اختر الدولة التي تريد تأسيس شركتك فيها')}</p>
               </div>
               <RadioGroup
                 value={formData.country}
@@ -190,14 +196,14 @@ const FormationWizard = () => {
                     <RadioGroupItem value={country.code} id={country.code} className="sr-only" />
                     <span className="text-3xl">{country.flag}</span>
                     <span>
-                      <span className="font-medium block">{country.name}</span>
-                      <span className="text-xs text-muted-foreground">from ${minPrice(country)}</span>
+                      <span className="font-medium block">{ct(country.name)}</span>
+                      <span className="text-xs text-muted-foreground">{L("from", "من")} ${minPrice(country)}</span>
                     </span>
                   </Label>
                 ))}
               </RadioGroup>
               <p className="text-center text-sm text-muted-foreground pt-2">
-                Prices are FoundStart service fees. Government and notary fees are separate and confirmed in your quote before work starts.
+                {L('Prices are FoundStart service fees. Government and notary fees are separate and confirmed in your quote before work starts.', 'الأسعار هي رسوم خدمة FoundStart. الرسوم الحكومية ورسوم التوثيق منفصلة ويتم تأكيدها في عرض السعر قبل بدء العمل.')}
               </p>
             </div>
           )}
@@ -206,8 +212,8 @@ const FormationWizard = () => {
           {currentStep === 2 && (
             <div className="space-y-4">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-semibold">Select Entity Type</h2>
-                <p className="text-muted-foreground">Choose the business structure for {selectedCountry?.name}</p>
+                <h2 className="text-xl font-semibold">{L('Select Entity Type', 'اختر نوع الكيان')}</h2>
+                <p className="text-muted-foreground">{L('Choose the business structure for', 'اختر الهيكل القانوني في')} {ct(selectedCountry?.name)}</p>
               </div>
               <RadioGroup
                 value={formData.entityType}
@@ -227,23 +233,23 @@ const FormationWizard = () => {
                   >
                     <RadioGroupItem value={entity.code} id={entity.code} className="sr-only" />
                     <span className="flex items-baseline justify-between gap-2">
-                      <span className="font-semibold">{entity.name}</span>
+                      <span className="font-semibold">{ct(entity.name)}</span>
                       <span className="font-semibold text-primary">${entity.price}</span>
                     </span>
-                    {entity.localName && (
+                    {entity.localName && language !== 'ar' && (
                       <span className="text-sm text-muted-foreground">{entity.localName}</span>
                     )}
-                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide pt-1">What you need to provide</span>
+                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide pt-1">{L('What you need to provide', 'ما الذي عليك تقديمه')}</span>
                     <ul className="list-disc pl-4 space-y-1">
                       {entity.requirements.map((req, i) => (
-                        <li key={i} className="text-sm text-muted-foreground">{req}</li>
+                        <li key={i} className="text-sm text-muted-foreground">{ct(req)}</li>
                       ))}
                     </ul>
                   </Label>
                 ))}
               </RadioGroup>
               {selectedCountry?.note && (
-                <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{selectedCountry.note}</p>
+                <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{ct(selectedCountry.note)}</p>
               )}
             </div>
           )}
@@ -252,79 +258,79 @@ const FormationWizard = () => {
           {currentStep === 3 && (
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-semibold">Business Details</h2>
-                <p className="text-muted-foreground">Provide information about your company</p>
+                <h2 className="text-xl font-semibold">{L('Business Details', 'بيانات النشاط')}</h2>
+                <p className="text-muted-foreground">{L('Provide information about your company', 'اكتب معلومات عن شركتك')}</p>
               </div>
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="companyName">Company Name</Label>
+                  <Label htmlFor="companyName">{L('Company Name', 'اسم الشركة')}</Label>
                   <Input
                     id="companyName"
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    placeholder="Enter your company name"
+                    placeholder={L('Enter your company name', 'اكتب اسم شركتك')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="businessAddress">Business Address</Label>
+                  <Label htmlFor="businessAddress">{L('Business Address', 'عنوان النشاط')}</Label>
                   <Textarea
                     id="businessAddress"
                     value={formData.businessAddress}
                     onChange={(e) => setFormData({ ...formData, businessAddress: e.target.value })}
-                    placeholder="Enter your business address"
+                    placeholder={L('Enter your business address', 'اكتب عنوان نشاطك')}
                     rows={3}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="businessDescription">Business Description</Label>
+                  <Label htmlFor="businessDescription">{L('Business Description', 'وصف النشاط')}</Label>
                   <Textarea
                     id="businessDescription"
                     value={formData.businessDescription}
                     onChange={(e) => setFormData({ ...formData, businessDescription: e.target.value })}
-                    placeholder="Describe your business activities"
+                    placeholder={L('Describe your business activities', 'اوصف أنشطة شركتك')}
                     rows={3}
                   />
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <Label>Owners / Members</Label>
+                    <Label>{L('Owners / Members', 'الملاك / الأعضاء')}</Label>
                     <Button type="button" variant="outline" size="sm" onClick={addOwner}>
                       <Plus className="mr-2 h-4 w-4" />
-                      Add Owner
+                      {L('Add Owner', 'إضافة مالك')}
                     </Button>
                   </div>
 
                   {formData.owners.map((owner, index) => (
                     <div key={index} className="grid gap-4 rounded-lg border p-4 sm:grid-cols-3">
                       <div className="space-y-2">
-                        <Label>Name</Label>
+                        <Label>{L('Name', 'الاسم')}</Label>
                         <Input
                           value={owner.name}
                           onChange={(e) => updateOwner(index, 'name', e.target.value)}
-                          placeholder="Full name"
+                          placeholder={L('Full name', 'الاسم الكامل')}
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label>Email</Label>
+                        <Label>{L('Email', 'البريد الإلكتروني')}</Label>
                         <Input
                           type="email"
                           value={owner.email}
                           onChange={(e) => updateOwner(index, 'email', e.target.value)}
-                          placeholder="Email address"
+                          placeholder={L('Email address', 'البريد الإلكتروني')}
                         />
                       </div>
                       <div className="flex items-end gap-2">
                         <div className="flex-1 space-y-2">
-                          <Label>Ownership %</Label>
+                          <Label>{L('Ownership %', 'نسبة الملكية %')}</Label>
                           <Input
                             type="number"
                             value={owner.ownership}
                             onChange={(e) => updateOwner(index, 'ownership', e.target.value)}
-                            placeholder="Ownership %"
+                            placeholder={L('Ownership %', 'نسبة الملكية %')}
                             min="0"
                             max="100"
                           />
@@ -351,8 +357,8 @@ const FormationWizard = () => {
           {currentStep === 4 && (
             <div className="space-y-4">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-semibold">Additional Services</h2>
-                <p className="text-muted-foreground">Select optional services to add to your formation</p>
+                <h2 className="text-xl font-semibold">{L('Additional Services', 'خدمات إضافية')}</h2>
+                <p className="text-muted-foreground">{L('Select optional services to add to your formation', 'اختر خدمات اختيارية لإضافتها إلى التأسيس')}</p>
               </div>
 
               <div className="grid gap-4">
@@ -373,8 +379,8 @@ const FormationWizard = () => {
                         onCheckedChange={() => toggleAddon(addon.id)}
                       />
                       <div>
-                        <span className="font-medium">{addon.name}</span>
-                        <p className="text-sm text-muted-foreground">{addon.description}</p>
+                        <span className="font-medium">{ct(addon.name)}</span>
+                        <p className="text-sm text-muted-foreground">{ct(addon.description)}</p>
                       </div>
                     </div>
                     <span className="font-semibold">${addon.price}</span>
@@ -388,54 +394,54 @@ const FormationWizard = () => {
           {currentStep === 5 && (
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-semibold">Review Your Order</h2>
-                <p className="text-muted-foreground">Please review your company formation details</p>
+                <h2 className="text-xl font-semibold">{L('Review Your Order', 'راجع طلبك')}</h2>
+                <p className="text-muted-foreground">{L('Please review your company formation details', 'من فضلك راجع بيانات تأسيس شركتك')}</p>
               </div>
 
               <div className="space-y-4 rounded-lg border p-4">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Country</span>
-                  <span className="font-medium">{selectedCountry?.flag} {selectedCountry?.name}</span>
+                  <span className="text-muted-foreground">{L('Country', 'الدولة')}</span>
+                  <span className="font-medium">{selectedCountry?.flag} {ct(selectedCountry?.name)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Entity Type</span>
-                  <span className="font-medium">{selectedEntity?.name}{selectedEntity?.localName ? ` (${selectedEntity.localName})` : ''}</span>
+                  <span className="text-muted-foreground">{L('Entity Type', 'نوع الكيان')}</span>
+                  <span className="font-medium">{ct(selectedEntity?.name)}{selectedEntity?.localName && language !== 'ar' ? ` (${selectedEntity.localName})` : ''}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Company Name</span>
+                  <span className="text-muted-foreground">{L('Company Name', 'اسم الشركة')}</span>
                   <span className="font-medium">{formData.companyName || 'Not provided'}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Owners</span>
+                  <span className="text-muted-foreground">{L('Owners', 'الملاك')}</span>
                   <span className="font-medium">{formData.owners.length}</span>
                 </div>
 
                 <div className="border-t pt-4 mt-4">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Formation Fee - {selectedEntity?.name} ({selectedCountry?.name})</span>
+                    <span className="text-muted-foreground">{L('Formation Fee', 'رسوم التأسيس')} - {ct(selectedEntity?.name)} ({ct(selectedCountry?.name)})</span>
                     <span className="font-medium">${selectedEntity?.price}</span>
                   </div>
                   {formData.addons.map((addonId) => {
                     const addon = addons.find(a => a.id === addonId);
                     return addon && (
                       <div key={addonId} className="flex justify-between">
-                        <span className="text-muted-foreground">{addon.name}</span>
+                        <span className="text-muted-foreground">{ct(addon.name)}</span>
                         <span className="font-medium">${addon.price}</span>
                       </div>
                     );
                   })}
                   <div className="flex justify-between border-t pt-2 mt-2">
-                    <span className="font-semibold">Total</span>
+                    <span className="font-semibold">{L('Total', 'الإجمالي')}</span>
                     <span className="font-bold text-lg">${calculateTotal()}</span>
                   </div>
                 </div>
               </div>
 
               {selectedCountry?.note && (
-                <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{selectedCountry.note}</p>
+                <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{ct(selectedCountry.note)}</p>
               )}
               <p className="text-center text-sm text-muted-foreground">
-                Secure card payment via Stripe. Your company appears in your dashboard right after payment.
+                {L('Secure card payment via Stripe. Your company appears in your dashboard right after payment.', 'دفع آمن بالبطاقة عبر Stripe. تظهر شركتك في لوحة التحكم بعد الدفع مباشرة.')}
               </p>
             </div>
           )}
@@ -450,7 +456,7 @@ const FormationWizard = () => {
           disabled={currentStep === 1 || submitting}
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Back
+          {L('Back', 'رجوع')}
         </Button>
 
         {currentStep < 5 ? (
@@ -462,13 +468,13 @@ const FormationWizard = () => {
               (currentStep === 3 && !formData.companyName)
             }
           >
-            Next
+            {L('Next', 'التالي')}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         ) : (
           <Button onClick={handleSubmit} disabled={submitting}>
             {submitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CreditCard className="mr-2 h-4 w-4" />}
-            {submitting ? 'Opening secure checkout...' : 'Pay with Stripe'}
+            {submitting ? L('Opening secure checkout...', 'جاري فتح الدفع الآمن...') : L('Pay with Stripe', 'ادفع عبر Stripe')}
           </Button>
         )}
       </div>
@@ -477,11 +483,12 @@ const FormationWizard = () => {
 };
 
 const CompanyFormation = () => {
+  const L = useL();
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Company Formation</h1>
-        <p className="text-muted-foreground">Start your business in the USA, UK, Canada, Europe, or Egypt</p>
+        <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">{L('Company Formation', 'تأسيس الشركات')}</h1>
+        <p className="text-muted-foreground">{L('Start your business in the USA, UK, Canada, Europe, or Egypt', 'ابدأ شركتك في أمريكا أو بريطانيا أو كندا أو أوروبا أو مصر')}</p>
       </div>
 
       <FormationWizard />

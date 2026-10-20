@@ -18,8 +18,13 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
         <div className="text-center mb-10 space-y-3">
           <h2 className="text-2xl md:text-4xl font-extrabold">{ar ? 'افتح شركتك مع FoundStart' : 'Open your company with FoundStart'}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {ar ? 'FoundStart منصة متكاملة لتأسيس الشركات وخدماتها. نفتح لك شركة في أي دولة بأسعارنا.' : 'FoundStart is a complete platform for company formation and services. We open a company for you in any country at our prices.'}
+            {ar ? 'للفريلانسرز، وأصحاب المتاجر الإلكترونية، وشركات SaaS، وكل من يحتاج شركة لاستقبال المدفوعات. نفتح لك شركة في أي دولة بأسعارنا.' : 'For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. We open a company for you in any country at our prices.'}
           </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {(ar ? ['فريلانسرز', 'تجارة إلكترونية', 'SaaS', 'استقبال المدفوعات'] : ['Freelancers', 'E-commerce', 'SaaS', 'Receive payments']).map((x) => (
+            <span key={x} className="rounded-full border px-4 py-1.5 text-sm font-medium">{x}</span>
+          ))}
         </div>
         <div className="grid gap-6 md:grid-cols-3 mb-8">
           {items.map(({ icon: Icon, t, d }) => (
