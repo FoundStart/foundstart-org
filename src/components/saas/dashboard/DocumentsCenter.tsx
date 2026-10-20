@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { useAuth } from '@/contexts/AuthProvider';
+import { useToast } from '@/hooks/use-toast';
 import { useL } from '@/hooks/useL';
 import { supabase } from '@/integrations/supabase/client';
 import React, { useState } from 'react';
@@ -46,15 +48,51 @@ const DocumentsCenter = () => {
   const L = useL();
   const categories = categoriesBase.map(c => ({ ...c, name: L(c.name, ({ all: 'كل المستندات', legal: 'قانونية', tax: 'ضريبية', marketing: 'تسويقية' } as Record<string,string>)[c.id]) }));
   const [documents, setDocuments] = useState<Doc[]>([]);
+  const { user } = useAuth();
+  const { toast } = useToast();
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
   useEffect(() => {
-    (supabase as any).from('documents').select('id, name, document_type, file_size, is_ai_generated, created_at').order('created_at', { ascending: false })
+    (supabase as any).from('documents').select('id, name, file_url, document_type, file_size, is_ai_generated, created_at').order('created_at', { ascending: false })
       .then(({ data }: any) => setDocuments((data ?? []).map((d: any) => ({
-        id: d.id, name: d.name, type: d.document_type, company: null,
+        id: d.id, name: d.name, fileUrl: d.file_url, type: d.document_type, company: null,
         createdAt: d.created_at ? new Date(d.created_at).toLocaleDateString() : '-',
         size: d.file_size ? `${Math.max(1, Math.round(d.file_size / 1024))} KB` : '-',
         isAiGenerated: !!d.is_ai_generated, bytes: Number(d.file_size) || 0,
       }))));
-  }, []);
+  }, [reloadKey]);
+
+  const signedUrl = async (path: string) => {
+    const { data } = await supabase.storage.from('documents').createSignedUrl(path, 300);
+    return data?.signedUrl;
+  };
+  const openDoc = async (doc: any, download: boolean) => {
+    if (!doc.fileUrl) { toast({ title: L('No file attached to this document.', 'لا يوجد ملف مرفق بهذا المستند.'), variant: 'destructive' }); return; }
+    const url = /^https?:/.test(doc.fileUrl) ? doc.fileUrl : await signedUrl(doc.fileUrl);
+    if (!url) { toast({ title: L('Could not open the file.', 'تعذر فتح الملف.'), variant: 'destructive' }); return; }
+    if (download) { const a = document.createElement('a'); a.href = url; a.download = doc.name; a.target = '_blank'; a.click(); } else window.open(url, '_blank');
+  };
+  const deleteDoc = async (doc: any) => {
+    if (!window.confirm(L('Delete this document?', 'حذف هذا المستند؟'))) return;
+    if (doc.fileUrl && !/^https?:/.test(doc.fileUrl)) await supabase.storage.from('documents').remove([doc.fileUrl]);
+    await (supabase as any).from('documents').delete().eq('id', doc.id);
+    setReloadKey(k => k + 1);
+  };
+  const onUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0]; e.target.value = '';
+    if (!f || !user) return;
+    if (f.size > 10 * 1024 * 1024) { toast({ title: L('File is larger than 10 MB.', 'حجم الملف أكبر من 10 ميجابايت.'), variant: 'destructive' }); return; }
+    setUploading(true);
+    const path = `${user.id}/${Date.now()}-${f.name.replace(/[^\w.\-]+/g, '_')}`;
+    const up = await supabase.storage.from('documents').upload(path, f, { contentType: f.type || undefined });
+    if (up.error) { toast({ title: L('Upload failed', 'فشل الرفع'), description: up.error.message, variant: 'destructive' }); setUploading(false); return; }
+    const ins = await (supabase as any).from('documents').insert({ user_id: user.id, name: f.name, document_type: selectedCategory === 'all' ? 'legal' : selectedCategory, file_url: path, file_size: f.size, mime_type: f.type || null, is_ai_generated: false });
+    setUploading(false);
+    if (ins.error) { toast({ title: L('Upload failed', 'فشل الرفع'), description: ins.error.message, variant: 'destructive' }); return; }
+    toast({ title: L('Document uploaded', 'تم رفع المستند') });
+    setReloadKey(k => k + 1);
+  };
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -79,6 +117,12 @@ const DocumentsCenter = () => {
         <div>
           <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">{L('Documents', 'المستندات')}</h1>
           <p className="text-muted-foreground">{L('Manage your business documents', 'إدارة مستندات شركتك')}</p>
+        </div>
+        <div>
+          <input ref={fileRef} type="file" className="hidden" onChange={onUpload} />
+          <Button onClick={() => fileRef.current?.click()} disabled={uploading}>
+            <Upload className="mr-2 h-4 w-4" />{uploading ? L('Uploading...', 'جارٍ الرفع...') : L('Upload document', 'رفع مستند')}
+          </Button>
         </div>
       </div>
 
@@ -193,15 +237,15 @@ const DocumentsCenter = () => {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => openDoc(doc, false)}>
                           <Eye className="mr-2 h-4 w-4" />
                           {L('Preview', 'معاينة')}
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => openDoc(doc, true)}>
                           <Download className="mr-2 h-4 w-4" />
                           {L('Download', 'تنزيل')}
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="text-destructive">
+                        <DropdownMenuItem className="text-destructive" onClick={() => deleteDoc(doc)}>
                           <Trash2 className="mr-2 h-4 w-4" />
                           {L('Delete', 'حذف')}
                         </DropdownMenuItem>

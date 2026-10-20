@@ -237,7 +237,7 @@ function App() {
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes></Suspense>
-                <ChatPageExclusions><Suspense fallback={null}><AIChatBot /></Suspense></ChatPageExclusions>
+                <ChatPageExclusions hideOnDashboard><Suspense fallback={null}><AIChatBot /></Suspense></ChatPageExclusions>
                 <MobileBottomNav />
                 <PartnerPagesOnly><Suspense fallback={null}><PartnerAdsHub /></Suspense></PartnerPagesOnly>
                 <OutboundUtmTagger />
