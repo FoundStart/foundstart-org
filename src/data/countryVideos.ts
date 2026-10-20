@@ -3,7 +3,11 @@
 export type CountryVideo = { en?: string; ar?: string };
 
 export const countryVideos: Record<string, CountryVideo> = {
-  // USA: { en: 'xxxxxxxxxxx', ar: 'xxxxxxxxxxx' },
+  EE: { en: '6At2MERCA-Q' },
+  FI: { en: 'auhn3ZxmidA' },
+  SE: { en: 'swzSiHgDGfg' },
+  LV: { en: 'Qf_kXuZPCvc' },
+  // LT: { en: '' }, IE: { en: '' }, EG: { en: '' },  (pending uploads)
 };
 
 export const getCountryVideoUrl = (countryId: string, isRTL: boolean, fallback?: string): string | undefined => {
