@@ -228,14 +228,14 @@ const AffiliateDashboard = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="p-4 bg-muted/50 rounded-lg">
-                    <h4 className="font-medium mb-2">Standard Plans</h4>
-                    <p className="text-sm text-muted-foreground mb-1">25% commission on all paid plans</p>
-                    <p className="text-sm">$299 plan = $74.75 commission</p>
+                    <h4 className="font-medium mb-2">Formation orders</h4>
+                    <p className="text-sm text-muted-foreground mb-1">25% commission on paid formation orders</p>
+                    <p className="text-sm">US LLC ($450) = $112.50 commission</p>
                   </div>
                   <div className="p-4 bg-muted/50 rounded-lg">
-                    <h4 className="font-medium mb-2">Premium Services</h4>
-                    <p className="text-sm text-muted-foreground mb-1">30% commission on premium packages</p>
-                    <p className="text-sm">$999 plan = $299.70 commission</p>
+                    <h4 className="font-medium mb-2">Higher-priced orders</h4>
+                    <p className="text-sm text-muted-foreground mb-1">Same 25% rate on every order</p>
+                    <p className="text-sm">US C-Corp ($550) = $137.50 commission</p>
                   </div>
                 </CardContent>
               </Card>

@@ -192,16 +192,16 @@ const BestCompanyFormation2026AR: React.FC = () => {
                       <th className="text-left p-3 border">الولاية القضائية</th>
                       <th className="text-left p-3 border">الأفضل لـ</th>
                       <th className="text-left p-3 border">السرعة</th>
-                      <th className="text-left p-3 border">متوسط التكلفة</th>
+                      <th className="text-left p-3 border">رسوم FoundStart</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td className="p-3 border">أمريكا (Delaware)</td><td className="p-3 border">بوابات الدفع، المستثمرون، شركات SaaS</td><td className="p-3 border">1–3 أيام</td><td className="p-3 border">$49–$299</td></tr>
-                    <tr><td className="p-3 border">أمريكا (Wyoming)</td><td className="p-3 border">الخصوصية، رسوم منخفضة، لا ضرائب ولاية</td><td className="p-3 border">1–3 أيام</td><td className="p-3 border">$49–$149</td></tr>
-                    <tr><td className="p-3 border">المملكة المتحدة</td><td className="p-3 border">العملاء الأوروبيون، المصداقية، سرعة التسجيل</td><td className="p-3 border">نفس اليوم</td><td className="p-3 border">£12–£100</td></tr>
-                    <tr><td className="p-3 border">إستونيا</td><td className="p-3 border">التواجد الأوروبي، الإقامة الإلكترونية، 0% ضريبة على الأرباح المحتجزة</td><td className="p-3 border">1–5 أيام</td><td className="p-3 border">€190–€400</td></tr>
-                    <tr><td className="p-3 border">أيرلندا</td><td className="p-3 border">أوروبا الناطقة بالإنجليزية، مركز تقني مرموق</td><td className="p-3 border">3–5 أيام</td><td className="p-3 border">€150–€350</td></tr>
-                    <tr><td className="p-3 border">السويد / فنلندا</td><td className="p-3 border">مصداقية دول الشمال</td><td className="p-3 border">5–10 أيام</td><td className="p-3 border">€200–€500</td></tr>
+                    <tr><td className="p-3 border">أمريكا (Delaware)</td><td className="p-3 border">بوابات الدفع، المستثمرون، شركات SaaS</td><td className="p-3 border">بحسب السجل</td><td className="p-3 border">$450</td></tr>
+                    <tr><td className="p-3 border">أمريكا (Wyoming)</td><td className="p-3 border">الخصوصية، رسوم منخفضة، لا ضرائب ولاية</td><td className="p-3 border">بحسب السجل</td><td className="p-3 border">$450</td></tr>
+                    <tr><td className="p-3 border">المملكة المتحدة</td><td className="p-3 border">العملاء الأوروبيون، المصداقية، سرعة التسجيل</td><td className="p-3 border">بحسب السجل</td><td className="p-3 border">$500</td></tr>
+                    <tr><td className="p-3 border">إستونيا</td><td className="p-3 border">التواجد الأوروبي، الإقامة الإلكترونية، 0% ضريبة على الأرباح المحتجزة</td><td className="p-3 border">بحسب السجل</td><td className="p-3 border">$335</td></tr>
+                    <tr><td className="p-3 border">أيرلندا</td><td className="p-3 border">أوروبا الناطقة بالإنجليزية، مركز تقني مرموق</td><td className="p-3 border">بحسب السجل</td><td className="p-3 border">$1,215</td></tr>
+                    <tr><td className="p-3 border">السويد / فنلندا</td><td className="p-3 border">مصداقية دول الشمال</td><td className="p-3 border">بحسب السجل</td><td className="p-3 border">$530–$575</td></tr>
                   </tbody>
                 </table>
               </div>

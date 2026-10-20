@@ -198,16 +198,16 @@ const BestCompanyFormation2026: React.FC = () => {
                       <th className="text-left p-3 border">Jurisdiction</th>
                       <th className="text-left p-3 border">Best For</th>
                       <th className="text-left p-3 border">Speed</th>
-                      <th className="text-left p-3 border">Avg. Cost</th>
+                      <th className="text-left p-3 border">FoundStart fee</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td className="p-3 border">USA (Delaware)</td><td className="p-3 border">Payment processors, investors, global SaaS</td><td className="p-3 border">1–3 days</td><td className="p-3 border">$49–$299</td></tr>
-                    <tr><td className="p-3 border">USA (Wyoming)</td><td className="p-3 border">Privacy, low fees, no state tax</td><td className="p-3 border">1–3 days</td><td className="p-3 border">$49–$149</td></tr>
-                    <tr><td className="p-3 border">UK (England)</td><td className="p-3 border">European clients, credibility, fast registration</td><td className="p-3 border">Same day</td><td className="p-3 border">£12–£100</td></tr>
-                    <tr><td className="p-3 border">Estonia</td><td className="p-3 border">EU presence, e-Residency, 0% retained earnings tax</td><td className="p-3 border">1–5 days</td><td className="p-3 border">€190–€400</td></tr>
-                    <tr><td className="p-3 border">Ireland</td><td className="p-3 border">English-speaking EU, tech hub reputation</td><td className="p-3 border">3–5 days</td><td className="p-3 border">€150–€350</td></tr>
-                    <tr><td className="p-3 border">Sweden / Finland</td><td className="p-3 border">Nordics credibility</td><td className="p-3 border">5–10 days</td><td className="p-3 border">€200–€500</td></tr>
+                    <tr><td className="p-3 border">USA (Delaware)</td><td className="p-3 border">Payment processors, investors, global SaaS</td><td className="p-3 border">Varies by registry</td><td className="p-3 border">$450</td></tr>
+                    <tr><td className="p-3 border">USA (Wyoming)</td><td className="p-3 border">Privacy, low fees, no state tax</td><td className="p-3 border">Varies by registry</td><td className="p-3 border">$450</td></tr>
+                    <tr><td className="p-3 border">UK (England)</td><td className="p-3 border">European clients, credibility, fast registration</td><td className="p-3 border">Varies by registry</td><td className="p-3 border">$500</td></tr>
+                    <tr><td className="p-3 border">Estonia</td><td className="p-3 border">EU presence, e-Residency, 0% retained earnings tax</td><td className="p-3 border">Varies by registry</td><td className="p-3 border">$335</td></tr>
+                    <tr><td className="p-3 border">Ireland</td><td className="p-3 border">English-speaking EU, tech hub reputation</td><td className="p-3 border">Varies by registry</td><td className="p-3 border">$1,215</td></tr>
+                    <tr><td className="p-3 border">Sweden / Finland</td><td className="p-3 border">Nordics credibility</td><td className="p-3 border">Varies by registry</td><td className="p-3 border">$530–$575</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -227,8 +227,8 @@ const BestCompanyFormation2026: React.FC = () => {
               <h2>Pro Tips from MoMoAI</h2>
               <ul>
                 <li><strong>Wyoming vs. Delaware:</strong> Delaware is better for VC-backed startups; Wyoming is better for bootstrapped founders who want privacy and zero state income tax.</li>
-                <li><strong>UK + US combo:</strong> Many MENA founders form both a UK Ltd and a US LLC — total cost under $400/year.</li>
-                <li><strong>Estonia e-Residency:</strong> Apply for your card first (€100–120), then form your OÜ through 1office. The whole process takes 2–4 weeks.</li>
+                <li><strong>UK + US combo:</strong> Many MENA founders form both a UK Ltd and a US LLC..</li>
+                <li><strong>Estonia e-Residency:</strong> Apply for your card first (€100–120), then form your OÜ through 1office. Timing depends on the registry.</li>
                 <li><strong>Use coupons:</strong> The ITIN service includes a <code>SAYED50</code> coupon for 50% off — always check for active promo codes.</li>
                 <li><strong>Annual compliance matters:</strong> Budget $0–$300/year for ongoing compliance.</li>
               </ul>

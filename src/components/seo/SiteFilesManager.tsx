@@ -92,9 +92,11 @@ Q: Do you support international clients?
 A: Yes, we help international entrepreneurs start businesses in the USA, UK, and Canada.
 
 ## Pricing Information
-- Basic LLC Formation: $299
-- Premium Package: $499 (includes EIN, Registered Agent)
-- Enterprise: $999 (includes banking setup and legal review)
+- US LLC: $450
+- US C-Corp: $550
+- US S-Corp: $750
+- UK Ltd: $500
+- Estonia OÜ: $335
 
 ## Contact Information
 - Website: https://yourdomain.com
