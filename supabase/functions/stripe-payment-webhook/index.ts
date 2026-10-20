@@ -61,6 +61,9 @@ async function handleFormationOrder(session: any) {
   if (!paidOk) return json({ success: true });
 
   await api(`orders?id=eq.${order.id}`, { method: "PATCH", body: JSON.stringify({ status: "paid", updated_at: new Date().toISOString() }) });
+  try {
+    await api("rpc/aff_record_sale", { method: "POST", body: JSON.stringify({ p_user: order.user_id, p_source_ref: String(session.id), p_payment_ref: session?.payment_intent ?? null, p_amount_cents: Number(session?.amount_total ?? 0), p_currency: session?.currency ?? "usd", p_product: "company formation order" }) });
+  } catch (e) { console.error("aff record", e); }
   if (order.company_id) {
     await api(`companies?id=eq.${order.company_id}`, { method: "PATCH", body: JSON.stringify({ status: "submitted", updated_at: new Date().toISOString() }) });
   }
@@ -105,6 +108,18 @@ Deno.serve(async (req) => {
   if (!sig || !(await verifyStripeSignature(raw, sig, secret))) return new Response("bad signature", { status: 401 });
 
   const evt = JSON.parse(raw);
+  // Affiliate: reverse commission on refunds and disputes (never blocks the webhook).
+  if (evt?.type === "charge.refunded" || evt?.type === "charge.dispute.created") {
+    try {
+      const o = evt.data?.object ?? {};
+      const pi = o.payment_intent ?? null;
+      const refunded = evt.type === "charge.refunded" ? Number(o.amount_refunded ?? 0) : Number(o.amount ?? 0);
+      if (pi && refunded > 0) {
+        await api("rpc/aff_reverse_sale", { method: "POST", body: JSON.stringify({ p_payment_ref: pi, p_source_ref: null, p_event_ref: evt.id, p_refunded_cents: refunded }) });
+      }
+    } catch (e) { console.error("aff reverse", e); }
+    return json({ success: true });
+  }
   if (evt?.type !== "checkout.session.completed") return json({ success: true });
 
   const session = evt?.data?.object ?? {};

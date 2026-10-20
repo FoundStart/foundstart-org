@@ -84,6 +84,7 @@ import VibeCodingPlatforms2026 from "./pages/blog/VibeCodingPlatforms2026";
 import PaymentGateways2026 from "./pages/blog/PaymentGateways2026";
 import CompanyFormationBio from "./pages/CompanyFormationBio";
 import "./App.css";
+import { AffiliatesRoute, AffiliateAdminRoute, VideosRoute, AffiliateTrackerMount } from "@/affiliate/site";
 
 const queryClient = new QueryClient();
 
@@ -147,6 +148,7 @@ function App() {
             <BrowserRouter>
               <AuthProvider>
                 <ScrollToTop />
+                <AffiliateTrackerMount />
                 <AdSenseLoader />
                 <HealthCheckBanner />
                 <Routes>
@@ -194,7 +196,13 @@ function App() {
                   <Route path="/media" element={<Media />} />
                   <Route path="/learning" element={<Learning />} />
                   <Route path="/tutorials" element={<Tutorials />} />
-                  <Route path="/affiliate-dashboard" element={<Navigate to="/" replace />} />
+                  <Route path="/affiliate-dashboard" element={<Navigate to="/affiliates/dashboard" replace />} />
+                  <Route path="/affiliates" element={<AffiliatesRoute view="program" />} />
+                  <Route path="/affiliates/dashboard" element={<AffiliatesRoute view="dashboard" />} />
+                  <Route path="/affiliates/terms" element={<AffiliatesRoute view="terms" />} />
+                  <Route path="/affiliates/admin" element={<AffiliateAdminRoute />} />
+                  <Route path="/affiliate" element={<Navigate to="/affiliates" replace />} />
+                  <Route path="/videos" element={<Navigate to="/media" replace />} />
                   <Route path="/seo-management" element={<Navigate to="/" replace />} />
                   <Route path="/contact-sales" element={<ContactSales />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />

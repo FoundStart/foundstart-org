@@ -10,7 +10,7 @@ import OrderManagement from '@/components/admin/OrderManagement';
 import DomainInquiryManagement from '@/components/admin/DomainInquiryManagement';
 import SalesInquiryManagement from '@/components/admin/SalesInquiryManagement';
 import DomainAnalyticsDashboard from '@/components/admin/DomainAnalyticsDashboard';
-import AdminAffiliatesManagement from '@/components/admin/AdminAffiliatesManagement';
+import { AffiliateAdminEmbedded } from '@/affiliate/site';
 import BlogPartnerAnalytics from '@/components/admin/BlogPartnerAnalytics';
 import NotificationBell from '@/components/notifications/NotificationBell';
 
@@ -40,7 +40,7 @@ const AdminDashboardContent = () => {
           <Route path="sales-inquiries" element={<SalesInquiryManagement />} />
           <Route path="domain-analytics" element={<DomainAnalyticsDashboard />} />
           <Route path="prompts" element={<PlaceholderPage title="AI Prompts" />} />
-          <Route path="affiliates" element={<AdminAffiliatesManagement />} />
+          <Route path="affiliates" element={<AffiliateAdminEmbedded />} />
           <Route path="blog-partner-analytics" element={<BlogPartnerAnalytics />} />
           <Route path="payments" element={<PlaceholderPage title="Payments" />} />
           <Route path="logs" element={<PlaceholderPage title="Activity Logs" />} />
