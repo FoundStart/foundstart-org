@@ -95,45 +95,16 @@ const Hero = () => {
               <span className="h-2.5 w-2.5 rounded-full bg-white/20" /><span className="h-2.5 w-2.5 rounded-full bg-white/20" /><span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               <span className="mx-auto rounded-md bg-white/5 px-3 py-0.5 text-[10px] text-white/40">foundstart.org/dashboard</span>
             </div>
-            <div className="flex text-left" dir={ar ? 'rtl' : 'ltr'}>
-              <div className="hidden sm:block w-44 shrink-0 border-white/10 p-3 space-y-1 border-e">
-                <div className="mb-3 px-2 text-sm font-bold text-white">FoundStart</div>
-                {nav.map((n, i) => (
-                  <div key={n} className={`rounded-lg px-2.5 py-1.5 text-xs ${i === 1 ? 'bg-purple-600/25 text-purple-200' : 'text-white/50'}`}>{n}</div>
-                ))}
-              </div>
-              <div className="flex-1 p-4 sm:p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-semibold text-white">{ar ? 'تأسيس شركة جديدة' : 'New company formation'}</div>
-                  <span className="rounded-full bg-purple-600/25 px-2.5 py-0.5 text-[10px] text-purple-200">{ar ? 'ادفع عبر Stripe' : 'Secure Stripe checkout'}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  {steps.map((st, i) => (
-                    <div key={st} className="flex-1">
-                      <div className={`h-1.5 rounded-full ${i < 3 ? 'bg-purple-500' : 'bg-white/10'}`} />
-                      <div className={`mt-1.5 text-[9px] sm:text-[10px] ${i < 3 ? 'text-white/80' : 'text-white/35'}`}>{st}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  {[
-                    { f: '🇺🇸', n: ar ? 'أمريكا' : 'United States', p: 'LLC $450' },
-                    { f: '🇬🇧', n: ar ? 'بريطانيا' : 'United Kingdom', p: 'LTD $500' },
-                    { f: '🇪🇪', n: ar ? 'إستونيا' : 'Estonia', p: 'OÜ $335' },
-                  ].map((c, i) => (
-                    <div key={c.n} className={`rounded-xl border border-white/10 bg-white/[0.03] p-3 ${i === 2 ? 'hidden sm:block' : ''}`}>
-                      <div className="text-lg">{c.f}</div>
-                      <div className="mt-1 text-xs text-white/80">{c.n}</div>
-                      <div className="text-[11px] text-purple-300">{c.p}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 flex items-center justify-between">
-                  <div className="text-xs text-white/70">{ar ? 'المستندات، الفواتير وحالة الطلب في مكان واحد' : 'Documents, billing and order status in one place'}</div>
-                  <span className="rounded-md bg-purple-600 px-2.5 py-1 text-[10px] font-semibold text-white">{ar ? 'ادفع الآن' : 'Pay now'}</span>
-                </div>
-              </div>
-            </div>
+            <picture>
+              <source media="(max-width: 639px)" srcSet={`/hero/dashboard-m-${ar ? 'ar' : 'en'}.webp`} width={560} height={1148} />
+              <img
+                src={`/hero/dashboard-${ar ? 'ar' : 'en'}.webp`}
+                width={1200} height={712}
+                alt={ar ? 'لوحة تحكم FoundStart الحقيقية: الشركات والطلبات وحالة التأسيس' : 'The real FoundStart dashboard: companies, orders and formation status'}
+                className="block w-full max-h-[460px] sm:max-h-none object-cover object-top"
+                loading="eager" fetchPriority="high" decoding="async"
+              />
+            </picture>
           </div>
         </motion.div>
       </div>
