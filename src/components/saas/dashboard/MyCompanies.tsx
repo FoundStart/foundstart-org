@@ -1,4 +1,5 @@
 import React from 'react';
+import { useL } from '@/hooks/useL';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthProvider';
@@ -12,6 +13,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { format } from 'date-fns';
 
 const MyCompanies = () => {
+  const L = useL();
   const { user } = useAuth();
   const [searchParams] = useSearchParams();
   const orderSuccess = searchParams.get('order') === 'success';
@@ -34,12 +36,12 @@ const MyCompanies = () => {
 
   const getStatusBadge = (status: string | null) => {
     const statusConfig: Record<string, { variant: 'default' | 'secondary' | 'destructive' | 'outline'; label: string }> = {
-      draft: { variant: 'outline', label: 'Draft' },
-      submitted: { variant: 'secondary', label: 'Submitted' },
-      in_progress: { variant: 'default', label: 'In Progress' },
-      pending_documents: { variant: 'secondary', label: 'Pending Documents' },
-      completed: { variant: 'default', label: 'Completed' },
-      rejected: { variant: 'destructive', label: 'Rejected' },
+      draft: { variant: 'outline', label: L('Draft','مسودة') },
+      submitted: { variant: 'secondary', label: L('Submitted','تم الإرسال') },
+      in_progress: { variant: 'default', label: L('In Progress','قيد التنفيذ') },
+      pending_documents: { variant: 'secondary', label: L('Pending Documents','بانتظار المستندات') },
+      completed: { variant: 'default', label: L('Completed','مكتملة') },
+      rejected: { variant: 'destructive', label: L('Rejected','مرفوضة') },
     };
     const config = statusConfig[status || 'draft'] || statusConfig.draft;
     return <Badge variant={config.variant}>{config.label}</Badge>;
@@ -69,7 +71,7 @@ const MyCompanies = () => {
     return (
       <Card>
         <CardContent className="py-12 text-center">
-          <p className="text-destructive">Error loading companies. Please try again.</p>
+          <p className="text-destructive">{L('Error loading companies. Please try again.','تعذر تحميل الشركات. حاول مرة أخرى.')}</p>
         </CardContent>
       </Card>
     );
@@ -79,18 +81,18 @@ const MyCompanies = () => {
     <div className="space-y-6">
       {orderSuccess && (
         <div className="rounded-lg border border-green-300 bg-green-50 dark:border-green-900 dark:bg-green-950 p-4 text-sm">
-          Payment received. Your company formation order is confirmed and its status will update here as we work on it.
+          {L('Payment received. Your company formation order is confirmed and its status will update here as we work on it.', 'تم استلام الدفع. تم تأكيد طلب تأسيس شركتك وستتحدث حالته هنا أثناء العمل عليه.')}
         </div>
       )}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold">My Companies</h1>
-          <p className="text-muted-foreground">Manage your registered companies and formations</p>
+          <h1 className="text-2xl font-bold">{L('My Companies', 'شركاتي')}</h1>
+          <p className="text-muted-foreground">{L('Manage your registered companies and formations', 'إدارة شركاتك المسجلة وطلبات التأسيس')}</p>
         </div>
         <Button asChild>
           <Link to="/dashboard/formation">
             <Plus className="w-4 h-4 mr-2" />
-            New Company
+            {L('New Company', 'شركة جديدة')}
           </Link>
         </Button>
       </div>
@@ -102,12 +104,12 @@ const MyCompanies = () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Company</TableHead>
-                    <TableHead>Jurisdiction</TableHead>
-                    <TableHead>Entity Type</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Created</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>{L('Company', 'الشركة')}</TableHead>
+                    <TableHead>{L('Jurisdiction', 'الدولة')}</TableHead>
+                    <TableHead>{L('Entity Type', 'نوع الكيان')}</TableHead>
+                    <TableHead>{L('Status', 'الحالة')}</TableHead>
+                    <TableHead>{L('Created', 'تاريخ الإنشاء')}</TableHead>
+                    <TableHead className="text-right">{L('Actions', 'الإجراءات')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -142,11 +144,11 @@ const MyCompanies = () => {
                           <DropdownMenuContent align="end">
                             <DropdownMenuItem>
                               <Eye className="w-4 h-4 mr-2" />
-                              View Details
+                              {L('View Details', 'عرض التفاصيل')}
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                               <FileText className="w-4 h-4 mr-2" />
-                              Documents
+                              {L('Documents', 'المستندات')}
                             </DropdownMenuItem>
                           </DropdownMenuContent>
                         </DropdownMenu>
@@ -162,14 +164,14 @@ const MyCompanies = () => {
         <Card>
           <CardContent className="py-16 text-center">
             <Building2 className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Companies Yet</h3>
+            <h3 className="text-lg font-semibold mb-2">{L('No Companies Yet', 'لا توجد شركات بعد')}</h3>
             <p className="text-muted-foreground mb-6 max-w-sm mx-auto">
-              Start your business journey by forming your first company in USA, UK, or Europe.
+              {L('Start your business journey by forming your first company in USA, UK, or Europe.', 'ابدأ رحلتك بتأسيس شركتك الأولى في أمريكا أو بريطانيا أو أوروبا أو مصر.')}
             </p>
             <Button asChild>
               <Link to="/dashboard/formation">
                 <Plus className="w-4 h-4 mr-2" />
-                Start Company Formation
+                {L('Start Company Formation', 'ابدأ تأسيس شركة')}
               </Link>
             </Button>
           </CardContent>
@@ -182,7 +184,7 @@ const MyCompanies = () => {
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">{companies.length}</div>
-              <p className="text-sm text-muted-foreground">Total Companies</p>
+              <p className="text-sm text-muted-foreground">{L('Total Companies', 'إجمالي الشركات')}</p>
             </CardContent>
           </Card>
           <Card>
@@ -190,7 +192,7 @@ const MyCompanies = () => {
               <div className="text-2xl font-bold">
                 {companies.filter(c => c.formation_status === 'completed').length}
               </div>
-              <p className="text-sm text-muted-foreground">Active</p>
+              <p className="text-sm text-muted-foreground">{L('Active', 'نشطة')}</p>
             </CardContent>
           </Card>
           <Card>
@@ -198,7 +200,7 @@ const MyCompanies = () => {
               <div className="text-2xl font-bold">
                 {companies.filter(c => c.formation_status === 'in_progress').length}
               </div>
-              <p className="text-sm text-muted-foreground">In Progress</p>
+              <p className="text-sm text-muted-foreground">{L('In Progress', 'قيد التنفيذ')}</p>
             </CardContent>
           </Card>
           <Card>
@@ -206,7 +208,7 @@ const MyCompanies = () => {
               <div className="text-2xl font-bold">
                 {companies.filter(c => c.formation_status === 'draft').length}
               </div>
-              <p className="text-sm text-muted-foreground">Drafts</p>
+              <p className="text-sm text-muted-foreground">{L('Drafts', 'مسودات')}</p>
             </CardContent>
           </Card>
         </div>

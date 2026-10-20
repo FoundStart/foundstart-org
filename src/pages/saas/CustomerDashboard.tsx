@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Navigate } from 'react-router-dom';
 import { SidebarProvider } from '@/components/ui/sidebar';
@@ -7,6 +8,7 @@ import CustomerDashboardContent from '@/components/saas/CustomerDashboardContent
 
 const CustomerDashboard = () => {
   const { user, loading } = useAuth();
+  const { isRTL } = useTranslation();
 
   if (loading) {
     return (
@@ -24,7 +26,7 @@ const CustomerDashboard = () => {
     <SidebarProvider dir="ltr">
       <div className="flex min-h-screen w-full bg-background">
         <CustomerSidebar />
-        <main className="flex-1 overflow-auto">
+        <main dir={isRTL ? 'rtl' : 'ltr'} className="flex-1 overflow-auto">
           <CustomerDashboardContent />
         </main>
       </div>

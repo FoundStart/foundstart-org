@@ -1,3 +1,4 @@
+import { useL } from '@/hooks/useL';
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
@@ -43,6 +44,7 @@ type TxRow = {
 };
 
 const BillingPayments = () => {
+  const L = useL();
   const { user } = useAuth();
 
   const { data: orders, isLoading: loadingOrders } = useQuery({
@@ -74,9 +76,9 @@ const BillingPayments = () => {
   });
 
   const paidTotal = (orders || []).filter(o => ['paid', 'processing', 'completed'].includes(o.status || '')).reduce((s, o) => s + Number(o.total_price), 0)
-    + (deposits || []).filter(d => d.status === 'completed').reduce((s, d) => s + Number(d.amount), 0);
+    ;
   const pendingTotal = (orders || []).filter(o => o.status === 'pending').reduce((s, o) => s + Number(o.total_price), 0)
-    + (deposits || []).filter(d => d.status === 'pending').reduce((s, d) => s + Number(d.amount), 0);
+    ;
 
   const getStatusBadge = (status: string | null) => {
     switch (status) {
@@ -85,16 +87,16 @@ const BillingPayments = () => {
         return (
           <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
             <CheckCircle2 className="mr-1 h-3 w-3" />
-            Paid
+            {L('Paid', 'مدفوع')}
           </Badge>
         );
       case 'processing':
-        return <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">Processing</Badge>;
+        return <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">{L('Processing', 'قيد المعالجة')}</Badge>;
       case 'pending':
         return (
           <Badge className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
             <Clock className="mr-1 h-3 w-3" />
-            Pending
+            {L('Pending', 'قيد الدفع')}
           </Badge>
         );
       case 'failed':
@@ -113,23 +115,23 @@ const BillingPayments = () => {
 
   const orderLabel = (o: OrderRow) => {
     const name = o.metadata?.companyName;
-    if (o.order_type === 'company_formation') return name ? `Company formation - ${name}` : 'Company formation';
-    return 'Service order';
+    if (o.order_type === 'company_formation') return name ? `${L('Company formation','تأسيس شركة')} - ${name}` : L('Company formation','تأسيس شركة');
+    return L('Service order','طلب خدمة');
   };
 
-  const loading = loadingOrders || loadingDeposits;
+  const loading = loadingOrders;
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Billing & Payments</h1>
-        <p className="text-muted-foreground">Your orders, payments and wallet deposits</p>
+        <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">{L('Billing & Payments', 'الفواتير والمدفوعات')}</h1>
+        <p className="text-muted-foreground">{L('Your orders and payments', 'طلباتك ومدفوعاتك')}</p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total paid</CardTitle>
+            <CardTitle className="text-sm font-medium">{L('Total paid', 'إجمالي المدفوع')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -138,7 +140,7 @@ const BillingPayments = () => {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Pending</CardTitle>
+            <CardTitle className="text-sm font-medium">{L('Pending', 'قيد الدفع')}</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -149,22 +151,22 @@ const BillingPayments = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><CreditCard className="h-5 w-5" />Orders</CardTitle>
-          <CardDescription>Company formation and service orders</CardDescription>
+          <CardTitle className="flex items-center gap-2"><CreditCard className="h-5 w-5" />{L('Orders', 'الطلبات')}</CardTitle>
+          <CardDescription>{L('Company formation and service orders', 'طلبات تأسيس الشركات')}</CardDescription>
         </CardHeader>
         <CardContent>
           {loading ? (
             <div className="flex justify-center py-8"><Loader2 className="h-6 w-6 animate-spin" /></div>
           ) : !orders?.length ? (
-            <p className="text-sm text-muted-foreground py-4">No orders yet. Start a company formation to see it here.</p>
+            <p className="text-sm text-muted-foreground py-4">{L('No orders yet. Start a company formation to see it here.', 'لا توجد طلبات بعد. ابدأ تأسيس شركة لتظهر هنا.')}</p>
           ) : (
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Description</TableHead>
-                  <TableHead>Amount</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Date</TableHead>
+                  <TableHead>{L('Description', 'الوصف')}</TableHead>
+                  <TableHead>{L('Amount', 'المبلغ')}</TableHead>
+                  <TableHead>{L('Status', 'الحالة')}</TableHead>
+                  <TableHead>{L('Date', 'التاريخ')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -174,43 +176,6 @@ const BillingPayments = () => {
                     <TableCell>${Number(o.total_price).toFixed(2)} {o.currency || 'USD'}</TableCell>
                     <TableCell>{getStatusBadge(o.status)}</TableCell>
                     <TableCell>{new Date(o.created_at).toLocaleDateString()}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          )}
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2"><Wallet className="h-5 w-5" />Wallet deposits</CardTitle>
-          <CardDescription>Card deposits to your FoundStart wallet</CardDescription>
-        </CardHeader>
-        <CardContent>
-          {loading ? (
-            <div className="flex justify-center py-8"><Loader2 className="h-6 w-6 animate-spin" /></div>
-          ) : !deposits?.length ? (
-            <p className="text-sm text-muted-foreground py-4">No deposits yet.</p>
-          ) : (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Reference</TableHead>
-                  <TableHead>Method</TableHead>
-                  <TableHead>Amount</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Date</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {deposits.map((d) => (
-                  <TableRow key={d.order_id}>
-                    <TableCell className="font-medium">{d.order_id}</TableCell>
-                    <TableCell className="capitalize">{d.payment_method || '-'}</TableCell>
-                    <TableCell>${Number(d.amount).toFixed(2)} {d.currency || 'USD'}</TableCell>
-                    <TableCell>{getStatusBadge(d.status)}</TableCell>
-                    <TableCell>{new Date(d.created_at).toLocaleDateString()}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

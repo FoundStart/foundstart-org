@@ -48,7 +48,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white/80 text-sm mb-8"
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
-          {language === 'ar' ? 'تأسيس شركتك في 10 دقائق' : 'Launch Your Business in 10 Jurisdictions'}
+          {language === 'ar' ? 'أسس شركتك في 10 دول' : 'Launch Your Business in 10 Jurisdictions'}
         </motion.div>
 
         {/* Headline */}

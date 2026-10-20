@@ -1,4 +1,5 @@
 import React from 'react';
+import { useL } from '@/hooks/useL';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -14,6 +15,7 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 
 const DashboardHome = () => {
+  const L = useL();
   const { user } = useAuth();
 
   const { data: companies = [], isLoading: companiesLoading } = useQuery({
@@ -77,10 +79,10 @@ const DashboardHome = () => {
   const openTickets = tickets.filter(t => t.status === 'open' || t.status === 'in_progress').length;
 
   const stats = [
-    { title: 'Companies', value: companies.length.toString(), subtitle: `${completedCompanies} completed`, icon: Building2, color: 'from-blue-500 to-indigo-600' },
-    { title: 'Orders', value: orders.length.toString(), subtitle: `${orders.filter(o => ['paid','processing','completed'].includes(o.status || '')).length} paid`, icon: ShoppingCart, color: 'from-emerald-500 to-green-600' },
-    { title: 'Documents', value: documents.length.toString(), subtitle: 'AI & uploaded', icon: FileText, color: 'from-violet-500 to-purple-600' },
-    { title: 'Pending', value: `$${pendingPayments}`, subtitle: `${orders.filter(o => o.status === 'pending').length} orders`, icon: CreditCard, color: 'from-amber-500 to-orange-600' },
+    { title: L('Companies','الشركات'), value: companies.length.toString(), subtitle: `${completedCompanies} ${L('completed','مكتملة')}`, icon: Building2, color: 'from-blue-500 to-indigo-600' },
+    { title: L('Orders','الطلبات'), value: orders.length.toString(), subtitle: `${orders.filter(o => ['paid','processing','completed'].includes(o.status || '')).length} ${L('paid','مدفوع')}`, icon: ShoppingCart, color: 'from-emerald-500 to-green-600' },
+    { title: L('Documents','المستندات'), value: documents.length.toString(), subtitle: L('Your files','ملفاتك'), icon: FileText, color: 'from-violet-500 to-purple-600' },
+    { title: L('Pending','قيد الدفع'), value: `$${pendingPayments}`, subtitle: `${orders.filter(o => o.status === 'pending').length} ${L('orders','طلبات')}`, icon: CreditCard, color: 'from-amber-500 to-orange-600' },
   ];
 
   const getStatusIcon = (status: string) => {
@@ -98,17 +100,22 @@ const DashboardHome = () => {
   };
 
   const quickActions = [
-    { icon: Building2, label: 'Form a Company', link: '/dashboard/formation', gradient: 'from-blue-500 to-indigo-600' },
-    { icon: Building2, label: 'My Companies', link: '/dashboard/companies', gradient: 'from-emerald-500 to-green-600' },
-    { icon: ArrowRight, label: 'Affiliate', link: '/dashboard/affiliates', gradient: 'from-amber-500 to-orange-600' },
-    { icon: ArrowRight, label: 'Get Support', link: '/dashboard/support', gradient: 'from-rose-500 to-pink-600' },
+    { icon: Building2, label: L('Form a Company','أسس شركة'), link: '/dashboard/formation', gradient: 'from-blue-500 to-indigo-600' },
+    { icon: Building2, label: L('My Companies','شركاتي'), link: '/dashboard/companies', gradient: 'from-emerald-500 to-green-600' },
+    { icon: ArrowRight, label: L('Affiliate','الأفلييت'), link: '/dashboard/affiliates', gradient: 'from-amber-500 to-orange-600' },
+    { icon: ArrowRight, label: L('Get Support','الدعم'), link: '/dashboard/support', gradient: 'from-rose-500 to-pink-600' },
   ];
+
+  const statusLabel = (st: string | null) => {
+    const m: Record<string, [string, string]> = { draft: ['Draft','مسودة'], submitted: ['Submitted','تم الإرسال'], in_progress: ['In progress','قيد التنفيذ'], pending_documents: ['Pending documents','بانتظار المستندات'], completed: ['Completed','مكتملة'], rejected: ['Rejected','مرفوضة'], pending: ['Pending','قيد الدفع'], paid: ['Paid','مدفوع'], processing: ['Processing','قيد المعالجة'] };
+    const x = m[st || 'draft']; return x ? L(x[0], x[1]) : (st || '');
+  };
 
   const greeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return 'Good morning';
-    if (hour < 18) return 'Good afternoon';
-    return 'Good evening';
+    if (hour < 12) return L('Good morning','صباح الخير');
+    if (hour < 18) return L('Good afternoon','مساء الخير');
+    return L('Good evening','مساء الخير');
   };
 
   return (
@@ -123,23 +130,23 @@ const DashboardHome = () => {
               <span className="text-sm font-medium text-primary">{greeting()}</span>
             </div>
             <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
-              Welcome{user?.user_metadata?.full_name ? `, ${user.user_metadata.full_name}` : ' back'}!
+              {L('Welcome','أهلاً')}{user?.user_metadata?.full_name ? `, ${user.user_metadata.full_name}` : L(' back',' بعودتك')}!
             </h1>
             <p className="text-muted-foreground mt-1">
-              Here's your business overview for today
+              {L('Here\'s your business overview for today', 'نظرة عامة على أعمالك اليوم')}
             </p>
           </div>
           <div className="flex gap-3">
             <Button asChild>
               <Link to="/dashboard/formation">
                 <Plus className="mr-2 h-4 w-4" />
-                New Company
+                {L('New Company', 'شركة جديدة')}
               </Link>
             </Button>
             <Button variant="outline" asChild>
               <Link to="/dashboard/affiliates">
                 <ShoppingCart className="mr-2 h-4 w-4" />
-                Affiliate
+                {L('Affiliate', 'الأفلييت')}
               </Link>
             </Button>
           </div>
@@ -189,12 +196,12 @@ const DashboardHome = () => {
               <div>
                 <CardTitle className="flex items-center gap-2">
                   <Building2 className="h-5 w-5 text-primary" />
-                  Company Formation
+                  {L('Company Formation', 'تأسيس الشركات')}
                 </CardTitle>
-                <CardDescription>Track your company formations</CardDescription>
+                <CardDescription>{L('Track your company formations', 'تابع تأسيس شركاتك')}</CardDescription>
               </div>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/dashboard/companies">View All</Link>
+                <Link to="/dashboard/companies">{L('View All', 'عرض الكل')}</Link>
               </Button>
             </div>
           </CardHeader>
@@ -212,7 +219,7 @@ const DashboardHome = () => {
                       <p className="text-xs text-muted-foreground">{company.jurisdiction}</p>
                     </div>
                     <Badge variant={company.formation_status === 'completed' ? 'default' : 'secondary'} className="text-xs">
-                      {company.formation_status?.replace('_', ' ') || 'Draft'}
+                      {statusLabel(company.formation_status)}
                     </Badge>
                   </div>
                   <Progress value={getCompanyProgress(company.formation_status)} className="h-1.5" />
@@ -223,9 +230,9 @@ const DashboardHome = () => {
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <Building2 className="h-8 w-8 text-primary/50" />
                 </div>
-                <p className="text-muted-foreground text-sm">No companies yet</p>
+                <p className="text-muted-foreground text-sm">{L('No companies yet', 'لا توجد شركات بعد')}</p>
                 <Button asChild variant="outline" size="sm" className="mt-3">
-                  <Link to="/dashboard/formation">Start Your First Company</Link>
+                  <Link to="/dashboard/formation">{L('Start Your First Company', 'أسس شركتك الأولى')}</Link>
                 </Button>
               </div>
             )}
@@ -239,12 +246,12 @@ const DashboardHome = () => {
               <div>
                 <CardTitle className="flex items-center gap-2">
                   <BarChart3 className="h-5 w-5 text-primary" />
-                  Recent Orders
+                  {L('Recent Orders', 'آخر الطلبات')}
                 </CardTitle>
-                <CardDescription>Your latest orders and updates</CardDescription>
+                <CardDescription>{L('Your latest orders and updates', 'أحدث طلباتك وتحديثاتها')}</CardDescription>
               </div>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/dashboard/billing">View All</Link>
+                <Link to="/dashboard/billing">{L('View All', 'عرض الكل')}</Link>
               </Button>
             </div>
           </CardHeader>
@@ -255,14 +262,14 @@ const DashboardHome = () => {
                   <div key={order.id} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
                     {getStatusIcon(order.status || 'pending')}
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">{order.order_type}</p>
+                      <p className="text-sm font-medium truncate">{order.order_type === 'company_formation' ? L('Company formation','تأسيس شركة') : order.order_type}</p>
                       <p className="text-xs text-muted-foreground">
                         {new Date(order.created_at || '').toLocaleDateString()}
                       </p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-bold">${order.total_price}</p>
-                      <Badge variant="outline" className="text-xs">{order.status}</Badge>
+                      <Badge variant="outline" className="text-xs">{statusLabel(order.status)}</Badge>
                     </div>
                   </div>
                 ))
@@ -271,9 +278,9 @@ const DashboardHome = () => {
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                     <ShoppingCart className="h-8 w-8 text-primary/50" />
                   </div>
-                  <p className="text-sm text-muted-foreground">No orders yet</p>
+                  <p className="text-sm text-muted-foreground">{L('No orders yet', 'لا توجد طلبات بعد')}</p>
                   <Button asChild variant="outline" size="sm" className="mt-3">
-                    <Link to="/dashboard/formation">Form a Company</Link>
+                    <Link to="/dashboard/formation">{L('Form a Company', 'أسس شركة')}</Link>
                   </Button>
                 </div>
               )}
@@ -289,15 +296,15 @@ const DashboardHome = () => {
             <div>
               <CardTitle className="flex items-center gap-2">
                 <Bell className="h-5 w-5 text-primary" />
-                Support Tickets
+                {L('Support Tickets', 'تذاكر الدعم')}
                 {openTickets > 0 && (
                   <Badge className="ml-2">{openTickets} open</Badge>
                 )}
               </CardTitle>
-              <CardDescription>Your recent support requests</CardDescription>
+              <CardDescription>{L('Your recent support requests', 'آخر طلبات الدعم')}</CardDescription>
             </div>
             <Button variant="ghost" size="sm" asChild>
-              <Link to="/dashboard/support">View All</Link>
+              <Link to="/dashboard/support">{L('View All', 'عرض الكل')}</Link>
             </Button>
           </div>
         </CardHeader>
@@ -318,7 +325,7 @@ const DashboardHome = () => {
               ))}
             </div>
           ) : (
-            <p className="text-sm text-muted-foreground text-center py-4">No support tickets</p>
+            <p className="text-sm text-muted-foreground text-center py-4">{L('No support tickets', 'لا توجد تذاكر دعم')}</p>
           )}
         </CardContent>
       </Card>
