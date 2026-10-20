@@ -1,117 +1,138 @@
+import { useMemo, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { Search } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-
 import WhatsAppButton from '@/components/WhatsAppButton';
-
-const faqData = [
-  {
-    category: "Company Formation",
-    questions: [
-      { q: "How long does it take to form a company?", a: "Timing depends on the country and its registry. After you pay, you can follow every step and status from your FoundStart dashboard." },
-      { q: "What types of companies can I form?", a: "We support LLC, C-Corp, S-Corp (USA), Ltd, LLP (UK), GmbH (Germany), BV (Netherlands), SL (Spain), SARL/SAS (France), and more across 10+ jurisdictions." },
-      { q: "Do I need to be a resident to form a company?", a: "No! Non-residents can form companies in most of our supported jurisdictions. We handle all paperwork including registered agent services, EIN applications, and compliance requirements." },
-      { q: "What documents do I need to get started?", a: "Typically you need a valid ID/passport, proof of address, and basic business information. Our AI assistant can help you prepare all required documents." },
-      { q: "Can I form a company without visiting the country?", a: "Yes, 100% remote formation is available for all jurisdictions. Everything is handled digitally through our platform and partner network." },
-    ]
-  },
-  {
-    category: "Domains & Hosting",
-    questions: [
-      { q: "How many premium domains do you have for sale?", a: "We currently have 187 premium domains across categories like Fintech, E-Commerce, SaaS, AI, and more." },
-      { q: "Can I search for domains across multiple platforms?", a: "Yes! Our Domain Global Marketplace lets you search across 16+ platforms including Spaceship, GoDaddy, Hostinger, Sedo, Dynadot, and more — all from one search bar." },
-      { q: "Do you offer hosting services?", a: "Yes, we offer premium cloud hosting with 99.9% uptime, free SSL certificates, automatic backups, and professional email accounts with custom domains." },
-      { q: "How do I transfer a domain I purchase?", a: "We provide full support during the domain transfer process. After purchase, our team guides you through the transfer with 24/7 assistance." },
-    ]
-  },
-  {
-    category: "Partners & Services",
-    questions: [
-      { q: "How many digital partners do you have?", a: "We have 467 digital partners across many categories, including hosting, design, marketing, development, and more. Each partner is vetted for quality and reliability." },
-      { q: "Do you offer affiliate programs?", a: "Yes! Join our affiliate program to earn commissions by referring clients. We offer competitive commission rates with real-time tracking through your dashboard." },
-      { q: "What banking solutions do you offer?", a: "We partner with Mercury, Wise, WorldFirst, Kast, Grey, and other neo-banking solutions to provide business banking, virtual cards, and payment processing." },
-      { q: "Can you help with SEO and digital marketing?", a: "Absolutely! We offer comprehensive SEO services including traditional SEO, local SEO, LLM optimization (LLMO), Answer Engine Optimization (AEO), and Geographic Engine Optimization (GEO)." },
-    ]
-  },
-  {
-    category: "Pricing & Payments",
-    questions: [
-      { q: "How much does company formation cost?", a: "Pricing varies by jurisdiction. Use our Pricing Calculator for exact costs. Basic LLC formation in the USA starts from $149, UK Ltd from £99, and European companies from €299." },
-      { q: "What payment methods do you accept?", a: "We accept credit/debit cards (Visa, Mastercard) via Stripe, bank transfers, and digital payment solutions." },
-      { q: "Are there any hidden fees?", a: "No hidden fees. Our pricing is transparent and includes all government filing fees, registered agent services (where applicable), and basic compliance support." },
-      { q: "Do you offer refunds?", a: "For any payment question, contact support from your dashboard. Government filing fees are non-refundable once submitted." },
-    ]
-  },
-  {
-    category: "Account & Support",
-    questions: [
-      { q: "How do I access my dashboard?", a: "Sign in at foundstart.org/auth and you'll be redirected to your dashboard where you can manage companies, services, documents, and more." },
-      { q: "Is my data secure?", a: "Yes, we implement enterprise-grade security including encrypted data storage, secure authentication with rate limiting, and SOC 2 compliant infrastructure." },
-      { q: "How can I contact support?", a: "Reach us via WhatsApp, email (momo@foundstart.org), or through the AI chatbot on our website. We typically respond within 24 hours." },
-      { q: "Can I manage multiple companies from one account?", a: "Yes! Your dashboard supports managing multiple companies across different jurisdictions, all from a single account." },
-    ]
-  }
-];
+import { useL } from '@/hooks/useL';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { faqCategories, faqCount } from '@/data/faqData';
 
 const FAQ = () => {
+  const L = useL();
+  const { language, isRTL } = useTranslation();
+  const ar = language === 'ar';
+  const [query, setQuery] = useState('');
+  const [cat, setCat] = useState('all');
+
+  const view = useMemo(() => {
+    const s = query.trim().toLowerCase();
+    return faqCategories
+      .filter(c => cat === 'all' || c.id === cat)
+      .map(c => ({
+        id: c.id,
+        title: ar ? c.titleAr : c.title,
+        items: c.items
+          .map(i => ({ q: ar ? i.qAr : i.q, a: ar ? i.aAr : i.a }))
+          .filter(i => !s || i.q.toLowerCase().includes(s) || i.a.toLowerCase().includes(s)),
+      }))
+      .filter(c => c.items.length > 0);
+  }, [query, cat, ar]);
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: ar ? 'ar' : 'en',
+    mainEntity: faqCategories.flatMap(c =>
+      c.items.map(i => ({
+        '@type': 'Question',
+        name: ar ? i.qAr : i.q,
+        acceptedAnswer: { '@type': 'Answer', text: ar ? i.aAr : i.a },
+      }))
+    ),
+  };
+
+  const shown = view.reduce((n, c) => n + c.items.length, 0);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+      <Helmet>
+        <title>{L('FoundStart FAQ: company formation questions answered', 'الأسئلة الشائعة - FoundStart: إجابات عن تأسيس الشركات')}</title>
+        <meta name="description" content={L(
+          `${faqCount} answers about opening a company abroad: US LLC, UK, Canada, Estonia, Finland, Sweden, Latvia, Lithuania, Ireland and Egypt. Prices, documents, banking, taxes and how FoundStart works.`,
+          `${faqCount} إجابة عن فتح شركة في الخارج: LLC أمريكية، بريطانيا، كندا، إستونيا، فنلندا، السويد، لاتفيا، ليتوانيا، أيرلندا ومصر. الأسعار والمستندات والبنوك والضرائب وطريقة عمل FoundStart.`
+        )} />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <Header />
       <main>
         <PageHero
-          title="Frequently Asked"
-          highlight="Questions"
-          subtitle="Find answers to common questions about company formation, domains, services, and more."
+          title={L('Frequently Asked', 'الأسئلة')}
+          highlight={L('Questions', 'الشائعة')}
+          subtitle={L(
+            'Answers about opening a company abroad: countries, prices, documents, banking and taxes.',
+            'إجابات عن فتح شركة في الخارج: الدول والأسعار والمستندات والبنوك والضرائب.'
+          )}
         />
 
-        <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <section className="py-10 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-4xl">
+            <div className="relative mb-4">
+              <Search className="pointer-events-none absolute top-1/2 -translate-y-1/2 start-3 h-4 w-4 text-muted-foreground" />
+              <input
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder={L('Search questions...', 'ابحث في الأسئلة...')}
+                className="h-12 w-full rounded-xl border bg-background ps-10 pe-4 text-base outline-none focus:ring-2 focus:ring-primary/40"
+                aria-label={L('Search questions', 'ابحث في الأسئلة')}
+              />
+            </div>
+
+            <div className="mb-8 flex flex-wrap gap-2">
+              {[{ id: 'all', t: L('All', 'الكل') }, ...faqCategories.map(c => ({ id: c.id, t: ar ? c.titleAr : c.title }))].map(c => (
+                <button
+                  key={c.id}
+                  type="button"
+                  onClick={() => setCat(c.id)}
+                  className={`rounded-full border px-3.5 py-1.5 text-sm transition-colors ${cat === c.id ? 'border-primary bg-primary text-primary-foreground' : 'hover:bg-muted'}`}
+                >
+                  {c.t}
+                </button>
+              ))}
+            </div>
+
             <div className="space-y-8">
-              {faqData.map((section, sectionIndex) => (
-                <div key={sectionIndex}>
-                  <h2 className="text-xl font-semibold mb-4 text-primary">{section.category}</h2>
+              {view.map(section => (
+                <div key={section.id} id={section.id}>
+                  <h2 className="mb-2 text-xl font-semibold text-primary">{section.title}</h2>
                   <Accordion type="single" collapsible className="w-full">
-                    {section.questions.map((faq, index) => (
-                      <AccordionItem key={index} value={`${sectionIndex}-${index}`}>
-                        <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground">
-                          {faq.a}
-                        </AccordionContent>
+                    {section.items.map((faq, index) => (
+                      <AccordionItem key={index} value={`${section.id}-${index}`}>
+                        <AccordionTrigger className="text-start">{faq.q}</AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>
                 </div>
               ))}
+              {shown === 0 && (
+                <p className="py-10 text-center text-muted-foreground">{L('No questions match your search.', 'لا توجد أسئلة مطابقة لبحثك.')}</p>
+              )}
             </div>
 
-            <div className="mt-12 text-center p-8 bg-muted/30 rounded-2xl">
-              <h3 className="text-xl font-semibold mb-2">Still have questions?</h3>
-              <p className="text-muted-foreground mb-4">Our team is here to help you 24/7</p>
+            <p className="mt-10 rounded-xl border bg-muted/30 p-4 text-sm text-muted-foreground">
+              {L(
+                'General information only. This is not legal or tax advice. Rules, fees and requirements change, so confirm the details for your situation with a licensed professional.',
+                'معلومات عامة فقط. هذه ليست استشارة قانونية أو ضريبية. القواعد والرسوم والمتطلبات تتغير، فتأكد من التفاصيل لحالتك مع مختص مرخص.'
+              )}
+            </p>
+
+            <div className="mt-8 rounded-2xl bg-muted/30 p-8 text-center">
+              <h3 className="mb-2 text-xl font-semibold">{L('Still have questions?', 'لسه عندك أسئلة؟')}</h3>
+              <p className="mb-4 text-muted-foreground">{L('Message us and we will help.', 'راسلنا وسنساعدك.')}</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild>
-                  <Link to="/contact-us">Contact Us</Link>
-                </Button>
+                <Button asChild><Link to="/contact-us">{L('Contact Us', 'تواصل معنا')}</Link></Button>
                 <WhatsAppButton variant="outline" />
               </div>
             </div>
 
-            <div className="mt-8 text-center p-8 rounded-2xl border bg-gradient-to-br from-primary/10 via-amber-500/10 to-emerald-500/10">
-              <h3 className="text-xl font-semibold mb-2">Explore exclusive country partner offers</h3>
-              <p className="text-muted-foreground mb-4">
-                Discounted company formation deals from our trusted USA, UK, Canada,
-                Estonia, Ireland, Egypt &amp; EU partners.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button asChild>
-                  <Link to="/countries">Browse Country Partners</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/company-formation-bio">Formation Bio Link</Link>
-                </Button>
-              </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Button asChild><Link to="/countries">{L('Countries & prices', 'الدول والأسعار')}</Link></Button>
+              <Button variant="outline" asChild><Link to="/auth?mode=signup">{L('Register & Start Formation', 'سجل وابدأ التأسيس')}</Link></Button>
             </div>
           </div>
         </section>
