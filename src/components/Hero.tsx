@@ -30,144 +30,115 @@ const Hero = () => {
     { label: 'Premium Domains', to: '/domains' },
   ];
 
+  const ar = language === 'ar';
+  const nav = ar
+    ? ['لوحة التحكم', 'تأسيس شركة', 'شركاتي', 'المستندات', 'الفواتير']
+    : ['Dashboard', 'Formation', 'My Companies', 'Documents', 'Billing'];
+  const steps = ar
+    ? ['الدولة', 'نوع الشركة', 'البيانات', 'المراجعة', 'الدفع']
+    : ['Country', 'Entity', 'Details', 'Review', 'Pay'];
+
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[hsl(222,84%,4.9%)]">
-      {/* Gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-purple-600/15 blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-[80px]" />
+    <section className="relative overflow-hidden bg-[#05050a]" dir={ar ? 'rtl' : 'ltr'}>
+      {/* purple glow arc */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[75%]">
+        <div className="absolute left-1/2 bottom-[-55%] h-[120%] w-[190%] sm:w-[130%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.55)_0%,rgba(109,40,217,0.28)_38%,transparent_68%)] blur-2xl" />
+        <div className="absolute left-1/2 bottom-[-62%] h-[120%] w-[170%] sm:w-[115%] -translate-x-1/2 rounded-[50%] border-t border-purple-400/60 shadow-[0_-10px_90px_rgba(168,85,247,0.55)]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white/80 text-sm mb-8"
-        >
-          <Sparkles className="w-4 h-4 text-amber-400" />
-          {language === 'ar' ? 'أسس شركتك في 10 دول' : 'Launch Your Business in 10 Jurisdictions'}
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6"
-        >
-          {language === 'ar' ? 'افتح شركتك مع FoundStart' : 'Open Your Company with FoundStart'}{' '}
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            {language === 'ar' ? 'في أي دولة' : 'Anywhere'}
-          </span>
-        </motion.h1>
-
-        {/* Subtitle */}
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 pt-14 md:pt-24 text-center">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10"
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+          className="mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-purple-400"
         >
-          {language === 'ar'
-            ? 'للفريلانسرز وأصحاب التجارة الإلكترونية وشركات SaaS وكل من يحتاج شركة لاستقبال المدفوعات. FoundStart تفتح لك شركتك في أي دولة بأسعارنا: سجل، ادفع أونلاين، وتابع كل خطوة.'
-            : 'For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. FoundStart opens your company in any country at our own prices: register, pay online, and track every step.'}
+          {ar ? 'للفريلانسرز · التجارة الإلكترونية · SaaS' : 'Freelancers · E-commerce · SaaS'}
         </motion.p>
 
-        {/* Search-style CTA bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="max-w-2xl mx-auto mb-8"
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08 }}
+          className="mx-auto max-w-4xl text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white"
         >
-          <Link to="/countries" className="block">
-            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer group">
-              <Globe className="w-5 h-5 text-white/40" />
-              <Building2 className="w-5 h-5 text-purple-400/60" />
-              <span className="text-white/40 text-left flex-1">
-                {language === 'ar' ? 'اختر الدولة لتأسيس شركتك...' : 'Choose a jurisdiction to start your company...'}
-              </span>
-              <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-white/60 group-hover:translate-x-1 transition-all" />
+          {ar ? (<>افتح شركتك<br />مع FoundStart</>) : (<>Open Your Company<br />with FoundStart</>)}
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.18 }}
+          className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-white/60"
+        >
+          {ar
+            ? 'سجل، ادفع أونلاين، وتابع كل خطوة من لوحة واحدة. 10 دول، سعر واضح لكل نوع شركة.'
+            : 'Register, pay online and track every step from one dashboard. 10 countries, one clear price per company type.'}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.28 }}
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+        >
+          <Button size="lg" className="h-12 w-full sm:w-auto rounded-full bg-purple-600 px-8 text-base font-semibold text-white hover:bg-purple-500 shadow-[0_0_30px_rgba(147,51,234,0.5)]" asChild>
+            <Link to="/auth?mode=signup">
+              {ar ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" className="h-12 w-full sm:w-auto rounded-full border-white/25 bg-transparent px-8 text-base font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
+            <Link to="/countries">{ar ? 'الدول والأسعار' : 'Countries & prices'}</Link>
+          </Button>
+        </motion.div>
+
+        {/* Dashboard mockup */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative mx-auto mt-12 md:mt-16 max-w-4xl"
+          dir="ltr"
+        >
+          <div className="rounded-t-2xl border border-white/10 border-b-0 bg-[#0c0c14]/95 shadow-[0_-20px_80px_rgba(139,92,246,0.35)] backdrop-blur">
+            <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" /><span className="h-2.5 w-2.5 rounded-full bg-white/20" /><span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="mx-auto rounded-md bg-white/5 px-3 py-0.5 text-[10px] text-white/40">foundstart.org/dashboard</span>
             </div>
-          </Link>
-        </motion.div>
-
-        {/* Quick action pills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-2 mb-12"
-        >
-          {quickActions.map((action) => (
-            <Link
-              key={action.label}
-              to={action.to}
-              className="px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-white/70 text-sm hover:bg-white/10 hover:text-white transition-all"
-            >
-              {action.label}
-            </Link>
-          ))}
-        </motion.div>
-
-        {/* Jurisdiction flags row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
-        >
-          {jurisdictions.map((j) => (
-            <Link
-              key={j.name}
-              to={`/country/${j.id}`}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-white/80 text-xs hover:bg-white/10 hover:scale-105 transition-all"
-            >
-              <span className="text-base">{j.flag}</span>
-              <span>{j.name}</span>
-            </Link>
-          ))}
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
-        >
-          <Button size="lg" className="text-base px-8 py-6 bg-white text-black hover:bg-white/90 font-semibold" asChild>
-            <Link to="/countries">
-              {t.startYourBusiness}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
-          <Button
-            size="lg"
-            variant="ghost"
-            className="text-base text-white/70 hover:text-white hover:bg-white/10"
-            onClick={() => setShowVideo(true)}
-          >
-            <Youtube className="w-5 h-5 mr-2" />
-            {t.watchDemo}
-          </Button>
-        </motion.div>
-
-        {/* Trust badges */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="flex flex-wrap justify-center gap-6 text-xs text-white/40"
-        >
-          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />{t.noHiddenFees}</span>
-          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />{t.support24}</span>
-          <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-green-400/60" />10+ Jurisdictions</span>
+            <div className="flex text-left" dir={ar ? 'rtl' : 'ltr'}>
+              <div className="hidden sm:block w-44 shrink-0 border-white/10 p-3 space-y-1 border-e">
+                <div className="mb-3 px-2 text-sm font-bold text-white">FoundStart</div>
+                {nav.map((n, i) => (
+                  <div key={n} className={`rounded-lg px-2.5 py-1.5 text-xs ${i === 1 ? 'bg-purple-600/25 text-purple-200' : 'text-white/50'}`}>{n}</div>
+                ))}
+              </div>
+              <div className="flex-1 p-4 sm:p-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-semibold text-white">{ar ? 'تأسيس شركة جديدة' : 'New company formation'}</div>
+                  <span className="rounded-full bg-purple-600/25 px-2.5 py-0.5 text-[10px] text-purple-200">{ar ? 'ادفع عبر Stripe' : 'Secure Stripe checkout'}</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  {steps.map((st, i) => (
+                    <div key={st} className="flex-1">
+                      <div className={`h-1.5 rounded-full ${i < 3 ? 'bg-purple-500' : 'bg-white/10'}`} />
+                      <div className={`mt-1.5 text-[9px] sm:text-[10px] ${i < 3 ? 'text-white/80' : 'text-white/35'}`}>{st}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  {[
+                    { f: '🇺🇸', n: ar ? 'أمريكا' : 'United States', p: 'LLC $450' },
+                    { f: '🇬🇧', n: ar ? 'بريطانيا' : 'United Kingdom', p: 'LTD $500' },
+                    { f: '🇪🇪', n: ar ? 'إستونيا' : 'Estonia', p: 'OÜ $335' },
+                  ].map((c, i) => (
+                    <div key={c.n} className={`rounded-xl border border-white/10 bg-white/[0.03] p-3 ${i === 2 ? 'hidden sm:block' : ''}`}>
+                      <div className="text-lg">{c.f}</div>
+                      <div className="mt-1 text-xs text-white/80">{c.n}</div>
+                      <div className="text-[11px] text-purple-300">{c.p}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 flex items-center justify-between">
+                  <div className="text-xs text-white/70">{ar ? 'المستندات، الفواتير وحالة الطلب في مكان واحد' : 'Documents, billing and order status in one place'}</div>
+                  <span className="rounded-md bg-purple-600 px-2.5 py-1 text-[10px] font-semibold text-white">{ar ? 'ادفع الآن' : 'Pay now'}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
+
+      <button type="button" onClick={() => setShowVideo(true)} className="sr-only">{t.watchDemo}</button>
 
       {/* Video Modal */}
       {showVideo && (
