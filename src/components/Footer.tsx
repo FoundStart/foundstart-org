@@ -36,8 +36,6 @@ const Footer = () => {
     links: [
       { name: 'Namelizer', href: 'https://namelizer.com', external: true },
       { name: 'HeyKeyword', href: 'https://heykeyword.com', external: true },
-      { name: 'YesShoot', href: 'https://yesshoot.com', external: true },
-      { name: 'Tafsirly', href: 'https://tafsirly.com', external: true },
       { name: 'Shortet', href: 'https://shortet.com', external: true },
       { name: 'ClotheCart', href: 'https://clothecart.com', external: true },
       { name: 'Cartgy', href: 'https://cartgy.com', external: true }
