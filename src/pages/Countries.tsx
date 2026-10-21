@@ -16,6 +16,8 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthProvider';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import VideoThumbnail from '@/components/VideoThumbnail';
+import PartnerPricing from '@/components/PartnerPricing';
+import { COUNTRY_AR_NAMES, selectCountryPartners } from '@/data/partnerPricing';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 const Countries = () => {
@@ -138,6 +140,22 @@ const Countries = () => {
                         </Link>
                       </Button>
                     </div>
+
+                    {selectCountryPartners(selectedCountryData.id, selectedCountryData.partners).length > 0 && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-center mb-3">{isRTL ? 'أو افتحها عن طريق شركائنا' : 'Or open it via our partners'}</h3>
+                        <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
+                          {selectCountryPartners(selectedCountryData.id, selectedCountryData.partners).map((p) => (
+                            <div key={p.name} className="rounded-xl border border-border p-4 space-y-3 text-start">
+                              <PartnerPricing countryId={selectedCountryData.id} partnerName={p.name} isRTL={isRTL} />
+                              <Button variant="outline" className="w-full justify-between" asChild>
+                                <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{isRTL ? `افتح شركة ${COUNTRY_AR_NAMES[selectedCountryData.id] || selectedCountryData.name} مع ${p.name}` : `Open ${selectedCountryData.name} company with ${p.name}`}<ArrowRight className="w-4 h-4" /></a>
+                              </Button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
 

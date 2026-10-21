@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 import { countriesData } from '@/data/countriesData';
 import { getPartnerVideoId } from '@/data/partnerVideos';
 import PartnerPricing from '@/components/PartnerPricing';
+import { COUNTRY_AR_NAMES, selectCountryPartners } from '@/data/partnerPricing';
 import { LayoutDashboard, ClipboardCheck, Package, ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthProvider';
 
-const AR_NAMES: Record<string, string> = { USA: 'الولايات المتحدة', UK: 'المملكة المتحدة', CA: 'كندا', EE: 'إستونيا', FI: 'فنلندا', SE: 'السويد', LV: 'لاتفيا', LT: 'ليتوانيا', IE: 'أيرلندا', EG: 'مصر' };
-// Partners tab: USA shows only Doola, UK only 1office (First Office), other countries show their partner link(s).
-const partnerRows = (ar: boolean) => countriesData.map((c) => {
-  const list = c.id === 'USA' ? c.partners.filter((p) => p.name === 'Doola') : c.id === 'UK' ? c.partners.filter((p) => p.name === '1office') : c.partners;
-  return { id: c.id, name: ar ? (AR_NAMES[c.id] || c.name) : c.name, flag: c.flag, partners: list };
-});
+const partnerRows = (ar: boolean) => countriesData.map((c) => ({ id: c.id, name: ar ? (COUNTRY_AR_NAMES[c.id] || c.name) : c.name, flag: c.flag, partners: selectCountryPartners(c.id, c.partners) }));
 
 const VideoEmbed = ({ id, title }: { id: string; title: string }) => {
   const [on, setOn] = useState(false);
@@ -73,7 +69,7 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
                     <VideoEmbed id={getPartnerVideoId(p.name, r.id, isRTL)} title={ar ? `كيف تفتح شركة في ${r.name} مع ${p.name}` : `How to open a company in ${r.name} with ${p.name}`} />
                     <PartnerPricing countryId={r.id} partnerName={p.name} isRTL={isRTL} />
                     <Button variant="outline" className="w-full justify-between" asChild>
-                      <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{p.name}<ExternalLink className="w-4 h-4" /></a>
+                      <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{ar ? `افتح شركة ${r.name} مع ${p.name}` : `Open ${r.name} company with ${p.name}`}<ExternalLink className="w-4 h-4" /></a>
                     </Button>
                   </div>
                 ))}
@@ -91,10 +87,12 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
           ))}
         </div>
         </>)}
-        <div className="flex flex-wrap justify-center gap-3">
-          <Button size="lg" asChild><Link to={user ? formationPath : '/auth'} state={{ redirectTo: formationPath }}>{ar ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}<ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
-          <Button size="lg" variant="outline" asChild><Link to="/countries">{ar ? 'الدول والأسعار' : 'Countries & prices'}</Link></Button>
-        </div>
+        {mode === 'fs' && (
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button size="lg" asChild><Link to={user ? formationPath : '/auth'} state={{ redirectTo: formationPath }}>{ar ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}<ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
+            <Button size="lg" variant="outline" asChild><Link to="/countries">{ar ? 'الدول والأسعار' : 'Countries & prices'}</Link></Button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -12,6 +12,8 @@ import VideoThumbnail from '@/components/VideoThumbnail';
 import EgyptCountryDetails from '@/components/countries/EgyptCountryDetails';
 import { waEgyptLink } from '@/lib/whatsapp';
 import { countriesData } from '@/data/countriesData';
+import PartnerPricing from '@/components/PartnerPricing';
+import { COUNTRY_AR_NAMES, selectCountryPartners } from '@/data/partnerPricing';
 
 const CountryPage = () => {
   const { isRTL } = useTranslation();
@@ -83,6 +85,22 @@ const CountryPage = () => {
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-4 text-center">{isRTL ? 'شاهد فيديو التأسيس' : 'Watch Formation Demo'}</h2>
                 <VideoThumbnail videoUrl={getCountryVideoUrl(country.id, isRTL, country.videoUrl)!} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />
+              </div>
+            )}
+
+            {selectCountryPartners(country.id, country.partners).length > 0 && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold mb-4 text-center">{isRTL ? 'أو افتحها عن طريق شركائنا' : 'Or open it via our partners'}</h2>
+                <div className="grid gap-4 sm:grid-cols-2 max-w-3xl mx-auto">
+                  {selectCountryPartners(country.id, country.partners).map((p) => (
+                    <div key={p.name} className="rounded-xl border border-border p-5 space-y-3">
+                      <PartnerPricing countryId={country.id} partnerName={p.name} isRTL={isRTL} />
+                      <Button variant="outline" className="w-full justify-between" asChild>
+                        <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{isRTL ? `افتح شركة ${COUNTRY_AR_NAMES[country.id] || country.name} مع ${p.name}` : `Open ${country.name} company with ${p.name}`}<ExternalLink className="w-4 h-4" /></a>
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 

@@ -32,5 +32,14 @@ export const partnerPricing: PartnerPrice[] = [
     ar: ['من €900 + ض.ق.م ورسوم الدولة مشمولة', 'تسجيل أونلاين بالكامل مع عنوان محلي', 'السعر النهائي بعرض سعر'] },
 ];
 
+export const COUNTRY_AR_NAMES: Record<string, string> = { USA: 'الولايات المتحدة', UK: 'المملكة المتحدة', CA: 'كندا', EE: 'إستونيا', FI: 'فنلندا', SE: 'السويد', LV: 'لاتفيا', LT: 'ليتوانيا', IE: 'أيرلندا', EG: 'مصر' };
+
+// Same selection as the Via Partners tab: USA shows only Doola, UK only 1office.
+export const selectCountryPartners = <T extends { name: string }>(countryId: string, partners: T[]): T[] => {
+  if (countryId.toUpperCase() === 'USA') return partners.filter((p) => p.name === 'Doola');
+  if (countryId.toUpperCase() === 'UK') return partners.filter((p) => p.name === '1office');
+  return partners;
+};
+
 export const getPartnerPricing = (countryId: string, partnerName: string): PartnerPrice | undefined =>
   partnerPricing.find((p) => p.countryId === countryId.toUpperCase() && p.partner === partnerName);
