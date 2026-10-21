@@ -4,18 +4,19 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, ExternalLink, CreditCard, Landmark, Wallet } from 'lucide-react';
 import { useState } from 'react';
+import { COUNTRY_AR_NAMES } from '@/data/partnerPricing';
 import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 // Real partners already listed on FoundStart (same links as the partner pages).
-type Fin = { name: string; en: string; ar: string; url: string; partner?: boolean };
+type Fin = { name: string; en: string; ar: string; url: string; partner?: boolean; country?: string };
 const localGateways: Fin[] = [
-  { name: 'Paymob', en: 'Egyptian payment gateway: online checkout and POS for stores', ar: 'بوابة دفع مصرية: دفع أونلاين وماكينات POS للمحلات', url: 'https://paymob.com/en' },
-  { name: 'Fawry', en: 'Egyptian e-payments network: online and retail payments', ar: 'شبكة مدفوعات إلكترونية مصرية: دفع أونلاين ومن نقاط البيع', url: 'https://www.fawry.com' },
-  { name: 'Kashier', en: 'Egyptian online payment platform for e-commerce and retail', ar: 'منصة دفع إلكتروني مصرية للتجارة الإلكترونية والمحلات', url: 'https://kashier.io' },
-  { name: 'InstaPay', en: 'Egypt: instant bank-to-bank transfers (not a merchant gateway)', ar: 'مصر: تحويلات فورية بين البنوك (ليست بوابة دفع للتجار)', url: 'https://www.instapay.eg/' },
-  { name: 'PayTabs', en: 'Payment infrastructure for merchants across MENA', ar: 'بنية مدفوعات للتجار في الشرق الأوسط وشمال أفريقيا', url: 'https://www.paytabs.com' },
+  { name: 'Paymob', country: 'EG', en: 'Egyptian payment gateway: online checkout and POS for stores', ar: 'بوابة دفع مصرية: دفع أونلاين وماكينات POS للمحلات', url: 'https://paymob.com/en' },
+  { name: 'Fawry', country: 'EG', en: 'Egyptian e-payments network: online and retail payments', ar: 'شبكة مدفوعات إلكترونية مصرية: دفع أونلاين ومن نقاط البيع', url: 'https://www.fawry.com' },
+  { name: 'Kashier', country: 'EG', en: 'Egyptian online payment platform for e-commerce and retail', ar: 'منصة دفع إلكتروني مصرية للتجارة الإلكترونية والمحلات', url: 'https://kashier.io' },
+  { name: 'InstaPay', country: 'EG', en: 'Egypt: instant bank-to-bank transfers (not a merchant gateway)', ar: 'مصر: تحويلات فورية بين البنوك (ليست بوابة دفع للتجار)', url: 'https://www.instapay.eg/' },
+  { name: 'PayTabs', country: 'EG', en: 'Payment infrastructure for merchants across MENA', ar: 'بنية مدفوعات للتجار في الشرق الأوسط وشمال أفريقيا', url: 'https://www.paytabs.com' },
   { name: 'MyFatoorah', en: 'Payment gateway for Kuwait and the GCC', ar: 'بوابة دفع للكويت ودول الخليج', url: 'https://myfatoorah.com' },
   { name: 'Tap', en: 'Payment gateway for the GCC (Saudi, Kuwait, UAE and more)', ar: 'بوابة دفع لدول الخليج (السعودية والكويت والإمارات وغيرها)', url: 'https://tap.company' },
   { name: 'HyperPay', en: 'Payment gateway serving MENA merchants', ar: 'بوابة دفع تخدم تجار الشرق الأوسط وشمال أفريقيا', url: 'https://hyperpay.com' },
@@ -26,22 +27,22 @@ const localGateways: Fin[] = [
   { name: 'Paystack', en: 'Payments for businesses in Africa (a Stripe company)', ar: 'مدفوعات للأعمال في أفريقيا (تابعة لـ Stripe)', url: 'https://paystack.com' },
 ];
 const globalGateways: Fin[] = [
-  { name: 'Stripe', en: 'Payment gateway: accept card payments online worldwide', ar: 'بوابة دفع: استقبل مدفوعات البطاقات أونلاين عالميا', url: 'https://stripe.com' },
-  { name: 'PayPal', en: 'Global online payments for businesses', ar: 'مدفوعات أونلاين عالمية للأعمال', url: 'https://www.paypal.com/business' },
+  { name: 'Stripe', country: 'US', en: 'Payment gateway: accept card payments online worldwide', ar: 'بوابة دفع: استقبل مدفوعات البطاقات أونلاين عالميا', url: 'https://stripe.com' },
+  { name: 'PayPal', country: 'US', en: 'Global online payments for businesses', ar: 'مدفوعات أونلاين عالمية للأعمال', url: 'https://www.paypal.com/business' },
   { name: 'Adyen', en: 'Enterprise payments platform for global companies', ar: 'منصة مدفوعات للشركات العالمية الكبرى', url: 'https://www.adyen.com' },
-  { name: 'Square', en: 'Online and in-person payments (US and selected countries)', ar: 'مدفوعات أونلاين وفي المتاجر (أمريكا ودول محددة)', url: 'https://squareup.com' },
-  { name: 'Checkout.com', en: 'Global payment processing for online businesses', ar: 'معالجة مدفوعات عالمية للأعمال أونلاين', url: 'https://www.checkout.com' },
-  { name: '2Checkout (Verifone)', en: 'Global online payments and merchant of record options', ar: 'مدفوعات عالمية وخيارات تاجر مسجل', url: 'https://www.2checkout.com' },
-  { name: 'Authorize.net', en: 'US payment gateway (a Visa solution)', ar: 'بوابة دفع أمريكية (من حلول Visa)', url: 'https://www.authorize.net' },
-  { name: 'Braintree', en: 'Online and mobile payments (a PayPal service)', ar: 'مدفوعات أونلاين وموبايل (خدمة من PayPal)', url: 'https://www.braintreepayments.com' },
+  { name: 'Square', country: 'US', en: 'Online and in-person payments (US and selected countries)', ar: 'مدفوعات أونلاين وفي المتاجر (أمريكا ودول محددة)', url: 'https://squareup.com' },
+  { name: 'Checkout.com', country: 'UK', en: 'Global payment processing for online businesses', ar: 'معالجة مدفوعات عالمية للأعمال أونلاين', url: 'https://www.checkout.com' },
+  { name: '2Checkout (Verifone)', country: 'US', en: 'Global online payments and merchant of record options', ar: 'مدفوعات عالمية وخيارات تاجر مسجل', url: 'https://www.2checkout.com' },
+  { name: 'Authorize.net', country: 'US', en: 'US payment gateway (a Visa solution)', ar: 'بوابة دفع أمريكية (من حلول Visa)', url: 'https://www.authorize.net' },
+  { name: 'Braintree', country: 'US', en: 'Online and mobile payments (a PayPal service)', ar: 'مدفوعات أونلاين وموبايل (خدمة من PayPal)', url: 'https://www.braintreepayments.com' },
   { name: 'Razorpay', en: 'Payments for businesses in India', ar: 'مدفوعات للأعمال في الهند', url: 'https://razorpay.com' },
-  { name: 'Mollie', en: 'European payment service provider', ar: 'مزود مدفوعات أوروبي', url: 'https://www.mollie.com' },
-  { name: 'Worldpay', en: 'Global payment processing for businesses of all sizes', ar: 'معالجة مدفوعات عالمية لكل أحجام الأعمال', url: 'https://www.worldpay.com' },
-  { name: 'Paddle', en: 'Merchant of Record for SaaS: handles global VAT and sales tax', ar: 'تاجر مسجل لشركات SaaS: يتولى ضرائب VAT العالمية', url: 'https://www.paddle.com' },
-  { name: 'LemonSqueezy', en: 'Merchant of Record for digital products', ar: 'تاجر مسجل للمنتجات الرقمية', url: 'https://www.lemonsqueezy.com' },
+  { name: 'Mollie', country: 'IE', en: 'European payment service provider', ar: 'مزود مدفوعات أوروبي', url: 'https://www.mollie.com' },
+  { name: 'Worldpay', country: 'UK', en: 'Global payment processing for businesses of all sizes', ar: 'معالجة مدفوعات عالمية لكل أحجام الأعمال', url: 'https://www.worldpay.com' },
+  { name: 'Paddle', country: 'UK', en: 'Merchant of Record for SaaS: handles global VAT and sales tax', ar: 'تاجر مسجل لشركات SaaS: يتولى ضرائب VAT العالمية', url: 'https://www.paddle.com' },
+  { name: 'LemonSqueezy', country: 'US', en: 'Merchant of Record for digital products', ar: 'تاجر مسجل للمنتجات الرقمية', url: 'https://www.lemonsqueezy.com' },
 ];
 const banks: Fin[] = [
-  { name: 'Payoneer', en: 'Receive international payments and withdraw locally', ar: 'استقبل مدفوعات دولية واسحبها محليا', url: 'https://www.payoneer.com' },
+  { name: 'Payoneer', country: 'US', en: 'Receive international payments and withdraw locally', ar: 'استقبل مدفوعات دولية واسحبها محليا', url: 'https://www.payoneer.com' },
   { name: 'Mercury', partner: true, en: 'US business bank account', ar: 'حساب بنكي أمريكي للأعمال', url: 'https://shortet.com/Mercury' },
   { name: 'Wise', partner: true, en: 'Multi-currency account for international transfers', ar: 'حساب متعدد العملات للتحويلات الدولية', url: 'https://shortet.com/Wise' },
   { name: 'WorldFirst', partner: true, en: 'Global business account for cross-border payments', ar: 'حساب أعمال عالمي للمدفوعات عبر الحدود', url: 'https://shortet.com/Worldfirst' },
@@ -71,11 +72,25 @@ const Section = ({ icon: Icon, title, items }: { icon: any; title: string; items
           <div className="font-semibold">{f.name}</div>
           <Desc f={f} />
           <a href={f.url} target="_blank" rel={f.partner ? "noopener noreferrer sponsored" : "noopener noreferrer"} className="inline-flex items-center gap-1 text-sm text-primary hover:underline">{f.name}<ExternalLink className="w-3.5 h-3.5" /></a>
+          <CTA f={f} />
         </CardContent></Card>
       ))}
     </div>
   </section>
 ));
+const COUNTRY_EN: Record<string, string> = { US: 'the USA', UK: 'the UK', CA: 'Canada', EE: 'Estonia', FI: 'Finland', SE: 'Sweden', LV: 'Latvia', LT: 'Lithuania', IE: 'Ireland', EG: 'Egypt' };
+const CTA = ({ f }: { f: Fin }) => {
+  const { isRTL } = useTranslation();
+  const c = f.country;
+  return (
+    <Link to={c ? `/country/${c}` : '/countries'} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+      {c
+        ? (isRTL ? `افتح شركة في ${COUNTRY_AR_NAMES[c] || c} مع ${f.name}` : `Open a company in ${COUNTRY_EN[c] || c} with ${f.name}`)
+        : (isRTL ? `افتح شركتك مع ${f.name}` : `Open your company with ${f.name}`)}
+      <ArrowRight className="w-3.5 h-3.5" />
+    </Link>
+  );
+};
 const Desc = ({ f }: { f: Fin }) => {
   const { isRTL } = useTranslation();
   return <p className="text-sm text-muted-foreground">{isRTL ? f.ar : f.en}</p>;
