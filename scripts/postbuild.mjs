@@ -23,7 +23,7 @@ function page(route, m, extra = {}) {
   if (desc) h = setTag(h, /<meta\s+name="twitter:description"[^>]*>/i, `<meta name="twitter:description" content="${esc(m.ogd || m.desc)}" />`);
   if (extra.noindex) h = setTag(h, /<meta\s+name="robots"[^>]*>/i, `<meta name="robots" content="noindex, nofollow" />`);
   const body = `<div id="root"><main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text ? `<p>${esc(m.text)}</p>` : ""}</main></div>`;
-  h = h.replace('</head>', PRERENDER_CSS + '</head>');
+  h = h.replace(/<head>/i, '<head>' + PRERENDER_CSS);
   return h.replace(/<div id="root">\s*<\/div>/, body);
 }
 let n = 0;
