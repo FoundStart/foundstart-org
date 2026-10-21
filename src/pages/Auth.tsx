@@ -192,7 +192,7 @@ const Auth = () => {
                     onClick={async () => {
                       const { error } = await supabase.auth.signInWithOAuth({
                         provider: 'google',
-                        options: { redirectTo: `${window.location.origin}/dashboard` },
+                        options: { redirectTo: `${window.location.origin}${redirectTo}` },
                       });
                       if (error) toast({ title: L('Google sign-in failed', 'فشل تسجيل الدخول بجوجل'), description: error.message, variant: 'destructive' });
                     }}
