@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { countriesData } from '@/data/countriesData';
-import { getCountryVideoUrl } from '@/data/countryVideos';
+import { getPartnerVideoId } from '@/data/partnerVideos';
 import { LayoutDashboard, ClipboardCheck, Package, ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthProvider';
@@ -12,6 +12,22 @@ const partnerRows = (ar: boolean) => countriesData.map((c) => {
   const list = c.id === 'USA' ? c.partners.filter((p) => p.name === 'Doola') : c.id === 'UK' ? c.partners.filter((p) => p.name === '1office') : c.partners;
   return { id: c.id, name: ar ? (AR_NAMES[c.id] || c.name) : c.name, flag: c.flag, partners: list };
 });
+
+const VideoEmbed = ({ id, title }: { id: string; title: string }) => {
+  const [on, setOn] = useState(false);
+  return (
+    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black">
+      {on ? (
+        <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`} title={title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
+      ) : (
+        <button type="button" onClick={() => setOn(true)} aria-label={title} className="group absolute inset-0 h-full w-full">
+          <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt={title} loading="lazy" className="h-full w-full object-cover" />
+          <span className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/20"><PlayCircle className="h-14 w-14 text-white" /></span>
+        </button>
+      )}
+    </div>
+  );
+};
 
 const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean }) => {
   const { user } = useAuth();
@@ -52,11 +68,13 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
                 {r.partners.length === 0 ? (
                   <p className="text-sm text-muted-foreground">{ar ? 'التأسيس في مصر عن طريق FoundStart.' : 'Egypt formation is handled by FoundStart.'}</p>
                 ) : r.partners.map((p) => (
-                  <Button key={p.name} variant="outline" className="w-full justify-between" asChild>
-                    <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{p.name}<ExternalLink className="w-4 h-4" /></a>
-                  </Button>
+                  <div key={p.name} className="space-y-2">
+                    <VideoEmbed id={getPartnerVideoId(p.name, r.id, isRTL)} title={ar ? `كيف تفتح شركة في ${r.name} مع ${p.name}` : `How to open a company in ${r.name} with ${p.name}`} />
+                    <Button variant="outline" className="w-full justify-between" asChild>
+                      <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{p.name}<ExternalLink className="w-4 h-4" /></a>
+                    </Button>
+                  </div>
                 ))}
-                <a href={getCountryVideoUrl(r.id, isRTL)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:underline"><PlayCircle className="w-4 h-4" />{ar ? 'شاهد الفيديو' : 'Watch the video'}</a>
               </div>
             ))}
           </div>
