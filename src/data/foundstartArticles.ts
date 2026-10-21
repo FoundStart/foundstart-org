@@ -1,6 +1,8 @@
 import type { ShortetArticle } from './shortetArticlesData';
 
 export const foundstartArticleOrder: string[] = [
+  "twine-freelance-platform-find-clients",
+  "twine-freelance-platform-find-clients-ar",
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company-ar",
   "five-free-guides-company-to-ai-company",
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company",
@@ -113,6 +115,26 @@ export const foundstartArticles: Record<string, ShortetArticle> = {
     "readTime": "4 دقائق قراءة",
     "heroImage": "/blog/covers/five-free-founder-guides-ar.jpg",
     "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><p>تنشر FoundStart خمسة أدلة مجانية بالعربية والإنجليزية. يشرح كل دليل الخطوات ويشير إلى أدوات يمكنك استخدامها.</p><ul><li><strong>تسجيل شركة:</strong> اختيار الدولة، وطلب التأسيس من شريك، وإعداد البنك والمدفوعات، والحفاظ على الالتزام.</li><li><strong>بناء شركة بالذكاء الاصطناعي:</strong> كيف تستخدم أدوات الذكاء الاصطناعي لتدير شركة صغيرة بعدد أقل من الأشخاص.</li><li><strong>البرمجة بالوصف:</strong> ابنِ تطبيقات بوصف ما تريده لأدوات البرمجة بالذكاء الاصطناعي.</li><li><strong>التسويق بالوصف:</strong> أنشئ محتوى وحملات بأدوات مدعومة بالذكاء الاصطناعي.</li><li><strong>إدارة العمل بالذكاء الاصطناعي:</strong> نظّم المشاريع والمهام والعمليات اليومية بالذكاء الاصطناعي.</li></ul><p>القائمة الكاملة في صفحة <a href=\"/guides\">أدلة المؤسسين</a>. وإن لم تعرف بأي دليل تبدأ، اسأل <a href=\"/cofounder\">الشريك المؤسس الذكي</a>.</p></div>"
+  },
+  "twine-freelance-platform-find-clients": {
+    "title": "Twine: A Freelance Platform for Creative, Digital and Marketing Clients",
+    "description": "What Twine is, who it is for, what it costs to start and how to use it to find freelance clients, based on Twine's own site and help center.",
+    "category": "Business",
+    "author": "Mohamed Sayed",
+    "date": "Oct 21, 2026",
+    "readTime": "4 min read",
+    "heroImage": "/blog/covers/twine-freelance-platform-find-clients.jpg",
+    "html": "<p>If you freelance in design, video, development or marketing, you need a steady place to find clients. <a href=\"https://twine.cello.so/mRmKTcJ27LW\" target=\"_blank\" rel=\"sponsored noopener\">Twine</a> is one option. This guide covers what Twine says about itself, what it costs to start, and how to use it well. Everything below comes from Twine's own website and help center.</p>\n<h2>What Twine is</h2>\n<p>Twine describes itself as a community and freelance marketplace for creative, digital and marketing freelancers. You build a portfolio, find jobs, chat with the client and get paid through Twine. Its help center says there is no application process to join and that freelancers of all skill levels are welcome.</p>\n<h2>Who it fits</h2>\n<p>Twine lists these areas: graphics and design, app and web development, video and animation, marketing and content, and music and audio. If your work is in one of those, there is a place for you. If you do something outside them, check the job listings first before you spend time on a profile.</p>\n<h2>What it costs to start</h2>\n<ul>\n<li>The free plan lets you create a portfolio and apply to jobs. Twine's freelancer page says free accounts can apply to one job a day.</li>\n<li>Twine Pro adds features. Its help center lists it from $9.49 per month billed yearly, or $18.99 billed monthly. Prices can change, so check the current figure on Twine before you subscribe.</li>\n<li>If a client pays through the Twine vault, a small commission is added on the client's side, and a small transaction fee may apply when you are paid out, depending on your payment method.</li>\n</ul>\n<h2>How to use it to find clients</h2>\n<ol>\n<li><strong>Build a portfolio that shows finished work.</strong> Twine's pitch to freelancers is showing your work to clients, so this is the first thing to get right.</li>\n<li><strong>Apply to jobs that match your skills.</strong> With a daily limit on the free plan, pick the one job a day where you are the best fit, and write to that client directly.</li>\n<li><strong>Try Ari, Twine's AI job agent.</strong> Twine says Ari searches over 10 million jobs and brings you the ones worth your time. Treat its matches as leads and judge each one yourself.</li>\n<li><strong>Keep the chat and the payment on Twine</strong> for your first jobs. Twine recommends paying through its vault, which is its built-in payment protection.</li>\n</ol>\n<h2>What to keep in mind</h2>\n<p>Twine says more than a million experts use it, so expect competition. A clear niche, a short portfolio of your best work and a quick reply help you stand out. No platform guarantees clients, and this one does not either.</p>\n<h2>Next step</h2>\n<p>You can create a free account on <a href=\"https://twine.cello.so/mRmKTcJ27LW\" target=\"_blank\" rel=\"sponsored noopener\">Twine</a> and see the jobs in your field before you decide on a paid plan. If you also plan to invoice clients from abroad, FoundStart's <a href=\"/countries\">company formation guides</a> and <a href=\"/freelancer-partners\">freelancer platforms list</a> cover the other half of the setup.</p>\n<p><em>The Twine link in this article is a referral link. If you sign up through it, FoundStart may receive a reward from Twine at no extra cost to you.</em></p>"
+  },
+  "twine-freelance-platform-find-clients-ar": {
+    "title": "Twine: منصة للعمل الحر لعملاء التصميم والتطوير والتسويق",
+    "description": "ما هي Twine ولمن تناسب وكم تكلفة البداية وكيف تستخدمها لإيجاد عملاء، بالاعتماد على موقع Twine ومركز المساعدة التابع لها.",
+    "category": "Business",
+    "author": "محمد سيد",
+    "date": "Oct 21, 2026",
+    "readTime": "4 دقائق قراءة",
+    "heroImage": "/blog/covers/twine-freelance-platform-find-clients-ar.jpg",
+    "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><p>لو بتشتغل فريلانسر في التصميم أو الفيديو أو البرمجة أو التسويق، محتاج مكان ثابت تلاقي فيه عملاء. <a href=\"https://twine.cello.so/mRmKTcJ27LW\" target=\"_blank\" rel=\"sponsored noopener\">Twine</a> واحدة من الخيارات. المقال ده بيشرح اللي Twine بتقوله عن نفسها، وتكلفة البداية، وإزاي تستخدمها صح. كل المعلومات من موقع Twine ومركز المساعدة بتاعها.</p>\n<h2>ما هي Twine</h2>\n<p>Twine بتوصف نفسها كمجتمع وسوق للعمل الحر للمستقلين في المجالات الإبداعية والرقمية والتسويق. بتعمل ملف أعمال، وتدور على وظائف، وتتكلم مع العميل، وتستلم فلوسك عن طريق Twine. مركز المساعدة بيقول إن مفيش عملية تقديم للانضمام، وإن المستقلين من كل المستويات مرحب بيهم.</p>\n<h2>لمن تناسب</h2>\n<p>Twine بتعرض المجالات دي: التصميم الجرافيكي، تطوير التطبيقات والمواقع، الفيديو والأنيميشن، التسويق وصناعة المحتوى، والموسيقى والصوتيات. لو شغلك في واحد منهم فيه مكان ليك. لو شغلك برا القائمة دي، شوف الوظائف المعروضة الأول قبل ما تضيع وقت في تجهيز الحساب.</p>\n<h2>كم تكلفة البداية</h2>\n<ul>\n<li>الخطة المجانية بتسمح بعمل ملف أعمال والتقديم على وظائف. صفحة المستقلين في Twine بتقول إن الحسابات المجانية تقدر تقدم على وظيفة واحدة في اليوم.</li>\n<li>Twine Pro بيضيف مزايا. مركز المساعدة بيذكر سعره من 9.49 دولار في الشهر مع الدفع السنوي، أو 18.99 دولار مع الدفع الشهري. الأسعار ممكن تتغير، فراجع السعر الحالي على Twine قبل الاشتراك.</li>\n<li>لو العميل دفع عن طريق Twine vault، بتتضاف عمولة صغيرة من ناحية العميل، وممكن تتطبق رسوم تحويل صغيرة وقت استلام فلوسك حسب طريقة الدفع.</li>\n</ul>\n<h2>إزاي تستخدمها لإيجاد عملاء</h2>\n<ol>\n<li><strong>اعمل ملف أعمال فيه شغل منتهي.</strong> فكرة Twine للمستقلين هي إنك تعرض شغلك للعملاء، فده أول حاجة تظبطها.</li>\n<li><strong>قدّم على الوظائف المناسبة لمهاراتك.</strong> مع الحد اليومي في الخطة المجانية، اختار وظيفة واحدة في اليوم إنت الأنسب ليها، واكتب للعميل مباشرة.</li>\n<li><strong>جرّب Ari، وكيل الوظائف بالذكاء الاصطناعي من Twine.</strong> Twine بتقول إن Ari بيدور في أكتر من 10 مليون وظيفة ويجيبلك اللي تستاهل وقتك. اعتبر النتايج دي فرص محتملة وقيّم كل واحدة بنفسك.</li>\n<li><strong>خلّي المحادثة والدفع على Twine</strong> في أول شغلانات. Twine بتنصح بالدفع عن طريق vault بتاعها، وهي حماية الدفع المدمجة عندها.</li>\n</ol>\n<h2>حاجات تحطها في بالك</h2>\n<p>Twine بتقول إن أكتر من مليون خبير بيستخدموها، فاتوقع منافسة. تخصص واضح، وملف أعمال قصير بأفضل شغلك، ورد سريع بيخلوك تبان. مفيش منصة بتضمن عملاء، وTwine كمان مبتضمنش.</p>\n<h2>الخطوة الجاية</h2>\n<p>تقدر تعمل حساب مجاني على <a href=\"https://twine.cello.so/mRmKTcJ27LW\" target=\"_blank\" rel=\"sponsored noopener\">Twine</a> وتشوف الوظائف في مجالك قبل ما تقرر تشترك في خطة مدفوعة. ولو ناوي تفوتر عملاء من برا مصر، <a href=\"/countries\">أدلة تأسيس الشركات</a> و<a href=\"/freelancer-partners\">قائمة منصات الفريلانسرز</a> في FoundStart بتغطي النص التاني من التجهيز.</p>\n<p><em>لينك Twine في المقال ده لينك إحالة. لو سجلت من خلاله ممكن تحصل FoundStart على مكافأة من Twine من غير أي تكلفة إضافية عليك.</em></p></div>"
   }
 };
 
@@ -226,5 +248,27 @@ export const foundstartBlogPosts = [
     "readTime": "4 دقائق قراءة",
     "slug": "five-free-founder-guides-ar",
     "image": "/blog/covers/five-free-founder-guides-ar.jpg"
+  },
+  {
+    "id": 5001,
+    "title": "Twine: A Freelance Platform for Creative, Digital and Marketing Clients",
+    "description": "What Twine is, who it is for, what it costs to start and how to use it to find freelance clients, based on Twine's own site and help center.",
+    "category": "Business",
+    "author": "Mohamed Sayed",
+    "date": "Oct 21, 2026",
+    "readTime": "4 min read",
+    "slug": "twine-freelance-platform-find-clients",
+    "image": "/blog/covers/twine-freelance-platform-find-clients.jpg"
+  },
+  {
+    "id": 5002,
+    "title": "Twine: منصة للعمل الحر لعملاء التصميم والتطوير والتسويق",
+    "description": "ما هي Twine ولمن تناسب وكم تكلفة البداية وكيف تستخدمها لإيجاد عملاء، بالاعتماد على موقع Twine ومركز المساعدة التابع لها.",
+    "category": "Business",
+    "author": "محمد سيد",
+    "date": "Oct 21, 2026",
+    "readTime": "4 دقائق قراءة",
+    "slug": "twine-freelance-platform-find-clients-ar",
+    "image": "/blog/covers/twine-freelance-platform-find-clients-ar.jpg"
   }
 ];
