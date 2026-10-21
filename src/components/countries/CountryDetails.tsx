@@ -1,3 +1,4 @@
+import PartnerPricing from '@/components/PartnerPricing';
 import { getCountryVideoUrl } from '@/data/countryVideos';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { Link } from 'react-router-dom';
@@ -76,6 +77,14 @@ const CountryDetails = ({ country }: CountryDetailsProps) => {
                   {partner.name}
                   <ExternalLink className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
                 </Button>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {country.partners.map((partner, index) => (
+                <div key={index} className="rounded-lg border border-border p-3">
+                  <p className="text-sm font-medium mb-1">{partner.name}</p>
+                  <PartnerPricing countryId={country.id} partnerName={partner.name} isRTL={isRTL} />
+                </div>
               ))}
             </div>
           </div>

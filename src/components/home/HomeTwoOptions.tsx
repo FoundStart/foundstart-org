@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { countriesData } from '@/data/countriesData';
 import { getPartnerVideoId } from '@/data/partnerVideos';
+import PartnerPricing from '@/components/PartnerPricing';
 import { LayoutDashboard, ClipboardCheck, Package, ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthProvider';
@@ -70,6 +71,7 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
                 ) : r.partners.map((p) => (
                   <div key={p.name} className="space-y-2">
                     <VideoEmbed id={getPartnerVideoId(p.name, r.id, isRTL)} title={ar ? `كيف تفتح شركة في ${r.name} مع ${p.name}` : `How to open a company in ${r.name} with ${p.name}`} />
+                    <PartnerPricing countryId={r.id} partnerName={p.name} isRTL={isRTL} />
                     <Button variant="outline" className="w-full justify-between" asChild>
                       <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{p.name}<ExternalLink className="w-4 h-4" /></a>
                     </Button>
