@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import HomeFAQ from '@/components/home/HomeFAQ';
 import HomeHowItWorks from '@/components/home/HomeHowItWorks';
 import HomeTwoOptions from '@/components/home/HomeTwoOptions';
+import HomeFintechBrief from '@/components/home/HomeFintechBrief';
 import HomeCTA from '@/components/home/HomeCTA';
 import HomeWhyChoose from '@/components/home/HomeWhyChoose';
 import { lazy, Suspense } from 'react';
@@ -24,6 +25,7 @@ const Index = () => {
       <main className=" w-full max-w-full">
         <Hero />
         <HomeTwoOptions language={language} isRTL={isRTL} />
+        <HomeFintechBrief language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />
         <Suspense fallback={null}><HomeBlogCarousel /></Suspense>
 

@@ -17,6 +17,7 @@ const CountryPage = lazy(() => import("./pages/CountryPage"));
 const DigitalServices = lazy(() => import("./pages/DigitalServices"));
 const Services = lazy(() => import("./pages/Services"));
 const Partners = lazy(() => import("./pages/Partners"));
+const Fintech = lazy(() => import("./pages/Fintech"));
 import Auth from "./pages/Auth";
 const DigitalPartners = lazy(() => import("./pages/DigitalPartners"));
 const FreelancerPartners = lazy(() => import("./pages/FreelancerPartners"));
@@ -166,6 +167,7 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/digital-services" element={<DigitalServices />} />
                   <Route path="/partners" element={<Partners />} />
+                  <Route path="/fintech" element={<Fintech />} />
                   <Route path="/all-partners" element={<AllPartners />} />
                   <Route path="/partner/:slug" element={<PartnerDetail />} />
                   <Route path="/pricing" element={<Pricing />} />
