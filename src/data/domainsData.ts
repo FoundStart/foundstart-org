@@ -12,11 +12,13 @@ export interface SoldDomain {
   name: string;
   platform: 'Spaceship' | 'Afternic' | 'Sedo';
   soldDate: string; // ISO date, from Mohamed's own sales records
-  soldPrice: string; // USD
+  soldPrice: string; // numeric amount
+  currency?: 'USD' | 'EUR'; // default USD
 }
 
 export const soldDomains: SoldDomain[] = [
   { name: 'Ecanso.com', platform: 'Afternic', soldDate: '2026-02-04', soldPrice: '59' },
+  { name: 'Transactionizer.com', platform: 'Sedo', soldDate: '2026-04-05', soldPrice: '100', currency: 'EUR' },
   { name: 'Shortoo.com', platform: 'Afternic', soldDate: '2026-06-26', soldPrice: '250' },
   { name: 'Shofic.com', platform: 'Afternic', soldDate: '2026-07-05', soldPrice: '250' },
   { name: 'Codestia.com', platform: 'Sedo', soldDate: '2026-08-02', soldPrice: '499' },

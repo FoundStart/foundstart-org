@@ -367,7 +367,7 @@ const Domains = () => {
                           </TableCell>
                           <TableCell>{domain.platform}</TableCell>
                           <TableCell>{domain.soldDate}</TableCell>
-                          <TableCell><span className="font-semibold text-primary">${domain.soldPrice}</span></TableCell>
+                          <TableCell><span className="font-semibold text-primary">{domain.currency === 'EUR' ? '€' : '$'}{domain.soldPrice}</span></TableCell>
                           <TableCell className="text-right">
                             <Badge variant="secondary">{t.soldBadge}</Badge>
                           </TableCell>
