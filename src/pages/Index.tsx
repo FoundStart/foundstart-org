@@ -24,6 +24,11 @@ const Index = () => {
       
       <main className=" w-full max-w-full">
         <Hero />
+        <div className="px-4 sm:px-6 lg:px-8 pt-8 flex justify-center">
+          <a href="https://link.fourthwall.com/join/cartgy" target="_blank" rel="nofollow sponsored" className="inline-flex items-center gap-2 rounded-full border bg-card px-5 py-2 text-sm font-semibold text-primary shadow-sm transition hover:shadow-md hover:border-primary/40">
+            {language === 'ar' ? 'ابدأ متجرك' : 'Launch your shop'} ↗
+          </a>
+        </div>
         <HomeTwoOptions language={language} isRTL={isRTL} />
         <HomeFintechBrief language={language} isRTL={isRTL} />
         <HomeHowItWorks language={language} isRTL={isRTL} />

@@ -39,6 +39,7 @@ const Footer = () => {
       { name: 'Shortet', href: 'https://shortet.com', external: true },
       { name: 'ClotheCart', href: 'https://clothecart.com', external: true },
       { name: 'Cartgy', href: 'https://cartgy.com', external: true }
+      ,{ name: L('Launch your shop', 'ابدأ متجرك'), href: 'https://link.fourthwall.com/join/cartgy', external: true, rel: 'nofollow sponsored' }
     ]
   }, {
     title: L("Partners", "الشركاء"),
@@ -96,7 +97,7 @@ const Footer = () => {
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {(link as any).external ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                      <a href={link.href} target="_blank" rel={(link as any).rel ?? "noopener noreferrer"} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
                         {link.name}
                       </a>
                     ) : (
