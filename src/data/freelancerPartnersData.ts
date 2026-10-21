@@ -3,6 +3,7 @@ export interface FreelancerPartner {
   language: string;
   platform: string;
   url: string;
+  niche?: string;
 }
 
 export const freelancerPartnersData: FreelancerPartner[] = [
@@ -437,5 +438,12 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "language": "RUS",
     "platform": "Pagazani",
     "url": "https://shortet.com/Pagazani"
+  },
+  {
+    "category": "Freelancer & Earn Money online",
+    "language": "English",
+    "platform": "Twine",
+    "url": "https://www.twine.net/",
+    "niche": "Hire vetted freelance designers, developers, video and marketing experts, matched to your project within 24 hours"
   }
 ];

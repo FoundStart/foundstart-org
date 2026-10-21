@@ -51,7 +51,7 @@ const slugify = (s: string) => s.toLowerCase().replace(/&/g, ' and ').replace(/[
 const raw: Omit<CatalogPartner, 'slug'>[] = [
   ...partnerData.map((p: any) => ({ name: p.platform, rawCategory: p.category, niche: p.details || '', url: p.url, coupon: p.coupon, videoUrl: p.videoUrl })),
   ...digitalPartnersData.map((p) => ({ name: p.platform, rawCategory: p.category, niche: p.niche || '', url: p.url, coupon: p.coupon || undefined })),
-  ...freelancerPartnersData.map((p) => ({ name: p.platform, rawCategory: p.category, niche: '', url: p.url, language: p.language })),
+  ...freelancerPartnersData.map((p) => ({ name: p.platform, rawCategory: p.category, niche: (p as any).niche || '', url: p.url, language: p.language })),
 ].map((p: any) => ({ ...p, group: groupByRaw[p.rawCategory] || 'more', url: fixUrl(p.url) }));
 
 // One entry per partner name; the first source wins and later duplicates only fill missing fields.
