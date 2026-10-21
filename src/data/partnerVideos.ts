@@ -5,9 +5,9 @@ import { walkthroughVideo } from './walkthroughVideo';
 // Key: partner name as in countriesData. A missing entry falls back to the country video.
 export type PartnerVideo = { en?: string; ar?: string };
 export const partnerVideos: Record<string, PartnerVideo> = {
-  // Doola: {},
-  // '1office': {},
-  // Privatily: {},
+  Doola: { en: 'bno9wQIbX4I', ar: '3yuIo4WCdhc' },
+  '1office': { en: 'lfGI_zlTgBM', ar: '_2ZIO0UB3Es' },
+  Privatily: { en: 'G_CVBmKCUC0', ar: '651JaZRI7aY' },
 };
 
 const LAUNCH_EN = 'f4HvKTM3zoc';
