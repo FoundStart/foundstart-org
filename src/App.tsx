@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import DarkLoader from "@/components/DarkLoader";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -151,13 +152,13 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter>
+            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
               <AuthProvider>
                 <ScrollToTop />
                 <AffiliateTrackerMount />
                 <AdSenseLoader />
                 <HealthCheckBanner />
-                <Suspense fallback={<div className="min-h-screen bg-background" />}><Routes>
+                <Suspense fallback={<DarkLoader />}><Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
                   <Route path="/country/:countryId" element={<CountryPage />} />
