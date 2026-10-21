@@ -12,6 +12,8 @@ import SalesInquiryManagement from '@/components/admin/SalesInquiryManagement';
 import DomainAnalyticsDashboard from '@/components/admin/DomainAnalyticsDashboard';
 import { AffiliateAdminEmbedded } from '@/affiliate/site';
 import BlogPartnerAnalytics from '@/components/admin/BlogPartnerAnalytics';
+import SupportTicketsAdmin from '@/components/admin/SupportTicketsAdmin';
+import PaymentsAdmin from '@/components/admin/PaymentsAdmin';
 import NotificationBell from '@/components/notifications/NotificationBell';
 
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -39,10 +41,11 @@ const AdminDashboardContent = () => {
           <Route path="domain-inquiries" element={<DomainInquiryManagement />} />
           <Route path="sales-inquiries" element={<SalesInquiryManagement />} />
           <Route path="domain-analytics" element={<DomainAnalyticsDashboard />} />
+          <Route path="tickets" element={<SupportTicketsAdmin />} />
           <Route path="prompts" element={<PlaceholderPage title="AI Prompts" />} />
           <Route path="affiliates" element={<AffiliateAdminEmbedded />} />
           <Route path="blog-partner-analytics" element={<BlogPartnerAnalytics />} />
-          <Route path="payments" element={<PlaceholderPage title="Payments" />} />
+          <Route path="payments" element={<PaymentsAdmin />} />
           <Route path="logs" element={<PlaceholderPage title="Activity Logs" />} />
         </Routes>
       </div>

@@ -15,11 +15,10 @@ const menuItems = [
   { title: 'Domain Inquiries', icon: Globe, href: '/admin/domain-inquiries' },
   { title: 'Sales Inquiries', icon: MessageSquare, href: '/admin/sales-inquiries' },
   { title: 'Domain Analytics', icon: BarChart3, href: '/admin/domain-analytics' },
+  { title: 'Support Tickets', icon: MessageSquare, href: '/admin/tickets' },
   { title: 'Payments', icon: CreditCard, href: '/admin/payments' },
   { title: 'Affiliates', icon: LinkIcon, href: '/admin/affiliates' },
   { title: 'Blog Partner Analytics', icon: BarChart3, href: '/admin/blog-partner-analytics' },
-  { title: 'AI Prompts', icon: Bot, href: '/admin/prompts' },
-  { title: 'Activity Logs', icon: Activity, href: '/admin/logs' },
 ];
 
 const AdminSidebar = () => {
