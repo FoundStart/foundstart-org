@@ -27,22 +27,22 @@ const localGateways: Fin[] = [
   { name: 'Paystack', en: 'Payments for businesses in Africa (a Stripe company)', ar: 'مدفوعات للأعمال في أفريقيا (تابعة لـ Stripe)', url: 'https://paystack.com' },
 ];
 const globalGateways: Fin[] = [
-  { name: 'Stripe', country: 'US', en: 'Payment gateway: accept card payments online worldwide', ar: 'بوابة دفع: استقبل مدفوعات البطاقات أونلاين عالميا', url: 'https://stripe.com' },
-  { name: 'PayPal', country: 'US', en: 'Global online payments for businesses', ar: 'مدفوعات أونلاين عالمية للأعمال', url: 'https://www.paypal.com/business' },
+  { name: 'Stripe', country: 'USA', en: 'Payment gateway: accept card payments online worldwide', ar: 'بوابة دفع: استقبل مدفوعات البطاقات أونلاين عالميا', url: 'https://stripe.com' },
+  { name: 'PayPal', country: 'USA', en: 'Global online payments for businesses', ar: 'مدفوعات أونلاين عالمية للأعمال', url: 'https://www.paypal.com/business' },
   { name: 'Adyen', en: 'Enterprise payments platform for global companies', ar: 'منصة مدفوعات للشركات العالمية الكبرى', url: 'https://www.adyen.com' },
-  { name: 'Square', country: 'US', en: 'Online and in-person payments (US and selected countries)', ar: 'مدفوعات أونلاين وفي المتاجر (أمريكا ودول محددة)', url: 'https://squareup.com' },
+  { name: 'Square', country: 'USA', en: 'Online and in-person payments (US and selected countries)', ar: 'مدفوعات أونلاين وفي المتاجر (أمريكا ودول محددة)', url: 'https://squareup.com' },
   { name: 'Checkout.com', country: 'UK', en: 'Global payment processing for online businesses', ar: 'معالجة مدفوعات عالمية للأعمال أونلاين', url: 'https://www.checkout.com' },
-  { name: '2Checkout (Verifone)', country: 'US', en: 'Global online payments and merchant of record options', ar: 'مدفوعات عالمية وخيارات تاجر مسجل', url: 'https://www.2checkout.com' },
-  { name: 'Authorize.net', country: 'US', en: 'US payment gateway (a Visa solution)', ar: 'بوابة دفع أمريكية (من حلول Visa)', url: 'https://www.authorize.net' },
-  { name: 'Braintree', country: 'US', en: 'Online and mobile payments (a PayPal service)', ar: 'مدفوعات أونلاين وموبايل (خدمة من PayPal)', url: 'https://www.braintreepayments.com' },
+  { name: '2Checkout (Verifone)', country: 'USA', en: 'Global online payments and merchant of record options', ar: 'مدفوعات عالمية وخيارات تاجر مسجل', url: 'https://www.2checkout.com' },
+  { name: 'Authorize.net', country: 'USA', en: 'US payment gateway (a Visa solution)', ar: 'بوابة دفع أمريكية (من حلول Visa)', url: 'https://www.authorize.net' },
+  { name: 'Braintree', country: 'USA', en: 'Online and mobile payments (a PayPal service)', ar: 'مدفوعات أونلاين وموبايل (خدمة من PayPal)', url: 'https://www.braintreepayments.com' },
   { name: 'Razorpay', en: 'Payments for businesses in India', ar: 'مدفوعات للأعمال في الهند', url: 'https://razorpay.com' },
   { name: 'Mollie', country: 'IE', en: 'European payment service provider', ar: 'مزود مدفوعات أوروبي', url: 'https://www.mollie.com' },
   { name: 'Worldpay', country: 'UK', en: 'Global payment processing for businesses of all sizes', ar: 'معالجة مدفوعات عالمية لكل أحجام الأعمال', url: 'https://www.worldpay.com' },
   { name: 'Paddle', country: 'UK', en: 'Merchant of Record for SaaS: handles global VAT and sales tax', ar: 'تاجر مسجل لشركات SaaS: يتولى ضرائب VAT العالمية', url: 'https://www.paddle.com' },
-  { name: 'LemonSqueezy', country: 'US', en: 'Merchant of Record for digital products', ar: 'تاجر مسجل للمنتجات الرقمية', url: 'https://www.lemonsqueezy.com' },
+  { name: 'LemonSqueezy', country: 'USA', en: 'Merchant of Record for digital products', ar: 'تاجر مسجل للمنتجات الرقمية', url: 'https://www.lemonsqueezy.com' },
 ];
 const banks: Fin[] = [
-  { name: 'Payoneer', country: 'US', en: 'Receive international payments and withdraw locally', ar: 'استقبل مدفوعات دولية واسحبها محليا', url: 'https://www.payoneer.com' },
+  { name: 'Payoneer', country: 'USA', en: 'Receive international payments and withdraw locally', ar: 'استقبل مدفوعات دولية واسحبها محليا', url: 'https://www.payoneer.com' },
   { name: 'Mercury', partner: true, en: 'US business bank account', ar: 'حساب بنكي أمريكي للأعمال', url: 'https://shortet.com/Mercury' },
   { name: 'Wise', partner: true, en: 'Multi-currency account for international transfers', ar: 'حساب متعدد العملات للتحويلات الدولية', url: 'https://shortet.com/Wise' },
   { name: 'WorldFirst', partner: true, en: 'Global business account for cross-border payments', ar: 'حساب أعمال عالمي للمدفوعات عبر الحدود', url: 'https://shortet.com/Worldfirst' },
@@ -78,7 +78,7 @@ const Section = ({ icon: Icon, title, items }: { icon: any; title: string; items
     </div>
   </section>
 ));
-const COUNTRY_EN: Record<string, string> = { US: 'the USA', UK: 'the UK', CA: 'Canada', EE: 'Estonia', FI: 'Finland', SE: 'Sweden', LV: 'Latvia', LT: 'Lithuania', IE: 'Ireland', EG: 'Egypt' };
+const COUNTRY_EN: Record<string, string> = { USA: 'the USA', UK: 'the UK', CA: 'Canada', EE: 'Estonia', FI: 'Finland', SE: 'Sweden', LV: 'Latvia', LT: 'Lithuania', IE: 'Ireland', EG: 'Egypt' };
 const CTA = ({ f }: { f: Fin }) => {
   const { isRTL } = useTranslation();
   const c = f.country;
