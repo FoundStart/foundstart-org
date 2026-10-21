@@ -116,15 +116,15 @@ const Domains = () => {
 
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <Tabs defaultValue="premium" className="w-full">
+            <Tabs defaultValue="search" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 h-12">
-                <TabsTrigger value="premium" className="text-xs sm:text-sm font-semibold gap-1 sm:gap-2 px-1 sm:px-3">
-                  <Sparkles className="w-4 h-4" />
-                  {t.premiumDomainsTab}
-                </TabsTrigger>
                 <TabsTrigger value="search" className="text-xs sm:text-sm font-semibold gap-1 sm:gap-2 px-1 sm:px-3">
                   <Store className="w-4 h-4" />
                   {t.searchMarketplaceTab}
+                </TabsTrigger>
+                <TabsTrigger value="premium" className="text-xs sm:text-sm font-semibold gap-1 sm:gap-2 px-1 sm:px-3">
+                  <Sparkles className="w-4 h-4" />
+                  {t.premiumDomainsTab}
                 </TabsTrigger>
                 <TabsTrigger value="sold" className="text-xs sm:text-sm font-semibold gap-1 sm:gap-2 px-1 sm:px-3">
                   <Globe className="w-4 h-4" />

@@ -16,12 +16,14 @@ export interface SoldDomain {
 }
 
 export const soldDomains: SoldDomain[] = [
+  { name: 'Ecanso.com', platform: 'Afternic', soldDate: '2026-02-04', soldPrice: '59' },
   { name: 'Shortoo.com', platform: 'Afternic', soldDate: '2026-06-26', soldPrice: '250' },
   { name: 'Shofic.com', platform: 'Afternic', soldDate: '2026-07-05', soldPrice: '250' },
   { name: 'Codestia.com', platform: 'Sedo', soldDate: '2026-08-02', soldPrice: '499' },
   { name: 'Caisho.com', platform: 'Spaceship', soldDate: '2026-08-23', soldPrice: '250' },
   { name: 'Flowmotic.com', platform: 'Afternic', soldDate: '2026-09-02', soldPrice: '250' },
   { name: 'CoinsLite.com', platform: 'Spaceship', soldDate: '2026-10-14', soldPrice: '250' },
+  { name: 'Tradoq.com', platform: 'Afternic', soldDate: '2026-10-19', soldPrice: '59' },
 ];
 
 const raw: Omit<Domain, 'id'>[] = [
