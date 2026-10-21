@@ -443,7 +443,7 @@ export const freelancerPartnersData: FreelancerPartner[] = [
     "category": "Freelancer & Earn Money online",
     "language": "English",
     "platform": "Twine",
-    "url": "https://www.twine.net/",
+    "url": "https://twine.cello.so/mRmKTcJ27LW",
     "niche": "Hire vetted freelance designers, developers, video and marketing experts, matched to your project within 24 hours"
   }
 ];
