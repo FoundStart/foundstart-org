@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LayoutDashboard, ClipboardCheck, Package, ArrowRight } from 'lucide-react';
+import { countriesData } from '@/data/countriesData';
+import { getCountryVideoUrl } from '@/data/countryVideos';
+import { LayoutDashboard, ClipboardCheck, Package, ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthProvider';
 
+const AR_NAMES: Record<string, string> = { USA: 'الولايات المتحدة', UK: 'المملكة المتحدة', CA: 'كندا', EE: 'إستونيا', FI: 'فنلندا', SE: 'السويد', LV: 'لاتفيا', LT: 'ليتوانيا', IE: 'أيرلندا', EG: 'مصر' };
+// Partners tab: USA shows only Doola, UK only 1office (First Office), other countries show their partner link(s).
+const partnerRows = (ar: boolean) => countriesData.map((c) => {
+  const list = c.id === 'USA' ? c.partners.filter((p) => p.name === 'Doola') : c.id === 'UK' ? c.partners.filter((p) => p.name === '1office') : c.partners;
+  return { id: c.id, name: ar ? (AR_NAMES[c.id] || c.name) : c.name, flag: c.flag, partners: list };
+});
+
 const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean }) => {
   const { user } = useAuth();
+  const [mode, setMode] = useState<'fs' | 'partners'>('fs');
   const ar = language === 'ar';
   const formationPath = '/dashboard/formation';
   const items = [
@@ -26,6 +37,30 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
             <span key={x} className="rounded-full border px-4 py-1.5 text-sm font-medium">{x}</span>
           ))}
         </div>
+        <div className="flex justify-center mb-8" role="tablist">
+          <div className="inline-flex rounded-full border p-1">
+            {([['fs', ar ? 'عن طريق FoundStart' : 'Via FoundStart'], ['partners', ar ? 'عن طريق الشركاء' : 'Via Partners']] as const).map(([k, label]) => (
+              <button key={k} role="tab" aria-selected={mode === k} onClick={() => setMode(k)} className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${mode === k ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>{label}</button>
+            ))}
+          </div>
+        </div>
+        {mode === 'partners' ? (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+            {partnerRows(ar).map((r) => (
+              <div key={r.id} className="rounded-xl border bg-card p-5 space-y-3">
+                <h3 className="font-semibold text-lg">{r.flag} {r.name}</h3>
+                {r.partners.length === 0 ? (
+                  <p className="text-sm text-muted-foreground">{ar ? 'التأسيس في مصر عن طريق FoundStart.' : 'Egypt formation is handled by FoundStart.'}</p>
+                ) : r.partners.map((p) => (
+                  <Button key={p.name} variant="outline" className="w-full justify-between" asChild>
+                    <a href={p.url} target="_blank" rel="noopener noreferrer sponsored">{p.name}<ExternalLink className="w-4 h-4" /></a>
+                  </Button>
+                ))}
+                <a href={getCountryVideoUrl(r.id, isRTL)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-primary hover:underline"><PlayCircle className="w-4 h-4" />{ar ? 'شاهد الفيديو' : 'Watch the video'}</a>
+              </div>
+            ))}
+          </div>
+        ) : (<>
         <div className="grid gap-6 md:grid-cols-3 mb-8">
           {items.map(({ icon: Icon, t, d }) => (
             <div key={t} className="rounded-xl border bg-card p-6">
@@ -35,6 +70,7 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
             </div>
           ))}
         </div>
+        </>)}
         <div className="flex flex-wrap justify-center gap-3">
           <Button size="lg" asChild><Link to={user ? formationPath : '/auth'} state={{ redirectTo: formationPath }}>{ar ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}<ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
           <Button size="lg" variant="outline" asChild><Link to="/countries">{ar ? 'الدول والأسعار' : 'Countries & prices'}</Link></Button>
