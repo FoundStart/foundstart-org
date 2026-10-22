@@ -34,6 +34,10 @@ export function LaunchBadges({ isRTL = false }: { isRTL?: boolean }) {
           </a>
         ))}
       </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 10, alignItems: "center" }}>
+          <a href="https://1000tools.best/projects/foundstart-8720?utm_source=badge" target="_blank" rel="noopener noreferrer"><img src="https://1000tools.best/images/badges/featured-on-dark.svg" alt="Featured on 1000 Tools" style={{ height: 44, width: "auto" }} /></a>
+          <a href="https://devhub.best/projects/foundstart?utm_source=badge" target="_blank" rel="noopener noreferrer"><img src="https://r2.direasy-multi-tenant.focusapps.app/uploads/616d0b1a-3979-4b8c-94d1-b4f1fedd3ead/1783239705242/q5ooy1np7e/featured-on-dark.svg" alt="Featured on DevHub" style={{ height: 44, width: "auto" }} /></a>
+      </div>
     </nav>
   );
 }
