@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { useSearchParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -21,6 +22,8 @@ const domainInquirySchema = z.object({
 });
 
 const DomainInquiry = () => {
+  const { isRTL } = useTranslation();
+  const L = (en: string, ar: string) => isRTL ? ar : en;
   const [searchParams] = useSearchParams();
   const domainFromUrl = searchParams.get('domain') || '';
   const { toast } = useToast();
@@ -66,7 +69,7 @@ const DomainInquiry = () => {
       setIsSubmitted(true);
       toast({
         title: "Inquiry submitted!",
-        description: "We'll get back to you within 24 hours."
+        description: L("Your inquiry has been received.", "وصل استفسارك.")
       });
     } catch (error: any) {
       if (error instanceof z.ZodError) {
@@ -92,22 +95,22 @@ const DomainInquiry = () => {
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="w-10 h-10 text-primary" />
                 </div>
-                <h1 className="text-2xl font-bold mb-4">Thank You!</h1>
+                <h1 className="text-2xl font-bold mb-4">{L('Thank You!', 'شكراً')}</h1>
                 <p className="text-muted-foreground mb-6">
                   Your inquiry for <strong>{formData.domain_name}</strong> has been submitted successfully.
-                  We'll get back to you within 24 hours.
+                  {L('We will reply to the email you provided.', 'هنرد على الإيميل اللي كتبته.')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild>
                     <Link to="/domains">
                       <Globe className="w-4 h-4 mr-2" />
-                      Browse More Domains
+                      {L('Browse More Domains', 'تصفح الدومينات')}
                     </Link>
                   </Button>
                   <Button variant="outline" asChild>
                     <a href="https://wa.me/201002905764" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="w-4 h-4 mr-2" />
-                      Contact via WhatsApp
+                      {L('Contact via WhatsApp', 'تواصل عبر واتساب')}
                     </a>
                   </Button>
                 </div>
@@ -140,17 +143,17 @@ const DomainInquiry = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Globe className="w-5 h-5 text-primary" />
-                    Domain Inquiry
+                    {L('Domain Inquiry', 'استفسار عن دومين')}
                   </CardTitle>
                   <CardDescription>
-                    Fill out the form below to inquire about a domain. We'll respond within 24 hours.
+                    {L('Ask about this domain using the form below.', 'ابعت استفسارك عن الدومين من النموذج ده.')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
+                        <Label htmlFor="name">{L('Full Name *', 'الاسم الكامل *')}</Label>
                         <Input
                           id="name"
                           placeholder="John Doe"
@@ -160,7 +163,7 @@ const DomainInquiry = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
+                        <Label htmlFor="email">{L('Email Address *', 'البريد الإلكتروني *')}</Label>
                         <Input
                           id="email"
                           type="email"
@@ -174,7 +177,7 @@ const DomainInquiry = () => {
 
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number (Optional)</Label>
+                        <Label htmlFor="phone">{L('Phone Number (Optional)', 'رقم الموبايل (اختياري)')}</Label>
                         <Input
                           id="phone"
                           type="tel"
@@ -184,7 +187,7 @@ const DomainInquiry = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="domain">Domain Name *</Label>
+                        <Label htmlFor="domain">{L('Domain Name *', 'اسم الدومين *')}</Label>
                         <Input
                           id="domain"
                           placeholder="example.com"
@@ -196,7 +199,7 @@ const DomainInquiry = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message (Optional)</Label>
+                      <Label htmlFor="message">{L('Message (Optional)', 'رسالة (اختياري)')}</Label>
                       <Textarea
                         id="message"
                         placeholder="Tell us about your project or any questions you have about this domain..."
@@ -212,7 +215,7 @@ const DomainInquiry = () => {
                       ) : (
                         <>
                           <Send className="w-4 h-4 mr-2" />
-                          Submit Inquiry
+                          {L('Submit Inquiry', 'إرسال الاستفسار')}
                         </>
                       )}
                     </Button>
@@ -225,7 +228,7 @@ const DomainInquiry = () => {
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Quick Contact</CardTitle>
+                  <CardTitle className="text-lg">{L('Quick Contact', 'تواصل سريع')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <a 
@@ -239,7 +242,7 @@ const DomainInquiry = () => {
                     </div>
                     <div>
                       <p className="font-medium">WhatsApp</p>
-                      <p className="text-sm text-muted-foreground">+210 029 05764</p>
+                      <p className="text-sm text-muted-foreground">+20 100 290 5764</p>
                     </div>
                   </a>
 
@@ -258,29 +261,7 @@ const DomainInquiry = () => {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Why Buy From Us?</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-sm">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5" />
-                    <span>Secure domain transfer process</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5" />
-                    <span>24/7 support during transfer</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5" />
-                    <span>Flexible payment options</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5" />
-                    <span>Money-back guarantee</span>
-                  </div>
-                </CardContent>
-              </Card>
+
             </div>
           </div>
         </div>

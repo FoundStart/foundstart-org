@@ -31,7 +31,7 @@ const Domains = () => {
   const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
 
   const allDomains = useMemo(
-    () => domainsData.filter(d => !soldDomains.some(s => s.name.toLowerCase() === d.name.toLowerCase()) && !['toolstogethers.com', 'msa-serv.com', 'zadafrica.com'].includes(d.name.toLowerCase())),
+    () => domainsData.filter(d => !soldDomains.some(s => s.name.toLowerCase() === d.name.toLowerCase()) && !['toolstogethers.com', 'msa-serv.com', 'zadafrica.com', 'hosstec.com'].includes(d.name.toLowerCase())),
     [bulkVersion]
   );
 
@@ -51,7 +51,8 @@ const Domains = () => {
     return allDomains
       .filter(domain => {
         const matchesSearch = domain.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                             domain.category.toLowerCase().includes(searchQuery.toLowerCase());
+                             domain.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                             ((domain.category.toLowerCase().includes('fintech') ? 'مال دفع مدفوعات تكنولوجيا مالية' : '') + (domain.category.toLowerCase().includes('commerce') ? 'تجارة متجر تسوق' : '') + (domain.category.toLowerCase().includes('saas') ? 'برمجيات أدوات تقنية' : '') + (domain.category.toLowerCase().includes('startup') ? 'شركات ناشئة' : '')).includes(searchQuery.trim());
         const matchesCategory = selectedCategory === 'All' || domain.category.toLowerCase().includes(selectedCategory.toLowerCase());
         const matchesHosting = selectedHosting === 'All' || domain.hosting === selectedHosting;
         return matchesSearch && matchesCategory && matchesHosting;
