@@ -59,7 +59,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "499",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/topypay.com"
+    "buyUrl": ""
   },
   {
     "name": "Expensol.com",
@@ -67,7 +67,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Venture, Community & Brands",
     "price": "400",
     "businessType": "Business",
-    "buyUrl": "https://www.atom.com/name/Expensol"
+    "buyUrl": ""
   },
   {
     "name": "Keepence.com",
@@ -75,7 +75,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, SAAS",
     "price": "400",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/keepence.com"
+    "buyUrl": ""
   },
   {
     "name": "Namelizer.com",
@@ -123,7 +123,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Food",
     "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/toolstogethers.com"
+    "buyUrl": ""
   },
   {
     "name": "Exitsme.com",
@@ -131,7 +131,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startup / M&A",
     "price": "400",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/exitsme.com"
+    "buyUrl": ""
   },
   {
     "name": "Halalye.com",
@@ -171,7 +171,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Mobile / Fintech",
     "price": "400",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/momomob.com"
+    "buyUrl": ""
   },
   {
     "name": "MoMoNil.com",
@@ -179,7 +179,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Mobile / Fintech",
     "price": "400",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/momonil.com"
+    "buyUrl": ""
   },
   {
     "name": "YesShoot.com",
@@ -195,7 +195,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Grocery / Delivery",
     "price": "400",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/talaboo.com"
+    "buyUrl": ""
   },
   {
     "name": "Etivago.com",
@@ -251,7 +251,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce / Dropshipping",
     "price": "500",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/dropoh.com"
+    "buyUrl": ""
   },
   {
     "name": "FoundVC.com",
@@ -267,7 +267,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Freelance / Gig Economy",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/freelinance.com"
+    "buyUrl": ""
   },
   {
     "name": "Agitli.com",
@@ -275,7 +275,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Business",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/agitli.com"
+    "buyUrl": ""
   },
   {
     "name": "Exitsmena.com",
@@ -283,7 +283,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/exitsmena.com"
+    "buyUrl": ""
   },
   {
     "name": "Foodievo.com",
@@ -299,7 +299,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Tech / Hosting",
     "price": "250",
     "businessType": "Business",
-    "buyUrl": "https://hosstec.com"
+    "buyUrl": ""
   },
   {
     "name": "TakeRides.com",
@@ -307,7 +307,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fleet Automotive",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/TakeRides"
+    "buyUrl": ""
   },
   {
     "name": "Talabook.com",
@@ -315,7 +315,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, APP, Grocery",
     "price": "500",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/talabook.com"
+    "buyUrl": ""
   },
   {
     "name": "Escroy.com",
@@ -323,7 +323,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Escrow Pay",
     "price": "499",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/escroy.com"
+    "buyUrl": ""
   },
   {
     "name": "Finaprise.com",
@@ -331,7 +331,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Venture, Community & Brands",
     "price": "499",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/FinaPrise"
+    "buyUrl": ""
   },
   {
     "name": "Fruitla.com",
@@ -371,7 +371,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Nany marketplace",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/nanymart.com"
+    "buyUrl": ""
   },
   {
     "name": "NixCash.com",
@@ -379,7 +379,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/NixCash"
+    "buyUrl": ""
   },
   {
     "name": "Paylita.com",
@@ -387,7 +387,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Paylita"
+    "buyUrl": ""
   },
   {
     "name": "Trancesend.com",
@@ -395,7 +395,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/trancesend.com"
+    "buyUrl": ""
   },
   {
     "name": "Uniqranker.com",
@@ -403,7 +403,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/uniqranker.com"
+    "buyUrl": ""
   },
   {
     "name": "Buyill.com",
@@ -427,7 +427,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/estateschain.com"
+    "buyUrl": ""
   },
   {
     "name": "Marttogo.com",
@@ -435,7 +435,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/marttogo.com"
+    "buyUrl": ""
   },
   {
     "name": "Societygram.com",
@@ -443,7 +443,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "350",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/societygram.com"
+    "buyUrl": ""
   },
   {
     "name": "Dealigi.com",
@@ -451,7 +451,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces, SAAS",
     "price": "300",
     "businessType": "Domain",
-    "buyUrl": "https://domains.atom.com/lpd/name/dealigi.com"
+    "buyUrl": ""
   },
   {
     "name": "Loadwhale.com",
@@ -459,7 +459,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "300",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Loadwhale"
+    "buyUrl": ""
   },
   {
     "name": "Bestofmart.com",
@@ -467,7 +467,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "265",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/bestofmart.com"
+    "buyUrl": ""
   },
   {
     "name": "Autobases.com",
@@ -475,7 +475,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/autobases.com"
+    "buyUrl": ""
   },
   {
     "name": "Cardido.com",
@@ -483,7 +483,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Cardido"
+    "buyUrl": ""
   },
   {
     "name": "Cartdidi.com",
@@ -491,7 +491,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/cartdidi.com"
+    "buyUrl": ""
   },
   {
     "name": "Cloddi.com",
@@ -499,7 +499,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "450",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/cloddi.com"
+    "buyUrl": ""
   },
   {
     "name": "Coinaxia.com",
@@ -507,7 +507,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/coinaxia.com"
+    "buyUrl": ""
   },
   {
     "name": "CometCall.com",
@@ -515,7 +515,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/CometCall"
+    "buyUrl": ""
   },
   {
     "name": "ComZio.com",
@@ -523,7 +523,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/comzio.com"
+    "buyUrl": ""
   },
   {
     "name": "Coursaro.com",
@@ -547,7 +547,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces, SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Dealago"
+    "buyUrl": ""
   },
   {
     "name": "Diroh.com",
@@ -571,7 +571,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/doscash.com"
+    "buyUrl": ""
   },
   {
     "name": "Ecardera.com",
@@ -595,7 +595,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech-E-Commerce & Marketplaces / SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://emotorsmarket.com"
+    "buyUrl": ""
   },
   {
     "name": "Enitsa.com",
@@ -611,7 +611,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/estatesa.com"
+    "buyUrl": ""
   },
   {
     "name": "Fintekly.com",
@@ -619,7 +619,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/fintekly.com"
+    "buyUrl": ""
   },
   {
     "name": "Folkgram.com",
@@ -627,7 +627,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/folkgram.com"
+    "buyUrl": ""
   },
   {
     "name": "Giftbed.com",
@@ -635,7 +635,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/giftbed.com"
+    "buyUrl": ""
   },
   {
     "name": "Godemart.com",
@@ -643,7 +643,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/godemart.com"
+    "buyUrl": ""
   },
   {
     "name": "InfiniteGram.com",
@@ -651,7 +651,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/infinitegram.com"
+    "buyUrl": ""
   },
   {
     "name": "InstaMackers.com",
@@ -659,7 +659,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Social Media",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/instamackers.com"
+    "buyUrl": ""
   },
   {
     "name": "Investue.com",
@@ -675,7 +675,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Recurements, Freelancer, SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/jobagy.com"
+    "buyUrl": ""
   },
   {
     "name": "Jobigy.com",
@@ -683,7 +683,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Recurements, Freelancer, SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/jobigy.com"
+    "buyUrl": ""
   },
   {
     "name": "Justailawyer.com",
@@ -691,7 +691,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Legal",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/justailawyer.com"
+    "buyUrl": ""
   },
   {
     "name": "llmified.com",
@@ -699,7 +699,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "LLM",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/LLMified"
+    "buyUrl": ""
   },
   {
     "name": "Loverlet.com",
@@ -707,7 +707,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/loverlet.com"
+    "buyUrl": ""
   },
   {
     "name": "Martome.com",
@@ -715,7 +715,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/martome.com"
+    "buyUrl": ""
   },
   {
     "name": "Medianar.com",
@@ -723,7 +723,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/medianar.com"
+    "buyUrl": ""
   },
   {
     "name": "Mediationmarket.com",
@@ -731,7 +731,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/MediationMarket"
+    "buyUrl": ""
   },
   {
     "name": "OppaPay.com",
@@ -739,7 +739,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/oppapay.com"
+    "buyUrl": ""
   },
   {
     "name": "Payleya.com",
@@ -747,7 +747,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/payleya.com"
+    "buyUrl": ""
   },
   {
     "name": "Payoha.com",
@@ -755,7 +755,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/payoha.com"
+    "buyUrl": ""
   },
   {
     "name": "Payort.com",
@@ -771,7 +771,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/rankingmart.com"
+    "buyUrl": ""
   },
   {
     "name": "Reallt.com",
@@ -779,7 +779,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/reallt.com"
+    "buyUrl": ""
   },
   {
     "name": "Sociallaters.com",
@@ -795,7 +795,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/trillionchat.com"
+    "buyUrl": ""
   },
   {
     "name": "UniqranKing.com",
@@ -811,7 +811,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/walletah.com"
+    "buyUrl": ""
   },
   {
     "name": "WhenSpend.com",
@@ -819,7 +819,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/whenspend.com"
+    "buyUrl": ""
   },
   {
     "name": "Teeped.com",
@@ -827,7 +827,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "245",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/teeped.com"
+    "buyUrl": ""
   },
   {
     "name": "AlternativeClaw.com",
@@ -835,7 +835,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Niche / Hardware",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/alternativeclaw.com"
+    "buyUrl": ""
   },
   {
     "name": "AtlanticClaw.com",
@@ -843,7 +843,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Seafood / Niche",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/atlanticclaw.com"
+    "buyUrl": ""
   },
   {
     "name": "Cashzor.com",
@@ -851,7 +851,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/cashzor.com"
+    "buyUrl": ""
   },
   {
     "name": "Ecardura.com",
@@ -859,7 +859,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/ecardura.com"
+    "buyUrl": ""
   },
   {
     "name": "MartGem.com",
@@ -867,7 +867,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Sport SAAS",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/martgem.com"
+    "buyUrl": ""
   },
   {
     "name": "TechyClaw.com",
@@ -875,7 +875,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Tech / Niche",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/techyclaw.com"
+    "buyUrl": ""
   },
   {
     "name": "TodaysClaw.com",
@@ -883,7 +883,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Niche",
     "price": "200",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/todaysclaw.com"
+    "buyUrl": ""
   },
   {
     "name": "Affivid.com",
@@ -891,7 +891,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Affiliate Video marketing",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/affivid.com"
+    "buyUrl": ""
   },
   {
     "name": "Automorize.com",
@@ -899,7 +899,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/automorize.com"
+    "buyUrl": ""
   },
   {
     "name": "BlocksValley.com",
@@ -907,7 +907,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/blocksvalley.com"
+    "buyUrl": ""
   },
   {
     "name": "Carthot.com",
@@ -923,7 +923,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/cityspain.com"
+    "buyUrl": ""
   },
   {
     "name": "ClauGram.com",
@@ -931,7 +931,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/claugram.com"
+    "buyUrl": ""
   },
   {
     "name": "Dailymr.com",
@@ -939,7 +939,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/dailymr.com"
+    "buyUrl": ""
   },
   {
     "name": "Dealello.com",
@@ -947,7 +947,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/dealello.com"
+    "buyUrl": ""
   },
   {
     "name": "Existmatch.com",
@@ -955,7 +955,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/existmatch.com"
+    "buyUrl": ""
   },
   {
     "name": "GramChase.com",
@@ -963,7 +963,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/gramchase.com"
+    "buyUrl": ""
   },
   {
     "name": "Gramout.com",
@@ -971,7 +971,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/gramout.com"
+    "buyUrl": ""
   },
   {
     "name": "InfinitiMeta.com",
@@ -995,7 +995,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Investicash"
+    "buyUrl": ""
   },
   {
     "name": "LandingKey.com",
@@ -1003,7 +1003,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/LandingKey"
+    "buyUrl": ""
   },
   {
     "name": "MallCanyon.com",
@@ -1011,7 +1011,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces - SAAS hub",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/mallcanyon.com"
+    "buyUrl": ""
   },
   {
     "name": "Metachia.com",
@@ -1027,7 +1027,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/mistonia.com"
+    "buyUrl": ""
   },
   {
     "name": "Solivid.com",
@@ -1051,7 +1051,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Affliate",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/afinya.com"
+    "buyUrl": ""
   },
   {
     "name": "AppWebo.com",
@@ -1067,7 +1067,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/AssetMediator"
+    "buyUrl": ""
   },
   {
     "name": "AssetMotive.com",
@@ -1075,7 +1075,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/assetmotive.com"
+    "buyUrl": ""
   },
   {
     "name": "Goidai.com",
@@ -1083,7 +1083,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/goidai.com"
+    "buyUrl": ""
   },
   {
     "name": "Grambond.com",
@@ -1091,7 +1091,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/grambond.com"
+    "buyUrl": ""
   },
   {
     "name": "Gramger.com",
@@ -1099,7 +1099,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/gramger.com"
+    "buyUrl": ""
   },
   {
     "name": "MartlyGram.com",
@@ -1107,7 +1107,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/martlygram.com"
+    "buyUrl": ""
   },
   {
     "name": "Mediomy.com",
@@ -1115,7 +1115,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/mediomy.com"
+    "buyUrl": ""
   },
   {
     "name": "Metanta.com",
@@ -1131,7 +1131,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Rewardial"
+    "buyUrl": ""
   },
   {
     "name": "Socialautoposters.com",
@@ -1139,7 +1139,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/socialautoposters.com"
+    "buyUrl": ""
   },
   {
     "name": "Socialsenders.com",
@@ -1147,7 +1147,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/socialsenders.com"
+    "buyUrl": ""
   },
   {
     "name": "VestaBrokers.com",
@@ -1155,7 +1155,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/VestaBrokers"
+    "buyUrl": ""
   },
   {
     "name": "ChasesGram.com",
@@ -1163,7 +1163,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/chasesgram.com"
+    "buyUrl": ""
   },
   {
     "name": "Chatelly.com",
@@ -1171,7 +1171,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Chatelly"
+    "buyUrl": ""
   },
   {
     "name": "Ecanio.com",
@@ -1187,7 +1187,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces / SAAS",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/ecanro.com"
+    "buyUrl": ""
   },
   {
     "name": "Paybrink.com",
@@ -1195,7 +1195,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/paybrink.com"
+    "buyUrl": ""
   },
   {
     "name": "Survimart.com",
@@ -1203,7 +1203,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/survimart.com"
+    "buyUrl": ""
   },
   {
     "name": "Transacly.com",
@@ -1211,7 +1211,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Transacly"
+    "buyUrl": ""
   },
   {
     "name": "VestaBroker.com",
@@ -1219,7 +1219,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/vestabroker.com"
+    "buyUrl": ""
   },
   {
     "name": "XperaPay.com",
@@ -1227,7 +1227,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/xperapay.com"
+    "buyUrl": ""
   },
   {
     "name": "ExemPay.com",
@@ -1235,7 +1235,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/exempay.com"
+    "buyUrl": ""
   },
   {
     "name": "ZohPay.com",
@@ -1243,7 +1243,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/zohpay.com"
+    "buyUrl": ""
   },
   {
     "name": "BekoMart.com",
@@ -1267,7 +1267,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/easycheckpay.com"
+    "buyUrl": ""
   },
   {
     "name": "Jumamart.com",
@@ -1275,7 +1275,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/jumamart.com"
+    "buyUrl": ""
   },
   {
     "name": "Landgage.com",
@@ -1283,7 +1283,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/landgage.com"
+    "buyUrl": ""
   },
   {
     "name": "Laterssocial.com",
@@ -1299,7 +1299,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/linkliz.com"
+    "buyUrl": ""
   },
   {
     "name": "Mediadirect.uk",
@@ -1315,7 +1315,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "EdTech / Coaching",
     "price": "250",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Mentelic"
+    "buyUrl": ""
   },
   {
     "name": "MetaMany.com",
@@ -1331,7 +1331,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - Social media services",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/postsocialauto.com"
+    "buyUrl": ""
   },
   {
     "name": "Sellerizer.com",
@@ -1339,7 +1339,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "400",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/Sellerizer"
+    "buyUrl": ""
   },
   {
     "name": "Shopeter.com",
@@ -1355,7 +1355,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/socialautobest.com"
+    "buyUrl": ""
   },
   {
     "name": "Stremion.com",
@@ -1363,7 +1363,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Stream IPTV. TV",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/stremion.com"
+    "buyUrl": ""
   },
   {
     "name": "Transationser.com",
@@ -1371,7 +1371,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/transationser.com"
+    "buyUrl": ""
   },
   {
     "name": "VisLif.com",
@@ -1379,7 +1379,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/vislif.com"
+    "buyUrl": ""
   },
   {
     "name": "XpanderPay.com",
@@ -1387,7 +1387,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/xpanderpay.com"
+    "buyUrl": ""
   },
   {
     "name": "ZonFood.com",
@@ -1395,7 +1395,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech, Food",
     "price": "150",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/zonfood.com"
+    "buyUrl": ""
   },
   {
     "name": "365crypt.com",
@@ -1411,7 +1411,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/365martly.com"
+    "buyUrl": ""
   },
   {
     "name": "Cartburn.com",
@@ -1419,7 +1419,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/cartburn.com"
+    "buyUrl": ""
   },
   {
     "name": "Cryptalyzes.com",
@@ -1435,7 +1435,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces, SAAS",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/dealiar.com"
+    "buyUrl": ""
   },
   {
     "name": "Drobito.com",
@@ -1443,7 +1443,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces, SAAS",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/drobito.com"
+    "buyUrl": ""
   },
   {
     "name": "Payerzy.com",
@@ -1451,7 +1451,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Fintech, Payments & Crypto",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/payerzy.com"
+    "buyUrl": ""
   },
   {
     "name": "syrri.com",
@@ -1459,7 +1459,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "Startups, SaaS & Tech - tool",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/syrri.com"
+    "buyUrl": ""
   },
   {
     "name": "voucherdeck.com",
@@ -1467,7 +1467,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "100",
     "businessType": "Domain",
-    "buyUrl": "https://www.atom.com/name/VoucherDeck"
+    "buyUrl": ""
   },
   {
     "name": "Kufya.com",
@@ -1475,7 +1475,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "category": "E-Commerce & Marketplaces",
     "price": "500",
     "businessType": "Business",
-    "buyUrl": "https://unstoppabledomains.com/d/kufya.com"
+    "buyUrl": ""
   },
   {
     "name": "Shortst.com",
@@ -1484,7 +1484,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "price": "4500",
     "businessType": "Business",
     "buyUrl": ""
-  },
+  }
 ];
 
 export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d }));

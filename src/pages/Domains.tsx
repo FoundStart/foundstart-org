@@ -19,7 +19,8 @@ import { useTranslation } from '@/contexts/TranslationContext';
 import { loadBulkDomains, mergeDomains, toCsv, downloadCsv } from '@/utils/domainNormalization';
 
 const Domains = () => {
-  const { t } = useTranslation();
+  const { t, isRTL } = useTranslation();
+  const L = (en: string, ar: string) => isRTL ? ar : en;
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedHosting, setSelectedHosting] = useState('All');
@@ -30,7 +31,7 @@ const Domains = () => {
   const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
 
   const allDomains = useMemo(
-    () => mergeDomains(domainsData, loadBulkDomains()),
+    () => domainsData.filter(d => !soldDomains.some(s => s.name.toLowerCase() === d.name.toLowerCase()) && !['toolstogethers.com', 'msa-serv.com', 'zadafrica.com'].includes(d.name.toLowerCase())),
     [bulkVersion]
   );
 
@@ -75,9 +76,9 @@ const Domains = () => {
 
       <main className="">
         <PageHero
-          title={t.domainHubTitle}
-          highlight={t.domainHubHighlight}
-          subtitle={t.domainHubSubtitle}
+          title={L("Domains", "الدومينات")}
+          highlight=""
+          subtitle={L("Find a name for your next business. Browse by category, compare asking prices and buy through a marketplace or send an inquiry.", "اختار اسم لمشروعك القادم. تصفح حسب المجال، وقارن الأسعار، واشتري من منصة البيع أو ابعت استفسار.")}
         >
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <Link to="/domain-wishlist">
@@ -98,7 +99,7 @@ const Domains = () => {
 
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">
-            <Tabs defaultValue="search" className="w-full">
+            <Tabs defaultValue="premium" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 h-12">
                 <TabsTrigger value="search" className="text-xs sm:text-sm font-semibold gap-1 sm:gap-2 px-1 sm:px-3">
                   <Store className="w-4 h-4" />
@@ -120,7 +121,7 @@ const Domains = () => {
                     {t.collectionTitle} <span className="gradient-text">{t.collectionHighlight}</span>
                   </h2>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <BulkDomainImport onImport={() => setBulkVersion(v => v + 1)} />
+                    
                     <Button
                       variant="outline"
                       size="sm"
@@ -132,7 +133,7 @@ const Domains = () => {
                           name: d.name,
                           hosting: d.hosting,
                           category: d.category,
-                          price: priceMap.get(d.name.toLowerCase()) || '',
+                          price: d.price || '',
                         }));
                         downloadCsv(`foundstart-domains-${new Date().toISOString().slice(0,10)}.csv`, toCsv(rows));
                       }}
@@ -170,7 +171,7 @@ const Domains = () => {
                         className="cursor-pointer hover:bg-primary/90"
                         onClick={() => setSelectedCategory('All')}
                       >
-                        All
+                        {t.allFilter}
                       </Badge>
                       {quickCategories.map(cat => (
                         <Badge
@@ -186,7 +187,10 @@ const Domains = () => {
                   </CardContent>
                 </Card>
 
-                <p className="text-sm text-muted-foreground mb-4">{t.showingDomains.replace('{x}', String(filteredDomains.length)).replace('{y}', String(allDomains.length))}</p>
+                <p className="text-sm text-muted-foreground mb-2">{t.showingDomains.replace('{x}', String(filteredDomains.length)).replace('{y}', String(allDomains.length))}</p>
+
+                <p className="text-xs text-muted-foreground mb-6">{L("Prices in USD. Domain name only, unless agreed otherwise. Marketplace checkout confirms availability and the final total.", "الأسعار بالدولار الأمريكي وللدومين فقط، إلا لو اتفقت على غير كده. منصة البيع بتأكد التوفر والمبلغ النهائي قبل الدفع.")}</p>
+                {filteredDomains.length === 0 && <p role="status" className="p-10 text-center border rounded-xl">{L("No domains match your search. Try another name or category.", "مفيش دومينات مطابقة للبحث. جرب اسم أو مجال تاني.")}</p>}
 
                 {viewMode === 'table' && (
                   <div className="hidden sm:block rounded-lg border overflow-x-auto">
