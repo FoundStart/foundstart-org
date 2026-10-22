@@ -1,6 +1,6 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import KashierPayment from './KashierPayment';
+import StripePayment from './StripePayment';
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -33,7 +33,7 @@ const PaymentModal = ({
         <DialogHeader>
           <DialogTitle>Complete Your Payment</DialogTitle>
         </DialogHeader>
-        <KashierPayment
+        <StripePayment
           amount={amount}
           currency={currency}
           planId={planId}

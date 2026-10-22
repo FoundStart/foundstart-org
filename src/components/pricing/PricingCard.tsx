@@ -84,7 +84,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
 
           {plan.buttonText !== "Contact Sales" && getNumericPrice() > 0 && (
             <div className="text-center">
-              <p className="text-xs text-muted-foreground mb-2">Secure payment via Kashier</p>
+              <p className="text-xs text-muted-foreground mb-2">Secure payment via Stripe</p>
               <div className="flex justify-center items-center gap-2">
                 <CreditCard className="h-4 w-4" />
                 <span className="text-xs text-muted-foreground">Visa, Mastercard accepted</span>

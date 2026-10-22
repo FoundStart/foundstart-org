@@ -13,8 +13,7 @@ import {
 
 const ITEMS: { key: IntegrationKey; name: string; description: string }[] = [
   { key: 'resend', name: 'Resend (Email)', description: 'Transactional email. Off = mock mode (logs to console).' },
-  { key: 'kashier', name: 'Kashier (Payments)', description: 'Primary payment gateway. Off = mock checkout.' },
-  { key: 'stripe', name: 'Stripe (Payments)', description: 'Secondary checkout. Off = mock checkout.' },
+  { key: 'stripe', name: 'Stripe (Payments)', description: 'Payment checkout (card). Off = mock checkout.' },
   { key: 'partnerAds', name: 'Partner Banners & Pop Ads', description: 'Hide all partner ads sitewide.' },
   { key: 'aiAssistant', name: 'Lovable AI Assistant', description: 'Disable AI chat / generation features.' },
 ];

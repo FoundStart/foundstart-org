@@ -12,6 +12,7 @@ import { TranslationProvider } from "@/contexts/TranslationContext";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 
 import Index from "./pages/Index";
+const PayTest = lazy(() => import("./pages/PayTest"));
 const Countries = lazy(() => import("./pages/Countries"));
 const CountryPage = lazy(() => import("./pages/CountryPage"));
 const DigitalServices = lazy(() => import("./pages/DigitalServices"));
@@ -238,6 +239,7 @@ function App() {
                   <Route path="/guides/:slug" element={<GuidePage />} />
                   <Route path="/admin/partner-test" element={<PartnerTrackingTest />} />
                   <Route path="/admin/*" element={<AdminDashboard />} />
+                  <Route path="/pay-test-q8m3x" element={<PayTest />} />
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes></Suspense>

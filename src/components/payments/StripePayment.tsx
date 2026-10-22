@@ -9,7 +9,7 @@ import { useAuth } from '@/contexts/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 
-interface KashierPaymentProps {
+interface StripePaymentProps {
   amount: number;
   currency?: string;
   planId?: string;
@@ -18,14 +18,14 @@ interface KashierPaymentProps {
   onError?: (error: string) => void;
 }
 
-const KashierPayment = ({ 
+const StripePayment = ({ 
   amount, 
   currency = 'USD', 
   planId, 
   planName,
   onSuccess,
   onError 
-}: KashierPaymentProps) => {
+}: StripePaymentProps) => {
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [customerData, setCustomerData] = useState({
@@ -56,7 +56,7 @@ const KashierPayment = ({
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('create-payment', {
+      const { data, error } = await supabase.functions.invoke('stripe-create-payment', {
         body: {
           amount,
           currency,
@@ -150,7 +150,7 @@ const KashierPayment = ({
 
         <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground mt-4">
           <Shield className="w-4 h-4" />
-          <span>Secured by Kashier</span>
+          <span>Secured by Stripe</span>
           <Lock className="w-4 h-4" />
         </div>
 
@@ -162,4 +162,4 @@ const KashierPayment = ({
   );
 };
 
-export default KashierPayment;
+export default StripePayment;
