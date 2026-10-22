@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -87,7 +86,6 @@ const BestCompanyFormation2026: React.FC = () => {
 
       <div className="min-h-screen bg-background">
         <Header />
-        <BlogAdStrip position="top" slug="best-company-formation-2026" />
 
         <main className="w-full max-w-full overflow-x-hidden">
           <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-background to-purple-500/5">
@@ -254,8 +252,6 @@ const BestCompanyFormation2026: React.FC = () => {
               </div>
             </div>
           </section>
-
-          <BlogAdStrip position="bottom" slug="best-company-formation-2026" />
         </main>
 
         <Footer />

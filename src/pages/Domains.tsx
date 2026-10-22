@@ -17,8 +17,6 @@ import { useDomainFavorites } from '@/hooks/useDomainFavorites';
 import { domainsData, soldDomains, categories, hostingProviders } from '@/data/domainsData';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { loadBulkDomains, mergeDomains, toCsv, downloadCsv } from '@/utils/domainNormalization';
-import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
-import SedoBanner from '@/components/sedo/SedoBanner';
 
 const Domains = () => {
   const { t } = useTranslation();
@@ -97,22 +95,6 @@ const Domains = () => {
           </div>
         </PageHero>
 
-        <section className="py-8 px-4 sm:px-6 lg:px-8 border-b border-border/40">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-4">
-              <h2 className="text-xl md:text-2xl font-bold mb-1">
-                {t.marketplaceSearchTitle} <span className="gradient-text">{t.marketplaceSearchHighlight}</span>
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                {t.marketplaceSearchSubtitle}
-              </p>
-            </div>
-            <SedoSearchWidget className="flex flex-col items-center" />
-            <div className="mt-6 flex justify-center">
-              <SedoBanner size="728x90" seed="domains-hero" />
-            </div>
-          </div>
-        </section>
 
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-7xl">

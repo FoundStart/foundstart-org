@@ -10,8 +10,6 @@ import React, { useState } from 'react';
 import { blogPosts as allPosts, categories } from '@/data/blogPostsData';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { postsForLanguage } from '@/lib/blogSort';
-import SedoBanner from '@/components/sedo/SedoBanner';
-import SedoSearchWidget from '@/components/sedo/SedoSearchWidget';
 
 const Blog = () => {
   const { language } = useTranslation();
@@ -36,24 +34,8 @@ const Blog = () => {
         subtitle="Insights, guides, and expert advice on agency formation, business setup, and starting your company in the USA & Europe."
       />
 
-      {/* Header banner + Sedo search */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 pt-10">
-        <div className="container mx-auto max-w-7xl flex flex-col items-center gap-6">
-          <SedoBanner size="728x90" seed="blog-header" className="hidden md:inline-block" />
-          <SedoBanner size="336x280" seed="blog-header-mobile" className="md:hidden" />
-          <div className="w-full max-w-2xl">
-            <SedoSearchWidget className="flex flex-col items-center" />
-          </div>
-        </div>
-      </div>
-
       <div className="w-full max-w-full px-4 sm:px-6 lg:px-8 py-16">
-        <div className="container mx-auto max-w-7xl grid lg:grid-cols-[160px_1fr_160px] gap-8">
-          {/* Left sidebar banner */}
-          <aside className="hidden lg:flex flex-col items-center gap-6 sticky top-24 self-start">
-            <SedoBanner size="160x600" seed="blog-left" />
-          </aside>
-
+        <div className="container mx-auto max-w-7xl">
           <div>
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-2 mb-12">
@@ -110,10 +92,6 @@ const Blog = () => {
               </Card>
             ))}
 
-            {/* Inline banner between featured and grid */}
-            <div className="flex justify-center my-10">
-              <SedoBanner size="336x280" seed="blog-inline" />
-            </div>
 
             {/* Blog Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -154,26 +132,11 @@ const Blog = () => {
                       </Link>
                     </CardContent>
                   </Card>
-                  {idx === 2 && (
-                    <div className="flex items-center justify-center">
-                      <SedoBanner size="336x280" seed={`blog-grid-${idx}`} />
-                    </div>
-                  )}
                 </React.Fragment>
               ))}
             </div>
           </div>
 
-          {/* Right sidebar banner */}
-          <aside className="hidden lg:flex flex-col items-center gap-6 sticky top-24 self-start">
-            <SedoBanner size="160x600" seed="blog-right" />
-          </aside>
-        </div>
-
-        {/* Footer banner */}
-        <div className="container mx-auto max-w-7xl flex justify-center mt-12">
-          <SedoBanner size="728x90" seed="blog-footer" className="hidden md:inline-block" />
-          <SedoBanner size="336x280" seed="blog-footer-mobile" className="md:hidden" />
         </div>
       </div>
 

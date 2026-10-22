@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import BlogAdStrip from '@/components/sedo/BlogAdStrip';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -30,7 +29,6 @@ const PremiumDomainsShowcaseBlog = () => {
         <link rel="canonical" href="https://foundstart.org/blog/premium-domains-showcase" />
       </Helmet>
       <Header />
-      <BlogAdStrip position="top" slug="premium-domains-showcase" />
       <main className="">
         <article className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
@@ -93,7 +91,6 @@ const PremiumDomainsShowcaseBlog = () => {
           </div>
         </article>
       </main>
-      <BlogAdStrip position="bottom" slug="premium-domains-showcase" />
       <Footer />
     </div>
   );
