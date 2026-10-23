@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
@@ -29,6 +29,10 @@ const Domains = () => {
   const [bulkVersion, setBulkVersion] = useState(0);
 
   const { favorites, toggleFavorite, isFavorite } = useDomainFavorites();
+  const rootRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    rootRef.current?.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+  }, [isRTL]);
 
   const allDomains = useMemo(
     () => domainsData.filter(d => !soldDomains.some(s => s.name.toLowerCase() === d.name.toLowerCase()) && !['toolstogethers.com', 'msa-serv.com', 'zadafrica.com', 'hosstec.com'].includes(d.name.toLowerCase())),
@@ -72,7 +76,7 @@ const Domains = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div ref={rootRef} className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
 
       <main className="">
