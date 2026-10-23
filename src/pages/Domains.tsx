@@ -98,7 +98,7 @@ const Domains = () => {
         </PageHero>
 
 
-        <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 max-sm:pr-20 max-sm:pb-28">
+        <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 max-sm:pe-20 max-sm:pb-28">
           <div className="container mx-auto max-w-7xl">
             <Tabs defaultValue="premium" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 h-12">
