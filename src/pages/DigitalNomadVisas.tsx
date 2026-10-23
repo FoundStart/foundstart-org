@@ -352,11 +352,11 @@ const DigitalNomadVisas = () => {
 
         {/* Information Tabs */}
         <Tabs defaultValue="requirements" className="mb-12">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="requirements">Requirements</TabsTrigger>
-            <TabsTrigger value="process">Application Process</TabsTrigger>
-            <TabsTrigger value="taxes">Tax Implications</TabsTrigger>
-            <TabsTrigger value="tips">Pro Tips</TabsTrigger>
+          <TabsList className="grid h-auto w-full grid-cols-2 gap-1 sm:grid-cols-4">
+            <TabsTrigger value="requirements" className="h-auto whitespace-normal px-2 py-2 text-center leading-tight">Requirements</TabsTrigger>
+            <TabsTrigger value="process" className="h-auto whitespace-normal px-2 py-2 text-center leading-tight">Application Process</TabsTrigger>
+            <TabsTrigger value="taxes" className="h-auto whitespace-normal px-2 py-2 text-center leading-tight">Tax Implications</TabsTrigger>
+            <TabsTrigger value="tips" className="h-auto whitespace-normal px-2 py-2 text-center leading-tight">Pro Tips</TabsTrigger>
           </TabsList>
 
           <TabsContent value="requirements" className="mt-6">

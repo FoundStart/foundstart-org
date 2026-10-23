@@ -3581,5 +3581,15 @@ export const arabicDict: Record<string, string> = {
 "Toggle menu": "تغيير عرض القائمة",
 "FoundStart Home": "الرئيسية - FoundStart",
 "Us": "معنا",
-"Sister": "الشركات الشقيقة"
+"Sister": "الشركات الشقيقة",
+"Apply remotely:": "التقديم عن بُعد:",
+"Yes": "نعم",
+"No": "لا",
+"+2 more": "+2 إضافية",
+"+3 more": "+3 إضافية",
+"+4 more": "+4 إضافية",
+"+5 more": "+5 إضافية",
+"+6 more": "+6 إضافية",
+"+7 more": "+7 إضافية",
+"+8 more": "+8 إضافية"
 };
