@@ -79,7 +79,7 @@ const Domains = () => {
         <PageHero
           title={L("Domains", "الدومينات")}
           highlight=""
-          subtitle={L("Find a name for your next business. Browse by category, compare asking prices and buy through a marketplace or send an inquiry.", "اختار اسم لمشروعك القادم. تصفح حسب المجال، وقارن الأسعار، واشتري من منصة البيع أو ابعت استفسار.")}
+          subtitle={L("Find a name for your next business. Browse by category, compare asking prices and buy directly on its marketplace.", "اختار اسم لمشروعك القادم. تصفح حسب المجال، وقارن الأسعار، واشتري مباشرة من منصة البيع.")}
         >
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <Link to="/domain-wishlist">
@@ -236,14 +236,10 @@ const Domains = () => {
                                 <Button variant="ghost" size="icon" onClick={() => toggleFavorite(domain.name)} className={isFavorite(domain.name) ? 'text-red-500' : ''}>
                                   <Heart className={`w-4 h-4 ${isFavorite(domain.name) ? 'fill-current' : ''}`} />
                                 </Button>
-                                {domain.buyUrl ? (
+                                {domain.buyUrl && (
                                   <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer">
-                                    <Button size="sm" variant="outline"><ExternalLink className="w-3 h-3 mr-1" />{t.buyBtn}</Button>
+                                    <Button size="sm" variant="outline"><ExternalLink className="w-3 h-3 mr-1" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
                                   </a>
-                                ) : (
-                                  <Link to={`/domain-inquiry?domain=${encodeURIComponent(domain.name)}`}>
-                                    <Button size="sm">{t.inquireBtn}</Button>
-                                  </Link>
                                 )}
                               </div>
                             </TableCell>
@@ -271,14 +267,10 @@ const Domains = () => {
                           <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
                           <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{domain.category}</p>
                           {domain.price && <p className="text-lg font-bold text-primary mb-3">${domain.price}</p>}
-                          {domain.buyUrl ? (
+                          {domain.buyUrl && (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-                              <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{t.buyBtn}</Button>
+                              <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
                             </a>
-                          ) : (
-                            <Link to={`/domain-inquiry?domain=${encodeURIComponent(domain.name)}`} className="w-full">
-                              <Button className="w-full">{t.inquireBtn}</Button>
-                            </Link>
                           )}
                         </CardContent>
                       </Card>
@@ -303,14 +295,10 @@ const Domains = () => {
                           <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
                           <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{domain.category}</p>
                           {domain.price && <p className="text-lg font-bold text-primary mb-3">${domain.price}</p>}
-                          {domain.buyUrl ? (
+                          {domain.buyUrl && (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-                              <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{t.buyBtn}</Button>
+                              <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
                             </a>
-                          ) : (
-                            <Link to={`/domain-inquiry?domain=${encodeURIComponent(domain.name)}`} className="w-full">
-                              <Button className="w-full">{t.inquireBtn}</Button>
-                            </Link>
                           )}
                         </CardContent>
                       </Card>
