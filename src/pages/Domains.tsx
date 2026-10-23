@@ -226,7 +226,7 @@ const Domains = () => {
                             </TableCell>
                             <TableCell>
                               {domain.price ? (
-                                <span className="font-semibold text-primary" dir="ltr">${domain.price}</span>
+                                <span className="font-semibold text-primary">${domain.price}</span>
                               ) : (
                                 <span className="text-muted-foreground">—</span>
                               )}
@@ -266,7 +266,7 @@ const Domains = () => {
                           </div>
                           <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
                           <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{domain.category}</p>
-                          {domain.price && <p className="text-lg font-bold text-primary mb-3" dir="ltr">${domain.price}</p>}
+                          {domain.price && <p className="text-lg font-bold text-primary mb-3">${domain.price}</p>}
                           {domain.buyUrl && (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
                               <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
@@ -294,7 +294,7 @@ const Domains = () => {
                           </div>
                           <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
                           <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{domain.category}</p>
-                          {domain.price && <p className="text-lg font-bold text-primary mb-3" dir="ltr">${domain.price}</p>}
+                          {domain.price && <p className="text-lg font-bold text-primary mb-3">${domain.price}</p>}
                           {domain.buyUrl && (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
                               <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
