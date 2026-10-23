@@ -12,13 +12,13 @@ const PARTNER_SITES: { key: string; name: string; href: string }[] = [
   { key: "hosstec", name: "Hosstec", href: "https://hosstec.com" },
 ];
 
-export function PartnerSites({ isRTL = false, self }: { isRTL?: boolean; self: string }) {
+export function PartnerSites({ isRTL = false, self, omit = [] }: { isRTL?: boolean; self: string; omit?: string[] }) {
   const title = isRTL ? "شركاؤنا" : "Partners";
   return (
     <nav aria-label={title} dir={isRTL ? "rtl" : "ltr"} className="py-5 border-t border-border mt-2 text-start">
       <p className="text-xs font-semibold text-muted-foreground mb-3">{title}</p>
       <ul className="grid grid-cols-2 gap-x-6 gap-y-2 max-w-md">
-        {PARTNER_SITES.map(({ key, name, href }) => (
+        {PARTNER_SITES.filter(({ key }) => !omit.includes(key)).map(({ key, name, href }) => (
           <li key={key}>
             {key === self ? (
               <span aria-current="page" className="text-sm font-semibold text-foreground">{name}</span>

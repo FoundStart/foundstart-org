@@ -113,7 +113,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <PartnerSites isRTL={isRTL} self="foundstart" />
+        <PartnerSites isRTL={isRTL} self="foundstart" omit={["namelizer", "heykeyword", "shortet", "cartgy", "clothecart"]} />
         <LaunchBadges isRTL={isRTL} />
 
         <Separator className="my-8" />
