@@ -3574,4 +3574,12 @@ export const arabicDict: Record<string, string> = {
 "Understanding your tax obligations when working abroad": "تعرف على التزاماتك الضريبية أثناء العمل بالخارج",
 "Pro Tips for Digital Nomad Success": "نصائح عملية لنجاح الرحالة الرقميين",
 "Expert advice for a smooth nomadic journey": "نصائح الخبراء لتجربة ترحال مريحة"
+,
+"See the exact FoundStart fee for your company formation. Select your country and entity type to see your total cost.": "تعرف على رسوم FoundStart الدقيقة لتأسيس شركتك. اختر الدولة ونوع الكيان لعرض التكلفة الإجمالية.",
+"Select from 10 countries": "اختر من بين 10 دول",
+"3. See Your Price": "3. اعرض السعر",
+"Toggle menu": "تغيير عرض القائمة",
+"FoundStart Home": "الرئيسية - FoundStart",
+"Us": "معنا",
+"Sister": "الشركات الشقيقة"
 };
