@@ -49,7 +49,7 @@ const Hero = () => {
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 pt-14 md:pt-24 text-center">
         <motion.p
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          className="mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-purple-400"
+          className={`mb-5 text-xs sm:text-sm font-semibold uppercase ${ar ? 'tracking-normal' : 'tracking-[0.18em]'} text-purple-400`}
         >
           {ar ? 'للفريلانسرز · التجارة الإلكترونية · SaaS' : 'Freelancers · E-commerce · SaaS'}
         </motion.p>

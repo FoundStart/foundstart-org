@@ -130,7 +130,7 @@ const CountryPage = () => {
             
 
             <div className="text-center py-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl">
-              <h2 className="text-3xl font-bold mb-4">Ready to Start Your {country.name} Business?</h2>
+              <h2 className="text-3xl font-bold mb-4">{isRTL ? <>هل أنت مستعد لتأسيس شركتك في {COUNTRY_AR_NAMES[country.id] || country.name}؟</> : <>Ready to Start Your {country.name} Business?</>}</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{isRTL ? 'دع FoundStart تؤسس شركتك.' : 'Let FoundStart establish your company for you.'}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild className="text-lg px-8">
