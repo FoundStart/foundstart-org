@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ArrowLeft, MapPin, Clock, DollarSign, FileText, Globe, Users, Plane, Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 interface DigitalNomadVisa {
   country: string;
@@ -200,6 +201,7 @@ const digitalNomadVisas: DigitalNomadVisa[] = [
 ];
 
 const DigitalNomadVisas = () => {
+  const { isRTL } = useTranslation();
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
   
   const regions = ["All", "Europe", "Asia", "Middle East", "Caribbean", "North America", "Central America", "South America"];
@@ -209,7 +211,7 @@ const DigitalNomadVisas = () => {
     : digitalNomadVisas.filter(visa => visa.region === selectedRegion);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
       
       <div className="container mx-auto px-4 py-8">
@@ -351,7 +353,7 @@ const DigitalNomadVisas = () => {
         </div>
 
         {/* Information Tabs */}
-        <Tabs defaultValue="requirements" className="mb-12">
+        <Tabs defaultValue="requirements" dir={isRTL ? 'rtl' : 'ltr'} className="mb-12 max-sm:[&_ul]:me-16 max-sm:[&_p]:me-16">
           <TabsList className="grid h-auto w-full grid-cols-2 gap-1 sm:grid-cols-4">
             <TabsTrigger value="requirements" className="h-auto whitespace-normal px-2 py-2 text-center leading-tight">Requirements</TabsTrigger>
             <TabsTrigger value="process" className="h-auto whitespace-normal px-2 py-2 text-center leading-tight">Application Process</TabsTrigger>
