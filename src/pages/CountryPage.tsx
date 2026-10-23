@@ -67,7 +67,7 @@ const CountryPage = () => {
                 </div>
 
                 <div className="rounded-xl border border-primary/50 p-5 flex flex-col gap-3 text-left max-w-xl mx-auto">
-                  <h3 className="font-semibold text-lg flex items-center gap-2"><CreditCard className="w-5 h-5 text-primary" />{isRTL ? `افتح شركتك في ${country.name} مع FoundStart` : `Open your ${country.name} company with FoundStart`}</h3>
+                  <h3 className="font-semibold text-lg flex items-center gap-2"><CreditCard className="w-5 h-5 text-primary" />{isRTL ? `افتح شركتك في ${COUNTRY_AR_NAMES[country.id] || country.name} مع FoundStart` : `Open your ${country.name} company with FoundStart`}</h3>
                   <p className="text-sm text-muted-foreground">
                     {isEgypt
                       ? (isRTL ? 'سجل في لوحة التحكم، ادفع بأمان أونلاين، وتابع كل خطوة أثناء تأسيس شركتك. رسوم الخدمة تبدأ من $249 والرسوم الحكومية منفصلة.' : 'Register to your dashboard, pay securely online, and track every step while we establish your company. Service fee starts from $249; government fees are separate.')
