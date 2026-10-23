@@ -1,4 +1,3 @@
-import { PartnerSites } from "@/components/PartnerSites";
 import { LaunchBadges } from "@/components/LaunchBadges";
 import { waLink } from '@/lib/whatsapp';
 import { Link } from 'react-router-dom';
@@ -39,7 +38,11 @@ const Footer = () => {
       { name: 'HeyKeyword', href: 'https://heykeyword.com', external: true },
       { name: 'Shortet', href: 'https://shortet.com', external: true },
       { name: 'ClotheCart', href: 'https://clothecart.com', external: true },
-      { name: 'Cartgy', href: 'https://cartgy.com', external: true }
+      { name: 'Cartgy', href: 'https://cartgy.com', external: true },
+      { name: 'Tafsirly', href: 'https://tafsirly.com', external: true },
+      { name: 'YesShoot', href: 'https://yesshoot.com', external: true },
+      { name: 'Toolstogethers', href: 'https://toolstogethers.com', external: true },
+      { name: 'Hosstec', href: 'https://hosstec.com', external: true }
       ,{ name: L('Launch your shop', 'ابدأ متجرك'), href: 'https://link.fourthwall.com/join/cartgy', external: true, rel: 'nofollow sponsored' }
     ]
   }, {
@@ -112,8 +115,6 @@ const Footer = () => {
             </div>
           ))}
         </div>
-
-        <PartnerSites isRTL={isRTL} self="foundstart" omit={["namelizer", "heykeyword", "shortet", "cartgy", "clothecart"]} />
         <LaunchBadges isRTL={isRTL} />
 
         <Separator className="my-8" />
