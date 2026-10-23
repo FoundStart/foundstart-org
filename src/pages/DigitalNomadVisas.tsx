@@ -340,7 +340,7 @@ const DigitalNomadVisas = () => {
                     ))}
                     {visa.bonuses.length > 2 && (
                       <Badge variant="outline" className="text-xs">
-                        +{visa.bonuses.length - 2} more
+                        {`+${visa.bonuses.length - 2} more`}
                       </Badge>
                     )}
                   </div>
