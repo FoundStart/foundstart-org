@@ -72,7 +72,7 @@ const Domains = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Header />
 
       <main className="">
@@ -98,7 +98,7 @@ const Domains = () => {
         </PageHero>
 
 
-        <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
+        <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 max-sm:pr-20 max-sm:pb-28">
           <div className="container mx-auto max-w-7xl">
             <Tabs defaultValue="premium" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 h-12">
@@ -217,7 +217,7 @@ const Domains = () => {
                             <TableCell>
                               <div className="flex items-center gap-2">
                                 <Globe className="w-4 h-4 text-primary" />
-                                <span className="font-semibold">{domain.name}</span>
+                                <span className="font-semibold" dir="ltr">{domain.name}</span>
                               </div>
                             </TableCell>
                             <TableCell className="hidden md:table-cell">{getHostingBadge(domain.hosting)}</TableCell>
@@ -226,7 +226,7 @@ const Domains = () => {
                             </TableCell>
                             <TableCell>
                               {domain.price ? (
-                                <span className="font-semibold text-primary">${domain.price}</span>
+                                <span className="font-semibold text-primary" dir="ltr">${domain.price}</span>
                               ) : (
                                 <span className="text-muted-foreground">—</span>
                               )}
@@ -258,7 +258,7 @@ const Domains = () => {
                           <div className="flex justify-between items-start mb-3">
                             <div className="flex items-center gap-2 min-w-0">
                               <Globe className="w-5 h-5 text-primary shrink-0" />
-                              <h3 className="font-semibold truncate">{domain.name}</h3>
+                              <h3 className="font-semibold truncate" dir="ltr">{domain.name}</h3>
                             </div>
                             <Button variant="ghost" size="icon" onClick={() => toggleFavorite(domain.name)} className={`h-8 w-8 ${isFavorite(domain.name) ? 'text-red-500' : ''}`}>
                               <Heart className={`w-4 h-4 ${isFavorite(domain.name) ? 'fill-current' : ''}`} />
@@ -266,7 +266,7 @@ const Domains = () => {
                           </div>
                           <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
                           <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{domain.category}</p>
-                          {domain.price && <p className="text-lg font-bold text-primary mb-3">${domain.price}</p>}
+                          {domain.price && <p className="text-lg font-bold text-primary mb-3" dir="ltr">${domain.price}</p>}
                           {domain.buyUrl && (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
                               <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
@@ -286,7 +286,7 @@ const Domains = () => {
                           <div className="flex justify-between items-start mb-3">
                             <div className="flex items-center gap-2 min-w-0">
                               <Globe className="w-5 h-5 text-primary shrink-0" />
-                              <h3 className="font-semibold truncate">{domain.name}</h3>
+                              <h3 className="font-semibold truncate" dir="ltr">{domain.name}</h3>
                             </div>
                             <Button variant="ghost" size="icon" onClick={() => toggleFavorite(domain.name)} className={`h-8 w-8 ${isFavorite(domain.name) ? 'text-red-500' : ''}`}>
                               <Heart className={`w-4 h-4 ${isFavorite(domain.name) ? 'fill-current' : ''}`} />
@@ -294,7 +294,7 @@ const Domains = () => {
                           </div>
                           <div className="mb-3">{getHostingBadge(domain.hosting)}</div>
                           <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{domain.category}</p>
-                          {domain.price && <p className="text-lg font-bold text-primary mb-3">${domain.price}</p>}
+                          {domain.price && <p className="text-lg font-bold text-primary mb-3" dir="ltr">${domain.price}</p>}
                           {domain.buyUrl && (
                             <a href={domain.buyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
                               <Button className="w-full" variant="outline"><ExternalLink className="w-4 h-4 mr-2" />{domain.marketplace ? L(`Buy on ${domain.marketplace}`, `اشترِ عبر ${domain.marketplace}`) : t.buyBtn}</Button>
@@ -337,7 +337,7 @@ const Domains = () => {
                           <TableCell>
                             <div className="flex items-center gap-2">
                               <Globe className="w-4 h-4 text-primary" />
-                              <span className="font-semibold">{domain.name}</span>
+                              <span className="font-semibold" dir="ltr">{domain.name}</span>
                             </div>
                           </TableCell>
                           <TableCell>{domain.platform}</TableCell>
