@@ -104,7 +104,7 @@ const Domains = () => {
 
         <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 max-sm:pe-20 max-sm:pb-28">
           <div className="container mx-auto max-w-7xl">
-            <Tabs defaultValue="premium" className="w-full">
+            <Tabs defaultValue="premium" dir={isRTL ? 'rtl' : 'ltr'} className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 h-12">
                 <TabsTrigger value="search" className="text-xs sm:text-sm font-semibold gap-1 sm:gap-2 px-1 sm:px-3">
                   <Store className="w-4 h-4" />
