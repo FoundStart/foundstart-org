@@ -1,3 +1,4 @@
+import { PartnerSites } from "@/components/PartnerSites";
 import { LaunchBadges } from "@/components/LaunchBadges";
 import { waLink } from '@/lib/whatsapp';
 import { Link } from 'react-router-dom';
@@ -112,6 +113,7 @@ const Footer = () => {
           ))}
         </div>
 
+        <PartnerSites isRTL={isRTL} self="foundstart" />
         <LaunchBadges isRTL={isRTL} />
 
         <Separator className="my-8" />
