@@ -624,7 +624,11 @@ const AgencyFormationBlog: React.FC = () => {
                     
                     {section.content.map((paragraph, pIndex) => (
                       <p key={pIndex} className="text-muted-foreground mb-4 leading-relaxed">
-                        {paragraph.split(/([A-Za-z0-9§][A-Za-z0-9§.()\-\/:_&%?=#]*(?: [A-Za-z0-9§(][A-Za-z0-9§.()\-\/:_&%?=#]*)*)/g).map((part, i) => /^https?:\/\//.test(part) ? <bdi key={i} dir="ltr"><a href={part} target="_blank" rel="noopener noreferrer" className="text-primary underline break-all">{part}</a></bdi> : /[A-Za-z0-9§]/.test(part) ? <bdi key={i} dir="ltr">{part}</bdi> : part)}
+                        {paragraph.split(/(https?:\/\/[^\s,]+)/g).map((seg, i) => /^https?:\/\//.test(seg)
+                          ? <bdi key={i} dir="ltr"><a href={seg} target="_blank" rel="noopener noreferrer" className="text-primary underline break-all">{seg}</a></bdi>
+                          : (isArPost
+                              ? seg.split(/([A-Za-z0-9§(][A-Za-z0-9§.()\-\/:_&%?=#]*(?: [A-Za-z0-9§(][A-Za-z0-9§.()\-\/:_&%?=#]*)*)/g).map((part, j) => /[A-Za-z0-9§]/.test(part) ? <bdi key={j} dir="ltr">{part}</bdi> : part)
+                              : seg))}
                       </p>
                     ))}
                     
