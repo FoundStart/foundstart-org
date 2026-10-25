@@ -137,7 +137,7 @@ const DomainsMobile = () => {
                     </div>
                   </div>
                   
-                  <div>
+                  <div hidden>
                     <h3 className="font-medium mb-3">Price</h3>
                     <div className="flex flex-wrap gap-2">
                       {priceFilters.map(price => (

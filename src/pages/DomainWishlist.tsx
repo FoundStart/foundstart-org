@@ -148,7 +148,7 @@ const DomainWishlist = () => {
                   <CardContent className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">Hosting: {domain.hosting}</span>
-                      <span className="text-lg font-bold text-primary">${domain.price}</span>
+                      {domain.price ? <span className="text-lg font-bold text-primary">${domain.price}</span> : null}
                     </div>
                     
                     <div className="flex flex-col gap-2">

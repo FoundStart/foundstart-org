@@ -83,7 +83,7 @@ const Domains = () => {
         <PageHero
           title={L("Domains", "الدومينات")}
           highlight=""
-          subtitle={L("Find a name for your next business. Browse by category, compare asking prices and buy directly on its marketplace.", "اختار اسم لمشروعك القادم. تصفح حسب المجال، وقارن الأسعار، واشتري مباشرة من منصة البيع.")}
+          subtitle={L("Find a name for your next business. Browse by category and buy directly on its marketplace.", "اختار اسم لمشروعك القادم. تصفح حسب المجال واشتري مباشرة من منصة البيع.")}
         >
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <Link to="/domain-wishlist">
