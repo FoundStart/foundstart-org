@@ -82,7 +82,7 @@ const Footer = () => {
               <span className="flex items-center gap-2"><img src="/logo-mark.png" alt="FoundStart logo" className="h-7 w-auto" /><span className="text-lg font-bold gradient-text">FoundStart</span></span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
-              {L("Launch your business in minutes, not months. The all-in-one platform for company formation, banking, and digital services.","أطلق شركتك في دقائق لا شهور. منصة واحدة لتأسيس الشركات والبنوك والخدمات الرقمية.")}
+              {L("Company formation in 10 countries, with one clear FoundStart price per company type.","تأسيس الشركات في 10 دول، بسعر واضح من FoundStart لكل نوع شركة.")}
             </p>
             
             
