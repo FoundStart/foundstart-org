@@ -624,7 +624,7 @@ const AgencyFormationBlog: React.FC = () => {
                     
                     {section.content.map((paragraph, pIndex) => (
                       <p key={pIndex} className="text-muted-foreground mb-4 leading-relaxed">
-                        {paragraph}
+                        {paragraph.split(/(https?:\/\/[^\s,]+)/g).map((part, i) => /^https?:\/\//.test(part) ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-primary underline break-all">{part}</a> : part)}
                       </p>
                     ))}
                     
