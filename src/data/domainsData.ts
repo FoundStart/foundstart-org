@@ -58,7 +58,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "TopyPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "499",
+    "price": "",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/topypay.com",
     "marketplace": "Unstoppable"
@@ -67,7 +67,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Expensol.com",
     "hosting": "Spaceship",
     "category": "Venture, Community & Brands",
-    "price": "400",
+    "price": "",
     "businessType": "Business",
     "buyUrl": "https://www.atom.com/name/Expensol",
     "marketplace": "Atom"
@@ -119,7 +119,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Creativoya.com",
     "hosting": "Spaceship",
     "category": "SaaS / Creative",
-    "price": "500",
+    "price": "",
     "businessType": "Business",
     "buyUrl": "https://creativoya.com",
     "marketplace": "Spaceship"
