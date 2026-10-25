@@ -194,7 +194,7 @@ const Domains = () => {
 
                 <p className="text-sm text-muted-foreground mb-2">{t.showingDomains.replace('{x}', String(filteredDomains.length)).replace('{y}', String(allDomains.length))}</p>
 
-                <p className="text-xs text-muted-foreground mb-6">{L("Prices in USD. Domain name only, unless agreed otherwise. Marketplace checkout confirms availability and the final total.", "الأسعار بالدولار الأمريكي وللدومين فقط، إلا لو اتفقت على غير كده. منصة البيع بتأكد التوفر والمبلغ النهائي قبل الدفع.")}</p>
+                <p className="text-xs text-muted-foreground mb-6">{L("Domain name only, unless agreed otherwise. Marketplace checkout confirms availability and the price.", "للدومين فقط، إلا لو اتفقت على غير كده. منصة البيع بتأكد التوفر والسعر قبل الدفع.")}</p>
                 {filteredDomains.length === 0 && <p role="status" className="p-10 text-center border rounded-xl">{L("No domains match your search. Try another name or category.", "مفيش دومينات مطابقة للبحث. جرب اسم أو مجال تاني.")}</p>}
 
                 {viewMode === 'table' && (
