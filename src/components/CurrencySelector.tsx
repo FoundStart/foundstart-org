@@ -15,7 +15,7 @@ const CurrencySelector = () => {
 
   return (
     <Select value={currency} onValueChange={(v) => setCurrency(v as typeof currency)}>
-      <SelectTrigger className="w-[80px] h-8 text-xs">
+      <SelectTrigger className="w-[100px] h-8 text-xs">
         <DollarSign className="w-3 h-3 mr-1" />
         <SelectValue />
       </SelectTrigger>
