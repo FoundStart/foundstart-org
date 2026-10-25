@@ -67,7 +67,7 @@ const PremiumDomainsShowcaseBlogAR = () => {
                           >
                             {domain.name}
                           </Link>
-                          <p className="text-xs text-muted-foreground">{domain.hosting}</p>
+                          <p className="text-xs text-muted-foreground">{domain.hosting === 'UD' ? 'Unstoppable Domains' : domain.hosting}</p>
                         </div>
                       </CardContent>
                     </Card>
