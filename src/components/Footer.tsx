@@ -16,19 +16,23 @@ const Footer = () => {
       { name: L("Digital Services", "خدمات رقمية"), href: "/digital-services" },
       { name: L("Domains", "الدومينات"), href: "/domains" },
       { name: L("Pricing", "الأسعار"), href: "/pricing" },
-      { name: L("Payment & Fintech", "الدفع والفينتك"), href: "/fintech" }
+      { name: L("Payment & Fintech", "الدفع والفينتك"), href: "/fintech" },
+      { name: L("All Partners", "كل الشركاء"), href: "/all-partners" },
+      { name: L("Formation Partners", "شركاء التأسيس"), href: "/partners" },
+      { name: L("Digital Partners", "الشركاء الرقميون"), href: "/digital-partners" },
+      { name: L("Freelancer Partners", "شركاء المستقلين"), href: "/freelancer-partners" }
     ]
   }, {
     title: L("Countries", "الدول"),
     links: [
-      { name: L("🇺🇸 United States", "🇺🇸 الولايات المتحدة"), href: "/country/USA" },
-      { name: L("🇬🇧 United Kingdom", "🇬🇧 المملكة المتحدة"), href: "/country/UK" },
-      { name: L("🇨🇦 Canada", "🇨🇦 كندا"), href: "/country/CA" },
-      { name: L("🇪🇪 Estonia", "🇪🇪 إستونيا"), href: "/country/EE" },
-      { name: L("🇫🇮 Finland", "🇫🇮 فنلندا"), href: "/country/FI" },
-      { name: L("🇸🇪 Sweden", "🇸🇪 السويد"), href: "/country/SE" },
-      { name: L("🇱🇻 Latvia", "🇱🇻 لاتفيا"), href: "/country/LV" },
-      { name: L("🇱🇹 Lithuania", "🇱🇹 ليتوانيا"), href: "/country/LT" },
+      { name: L("United States", "الولايات المتحدة"), href: "/country/USA", flag: "us" },
+      { name: L("United Kingdom", "المملكة المتحدة"), href: "/country/UK", flag: "gb" },
+      { name: L("Canada", "كندا"), href: "/country/CA", flag: "ca" },
+      { name: L("Estonia", "إستونيا"), href: "/country/EE", flag: "ee" },
+      { name: L("Finland", "فنلندا"), href: "/country/FI", flag: "fi" },
+      { name: L("Sweden", "السويد"), href: "/country/SE", flag: "se" },
+      { name: L("Latvia", "لاتفيا"), href: "/country/LV", flag: "lv" },
+      { name: L("Lithuania", "ليتوانيا"), href: "/country/LT", flag: "lt" },
       { name: L("All Countries", "كل الدول"), href: "/countries" }
     ]
   }, {
@@ -44,14 +48,6 @@ const Footer = () => {
       { name: 'Toolstogethers', href: 'https://toolstogethers.com', external: true },
       { name: 'Hosstec', href: 'https://hosstec.com', external: true }
       ,{ name: L('Launch your shop', 'ابدأ متجرك'), href: 'https://link.fourthwall.com/join/cartgy', external: true, rel: 'nofollow sponsored' }
-    ]
-  }, {
-    title: L("Partners", "الشركاء"),
-    links: [
-      { name: L("All Partners", "كل الشركاء"), href: "/all-partners" },
-      { name: L("Formation Partners", "شركاء التأسيس"), href: "/partners" },
-      { name: L("Digital Partners", "الشركاء الرقميون"), href: "/digital-partners" },
-      { name: L("Freelancer Partners", "شركاء المستقلين"), href: "/freelancer-partners" }
     ]
   }, {
     title: L("Resources", "المصادر"),
@@ -80,7 +76,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <span className="flex items-center gap-2"><img src="/logo-mark.png" alt="FoundStart logo" className="h-7 w-auto" /><span className="text-lg font-bold gradient-text">FoundStart</span></span>
@@ -95,9 +91,9 @@ const Footer = () => {
           </div>
 
           {footerSections.map((section, index) => (
-            <div key={index}>
+            <div key={index} className={section.title === L("Products", "منتجاتنا") ? "md:col-span-2" : ""}>
               <h4 className="font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-2">
+              <ul className={section.title === L("Products", "منتجاتنا") ? "grid grid-cols-2 gap-x-4 gap-y-2" : "space-y-2"}>
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {(link as any).external ? (
@@ -105,7 +101,8 @@ const Footer = () => {
                         {link.name}
                       </a>
                     ) : (
-                      <Link to={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                      <Link to={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-2">
+                        {(link as any).flag && <img src={`https://flagcdn.com/w20/${(link as any).flag}.png`} alt="" width={20} height={14} loading="lazy" className="inline-block h-3.5 w-5 rounded-[2px] object-cover" />}
                         {link.name}
                       </Link>
                     )}
