@@ -256,11 +256,11 @@ const allBlogPosts: BlogPost[] = [
   },
   {
     id: 6,
-    title: "Starting a Creative Agency in Delaware: Tax Benefits & Process",
-    description: "Why Delaware is the top choice for creative agencies and how FoundStart simplifies the entire process.",
+    title: "Forming a Delaware LLC for a Creative Agency: What the State Requires",
+    description: "The Delaware filing, registered agent and annual tax a creative agency LLC has to handle, with official sources.",
     category: "Agency Formation",
     author: "FoundStart Team",
-    date: "Jan 17, 2026",
+    date: "Oct 25, 2026",
     readTime: "8 min read",
     slug: "creative-agency-delaware",
     image: "/blog/covers/creative-agency-delaware.jpg"

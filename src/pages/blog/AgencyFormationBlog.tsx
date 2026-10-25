@@ -29,6 +29,62 @@ interface BlogContent {
 }
 
 const blogContents: Record<string, BlogContent> = {
+  'creative-agency-delaware': {
+    title: "Forming a Delaware LLC for a Creative Agency: What the State Requires",
+    description: "The Delaware filing, registered agent and annual tax a creative agency LLC has to handle, with official sources.",
+    category: "Agency Formation",
+    author: "FoundStart Team",
+    date: "Oct 25, 2026",
+    readTime: "4 min read",
+    sections: [
+      {
+        title: "Forming in Delaware",
+        content: [
+          "A Delaware LLC is created by filing a Certificate of Formation with the Delaware Division of Corporations (Delaware LLC Act, 6 Del. C. § 18-201). This guide covers only what the state publishes. It is general information, not legal or tax advice.",
+          "Sources: https://corpfiles.delaware.gov/LLCFormation.pdf and https://delcode.delaware.gov/title6/c018/sc02/index.html"
+        ]
+      },
+      {
+        title: "Filing fees",
+        content: [
+          "The state sets and updates its fees. Check the current filing fee, and the extra cost of certified copies and faster service, on the Division of Corporations fee schedule before you pay: https://corp.delaware.gov/fee/"
+        ]
+      },
+      {
+        title: "Registered office and registered agent",
+        content: [
+          "Every Delaware LLC must keep a registered office in Delaware and a registered agent for service of process whose business office is that same address. The agent can be the LLC itself, an individual resident in Delaware, or certain domestic or foreign entities listed in the law.",
+          "Source: 6 Del. C. § 18-104, https://delcode.delaware.gov/title6/c018/sc01/index.html"
+        ]
+      },
+      {
+        title: "Annual tax",
+        content: [
+          "Delaware LLCs pay an annual tax, due on or before June 1 for the prior year. There is no annual report to file for an LLC. Late payment carries a $200 penalty plus 1.5% interest per month on the tax and penalty. If the tax stays unpaid for three years, the law provides that the certificate of formation is canceled.",
+          "The amount is $400 under the current statute (6 Del. C. § 18-1107(b)). The 2026 act that raised it (HB 352) lists the LLC annual tax change as effective January 1, 2026, so it applies from tax year 2026. Earlier years were taxed at the previous amount, so check your own account on the state site.",
+          "Sources: https://corp.delaware.gov/alt-entitytaxinstructions/ , https://delcode.delaware.gov/title6/c018/sc11/index.html , https://legis.delaware.gov/BillDetail/143069",
+          "Be careful with look-alike tax or annual report solicitations. The state advises treating mail or email that does not come from the State or your registered agent with suspicion."
+        ]
+      },
+      {
+        title: "Getting help",
+        content: [
+          "FoundStart lists US formation providers such as Doola and Clemta in its partner catalog. Compare what each package includes, such as registered agent service, before you buy."
+        ]
+      },
+      {
+        title: "Next steps",
+        content: ["Use this short list as a starting point."],
+        list: [
+          "Check the current Delaware fees and decide who will be your registered agent",
+          "Choose a name and file the Certificate of Formation",
+          "Put June 1 on your calendar for the annual tax"
+        ]
+      }
+    ],
+    ctaText: "Explore Formation Partners",
+    relatedSlugs: []
+  },
   'marketing-agency-usa': {
     title: "How to Start a Marketing Agency in the USA with FoundStart",
     description: "Complete guide to establishing a marketing agency in the USA. Learn about LLC formation, tax requirements, and how FoundStart partners make it seamless.",
@@ -690,7 +746,7 @@ const AgencyFormationBlog: React.FC = () => {
 
 
               {/* Related Posts */}
-              <div className="mt-12">
+              {content.relatedSlugs.length > 0 && (<div className="mt-12">
                 <h3 className="text-xl font-bold mb-6">Related Articles</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {content.relatedSlugs.map((relatedSlug) => {
@@ -709,7 +765,7 @@ const AgencyFormationBlog: React.FC = () => {
                     );
                   })}
                 </div>
-              </div>
+              </div>)}
             </div>
           </section>
         </main>
