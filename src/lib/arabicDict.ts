@@ -894,6 +894,7 @@ export const arabicDict: Record<string, string> = {
 "Read more": "اقرأ المزيد",
 "Business": "الأعمال",
 "Agency Formation": "تأسيس الوكالات",
+"Banking & Finance": "الخدمات البنكية والمالية",
 "International Business": "الأعمال الدولية",
 "Digital Nomad": "الرحالة الرقميون",
 "Tax & Compliance": "الضرائب والامتثال",
