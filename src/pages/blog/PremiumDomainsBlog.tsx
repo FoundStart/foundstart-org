@@ -161,7 +161,7 @@ const PremiumDomainsBlog = () => {
 
                         <img src="/blog/covers/premium-domains-for-sale.jpg" alt="premium domains for sale" className="w-full rounded-xl shadow-lg mb-10 object-cover" loading="lazy" />
 
-          <div className="prose prose-lg max-w-none space-y-8">
+          <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">
             <Card className="p-6 bg-gradient-to-r from-primary/10 to-purple-600/10">
               <CardContent className="p-0">
                 <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
