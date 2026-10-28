@@ -1630,7 +1630,7 @@ const raw: Omit<Domain, 'id'>[] = [
   }
 ];
 
-export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d, price: '' })) // display prices suppressed until reconciled with the approved inventory;
+export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d, price: ['solivid.com', 'techyclaw.com'].includes(d.name.toLowerCase()) ? d.price : '' })) // display prices suppressed until reconciled with the approved inventory; Solivid.com + TechyClaw.com approved at $5,000 on 2026-10-28
 
 export const categories: string[] = Array.from(new Set(domainsData.map(d => d.category))).sort();
 export const hostingProviders: string[] = Array.from(new Set(domainsData.map(d => d.hosting))).sort();
