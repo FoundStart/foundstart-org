@@ -4806,5 +4806,277 @@
     "ogt": "Payment Ways & Fintech Solutions | FoundStart",
     "ogd": "Payment gateways, business banks and wallets from our partners: Stripe, Paymob, Fawry, Kashier, PayTabs, Paddle, Wise, Mercury and more.",
     "text": "Payment ways and fintech solutions. Local payment gateways in Egypt and MENA: Paymob, Fawry, Kashier, PayTabs. Global gateways: Stripe, Paddle, LemonSqueezy. Business bank accounts: Mercury, Wise, WorldFirst, Kast, Grey, Novel Bank. Digital wallets: Payeer, Airtm, RedotPay. Open your company via our country solutions."
+  },
+  "/blog/consulting-agency-germany": {
+    "title": "How to Launch a Consulting Agency in Germany: Formation Guide | FoundStart Blog",
+    "desc": "UG vs GmbH, the notary and Commercial Register steps, VAT and the small-business rule for a German consulting business, checked against official sources.",
+    "ogt": "How to Launch a Consulting Agency in Germany: Formation Guide | FoundStart Blog",
+    "ogd": "UG vs GmbH, the notary and Commercial Register steps, VAT and the small-business rule for a German consulting business, checked against official sources.",
+    "h1": "How to Launch a Consulting Agency in Germany: Formation Guide",
+    "text": "Germany is a serious market for consulting: large Mittelstand companies buy external expertise, and procurement teams expect a proper legal entity, a German tax number and correct invoices. This guide walks through how a consulting agency is actually set up in Germany, with the current official figures, so you can plan the steps and the order they come in. First decision: freelance activity or trade German tax law separates liberal professions (Freie Berufe) from commercial trades (Gewerbe).…"
+  },
+  "/blog/consulting-agency-germany-ar": {
+    "title": "كيف تؤسس وكالة استشارات في ألمانيا: دليل التأسيس | FoundStart Blog",
+    "desc": "الفرق بين UG وGmbH، وخطوات الكاتب العدل والسجل التجاري، وضريبة القيمة المضافة وقاعدة المنشآت الصغيرة، بالرجوع إلى المصادر الرسمية.",
+    "ogt": "كيف تؤسس وكالة استشارات في ألمانيا: دليل التأسيس | FoundStart Blog",
+    "ogd": "الفرق بين UG وGmbH، وخطوات الكاتب العدل والسجل التجاري، وضريبة القيمة المضافة وقاعدة المنشآت الصغيرة، بالرجوع إلى المصادر الرسمية.",
+    "h1": "كيف تؤسس وكالة استشارات في ألمانيا: دليل التأسيس",
+    "text": "ألمانيا سوق جادة للاستشارات: الشركات المتوسطة الكبيرة تشتري الخبرة الخارجية، وفرق المشتريات تتوقع كيانًا قانونيًا سليمًا ورقمًا ضريبيًا ألمانيًا وفواتير صحيحة. يشرح هذا الدليل كيف تُؤسَّس وكالة استشارات في ألمانيا فعليًا، بالأرقام الرسمية الحالية، لتعرف الخطوات وترتيبها. القرار الأول: مهنة حرة أم نشاط تجاري يميز القانون الضريبي الألماني بين المهن الحرة (Freie Berufe) والأنشطة التجارية (Gewerbe). كثير من مجالات الاستشارات التقليدية - الهندسة والاستشارات الضريبية والإدارية واستشارات تقنية…"
+  },
+  "/blog/estonia-eresidency-agency": {
+    "title": "Estonia E-Residency: Start a Digital Agency Remotely | FoundStart Blog",
+    "desc": "What Estonian e-Residency actually gives you, what it costs (€150 plus €265 to register an OÜ), how the company is taxed, and the limits to know first.",
+    "ogt": "Estonia E-Residency: Start a Digital Agency Remotely | FoundStart Blog",
+    "ogd": "What Estonian e-Residency actually gives you, what it costs (€150 plus €265 to register an OÜ), how the company is taxed, and the limits to know first.",
+    "h1": "Estonia E-Residency: Start a Digital Agency Remotely",
+    "text": "Estonia's e-Residency program lets a non-resident found and run an Estonian private limited company (OÜ) almost entirely online: digital signatures, an online business register and electronic tax filing. For a digital agency selling services across borders, it is one of the few routes to an EU company without relocating. Here is what the program actually includes in 2026, with current official fees - and what it does not include. What e-Residency is - and is not E-Residency gives you an…"
+  },
+  "/blog/estonia-eresidency-agency-ar": {
+    "title": "الإقامة الإلكترونية في إستونيا: أسّس وكالة رقمية عن بُعد | FoundStart Blog",
+    "desc": "ماذا تمنحك الإقامة الإلكترونية الإستونية فعلًا، وتكلفتها (150 يورو ثم 265 يورو لتسجيل OÜ)، وكيف تُفرض الضريبة على الشركة، والحدود التي يجب معرفتها أولًا.",
+    "ogt": "الإقامة الإلكترونية في إستونيا: أسّس وكالة رقمية عن بُعد | FoundStart Blog",
+    "ogd": "ماذا تمنحك الإقامة الإلكترونية الإستونية فعلًا، وتكلفتها (150 يورو ثم 265 يورو لتسجيل OÜ)، وكيف تُفرض الضريبة على الشركة، والحدود التي يجب معرفتها أولًا.",
+    "h1": "الإقامة الإلكترونية في إستونيا: أسّس وكالة رقمية عن بُعد",
+    "text": "يتيح برنامج الإقامة الإلكترونية في إستونيا لغير المقيم تأسيس شركة إستونية محدودة (OÜ) وإدارتها عبر الإنترنت بالكامل تقريبًا: توقيع رقمي، وسجل أعمال إلكتروني، وإقرارات ضريبية إلكترونية. ولوكالة رقمية تبيع خدمات عبر الحدود، تُعد هذه واحدة من الطرق القليلة لامتلاك شركة أوروبية دون الانتقال. إليك ما يشمله البرنامج فعلًا في 2026 بالرسوم الرسمية الحالية - وما لا يشمله. ما هي الإقامة الإلكترونية - وما ليست عليه تمنحك الإقامة الإلكترونية بطاقة هوية رقمية إستونية. بها توقّع المستندات بتوقيع رقمي معتمد،…"
+  },
+  "/blog/social-media-agency-usa": {
+    "title": "Building a Social Media Agency in the USA: Formation Guide | FoundStart Blog",
+    "desc": "LLC formation, a free EIN from the IRS, client contracts and tax basics for a US social media agency, with official sources and a launch checklist.",
+    "ogt": "Building a Social Media Agency in the USA: Formation Guide | FoundStart Blog",
+    "ogd": "LLC formation, a free EIN from the IRS, client contracts and tax basics for a US social media agency, with official sources and a launch checklist.",
+    "h1": "Building a Social Media Agency in the USA: Formation Guide",
+    "text": "A social media agency is one of the cheapest service businesses to start - and one of the easiest to run informally for too long. A proper US entity separates your personal money from the business, makes enterprise clients comfortable signing with you, and is usually required before a business bank account or payment processor will onboard you. This guide covers the formation side: what to file, what is free, and what to sort out before your first retainer. Pick the entity: LLC is the common…"
+  },
+  "/blog/social-media-agency-usa-ar": {
+    "title": "تأسيس وكالة سوشيال ميديا في الولايات المتحدة: دليل التكوين | FoundStart Blog",
+    "desc": "تأسيس LLC، والحصول على EIN مجانًا من مصلحة الضرائب الأمريكية، وعقود العملاء وأساسيات الضرائب لوكالة سوشيال ميديا أمريكية، بمصادر رسمية وقائمة إطلاق.",
+    "ogt": "تأسيس وكالة سوشيال ميديا في الولايات المتحدة: دليل التكوين | FoundStart Blog",
+    "ogd": "تأسيس LLC، والحصول على EIN مجانًا من مصلحة الضرائب الأمريكية، وعقود العملاء وأساسيات الضرائب لوكالة سوشيال ميديا أمريكية، بمصادر رسمية وقائمة إطلاق.",
+    "h1": "تأسيس وكالة سوشيال ميديا في الولايات المتحدة: دليل التكوين",
+    "text": "وكالة السوشيال ميديا من أرخص الأعمال الخدمية في البدء - ومن أسهلها في الاستمرار بشكل غير رسمي أكثر من اللازم. الكيان الأمريكي السليم يفصل أموالك الشخصية عن العمل، ويريح عملاء الشركات الكبرى عند التوقيع معك، وعادة ما يكون مطلوبًا قبل أن يفتح لك بنك أو معالج مدفوعات حسابًا. يغطي هذا الدليل جانب التأسيس: ماذا تقدّم، وما المجاني، وما الذي يجب ترتيبه قبل أول عقد شهري. اختر الكيان: LLC هو الخيار الشائع معظم وكالات الخدمات الصغيرة في أمريكا تؤسس شركة ذات مسؤولية محدودة (LLC). تحد LLC مسؤوليتك الشخصية،…"
+  },
+  "/blog/seo-agency-usa-uk": {
+    "title": "SEO Agency Formation: USA vs UK Compared | FoundStart Blog",
+    "desc": "US LLC vs UK limited company for an SEO agency: formation fees, tax rates, VAT thresholds and yearly admin, compared with current official figures.",
+    "ogt": "SEO Agency Formation: USA vs UK Compared | FoundStart Blog",
+    "ogd": "US LLC vs UK limited company for an SEO agency: formation fees, tax rates, VAT thresholds and yearly admin, compared with current official figures.",
+    "h1": "SEO Agency Formation: USA vs UK Compared",
+    "text": "SEO agencies sell across borders from day one, so founders often ask the same question first: register in the US or the UK? Both are fast, online-friendly jurisdictions. They differ on cost, tax and yearly admin. This comparison uses the current official figures, so you can match the jurisdiction to where your clients - and you - actually are. Formation cost and speed UK: a private limited company is incorporated online with Companies House for £100; same-day software filing costs more.…"
+  },
+  "/blog/seo-agency-usa-uk-ar": {
+    "title": "تأسيس وكالة سيو: مقارنة بين الولايات المتحدة وبريطانيا | FoundStart Blog",
+    "desc": "شركة LLC أمريكية أم شركة محدودة بريطانية لوكالة سيو: رسوم التأسيس ومعدلات الضريبة وحدود ضريبة القيمة المضافة والأعباء السنوية، مقارنة بأرقام رسمية حالية.",
+    "ogt": "تأسيس وكالة سيو: مقارنة بين الولايات المتحدة وبريطانيا | FoundStart Blog",
+    "ogd": "شركة LLC أمريكية أم شركة محدودة بريطانية لوكالة سيو: رسوم التأسيس ومعدلات الضريبة وحدود ضريبة القيمة المضافة والأعباء السنوية، مقارنة بأرقام رسمية حالية.",
+    "h1": "تأسيس وكالة سيو: مقارنة بين الولايات المتحدة وبريطانيا",
+    "text": "وكالات السيو تبيع عبر الحدود من اليوم الأول، لذلك يبدأ المؤسسون غالبًا بنفس السؤال: التسجيل في أمريكا أم في بريطانيا؟ كلتاهما جهة سريعة وصديقة للعمل أونلاين، لكنهما تختلفان في التكلفة والضريبة والأعباء السنوية. هذه المقارنة تستخدم الأرقام الرسمية الحالية لتطابق الجهة مع مكان عملائك - ومكانك أنت - الفعلي. تكلفة التأسيس وسرعته بريطانيا: تُسجَّل الشركة المحدودة أونلاين لدى Companies House مقابل 100 جنيه إسترليني؛ والتسجيل بنفس اليوم عبر البرمجيات يكلف أكثر. ويكتمل التسجيل عادة خلال نحو 24 ساعة.…"
+  },
+  "/blog/ppc-agency-europe": {
+    "title": "How to Start a PPC Advertising Agency in Europe | FoundStart Blog",
+    "desc": "Choosing a European entity for a PPC agency, VAT and cross-border invoicing basics, GDPR duties for ad data, and platform verification - with official…",
+    "ogt": "How to Start a PPC Advertising Agency in Europe | FoundStart Blog",
+    "ogd": "Choosing a European entity for a PPC agency, VAT and cross-border invoicing basics, GDPR duties for ad data, and platform verification - with official…",
+    "h1": "How to Start a PPC Advertising Agency in Europe",
+    "text": "A PPC agency sells trust before it sells clicks: clients hand you ad budgets, platform accounts and customer data. In Europe, that means your entity choice, your VAT handling and your data-protection duties matter as much as your media-buying skill. This guide covers the formation and compliance side for a European PPC agency. Step 1: choose where to incorporate Popular routes for service businesses include a UK limited company (£100 online incorporation), an Estonian OÜ through e-Residency…"
+  },
+  "/blog/ppc-agency-europe-ar": {
+    "title": "كيف تؤسس وكالة إعلانات مدفوعة (PPC) في أوروبا | FoundStart Blog",
+    "desc": "اختيار الكيان الأوروبي لوكالة إعلانات مدفوعة، وأساسيات ضريبة القيمة المضافة والفوترة العابرة للحدود، وواجبات GDPR لبيانات الإعلانات، وتحقق المنصات -…",
+    "ogt": "كيف تؤسس وكالة إعلانات مدفوعة (PPC) في أوروبا | FoundStart Blog",
+    "ogd": "اختيار الكيان الأوروبي لوكالة إعلانات مدفوعة، وأساسيات ضريبة القيمة المضافة والفوترة العابرة للحدود، وواجبات GDPR لبيانات الإعلانات، وتحقق المنصات -…",
+    "h1": "كيف تؤسس وكالة إعلانات مدفوعة (PPC) في أوروبا",
+    "text": "وكالة الإعلانات المدفوعة تبيع الثقة قبل النقرات: العملاء يسلمونك ميزانيات إعلانية وحسابات منصات وبيانات عملاء. وفي أوروبا، يعني ذلك أن اختيار كيانك ومعالجتك لضريبة القيمة المضافة وواجباتك في حماية البيانات لا تقل أهمية عن مهارتك في شراء الوسائط. يغطي هذا الدليل جانب التأسيس والامتثال لوكالة PPC أوروبية. الخطوة 1: اختر مكان التأسيس من المسارات الشائعة للأعمال الخدمية: شركة بريطانية محدودة (تأسيس أونلاين بـ100 جنيه)، أو OÜ إستونية عبر الإقامة الإلكترونية (طلب بـ150 يورو ثم تسجيل بـ265 يورو)، أو…"
+  },
+  "/blog/branding-agency-netherlands": {
+    "title": "Launching a Branding Agency in the Netherlands | FoundStart Blog",
+    "desc": "The Dutch BV through a civil-law notary, KvK registration (€85.15), VAT at 21% and the €20,000 small-business scheme - the real setup steps for an agency.",
+    "ogt": "Launching a Branding Agency in the Netherlands | FoundStart Blog",
+    "ogd": "The Dutch BV through a civil-law notary, KvK registration (€85.15), VAT at 21% and the €20,000 small-business scheme - the real setup steps for an agency.",
+    "h1": "Launching a Branding Agency in the Netherlands",
+    "text": "The Netherlands is a natural home for branding and design work: agencies there sell to the whole EU in English, and the business infrastructure is built for it. Here is how a branding agency is actually set up, with the current official fees. The legal form: BV The besloten vennootschap (BV) is the Dutch private limited company and the standard choice for an agency that wants limited liability and a structure clients recognize. Since the flex-BV reform, there is no substantial minimum capital -…"
+  },
+  "/blog/branding-agency-netherlands-ar": {
+    "title": "إطلاق وكالة براندينغ في هولندا | FoundStart Blog",
+    "desc": "شركة BV الهولندية عبر كاتب العدل، وتسجيل KvK (85.15 يورو)، وضريبة القيمة المضافة 21% ونظام المنشآت الصغيرة بحد 20,000 يورو - خطوات الإعداد الحقيقية لوكالة.",
+    "ogt": "إطلاق وكالة براندينغ في هولندا | FoundStart Blog",
+    "ogd": "شركة BV الهولندية عبر كاتب العدل، وتسجيل KvK (85.15 يورو)، وضريبة القيمة المضافة 21% ونظام المنشآت الصغيرة بحد 20,000 يورو - خطوات الإعداد الحقيقية لوكالة.",
+    "h1": "إطلاق وكالة براندينغ في هولندا",
+    "text": "هولندا موطن طبيعي لأعمال البراندينغ والتصميم: الوكالات هناك تبيع لكل الاتحاد الأوروبي بالإنجليزية، والبنية التحتية للأعمال مهيأة لذلك. إليك كيف تُؤسَّس وكالة براندينغ فعليًا، بالرسوم الرسمية الحالية. الشكل القانوني: BV شركة besloten vennootschap (BV) هي الشركة الهولندية المحدودة والخيار القياسي لوكالة تريد مسؤولية محدودة وهيكلًا يعرفه العملاء. ومنذ إصلاح flex-BV، لا يوجد حد أدنى جوهري لرأس المال - فالحد القانوني سنت يورو واحد. تُؤسَّس BV عبر كاتب عدل، يعدّ صك التأسيس والنظام الأساسي، ويصدر سجل…"
+  },
+  "/blog/video-agency-usa": {
+    "title": "Video Production Agency: US Formation Guide | FoundStart Blog",
+    "desc": "Forming a US video production agency: LLC setup, EIN, insurance, licensing and contracts - the business side before the first shoot.",
+    "ogt": "Video Production Agency: US Formation Guide | FoundStart Blog",
+    "ogd": "Forming a US video production agency: LLC setup, EIN, insurance, licensing and contracts - the business side before the first shoot.",
+    "h1": "Video Production Agency: US Formation Guide",
+    "text": "Video production mixes creative work with real-world risk: crews on location, rented gear, music licenses, client approvals. That mix is exactly why the business structure matters before the first booking. This guide covers forming a US video production agency - entity, taxes, insurance and the contracts that protect you. Entity: LLC first An LLC is the standard starting point: liability protection if a shoot goes wrong, simple pass-through taxation by default, and credibility with corporate…"
+  },
+  "/blog/video-agency-usa-ar": {
+    "title": "وكالة إنتاج فيديو: دليل التأسيس في الولايات المتحدة | FoundStart Blog",
+    "desc": "تأسيس وكالة إنتاج فيديو أمريكية: إعداد LLC، وEIN، والتأمين، والتراخيص والعقود - جانب الأعمال قبل أول تصوير.",
+    "ogt": "وكالة إنتاج فيديو: دليل التأسيس في الولايات المتحدة | FoundStart Blog",
+    "ogd": "تأسيس وكالة إنتاج فيديو أمريكية: إعداد LLC، وEIN، والتأمين، والتراخيص والعقود - جانب الأعمال قبل أول تصوير.",
+    "h1": "وكالة إنتاج فيديو: دليل التأسيس في الولايات المتحدة",
+    "text": "إنتاج الفيديو يمزج العمل الإبداعي بمخاطر واقعية: طواقم في مواقع تصوير، ومعدات مستأجرة، وتراخيص موسيقى، واعتمادات من العملاء. وهذا المزيج بالتحديد هو ما يجعل هيكل العمل مهمًا قبل أول حجز. يغطي هذا الدليل تأسيس وكالة إنتاج فيديو أمريكية - الكيان والضرائب والتأمين والعقود التي تحميك. الكيان: LLC أولًا شركة LLC هي نقطة البداية القياسية: حماية من المسؤولية إذا حدث خطأ في التصوير، وضريبة مباشرة بسيطة افتراضيًا، ومصداقية أمام عملاء الشركات. أسّس في الولاية التي تعمل فيها فعلًا؛ فالتسجيل في ولاية أخرى…"
+  },
+  "/blog/content-agency-uk": {
+    "title": "Starting a Content Marketing Agency in the UK | FoundStart Blog",
+    "desc": "UK content agency formation: Ltd at Companies House (£100), corporation tax, £90,000 VAT threshold, ID verification and IR35 basics.",
+    "ogt": "Starting a Content Marketing Agency in the UK | FoundStart Blog",
+    "ogd": "UK content agency formation: Ltd at Companies House (£100), corporation tax, £90,000 VAT threshold, ID verification and IR35 basics.",
+    "h1": "Starting a Content Marketing Agency in the UK",
+    "text": "Content agencies live on retainers, and the UK is one of the cheapest credible places to run one: a private limited company costs £100 to incorporate online, and the tax regime for small companies is predictable. Here is the actual setup path, with the current official figures. The vehicle: private company limited by shares A Ltd gives you limited liability and a company clients can contract with cleanly. Incorporate online at Companies House for £100 (the paper route costs more). Since 18…"
+  },
+  "/blog/content-agency-uk-ar": {
+    "title": "بدء وكالة تسويق بالمحتوى في بريطانيا | FoundStart Blog",
+    "desc": "تأسيس وكالة محتوى في بريطانيا: شركة Ltd لدى Companies House (100 جنيه)، وضريبة الشركات، وحد VAT بقيمة 90,000 جنيه، والتحقق من الهوية وأساسيات IR35.",
+    "ogt": "بدء وكالة تسويق بالمحتوى في بريطانيا | FoundStart Blog",
+    "ogd": "تأسيس وكالة محتوى في بريطانيا: شركة Ltd لدى Companies House (100 جنيه)، وضريبة الشركات، وحد VAT بقيمة 90,000 جنيه، والتحقق من الهوية وأساسيات IR35.",
+    "h1": "بدء وكالة تسويق بالمحتوى في بريطانيا",
+    "text": "وكالات المحتوى تعيش على العقود الشهرية، وبريطانيا من أرخص الأماكن الموثوقة لإدارتها: تأسيس شركة محدودة يكلف 100 جنيه أونلاين، والنظام الضريبي للشركات الصغيرة متوقَّع. إليك مسار الإعداد الفعلي بالأرقام الرسمية الحالية. الكيان: شركة خاصة محدودة بالأسهم شركة Ltd تمنحك مسؤولية محدودة وكيانًا يتعاقد معه العملاء بوضوح. أسّس أونلاين لدى Companies House مقابل 100 جنيه (المسار الورقي أغلى). ومنذ 18 نوفمبر 2025 ، يجب على المديرين والأشخاص ذوي السيطرة الكبيرة التحقق من هويتهم لدى Companies House - فخطط…"
+  },
+  "/blog/ecommerce-agency-wyoming": {
+    "title": "E-commerce Agency in Wyoming: Formation Guide | FoundStart Blog",
+    "desc": "Why e-commerce agencies pick Wyoming: $100 LLC filing, $60 minimum annual tax, no state income tax - plus where it does not save you money.",
+    "ogt": "E-commerce Agency in Wyoming: Formation Guide | FoundStart Blog",
+    "ogd": "Why e-commerce agencies pick Wyoming: $100 LLC filing, $60 minimum annual tax, no state income tax - plus where it does not save you money.",
+    "h1": "E-commerce Agency in Wyoming: Formation Guide",
+    "text": "Wyoming comes up in almost every e-commerce formation conversation, and some of what is said about it is true: the state charges $100 to file an LLC, its annual license tax starts at just $60, and it has no personal or corporate state income tax. But a Wyoming LLC does not exempt you from the rules of the state where you actually live and work. This guide separates the real advantages from the myths. What Wyoming genuinely offers Low formation cost: $100 to file the Articles of Organization…"
+  },
+  "/blog/ecommerce-agency-wyoming-ar": {
+    "title": "وكالة تجارة إلكترونية في وايومنغ: دليل التأسيس | FoundStart Blog",
+    "desc": "لماذا تختار وكالات التجارة الإلكترونية وايومنغ: تقديم LLC بمئة دولار، وحد أدنى سنوي 60 دولارًا، ولا ضريبة دخل حكومية - وأين لا يوفر عليك ذلك المال.",
+    "ogt": "وكالة تجارة إلكترونية في وايومنغ: دليل التأسيس | FoundStart Blog",
+    "ogd": "لماذا تختار وكالات التجارة الإلكترونية وايومنغ: تقديم LLC بمئة دولار، وحد أدنى سنوي 60 دولارًا، ولا ضريبة دخل حكومية - وأين لا يوفر عليك ذلك المال.",
+    "h1": "وكالة تجارة إلكترونية في وايومنغ: دليل التأسيس",
+    "text": "وايومنغ تظهر في كل نقاش تقريبًا عن تأسيس شركات التجارة الإلكترونية، وبعض ما يُقال عنها صحيح: الولاية تتقاضى 100 دولار لتقديم LLC، وضريبة الترخيص السنوية تبدأ من 60 دولارًا فقط، ولا توجد فيها ضريبة دخل حكومية على الأفراد أو الشركات. لكن LLC في وايومنغ لا تعفيك من قواعد الولاية التي تعيش وتعمل فيها فعلًا. هذا الدليل يفصل المزايا الحقيقية عن الأساطير. ما الذي تقدمه وايومنغ فعلًا تكلفة تأسيس منخفضة: 100 دولار لتقديم عقد التأسيس لدى أمين سر ولاية وايومنغ. تكلفة سنوية منخفضة: تقرير سنوي بضريبة ترخيص…"
+  },
+  "/blog/ai-tech-agency-usa": {
+    "title": "AI & Tech Agency: US Formation Guide | FoundStart Blog",
+    "desc": "Forming an AI or tech services agency in the US: LLC vs C-Corp, IP assignment, contractor rules and data-handling terms clients now demand.",
+    "ogt": "AI & Tech Agency: US Formation Guide | FoundStart Blog",
+    "ogd": "Forming an AI or tech services agency in the US: LLC vs C-Corp, IP assignment, contractor rules and data-handling terms clients now demand.",
+    "h1": "AI & Tech Agency: US Formation Guide",
+    "text": "An AI or tech services agency has two features that shape its formation choices more than any other agency type: its product is intellectual property, and it touches client data. Both show up in contracts, in tax choices and in what clients ask before signing. Here is how to set one up properly in the US. LLC or C-Corp? For a bootstrapped services agency billing clients from day one, an LLC with default pass-through taxation is usually the right start - simple, flexible, no double taxation. The…"
+  },
+  "/blog/ai-tech-agency-usa-ar": {
+    "title": "وكالة ذكاء اصطناعي وتقنية: دليل التأسيس في الولايات المتحدة | FoundStart Blog",
+    "desc": "تأسيس وكالة خدمات ذكاء اصطناعي أو تقنية في الولايات المتحدة: LLC مقابل C-Corp، والتنازل عن الملكية الفكرية، وقواعد المتعاقدين، وشروط معالجة البيانات التي…",
+    "ogt": "وكالة ذكاء اصطناعي وتقنية: دليل التأسيس في الولايات المتحدة | FoundStart Blog",
+    "ogd": "تأسيس وكالة خدمات ذكاء اصطناعي أو تقنية في الولايات المتحدة: LLC مقابل C-Corp، والتنازل عن الملكية الفكرية، وقواعد المتعاقدين، وشروط معالجة البيانات التي…",
+    "h1": "وكالة ذكاء اصطناعي وتقنية: دليل التأسيس في الولايات المتحدة",
+    "text": "وكالة خدمات الذكاء الاصطناعي أو التقنية لها سمتان تشكّلان قرارات تأسيسها أكثر من أي نوع وكالات آخر: منتجها ملكية فكرية، وتعمل على بيانات العملاء. وكلتاهما تظهران في العقود وفي الخيارات الضريبية وفيما يطلبه العملاء قبل التوقيع. إليك كيف تؤسس واحدة بشكل صحيح في الولايات المتحدة. LLC أم C-Corp؟ لوكالة خدمات ممولة ذاتيًا تفوتر العملاء من اليوم الأول، تكون LLC بالضريبة المباشرة الافتراضية هي البداية الصحيحة عادة - بسيطة ومرنة وبدون ازدواج ضريبي. أما C-Corp في ديلاوير فيدخل الصورة عندما تخطط لجمع…"
+  },
+  "/blog/pr-agency-europe": {
+    "title": "PR Agency in Europe: Where and How to Incorporate | FoundStart Blog",
+    "desc": "Incorporating a PR agency serving European clients: UK Ltd vs Estonian OÜ vs the Irish route - costs, VAT and cross-border invoicing.",
+    "ogt": "PR Agency in Europe: Where and How to Incorporate | FoundStart Blog",
+    "ogd": "Incorporating a PR agency serving European clients: UK Ltd vs Estonian OÜ vs the Irish route - costs, VAT and cross-border invoicing.",
+    "h1": "PR Agency in Europe: Where and How to Incorporate",
+    "text": "PR is a cross-border business by nature: clients, journalists and events are rarely in one country. The good news is that a services agency needs no physical presence in its clients' countries - one well-chosen European company can serve them all. Here is how the main options compare for a PR agency. Option 1: UK limited company The UK remains a strong PR hub with the London media market, and a Ltd is cheap to run: £100 to incorporate online at Companies House, £50 for the annual confirmation…"
+  },
+  "/blog/pr-agency-europe-ar": {
+    "title": "وكالة علاقات عامة في أوروبا: أين وكيف تؤسس | FoundStart Blog",
+    "desc": "تأسيس وكالة علاقات عامة تخدم عملاء أوروبيين: Ltd بريطانية مقابل OÜ إستونية مقابل المسار الأيرلندي - التكاليف وضريبة القيمة المضافة والفوترة العابرة للحدود.",
+    "ogt": "وكالة علاقات عامة في أوروبا: أين وكيف تؤسس | FoundStart Blog",
+    "ogd": "تأسيس وكالة علاقات عامة تخدم عملاء أوروبيين: Ltd بريطانية مقابل OÜ إستونية مقابل المسار الأيرلندي - التكاليف وضريبة القيمة المضافة والفوترة العابرة للحدود.",
+    "h1": "وكالة علاقات عامة في أوروبا: أين وكيف تؤسس",
+    "text": "العلاقات العامة عمل عابر للحدود بطبيعته: العملاء والصحفيون والفعاليات نادرًا ما يكونون في دولة واحدة. والخبر الجيد أن وكالة خدمات لا تحتاج حضورًا فعليًا في دول عملائها - شركة أوروبية واحدة مختارة بعناية تستطيع خدمتهم جميعًا. إليك مقارنة الخيارات الرئيسية لوكالة علاقات عامة. الخيار الأول: شركة بريطانية محدودة تظل بريطانيا مركزًا قويًا للعلاقات العامة بسوق لندن الإعلامي، وشركة Ltd رخيصة التشغيل: 100 جنيه للتأسيس أونلاين لدى Companies House، و50 جنيهًا لبيان التأكيد السنوي (إلكترونيًا)، وضريبة…"
+  },
+  "/blog/influencer-agency-comparison": {
+    "title": "Influencer Marketing Agency: US vs UK Formation | FoundStart Blog",
+    "desc": "Comparing US LLC vs UK Ltd for an influencer marketing agency: costs, taxes, FTC and ASA disclosure rules, and creator contracts.",
+    "ogt": "Influencer Marketing Agency: US vs UK Formation | FoundStart Blog",
+    "ogd": "Comparing US LLC vs UK Ltd for an influencer marketing agency: costs, taxes, FTC and ASA disclosure rules, and creator contracts.",
+    "h1": "Influencer Marketing Agency: US vs UK Formation",
+    "text": "Influencer marketing agencies sit between brands and creators, which means two things matter more than the flag on the company: whether brands can pay you easily, and whether your campaigns comply with advertising-disclosure law. Here is how the two most common bases - a US LLC and a UK Ltd - actually compare. Formation and running costs US LLC: filing fees vary by state (Wyoming charges $100, Delaware $110; Delaware adds a $300 annual LLC tax due June 1, Wyoming a $60 minimum annual license…"
+  },
+  "/blog/influencer-agency-comparison-ar": {
+    "title": "وكالة تسويق بالمؤثرين: مقارنة التأسيس بين أمريكا وبريطانيا | FoundStart Blog",
+    "desc": "مقارنة LLC الأمريكية وLtd البريطانية لوكالة تسويق بالمؤثرين: التكاليف والضرائب وقواعد الإفصاح من FTC وASA وعقود صنّاع المحتوى.",
+    "ogt": "وكالة تسويق بالمؤثرين: مقارنة التأسيس بين أمريكا وبريطانيا | FoundStart Blog",
+    "ogd": "مقارنة LLC الأمريكية وLtd البريطانية لوكالة تسويق بالمؤثرين: التكاليف والضرائب وقواعد الإفصاح من FTC وASA وعقود صنّاع المحتوى.",
+    "h1": "وكالة تسويق بالمؤثرين: مقارنة التأسيس بين أمريكا وبريطانيا",
+    "text": "وكالات التسويق بالمؤثرين تقف بين العلامات وصنّاع المحتوى، وهذا يعني أن أمرين أهم من جنسية الشركة: هل تستطيع العلامات الدفع لك بسهولة، وهل حملاتك ملتزمة بقانون الإفصاح الإعلاني. إليك مقارنة واقعية بين القاعدتين الأكثر شيوعًا - LLC أمريكية وLtd بريطانية. التأسيس وتكاليف التشغيل LLC أمريكية: رسوم التقديم تختلف حسب الولاية (وايومنغ 100 دولار، وديلاوير 110 دولارات؛ وتضيف ديلاوير ضريبة LLC سنوية 300 دولار مستحقة في الأول من يونيو، ووايومنغ حدًا أدنى لضريبة الترخيص السنوية 60 دولارًا). ولا يوجد تسجيل…"
+  },
+  "/blog/uxui-agency-uk": {
+    "title": "UX/UI Design Agency in the UK: Formation Guide | FoundStart Blog",
+    "desc": "Forming a UK UX/UI design agency: Ltd setup (£100), VAT at £90,000, IR35 for contractors, and the IP terms design clients actually check.",
+    "ogt": "UX/UI Design Agency in the UK: Formation Guide | FoundStart Blog",
+    "ogd": "Forming a UK UX/UI design agency: Ltd setup (£100), VAT at £90,000, IR35 for contractors, and the IP terms design clients actually check.",
+    "h1": "UX/UI Design Agency in the UK: Formation Guide",
+    "text": "Design agencies sell intellectual property almost exclusively, so the UK formation basics matter as much as the contract mechanics. Here is the complete setup for a UX/UI design agency in the UK, with current official figures. Company setup Incorporate a private company limited by shares online at Companies House for £100 . Since 18 November 2025 , directors and people with significant control must verify their identity with Companies House - do this first through GOV.UK One Login or an…"
+  },
+  "/blog/uxui-agency-uk-ar": {
+    "title": "وكالة تصميم UX/UI في بريطانيا: دليل التأسيس | FoundStart Blog",
+    "desc": "تأسيس وكالة تصميم UX/UI بريطانية: إعداد Ltd (100 جنيه)، وVAT عند 90,000 جنيه، وIR35 للمتعاقدين، وشروط الملكية الفكرية التي يفحصها عملاء التصميم فعلًا.",
+    "ogt": "وكالة تصميم UX/UI في بريطانيا: دليل التأسيس | FoundStart Blog",
+    "ogd": "تأسيس وكالة تصميم UX/UI بريطانية: إعداد Ltd (100 جنيه)، وVAT عند 90,000 جنيه، وIR35 للمتعاقدين، وشروط الملكية الفكرية التي يفحصها عملاء التصميم فعلًا.",
+    "h1": "وكالة تصميم UX/UI في بريطانيا: دليل التأسيس",
+    "text": "وكالات التصميم تبيع ملكية فكرية بشكل شبه حصري، لذا فإن أساسيات التأسيس البريطاني مهمة بقدر آليات العقود. إليك الإعداد الكامل لوكالة تصميم UX/UI في بريطانيا، بالأرقام الرسمية الحالية. إعداد الشركة أسّس شركة خاصة محدودة بالأسهم أونلاين لدى Companies House مقابل 100 جنيه . ومنذ 18 نوفمبر 2025 ، يجب على المديرين والأشخاص ذوي السيطرة الكبيرة التحقق من هويتهم لدى Companies House - فأنجز ذلك أولًا عبر GOV.UK One Login أو وكيل معتمد. سجّل لضريبة الشركات لدى HMRC بعد التأسيس؛ والمعدلات الحالية 19% على…"
+  },
+  "/blog/full-service-agency-multicountry": {
+    "title": "Full-Service Agency: Multi-Country Setup Strategy | FoundStart Blog",
+    "desc": "One entity or several? How a full-service agency structures across the US, UK and EU - permanent establishment, transfer pricing and VAT basics.",
+    "ogt": "Full-Service Agency: Multi-Country Setup Strategy | FoundStart Blog",
+    "ogd": "One entity or several? How a full-service agency structures across the US, UK and EU - permanent establishment, transfer pricing and VAT basics.",
+    "h1": "Full-Service Agency: Multi-Country Setup Strategy",
+    "text": "A full-service agency with clients on both sides of the Atlantic eventually faces the question: one company invoicing everywhere, or a local entity per market? The answer has real tax and liability consequences, and the wrong structure discovered late is expensive to unwind. This guide covers the framework and the traps. Start with one well-placed entity Services travel well. A single company - a US LLC, a UK Ltd or an Estonian OÜ - can contract with clients in most countries, invoice in their…"
+  },
+  "/blog/full-service-agency-multicountry-ar": {
+    "title": "الوكالة المتكاملة: استراتيجية التأسيس متعدد الدول | FoundStart Blog",
+    "desc": "كيان واحد أم عدة كيانات؟ كيف تهيكل وكالة متكاملة عبر أمريكا وبريطانيا والاتحاد الأوروبي - أساسيات المنشأة الدائمة وتسعير التحويلات وضريبة القيمة المضافة.",
+    "ogt": "الوكالة المتكاملة: استراتيجية التأسيس متعدد الدول | FoundStart Blog",
+    "ogd": "كيان واحد أم عدة كيانات؟ كيف تهيكل وكالة متكاملة عبر أمريكا وبريطانيا والاتحاد الأوروبي - أساسيات المنشأة الدائمة وتسعير التحويلات وضريبة القيمة المضافة.",
+    "h1": "الوكالة المتكاملة: استراتيجية التأسيس متعدد الدول",
+    "text": "الوكالة المتكاملة التي لها عملاء على ضفتي الأطلسي تواجه عاجلًا أم آجلًا السؤال: شركة واحدة تفوتر في كل مكان، أم كيان محلي لكل سوق؟ للإجابة عواقب ضريبية وقانونية حقيقية، والهيكل الخاطئ المكتشف متأخرًا مكلف التفكيك. يغطي هذا الدليل الإطار والفخاخ. ابدأ بكيان واحد في مكان مدروس الخدمات تسافر جيدًا. شركة واحدة - LLC أمريكية أو Ltd بريطانية أو OÜ إستونية - تستطيع التعاقد مع عملاء في معظم الدول، والفوترة بعملتهم، وتطبيق المعاملة الصحيحة لضريبة القيمة المضافة أو ضريبة المبيعات عن بُعد. إضافة كيانات…"
+  },
+  "/blog/banking-solutions-mercury-vs-traditional": {
+    "title": "Mercury vs Traditional Business Banking for Startups | FoundStart Blog",
+    "desc": "Mercury vs a traditional US business bank account: how each works, FDIC coverage mechanics, eligibility for non-US founders, and fees.",
+    "ogt": "Mercury vs Traditional Business Banking for Startups | FoundStart Blog",
+    "ogd": "Mercury vs a traditional US business bank account: how each works, FDIC coverage mechanics, eligibility for non-US founders, and fees.",
+    "h1": "Mercury vs Traditional Business Banking for Startups",
+    "text": "For a new US company - especially one founded from abroad - the banking decision usually comes down to a fintech like Mercury versus a traditional bank. They work differently under the hood, and understanding that difference matters for how your money is protected. This comparison sticks to what the providers themselves publish. First: what Mercury actually is Mercury is a financial technology company, not a bank. Banking services are provided by its partner banks - Choice Financial Group and…"
+  },
+  "/blog/banking-solutions-mercury-vs-traditional-ar": {
+    "title": "Mercury مقابل الخدمات البنكية التقليدية للشركات الناشئة | FoundStart Blog",
+    "desc": "Mercury مقابل حساب بنكي أمريكي تقليدي للشركات: كيف يعمل كل منهما، وآليات تغطية FDIC، والأهلية للمؤسسين غير الأمريكيين، والرسوم.",
+    "ogt": "Mercury مقابل الخدمات البنكية التقليدية للشركات الناشئة | FoundStart Blog",
+    "ogd": "Mercury مقابل حساب بنكي أمريكي تقليدي للشركات: كيف يعمل كل منهما، وآليات تغطية FDIC، والأهلية للمؤسسين غير الأمريكيين، والرسوم.",
+    "h1": "Mercury مقابل الخدمات البنكية التقليدية للشركات الناشئة",
+    "text": "لشركة أمريكية جديدة - خاصة واحدة أسّسها شخص من الخارج - يختصر قرار الخدمات البنكية عادة بين شركة تقنية مالية مثل Mercury وبنك تقليدي. وهما يعملان بشكل مختلف في العمق، وفهم ذلك الاختلاف مهم لكيفية حماية أموالك. هذه المقارنة تلتزم بما ينشره المزودون أنفسهم. أولًا: ما هو Mercury فعلًا Mercury شركة تقنية مالية، وليست بنكًا. الخدمات البنكية تقدمها بنوكها الشريكة - Choice Financial Group وColumn N.A.، وكلاهما عضو في FDIC. ودائعك محفوظة لدى تلك البنوك، بينما تبني Mercury طبقة البرمجيات فوقها: لوحة…"
+  },
+  "/blog/ein-application-guide": {
+    "title": "How to Get an EIN: Complete Application Guide | FoundStart Blog",
+    "desc": "Getting an EIN from the IRS is free - online for US-based applicants, phone/fax/mail (Form SS-4) for international founders. Every route explained.",
+    "ogt": "How to Get an EIN: Complete Application Guide | FoundStart Blog",
+    "ogd": "Getting an EIN from the IRS is free - online for US-based applicants, phone/fax/mail (Form SS-4) for international founders. Every route explained.",
+    "h1": "How to Get an EIN: Complete Application Guide",
+    "text": "The Employer Identification Number (EIN) is your US company's federal tax ID - you need it to open a business bank account, file taxes and hire. The single most important fact: the IRS issues EINs for free . Any website charging you for \"EIN filing\" is selling convenience, not the number itself. Here is every legitimate route. Route 1: online (US-based applicants) If your principal business, agency or office is in the US and the responsible party has a valid SSN, ITIN or existing EIN, you can…"
+  },
+  "/blog/ein-application-guide-ar": {
+    "title": "كيف تحصل على الرقم الضريبي EIN: دليل التقديم الكامل | FoundStart Blog",
+    "desc": "الحصول على EIN من مصلحة الضرائب مجاني - أونلاين للمتقدمين داخل أمريكا، وعبر الهاتف أو الفاكس أو البريد (نموذج SS-4) للمؤسسين الدوليين. كل المسارات مشروحة.",
+    "ogt": "كيف تحصل على الرقم الضريبي EIN: دليل التقديم الكامل | FoundStart Blog",
+    "ogd": "الحصول على EIN من مصلحة الضرائب مجاني - أونلاين للمتقدمين داخل أمريكا، وعبر الهاتف أو الفاكس أو البريد (نموذج SS-4) للمؤسسين الدوليين. كل المسارات مشروحة.",
+    "h1": "كيف تحصل على الرقم الضريبي EIN: دليل التقديم الكامل",
+    "text": "الرقم الضريبي الفيدرالي EIN هو المعرف الضريبي لشركتك الأمريكية - تحتاجه لفتح حساب بنكي للشركة وتقديم الضرائب والتوظيف. وأهم حقيقة: مصلحة الضرائب تصدر EIN مجانًا . أي موقع يتقاضى منك مقابل \"تقديم EIN\" يبيعك راحة، لا الرقم نفسه. إليك كل المسارات المشروعة. المسار الأول: أونلاين (للمتقدمين داخل الولايات المتحدة) إذا كان نشاطك الرئيسي أو وكالتك أو مكتبك في الولايات المتحدة وكان الطرف المسؤول يملك رقم ضمان اجتماعي SSN أو ITIN أو EIN قائمًا صالحًا، يمكنك استخدام طلب EIN الإلكتروني على موقع المصلحة…"
+  },
+  "/blog/delaware-vs-wyoming-llc": {
+    "title": "Delaware vs Wyoming LLC: Real Costs Compared | FoundStart Blog",
+    "desc": "Delaware LLC: $110 filing + $300 annual tax. Wyoming: $100 filing + $60 minimum annual tax. Which state actually fits your business - with the caveats.",
+    "ogt": "Delaware vs Wyoming LLC: Real Costs Compared | FoundStart Blog",
+    "ogd": "Delaware LLC: $110 filing + $300 annual tax. Wyoming: $100 filing + $60 minimum annual tax. Which state actually fits your business - with the caveats.",
+    "h1": "Delaware vs Wyoming LLC: Real Costs Compared",
+    "text": "Delaware and Wyoming are the two states most recommended for LLC formation - and the most oversimplified. The filing-fee comparison is the easy part; the real question is where you operate, what you are building, and whether investors are in your future. Here are the current official numbers and an honest decision framework. The numbers, side by side Filing fee: Delaware $110 for the Certificate of Formation; Wyoming $100 for the Articles of Organization. Annual cost: Delaware LLCs pay a flat…"
+  },
+  "/blog/delaware-vs-wyoming-llc-ar": {
+    "title": "ديلاوير مقابل وايومنغ LLC: مقارنة التكاليف الحقيقية | FoundStart Blog",
+    "desc": "ديلاوير LLC: تقديم 110 دولارات + ضريبة سنوية 300 دولار. وايومنغ: تقديم 100 دولار + حد أدنى سنوي 60 دولارًا. أي ولاية تناسب عملك فعلًا - مع التحفظات.",
+    "ogt": "ديلاوير مقابل وايومنغ LLC: مقارنة التكاليف الحقيقية | FoundStart Blog",
+    "ogd": "ديلاوير LLC: تقديم 110 دولارات + ضريبة سنوية 300 دولار. وايومنغ: تقديم 100 دولار + حد أدنى سنوي 60 دولارًا. أي ولاية تناسب عملك فعلًا - مع التحفظات.",
+    "h1": "ديلاوير مقابل وايومنغ LLC: مقارنة التكاليف الحقيقية",
+    "text": "ديلاوير ووايومنغ هما الولاتيان الأكثر ترشيحًا لتأسيس LLC - والأكثر تبسيطًا بشكل مضلل. مقارنة رسوم التقديم هي الجزء السهل؛ أما السؤال الحقيقي فهو أين تعمل، وما الذي تبنيه، وهل يوجد مستثمرون في مستقبلك. إليك الأرقام الرسمية الحالية وإطار قرار صادق. الأرقام جنبًا إلى جنب رسم التقديم: ديلاوير 110 دولارات لشهادة التأسيس؛ وايومنغ 100 دولار لعقد التأسيس. التكلفة السنوية: شركات ديلاوير تدفع ضريبة سنوية ثابتة 300 دولار مستحقة في الأول من يونيو ، دون اشتراط تقرير سنوي؛ والتأخر يضيف غرامة 200 دولار مع…"
   }
 }
