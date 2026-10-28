@@ -1128,15 +1128,6 @@ const raw: Omit<Domain, 'id'>[] = [
     "marketplace": "Unstoppable"
   },
   {
-    "name": "Solivid.com",
-    "hosting": "Spaceship",
-    "category": "Startups, SaaS & Tech",
-    "price": "150",
-    "businessType": "Domain",
-    "buyUrl": "https://solivid.com",
-    "marketplace": "Spaceship"
-  },
-  {
     "name": "Storecho.com",
     "hosting": "Spaceship",
     "category": "E-Commerce & Marketplaces",
