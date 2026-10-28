@@ -954,9 +954,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "hosting": "UD",
     "category": "Tech / Niche",
     "price": "5000",
-    "businessType": "Domain",
-    "buyUrl": "https://unstoppabledomains.com/d/techyclaw.com",
-    "marketplace": "Unstoppable"
+    "businessType": "Domain"
   },
   {
     "name": "TodaysClaw.com",
