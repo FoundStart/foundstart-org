@@ -55,7 +55,7 @@ const PremiumDomainsBlog = () => {
       domains: [
         { name: "CometCall.com", price: "$250" },
         { name: "HeyKeyword.com", price: "$5,000" },
-        { name: "Solivid.com", price: "Not for sale" },
+        { name: "Solivid.com", price: "$5,000" },
         { name: "Expensol.com", price: "$400" },
         { name: "Hosstec.com", price: "$250" },
       ]

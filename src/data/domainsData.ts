@@ -953,7 +953,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "TechyClaw.com",
     "hosting": "UD",
     "category": "Tech / Niche",
-    "price": "200",
+    "price": "5000",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/techyclaw.com",
     "marketplace": "Unstoppable"
@@ -1126,6 +1126,15 @@ const raw: Omit<Domain, 'id'>[] = [
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/mistonia.com",
     "marketplace": "Unstoppable"
+  },
+  {
+    "name": "Solivid.com",
+    "hosting": "Spaceship",
+    "category": "Startups, SaaS & Tech",
+    "price": "5000",
+    "businessType": "Domain",
+    "buyUrl": "https://www.spaceship.com/domain-search/?query=solivid.com&tab=domains",
+    "marketplace": "Spaceship"
   },
   {
     "name": "Storecho.com",
