@@ -16,6 +16,7 @@ export interface BlogPost {
 import { foundstartBlogPosts } from './foundstartArticles';
 import { shortetArBlogPosts } from './shortetArticlesAr';
 import { arExtraPosts } from './foundstartAr2';
+import { agencyBlogPosts } from './foundstartAgencyArticles';
 
 // Posts with unverified market figures: redirected to /blog, hidden from the index (no hard delete).
 export const HIDDEN_BLOG_SLUGS = new Set(["uk-vs-us-company-formation","uk-vs-us-company-formation-ar","marketing-agency-usa","marketing-agency-usa-ar","digital-agency-uk","digital-agency-uk-ar"]);
@@ -23,6 +24,7 @@ const allBlogPosts: BlogPost[] = [
   ...(foundstartBlogPosts as BlogPost[]),
   ...(shortetArBlogPosts as BlogPost[]),
   ...(arExtraPosts as BlogPost[]),
+  ...(agencyBlogPosts as BlogPost[]),
   {"id": 320, "title": "Shortet 2.0 Launches on Product Hunt: Short Links, Bio Pages and QR Codes in One Platform", "description": "Shortet 2.0 is launching on Product Hunt. Create short links, link-in-bio pages and QR codes from one dashboard. Watch the video and support the launch.", "category": "Business", "author": "Mohamed Sayed", "date": "Oct 17, 2026", "readTime": "9 min read", "slug": "shortet-2-0-launches-on-product-hunt-short-links-bio-pages-and-qr-codes-in-one-platform", "image": "/blog/shortet-2-0-launches-on-product-hunt-short-links-bio-pages-and-qr-codes-in-one-platform-fbdd5603.webp"},
   {"id": 319, "title": "Online company formation: questions to answer before choosing a service", "description": "Compare formation scope with ongoing obligations. Explore Clemta and GoNomad examples and prepare questions on filings, renewals and banking eligibility.", "category": "Business", "author": "Mohamed Sayed", "date": "Oct 16, 2026", "readTime": "10 min read", "slug": "company-formation-checklist", "image": "/blog/company-formation-checklist-02813472.webp"},
   {"id": 318, "title": "Company formation services compared: US, UK and EU routes", "description": "Compare company formation services for US LLCs, UK limited companies and EU entities. Verified examples, cost questions and a pre-payment checklist.", "category": "Business", "author": "Mohamed Sayed", "date": "Oct 16, 2026", "readTime": "13 min read", "slug": "company-formation-guide", "image": "/blog/covers/company-formation-guide.jpg"},
@@ -265,193 +267,6 @@ const allBlogPosts: BlogPost[] = [
     slug: "creative-agency-delaware",
     image: "/blog/covers/creative-agency-delaware.jpg"
   },
-  {
-    id: 7,
-    title: "How to Launch Your Consulting Agency in Germany with FoundStart",
-    description: "Complete guide to setting up a consulting business in Germany through FoundStart's European partners.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 16, 2026",
-    readTime: "10 min read",
-    slug: "consulting-agency-germany",
-    image: "/blog/covers/consulting-agency-germany.jpg"
-  },
-  {
-    id: 8,
-    title: "Estonia E-Residency: Start Your Digital Agency Remotely",
-    description: "How to leverage Estonia's E-Residency program to build a location-independent agency with FoundStart.",
-    category: "Digital Nomad",
-    author: "FoundStart Team",
-    date: "Jan 15, 2026",
-    readTime: "12 min read",
-    slug: "estonia-eresidency-agency",
-    image: "/blog/covers/estonia-eresidency-agency.jpg"
-  },
-  {
-    id: 9,
-    title: "Building a Social Media Agency in the USA: Complete Guide",
-    description: "From LLC formation to client acquisition - everything about starting a social media agency in America.",
-    category: "Agency Formation",
-    author: "MoMo Sa",
-    date: "Jan 14, 2026",
-    readTime: "9 min read",
-    slug: "social-media-agency-usa",
-    image: "/blog/covers/social-media-agency-usa.jpg"
-  },
-  {
-    id: 10,
-    title: "SEO Agency Formation: USA vs UK Comparison",
-    description: "Detailed comparison of launching an SEO agency in the USA versus the UK with FoundStart partners.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 13, 2026",
-    readTime: "10 min read",
-    slug: "seo-agency-usa-uk",
-    image: "/blog/covers/seo-agency-usa-uk.jpg"
-  },
-  {
-    id: 11,
-    title: "How to Start a PPC Advertising Agency in Europe",
-    description: "Guide to establishing a PPC/paid advertising agency in European countries through FoundStart.",
-    category: "Agency Formation",
-    author: "Sarah Johnson",
-    date: "Jan 12, 2026",
-    readTime: "8 min read",
-    slug: "ppc-agency-europe",
-    image: "/blog/covers/ppc-agency-europe.jpg"
-  },
-  {
-    id: 12,
-    title: "Launching a Branding Agency in the Netherlands",
-    description: "Complete process for setting up a branding and design agency in the Netherlands with FoundStart.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 11, 2026",
-    readTime: "9 min read",
-    slug: "branding-agency-netherlands",
-    image: "/blog/covers/branding-agency-netherlands.jpg"
-  },
-  {
-    id: 13,
-    title: "Video Production Agency: US Formation with FoundStart",
-    description: "How to establish a video production agency in the USA using FoundStart's partner network.",
-    category: "Agency Formation",
-    author: "MoMo Sa",
-    date: "Jan 10, 2026",
-    readTime: "8 min read",
-    slug: "video-agency-usa",
-    image: "/blog/covers/video-agency-usa.jpg"
-  },
-  {
-    id: 14,
-    title: "Content Marketing Agency in the UK: Complete Setup Guide",
-    description: "Everything you need to launch a content marketing agency in the United Kingdom.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 9, 2026",
-    readTime: "10 min read",
-    slug: "content-agency-uk",
-    image: "/blog/covers/content-agency-uk.jpg"
-  },
-  {
-    id: 15,
-    title: "E-commerce Agency Formation: Wyoming LLC Guide",
-    description: "Why Wyoming is ideal for e-commerce agencies and how FoundStart makes formation simple.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 8, 2026",
-    readTime: "7 min read",
-    slug: "ecommerce-agency-wyoming",
-    image: "/blog/covers/ecommerce-agency-wyoming.jpg"
-  },
-  {
-    id: 16,
-    title: "Starting an AI/Tech Agency in the USA with FoundStart",
-    description: "Guide to establishing an AI or technology consulting agency in the United States.",
-    category: "Agency Formation",
-    author: "MoMo Sa",
-    date: "Jan 7, 2026",
-    readTime: "11 min read",
-    slug: "ai-tech-agency-usa",
-    image: "/blog/covers/ai-tech-agency-usa.jpg"
-  },
-  {
-    id: 17,
-    title: "PR Agency Formation in Europe: A Complete Guide",
-    description: "How to set up a public relations agency in European countries through FoundStart's partners.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 6, 2026",
-    readTime: "9 min read",
-    slug: "pr-agency-europe",
-    image: "/blog/covers/pr-agency-europe.jpg"
-  },
-  {
-    id: 18,
-    title: "Influencer Marketing Agency: USA vs Europe",
-    description: "Comparing influencer marketing agency formation in the USA and Europe with FoundStart.",
-    category: "Agency Formation",
-    author: "Sarah Johnson",
-    date: "Jan 5, 2026",
-    readTime: "8 min read",
-    slug: "influencer-agency-comparison",
-    image: "/blog/covers/influencer-agency-comparison.jpg"
-  },
-  {
-    id: 19,
-    title: "UX/UI Design Agency in the UK: Formation Guide",
-    description: "Complete guide to launching a UX/UI design agency in the United Kingdom.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 4, 2026",
-    readTime: "10 min read",
-    slug: "uxui-agency-uk",
-    image: "/blog/covers/uxui-agency-uk.jpg"
-  },
-  {
-    id: 20,
-    title: "Full-Service Agency Formation: Multi-Country Options",
-    description: "How FoundStart helps you establish a full-service agency with presence in multiple countries.",
-    category: "Agency Formation",
-    author: "FoundStart Team",
-    date: "Jan 3, 2026",
-    readTime: "12 min read",
-    slug: "full-service-agency-multicountry",
-    image: "/blog/covers/full-service-agency-multicountry.jpg"
-  },
-  {
-    id: 21,
-    title: "Banking Solutions for New Businesses: Mercury vs Traditional Banks",
-    description: "Explore the best banking options for startups, including digital banks like Mercury and traditional banking solutions.",
-    category: "Banking",
-    author: "David Chen",
-    date: "Dec 10, 2024",
-    readTime: "7 min read",
-    slug: "banking-solutions-mercury-vs-traditional",
-    image: "/blog/covers/banking-solutions-mercury-vs-traditional.jpg"
-  },
-  {
-    id: 22,
-    title: "EIN Application Process: Step-by-Step Guide",
-    description: "Learn how to obtain your Employer Identification Number (EIN) quickly and efficiently for your new business.",
-    category: "Tax & Compliance",
-    author: "Lisa Rodriguez",
-    date: "Dec 8, 2024",
-    readTime: "5 min read",
-    slug: "ein-application-guide",
-    image: "/blog/covers/ein-application-guide.jpg"
-  },
-  {
-    id: 23,
-    title: "Delaware vs Wyoming: Best States for LLC Formation",
-    description: "Compare the top states for LLC formation, including tax benefits, privacy protections, and business-friendly laws.",
-    category: "Business Formation",
-    author: "Michael Turner",
-    date: "Dec 5, 2024",
-    readTime: "9 min read",
-    slug: "delaware-vs-wyoming-llc",
-    image: "/blog/covers/delaware-vs-wyoming-llc.jpg"
-  }
 ];
 export const blogPosts: BlogPost[] = allBlogPosts.filter((p) => !HIDDEN_BLOG_SLUGS.has(p.slug));
 

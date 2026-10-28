@@ -10,9 +10,10 @@ import { Helmet } from 'react-helmet-async';
 import { shortetArticles as baseArticles, shortetArticleOrder as baseOrder } from '@/data/shortetArticlesData';
 import { foundstartArticles, foundstartArticleOrder } from '@/data/foundstartArticles';
 import { shortetArticlesAr, shortetArticlesArOrder } from '@/data/shortetArticlesAr';
+import { agencyArticles, agencyArticleOrder } from '@/data/foundstartAgencyArticles';
 
-const shortetArticles = { ...baseArticles, ...foundstartArticles, ...shortetArticlesAr };
-const shortetArticleOrder = [...foundstartArticleOrder, ...shortetArticlesArOrder, ...baseOrder];
+const shortetArticles = { ...baseArticles, ...foundstartArticles, ...shortetArticlesAr, ...agencyArticles };
+const shortetArticleOrder = [...agencyArticleOrder, ...foundstartArticleOrder, ...shortetArticlesArOrder, ...baseOrder];
 import AgencyFormationBlog from './AgencyFormationBlog';
 import { postTime } from '@/lib/blogSort';
 
