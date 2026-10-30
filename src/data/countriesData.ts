@@ -38,7 +38,7 @@ export const countriesData = [
     currency: 'GBP',
     ctaUrl: 'https://shortet.com/1st-formations',
     videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM',
-    description: 'Establish your UK company with leading formation partners including 1office, Firstbase, 1stFormations, Privatily, Rapid Formation, and Go Nomad HQ.',
+    description: 'Establish your UK company with leading formation partners including 1office, 1stFormations, Privatily, Rapid Formation, and Go Nomad HQ.',
     benefits: [
       'Gateway to European markets',
       'Strong legal and regulatory framework',
@@ -49,7 +49,6 @@ export const countriesData = [
     ],
     partners: [
       { name: '1office', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
-      { name: 'Firstbase', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
       { name: '1stFormations', url: 'https://shortet.com/1st-formations', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
       { name: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
       { name: 'Rapid Formation', url: 'https://shortet.com/rapid-formations', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
@@ -64,9 +63,9 @@ export const countriesData = [
     price: '$700',
     timeframe: '7-10 business days',
     currency: 'CAD',
-    ctaUrl: 'https://shortet.com/privatily',
+    ctaUrl: 'https://shortet.com/foundstart',
     videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
-    description: 'Start your Canadian business with Privatily, our trusted formation partner.',
+    description: 'Start your Canadian business with guidance from our vetted formation resources.',
     benefits: [
       'Stable political and economic environment',
       'Access to NAFTA/USMCA markets',
@@ -75,9 +74,7 @@ export const countriesData = [
       'Innovation and technology incentives',
       'High quality of life'
     ],
-    partners: [
-      { name: 'Privatily', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q' },
-    ],
+    partners: [],
     keyStats: { gdp: '$1.7T', population: '38M', easeOfBusiness: '23rd', corporateTax: '15%' }
   },
   {

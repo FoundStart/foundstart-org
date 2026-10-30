@@ -25,11 +25,11 @@ const USA: Partner[] = [
   { name: 'Privatily — Privacy-First Formation (USA & UK)', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q', note: 'Privacy-conscious founders in the US and UK.' },
   { name: 'Tailorbrands — Formation + Brand Identity', url: 'https://shortet.com/tailorbrands', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E', note: 'New founders who need legal + brand in one package.' },
   { name: 'Startfleet — Fast US LLC for Startups', url: 'https://shortet.com/startfleet', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM', note: 'Tech startup founders who want a streamlined experience.' },
+  { name: 'Firstbase — US Incorporation + Business Address', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
 ];
 
 const UK: Partner[] = [
   { name: '1office — UK, Estonia & Baltic Europe Specialist', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
-  { name: 'Firstbase — UK Formation + Business Address', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
   { name: '1stFormations — UK\u2019s Most Established Provider', url: 'https://shortet.com/1st-formations', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
   { name: 'Privatily (UK)', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
   { name: 'Rapid Formations — Same-Day UK Company Registration', url: 'https://shortet.com/rapid-formations', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },

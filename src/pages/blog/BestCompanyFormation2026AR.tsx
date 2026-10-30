@@ -25,11 +25,11 @@ const USA: Partner[] = [
   { name: 'Privatily — تأسيس يركز على الخصوصية (أمريكا والمملكة المتحدة)', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q', note: 'للمؤسسين المهتمين بالخصوصية في أمريكا والمملكة المتحدة.' },
   { name: 'Tailorbrands — التأسيس وبناء الهوية التجارية', url: 'https://shortet.com/tailorbrands', videoUrl: 'https://www.youtube.com/watch?v=W4wbVlR2b-E', note: 'للمؤسسين الجدد الذين يحتاجون إلى الجانب القانوني والهوية التجارية في باقة واحدة.' },
   { name: 'Startfleet — تأسيس سريع لشركات الـ LLC الناشئة', url: 'https://shortet.com/startfleet', videoUrl: 'https://www.youtube.com/watch?v=ALSx9TKGAeM', note: 'لمؤسسي الشركات التقنية الناشئة الذين يبحثون عن تجربة سلسة.' },
+  { name: 'Firstbase — تأسيس شركة أمريكية + عنوان عمل', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
 ];
 
 const UK: Partner[] = [
   { name: '1office — متخصص في المملكة المتحدة، إستونيا ودول البلطيق', url: 'https://shortet.com/1office', videoUrl: 'https://www.youtube.com/watch?v=B9X1-xxE-UY' },
-  { name: 'Firstbase — تأسيس شركة في المملكة المتحدة + عنوان عمل', url: 'https://shortet.com/firstbase', videoUrl: 'https://www.youtube.com/watch?v=juXv8iz-jDg' },
   { name: '1stFormations — المزود الأكثر رسوخاً في المملكة المتحدة', url: 'https://shortet.com/1st-formations', videoUrl: 'https://www.youtube.com/watch?v=955CDcBJuWM' },
   { name: 'Privatily (المملكة المتحدة)', url: 'https://shortet.com/privatily', videoUrl: 'https://www.youtube.com/watch?v=2S3luWiTWZ0' },
   { name: 'Rapid Formations — تسجيل الشركات في المملكة المتحدة في نفس اليوم', url: 'https://shortet.com/rapid-formations', videoUrl: 'https://www.youtube.com/watch?v=yvbwFtm0cDg' },
