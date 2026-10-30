@@ -3,7 +3,7 @@ import { formationCountries, minPrice } from './formationCatalog';
 const jurisdictionBase = [
   { flag: "🇺🇸", name: "USA", description: "Delaware, Wyoming, Nevada formations", timeframe: "3-5 days", partners: 8, price: "From $299", benefits: ["EIN included", "Registered Agent", "US Bank Account options"] },
   { flag: "🇬🇧", name: "UK", description: "England, Scotland, Wales formations", timeframe: "1-3 days", partners: 5, price: "From £199", benefits: ["Company House filing", "Registered Office", "VAT Registration"] },
-  { flag: "🇨🇦", name: "Canada", description: "Federal and Provincial formations", timeframe: "5-10 days", partners: 1, price: "From CAD $399", benefits: ["Business Number", "Registered Office", "Banking assistance"] },
+  { flag: "🇨🇦", name: "Canada", description: "Federal and Provincial formations", timeframe: "5-10 days", partners: 0, price: "", benefits: ["Business Number", "Registered Office", "Banking assistance"] },
   { flag: "🇪🇪", name: "Estonia", description: "EU Digital-first formations", timeframe: "1-3 days", partners: 1, price: "From €300", benefits: ["e-Residency", "Digital signature", "EU market access"] },
   { flag: "🇫🇮", name: "Finland", description: "Nordic business formations", timeframe: "3-7 days", partners: 1, price: "From €350", benefits: ["Business ID", "Nordic market", "Banking setup"] },
   { flag: "🇸🇪", name: "Sweden", description: "Scandinavian formations", timeframe: "3-7 days", partners: 1, price: "From SEK 3,500", benefits: ["Business registration", "Scandinavian access", "VAT setup"] },
