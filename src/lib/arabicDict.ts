@@ -3577,7 +3577,7 @@ export const arabicDict: Record<string, string> = {
 "Expert advice for a smooth nomadic journey": "نصائح الخبراء لتجربة ترحال مريحة"
 ,
 "See the exact FoundStart fee for your company formation. Select your country and entity type to see your total cost.": "تعرف على رسوم FoundStart الدقيقة لتأسيس شركتك. اختر الدولة ونوع الكيان لعرض التكلفة الإجمالية.",
-"Select from 10 countries": "اختر من بين 10 دول",
+"Select from 9 countries": "اختر من بين 9 دول",
 "3. See Your Price": "3. اعرض السعر",
 "Toggle menu": "تغيير عرض القائمة",
 "FoundStart Home": "الرئيسية - FoundStart",

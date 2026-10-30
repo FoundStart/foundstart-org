@@ -113,7 +113,7 @@ const Countries = () => {
                         { label: 'GDP', value: selectedCountryData.keyStats.gdp },
                         { label: 'Population', value: selectedCountryData.keyStats.population },
                         { label: 'Ease of Business', value: selectedCountryData.keyStats.easeOfBusiness },
-                        { label: 'Corporate Tax', value: selectedCountryData.keyStats.corporateTax },
+                        { label: 'Corporate Tax', value: (isRTL && selectedCountryData.id === 'CA') ? '15% فدرالية' : selectedCountryData.keyStats.corporateTax },
                       ].filter((stat) => stat.value).map((stat) => (
                         <Card key={stat.label} className="text-center p-3">
                           <div className="text-sm font-bold">{stat.value}</div>

@@ -70,8 +70,8 @@ export const countriesData = [
     currency: 'CAD',
     ctaUrl: 'https://shortet.com/foundstart',
     videoUrl: 'https://www.youtube.com/watch?v=M6kqj4gOo_Q',
-    description: 'Start your Canadian business with guidance from our vetted formation resources.',
-    descriptionAr: 'ابدأ عملك في كندا بإرشاد من موارد التأسيس الموثوقة لدينا.',
+    description: 'Learn how company formation works in Canada: business structures, requirements and key considerations. FoundStart does not currently offer a Canada formation service.',
+    descriptionAr: 'تعرف على كيفية تأسيس الشركات في كندا: الهياكل والمتطلبات والاعتبارات الأساسية. لا تقدم FoundStart حالياً خدمة تأسيس في كندا.',
     benefits: [
       'Stable political and economic environment',
       'Access to NAFTA/USMCA markets',
