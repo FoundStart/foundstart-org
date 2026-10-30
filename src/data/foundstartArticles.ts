@@ -1,6 +1,8 @@
 import type { ShortetArticle } from './shortetArticlesData';
 
 export const foundstartArticleOrder: string[] = [
+  "registered-agent-explained",
+  "registered-agent-explained-ar",
   "twine-freelance-platform-find-clients",
   "twine-freelance-platform-find-clients-ar",
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company-ar",
@@ -16,6 +18,26 @@ export const foundstartArticleOrder: string[] = [
 ];
 
 export const foundstartArticles: Record<string, ShortetArticle> = {
+  "registered-agent-explained": {
+    "title": "Registered Agent Explained: What It Does and When You Need One",
+    "description": "Every US company needs a registered agent. What the role does, why the address is public, and how to choose between acting yourself and hiring a service.",
+    "category": "Business",
+    "author": "Mohamed Sayed",
+    "date": "Oct 30, 2026",
+    "readTime": "4 min read",
+    "heroImage": "/blog/covers/registered-agent-explained.jpg",
+    "html": "<h2>What a registered agent is</h2><p>A registered agent is the official point of contact for your company in its state of formation. The agent receives legal notices, state tax documents and service of process - the papers that start a lawsuit - on behalf of the company, then forwards them to you. Every US LLC and corporation is required by state law to keep one, with a physical street address in that state.</p><h2>Why the address matters</h2><p>The agent's address goes on the public record. If you run the company from home or from outside the US, using your own address exposes it publicly and risks missed documents when you travel. A missed lawsuit notice can end in a default judgment against your company even if you never saw the papers.</p><h2>Your options</h2><p>You can be your own agent if you have a street address in the state and you are reliably available during business hours. You can appoint a person you trust who meets the same conditions. Or you can hire a commercial registered agent service: these typically charge between $50 and $300 a year, and many formation packages include the first year free.</p><h2>When you need one beyond formation</h2><p>If you register your company in additional states - a foreign qualification - you need an agent in each of those states too. Changing your agent later is a simple state filing, so the choice you make at formation is not permanent.</p><h2>What to check in a service</h2><p>Look for same-day document scanning, clear renewal pricing after any free first year, and compliance reminders for annual reports. The agent handles your most time-sensitive mail, so reliability matters more than the lowest price.</p><p>FoundStart's free guides walk through formation state by state, including where the registered agent fits in each filing.</p>"
+  },
+  "registered-agent-explained-ar": {
+    "title": "الوكيل المسجّل: ما دوره ومتى تحتاجه",
+    "description": "كل شركة أمريكية تحتاج وكيلاً مسجّلاً. ما دوره، ولماذا عنوانه علني، وكيف تختار بين أن تكون وكيل نفسك واستئجار خدمة.",
+    "category": "Business",
+    "author": "محمد سيد",
+    "date": "Oct 30, 2026",
+    "readTime": "4 دقائق قراءة",
+    "heroImage": "/blog/covers/registered-agent-explained-ar.jpg",
+    "html": "<div dir=\"rtl\" lang=\"ar\" style=\"text-align:right\"><h2>ما هو الوكيل المسجّل</h2><p>الوكيل المسجّل (Registered Agent) هو نقطة الاتصال الرسمية لشركتك في ولاية التأسيس. يستلم الإشعارات القانونية والمستندات الضريبية للولاية وأوراق الدعاوى القضائية نيابة عن الشركة ثم يحوّلها إليك. كل شركة LLC أو كوربوريشن أمريكية مطالَبة قانوناً بأن تحتفظ بوكيل له عنوان فعلي داخل الولاية.</p><h2>لماذا العنوان مهم</h2><p>عنوان الوكيل يُدرج في السجل العام. لو تدير الشركة من البيت أو من خارج الولايات المتحدة، فاستخدام عنوانك الخاص يعرّضه للعلن ويخاطر بفقدان مستندات أثناء سفرك. إشعار دعوى فائت قد ينتهي بحكم غيابي ضد شركتك حتى لو لم ترَ الأوراق أبداً.</p><h2>خياراتك</h2><p>يمكنك أن تكون وكيل نفسك إذا كان لديك عنوان في الولاية وكنت متاحاً بانتظام في ساعات العمل. أو تعيّن شخصاً تثق به يستوفي الشروط نفسها. أو تستأجر خدمة وكيل مسجّل تجارية: تتقاضى عادة بين 50 و300 دولار سنوياً، وكثير من باقات التأسيس تشمل السنة الأولى مجاناً.</p><h2>متى تحتاجه بعد التأسيس</h2><p>إذا سجّلت شركتك في ولايات إضافية (Foreign Qualification) فستحتاج وكيلاً في كل ولاية منها. وتغيير الوكيل لاحقاً إجراء بسيط لدى الولاية، فاختيارك عند التأسيس ليس نهائياً.</p><h2>ما الذي تفحصه في الخدمة</h2><p>ابحث عن مسح المستندات في اليوم نفسه، وتسعير واضح للتجديد بعد أي سنة أولى مجانية، وتذكيرات بالتقارير السنوية. الوكيل يتعامل مع أكثر بريدك حساسية للوقت، فالاعتمادية أهم من أقل سعر.</p><p>أدلة FoundStart المجانية تشرح التأسيس ولاية بولاية، بما فيها موضع الوكيل المسجّل في كل إيداع.</p></div>"
+  },
   "usa-vs-uk-vs-estonia-vs-egypt-where-to-register-your-company-ar": {
       "title": "الولايات المتحدة أم بريطانيا أم إستونيا أم مصر: أين تسجّل شركتك؟",
       "description": "مقارنة عملية بين أربعة مسارات يستخدمها رواد الأعمال: الولايات المتحدة وبريطانيا وإستونيا ومصر، وثلاثة أسئلة تساعدك على الاختيار.",
