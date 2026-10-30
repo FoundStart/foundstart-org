@@ -128,7 +128,7 @@ const Fintech = () => {
           </div>
           <div className="text-center py-10 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl space-y-4">
             <h2 className="text-2xl font-bold">{isRTL ? 'لسه مفتحتش شركتك؟' : "Haven't opened your company yet?"}</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">{isRTL ? 'افتحها مع FoundStart في 10 دول بسعر واضح واحد، وبعدها فعّل طرق الدفع دي.' : 'Open it with FoundStart in 10 countries at one clear price, then set up these payment ways.'}</p>
+            <p className="text-muted-foreground max-w-xl mx-auto">{isRTL ? 'افتحها مع FoundStart في 9 دول بسعر واضح واحد، وبعدها فعّل طرق الدفع دي.' : 'Open it with FoundStart in 9 countries at one clear price, then set up these payment ways.'}</p>
             <Button size="lg" asChild><Link to="/countries">{isRTL ? 'الدول والأسعار' : 'Countries & prices'}<ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
           </div>
         </div>

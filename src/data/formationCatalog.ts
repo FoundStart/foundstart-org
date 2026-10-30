@@ -66,17 +66,6 @@ export const formationCountries: FormationCountry[] = [
     ],
   },
   {
-    code: 'ca', name: 'Canada', flag: '🇨🇦',
-    entities: [
-      { code: 'corp', name: 'Corporation', price: 700, requirements: [
-        'At least 1 director',
-        'Valid passport or ID',
-        'Canadian registered address (we can provide)',
-        'Federal or provincial registration - we recommend the right one',
-      ] },
-    ],
-  },
-  {
     code: 'ee', name: 'Estonia', flag: '🇪🇪',
     entities: [
       { code: 'ou', name: 'OÜ', price: 335, requirements: [

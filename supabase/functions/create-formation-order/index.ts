@@ -19,9 +19,6 @@ const COUNTRIES: Record<string, { name: string; entities: Record<string, { name:
     ltd: { name: "LTD", price: 500 },
     llp: { name: "LLP", price: 500 },
   } },
-  ca: { name: "Canada", entities: {
-    corp: { name: "Corporation", price: 700 },
-  } },
   ee: { name: "Estonia", entities: {
     ou: { name: "OU", price: 335 },
   } },

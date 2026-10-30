@@ -23,7 +23,7 @@ function useAdapter(layout: AffAdapter["Layout"] = Layout): AffAdapter {
     supabase,
     site: {
       key: "foundstart", name: "FoundStart", url: "https://www.foundstart.org", product: "foundstart",
-      whatTheySell: { en: "FoundStart helps founders register a company in 10 countries and find the right tools and partners.", ar: "FoundStart بيساعد المؤسسين يسجلوا شركة في 10 دول ويلاقوا الأدوات والشركاء المناسبين." },
+      whatTheySell: { en: "FoundStart helps founders register a company in 9 countries and find the right tools and partners.", ar: "FoundStart بيساعد المؤسسين يسجلوا شركة في 9 دول ويلاقوا الأدوات والشركاء المناسبين." },
       paths: [{ en: "Home", ar: "الرئيسية", path: "/" }, { en: "Countries", ar: "الدول", path: "/countries" }, { en: "Pricing", ar: "الأسعار", path: "/pricing" }, { en: "Services", ar: "الخدمات", path: "/services" }, { en: "Blog", ar: "المدونة", path: "/blog" }],
     },
     lang: language === "ar" ? "ar" : "en",

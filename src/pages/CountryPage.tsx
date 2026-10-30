@@ -109,7 +109,7 @@ const CountryPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
               <Card className="text-center p-4 glass-card"><TrendingUp className="w-6 h-6 text-green-500 mx-auto mb-2" /><div className="text-lg font-bold">{country.keyStats.gdp}</div><div className="text-sm text-muted-foreground">GDP</div></Card>
               <Card className="text-center p-4 glass-card"><Users className="w-6 h-6 text-blue-500 mx-auto mb-2" /><div className="text-lg font-bold">{country.keyStats.population}</div><div className="text-sm text-muted-foreground">Population</div></Card>
-              <Card className="text-center p-4 glass-card"><Globe className="w-6 h-6 text-purple-500 mx-auto mb-2" /><div className="text-lg font-bold">{country.keyStats.easeOfBusiness}</div><div className="text-sm text-muted-foreground">Ease of Business</div></Card>
+              {country.keyStats.easeOfBusiness && (<Card className="text-center p-4 glass-card"><Globe className="w-6 h-6 text-purple-500 mx-auto mb-2" /><div className="text-lg font-bold">{country.keyStats.easeOfBusiness}</div><div className="text-sm text-muted-foreground">Ease of Business</div></Card>)}
               <Card className="text-center p-4 glass-card"><Building className="w-6 h-6 text-orange-500 mx-auto mb-2" /><div className="text-lg font-bold">{country.keyStats.corporateTax}</div><div className="text-sm text-muted-foreground">Corporate Tax</div></Card>
             </div>
 

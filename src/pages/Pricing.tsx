@@ -42,7 +42,7 @@ const Pricing = () => {
                 <span className="gradient-text">{L('Formation by Country', 'التأسيس حسب الدولة')}</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {L('Open your company in any of our 10 countries. Prices are FoundStart service fees in USD.', 'افتح شركتك في أي من دولنا العشر. الأسعار هي رسوم خدمة FoundStart بالدولار.')}
+                {L('Open your company in any of our 9 countries. Prices are FoundStart service fees in USD.', 'افتح شركتك في أي من دولنا التسع. الأسعار هي رسوم خدمة FoundStart بالدولار.')}
               </p>
             </div>
 

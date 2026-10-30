@@ -114,7 +114,7 @@ const Countries = () => {
                         { label: 'Population', value: selectedCountryData.keyStats.population },
                         { label: 'Ease of Business', value: selectedCountryData.keyStats.easeOfBusiness },
                         { label: 'Corporate Tax', value: selectedCountryData.keyStats.corporateTax },
-                      ].map((stat) => (
+                      ].filter((stat) => stat.value).map((stat) => (
                         <Card key={stat.label} className="text-center p-3">
                           <div className="text-sm font-bold">{stat.value}</div>
                           <div className="text-xs text-muted-foreground">{stat.label}</div>

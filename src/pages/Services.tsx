@@ -18,7 +18,7 @@ const Services = () => {
   const { language, isRTL } = useTranslation();
 
   const included = [
-    { i: <Building2 className="h-5 w-5" />, t: L('Company formation in 10 countries', 'تأسيس شركة في 10 دول'), d: L('Choose a country and company type. One clear service fee, no add-ons.', 'اختر الدولة ونوع الشركة. رسوم خدمة واحدة واضحة، بدون إضافات.') },
+    { i: <Building2 className="h-5 w-5" />, t: L('Company formation in 9 countries', 'تأسيس شركة في 9 دول'), d: L('Choose a country and company type. One clear service fee, no add-ons.', 'اختر الدولة ونوع الشركة. رسوم خدمة واحدة واضحة، بدون إضافات.') },
     { i: <CreditCard className="h-5 w-5" />, t: L('Pay online', 'ادفع أونلاين'), d: L('Secure card checkout through Stripe.', 'دفع آمن بالبطاقة عبر Stripe.') },
     { i: <FolderOpen className="h-5 w-5" />, t: L('Documents in one place', 'المستندات في مكان واحد'), d: L('Upload your documents privately from your dashboard.', 'ارفع مستنداتك بشكل خاص من لوحة التحكم.') },
     { i: <LayoutDashboard className="h-5 w-5" />, t: L('Track every step', 'تابع كل خطوة'), d: L('See all your orders and companies with their real status.', 'شاهد كل طلباتك وشركاتك بحالتها الحقيقية.') },
@@ -28,7 +28,7 @@ const Services = () => {
     <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <Helmet>
         <title>{L('FoundStart Services: open your company in any country', 'خدمات FoundStart: افتح شركتك في أي دولة')}</title>
-        <meta name="description" content={L('Company formation in 10 countries with one clear price per company type. Register, pay online and track every step.', 'تأسيس شركات في 10 دول بسعر واضح لكل نوع شركة. سجل وادفع أونلاين وتابع كل خطوة.')} />
+        <meta name="description" content={L('Company formation in 9 countries with one clear price per company type. Register, pay online and track every step.', 'تأسيس شركات في 9 دول بسعر واضح لكل نوع شركة. سجل وادفع أونلاين وتابع كل خطوة.')} />
       </Helmet>
       <Header />
       <main>
