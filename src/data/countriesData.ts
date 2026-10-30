@@ -81,7 +81,7 @@ export const countriesData = [
       'High quality of life'
     ],
     partners: [],
-    keyStats: { gdp: '$1.7T', population: '38M', easeOfBusiness: '23rd', corporateTax: '15%' }
+    keyStats: { gdp: '$2.24T (2024)', population: '41.7M (2025)', easeOfBusiness: '', corporateTax: '15% federal' }
   },
   {
     id: 'EE',
