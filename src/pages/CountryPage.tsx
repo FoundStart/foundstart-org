@@ -55,9 +55,10 @@ const CountryPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Start Your Business in <span className="gradient-text">{country.name}</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{country.description}</p>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{(isRTL && country.descriptionAr) ? country.descriptionAr : country.description}</p>
             </div>
 
+            {country.offerAvailable && (
             <Card className="glass-card mb-12">
               <CardHeader className="text-center"><CardTitle className="text-2xl">Formation Package</CardTitle></CardHeader>
               <CardContent className="space-y-6">
@@ -80,8 +81,9 @@ const CountryPage = () => {
                 </div>
               </CardContent>
             </Card>
+            )}
 
-            {getCountryVideoUrl(country.id, isRTL, country.videoUrl) && (
+            {country.offerAvailable && getCountryVideoUrl(country.id, isRTL, country.videoUrl) && (
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-4 text-center">{isRTL ? 'شاهد فيديو التأسيس' : 'Watch Formation Demo'}</h2>
                 <VideoThumbnail videoUrl={getCountryVideoUrl(country.id, isRTL, country.videoUrl)!} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />
@@ -129,6 +131,7 @@ const CountryPage = () => {
 
             
 
+            {country.offerAvailable && (
             <div className="text-center py-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl">
               <h2 className="text-3xl font-bold mb-4">{isRTL ? <>هل أنت مستعد لتأسيس شركتك في {COUNTRY_AR_NAMES[country.id] || country.name}؟</> : <>Ready to Start Your {country.name} Business?</>}</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{isRTL ? 'دع FoundStart تؤسس شركتك.' : 'Let FoundStart establish your company for you.'}</p>
@@ -145,6 +148,7 @@ const CountryPage = () => {
                 )}
               </div>
             </div>
+            )}
           </div>
         </section>
       </main>
