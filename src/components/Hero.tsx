@@ -66,8 +66,8 @@ const Hero = () => {
           className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-white/60"
         >
           {ar
-            ? 'سجل، ادفع أونلاين، وتابع كل خطوة من لوحة واحدة. 10 دول، سعر واضح لكل نوع شركة.'
-            : 'Register, pay online and track every step from one dashboard. 10 countries, one clear price per company type.'}
+            ? 'سجل، ادفع أونلاين، وتابع كل خطوة من لوحة واحدة. 9 دول، سعر واضح لكل نوع شركة.'
+            : 'Register, pay online and track every step from one dashboard. 9 countries, one clear price per company type.'}
         </motion.p>
 
         <motion.div

@@ -343,7 +343,7 @@ const blogContents: Record<string, BlogContent> = {
         title: "Why Your Payment Stack Defines Your Growth",
         content: [
           "Global founders rarely use a single gateway. The right stack depends on (1) where your company is incorporated, (2) where your customers are, and (3) how you want to be paid out.",
-          "FoundStart helps founders incorporate in 10+ jurisdictions (USA, UK, Estonia, Ireland, Finland, Sweden, Latvia, Lithuania, Canada, Egypt) — each unlocks a different set of premium gateways."
+          "FoundStart helps founders incorporate in 9 jurisdictions (USA, UK, Estonia, Ireland, Finland, Sweden, Latvia, Lithuania, Egypt) — each unlocks a different set of premium gateways."
         ]
       },
       {

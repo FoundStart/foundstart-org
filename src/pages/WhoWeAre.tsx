@@ -39,7 +39,7 @@ const WhoWeAre = () => {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">What We Do</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card><CardHeader><CardTitle className="flex items-center space-x-2"><Building2 className="w-6 h-6 text-primary" /><span>Company Formation</span></CardTitle></CardHeader><CardContent><p className="text-muted-foreground">We simplify company formation across 10+ jurisdictions, making it fast and hassle-free.</p></CardContent></Card>
+              <Card><CardHeader><CardTitle className="flex items-center space-x-2"><Building2 className="w-6 h-6 text-primary" /><span>Company Formation</span></CardTitle></CardHeader><CardContent><p className="text-muted-foreground">We simplify company formation across 9 jurisdictions, making it fast and hassle-free.</p></CardContent></Card>
               <Card><CardHeader><CardTitle className="flex items-center space-x-2"><Globe className="w-6 h-6 text-primary" /><span>Digital Services</span></CardTitle></CardHeader><CardContent><p className="text-muted-foreground">From banking setup to AI-powered tools, we provide comprehensive digital services.</p></CardContent></Card>
               <Card><CardHeader><CardTitle className="flex items-center space-x-2"><Users className="w-6 h-6 text-primary" /><span>Partner Network</span></CardTitle></CardHeader><CardContent><p className="text-muted-foreground">467 digital partners providing the best services and solutions for your business.</p></CardContent></Card>
             </div>
