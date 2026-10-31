@@ -9,6 +9,7 @@ import CompanyFormation from './dashboard/CompanyFormation';
 import ServicesMarketplace from './dashboard/ServicesMarketplace';
 import AIAssistant from './dashboard/AIAssistant';
 import DocumentsCenter from './dashboard/DocumentsCenter';
+import FormationChecklist from './dashboard/FormationChecklist';
 import BillingPayments from './dashboard/BillingPayments';
 import AffiliatesDashboard from './dashboard/AffiliatesDashboard';
 import SupportCenter from './dashboard/SupportCenter';
@@ -36,6 +37,7 @@ const CustomerDashboardContent = () => {
           <Route path="companies" element={<MyCompanies />} />
           <Route path="formation/*" element={<CompanyFormation />} />
           <Route path="documents" element={<DocumentsCenter />} />
+          <Route path="checklist" element={<FormationChecklist />} />
           <Route path="billing" element={<BillingPayments />} />
           <Route path="affiliates" element={<AffiliatesEmbedded />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />

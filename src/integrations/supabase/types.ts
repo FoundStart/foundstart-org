@@ -438,7 +438,100 @@ export type Database = {
           },
         ]
       }
-      domain_favorites: {
+
+      quiz_leads: {
+        Row: {
+          answers: number[]
+          created_at: string
+          email: string
+          id: string
+          language: string
+          name: string
+          result_countries: string[] | null
+        }
+        Insert: {
+          answers: number[]
+          created_at?: string
+          email: string
+          id?: string
+          language?: string
+          name: string
+          result_countries?: string[] | null
+        }
+        Update: {
+          answers?: number[]
+          created_at?: string
+          email?: string
+          id?: string
+          language?: string
+          name?: string
+          result_countries?: string[] | null
+        }
+        Relationships: []
+      }
+      formation_checklist: {
+        Row: {
+          company_id: string
+          done: boolean
+          id: string
+          step_key: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_id: string
+          done?: boolean
+          id?: string
+          step_key: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_id?: string
+          done?: boolean
+          id?: string
+          step_key?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "formation_checklist_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      newsletter_subscribers: {
+        Row: {
+          confirmed: boolean
+          created_at: string
+          email: string
+          id: string
+          language: string
+          source: string
+        }
+        Insert: {
+          confirmed?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          language?: string
+          source?: string
+        }
+        Update: {
+          confirmed?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          language?: string
+          source?: string
+        }
+        Relationships: []
+      }
+ domain_favorites: {
         Row: {
           created_at: string
           domain_name: string
