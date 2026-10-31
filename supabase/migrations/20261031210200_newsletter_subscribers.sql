@@ -12,8 +12,7 @@ create table public.newsletter_subscribers (
 
 alter table public.newsletter_subscribers enable row level security;
 
-revoke insert, update, delete on public.newsletter_subscribers from anon, authenticated;
-revoke select on public.newsletter_subscribers from anon;
+revoke all on public.newsletter_subscribers from anon, authenticated;
 grant select on public.newsletter_subscribers to authenticated; -- RLS below limits this to admins
 
 create policy "Admins can view subscribers"

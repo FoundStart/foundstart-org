@@ -22,8 +22,7 @@ create table public.quiz_leads (
 
 alter table public.quiz_leads enable row level security;
 
-revoke insert, update, delete on public.quiz_leads from anon, authenticated;
-revoke select on public.quiz_leads from anon;
+revoke all on public.quiz_leads from anon, authenticated;
 grant select on public.quiz_leads to authenticated; -- RLS below limits this to admins
 
 create policy "Admins can view quiz leads"

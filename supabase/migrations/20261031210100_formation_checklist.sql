@@ -13,7 +13,7 @@ create table public.formation_checklist (
 
 alter table public.formation_checklist enable row level security;
 
-revoke all on public.formation_checklist from anon;
+revoke all on public.formation_checklist from anon, authenticated;
 grant select, insert, update, delete on public.formation_checklist to authenticated;
 
 create policy "Owners manage their own checklist"
