@@ -23,9 +23,20 @@ const TurnstileWidget = ({ onToken, action }: { onToken: (t: string | null) => v
       }
     };
     if (window.turnstile) { render(); return; }
+    // Two widgets on one page (quiz form + footer newsletter) must share one
+    // api.js load: appending a second script tag races and the second widget
+    // never executes, leaving its submit disabled.
+    const existing = document.querySelector('script[data-turnstile-api]');
+    if (existing) {
+      existing.addEventListener('load', render, { once: true });
+      existing.addEventListener('error', () => onToken(null), { once: true });
+      if (window.turnstile) render();
+      return;
+    }
     const s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     s.async = true;
+    s.dataset.turnstileApi = '1';
     s.onload = render;
     s.onerror = () => onToken(null);
     document.head.appendChild(s);
