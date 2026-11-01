@@ -64,6 +64,7 @@ const GuidesIndex = lazy(() => import("./pages/guides/GuidesIndex"));
 const GuidePage = lazy(() => import("./pages/guides/GuidePage"));
 const AdminDashboard = lazy(() => import("./pages/saas/AdminDashboard"));
 const PricingCalculator = lazy(() => import("./pages/PricingCalculator"));
+const Quiz = lazy(() => import("./pages/Quiz"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const BusinessNameGenerator = lazy(() => import("./pages/BusinessNameGenerator"));
 const AllPartners = lazy(() => import("./pages/AllPartners"));
@@ -173,6 +174,7 @@ function App() {
                   <Route path="/partner/:slug" element={<PartnerDetail />} />
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/pricing-calculator" element={<PricingCalculator />} />
+                  <Route path="/quiz" element={<Quiz />} />
                   <Route path="/auth" element={<Auth />} />
                   <Route path="/reset-password" element={<ResetPassword />} />
                   <Route path="/digital-partners" element={<DigitalPartners />} />

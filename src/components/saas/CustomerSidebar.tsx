@@ -28,8 +28,7 @@ import {
   Package,
   Briefcase,
   Tag,
-  Sparkles,
-} from 'lucide-react';
+  Sparkles, ListChecks } from 'lucide-react';
 import { useL } from '@/hooks/useL';
 import { useAuth } from '@/contexts/AuthProvider';
 import { Button } from '@/components/ui/button';
@@ -39,6 +38,7 @@ const mainMenuItems = [
   { title: 'New Formation', ar: 'تأسيس شركة جديدة', icon: Briefcase, href: '/dashboard/formation' },
   { title: 'My Companies', ar: 'شركاتي', icon: Building2, href: '/dashboard/companies' },
   { title: 'Documents', ar: 'المستندات', icon: FileText, href: '/dashboard/documents' },
+  { title: 'Checklist', ar: 'قائمة الخطوات', icon: ListChecks, href: '/dashboard/checklist' },
 ];
 
 const servicesMenuItems: typeof mainMenuItems = [];

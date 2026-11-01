@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useAuth } from '@/contexts/AuthProvider';
+import OfficialResources from './OfficialResources';
 import { useToast } from '@/hooks/use-toast';
 import { useL } from '@/hooks/useL';
 import { supabase } from '@/integrations/supabase/client';
@@ -265,6 +266,8 @@ const DocumentsCenter = () => {
           <p className="mt-2 text-muted-foreground">{L('No documents found.', 'لا توجد مستندات.')}</p>
         </div>
       )}
+
+      <OfficialResources />
     </div>
   );
 };

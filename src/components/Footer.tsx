@@ -1,4 +1,5 @@
 import { LaunchBadges } from "@/components/LaunchBadges";
+import NewsletterSubscribe from "@/components/NewsletterSubscribe";
 import { waLink } from '@/lib/whatsapp';
 import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
@@ -112,6 +113,8 @@ const Footer = () => {
             </div>
           ))}
         </div>
+        <div className="mb-8"><NewsletterSubscribe /></div>
+
         <LaunchBadges isRTL={isRTL} />
 
         <Separator className="my-8" />
