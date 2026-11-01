@@ -286,6 +286,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/quiz",
+      "destination": "/index.html"
+    },
+    {
       "source": "/reset-password",
       "destination": "/index.html"
     },
