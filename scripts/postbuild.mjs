@@ -47,7 +47,7 @@ function page(route, m, extra = {}) {
   if (extra.noindex) h = setTag(h, /<meta\s+name="robots"[^>]*>/i, `<meta name="robots" content="noindex, nofollow" />`);
   // The shell's #root is not empty (badge markup), so insert the prerendered main as its
   // first child instead of replacing an empty div. React replaces it client-side on mount.
-  const preInner = `<main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text ? `<p>${esc(m.text)}</p>` : ""}${extra.bodyHtml || ""}</main>`;
+  const preInner = `<main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text && !extra.skipText ? `<p>${esc(m.text)}</p>` : ""}${extra.bodyHtml || ""}</main>`;
   const cssLink = (h.match(/<link rel="stylesheet"[^>]*href="\/assets\/[^"]*\.css"[^>]*>/) || [''])[0];
   if (cssLink) h = h.replace(cssLink, '');
   h = h.replace(/<head>/i, '<head>' + PRERENDER_CSS + cssLink);
@@ -65,7 +65,7 @@ for (const [route, m] of Object.entries(manifest)) {
   const extra = {};
   const bm = route.match(/^\/blog\/([a-z0-9-]+)$/);
   if (bm && ARTICLES[bm[1]] && ARTICLES[bm[1]].html) extra.bodyHtml = `<article>${ARTICLES[bm[1]].html}</article>`;
-  if (route === "/faq" && faqHtml) extra.bodyHtml = faqHtml;
+  if (route === "/faq" && faqHtml) { extra.bodyHtml = faqHtml; extra.skipText = true; }
   const out = route === "/" ? path.join(dist, "index.html") : path.join(dist, route, "index.html");
   fs.mkdirSync(path.dirname(out), { recursive: true }); fs.writeFileSync(out, page(route, m, extra)); n++;
 }
