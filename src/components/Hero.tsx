@@ -9,6 +9,11 @@ const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
   const { t, language } = useTranslation();
 
+  // When the served HTML included the static prerender fallback (postbuild sets the flag),
+  // the hero is already on screen - skip the entrance animations so hydration swaps seamlessly.
+  const skipIntro = typeof window !== 'undefined' && (window as unknown as { __fsPrerender?: boolean }).__fsPrerender === true;
+  if (skipIntro) { try { (window as unknown as { __fsPrerender?: boolean }).__fsPrerender = false; } catch { /* noop */ } }
+
   const jurisdictions = [
     { id: "USA", name: t.usa, flag: "🇺🇸" },
     { id: "UK", name: t.uk, flag: "🇬🇧" },
@@ -48,21 +53,21 @@ const Hero = () => {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 pt-14 md:pt-24 text-center">
         <motion.p
-          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+          initial={skipIntro ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
           className={`mb-5 text-xs sm:text-sm font-semibold uppercase ${ar ? 'tracking-normal' : 'tracking-[0.18em]'} text-purple-400`}
         >
           {ar ? 'للفريلانسرز · التجارة الإلكترونية · SaaS' : 'Freelancers · E-commerce · SaaS'}
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08 }}
+          initial={skipIntro ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08 }}
           className="mx-auto max-w-4xl text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white"
         >
           {ar ? (<>افتح شركتك<br />مع FoundStart</>) : (<>Open Your Company<br />with FoundStart</>)}
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.18 }}
+          initial={skipIntro ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.18 }}
           className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-white/60"
         >
           {ar
@@ -71,7 +76,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.28 }}
+          initial={skipIntro ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.28 }}
           className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <Button size="lg" className="h-12 w-full sm:w-auto rounded-full bg-purple-600 px-8 text-base font-semibold text-white hover:bg-purple-500 shadow-[0_0_30px_rgba(147,51,234,0.5)]" asChild>
@@ -86,7 +91,7 @@ const Hero = () => {
 
         {/* Dashboard mockup */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
+          initial={skipIntro ? false : { opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
           className="relative mx-auto mt-12 md:mt-16 max-w-4xl"
           dir="ltr"
         >
