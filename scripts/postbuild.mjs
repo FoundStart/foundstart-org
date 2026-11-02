@@ -1,4 +1,4 @@
-const PRERENDER_CSS = '<script>try{var t=localStorage.getItem("theme");if(t==="dark"||((!t||t==="system")&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script><style>html:has(#root>main[data-prerender]),html:has(#root>main[data-prerender]) body{background:#0e0a1b!important}#root:has(>main[data-prerender])::before{border-color:#334155!important;border-top-color:#60a5fa!important}#root>main[data-prerender]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}#root:has(>main[data-prerender])::before{content:"";display:block;width:28px;height:28px;margin:45vh auto 0;border:3px solid #334155;border-top-color:#60a5fa;border-radius:50%;animation:fsspin .8s linear infinite}@keyframes fsspin{to{transform:rotate(360deg)}}</style>';
+const PRERENDER_CSS = '<script>try{var t=localStorage.getItem("theme");if(t==="dark"||((!t||t==="system")&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script><style>html:has(#root>main[data-prerender]),html:has(#root>main[data-prerender]) body{background:#0e0a1b!important}#root>main[data-prerender]{max-width:768px;margin:0 auto;padding:110px 24px 70px;color:#e8ecf3;line-height:1.75;font-family:Inter,system-ui,-apple-system,sans-serif}#root>main[data-prerender] h1{font-size:1.9rem;line-height:1.25;margin:0 0 16px}#root>main[data-prerender] h2{font-size:1.35rem;margin:30px 0 10px}#root>main[data-prerender] h3{font-size:1.1rem;margin:22px 0 6px}#root>main[data-prerender] p{margin:0 0 14px}#root>main[data-prerender] a{color:#60a5fa}#root>main[data-prerender] img{max-width:100%;height:auto}#root>main[data-prerender] section{margin:0 0 26px}</style>';
 // Post-build step (no browser needed): writes one HTML file per known route with its own
 // <title>, description, canonical and Open Graph tags plus the page heading/summary in the
 // HTML itself, adds a 404 page, and rewrites sitemap.xml with fresh lastmod dates.
@@ -22,9 +22,10 @@ esbuild.buildSync({
 const pdata = await import(bundleOut.href ?? bundleOut);
 const ARTICLES = { ...pdata.shortetArticles, ...pdata.foundstartArticles, ...pdata.shortetArticlesAr, ...pdata.agencyArticles };
 const FAQS = pdata.faqCategories || [];
+// Default locale (EN) only: this block must equal what the /faq UI shows by default.
+// The AR FAQ remains available through the site's language toggle (client-rendered), as before.
 const faqHtml = FAQS.length
-  ? FAQS.map((c) => `<section><h2>${esc(c.title)}</h2>${c.items.map((i) => `<h3>${esc(i.q)}</h3><p>${esc(i.a)}</p>`).join("")}</section>`).join("") +
-    `<div dir="rtl" lang="ar">` + FAQS.map((c) => `<section><h2>${esc(c.titleAr)}</h2>${c.items.map((i) => `<h3>${esc(i.qAr)}</h3><p>${esc(i.aAr)}</p>`).join("")}</section>`).join("") + `</div>`
+  ? FAQS.map((c) => `<section><h2>${esc(c.title)}</h2>${c.items.map((i) => `<h3>${esc(i.q)}</h3><p>${esc(i.a)}</p>`).join("")}</section>`).join("")
   : "";
 // Every data-driven article gets a manifest entry so it is prerendered and listed in the sitemap.
 for (const [slug, a] of Object.entries(ARTICLES)) {
