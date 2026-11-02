@@ -276,11 +276,6 @@ const PricingCalculator: React.FC = () => {
 
             {/* Trust badges */}
             <div className="mt-4 p-4 rounded-lg bg-muted/50 text-center space-y-2">
-              <p className="text-sm font-medium">Trusted by 1000+ entrepreneurs</p>
-              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                <Check className="h-4 w-4 text-green-500" />
-                <span>Money-back guarantee</span>
-              </div>
               <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                 <Check className="h-4 w-4 text-green-500" />
                 <span>Secure payment</span>
