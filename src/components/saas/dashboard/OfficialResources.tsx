@@ -43,9 +43,39 @@ const RESOURCES: Resource[] = [
     note: ['Incorporation applications are filed online via the CRO\u2019s CORE portal; the leaflet is the official published guide', 'تُقدَّم طلبات التأسيس إلكترونياً عبر بوابة CORE التابعة لـ CRO؛ والنشرة هي الدليل الرسمي المنشور'] },
 ];
 
+
+interface StandardSource { name: [string, string]; url: string; rowLabel: [string, string]; linkLabel: [string, string]; linkUrl: string; docs: OfficialDownload[]; note?: [string, string] }
+
+// Standard third-party business templates. Verified 2026-11-02: every download URL fetch-checked
+// (HTTP 200/206 with the expected file content type) and each source's current license/terms page read.
+// Downloads open the source's own file on the source's own infrastructure; we never mirror or modify them.
+// File content is English; jurisdictions are labeled per document.
+const STANDARD_SOURCES: StandardSource[] = [
+  { name: ['Common Paper standard agreements', 'اتفاقيات Common Paper القياسية'], url: 'https://commonpaper.com/standards/', rowLabel: ['License', 'الرخصة'], linkLabel: ['CC BY 4.0', 'CC BY 4.0'], linkUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    note: ['US-law standard terms maintained by an attorney committee; free to use under CC BY 4.0 with attribution', 'شروط قياسية بقانون أمريكي يديرها فريق محامين؛ مجانية بموجب رخصة CC BY 4.0 مع نسب المصدر'],
+    docs: [
+      { label: ['Mutual NDA v1.0 - full agreement, cover page + standard terms (English file)', 'اتفاقية عدم إفصاح متبادل v1.0 - الاتفاقية كاملة، صفحة الغلاف + الشروط القياسية (ملف إنجليزي)'], url: 'https://commonpaper.com/standards/mutual-nda/1.0/mutual-nda-cover-page-and-standard-terms-docx', format: 'DOC' },
+      { label: ['Mutual NDA v1.0 - full agreement, cover page + standard terms (English file)', 'اتفاقية عدم إفصاح متبادل v1.0 - الاتفاقية كاملة (ملف إنجليزي)'], url: 'https://commonpaper.com/standards/mutual-nda/1.0/mutual-nda-cover-page-and-standard-terms-pdf', format: 'PDF' },
+      { label: ['Cloud Service Agreement v3.0 - full agreement (English file)', 'اتفاقية الخدمات السحابية v3.0 - الاتفاقية كاملة (ملف إنجليزي)'], url: 'https://commonpaper.com/standards/cloud-service-agreement/3.0/cover-page-and-standard-terms-docx', format: 'DOC' },
+      { label: ['Data Processing Agreement v1.1 - full agreement (English file)', 'اتفاقية معالجة البيانات v1.1 - الاتفاقية كاملة (ملف إنجليزي)'], url: 'https://commonpaper.com/standards/data-processing-agreement/1.1/cover-page-and-standard-terms-docx', format: 'DOC' },
+      { label: ['Service Level Agreement v2.0 - full agreement (English file)', 'اتفاقية مستوى الخدمة v2.0 - الاتفاقية كاملة (ملف إنجليزي)'], url: 'https://commonpaper.com/standards/cloud-service-agreement/2.0/sla-cover-page-and-standard-terms-docx', format: 'DOC' },
+      { label: ['Design Partner Agreement v1.3 - full agreement (English file)', 'اتفاقية شريك التصميم v1.3 - الاتفاقية كاملة (ملف إنجليزي)'], url: 'https://commonpaper.com/standards/design-partner-agreement/1.3/cover-page-and-standard-terms-docx', format: 'DOC' },
+    ] },
+  { name: ['Y Combinator post-money SAFE (US)', 'نماذج Y Combinator الاستثمارية SAFE (الولايات المتحدة)'], url: 'https://www.ycombinator.com/documents', rowLabel: ['Source and terms', 'المصدر وشروط الاستخدام'], linkLabel: ['YC SAFE documents page (no separate license grant stated)', 'صفحة مستندات YC SAFE (لا يوجد منح رخصة منفصل معلن)'], linkUrl: 'https://www.ycombinator.com/documents',
+    note: ['Drafted for US-incorporated startups; Canada, Cayman and Singapore variants are on the source page. YC advises consulting a lawyer licensed in your company\u2019s country before use', 'مصممة للشركات المؤسسة في الولايات المتحدة؛ نسخ كندا وجزر كايمان وسنغافورة موجودة في صفحة المصدر. YC تنصح باستشارة محامٍ مرخص في بلد تأسيس شركتك قبل الاستخدام'],
+    docs: [
+      { label: ['Post-money SAFE - Valuation Cap, no Discount, US (English file)', 'SAFE - حد أقصى للتقييم بدون خصم، الولايات المتحدة (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/Postmoney%20Safe%20-%20Valuation%20Cap%20Only%20-%20FINAL-f2a64add6d21039ab347ee2e7194141a4239e364ffed54bad0fe9cf623bf1691.docx', format: 'DOC' },
+      { label: ['Post-money SAFE - Discount, no Valuation Cap, US (English file)', 'SAFE - خصم بدون حد أقصى للتقييم، الولايات المتحدة (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/Postmoney%20Safe%20-%20Discount%20Only%20-%20FINAL-b9ecb516615d60c6c4653507442aa2561023004368232b7d6e75edc9629acc99.docx', format: 'DOC' },
+      { label: ['Post-money SAFE - MFN, no Valuation Cap no Discount, US (English file)', 'SAFE - MFN بدون حد تقييم ولا خصم، الولايات المتحدة (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/Postmoney%20Safe%20-%20MFN%20Only%20-%20FINAL-2bc87fa3d2ec5072a60d653aec9a885fb43879781e44341fa720a8e7d1cc42ff.docx', format: 'DOC' },
+      { label: ['Pro Rata Side Letter (English file)', 'خطاب حق المشاركة النسبية الجانبي (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/Pro%20Rata%20Side%20Letter-d6dd8d827741862b18fba0f658da17fb4e787e5f2dda49584b9caea89bf42302.docx', format: 'DOC' },
+      { label: ['SAFE User Guide (English file)', 'دليل استخدام SAFE (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/SAFE%20User%20Guide-a47c6588327d73aa2799e61ed7c2cae9f1a0ee9acfa9c43b62039dc06e715832.pdf', format: 'PDF' },
+    ] },
+];
+
 const OfficialResources = () => {
   const L = useL();
   return (
+    <>
     <Card className="mt-6">
       <CardHeader>
         <CardTitle className="flex items-center gap-2"><Landmark className="h-5 w-5" /> {L('Official resources by country', 'مصادر رسمية حسب الدولة')}</CardTitle>
@@ -88,6 +118,45 @@ const OfficialResources = () => {
         <p className="mt-4 text-xs text-muted-foreground">{L('These are official registry resources. Direct downloads open the registry\u2019s own file on the registry\u2019s own site - we never host or modify them. Requirements, fees and form versions change - always confirm the current requirements on the registry site before relying on any document. Not every form on a registry site applies to every entity type or situation; this is not legal advice.', 'دي روابط لمصادر رسمية للسجلات الحكومية. روابط التحميل المباشرة بتفتح الملف الرسمي على موقع السجل نفسه - إحنا لا بنستضيف ولا بنعدّل أي ملف. المتطلبات والرسوم وإصدارات النماذج بتتغير - لازم تتأكد من المتطلبات الحالية على موقع السجل قبل الاعتماد على أي مستند. مش كل نموذج على موقع السجل بينطبق على كل نوع شركة أو حالة؛ ده مش استشارة قانونية.')}</p>
       </CardContent>
     </Card>
+    <Card className="mt-6">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2"><Download className="h-5 w-5" /> {L('Standard business templates', 'نماذج أعمال قياسية')}</CardTitle>
+        <CardDescription>{L('Free standard agreements published by their authors, ready to download. File content is English; each document\u2019s jurisdiction is labeled.', 'اتفاقيات قياسية مجانية منشورة من أصحابها، جاهزة للتحميل. محتوى الملفات بالإنجليزية؛ وسلطة كل مستند القانونية موضحة.')}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {STANDARD_SOURCES.map((s) => (
+            <li key={s.url}>
+              <a href={s.url} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 rounded-md border p-3 text-sm hover:bg-muted/50 transition-colors">
+                <span className="flex-1">
+                  <span className="font-medium">{L(s.name[0], s.name[1])}</span>
+                  <span className="block text-muted-foreground">
+                    {L(s.note ? s.note[0] : '', s.note ? s.note[1] : '')}
+                  </span>
+                </span>
+                <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground" />
+              </a>
+              <p className="mt-1 ps-2 text-[11px] text-muted-foreground">
+                {L(s.rowLabel[0], s.rowLabel[1])}: <a href={s.linkUrl} target="_blank" rel="noopener noreferrer" className="underline">{L(s.linkLabel[0], s.linkLabel[1])}</a>
+              </p>
+              <ul className="mt-1 space-y-1 ps-2">
+                {s.docs.map((d) => (
+                  <li key={d.url}>
+                    <a href={d.url} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 rounded-md border border-dashed p-2 text-xs hover:bg-muted/50 transition-colors">
+                      <Download className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
+                      <span className="flex-1">{L(d.label[0], d.label[1])}</span>
+                      <span className="shrink-0 rounded bg-muted px-1 py-0.5 font-mono text-[10px] text-muted-foreground">{d.format}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-xs text-muted-foreground">{L('These are third-party standard templates. Downloads open the source\u2019s own file on the source\u2019s own site - we never host or modify them. Common Paper agreements are published under CC BY 4.0; YC publishes the SAFE as an open standard. Both are drafted for US-law contexts unless labeled otherwise - have a lawyer licensed in your company\u2019s country review any template before use. This is not legal advice.', 'دي نماذج قياسية من طرف ثالث. روابط التحميل بتفتح ملف المصدر نفسه على موقعه - إحنا لا بنستضيف ولا بنعدّل أي ملف. اتفاقيات Common Paper منشورة برخصة CC BY 4.0؛ وYC تنشر SAFE كمعيار مفتوح. الاثنان مصممان للقانون الأمريكي ما لم يُذكر غير ذلك - اعرض أي نموذج على محامٍ مرخص في بلد تأسيس شركتك قبل الاستخدام. ده مش استشارة قانونية.')}</p>
+      </CardContent>
+    </Card>
+    </>
   );
 };
 
