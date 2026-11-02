@@ -162,7 +162,7 @@ const Countries = () => {
                 {/* Country Grid */}
                 <h2 className="text-2xl font-bold text-center mb-6">All Supported Countries</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-                  {countriesData.map((c) => {
+                  {countriesData.filter((c) => c.offerAvailable !== false).map((c) => {
                                         return (
                       <Card
                         key={c.id}
