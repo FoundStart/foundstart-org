@@ -204,6 +204,23 @@ export const faqCategories: FaqCategory[] = [
     ],
   },
   {
+    id: 'country-costs', title: 'Country costs & timelines', titleAr: 'تكاليف الدول والمدد',
+    items: [
+      { q: 'How much does it cost to form a US LLC in 2026?', a: `Each state sets its own fee. Wyoming charges $100 to file the articles of organization; Delaware charges $90 for the certificate of formation. Yearly: Wyoming has a $25 annual report fee plus a license tax from $60, and Delaware charges LLCs a flat $400 annual tax due by 1 June (no annual report filing). A registered agent service is extra. (Official state fee sources, checked November 2, 2026.)`,
+        qAr: 'كم تكلفة تأسيس شركة LLC أمريكية في 2026؟', aAr: `كل ولاية تحدد رسومها. وايومنج تتقاضى 100 دولار لإيداع عقد التأسيس، وديلاوير 90 دولارًا لشهادة التأسيس. سنويًا: وايومنج لديها رسوم تقرير سنوي 25 دولارًا وضريبة ترخيص تبدأ من 60 دولارًا، وديلاوير تفرض ضريبة سنوية ثابتة 400 دولار على شركات LLC تستحق قبل 1 يونيو (بدون تقديم تقرير سنوي). خدمة الوكيل المسجل رسومها منفصلة. (مصادر رسوم رسمية للولايات، تمت المراجعة في 2 نوفمبر 2026.)` },
+      { q: 'How long does it take to register a UK company?', a: `Usually within 24 hours with the £100 online application. A same-day option (£156) is available only through software filing, and you must apply before 3pm on weekdays. The confirmation statement costs £50 a year when filed online.`,
+        qAr: 'كم تستغرق مدة تسجيل شركة بريطانية؟', aAr: `عادة خلال 24 ساعة مع طلب الإنترنت برسوم 100 جنيه إسترليني. ويتوفر خيار في نفس اليوم (156 جنيهًا) عبر التقديم بالبرمجيات فقط، بشرط التقديم قبل الساعة 3 عصرًا في أيام العمل. وبيان التأكيد يكلف 50 جنيهًا سنويًا عند التقديم الإلكتروني.` },
+      { q: 'What do Estonian e-Residency and company registration cost?', a: `€150 for the e-Residency application and a €265 state fee to register the OÜ. e-Residency approval takes 3-8 weeks including card pickup; registering the company online afterwards takes 1-2 days. Minimum share capital is €0.01 per shareholder.`,
+        qAr: 'كم تكلفة الإقامة الإلكترونية الإستونية وتسجيل الشركة؟', aAr: `‏150 يورو لطلب الإقامة الإلكترونية و265 يورو رسوم دولة لتسجيل شركة OÜ. الموافقة على الإقامة الإلكترونية تستغرق 3-8 أسابيع شاملة استلام البطاقة، وبعدها يستغرق تسجيل الشركة عبر الإنترنت يومًا أو يومين. الحد الأدنى لرأس المال 0.01 يورو لكل مساهم.` },
+      { q: 'Do I need a local address or contact person in Estonia?', a: `Yes. An Estonian company needs a legal address in Estonia. If the management board is located outside Estonia, the company must also appoint a licensed contact person there to receive official mail.`,
+        qAr: 'هل أحتاج عنوانًا محليًا أو شخص اتصال في إستونيا؟', aAr: `نعم. تحتاج الشركة الإستونية إلى عنوان قانوني في إستونيا. وإذا كان مجلس الإدارة خارج إستونيا، يجب أيضًا تعيين شخص اتصال مرخص هناك لاستلام البريد الرسمي.` },
+      { q: 'Can I open a Stripe account from Egypt?', a: `Not directly. Stripe does not currently support businesses registered in Egypt, so Egyptian founders usually form a US, UK or Estonian company first, then open Stripe and a business account under that company.`,
+        qAr: 'هل أقدر أفتح حساب Stripe من مصر؟', aAr: `ليس مباشرة. Stripe لا تدعم حاليًا الشركات المسجلة في مصر، لذلك يؤسس المؤسسون المصريون عادة شركة أمريكية أو بريطانية أو إستونية أولًا، ثم يفتحون Stripe وحسابًا بنكيًا باسم تلك الشركة.` },
+      { q: 'What documents do I need to form a company abroad?', a: `For the US, UK and Estonia routes: a passport, a company name that passes the local availability check, and director and shareholder details. The US also requires a registered agent in the formation state, the UK a registered office address, and Estonia a legal address plus a licensed contact person if the board is abroad.`,
+        qAr: 'ما المستندات المطلوبة لتأسيس شركة في الخارج؟', aAr: `في مسارات الولايات المتحدة وبريطانيا وإستونيا: جواز سفر، واسم شركة يجتاز فحص التوفر المحلي، وبيانات المديرين والمساهمين. وتشترط الولايات المتحدة وكيلًا مسجلًا في ولاية التأسيس، وبريطانيا عنوان مكتب مسجل، وإستونيا عنوانًا قانونيًا وشخص اتصال مرخصًا إذا كان مجلس الإدارة خارج البلاد.` },
+    ],
+  },
+  {
     id: 'affiliate', title: 'Referrals', titleAr: 'الإحالات',
     items: [
       { q: 'Can I earn by referring people to FoundStart?', a: `Yes. The Referrals section of your dashboard gives you your referral link and shows your referrals.`,

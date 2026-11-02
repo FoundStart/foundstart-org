@@ -11,7 +11,7 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-const wanted = ['How long does it take to form a company?', 'Can a non-resident or foreigner own a company abroad?', 'How much does company formation cost?', 'How do I pay?', 'Does FoundStart open a bank account for me?', 'Which countries can I open a company in with FoundStart?'];
+const wanted = ['How long does it take to form a company?', 'Can a non-resident or foreigner own a company abroad?', 'How much does company formation cost?', 'How much does it cost to form a US LLC in 2026?', 'Can I open a Stripe account from Egypt?', 'How do I pay?', 'Does FoundStart open a bank account for me?', 'Which countries can I open a company in with FoundStart?'];
 const picks = faqCategories.flatMap(c => c.items).filter(i => wanted.includes(i.q)).sort((x, y) => wanted.indexOf(x.q) - wanted.indexOf(y.q));
 
 const HomeFAQ = () => {
