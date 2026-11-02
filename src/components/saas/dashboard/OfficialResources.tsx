@@ -70,6 +70,14 @@ const STANDARD_SOURCES: StandardSource[] = [
       { label: ['Pro Rata Side Letter (English file)', 'خطاب حق المشاركة النسبية الجانبي (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/Pro%20Rata%20Side%20Letter-d6dd8d827741862b18fba0f658da17fb4e787e5f2dda49584b9caea89bf42302.docx', format: 'DOC' },
       { label: ['SAFE User Guide (English file)', 'دليل استخدام SAFE (ملف إنجليزي)'], url: 'https://bookface-static.ycombinator.com/assets/ycdc/SAFE%20User%20Guide-a47c6588327d73aa2799e61ed7c2cae9f1a0ee9acfa9c43b62039dc06e715832.pdf', format: 'PDF' },
     ] },
+  { name: ['FoundStart blank business documents', 'نماذج أعمال فارغة من إعداد FoundStart'], url: 'https://www.foundstart.org/templates/invoice-blank-foundstart.pdf', rowLabel: ['Author', 'الإعداد'], linkLabel: ['FoundStart (authored blank template)', 'FoundStart (نموذج فارغ من إعدادنا)'], linkUrl: 'https://www.foundstart.org/templates/invoice-blank-foundstart.pdf',
+    note: ['Blank invoice template authored by FoundStart - not an official form and no tax or legal compliance claim; fill in your own details before use', 'نموذج فاتورة فارغ من إعداد FoundStart - ليس مستنداً رسمياً ولا ندّعي أي توافق ضريبي أو قانوني؛ املأ بياناتك قبل الاستخدام'],
+    docs: [
+      { label: ['Blank invoice - English (Word)', 'فاتورة فارغة - إنجليزي (Word)'], url: 'https://www.foundstart.org/templates/invoice-blank-foundstart.docx', format: 'DOC' },
+      { label: ['Blank invoice - English (PDF)', 'فاتورة فارغة - إنجليزي (PDF)'], url: 'https://www.foundstart.org/templates/invoice-blank-foundstart.pdf', format: 'PDF' },
+      { label: ['Blank invoice - Arabic, right-to-left (Word)', 'فاتورة فارغة - عربي من اليمين لليسار (Word)'], url: 'https://www.foundstart.org/templates/invoice-blank-foundstart-ar.docx', format: 'DOC' },
+      { label: ['Blank invoice - Arabic, right-to-left (PDF)', 'فاتورة فارغة - عربي من اليمين لليسار (PDF)'], url: 'https://www.foundstart.org/templates/invoice-blank-foundstart-ar.pdf', format: 'PDF' },
+    ] },
 ];
 
 const OfficialResources = () => {
