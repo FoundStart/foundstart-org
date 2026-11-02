@@ -9,6 +9,28 @@ const manifest = JSON.parse(fs.readFileSync("scripts/seo-manifest.json", "utf8")
 const dist = path.resolve("dist"); const shell = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const today = new Date().toISOString().slice(0, 10);
+// Load full article bodies + FAQ data from the typed source files (bundled with esbuild,
+// which ships with vite). Used to prerender complete article/FAQ content into server HTML.
+const require2 = (await import("node:module")).createRequire(import.meta.url);
+const esbuild = require2("esbuild");
+const bundleOut = path.resolve("node_modules/.cache/fs-prerender-data.mjs");
+esbuild.buildSync({
+  entryPoints: ["scripts/article-bodies-entry.ts"], bundle: true, format: "esm", platform: "node",
+  outfile: bundleOut, logLevel: "silent", alias: { "@": path.resolve("src") },
+  loader: { ".png": "text", ".jpg": "text", ".jpeg": "text", ".svg": "text", ".webp": "text", ".gif": "text", ".mp4": "text", ".css": "text" },
+});
+const pdata = await import(bundleOut.href ?? bundleOut);
+const ARTICLES = { ...pdata.shortetArticles, ...pdata.foundstartArticles, ...pdata.shortetArticlesAr, ...pdata.agencyArticles };
+const FAQS = pdata.faqCategories || [];
+const faqHtml = FAQS.length
+  ? FAQS.map((c) => `<section><h2>${esc(c.title)}</h2>${c.items.map((i) => `<h3>${esc(i.q)}</h3><p>${esc(i.a)}</p>`).join("")}</section>`).join("") +
+    `<div dir="rtl" lang="ar">` + FAQS.map((c) => `<section><h2>${esc(c.titleAr)}</h2>${c.items.map((i) => `<h3>${esc(i.qAr)}</h3><p>${esc(i.aAr)}</p>`).join("")}</section>`).join("") + `</div>`
+  : "";
+// Every data-driven article gets a manifest entry so it is prerendered and listed in the sitemap.
+for (const [slug, a] of Object.entries(ARTICLES)) {
+  const r = "/blog/" + slug;
+  if (!manifest[r] && a && a.title) manifest[r] = { title: `${a.title} | FoundStart Blog`, desc: a.description || "", ogt: a.title, ogd: a.description || "", h1: a.title, text: a.description || "" };
+}
 function setTag(html, re, tag) { return re.test(html) ? html.replace(re, tag) : html.replace("</head>", `  ${tag}\n  </head>`); }
 function page(route, m, extra = {}) {
   let h = shell; const url = cfg.site + (route === "/" ? "" : route);
@@ -22,7 +44,9 @@ function page(route, m, extra = {}) {
   h = setTag(h, /<meta\s+name="twitter:title"[^>]*>/i, `<meta name="twitter:title" content="${esc(m.ogt || m.title)}" />`);
   if (desc) h = setTag(h, /<meta\s+name="twitter:description"[^>]*>/i, `<meta name="twitter:description" content="${esc(m.ogd || m.desc)}" />`);
   if (extra.noindex) h = setTag(h, /<meta\s+name="robots"[^>]*>/i, `<meta name="robots" content="noindex, nofollow" />`);
-  const body = `<div id="root"><main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text ? `<p>${esc(m.text)}</p>` : ""}</main></div>`;
+  // The shell's #root is not empty (badge markup), so insert the prerendered main as its
+  // first child instead of replacing an empty div. React replaces it client-side on mount.
+  const preInner = `<main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text ? `<p>${esc(m.text)}</p>` : ""}${extra.bodyHtml || ""}</main>`;
   const cssLink = (h.match(/<link rel="stylesheet"[^>]*href="\/assets\/[^"]*\.css"[^>]*>/) || [''])[0];
   if (cssLink) h = h.replace(cssLink, '');
   h = h.replace(/<head>/i, '<head>' + PRERENDER_CSS + cssLink);
@@ -32,13 +56,17 @@ function page(route, m, extra = {}) {
     h = h.replace("</head>", `  <script type="application/ld+json">${JSON.stringify(FAQ_LD)}</script>
   </head>`);
   }
-  return h.replace(/<div id="root">\s*<\/div>/, body);
+  return h.replace(/<div id="root">/, "<div id=\"root\">" + preInner);
 }
 let n = 0;
 for (const [route, m] of Object.entries(manifest)) {
   if (!m || !m.title) continue;
+  const extra = {};
+  const bm = route.match(/^\/blog\/([a-z0-9-]+)$/);
+  if (bm && ARTICLES[bm[1]] && ARTICLES[bm[1]].html) extra.bodyHtml = `<article>${ARTICLES[bm[1]].html}</article>`;
+  if (route === "/faq" && faqHtml) extra.bodyHtml = faqHtml;
   const out = route === "/" ? path.join(dist, "index.html") : path.join(dist, route, "index.html");
-  fs.mkdirSync(path.dirname(out), { recursive: true }); fs.writeFileSync(out, page(route, m)); n++;
+  fs.mkdirSync(path.dirname(out), { recursive: true }); fs.writeFileSync(out, page(route, m, extra)); n++;
 }
 fs.writeFileSync(path.join(dist, "404.html"), page("/404", { title: "Page not found | " + cfg.name, desc: "This page does not exist.", h1: "Page not found" }, { noindex: true }).replace(/<link rel="canonical"[^>]*>\s*/, ""));
 const urls = Object.keys(manifest).filter((r) => manifest[r] && manifest[r].title && !(cfg.sitemapExclude || []).some((p) => r.startsWith(p)));
