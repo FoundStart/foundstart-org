@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useMemo, useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react';
 import { blogPosts, type BlogPost } from '@/data/blogPostsData';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -24,7 +23,7 @@ import thumbMomoAr from '@/assets/blog-momoai-business-setup-ar.jpg';
 const THUMBS: Record<string, string> = {
   'fintech-virtual-cards-2026': thumbFintech,
   'business-automation-2026': thumbAutomation,
-  'best-company-formation-2026': (thumbFormation as { url: string }).url,
+  'best-company-formation-2026': thumbFormation,
   'vibe-coding-platforms-2026': thumbVibe,
   'payment-gateways-2026': thumbPayments,
   'momoai-business-setup-guide-en': thumbMomoEn,
@@ -45,41 +44,14 @@ const catGradient = (cat: string) => {
   return grads[h % grads.length];
 };
 
-const SkeletonCard = () => (
-  <Card className="h-full border-border/50">
-    <CardContent className="p-0">
-      <Skeleton className="h-40 w-full rounded-t-lg" />
-      <div className="p-5 space-y-3">
-        <Skeleton className="h-4 w-20" />
-        <Skeleton className="h-5 w-11/12" />
-        <Skeleton className="h-5 w-3/4" />
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-5/6" />
-        <div className="flex gap-3 pt-2">
-          <Skeleton className="h-3 w-16" />
-          <Skeleton className="h-3 w-14" />
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-);
-
 const HomeBlogCarousel = () => {
   const { language } = useTranslation();
-  const [ready, setReady] = useState(false);
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const ar = language === 'ar';
+  const posts = useMemo(() => postsForLanguage(blogPosts, language).slice(0, 10), [language]);
   const autoplay = useRef(
     Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
-  useEffect(() => {
-    // Simulate async load so skeletons render on first paint — prevents layout shift.
-    const t = setTimeout(() => {
-      setPosts(postsForLanguage(blogPosts, language).slice(0, 10));
-      setReady(true);
-    }, 250);
-    return () => clearTimeout(t);
-  }, [language]);
 
   return (
     <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-muted/20 to-background">
@@ -108,22 +80,18 @@ const HomeBlogCarousel = () => {
         </motion.div>
 
         <Carousel
-          opts={{ align: 'start', loop: true, dragFree: true }}
+          key={language}
+          dir={ar ? 'rtl' : 'ltr'}
+          opts={{ align: 'start', loop: true, dragFree: true, direction: ar ? 'rtl' : 'ltr' }}
           plugins={[autoplay.current]}
           className="w-full"
           onMouseLeave={() => autoplay.current.play()}
         >
-          <CarouselContent className="-ml-4">
-            {!ready
-              ? Array.from({ length: 6 }).map((_, i) => (
-                  <CarouselItem key={`sk-${i}`} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                    <SkeletonCard />
-                  </CarouselItem>
-                ))
-              : posts.map((post) => {
+          <CarouselContent className={ar ? "!ml-0 !-mr-4" : "-ml-4"}>
+            {posts.map((post) => {
                   const thumb = THUMBS[post.slug] || post.image;
                   return (
-                    <CarouselItem key={post.id} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={post.id} className={`${ar ? "!pl-0 pr-4" : "pl-4"} basis-full sm:basis-1/2 lg:basis-1/3`}>
                       <Link to={`/blog/${post.slug}`} className="block h-full group">
                         <Card className="h-full overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1 border-border/50 hover:border-primary/40">
                           <CardContent className="p-0 flex flex-col h-full">
@@ -162,8 +130,8 @@ const HomeBlogCarousel = () => {
                   );
                 })}
           </CarouselContent>
-          <CarouselPrevious className="flex -left-2 md:-left-4" />
-          <CarouselNext className="flex -right-2 md:-right-4" />
+          <CarouselPrevious className={ar ? "flex !left-auto -right-2 md:-right-4" : "flex -left-2 md:-left-4"} />
+          <CarouselNext className={ar ? "flex !right-auto -left-2 md:-left-4" : "flex -right-2 md:-right-4"} />
         </Carousel>
 
         <div className="mt-10 flex justify-center">
