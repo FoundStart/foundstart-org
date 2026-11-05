@@ -21,7 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Noto Sans Arabic', 'system-ui', 'sans-serif'],
-				'arabic': ['Noto Sans Arabic', 'system-ui', 'sans-serif'],
+				'arabic': ['Cairo', 'Noto Sans Arabic', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

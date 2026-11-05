@@ -1,23 +1,12 @@
 
-import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Sun, Moon } from 'lucide-react';
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.className = savedTheme;
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.className = newTheme;
-    localStorage.setItem('theme', newTheme);
-  };
+  const { resolvedTheme, setTheme } = useTheme();
+  const theme = resolvedTheme || 'dark';
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <Button
