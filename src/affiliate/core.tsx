@@ -64,11 +64,17 @@ export function AffiliateTracker({ supabase, userId }: { supabase: any; userId: 
 }
 
 /* ---------- videos ---------- */
+const obsoleteVideo = (id: string) => ['5PxLxnn2nfk','fKCAGMalUFM'].includes(id);
+const obsoleteText = (id: string, ar: boolean) => id === '5PxLxnn2nfk'
+ ? (ar ? 'فيديو أرشيفي لفكرة قديمة، وليس شرحا للمنتج الحالي. ادعاءات الذكاء الاصطناعي والتعلم من التفضيلات وتحسن التوصيات والتوفر الفوري وشراء الدومينات لا تمثل خصائص Namelizer الحالية. المنتج الحالي يدير محفظة دومينات؛ التوليد قائم على قواعد وفحص السجل يدوي، ولا يشتري نيابة عنك.' : 'Archived concept, not a demo of the current product. Its AI, preference learning, improving recommendations, instant availability and Buy Now claims do not describe current Namelizer features. The current product manages a domain portfolio, uses rule-based generation and manual registry checks, and does not buy domains for you.')
+ : (ar ? 'فيديو تسويقي قديم، وليس شرحا للمنتج الحالي. ادعاءات فحص Reddit كل ساعة والنتائج الفورية وباقات الاشتراك 9 و29 و99 دولار غير سارية. المنتج الحالي يتابع X وLinkedIn وHacker News وGoogle News؛ لا يتابع Reddit ولا يضمن فحصا كل ساعة أو تنبيهات فورية. التسعير الحالي أرصدة بدفع مرة واحدة، وليس اشتراكا.' : 'Archived marketing video, not a current product demo. Its Reddit monitoring, hourly scans, instant results and $9/$29/$99 subscription tiers are outdated. Current coverage is X, LinkedIn, Hacker News and Google News, not Reddit; hourly scans and instant alerts are not promised. Current pricing uses one-time credit packs, not subscriptions.');
+
 export function VideoCard({ v, lang }: { v: ProductVideo; lang: Lang }) {
   const [on, setOn] = useState(false);
   const [done, setDone] = useState(false);
   const link = `https://youtu.be/${v.id}`;
   const t = T(lang);
+  if (obsoleteVideo(v.id)) return <article className="rounded-lg border border-border bg-card p-4 space-y-3" dir={lang === 'ar' ? 'rtl' : 'ltr'}><h3 className="font-semibold">{lang === 'ar' ? 'فيديو أرشيفي غير ساري' : 'Obsolete archive video'}: {v.product === 'namelizer' ? 'Namelizer' : 'HeyKeyword'}</h3><p className="text-sm leading-relaxed">{obsoleteText(v.id, lang === 'ar')}</p><a className="underline text-sm" href={link} target="_blank" rel="noopener noreferrer">{lang === 'ar' ? 'فتح المصدر التاريخي على YouTube' : 'Open historical source on YouTube'}</a></article>;
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden flex flex-col" dir={v.lang === "ar" ? "rtl" : "ltr"}>
       <div className="relative aspect-video bg-muted">
@@ -99,7 +105,7 @@ export function VideoCard({ v, lang }: { v: ProductVideo; lang: Lang }) {
 
 export function ProductVideoSection({ product, lang, title, limit }: { product: VideoProduct; lang: Lang; title?: string; limit?: number }) {
   const t = T(lang);
-  const list = useMemo(() => productVideos.filter((v) => v.product === product && v.lang === lang), [product, lang]);
+  const list = useMemo(() => productVideos.filter((v) => v.product === product && v.lang === lang && !obsoleteVideo(v.id)), [product, lang]);
   const shown = limit ? list.slice(0, limit) : list;
   if (!list.length) return null;
   return (
@@ -389,7 +395,7 @@ export function AffiliatesPage({ a, view = "program" }: { a: AffAdapter; view?: 
             <>
               {Facts}{How}{Join}
               <section dir={dir}><h2 className="text-xl font-bold mb-2 flex items-center gap-2"><Film className="w-5 h-5" />{t("Media kit", "الميديا كيت")}</h2><p className="text-sm text-muted-foreground mb-4">{t("Affiliates get a media kit with our videos for every platform, ready to share. A few examples:", "الأفلييت بياخدوا ميديا كيت فيها فيديوهاتنا لكل المنصات جاهزة للمشاركة. أمثلة:")}</p>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{productVideos.filter((v) => v.product === a.site.product && v.lang === a.lang).slice(0, 3).map((v) => <VideoCard key={v.id} v={v} lang={a.lang} />)}</div></section>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{productVideos.filter((v) => v.product === a.site.product && !obsoleteVideo(v.id) && v.lang === a.lang).slice(0, 3).map((v) => <VideoCard key={v.id} v={v} lang={a.lang} />)}</div></section>
               <p className="text-xs text-muted-foreground text-center" dir={dir}>{t("Earnings depend entirely on your referrals and are not guaranteed.", "الأرباح تعتمد بالكامل على إحالاتك وغير مضمونة.")}</p>
             </>
           )}
@@ -481,8 +487,9 @@ export function ProductVideosPage({ a }: { a: AffAdapter }) {
   const t = T(a.lang);
   useEffect(() => { document.title = `${t("Videos", "فيديوهات")} | ${a.site.name}`; }, [a.lang]);
   const mine = productVideos.filter((v) => v.product === a.site.product);
-  const inLang = mine.filter((v) => v.lang === a.lang);
-  const rest = mine.filter((v) => v.lang !== a.lang);
+  const inLang = mine.filter((v) => v.lang === a.lang && !obsoleteVideo(v.id));
+  const archive = mine.filter((v) => obsoleteVideo(v.id));
+  const rest = mine.filter((v) => v.lang !== a.lang && !obsoleteVideo(v.id));
   const dir = a.lang === "ar" ? "rtl" : "ltr";
   return (
     <a.Layout>
@@ -493,6 +500,7 @@ export function ProductVideosPage({ a }: { a: AffAdapter }) {
         </div>
         {inLang.length > 0 && <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{inLang.map((v) => <VideoCard key={v.id} v={v} lang={a.lang} />)}</div>}
         {rest.length > 0 && <div><h2 className="text-lg font-semibold mb-3">{a.lang === "ar" ? "Videos in English" : "الفيديوهات بالعربية"}</h2><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{rest.map((v) => <VideoCard key={v.id} v={v} lang={a.lang} />)}</div></div>}
+        {archive.length > 0 && <section className="space-y-4 border-t pt-8"><h2 className="text-xl font-bold">{a.lang === 'ar' ? 'أرشيف قديم، وليس شرحا للمنتج الحالي' : 'Historical archive, not current product demos'}</h2>{archive.map(v => <VideoCard key={v.id} v={v} lang={a.lang} />)}</section>}
         <p className="text-sm text-muted-foreground"><Link className="underline" to="/affiliates">{t("Earn by sharing - affiliate program", "اكسب بالمشاركة - برنامج الأفلييت")}</Link></p>
       </div>
     </a.Layout>
