@@ -1,3 +1,4 @@
+import OwnedVideoPlayer, { ownedVideoSource } from "./OwnedVideoPlayer";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Play } from 'lucide-react';
 
@@ -26,14 +27,14 @@ const VideoModal = ({ isOpen, onClose, videoUrl, title }: VideoModalProps) => {
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-          <iframe
+          {videoId && ownedVideoSource(videoId) ? <OwnedVideoPlayer id={videoId} title={title} className="absolute top-0 left-0 w-full h-full rounded-lg" /> : <iframe
             className="absolute top-0 left-0 w-full h-full rounded-lg"
             src={embedUrl}
             title={title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          />
+          /> }
         </div>
       </DialogContent>
     </Dialog>

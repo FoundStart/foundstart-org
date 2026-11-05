@@ -1,3 +1,4 @@
+import OwnedVideoPlayer from "./OwnedVideoPlayer";
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, Sparkles, Globe, Building2, Youtube } from 'lucide-react';
@@ -120,14 +121,7 @@ const Hero = () => {
       {showVideo && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setShowVideo(false)}>
           <div className="w-full max-w-4xl mx-4 aspect-video rounded-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <iframe
-              src="https://www.youtube.com/embed/dvyjdyrKFUw?autoplay=1"
-              title="FoundStart Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
+            <OwnedVideoPlayer id="dvyjdyrKFUw" title="FoundStart Demo" className="w-full h-full" />
           </div>
         </div>
       )}

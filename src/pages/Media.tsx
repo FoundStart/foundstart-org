@@ -1,3 +1,4 @@
+import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -131,8 +132,8 @@ const Media = () => {
               <button type="button" onClick={() => setPlaying(null)} aria-label={l.close} className="p-1 shrink-0"><X className="w-6 h-6" /></button>
             </div>
             <div className="aspect-video bg-black">
-              <iframe className="w-full h-full" src={`https://www.youtube-nocookie.com/embed/${playing.id}?autoplay=1&rel=0`} title={playing.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              {ownedVideoSource(playing.id) ? <OwnedVideoPlayer id={playing.id} title={playing.title} className="w-full h-full" /> : <iframe className="w-full h-full" src={`https://www.youtube-nocookie.com/embed/${playing.id}?autoplay=1&rel=0`} title={playing.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> }
             </div>
             <a className="inline-flex items-center gap-1 mt-2 text-sm text-white/80 hover:text-white" href={`https://www.youtube.com/watch?v=${playing.id}`} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="w-4 h-4" />{l.open}
