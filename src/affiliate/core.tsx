@@ -1,3 +1,4 @@
+import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 // Affiliate / referral program UI shared by FoundStart, HeyKeyword and Namelizer.
 // Each site passes an adapter (supabase client, language, auth, layout). All data goes through
 // SECURITY DEFINER RPCs (aff_*) in that site's own Supabase project. Nothing is paid automatically.
@@ -71,7 +72,7 @@ export function VideoCard({ v, lang }: { v: ProductVideo; lang: Lang }) {
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden flex flex-col" dir={v.lang === "ar" ? "rtl" : "ltr"}>
       <div className="relative aspect-video bg-muted">
-        {on ? (
+        {ownedVideoSource(v.id) ? <OwnedVideoPlayer id={v.id} title={v.title} className="absolute inset-0 w-full h-full" /> : on ? (
           <iframe className="absolute inset-0 w-full h-full" src={`https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`} title={v.title} allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowFullScreen loading="lazy" />
         ) : (
           <button type="button" onClick={() => setOn(true)} className="absolute inset-0 group" aria-label={`Play: ${v.title}`}>

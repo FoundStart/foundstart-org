@@ -1,3 +1,4 @@
+import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { countriesData } from '@/data/countriesData';
@@ -14,7 +15,7 @@ const VideoEmbed = ({ id, title }: { id: string; title: string }) => {
   const [on, setOn] = useState(false);
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black">
-      {on ? (
+      {ownedVideoSource(id) ? <OwnedVideoPlayer id={id} title={title} className="absolute inset-0 h-full w-full" /> : on ? (
         <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`} title={title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
       ) : (
         <button type="button" onClick={() => setOn(true)} aria-label={title} className="group absolute inset-0 h-full w-full">

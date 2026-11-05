@@ -1,3 +1,4 @@
+import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Play, ArrowRight } from 'lucide-react';
@@ -48,14 +49,14 @@ const Tutorials = () => {
 
         <Card className="mb-10 overflow-hidden border-primary/20">
           <div className="aspect-video bg-black">
-            <iframe
+            {ownedVideoSource(mainId) ? <OwnedVideoPlayer id={mainId} title={L("FoundStart full walkthrough", "شرح FoundStart الكامل")} className="h-full w-full" /> : <iframe
               className="h-full w-full"
               src={`https://www.youtube.com/embed/${mainId}`}
               title={L('FoundStart full walkthrough', 'شرح FoundStart الكامل')}
               loading="lazy"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-            />
+            />}
           </div>
           <CardContent className="p-5 md:p-6">
             <h2 className="text-xl md:text-2xl font-bold mb-1">{L('Full walkthrough: open a company in any country', 'الشرح الكامل: افتح شركتك في أي دولة')}</h2>
