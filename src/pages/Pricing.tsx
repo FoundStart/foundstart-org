@@ -81,7 +81,7 @@ const Pricing = () => {
                         </div>
                       ))}
                     </div>
-                    {c.note && <p className="text-xs text-muted-foreground">{L('Government, notary and registry fees are separate and confirmed in your quote before work starts.', 'الرسوم الحكومية ورسوم التوثيق والسجل منفصلة ويتم تأكيدها في عرض السعر قبل بدء العمل.')}</p>}
+                    {c.note && <p className="text-xs text-muted-foreground">{L('Government, notary and registry fees are separate; request a written breakdown before payment.', 'الرسوم الحكومية ورسوم التوثيق والسجل منفصلة؛ اطلب بيانها كتابة قبل الدفع.')}</p>}
                     <Button asChild className="w-full">
                       <Link to={`/dashboard/formation?country=${c.code}`}>
                         {L('Start in', 'ابدأ في')} {ct(c.name)}
@@ -94,7 +94,7 @@ const Pricing = () => {
             </div>
 
             <p className="text-center text-sm text-muted-foreground mt-10">
-              {L('Prices are FoundStart service fees. Government and notary fees, where they apply, are separate and confirmed in your quote before work starts.', 'الأسعار هي رسوم خدمة FoundStart. الرسوم الحكومية ورسوم التوثيق، إن وجدت، منفصلة ويتم تأكيدها في عرض السعر قبل بدء العمل.')}
+              {L('Prices are FoundStart service fees. Government and notary fees, where they apply, are separate; request a written breakdown before payment.', 'الأسعار هي رسوم خدمة FoundStart. الرسوم الحكومية ورسوم التوثيق، إن وجدت، منفصلة؛ اطلب بيانها كتابة قبل الدفع.')}
             </p>
           </div>
         </section>
