@@ -72,8 +72,8 @@ const Hero = () => {
           className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-white/60"
         >
           {ar
-            ? 'سجل، ادفع أونلاين، وتابع كل خطوة من لوحة واحدة. 9 دول، سعر واضح لكل نوع شركة.'
-            : 'Register, pay online and track every step from one dashboard. 9 countries, one clear price per company type.'}
+            ? 'قارن 9 دول وأتعاب خدمة FoundStart. أكد نطاق الخدمة والرسوم الحكومية المنفصلة قبل الدفع.'
+            : 'Compare 9 countries and FoundStart service fees. Confirm the full scope and separate government charges before paying.'}
         </motion.p>
 
         <motion.div

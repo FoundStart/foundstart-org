@@ -1,3 +1,4 @@
+import FormationScope from '@/components/FormationScope';
 import React from 'react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -32,7 +33,7 @@ const PricingCalculatorPage: React.FC = () => {
             </h1>
             <p className="text-xl text-muted-foreground">
               See the exact FoundStart fee for your company formation. Select your country
-              and entity type to see your total cost.
+              and entity type. Government charges and renewals are not included.
             </p>
           </div>
 
@@ -57,10 +58,11 @@ const PricingCalculatorPage: React.FC = () => {
                 <CreditCard className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-1">3. See Your Price</h3>
-              <p className="text-sm text-muted-foreground">One clear fee, no add-ons</p>
+              <p className="text-sm text-muted-foreground">Service fee only, not the all-in filing cost</p>
             </div>
           </div>
 
+              <FormationScope />
           {/* Calculator */}
           <PricingCalculatorComponent />
         </main>

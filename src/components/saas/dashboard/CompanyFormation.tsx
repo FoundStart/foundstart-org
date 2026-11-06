@@ -1,3 +1,4 @@
+import FormationScope from '@/components/FormationScope';
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
@@ -150,7 +151,7 @@ const FormationWizard = () => {
     <div className="space-y-6">
       {cancelled && (
         <div className="rounded-lg border border-yellow-300 bg-yellow-50 dark:border-yellow-900 dark:bg-yellow-950 p-4 text-sm">
-          {L('Payment was cancelled - no charge was made. Review your details and try again when ready.', 'تم إلغاء الدفع - لم يتم خصم أي مبلغ. راجع بياناتك وحاول مرة أخرى عندما تكون جاهزاً.')}
+          {L('Checkout was cancelled. Check your payment records before trying again.', 'تم إلغاء مسار الدفع. راجع سجل مدفوعاتك قبل المحاولة مجددا.')}
         </div>
       )}
 
@@ -432,7 +433,7 @@ const FormationWizard = () => {
 
                 <div className="border-t pt-4 mt-4">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">{L('Formation Fee', 'رسوم التأسيس')} - {ct(selectedEntity?.name)} ({ct(selectedCountry?.name)})</span>
+                    <span className="text-muted-foreground">{L('FoundStart service fee', 'أتعاب خدمة FoundStart')} - {ct(selectedEntity?.name)} ({ct(selectedCountry?.name)})</span>
                     <span className="font-medium">${selectedEntity?.price}</span>
                   </div>
                   {formData.addons.map((addonId) => {
@@ -445,7 +446,7 @@ const FormationWizard = () => {
                     );
                   })}
                   <div className="flex justify-between border-t pt-2 mt-2">
-                    <span className="font-semibold">{L('Total', 'الإجمالي')}</span>
+                    <span className="font-semibold">{L('Service fee payable', 'أتعاب الخدمة المطلوب دفعها')}</span>
                     <span className="font-bold text-lg">${calculateTotal()}</span>
                   </div>
                 </div>
@@ -454,8 +455,9 @@ const FormationWizard = () => {
               {selectedCountry?.note && (
                 <p className="text-sm text-muted-foreground rounded-lg border p-3 bg-muted/40">{ct(selectedCountry.note)}</p>
               )}
+              <FormationScope />
               <p className="text-center text-sm text-muted-foreground">
-                {L('Secure card payment via Stripe. Your company appears in your dashboard right after payment.', 'دفع آمن بالبطاقة عبر Stripe. تظهر شركتك في لوحة التحكم بعد الدفع مباشرة.')}
+                {L('Secure card payment via Stripe. An order or company record in the dashboard is not a government registration certificate.', 'دفع آمن بالبطاقة عبر Stripe. وجود طلب أو سجل شركة في اللوحة ليس شهادة تسجيل حكومية.')}
               </p>
             </div>
           )}

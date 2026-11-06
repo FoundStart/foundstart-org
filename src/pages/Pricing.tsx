@@ -1,3 +1,4 @@
+import FormationScope from '@/components/FormationScope';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -19,7 +20,7 @@ const Pricing = () => {
   const included = [
     L('Register your company online in a few steps', 'سجل شركتك أونلاين في خطوات بسيطة'),
     L('Pay securely by card through Stripe', 'ادفع بأمان بالبطاقة عبر Stripe'),
-    L('Track every step from your FoundStart dashboard', 'تابع كل خطوة من لوحة تحكم FoundStart'),
+    L('Track your request from your FoundStart dashboard', 'تابع طلبك من لوحة تحكم FoundStart'),
   ];
 
   return (
@@ -30,8 +31,8 @@ const Pricing = () => {
           title={L('Transparent', 'أسعار')}
           highlight={L('Pricing', 'واضحة')}
           subtitle={L(
-            'One clear FoundStart fee per company type. No add-ons, no surprises.',
-            'رسوم FoundStart واضحة لكل نوع شركة. بدون خدمات إضافية وبدون مفاجآت.'
+            'FoundStart service fees by company type. Government charges and renewals are separate.',
+            'أتعاب خدمة FoundStart حسب نوع الشركة. الرسوم الحكومية والتجديد منفصلة.'
           )}
         />
 
@@ -62,6 +63,7 @@ const Pricing = () => {
               </CardContent>
             </Card>
 
+              <FormationScope />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {formationCountries.map((c) => (
                 <Card key={c.code} className="glass-card">

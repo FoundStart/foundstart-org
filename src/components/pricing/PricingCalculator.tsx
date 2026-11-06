@@ -232,7 +232,7 @@ const PricingCalculator: React.FC = () => {
 
                     {/* Total */}
                     <div className="flex justify-between items-center">
-                      <span className="text-lg font-semibold">Total</span>
+                      <span className="text-lg font-semibold">FoundStart service fee</span>
                       <span className="text-2xl font-bold text-primary">
                         {formatPrice(calculation.total, calculation.currencySymbol)}
                       </span>

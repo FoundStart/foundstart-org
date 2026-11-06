@@ -1,3 +1,4 @@
+import FormationScope from '@/components/FormationScope';
 import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -33,9 +34,9 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
   const ar = language === 'ar';
   const formationPath = '/dashboard/formation';
   const items = [
-    { icon: LayoutDashboard, t: ar ? 'لوحة عميل كاملة' : 'A full client dashboard', d: ar ? 'تابع شركتك ومستنداتك ومدفوعاتك من مكان واحد، مثل كبرى شركات التأسيس.' : 'Track your company, documents and payments in one place, like the big formation companies.' },
+    { icon: LayoutDashboard, t: ar ? 'لوحة عميل كاملة' : 'A full client dashboard', d: ar ? 'تابع شركتك ومستنداتك ومدفوعاتك من مكان واحد.' : 'Track your company, documents and payments in one place.' },
     { icon: ClipboardCheck, t: ar ? 'متطلبات كل دولة' : "Each country's requirements", d: ar ? 'شوف المتطلبات والسعر داخل اللوحة قبل ما تدفع.' : 'See the requirements and the price inside the dashboard before you pay.' },
-    { icon: Package, t: ar ? 'سعر واضح واحد' : 'One clear price', d: ar ? 'رسوم FoundStart واحدة لكل نوع شركة، بدون خدمات إضافية.' : 'One FoundStart fee per company type, no add-ons.' },
+    { icon: Package, t: ar ? 'أتعاب خدمة FoundStart' : 'FoundStart service fee', d: ar ? 'أتعاب الخدمة حسب نوع الشركة. الرسوم الحكومية والتجديد تحتاج تأكيدا منفصلا.' : 'Service fees by company type. Government charges and renewals need separate confirmation.' },
   ];
   return (
     <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -43,7 +44,7 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
         <div className="text-center mb-10 space-y-3">
           <h2 className="text-2xl md:text-4xl font-extrabold">{ar ? 'افتح شركتك مع FoundStart' : 'Open your company with FoundStart'}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {ar ? 'للفريلانسرز، وأصحاب المتاجر الإلكترونية، وشركات SaaS، وكل من يحتاج شركة لاستقبال المدفوعات. نفتح لك شركة في أي دولة بأسعارنا.' : 'For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. We open a company for you in any country at our prices.'}
+            {ar ? 'للفريلانسرز، وأصحاب المتاجر الإلكترونية، وشركات SaaS، وكل من يحتاج شركة لاستقبال المدفوعات. قارن الدول المتاحة وأكد نطاق الخدمة قبل الطلب.' : 'For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. Compare available jurisdictions and confirm the service scope before ordering.'}
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -88,6 +89,7 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
           ))}
         </div>
         </>)}
+        {mode === 'fs' && <FormationScope />}
         {mode === 'fs' && (
           <div className="flex flex-wrap justify-center gap-3">
             <Button size="lg" asChild><Link to={user ? formationPath : '/auth'} state={{ redirectTo: formationPath }}>{ar ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}<ArrowRight className="w-4 h-4 ml-2" /></Link></Button>

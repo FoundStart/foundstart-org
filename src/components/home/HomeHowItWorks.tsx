@@ -18,14 +18,14 @@ const steps = [
   {
     icon: Rocket,
     link: '/auth',
-    en: ['Pay online', 'Secure card checkout. One clear fee, no add-ons.'],
-    ar: ['ادفع أونلاين', 'دفع آمن بالبطاقة. رسوم واحدة واضحة، بدون إضافات.'],
+    en: ['Pay online', 'Confirm the written scope and separate charges before card checkout.'],
+    ar: ['ادفع أونلاين', 'أكد نطاق الخدمة والرسوم المنفصلة كتابة قبل الدفع بالبطاقة.'],
   },
   {
     icon: MessagesSquare,
     link: '/dashboard',
-    en: ['Track every step', 'Upload documents and follow your company in the dashboard.'],
-    ar: ['تابع كل خطوة', 'ارفع المستندات وتابع شركتك من لوحة التحكم.'],
+    en: ['Track your request', 'Upload documents and follow your company in the dashboard.'],
+    ar: ['تابع طلبك', 'ارفع المستندات وتابع شركتك من لوحة التحكم.'],
   },
 ];
 
@@ -44,8 +44,8 @@ const HomeHowItWorks = ({ language, isRTL }: { language: string; isRTL: boolean 
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
           {language === 'ar'
-            ? 'من الفكرة لشركة مسجلة في أربع خطوات'
-            : 'From idea to a registered company in four steps'}
+            ? 'من الاستفسار لمتابعة طلب تأسيس شركتك'
+            : 'From enquiry to tracking your formation request'}
         </p>
       </motion.div>
 
