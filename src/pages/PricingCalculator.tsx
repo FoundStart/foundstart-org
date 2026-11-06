@@ -1,3 +1,4 @@
+import { useL } from '@/hooks/useL';
 import FormationScope from '@/components/FormationScope';
 import React from 'react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
@@ -7,6 +8,7 @@ import PricingCalculatorComponent from '@/components/pricing/PricingCalculator';
 import { Calculator, Globe, Building2, CreditCard } from 'lucide-react';
 
 const PricingCalculatorPage: React.FC = () => {
+  const L = useL();
   return (
     <HelmetProvider>
       <Helmet>
@@ -32,8 +34,7 @@ const PricingCalculatorPage: React.FC = () => {
               Company Formation <span className="text-primary">Pricing Calculator</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              See the exact FoundStart fee for your company formation. Select your country
-              and entity type. Government charges and renewals are not included.
+              {L('See the FoundStart service fee by country and entity type. Government charges and renewals are not included.', 'اعرض أتعاب خدمة FoundStart حسب الدولة ونوع الكيان. الرسوم الحكومية والتجديد غير مشمولة.')}
             </p>
           </div>
 
@@ -58,7 +59,7 @@ const PricingCalculatorPage: React.FC = () => {
                 <CreditCard className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-1">3. See Your Price</h3>
-              <p className="text-sm text-muted-foreground">Service fee only, not the all-in filing cost</p>
+              <p className="text-sm text-muted-foreground">{L('Service fee only, not the all-in filing cost', 'أتعاب الخدمة فقط، وليست التكلفة الشاملة للتسجيل')}</p>
             </div>
           </div>
 

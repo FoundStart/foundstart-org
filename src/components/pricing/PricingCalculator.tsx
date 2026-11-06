@@ -1,3 +1,4 @@
+import { useL } from '@/hooks/useL';
 import { SHOW_REGISTRATION } from '@/config/features';
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,6 +13,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthProvider';
 
 const PricingCalculator: React.FC = () => {
+  const L = useL();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [selectedCountry, setSelectedCountry] = useState<string>('');
@@ -232,7 +234,7 @@ const PricingCalculator: React.FC = () => {
 
                     {/* Total */}
                     <div className="flex justify-between items-center">
-                      <span className="text-lg font-semibold">FoundStart service fee</span>
+                      <span className="text-lg font-semibold">{L('FoundStart service fee', 'أتعاب خدمة FoundStart')}</span>
                       <span className="text-2xl font-bold text-primary">
                         {formatPrice(calculation.total, calculation.currencySymbol)}
                       </span>
