@@ -1,3 +1,8 @@
+import { shortetArticles as baseArticles } from '@/data/shortetArticlesData';
+import { foundstartArticles } from '@/data/foundstartArticles';
+import { shortetArticlesAr } from '@/data/shortetArticlesAr';
+import { agencyArticles } from '@/data/foundstartAgencyArticles';
+const articlePairs = { ...baseArticles, ...foundstartArticles, ...shortetArticlesAr, ...agencyArticles };
 
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
@@ -12,11 +17,14 @@ import {
 const LanguageToggle = () => {
   const { language, setLanguage } = useTranslation();
   const chooseLanguage = (lang: 'en' | 'ar') => {
-    // Article language is encoded in its paired URL, not only in UI state.
-    const alternate = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${lang}"]`);
-    if (window.location.pathname.startsWith('/blog/') && alternate?.href) {
-      const target = new URL(alternate.href, window.location.href);
-      if (target.origin === window.location.origin && target.pathname.startsWith('/blog/')) {
+    const match = window.location.pathname.match(/^\/blog\/([^/]+)\/?$/);
+    if (match) {
+      const current = decodeURIComponent(match[1]);
+      const base = current.endsWith('-ar') ? current.slice(0, -3) : current;
+      const next = lang === 'ar' ? `${base}-ar` : base;
+      if (articlePairs[current] && articlePairs[next]) {
+        const target = new URL(window.location.href);
+        target.pathname = `/blog/${next}`;
         target.searchParams.set('lang', lang);
         setLanguage(lang);
         window.location.assign(target.href);
