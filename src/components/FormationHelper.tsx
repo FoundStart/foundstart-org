@@ -49,7 +49,7 @@ const FormationHelper = () => {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={ar ? 'مساعد التأسيس' : 'Formation helper'}
-          className="relative mx-auto my-5 flex min-h-12 w-[calc(100%-2rem)] max-w-sm items-center justify-center gap-2 rounded-full bg-primary px-4 text-primary-foreground shadow-lg lg:fixed lg:bottom-6 lg:end-4 lg:z-40 lg:m-0 lg:h-14 lg:w-14 lg:p-0"
+          className="relative mx-auto my-5 flex min-h-12 w-[calc(100%_-_2rem)] max-w-sm items-center justify-center gap-2 rounded-full bg-primary px-4 text-primary-foreground shadow-lg lg:fixed lg:bottom-6 lg:end-4 lg:z-40 lg:m-0 lg:h-14 lg:w-14 lg:p-0"
         >
           <MessageCircle className="h-6 w-6" /><span className="lg:hidden">{ar ? 'مساعد التأسيس' : 'Formation helper'}</span>
         </button>
