@@ -33,20 +33,6 @@ const PayTest = () => {
     }
   };
 
-  return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-background">
-      <Card className="w-full max-w-sm">
-        <CardHeader><CardTitle>Stripe test payment</CardTitle></CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">One $1.00 card payment through Stripe to confirm the payment webhook.</p>
-          {user ? (
-            <Button className="w-full" size="lg" onClick={pay} disabled={loading}>{loading ? 'Opening Stripe...' : 'Pay $1'}</Button>
-          ) : (
-            <Button asChild className="w-full" size="lg"><Link to="/auth">Sign in to continue</Link></Button>
-          )}
-        </CardContent>
-      </Card>
-    </div>
-  );
+  return <div className="p-8">Stripe payments are disabled on FoundStart. / تم إيقاف الدفع عبر Stripe على FoundStart.</div>;
 };
 export default PayTest;

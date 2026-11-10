@@ -101,6 +101,7 @@ const FormationWizard = () => {
   };
 
   const handleSubmit = async () => {
+    return; // New online payments are paused pending EasyKash activation.
     setSubmitting(true);
     try {
       const withTimeout = <T,>(p: Promise<T>, ms: number) => Promise.race([p, new Promise<T>((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]);
@@ -457,7 +458,7 @@ const FormationWizard = () => {
               )}
               <FormationScope />
               <p className="text-center text-sm text-muted-foreground">
-                {L('Secure card payment via Stripe. An order or company record in the dashboard is not a government registration certificate.', 'دفع آمن بالبطاقة عبر Stripe. وجود طلب أو سجل شركة في اللوحة ليس شهادة تسجيل حكومية.')}
+                {L('Online payments are paused while EasyKash is being prepared. It is not active yet. Existing price references remain in USD until EGP prices are confirmed.', 'الدفع الإلكتروني متوقف أثناء تجهيز EasyKash، وهو غير مفعل حاليا. الأسعار المرجعية الحالية بالدولار لحين تأكيد الأسعار بالجنيه.')}
               </p>
             </div>
           )}
@@ -488,9 +489,9 @@ const FormationWizard = () => {
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         ) : (
-          <Button onClick={handleSubmit} disabled={submitting}>
+          <Button onClick={handleSubmit} disabled={true}>
             {submitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CreditCard className="mr-2 h-4 w-4" />}
-            {submitting ? L('Opening secure checkout...', 'جاري فتح الدفع الآمن...') : L('Pay with Stripe', 'ادفع عبر Stripe')}
+            {submitting ? L('Opening secure checkout...', 'جاري فتح الدفع الآمن...') : L('Online payment unavailable', 'الدفع الإلكتروني غير متاح')}
           </Button>
         )}
       </div>

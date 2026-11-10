@@ -32,33 +32,16 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [currency, setCurrency] = useState<CurrencyCode>('EGP');
   const [rates, setRates] = useState(defaultRates);
 
-  // Detect user location on mount
+  // Egyptian pounds are the site default. Only an explicit visitor choice overrides it.
   useEffect(() => {
-    const detectLocation = async () => {
-      try {
-        const res = await fetch('https://ipapi.co/json/');
-        const data = await res.json();
-        const countryToCurrency: Record<string, CurrencyCode> = {
-          EG: 'EGP', US: 'USD', GB: 'GBP', DE: 'EUR', FR: 'EUR', ES: 'EUR', NL: 'EUR',
-        };
-        const detected = countryToCurrency[data.country_code];
-        if (detected) setCurrency(detected);
-      } catch {
-        // Default to EGP
-      }
-    };
-
-    const saved = localStorage.getItem('preferred_currency') as CurrencyCode;
-    if (saved && defaultRates[saved]) {
-      setCurrency(saved);
-    } else {
-      detectLocation();
-    }
+    const saved = localStorage.getItem('foundstart_currency_egp_v1') as CurrencyCode;
+    if (saved && defaultRates[saved]) setCurrency(saved);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('preferred_currency', currency);
-  }, [currency]);
+  const chooseCurrency = (next: CurrencyCode) => {
+    setCurrency(next);
+    localStorage.setItem('foundstart_currency_egp_v1', next);
+  };
 
   const convert = (amount: number, from: CurrencyCode = 'USD') => {
     const usdAmount = amount / rates[from];
@@ -77,7 +60,7 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   return (
-    <CurrencyContext.Provider value={{ currency, setCurrency, rates, convert, format, formatBoth }}>
+    <CurrencyContext.Provider value={{ currency, setCurrency: chooseCurrency, rates, convert, format, formatBoth }}>
       {children}
     </CurrencyContext.Provider>
   );

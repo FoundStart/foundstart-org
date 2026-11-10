@@ -17,11 +17,12 @@ const DepositForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const paymentMethods = [
-    { id: 'stripe', name: 'Credit/Debit Card (Stripe)', icon: CreditCard, fee: 'card fees apply' },
+
     { id: 'lemonsqueezy', name: 'Credit/Debit Card (Lemon Squeezy)', icon: CreditCard, fee: 'card fees apply' }
   ];
 
   const handleDeposit = async () => {
+    if (paymentMethod === 'stripe') return;
     if (!amount || !paymentMethod) {
       toast({
         title: "Error",

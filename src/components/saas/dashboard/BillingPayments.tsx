@@ -190,8 +190,8 @@ const BillingPayments = () => {
                     <TableCell>{new Date(o.created_at).toLocaleDateString()}</TableCell>
                     <TableCell>
                       {o.status === 'pending' && o.order_type === 'company_formation' && (
-                        <Button size="sm" disabled={paying === o.id} onClick={() => payNow(o)}>
-                          {paying === o.id ? '...' : L('Pay now', 'ادفع الآن')}
+                        <Button size="sm" disabled={true} onClick={() => payNow(o)}>
+                          {paying === o.id ? '...' : L('Online payment unavailable', 'الدفع الإلكتروني غير متاح')}
                         </Button>
                       )}
                     </TableCell>

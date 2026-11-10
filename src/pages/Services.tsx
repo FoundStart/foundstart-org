@@ -20,7 +20,7 @@ const Services = () => {
 
   const included = [
     { i: <Building2 className="h-5 w-5" />, t: L('Company formation in 9 countries', 'تأسيس شركة في 9 دول'), d: L('Choose a country and company type. Service fees exclude government charges and renewals.', 'اختر الدولة ونوع الشركة. أتعاب الخدمة لا تشمل الرسوم الحكومية والتجديد.') },
-    { i: <CreditCard className="h-5 w-5" />, t: L('Pay online', 'ادفع أونلاين'), d: L('Secure card checkout through Stripe.', 'دفع آمن بالبطاقة عبر Stripe.') },
+    { i: <CreditCard className="h-5 w-5" />, t: L('Pay online', 'ادفع أونلاين'), d: L('Online payments are paused while EasyKash is being prepared. It is not active yet. Existing price references remain in USD until EGP prices are confirmed.', 'الدفع الإلكتروني متوقف أثناء تجهيز EasyKash، وهو غير مفعل حاليا. الأسعار المرجعية الحالية بالدولار لحين تأكيد الأسعار بالجنيه.') },
     { i: <FolderOpen className="h-5 w-5" />, t: L('Documents in one place', 'المستندات في مكان واحد'), d: L('Upload your documents privately from your dashboard.', 'ارفع مستنداتك بشكل خاص من لوحة التحكم.') },
     { i: <LayoutDashboard className="h-5 w-5" />, t: L('Track your request', 'تابع طلبك'), d: L('See all your orders and companies with their recorded status.', 'شاهد كل طلباتك وشركاتك بالحالة المسجلة.') },
   ];
