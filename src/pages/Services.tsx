@@ -1,3 +1,4 @@
+import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 import FormationScope from '@/components/FormationScope';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -61,12 +62,12 @@ const Services = () => {
                     <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 rtl:rotate-180" />
                   </div>
                   <div className="mt-2 text-sm text-muted-foreground">{c.entities.map(e => catalogT(e.name, language)).join(' · ')}</div>
-                  <div className="mt-3 font-semibold text-primary">{L('From', 'من')} ${minPrice(c)}</div>
+                  <div className="mt-3 font-semibold text-primary">{L('From', 'من')} <ServicePrice amount={minPrice(c)} /></div>
                 </Link>
               ))}
             </div>
             <p className="mt-4 text-xs text-muted-foreground">
-              {L('Prices are FoundStart service fees in USD. Government and notary fees, where they apply, are separate; obtain a written breakdown before payment.', 'الأسعار هي رسوم خدمة FoundStart بالدولار. الرسوم الحكومية ورسوم التوثيق، حيث تنطبق، منفصلة؛ اطلب بيانها كتابة قبل الدفع.')}
+              {L('Base service fees are in USD; displayed conversions are indicative. Government and notary fees, where they apply, are separate; obtain a written breakdown before payment.', 'أساس رسوم خدمة FoundStart بالدولار، والتحويل المعروض استرشادي. الرسوم الحكومية ورسوم التوثيق، حيث تنطبق، منفصلة؛ اطلب بيانها كتابة قبل الدفع.')}
             </p>
 
             <div className="mt-12 rounded-2xl bg-muted/30 p-8 text-center">

@@ -4,10 +4,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { DollarSign } from 'lucide-react';
 
 const currencies = [
-  { code: 'EGP' as const, label: '🇪🇬 EGP', name: 'Egyptian Pound' },
-  { code: 'USD' as const, label: '🇺🇸 USD', name: 'US Dollar' },
-  { code: 'EUR' as const, label: '🇪🇺 EUR', name: 'Euro' },
-  { code: 'GBP' as const, label: '🇬🇧 GBP', name: 'British Pound' },
+  { code: 'EGP' as const, label: 'EGP', name: 'Egyptian Pound' },
+  { code: 'USD' as const, label: 'USD', name: 'US Dollar' },
+  { code: 'EUR' as const, label: 'EUR', name: 'Euro' },
+  { code: 'GBP' as const, label: 'GBP', name: 'British Pound' },
 ];
 
 const CurrencySelector = () => {

@@ -1,3 +1,5 @@
+import ExchangeRateNotice from '@/components/ExchangeRateNotice';
+import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 
 import { getCountryVideoUrl } from '@/data/countryVideos';
 import { useState } from 'react';
@@ -39,7 +41,7 @@ const Countries = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header /><div className="container mx-auto px-4 pt-20"><ExchangeRateNotice /></div>
       <main className="">
         <PageHero title="Company Formation" highlight="Worldwide" subtitle="Open your company with FoundStart in 9 jurisdictions" />
         <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -92,7 +94,7 @@ const Countries = () => {
                     <div className="text-6xl mb-3">{selectedCountryData.flag}</div>
                     <CardTitle className="text-2xl gradient-text">{selectedCountryData.name}</CardTitle>
                     <div className="flex justify-center gap-3 mt-3">
-                      <Badge variant="outline" className="text-base px-4 py-1">{selectedCountryData.price}</Badge>
+                      <Badge variant="outline" className="text-base px-4 py-1"><ServicePriceText value={selectedCountryData.price} /></Badge>
                       <Badge variant="secondary" className="text-base px-4 py-1">{selectedCountryData.timeframe}</Badge>
                     </div>
                   </CardHeader>
@@ -172,7 +174,7 @@ const Countries = () => {
                         <CardContent className="p-4 flex flex-col items-center gap-2">
                           <div className="text-3xl">{c.flag}</div>
                           <div className="font-semibold text-sm">{c.name}</div>
-                          <div className="text-xs text-primary font-medium">{c.price}</div>
+                          <div className="text-xs text-primary font-medium"><ServicePriceText value={c.price} /></div>
                           <Button size="sm" className="w-full mt-2" asChild onClick={(e) => e.stopPropagation()}>
                             <Link to={user ? `/dashboard/formation?country=${c.id.toLowerCase()}` : '/auth'} state={{ redirectTo: `/dashboard/formation?country=${c.id.toLowerCase()}` }}>
                               Form Company <ArrowRight className="w-3 h-3 ml-1" />

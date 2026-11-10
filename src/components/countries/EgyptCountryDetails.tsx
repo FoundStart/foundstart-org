@@ -1,3 +1,4 @@
+import { ServicePriceText } from '@/components/ServicePrice';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Building, CheckCircle, MessageCircle } from 'lucide-react';
@@ -68,9 +69,9 @@ const EgyptCountryDetails = () => {
             ))}
           </div>
           <p className="text-sm text-muted-foreground mt-4">
-            {isRTL
+            <ServicePriceText value={isRTL
               ? 'رسوم الخدمة تبدأ من $249 (منشأة فردية) حتى $1,499 (شركة منطقة حرة)، والرسوم الحكومية منفصلة. الأسعار الدقيقة ومتطلبات كل نوع موجودة في معالج التأسيس داخل لوحة التحكم.'
-              : 'Service fees range from $249 (sole establishment) to $1,499 (free zone company); government fees are separate. Exact per-type prices and requirements are listed in the formation wizard in your dashboard.'}
+              : 'Service fees range from $249 (sole establishment) to $1,499 (free zone company); government fees are separate. Exact per-type prices and requirements are listed in the formation wizard in your dashboard.'} />
           </p>
         </CardContent>
       </Card>

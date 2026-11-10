@@ -1,3 +1,5 @@
+import ExchangeRateNotice from '@/components/ExchangeRateNotice';
+import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useAuth } from '@/contexts/AuthProvider';
@@ -41,7 +43,7 @@ const CountryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
+      <main className="pt-20"><div className="container mx-auto px-4"><ExchangeRateNotice /></div>
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
             <div className="mb-8">
@@ -63,7 +65,7 @@ const CountryPage = () => {
               <CardHeader className="text-center"><CardTitle className="text-2xl">Formation Package</CardTitle></CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex justify-center items-center gap-4">
-                  <Badge variant="default" className="text-2xl px-6 py-3">{isEgypt ? (isRTL ? 'يبدأ من $249' : 'Starting from $249') : <>Starting from {country.price}</>}</Badge>
+                  <Badge variant="default" className="text-2xl px-6 py-3"><>{isRTL ? 'من ' : 'Starting from '}<ServicePriceText value={country.price} /></></Badge>
                   <Badge variant="secondary" className="text-lg px-4 py-2">{country.timeframe}</Badge>
                 </div>
 

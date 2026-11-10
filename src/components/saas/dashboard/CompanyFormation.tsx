@@ -1,3 +1,4 @@
+import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 import FormationScope from '@/components/FormationScope';
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -212,7 +213,7 @@ const FormationWizard = () => {
                     <span className="text-3xl">{country.flag}</span>
                     <span>
                       <span className="font-medium block">{ct(country.name)}</span>
-                      <span className="text-xs text-muted-foreground">{L("from", "من")} ${minPrice(country)}</span>
+                      <span className="text-xs text-muted-foreground">{L("from", "من")} <ServicePrice amount={minPrice(country)} /></span>
                     </span>
                   </Label>
                 ))}
@@ -249,7 +250,7 @@ const FormationWizard = () => {
                     <RadioGroupItem value={entity.code} id={entity.code} className="sr-only" />
                     <span className="flex items-baseline justify-between gap-2">
                       <span className="font-semibold">{ct(entity.name)}</span>
-                      <span className="font-semibold text-primary">${entity.price}</span>
+                      <span className="font-semibold text-primary"><ServicePrice amount={entity.price} /></span>
                     </span>
                     {entity.localName && language !== 'ar' && (
                       <span className="text-sm text-muted-foreground">{entity.localName}</span>
@@ -398,7 +399,7 @@ const FormationWizard = () => {
                         <p className="text-sm text-muted-foreground">{ct(addon.description)}</p>
                       </div>
                     </div>
-                    <span className="font-semibold">${addon.price}</span>
+                    <span className="font-semibold"><ServicePrice amount={addon.price} /></span>
                   </Label>
                 ))}
               </div>
@@ -434,20 +435,20 @@ const FormationWizard = () => {
                 <div className="border-t pt-4 mt-4">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">{L('FoundStart service fee', 'أتعاب خدمة FoundStart')} - {ct(selectedEntity?.name)} ({ct(selectedCountry?.name)})</span>
-                    <span className="font-medium">${selectedEntity?.price}</span>
+                    <span className="font-medium"><ServicePrice amount={selectedEntity?.price ?? 0} /></span>
                   </div>
                   {formData.addons.map((addonId) => {
                     const addon = addons.find(a => a.id === addonId);
                     return addon && (
                       <div key={addonId} className="flex justify-between">
                         <span className="text-muted-foreground">{ct(addon.name)}</span>
-                        <span className="font-medium">${addon.price}</span>
+                        <span className="font-medium"><ServicePrice amount={addon.price} /></span>
                       </div>
                     );
                   })}
                   <div className="flex justify-between border-t pt-2 mt-2">
-                    <span className="font-semibold">{L('Service fee payable', 'أتعاب الخدمة المطلوب دفعها')}</span>
-                    <span className="font-bold text-lg">${calculateTotal()}</span>
+                    <span className="font-semibold">{L('Indicative service fee', 'أتعاب الخدمة الاسترشادية')}</span>
+                    <span className="font-bold text-lg"><ServicePrice amount={calculateTotal()} /></span>
                   </div>
                 </div>
               </div>
@@ -457,7 +458,8 @@ const FormationWizard = () => {
               )}
               <FormationScope />
               <p className="text-center text-sm text-muted-foreground">
-                {L('Secure card payment via Stripe. An order or company record in the dashboard is not a government registration certificate.', 'دفع آمن بالبطاقة عبر Stripe. وجود طلب أو سجل شركة في اللوحة ليس شهادة تسجيل حكومية.')}
+                <bdi className="block font-semibold mb-2">Stripe: USD {calculateTotal().toFixed(2)}</bdi>
+                {L('Stripe checkout charges the original service fee in USD. EGP amounts are indicative only. An order is not a government registration certificate.', 'الدفع عبر Stripe يكون بأتعاب الخدمة الأصلية بالدولار. المبالغ بالجنيه استرشادية فقط، والطلب ليس شهادة تسجيل حكومية.')}
               </p>
             </div>
           )}
@@ -490,7 +492,7 @@ const FormationWizard = () => {
         ) : (
           <Button onClick={handleSubmit} disabled={submitting}>
             {submitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CreditCard className="mr-2 h-4 w-4" />}
-            {submitting ? L('Opening secure checkout...', 'جاري فتح الدفع الآمن...') : L('Pay with Stripe', 'ادفع عبر Stripe')}
+            {submitting ? L('Opening secure checkout...', 'جاري فتح الدفع الآمن...') : L('Pay with Stripe in USD', 'ادفع عبر Stripe بالدولار')}
           </Button>
         )}
       </div>

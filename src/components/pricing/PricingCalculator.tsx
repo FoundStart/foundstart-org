@@ -1,3 +1,4 @@
+import { useCurrency } from '@/contexts/CurrencyContext';
 import { useL } from '@/hooks/useL';
 import { SHOW_REGISTRATION } from '@/config/features';
 import React, { useState, useMemo } from 'react';
@@ -14,6 +15,7 @@ import { useAuth } from '@/contexts/AuthProvider';
 
 const PricingCalculator: React.FC = () => {
   const L = useL();
+  const { format } = useCurrency();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [selectedCountry, setSelectedCountry] = useState<string>('');
@@ -54,7 +56,7 @@ const PricingCalculator: React.FC = () => {
   };
 
   const formatPrice = (price: number, symbol: string) => {
-    return `${symbol}${price.toLocaleString()}`;
+    return format(price, ({ '$': 'USD', '€': 'EUR', '£': 'GBP', 'EGP': 'EGP', 'ج.م': 'EGP' } as const)[symbol] || 'USD');
   };
 
   const handleGetStarted = () => {

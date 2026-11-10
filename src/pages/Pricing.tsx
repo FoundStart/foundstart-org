@@ -1,3 +1,4 @@
+import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 import FormationScope from '@/components/FormationScope';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -43,7 +44,7 @@ const Pricing = () => {
                 <span className="gradient-text">{L('Formation by Country', 'التأسيس حسب الدولة')}</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {L('Open your company in any of our 9 countries. Prices are FoundStart service fees in USD.', 'افتح شركتك في أي من دولنا التسع. الأسعار هي رسوم خدمة FoundStart بالدولار.')}
+                {L('Open your company in any of our 9 countries. Base service fees are in USD; displayed conversions are indicative.', 'افتح شركتك في أي من دولنا التسع. أساس رسوم خدمة FoundStart بالدولار، والتحويل المعروض استرشادي.')}
               </p>
             </div>
 
@@ -70,14 +71,14 @@ const Pricing = () => {
                   <CardHeader className="text-center pb-3">
                     <div className="text-4xl mb-2">{c.flag}</div>
                     <CardTitle className="text-lg">{ct(c.name)}</CardTitle>
-                    <div className="text-sm text-muted-foreground">{L('from', 'من')} <span className="text-2xl font-bold gradient-text">${minPrice(c)}</span></div>
+                    <div className="text-sm text-muted-foreground">{L('from', 'من')} <span className="text-2xl font-bold gradient-text"><ServicePrice amount={minPrice(c)} /></span></div>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="space-y-1">
                       {c.entities.map((e) => (
                         <div key={e.code} className="flex justify-between text-sm">
                           <span className="text-muted-foreground">{ct(e.name)}</span>
-                          <span className="font-medium">${e.price}</span>
+                          <span className="font-medium"><ServicePrice amount={e.price} /></span>
                         </div>
                       ))}
                     </div>
