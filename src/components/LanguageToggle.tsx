@@ -11,6 +11,34 @@ import {
 
 const LanguageToggle = () => {
   const { language, setLanguage } = useTranslation();
+  const chooseLanguage = (lang: 'en' | 'ar') => {
+    // Article language is encoded in its paired URL, not only in UI state.
+    const alternate = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${lang}"]`);
+    if (window.location.pathname.startsWith('/blog/') && alternate?.href) {
+      const target = new URL(alternate.href, window.location.href);
+      if (target.origin === window.location.origin && target.pathname.startsWith('/blog/')) {
+        target.searchParams.set('lang', lang);
+        setLanguage(lang);
+        window.location.assign(target.href);
+        return;
+      }
+    }
+    setLanguage(lang);
+  };
+  const chooseLanguage = (lang: 'en' | 'ar') => {
+    // Article language is encoded in its paired URL, not only in UI state.
+    const alternate = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${lang}"]`);
+    if (window.location.pathname.startsWith('/blog/') && alternate?.href) {
+      const target = new URL(alternate.href, window.location.href);
+      if (target.origin === window.location.origin && target.pathname.startsWith('/blog/')) {
+        target.searchParams.set('lang', lang);
+        setLanguage(lang);
+        window.location.assign(target.href);
+        return;
+      }
+    }
+    setLanguage(lang);
+  };
 
   return (
     <DropdownMenu>
@@ -22,14 +50,14 @@ const LanguageToggle = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-background border shadow-lg z-50">
         <DropdownMenuItem
-          onClick={() => setLanguage('en')}
+          onClick={() => chooseLanguage('en')}
           className={`cursor-pointer ${language === 'en' ? 'bg-accent' : ''}`}
         >
           <span className="mr-2">🇺🇸</span>
           English
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => setLanguage('ar')}
+          onClick={() => chooseLanguage('ar')}
           className={`cursor-pointer ${language === 'ar' ? 'bg-accent' : ''}`}
         >
           <span className="mr-2">🇸🇦</span>
