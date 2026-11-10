@@ -235,15 +235,15 @@ const PricingCalculator: React.FC = () => {
                     <Separator />
 
                     {/* Total */}
-                    <div className="flex justify-between items-center">
+                    <div className="flex flex-col items-start gap-2 sm:flex-row sm:justify-between sm:items-center">
                       <span className="text-lg font-semibold">{L('FoundStart service fee', 'أتعاب خدمة FoundStart')}</span>
-                      <span className="text-2xl font-bold text-primary">
+                      <span className="text-2xl font-bold text-primary whitespace-nowrap">
                         {formatPrice(calculation.total, calculation.currencySymbol)}
                       </span>
                     </div>
 
                     <div className="text-xs text-muted-foreground text-center">
-                      {calculation.currency} • One-time payment
+                      {L('USD base fee; displayed conversion is indicative.', 'أساس الأتعاب بالدولار؛ التحويل المعروض استرشادي.')}
                     </div>
 
                     {(user || SHOW_REGISTRATION) && <Button 
