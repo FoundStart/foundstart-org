@@ -17,7 +17,6 @@ function api(path: string, init?: RequestInit) {
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
   if (req.method !== "POST") return json({ error: "method not allowed" }, 405);
-  return json({ error: "Online payments are paused. EasyKash is not active yet.", code: "PAYMENTS_PAUSED" }, 503);
   const auth = req.headers.get("Authorization");
   if (!auth) return json({ error: "sign in required" }, 401);
 

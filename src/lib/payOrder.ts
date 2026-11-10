@@ -2,7 +2,6 @@ import { supabase } from '@/integrations/supabase/client';
 
 // Re-opens Stripe checkout for an unpaid formation order (same country, entity, name, price).
 export async function startOrderPayment(order: { metadata?: any }, expiredMsg: string): Promise<void> {
-  throw new Error('Online payments are paused. EasyKash is not active yet. / الدفع الإلكتروني متوقف لحين تفعيل EasyKash.');
   const { data: sess } = await supabase.auth.getSession();
   const token = sess.session?.access_token;
   if (!token) throw new Error(expiredMsg);

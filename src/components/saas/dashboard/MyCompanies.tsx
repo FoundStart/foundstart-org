@@ -157,8 +157,8 @@ const MyCompanies = () => {
                       </TableCell>
                       <TableCell className="text-right">
                         {unpaidFor(company) && (
-                          <Button size="sm" className="mr-2" disabled={true} onClick={() => payNow(unpaidFor(company))}>
-                            {paying === unpaidFor(company).id ? '...' : L('Online payment unavailable', 'الدفع الإلكتروني غير متاح')}
+                          <Button size="sm" className="mr-2" disabled={paying === unpaidFor(company).id} onClick={() => payNow(unpaidFor(company))}>
+                            {paying === unpaidFor(company).id ? '...' : L('Pay now', 'ادفع الآن')}
                           </Button>
                         )}
                         <DropdownMenu>
@@ -169,9 +169,9 @@ const MyCompanies = () => {
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
                             {unpaidFor(company) && (
-                              <DropdownMenuItem disabled>
+                              <DropdownMenuItem onClick={() => payNow(unpaidFor(company))}>
                                 <FileText className="w-4 h-4 mr-2" />
-                                {L('Online payment unavailable', 'الدفع الإلكتروني غير متاح')}
+                                {L('Pay now', 'ادفع الآن')}
                               </DropdownMenuItem>
                             )}
                             <DropdownMenuItem onClick={() => navigate('/dashboard/documents')}>

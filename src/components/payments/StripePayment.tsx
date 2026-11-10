@@ -89,6 +89,77 @@ const StripePayment = ({
     }
   };
 
-  return <Card><CardContent className="p-6">Online payments are paused. EasyKash is not active yet. / الدفع الإلكتروني متوقف لحين تفعيل EasyKash.</CardContent></Card>;
+  return (
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <CreditCard className="w-5 h-5" />
+          Secure Payment
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="text-center p-4 bg-muted rounded-lg">
+          <div className="text-2xl font-bold">{currency} {amount}</div>
+          {planName && <div className="text-sm text-muted-foreground">{planName}</div>}
+        </div>
+
+        <div className="space-y-3">
+          <div>
+            <Label htmlFor="name">Full Name *</Label>
+            <Input
+              id="name"
+              value={customerData.name}
+              onChange={(e) => setCustomerData({...customerData, name: e.target.value})}
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="email">Email *</Label>
+            <Input
+              id="email"
+              type="email"
+              value={customerData.email}
+              onChange={(e) => setCustomerData({...customerData, email: e.target.value})}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input
+              id="phone"
+              type="tel"
+              value={customerData.phone}
+              onChange={(e) => setCustomerData({...customerData, phone: e.target.value})}
+              placeholder="Enter your phone number"
+            />
+          </div>
+        </div>
+
+        <Button 
+          onClick={handlePayment}
+          disabled={isLoading}
+          className="w-full"
+          size="lg"
+        >
+          {isLoading ? 'Processing...' : `Pay ${currency} ${amount}`}
+        </Button>
+
+        <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground mt-4">
+          <Shield className="w-4 h-4" />
+          <span>Secured by Stripe</span>
+          <Lock className="w-4 h-4" />
+        </div>
+
+        <div className="text-center text-xs text-muted-foreground">
+          Supports Visa, Mastercard, and other major payment methods
+        </div>
+      </CardContent>
+    </Card>
+  );
 };
+
 export default StripePayment;

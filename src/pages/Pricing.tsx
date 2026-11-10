@@ -19,7 +19,7 @@ const Pricing = () => {
 
   const included = [
     L('Register your company online in a few steps', 'سجل شركتك أونلاين في خطوات بسيطة'),
-    L('Online payments are paused while EasyKash is being prepared. It is not active yet. Existing price references remain in USD until EGP prices are confirmed.', 'الدفع الإلكتروني متوقف أثناء تجهيز EasyKash، وهو غير مفعل حاليا. الأسعار المرجعية الحالية بالدولار لحين تأكيد الأسعار بالجنيه.'),
+    L('Pay securely by card through Stripe', 'ادفع بأمان بالبطاقة عبر Stripe'),
     L('Track your request from your FoundStart dashboard', 'تابع طلبك من لوحة تحكم FoundStart'),
   ];
 
