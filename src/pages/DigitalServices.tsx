@@ -85,6 +85,7 @@ const DigitalServices = () => {
         highlight={isRTL ? 'لشغلك، من الفكرة للتسليم' : 'for your business, end to end'}
         subtitle={isRTL ? 'شريك واحد للبرمجة والتسويق والمحتوى والفيديو. نطاق واضح، مخرجات محددة، تسليم سريع.' : 'One partner for code, marketing, content and video. Clear scope, fixed deliverables, fast turnaround.'}
       >
+        <Button size="lg" variant="outline" asChild className="mx-2 mb-3 bg-white/5 text-white border-white/30 hover:bg-white/10"><Link to="/portfolio">{isRTL ? 'سابقة أعمالنا ومنصاتنا' : 'Our portfolio & platforms'}</Link></Button>
         <Button size="lg" asChild><a href="#quote">{isRTL ? 'اطلب عرض سعر' : 'Get a quote'}</a></Button>
       </PageHero>
 

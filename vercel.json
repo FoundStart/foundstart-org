@@ -242,6 +242,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/fintech",
+      "destination": "/index.html"
+    },
+    {
       "source": "/freelancer-partners",
       "destination": "/index.html"
     },
@@ -267,6 +271,14 @@
     },
     {
       "source": "/partners",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pay-test-q8m3x",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/portfolio",
       "destination": "/index.html"
     },
     {
@@ -324,21 +336,6 @@
     {
       "source": "/who-we-are",
       "destination": "/index.html"
-    },
-    {
-      "source": "/pay-test-q8m3x",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/pay-test-q8m3x",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
     }
   ]
 }

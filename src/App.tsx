@@ -15,6 +15,7 @@ import Index from "./pages/Index";
 const PayTest = lazy(() => import("./pages/PayTest"));
 const Countries = lazy(() => import("./pages/Countries"));
 const CountryPage = lazy(() => import("./pages/CountryPage"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
 const DigitalServices = lazy(() => import("./pages/DigitalServices"));
 const Services = lazy(() => import("./pages/Services"));
 const Partners = lazy(() => import("./pages/Partners"));
@@ -168,6 +169,7 @@ function App() {
                   <Route path="/company-formation-bio" element={<CompanyFormationBio />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/digital-services" element={<DigitalServices />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/fintech" element={<Fintech />} />
                   <Route path="/all-partners" element={<AllPartners />} />

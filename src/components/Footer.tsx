@@ -16,6 +16,7 @@ const Footer = () => {
       { name: L("All Services", "كل الخدمات"), href: "/services" },
       { name: L("Company Formation", "تأسيس الشركات"), href: "/company-formation-bio" },
       { name: L("Digital Services", "خدمات رقمية"), href: "/digital-services" },
+      { name: L("Portfolio", "سابقة الأعمال"), href: "/portfolio" },
       { name: L("Domains", "الدومينات"), href: "/domains" },
       { name: L("Pricing", "الأسعار"), href: "/pricing" },
       { name: L("Payment & Fintech", "الدفع والفينتك"), href: "/fintech" },

@@ -37,6 +37,7 @@ const Index = () => {
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
             <div className="grid gap-6 md:grid-cols-2">
+              <Link to="/portfolio" className="group rounded-xl border bg-card p-8 transition-shadow hover:shadow-lg"><h3 className="mb-2 text-2xl font-bold">{language === 'ar' ? 'سابقة أعمالنا' : 'Our portfolio'}</h3><p className="text-muted-foreground">{language === 'ar' ? 'منصاتنا ومتاجرنا ومشروعاتنا تحت التطوير، ودومينات بعناها وأصبحت مواقع مستقلة.' : 'Our platforms, stores and development projects, plus sold domains now used by independent websites.'}</p></Link>
               <Link to="/guides" className="group rounded-xl border bg-card p-8 transition-shadow hover:shadow-lg">
                 <h3 className="mb-2 text-2xl font-bold">
                   {language === 'ar' ? 'أدلة المؤسسين المجانية' : 'Free Founder Guides'}

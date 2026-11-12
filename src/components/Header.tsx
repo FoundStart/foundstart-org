@@ -37,6 +37,7 @@ const Header = () => {
 
   const navigationItems = [
     { name: "Services", href: '/services' },
+    { name: language === 'ar' ? "سابقة الأعمال" : "Portfolio", href: '/portfolio' },
     { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
     { name: language === 'ar' ? "التعلم" : "Learning", href: '/learning' },
     { name: "Pricing", href: '/pricing-calculator' },
@@ -56,6 +57,7 @@ const Header = () => {
     { name: language === 'ar' ? "الدول" : "Countries", href: '/countries' },
     { name: language === 'ar' ? "التأسيس عبر لوحة FoundStart" : "Formation Dashboard", href: '/dashboard/formation' },
     { name: "Services", href: '/services' },
+    { name: language === 'ar' ? "سابقة الأعمال" : "Portfolio", href: '/portfolio' },
     { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
     { name: language === 'ar' ? "التعلم" : "Learning", href: '/learning' },
     { name: "Premium Domains", href: '/domains' },
