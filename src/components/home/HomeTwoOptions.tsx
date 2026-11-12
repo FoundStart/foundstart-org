@@ -1,4 +1,3 @@
-import FormationScope from '@/components/FormationScope';
 import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -89,7 +88,6 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
           ))}
         </div>
         </>)}
-        {mode === 'fs' && <FormationScope />}
         {mode === 'fs' && (
           <div className="flex flex-wrap justify-center gap-3">
             <Button size="lg" asChild><Link to={user ? formationPath : '/auth'} state={{ redirectTo: formationPath }}>{ar ? 'سجل وابدأ التأسيس' : 'Register & Start Formation'}<ArrowRight className="w-4 h-4 ml-2" /></Link></Button>

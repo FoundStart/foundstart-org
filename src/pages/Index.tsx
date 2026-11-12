@@ -84,7 +84,7 @@ const Index = () => {
         </section>
       </main>
       
-      <Footer />
+      <Footer hideExchangeRateNotice />
     </div>
   );
 };

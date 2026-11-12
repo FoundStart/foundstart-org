@@ -7,7 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { useTranslation } from '@/contexts/TranslationContext';
 
 
-const Footer = () => {
+const Footer = ({ hideExchangeRateNotice = false }: { hideExchangeRateNotice?: boolean }) => {
   const { isRTL } = useTranslation();
   const L = (en: string, ar: string) => (isRTL ? ar : en);
   const footerSections = [{
@@ -78,7 +78,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-card border-t border-border">
-<div className="container mx-auto px-4"><ExchangeRateNotice /></div>
+{!hideExchangeRateNotice && <div className="container mx-auto px-4"><ExchangeRateNotice /></div>}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <div className="col-span-1 md:col-span-2">
