@@ -78,7 +78,7 @@ const Footer = ({ hideExchangeRateNotice = false }: { hideExchangeRateNotice?: b
 
   return (
     <footer className="bg-card border-t border-border">
-{!hideExchangeRateNotice && <div className="container mx-auto px-4"><ExchangeRateNotice /></div>}
+{hideExchangeRateNotice ? <div className="container mx-auto px-4 pt-4 text-xs text-muted-foreground"><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground underline underline-offset-2">Rates By Exchange Rate API</a></div> : <div className="container mx-auto px-4"><ExchangeRateNotice /></div>}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <div className="col-span-1 md:col-span-2">
