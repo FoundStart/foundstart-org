@@ -30,7 +30,7 @@ const Footer = ({ hideExchangeRateNotice = false }: { hideExchangeRateNotice?: b
     links: [
       { name: L("United States", "الولايات المتحدة"), href: "/country/USA", flag: "us" },
       { name: L("United Kingdom", "المملكة المتحدة"), href: "/country/UK", flag: "gb" },
-      { name: L("Canada", "كندا"), href: "/country/CA", flag: "ca" },
+      { name: L("Canada (information only)", "كندا (معلومات فقط)"), href: "/country/CA", flag: "ca" },
       { name: L("Estonia", "إستونيا"), href: "/country/EE", flag: "ee" },
       { name: L("Finland", "فنلندا"), href: "/country/FI", flag: "fi" },
       { name: L("Sweden", "السويد"), href: "/country/SE", flag: "se" },

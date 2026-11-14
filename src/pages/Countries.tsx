@@ -83,7 +83,7 @@ const Countries = () => {
                       className="flex items-center gap-2"
                     >
                       <span className="text-lg">{country.flag}</span>
-                      <span>{country.name}</span>
+                      <span>{country.name}{country.offerAvailable === false ? (isRTL ? " - معلومات فقط" : " - information only") : ""}</span>
                     </Button>
                   ))}
                 </div>
@@ -93,15 +93,15 @@ const Countries = () => {
                   <CardHeader className="text-center">
                     <div className="text-6xl mb-3">{selectedCountryData.flag}</div>
                     <CardTitle className="text-2xl gradient-text">{selectedCountryData.name}</CardTitle>
-                    <div className="flex justify-center gap-3 mt-3">
+                    {selectedCountryData.offerAvailable !== false && <div className="flex justify-center gap-3 mt-3">
                       <Badge variant="outline" className="text-base px-4 py-1"><ServicePriceText value={selectedCountryData.price} /></Badge>
                       <Badge variant="secondary" className="text-base px-4 py-1">{selectedCountryData.timeframe}</Badge>
-                    </div>
+                    </div>}
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <p className="text-muted-foreground text-center">{selectedCountryData.description}</p>
+                    <p className="text-muted-foreground text-center">{isRTL && selectedCountryData.descriptionAr ? selectedCountryData.descriptionAr : selectedCountryData.description}</p>
 
-                    {selectedCountryData && (
+                    {selectedCountryData.offerAvailable !== false && (
                       <VideoThumbnail
                         videoUrl={getCountryVideoUrl(selectedCountryData.id, isRTL)}
                         title={`${selectedCountryData.name} Formation Demo`}
@@ -134,16 +134,16 @@ const Countries = () => {
                       ))}
                     </div>
 
-                    <div className="text-center">
+                    {selectedCountryData.offerAvailable === false ? <p className="text-center font-medium" role="status">{isRTL ? "لا تتوفر خدمة تأسيس كندية من FoundStart. هذه معلومات عامة وليست عرضاً أو سعراً أو وعداً بالتنفيذ." : "FoundStart Canada formation is unavailable. This is general information, not an offer, price or fulfillment promise."}</p> : <div className="text-center">
                       <Button size="lg" asChild>
                         <Link to={user ? `/dashboard/formation?country=${selectedCountryData.id.toLowerCase()}` : '/auth'} state={{ redirectTo: `/dashboard/formation?country=${selectedCountryData.id.toLowerCase()}` }}>
                           Start Formation in {selectedCountryData.name}
                           <ArrowRight className="w-5 h-5 ml-2" />
                         </Link>
                       </Button>
-                    </div>
+                    </div>}
 
-                    {selectCountryPartners(selectedCountryData.id, selectedCountryData.partners).length > 0 && (
+                    {selectedCountryData.offerAvailable !== false && selectCountryPartners(selectedCountryData.id, selectedCountryData.partners).length > 0 && (
                       <div>
                         <h3 className="text-lg font-semibold text-center mb-3">{isRTL ? 'أو افتحها عن طريق شركائنا' : 'Or open it via our partners'}</h3>
                         <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">

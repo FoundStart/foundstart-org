@@ -41,19 +41,19 @@
   },
   "/": {
     "title": "Open Your Company with FoundStart | For Freelancers, E-commerce & SaaS",
-    "desc": "FoundStart opens your company in the USA, UK, Canada, Europe and Egypt, at our own prices. Built for freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. Register online, pay securely, track every step. افتح شركتك مع FoundStart: للفريلانسرز والتجارة الإلكترونية وشركات SaaS وكل من يحتاج شركة لاستقبال المدفوعات.",
+    "desc": "FoundStart opens your company in the USA, UK, Europe and Egypt, at our own prices. Built for freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. Register online, pay securely, track every step. افتح شركتك مع FoundStart: للفريلانسرز والتجارة الإلكترونية وشركات SaaS وكل من يحتاج شركة لاستقبال المدفوعات.",
     "ogt": "Open Your Company with FoundStart | For Freelancers, E-commerce & SaaS",
-    "ogd": "FoundStart opens your company in the USA, UK, Canada, Europe and Egypt, at our own prices. Built for freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. Register online, pay securely, track every step. افتح شركتك مع FoundStart: للفريلانسرز والتجارة الإلكترونية وشركات SaaS وكل من يحتاج شركة لاستقبال المدفوعات.",
+    "ogd": "FoundStart opens your company in the USA, UK, Europe and Egypt, at our own prices. Built for freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. Register online, pay securely, track every step. افتح شركتك مع FoundStart: للفريلانسرز والتجارة الإلكترونية وشركات SaaS وكل من يحتاج شركة لاستقبال المدفوعات.",
     "h1": "Open Your Company with FoundStart",
-    "text": "Register, pay online and track every step from one dashboard. 10 countries, listed service fees by company type. Register & Start Formation Countries & prices foundstart.org/dashboard Watch Demo by MoMo Sa Open your company with FoundStart For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. We open a company for you in any country at our prices. Freelancers E-commerce SaaS Receive payments A full client dashboard Track your company, documents and…"
+    "text": "Register, pay online and track every step from one dashboard. 9 listed countries, listed service fees by company type. Register & Start Formation Countries & prices foundstart.org/dashboard Watch Demo by MoMo Sa Open your company with FoundStart For freelancers, e-commerce sellers, SaaS founders and anyone who needs a company to receive payments. We open a company for you in any country at our prices. Freelancers E-commerce SaaS Receive payments A full client dashboard Track your company, documents and…"
   },
   "/countries": {
     "title": "Company Formation Worldwide | FoundStart",
-    "desc": "Open your company with FoundStart in 10+ jurisdictions & FoundStart Formation Choose your country and open your company with FoundStart. View Formation Bio…",
+    "desc": "Open your company with FoundStart in 9 listed formation countries & FoundStart Formation Choose your country and open your company with FoundStart. View Formation Bio…",
     "ogt": "Company Formation Worldwide | FoundStart",
-    "ogd": "Open your company with FoundStart in 10+ jurisdictions & FoundStart Formation Choose your country and open your company with FoundStart. View Formation Bio…",
+    "ogd": "Open your company with FoundStart in 9 listed formation countries & FoundStart Formation Choose your country and open your company with FoundStart. View Formation Bio…",
     "h1": "Company Formation Worldwide",
-    "text": "Open your company with FoundStart in 10+ jurisdictions & FoundStart Formation Choose your country and open your company with FoundStart. View Formation Bio Page (All Countries) 🇺🇸 United States 🇬🇧 United Kingdom 🇨🇦 Canada 🇪🇪 Estonia 🇫🇮 Finland 🇸🇪 Sweden 🇱🇻 Latvia 🇱🇹 Lithuania 🇮🇪 Ireland 🇪🇬 Egypt 🇺🇸 United States $450 5-7 business days Form your US company with our trusted partners including Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, Startfleet, and Go Nomad HQ. United States…"
+    "text": "Explore the nine listed FoundStart formation countries: United States, United Kingdom, Estonia, Finland, Sweden, Latvia, Lithuania, Ireland and Egypt. Listed service fees exclude government and renewal fees. Availability, package scope, current partner pricing and fulfillment must be confirmed for the selected country. Canada information remains available, but FoundStart does not currently offer Canada formation; it is not a priced service offer."
   },
   "/partners": {
     "title": "Our 539 Trusted Partners | FoundStart",
@@ -608,12 +608,12 @@
     "text": "Form your US company with our trusted partners including Privatily, ITIN, Clemta, Startglobal, Doola, Tailorbrands, Startfleet, and Go Nomad HQ. Formation Package Starting from $450 5-7 business days Open your United States company with FoundStart Register to your dashboard, see the country's requirements and price, pay securely online, and track every step while we establish your company. Register & Start Formation Watch Formation Demo United States Company Formation Demo $21.4T GDP 331M…"
   },
   "/country/CA": {
-    "title": "Start Your Business in Canada | FoundStart",
-    "desc": "Start your Canadian business with Privatily, our trusted formation partner. Formation Package Starting from $700 7-10 business days Open your Canada company…",
-    "ogt": "Start Your Business in Canada | FoundStart",
-    "ogd": "Start your Canadian business with Privatily, our trusted formation partner. Formation Package Starting from $700 7-10 business days Open your Canada company…",
-    "h1": "Start Your Business in Canada",
-    "text": "Start your Canadian business with Privatily, our trusted formation partner. Formation Package Starting from $700 7-10 business days Open your Canada company with FoundStart Register to your dashboard, see the country's requirements and price, pay securely online, and track every step while we establish your company. Register & Start Formation Watch Formation Demo Canada Company Formation Demo $1.7T GDP 38M Population 23rd Ease of Business 15% Corporate Tax Why Choose Canada? Stable political…"
+    "title": "Canada company formation information - service unavailable | FoundStart",
+    "desc": "General Canada company formation information only. FoundStart does not currently offer a Canada formation service or quote.",
+    "ogt": "Canada information - no FoundStart formation offer",
+    "ogd": "FoundStart Canada formation is unavailable. Informational page only, not a price or fulfillment promise.",
+    "h1": "Canada company formation information",
+    "text": "FoundStart does not currently offer a Canada formation service. This page is general information only, not an offer, current price or fulfillment promise. Existing Canada informational content is available in the site. No Canada formation checkout is offered."
   },
   "/country/UK": {
     "title": "Start Your Business in United Kingdom | FoundStart",
