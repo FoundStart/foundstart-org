@@ -58,7 +58,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "TopyPay.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/topypay.com",
     "marketplace": "Unstoppable"
@@ -102,7 +102,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Cartgy.com",
     "hosting": "Spaceship",
     "category": "E-Commerce",
-    "price": "5000",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -128,7 +128,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Toolstogethers.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech, Food",
-    "price": "250",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -154,7 +154,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "NameLik.com",
     "hosting": "UD",
     "category": "Branding",
-    "price": "400",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": "https://unstoppabledomains.com/d/namelik.com",
     "marketplace": "Unstoppable"
@@ -198,7 +198,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "YesShoot.com",
     "hosting": "UD",
     "category": "Photography / Gaming",
-    "price": "5000",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -233,7 +233,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "MSA-serv.com",
     "hosting": "Hostinger",
     "category": "B2B / Services",
-    "price": "2500",
+    "price": "5000",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -258,7 +258,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Deeemoz.shop",
     "hosting": "Spaceship",
     "category": "E-Commerce",
-    "price": "150",
+    "price": "250",
     "businessType": "Business",
     "buyUrl": "https://deeemoz.shop",
     "marketplace": "Spaceship"
@@ -320,7 +320,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Hosstec.com",
     "hosting": "Spaceship",
     "category": "Tech / Hosting",
-    "price": "250",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -451,7 +451,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Clothecart.com",
     "hosting": "Spaceship",
     "category": "POD-E-Commerce/Fashion",
-    "price": "350",
+    "price": "1000",
     "businessType": "Domain",
     "buyUrl": ""
   },
@@ -573,7 +573,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Coursaro.com",
     "hosting": "Spaceship",
     "category": "EdTech",
-    "price": "250",
+    "price": "1000",
     "businessType": "Domain",
     "buyUrl": "https://coursaro.com",
     "marketplace": "Spaceship"
@@ -616,7 +616,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Doscash.com",
     "hosting": "UD",
     "category": "Fintech, Payments & Crypto",
-    "price": "250",
+    "price": "1000",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/doscash.com",
     "marketplace": "Unstoppable"
@@ -634,7 +634,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Ecardora.com",
     "hosting": "UD",
     "category": "E-Commerce & Marketplaces / SAAS",
-    "price": "250",
+    "price": "1000",
     "businessType": "Business",
     "buyUrl": ""
   },
@@ -953,7 +953,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "TechyClaw.com",
     "hosting": "UD",
     "category": "Tech / Niche",
-    "price": "5000",
+    "price": "1000",
     "businessType": "Domain"
   },
   {
@@ -1129,7 +1129,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Solivid.com",
     "hosting": "Spaceship",
     "category": "Startups, SaaS & Tech",
-    "price": "5000",
+    "price": "1000",
     "businessType": "Domain",
     "buyUrl": "https://www.spaceship.com/domain-search/?query=solivid.com&tab=domains",
     "marketplace": "Spaceship"
@@ -1412,7 +1412,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Laterssocial.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "100",
+    "price": "1000",
     "businessType": "Domain",
     "buyUrl": "https://laterssocial.com"
   },
@@ -1420,7 +1420,7 @@ const raw: Omit<Domain, 'id'>[] = [
     "name": "Linkliz.com",
     "hosting": "UD",
     "category": "Startups, SaaS & Tech",
-    "price": "100",
+    "price": "1000",
     "businessType": "Domain",
     "buyUrl": "https://unstoppabledomains.com/d/linkliz.com",
     "marketplace": "Unstoppable"
@@ -1628,7 +1628,7 @@ const raw: Omit<Domain, 'id'>[] = [
   }
 ];
 
-export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d, price: ['solivid.com'].includes(d.name.toLowerCase()) ? d.price : '' })) // display prices suppressed until reconciled with the approved inventory; Solivid.com approved at $5,000 on 2026-10-28; TechyClaw.com display price re-suppressed same day pending actual marketplace reprice (user deferred)
+export const domainsData: Domain[] = raw.map((d, i) => ({ id: i + 1, ...d, price: {"cartgy.com": 1000, "clothecart.com": 1000, "hosstec.com": 1000, "solivid.com": 1000, "coursaro.com": 1000, "techyclaw.com": 1000, "namelik.com": 1000, "toolstogethers.com": 1000, "yesshoot.com": 1000, "laterssocial.com": 1000, "linkliz.com": 1000, "doscash.com": 1000, "topypay.com": 1000, "ecardora.com": 1000, "foundstart.org": 5000, "namelizer.com": 5000, "shortet.com": 5000, "tafsirly.com": 5000, "heykeyword.com": 5000, "zadafrica.com": 5000, "msa-serv.com": 5000, "deeemoz.shop": 250}[d.name.toLowerCase()]?.toString() || (['solivid.com'].includes(d.name.toLowerCase()) ? d.price : '') })) // Approved business-domain price map updated 2026-11-17; unrelated display prices unchanged.
 
 export const categories: string[] = Array.from(new Set(domainsData.map(d => d.category))).sort();
 export const hostingProviders: string[] = Array.from(new Set(domainsData.map(d => d.hosting))).sort();
