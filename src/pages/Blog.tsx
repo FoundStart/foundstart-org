@@ -1,3 +1,4 @@
+import WidePartnerBanner from '@/components/ads/WidePartnerBanner';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
@@ -91,7 +92,7 @@ const Blog = () => {
                 </div>
               </Card>
             ))}
-
+            <WidePartnerBanner slot={0}/>
 
             {/* Blog Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -132,6 +133,7 @@ const Blog = () => {
                       </Link>
                     </CardContent>
                   </Card>
+                  {(idx+1)%6===0&&<WidePartnerBanner slot={Math.floor((idx+1)/6)}/>}
                 </React.Fragment>
               ))}
             </div>
