@@ -1,3 +1,4 @@
+import PressNewsStories from '@/components/PressNewsStories';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
@@ -94,16 +95,18 @@ const Press = () => {
     <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Header />
       <PageHero
-        title={L('Blogs &', 'المدونات')}
+        title={L('News &', 'الأخبار')}
         highlight={L('Media', 'والوسائط')}
         subtitle={L(
-          'Blogs, guides, videos and media from FoundStart and our sister products - all in one place.',
-          'المدونات والأدلة والفيديوهات والوسائط من FoundStart وكل منتجاتنا الشقيقة - في مكان واحد.'
+          'Product stories, company formation news and media from FoundStart and our sister platforms.',
+          'أخبار المنتجات وتأسيس الشركات والوسائط من FoundStart ومنصاتنا الشقيقة.'
         )}
       />
 
       <div className="w-full px-4 sm:px-6 lg:px-8 py-16">
         <div className="container mx-auto max-w-7xl">
+          <PressNewsStories />
+          <h2 className="text-2xl font-bold mb-6">{L('Blogs, guides & media directory', 'دليل المدونات والأدلة والوسائط')}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {properties.map((p) => (
               <Card key={p.name} className="hover:shadow-lg transition-shadow overflow-hidden">
@@ -138,7 +141,7 @@ const Press = () => {
 
           <div className="mt-16 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">
-              {L('Featured on', 'مذكورون على')}
+              {L('Launch-platform listings', 'إدراجات منصات الإطلاق')}
             </h2>
             <p className="text-muted-foreground mb-6">
               {L('Launch platforms where FoundStart is listed.', 'منصات الإطلاق اللي FoundStart متسجل عليها.')}
