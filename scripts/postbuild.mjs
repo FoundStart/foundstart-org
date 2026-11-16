@@ -6,6 +6,7 @@ const PRERENDER_CSS = '<script>window.__fsPrerender=true;try{var t=localStorage.
 import fs from "node:fs"; import path from "node:path";
 const cfg = JSON.parse(fs.readFileSync("scripts/seo-config.json", "utf8"));   // {site, sitemapExclude:[prefixes]}
 const manifest = JSON.parse(fs.readFileSync("scripts/seo-manifest.json", "utf8"));
+const BOOT_HTML=fs.readFileSync('scripts/browser-bootstrap.html','utf8');
 const dist = path.resolve("dist"); const shell = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const today = new Date().toISOString().slice(0, 10);
@@ -75,7 +76,7 @@ function page(route, m, extra = {}) {
   if (extra.noindex) h = setTag(h, /<meta\s+name="robots"[^>]*>/i, `<meta name="robots" content="noindex, nofollow" />`);
   // The shell's #root is not empty (badge markup), so insert the prerendered main as its
   // first child instead of replacing an empty div. React replaces it client-side on mount.
-  const preInner = route === "/" ? HOME_PRE : `<main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text && !extra.skipText ? `<p>${esc(m.text)}</p>` : ""}${extra.bodyHtml || ""}</main>`;
+  const preInner = route === "/" ? HOME_PRE : route === "/blog" ? `<main data-prerender><h1>FoundStart Blog / المدونة</h1>${["en","ar"].map(l=>`<section lang="${l}" dir="${l==="ar"?"rtl":"ltr"}"><h2>${l==="ar"?"أحدث المقالات":"Latest articles"}</h2>${pdata.postsForLanguage(pdata.currentBlogPosts,l).slice(0,30).map(p=>`<article><h3><a href="/blog/${esc(p.slug)}?lang=${l}">${esc(p.title)}</a></h3><p>${esc(p.description)}</p></article>`).join("")}</section>`).join("")}</main>` : `<main data-prerender><h1>${esc(m.h1 || m.title)}</h1>${m.text && !extra.skipText ? `<p>${esc(m.text)}</p>` : ""}${extra.bodyHtml || ""}</main>`;
   const cssLink = (h.match(/<link rel="stylesheet"[^>]*href="\/assets\/[^"]*\.css"[^>]*>/) || [''])[0];
   if (cssLink) h = h.replace(cssLink, '');
   h = h.replace(/<head>/i, '<head>' + PRERENDER_CSS + (route === "/" ? HOME_PRE_CSS : "") + cssLink);
@@ -87,6 +88,7 @@ function page(route, m, extra = {}) {
   }
   const homeLocale = route === "/" ? `<script>(function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q==='ar'||q==='en'?q:localStorage.getItem('fs_lang');if(l!=='ar')return;document.documentElement.lang='ar';document.documentElement.dir='rtl';var r=document.querySelector('[data-home]');r.dir='rtl';r.querySelector('header .h-16').classList.add('flex-row-reverse');var map={"Freelancers · E-commerce · SaaS":"للفريلانسرز · التجارة الإلكترونية · SaaS","Compare 9 countries and FoundStart service fees. Confirm the full scope and separate government charges before paying.":"سجل، ادفع أونلاين، وتابع كل خطوة من لوحة واحدة. 9 دول، سعر واضح لكل نوع شركة.","Register & Start Formation":"سجل وابدأ التأسيس","Countries & prices":"الدول والأسعار"};r.querySelectorAll('p,a').forEach(function(e){var v=map[e.textContent];if(v)e.textContent=v});r.querySelector('h1').innerHTML='افتح شركتك<br>مع FoundStart';r.querySelector('h1').style.letterSpacing='0';r.querySelector('section p').style.letterSpacing='0';r.querySelectorAll('picture source,picture img').forEach(function(e){['src','srcset'].forEach(function(a){if(e.hasAttribute(a))e.setAttribute(a,e.getAttribute(a).replace('-en.webp','-ar.webp'))})})}catch(e){}})();</script>` : "";
   const portfolioLocale = route === "/portfolio" ? `<script>(function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q==='ar'||q==='en'?q:localStorage.getItem('fs_lang');if(l!=='ar')return;document.documentElement.lang='ar';document.documentElement.dir='rtl';var r=document.querySelector('[data-prerender]');if(r){r.dir='rtl';r.style.textAlign='right';r.querySelector('h1').textContent='سابقة أعمالنا: المنصات ومبيعات الدومينات';var p=r.querySelector('p');if(p)p.textContent='منصاتنا ومتاجرنا ومشروعاتنا تحت التطوير، ودومينات بعناها وأصبحت مواقع مستقلة. دورنا في الدومينات المباعة كان بيع الاسم فقط؛ لا ندّعي تطوير المواقع الحالية أو تشغيلها.';}document.title='سابقة أعمالنا | المنصات ومبيعات الدومينات | FoundStart';}catch(e){}})();</script>` : "";
+  h=h.replace('<head>','<head>'+BOOT_HTML).replace(/<body([^>]*)>/,'<body$1><div id="fs-browser-boot" role="status" aria-live="polite"><header><img src="/logo-mark.png" alt=""><strong>FoundStart</strong></header><section><h1></h1><p></p><div class="fs-skeleton"></div><div class="fs-skeleton"></div><div class="fs-skeleton"></div><button hidden type="button"></button></section></div><script>document.querySelector("#fs-browser-boot h1").textContent=document.documentElement.lang==="ar"?"جاري تحميل FoundStart":"Loading FoundStart";</script>');
   return h.replace(/<div id="root">/, "<div id=\"root\">" + preInner + homeLocale + portfolioLocale);
 }
 let n = 0;

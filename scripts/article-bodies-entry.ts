@@ -5,3 +5,6 @@ export { foundstartArticles } from '../src/data/foundstartArticles';
 export { shortetArticlesAr } from '../src/data/shortetArticlesAr';
 export { agencyArticles } from '../src/data/foundstartAgencyArticles';
 export { faqCategories } from '../src/data/faqData';
+
+export {blogPosts as currentBlogPosts} from "../src/data/blogPostsData";
+export {postsForLanguage} from "../src/lib/blogSort";
