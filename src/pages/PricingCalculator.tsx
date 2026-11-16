@@ -1,4 +1,3 @@
-import ExchangeRateNotice from '@/components/ExchangeRateNotice';
 import { useL } from '@/hooks/useL';
 import FormationScope from '@/components/FormationScope';
 import React from 'react';
@@ -66,7 +65,7 @@ const PricingCalculatorPage: React.FC = () => {
 
               <FormationScope />
           {/* Calculator */}
-          <ExchangeRateNotice /><PricingCalculatorComponent />
+          <PricingCalculatorComponent />
         </main>
 
         <Footer />

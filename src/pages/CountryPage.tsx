@@ -1,4 +1,3 @@
-import ExchangeRateNotice from '@/components/ExchangeRateNotice';
 import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -43,7 +42,7 @@ const CountryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20"><div className="container mx-auto px-4"><ExchangeRateNotice /></div>
+      <main className="pt-20">
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
             <div className="mb-8">

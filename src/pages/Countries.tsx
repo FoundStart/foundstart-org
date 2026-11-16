@@ -1,4 +1,3 @@
-import ExchangeRateNotice from '@/components/ExchangeRateNotice';
 import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 
 import { getCountryVideoUrl } from '@/data/countryVideos';
@@ -41,7 +40,7 @@ const Countries = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header /><div className="container mx-auto px-4 pt-20"><ExchangeRateNotice /></div>
+      <Header />
       <main className="">
         <PageHero title="Company Formation" highlight="Worldwide" subtitle="Open your company with FoundStart in 9 jurisdictions" />
         <section className="py-12 px-4 sm:px-6 lg:px-8">
