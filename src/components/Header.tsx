@@ -1,3 +1,4 @@
+import ContentPartnerPromotions from './ads/ContentPartnerPromotions';
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
@@ -67,7 +68,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`} role="banner">
+    <><header className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`} role="banner">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div className={`flex h-16 items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
@@ -168,7 +169,7 @@ const Header = () => {
           </div>
         )}
       </div>
-    </header>
+    </header><ContentPartnerPromotions /></>
   );
 };
 

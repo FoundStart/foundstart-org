@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Calendar, User, Clock, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, ExternalLink, Sparkles, Ticket } from 'lucide-react';
 import heroImg from '@/assets/blog-business-automation-2026.jpg';
 import { withUtm } from '@/utils/utm';
 
