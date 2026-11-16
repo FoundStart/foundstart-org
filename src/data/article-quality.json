@@ -8,8 +8,10 @@
       "Reconcile money already received"
     ],
     "ar": false,
-    "cta": "Browse practical business guides",
-    "href": "/blog"
+    "cta": "Agree the currency before the next invoice",
+    "href": "/blog/client-invoice-currency-agreement",
+    "video": "/article-video/en.mp4",
+    "captions": "/article-video/en.vtt"
   },
   "invoice-correction-version-record-ar": {
     "image": "/article-art/invoice-correction-version-record-ar.svg",
@@ -20,8 +22,10 @@
       "طابق المبالغ المستلمة بالفعل"
     ],
     "ar": true,
-    "cta": "تصفح أدلة الأعمال العملية",
-    "href": "/blog?lang=ar"
+    "cta": "اتفق على العملة قبل الفاتورة التالية",
+    "href": "/blog/client-invoice-currency-agreement-ar",
+    "video": "/article-video/ar.mp4",
+    "captions": "/article-video/ar.vtt"
   },
   "business-expense-reimbursement-packet": {
     "image": "/article-art/business-expense-reimbursement-packet.svg",
@@ -32,8 +36,8 @@
       "Separate purchase currency from reimbursement"
     ],
     "ar": false,
-    "cta": "Browse practical business guides",
-    "href": "/blog"
+    "cta": "Build a usable file of company records",
+    "href": "/blog/first-month-company-records"
   },
   "business-expense-reimbursement-packet-ar": {
     "image": "/article-art/business-expense-reimbursement-packet-ar.svg",
@@ -44,8 +48,8 @@
       "افصل عملة الشراء عن عملة الاسترداد"
     ],
     "ar": true,
-    "cta": "تصفح أدلة الأعمال العملية",
-    "href": "/blog?lang=ar"
+    "cta": "جهز ملفا منظما لسجلات الشركة",
+    "href": "/blog/first-month-company-records-ar"
   },
   "client-handover-acceptance-boundary": {
     "image": "/article-art/client-handover-acceptance-boundary.svg",
@@ -56,8 +60,8 @@
       "Make the test observable"
     ],
     "ar": false,
-    "cta": "Browse practical business guides",
-    "href": "/blog"
+    "cta": "Record a change request before extra work",
+    "href": "/blog/business-change-request-record"
   },
   "client-handover-acceptance-boundary-ar": {
     "image": "/article-art/client-handover-acceptance-boundary-ar.svg",
@@ -68,7 +72,7 @@
       "اجعل الفحص قابلا للملاحظة"
     ],
     "ar": true,
-    "cta": "تصفح أدلة الأعمال العملية",
-    "href": "/blog?lang=ar"
+    "cta": "سجل طلب التغيير قبل العمل الإضافي",
+    "href": "/blog/business-change-request-record-ar"
   }
 }
