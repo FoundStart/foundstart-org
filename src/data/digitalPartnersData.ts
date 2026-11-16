@@ -234,9 +234,9 @@ export const digitalPartnersData: DigitalPartner[] = [
   {
     "category": "Business Automation",
     "platform": "Albato",
-    "url": "https://shortet.com/Albato",
-    "niche": "Automate smarter with no-code and AI",
-    "coupon": "GIMME20%OFF"
+    "url": "https://shortet.com/Xo",
+    "niche": "Embedded integrations and connected AI-agent workflows for software products",
+    "coupon": ""
   },
   {
     "category": "Business Automation",
