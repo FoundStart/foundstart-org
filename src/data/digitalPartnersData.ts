@@ -240,9 +240,9 @@ export const digitalPartnersData: DigitalPartner[] = [
   },
   {
     "category": "Business Automation",
-    "platform": "Relay",
-    "url": "https://shortet.com/Relay",
-    "niche": "Build AI agents",
+    "platform": "Relay (closed September 2026)",
+    "url": "https://www.relay.app/",
+    "niche": "Closed September 2026. Official closure notice, not an available service.",
     "coupon": ""
   },
   {

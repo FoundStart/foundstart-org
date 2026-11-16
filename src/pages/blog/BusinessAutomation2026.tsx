@@ -48,7 +48,7 @@ const AUTOMATION: Partner[] = [
   { name: 'Scispace', url: 'https://shortet.com/Scispace', description: 'AI researcher agent.' },
   { name: 'Ottokit', url: 'https://shortet.com/Ottokit', description: 'Build automations fast.' },
   { name: 'Albato', url: 'https://shortet.com/Albato', coupon: 'GIMME20%OFF', description: 'Automate smarter with no-code and AI.' },
-  { name: 'Relay', url: 'https://shortet.com/Relay', description: 'Build AI agents.' },
+  { name: 'Relay (closed)', url: 'https://www.relay.app/', description: 'Relay.app shut down in September 2026 according to its official notice. This link is a closure notice, not an available service.' },
   { name: 'GHL (GoHighLevel)', url: 'https://shortet.com/GHL', description: 'All-in-one marketing automation platform.' },
   { name: 'Axiom', url: 'https://shortet.com/Axiom', description: 'Browser automation platform.' },
   { name: 'Wiza', url: 'https://shortet.com/Wiza', description: 'Lead-data automation platform.' },

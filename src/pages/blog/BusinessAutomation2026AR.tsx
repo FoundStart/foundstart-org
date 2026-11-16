@@ -48,7 +48,7 @@ const AUTOMATION: Partner[] = [
   { name: 'Scispace', url: 'https://shortet.com/Scispace', description: 'وكيل بحث علمي بالذكاء الاصطناعي.' },
   { name: 'Ottokit', url: 'https://shortet.com/Ottokit', description: 'بناء أتمتة العمليات بسرعة.' },
   { name: 'Albato', url: 'https://shortet.com/Albato', coupon: 'GIMME20%OFF', description: 'أتمتة أكثر ذكاءً باستخدام الأدوات بدون كود والذكاء الاصطناعي.' },
-  { name: 'Relay', url: 'https://shortet.com/Relay', description: 'بناء وكلاء الذكاء الاصطناعي.' },
+  { name: 'Relay (متوقف)', url: 'https://www.relay.app/', description: 'أغلق Relay.app في سبتمبر 2026 بحسب إعلانه الرسمي. الرابط لقراءة إشعار الإغلاق، وليس لبدء استخدام الخدمة.' },
   { name: 'GHL (GoHighLevel)', url: 'https://shortet.com/GHL', description: 'منصة أتمتة التسويق الشاملة.' },
   { name: 'Axiom', url: 'https://shortet.com/Axiom', description: 'منصة أتمتة المتصفح.' },
   { name: 'Wiza', url: 'https://shortet.com/Wiza', description: 'منصة أتمتة بيانات العملاء المحتملين.' },
