@@ -1,3 +1,4 @@
+import ContentRouteBoundary from './components/ContentRouteBoundary';
 import type { ReactNode } from "react";
 import DarkLoader from "@/components/DarkLoader";
 import { Toaster } from "@/components/ui/toaster";
@@ -162,7 +163,7 @@ function App() {
                 <AffiliateTrackerMount />
                 <AdSenseLoader />
                 <HealthCheckBanner />
-                <Suspense fallback={<DarkLoader />}><Routes>
+                <ContentRouteBoundary><Suspense fallback={<DarkLoader />}><Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/countries" element={<Countries />} />
                   <Route path="/country/:countryId" element={<CountryPage />} />
@@ -246,7 +247,7 @@ function App() {
                   <Route path="/pay-test-q8m3x" element={<PayTest />} />
                   <Route path="/settings/integrations" element={<IntegrationSettings />} />
                   <Route path="*" element={<NotFound />} />
-                </Routes></Suspense>
+                </Routes></Suspense></ContentRouteBoundary>
                 <Suspense fallback={null}><FormationHelper /></Suspense>
                 <PartnerPagesOnly><Suspense fallback={null}><PartnerAdsHub /></Suspense></PartnerPagesOnly>
                 <OutboundUtmTagger />
