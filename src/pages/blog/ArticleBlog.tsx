@@ -1,3 +1,4 @@
+import { ArticleFigure, ArticleNextSteps, LinkedText, linkifyHtml } from '@/lib/article-quality';
 import React, { useEffect } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useParams, Link, Navigate } from 'react-router-dom';
@@ -72,7 +73,7 @@ const ArticleBlog: React.FC = () => {
             <div className="container mx-auto max-w-4xl">
               <Link to="/blog" className="inline-flex items-center text-primary hover:underline mb-6">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Blog
+                {isAr ? "العودة إلى المدونة" : "Back to Blog"}
               </Link>
 
               <Badge className="mb-4">{content.category}</Badge>
@@ -105,6 +106,7 @@ const ArticleBlog: React.FC = () => {
           {/* Content Section */}
           <section className="py-12 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-4xl">
+              <ArticleFigure id={slug || ""} />
               {content.heroImage && (
                 <img
                   src={content.heroImage}
@@ -116,18 +118,19 @@ const ArticleBlog: React.FC = () => {
 
               <div
                 className="prose prose-lg dark:prose-invert max-w-none prose-img:rounded-xl prose-a:text-primary"
-                dangerouslySetInnerHTML={{ __html: content.html }}
+                dangerouslySetInnerHTML={{ __html: linkifyHtml(content.html) }}
               />
 
+              <ArticleNextSteps id={slug || ""} />
               {/* CTA Section */}
               <div className="mt-12 rounded-xl border bg-gradient-to-r from-primary/10 to-purple-500/10 p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Explore More Guides</h3>
+                <h3 className="text-2xl font-bold mb-4">{isAr ? "استكشف المزيد من الأدلة" : "Explore More Guides"}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Browse the full FoundStart blog library for more practical guides.
+                  {isAr ? "تصفح مكتبة FoundStart لمزيد من الأدلة العملية." : "Browse the full FoundStart blog library for more practical guides."}
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/blog">
-                    Back to the Blog
+                    {isAr ? "العودة إلى المدونة" : "Back to the Blog"}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </Button>
@@ -135,7 +138,7 @@ const ArticleBlog: React.FC = () => {
 
               {/* Related Posts */}
               <div className="mt-12">
-                <h3 className="text-xl font-bold mb-6">Related Articles</h3>
+                <h3 className="text-xl font-bold mb-6">{isAr ? "مقالات ذات صلة" : "Related Articles"}</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {related.map((relatedSlug) => {
                     const rel = shortetArticles[relatedSlug];

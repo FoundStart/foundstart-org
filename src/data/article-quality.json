@@ -1,0 +1,74 @@
+{
+  "invoice-correction-version-record": {
+    "image": "/article-art/invoice-correction-version-record.svg",
+    "title": "Correct an invoice without losing the payment trail",
+    "steps": [
+      "Identify the mistake before making a new copy",
+      "Check the required correction route",
+      "Reconcile money already received"
+    ],
+    "ar": false,
+    "cta": "Browse practical business guides",
+    "href": "/blog"
+  },
+  "invoice-correction-version-record-ar": {
+    "image": "/article-art/invoice-correction-version-record-ar.svg",
+    "title": "صحح الفاتورة دون فقد مسار الدفع",
+    "steps": [
+      "حدد الخطأ قبل إنشاء نسخة جديدة",
+      "راجع مسار التصحيح المطلوب",
+      "طابق المبالغ المستلمة بالفعل"
+    ],
+    "ar": true,
+    "cta": "تصفح أدلة الأعمال العملية",
+    "href": "/blog?lang=ar"
+  },
+  "business-expense-reimbursement-packet": {
+    "image": "/article-art/business-expense-reimbursement-packet.svg",
+    "title": "Prepare an expense reimbursement without exposing the whole account",
+    "steps": [
+      "Start with the business purpose",
+      "Match one claim to one record",
+      "Separate purchase currency from reimbursement"
+    ],
+    "ar": false,
+    "cta": "Browse practical business guides",
+    "href": "/blog"
+  },
+  "business-expense-reimbursement-packet-ar": {
+    "image": "/article-art/business-expense-reimbursement-packet-ar.svg",
+    "title": "جهز طلب استرداد مصروف دون كشف الحساب كله",
+    "steps": [
+      "ابدأ بسبب المصروف",
+      "طابق الطلب بسجل محدد",
+      "افصل عملة الشراء عن عملة الاسترداد"
+    ],
+    "ar": true,
+    "cta": "تصفح أدلة الأعمال العملية",
+    "href": "/blog?lang=ar"
+  },
+  "client-handover-acceptance-boundary": {
+    "image": "/article-art/client-handover-acceptance-boundary.svg",
+    "title": "Define what the client is accepting at handover",
+    "steps": [
+      "Name the deliverable, not the project",
+      "Separate review from approval",
+      "Make the test observable"
+    ],
+    "ar": false,
+    "cta": "Browse practical business guides",
+    "href": "/blog"
+  },
+  "client-handover-acceptance-boundary-ar": {
+    "image": "/article-art/client-handover-acceptance-boundary-ar.svg",
+    "title": "حدد ما يقبله العميل عند التسليم",
+    "steps": [
+      "سم المخرج لا المشروع",
+      "افصل المراجعة عن الموافقة",
+      "اجعل الفحص قابلا للملاحظة"
+    ],
+    "ar": true,
+    "cta": "تصفح أدلة الأعمال العملية",
+    "href": "/blog?lang=ar"
+  }
+}
