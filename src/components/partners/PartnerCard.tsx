@@ -1,3 +1,4 @@
+import QuillBotStatus from '@/components/partners/QuillBotStatus';
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -51,6 +52,7 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
           {partner.niche && (
             <p className="text-xs text-muted-foreground line-clamp-2 mt-1">{partner.niche}</p>
           )}
+          <QuillBotStatus name={partner.platform} />
         </CardHeader>
         <CardContent className="pt-0">
           <Button

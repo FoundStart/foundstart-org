@@ -1,3 +1,4 @@
+import QuillBotStatus from '@/components/partners/QuillBotStatus';
 import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -72,6 +73,7 @@ const AllPartners = () => {
                       <Link key={p.slug} to={`/partner/${p.slug}`} className="rounded-lg border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-md">
                         <div className="font-semibold" dir="ltr" style={{ textAlign: isRTL ? 'right' : 'left' }}>{p.name}</div>
                         {p.niche && <p className="mt-1 text-xs text-muted-foreground line-clamp-2" dir="ltr" style={{ textAlign: isRTL ? 'right' : 'left' }}>{p.niche}</p>}
+                        <QuillBotStatus name={p.name} />
                       </Link>
                     ))}
                   </div>

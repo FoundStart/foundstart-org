@@ -1,3 +1,4 @@
+import QuillBotStatus from '@/components/partners/QuillBotStatus';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -50,6 +51,7 @@ const PartnerPreviewModal = ({ open, onOpenChange, partner }: PartnerPreviewModa
           {partner.category && <Badge variant="secondary">{partner.category}</Badge>}
           {partner.niche && <p className="text-sm text-muted-foreground">{partner.niche}</p>}
 
+          <QuillBotStatus name={partner.platform} />
           {partner.coupon && (
             <div className="flex items-center gap-2 p-3 border-2 border-dashed border-primary/40 rounded-lg bg-primary/5">
               <span className="text-xs text-muted-foreground">Coupon:</span>

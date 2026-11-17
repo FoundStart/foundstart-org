@@ -1,3 +1,4 @@
+import QuillBotStatus from '@/components/partners/QuillBotStatus';
 import { Helmet } from 'react-helmet-async';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Tag } from 'lucide-react';
@@ -41,6 +42,7 @@ const PartnerDetail = () => {
                 {p.niche && <div><dt className="text-muted-foreground">{L('What it does', 'ماذا يقدم')}</dt><dd className="font-medium" dir="ltr" style={{ textAlign: isRTL ? 'right' : 'left' }}>{p.niche}</dd></div>}
                 {p.language && <div><dt className="text-muted-foreground">{L('Language', 'اللغة')}</dt><dd className="font-medium">{p.language === 'Arabic' ? L('Arabic', 'العربية') : p.language}</dd></div>}
               </dl>
+              <QuillBotStatus name={p.name} />
               {p.coupon && (
                 <div className="flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm">
                   <Tag className="w-4 h-4 text-primary" />
