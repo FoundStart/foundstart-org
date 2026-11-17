@@ -2,3 +2,7 @@
 
 /* Compact unique stacks. Keep provider conditions visible, never repeat cards to fill length. */
 .fs-partner-tile{gap:6px;padding:11px 10px;border-radius:10px;border-top-width:3px}.fs-partner-brand{font-size:20px}.fs-partner-tile strong{font-size:12px;line-height:1.55}.fs-partner-copy{font-size:10px;line-height:1.65}.fs-partner-note{font-size:9px;line-height:1.6}.fs-partner-link{font-size:10px;padding:8px 5px}.fs-partner-disclosure{font-size:8px;line-height:1.5}.fs-partner-adlabel{font-size:8px}.fs-partner-mobile-lead{gap:6px}.fs-partner-compact{padding:11px 9px;gap:6px}.fs-partner-compact .fs-partner-brand{font-size:18px}
+
+/* Preserve one unique stack, six-pixel gaps and footer bounds. */
+@media(min-width:1280px){.fs-partner-rail{display:block;overflow:clip}.fs-partner-stack{display:grid;gap:6px;grid-auto-rows:max-content;align-content:start;align-items:start;will-change:transform}}
+@media(min-width:1280px) and (prefers-reduced-motion:reduce){.fs-partner-rail{overflow-y:auto;scrollbar-width:thin}.fs-partner-stack{will-change:auto}}
