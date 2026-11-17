@@ -1,4 +1,28 @@
 {
+  "service-scope-assumptions-before-quote": {
+    "image": "/article-art/service-scope-assumptions-before-quote.svg",
+    "title": "What your service quote assumes, and why it matters",
+    "steps": [
+      "Separate facts from assumptions",
+      "Show the price-changing conditions",
+      "Compare the same inputs"
+    ],
+    "ar": false,
+    "cta": "Compare the line items in a formation quote",
+    "href": "/blog/compare-formation-quotes-line-by-line"
+  },
+  "service-scope-assumptions-before-quote-ar": {
+    "image": "/article-art/service-scope-assumptions-before-quote-ar.svg",
+    "title": "افتراضات عرض الخدمة: ما الذي يتوقف عليه السعر؟",
+    "steps": [
+      "افصل الحقائق عن الافتراضات",
+      "وضح ما قد يغير السعر",
+      "قارن المدخلات نفسها"
+    ],
+    "ar": true,
+    "cta": "راجع بنود عرض تأسيس شركة",
+    "href": "/blog/compare-formation-quotes-line-by-line-ar"
+  },
   "invoice-correction-version-record": {
     "image": "/article-art/invoice-correction-version-record.svg",
     "title": "Correct an invoice without losing the payment trail",

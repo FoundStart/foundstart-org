@@ -52,16 +52,8 @@ const ArticleBlog: React.FC = () => {
         <meta property="og:description" content={content.description} />
         <meta property="og:type" content="article" />
         <link rel="canonical" href={`https://www.foundstart.org/blog/${slug}`} />
-        {(() => {
-          const enSlug = isAr ? slug!.slice(0, -3) : slug!;
-          const arSlug = isAr ? slug! : `${slug}-ar`;
-          return shortetArticles[enSlug] && shortetArticles[arSlug] ? (
-            <>
-              <link rel="alternate" hrefLang="en" href={`https://www.foundstart.org/blog/${enSlug}`} />
-              <link rel="alternate" hrefLang="ar" href={`https://www.foundstart.org/blog/${arSlug}`} />
-            </>
-          ) : null;
-        })()}
+        <link rel="alternate" hrefLang="en" href={`https://www.foundstart.org/blog/${isAr ? slug!.slice(0,-3) : slug}`} />
+        <link rel="alternate" hrefLang="ar" href={`https://www.foundstart.org/blog/${isAr ? slug : slug+'-ar'}`} />
         {content.heroImage && <meta property="og:image" content={`https://www.foundstart.org${content.heroImage}`} />}
       </Helmet>
 
