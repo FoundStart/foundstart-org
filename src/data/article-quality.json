@@ -1,4 +1,28 @@
 {
+  "project-pause-handover-deliverables": {
+    "image": "/article-art/project-pause-handover-deliverables.svg",
+    "title": "Pause a supplier project without losing the work already done",
+    "steps": [
+      "Separate a pause from a cancellation",
+      "List the completed and unfinished outputs",
+      "Agree what continues during the pause"
+    ],
+    "ar": false,
+    "cta": "Separate delivery from acceptance",
+    "href": "/blog/client-handover-acceptance-boundary"
+  },
+  "project-pause-handover-deliverables-ar": {
+    "image": "/article-art/project-pause-handover-deliverables-ar.svg",
+    "title": "أوقف مشروع المورد مؤقتا دون ضياع العمل المنجز",
+    "steps": [
+      "افصل التوقف المؤقت عن الإلغاء",
+      "احصر المخرجات المكتملة وغير المكتملة",
+      "اتفق على ما يستمر أثناء التوقف"
+    ],
+    "ar": true,
+    "cta": "افصل التسليم عن القبول",
+    "href": "/blog/client-handover-acceptance-boundary-ar"
+  },
   "service-scope-assumptions-before-quote": {
     "image": "/article-art/service-scope-assumptions-before-quote.svg",
     "title": "What your service quote assumes, and why it matters",
