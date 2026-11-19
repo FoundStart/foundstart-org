@@ -1,4 +1,28 @@
 {
+  "supplier-proposal-revision-comparison": {
+    "image": "/article-art/supplier-proposal-revision-comparison.svg",
+    "title": "Compare a revised supplier proposal without losing the original agreement",
+    "steps": [
+      "Identify the version you are comparing",
+      "Follow what disappeared as well as what was added",
+      "Compare obligations, not just prices"
+    ],
+    "ar": false,
+    "cta": "Check the assumptions behind the quote",
+    "href": "/blog/service-scope-assumptions-before-quote"
+  },
+  "supplier-proposal-revision-comparison-ar": {
+    "image": "/article-art/supplier-proposal-revision-comparison-ar.svg",
+    "title": "قارن عرض المورد المعدل دون أن تضيع تفاصيل الاتفاق الأصلي",
+    "steps": [
+      "حدد النسخة التي تقارنها",
+      "راجع المحذوف مثل المضاف",
+      "قارن الالتزامات لا الأسعار وحدها"
+    ],
+    "ar": true,
+    "cta": "راجع افتراضات عرض الخدمة",
+    "href": "/blog/service-scope-assumptions-before-quote-ar"
+  },
   "project-pause-handover-deliverables": {
     "image": "/article-art/project-pause-handover-deliverables.svg",
     "title": "Pause a supplier project without losing the work already done",
