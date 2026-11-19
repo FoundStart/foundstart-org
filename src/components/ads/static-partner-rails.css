@@ -6,3 +6,7 @@
 /* Preserve one unique stack, six-pixel gaps and footer bounds. */
 @media(min-width:1280px){.fs-partner-rail{display:block;overflow:clip}.fs-partner-stack{display:grid;gap:6px;grid-auto-rows:max-content;align-content:start;align-items:start;will-change:transform}}
 @media(min-width:1280px) and (prefers-reduced-motion:reduce){.fs-partner-rail{overflow-y:auto;scrollbar-width:thin}.fs-partner-stack{will-change:auto}}
+
+/* Three owner-selected lead partners stay visible without opening More. */
+.fs-partner-featured>.fs-partner-tile:last-child{grid-column:1/-1}
+@media(min-width:640px) and (max-width:1279px){.fs-partner-featured{grid-template-columns:repeat(3,minmax(0,1fr))}.fs-partner-featured>.fs-partner-tile:last-child{grid-column:auto}}
