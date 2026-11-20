@@ -32,16 +32,16 @@ const Header = () => {
   }, []);
 
   const domainsDropdownItems = [
-    { name: "Premium Domains", href: '/domains' },
-    { name: "Domain Marketplace", href: '/domains#marketplace' },
+    { name: language === 'ar' ? 'دومينات مميزة' : 'Premium Domains', href: '/domains' },
+    { name: language === 'ar' ? 'سوق الدومينات' : 'Domain Marketplace', href: '/domains#marketplace' },
   ];
 
   const navigationItems = [
-    { name: "Services", href: '/services' },
+    { name: language === 'ar' ? 'الخدمات' : 'Services', href: '/services' },
     { name: language === 'ar' ? "سابقة الأعمال" : "Portfolio", href: '/portfolio' },
     { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
     { name: language === 'ar' ? "التعلم" : "Learning", href: '/learning' },
-    { name: "Pricing", href: '/pricing-calculator' },
+    { name: language === 'ar' ? 'الأسعار' : 'Pricing', href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },
   ];
@@ -57,12 +57,12 @@ const Header = () => {
   const mobileItems = [
     { name: language === 'ar' ? "الدول" : "Countries", href: '/countries' },
     { name: language === 'ar' ? "التأسيس عبر لوحة FoundStart" : "Formation Dashboard", href: '/dashboard/formation' },
-    { name: "Services", href: '/services' },
+    { name: language === 'ar' ? 'الخدمات' : 'Services', href: '/services' },
     { name: language === 'ar' ? "سابقة الأعمال" : "Portfolio", href: '/portfolio' },
     { name: language === 'ar' ? "الأدلة" : "Guides", href: '/guides' },
     { name: language === 'ar' ? "التعلم" : "Learning", href: '/learning' },
-    { name: "Premium Domains", href: '/domains' },
-    { name: "Pricing", href: '/pricing-calculator' },
+    { name: language === 'ar' ? 'دومينات مميزة' : 'Premium Domains', href: '/domains' },
+    { name: language === 'ar' ? 'الأسعار' : 'Pricing', href: '/pricing-calculator' },
     { name: t.blog, href: '/blog' },
     { name: t.contact, href: '/contact-sales' },
   ];
@@ -81,14 +81,17 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav 
-            className={`hidden lg:flex items-center space-x-2 xl:space-x-4 ${isRTL ? 'space-x-reverse mx-3 xl:mx-6' : 'mx-3 xl:mx-6'}`}
+            className="hidden lg:flex items-center gap-2 xl:gap-4 mx-3 xl:mx-6"
             role="navigation"
             aria-label="Main navigation"
           >
+            <Link to="/countries" className="text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap" aria-current={location.pathname === '/countries' ? 'page' : undefined}>
+              {language === 'ar' ? 'الدول' : 'Countries'}
+            </Link>
             {/* Domains Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-xs xl:text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap outline-none">
-                Domains
+                {language === 'ar' ? 'الدومينات' : 'Domains'}
                 <ChevronDown className="ml-1 h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-48">
