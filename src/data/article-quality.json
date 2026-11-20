@@ -1,4 +1,28 @@
 {
+  "supplier-reimbursable-cost-approval": {
+    "image": "/article-art/supplier-reimbursable-cost-approval.svg",
+    "title": "Agree reimbursable supplier costs before they appear on an invoice",
+    "steps": [
+      "Separate the service from its expenses",
+      "Set the approval boundary",
+      "Ask what supports the charge"
+    ],
+    "ar": false,
+    "cta": "Compare the revised supplier proposal",
+    "href": "/blog/supplier-proposal-revision-comparison"
+  },
+  "supplier-reimbursable-cost-approval-ar": {
+    "image": "/article-art/supplier-reimbursable-cost-approval-ar.svg",
+    "title": "اتفق على مصروفات المورد المستردة قبل ظهورها في الفاتورة",
+    "steps": [
+      "افصل الخدمة عن مصروفاتها",
+      "حدد حدود الموافقة",
+      "اطلب ما يثبت المصروف"
+    ],
+    "ar": true,
+    "cta": "قارن عرض المورد المعدل",
+    "href": "/blog/supplier-proposal-revision-comparison-ar"
+  },
   "supplier-proposal-revision-comparison": {
     "image": "/article-art/supplier-proposal-revision-comparison.svg",
     "title": "Compare a revised supplier proposal without losing the original agreement",
