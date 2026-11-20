@@ -253,7 +253,7 @@ const BulkDomainInquiry = () => {
             <span className="font-medium text-green-600">WhatsApp</span>
           </a>
           <a 
-            href="mailto:momo@foundstart.org"
+            href="mailto:info@foundstart.org"
             className="flex items-center justify-center gap-2 p-4 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors touch-manipulation"
           >
             <Mail className="w-5 h-5 text-primary" />

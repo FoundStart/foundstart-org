@@ -165,7 +165,7 @@ const DomainWishlist = () => {
                           </a>
                         </Button>
                         <Button variant="outline" size="sm" className="flex-1" asChild>
-                          <a href="mailto:momo@foundstart.org">
+                          <a href="mailto:info@foundstart.org">
                             <Mail className="w-4 h-4" />
                           </a>
                         </Button>

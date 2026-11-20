@@ -146,7 +146,7 @@ const DigitalServices = () => {
                 <Button type="submit" className="w-full" disabled={sending}><Send className="w-4 h-4 mx-2" />{isRTL ? 'إرسال' : 'Send'}</Button>
               </form>
               <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center text-sm">
-                <a className="flex items-center gap-2 text-primary hover:underline" href="mailto:Momo@foundstart.org"><Mail className="w-4 h-4" />Momo@foundstart.org</a>
+                <a className="flex items-center gap-2 text-primary hover:underline" href="mailto:info@foundstart.org"><Mail className="w-4 h-4" />info@foundstart.org</a>
                 <a className="flex items-center gap-2 text-primary hover:underline" href={waLink(isRTL)} target="_blank" rel="noopener noreferrer"><MessageCircle className="w-4 h-4" /><span dir="ltr">WhatsApp +20 100 290 5764</span></a>
               </div>
               <p className="text-xs text-muted-foreground text-center mt-4">{isRTL ? 'الأسعار بتتحدد لكل مشروع.' : 'Prices are quoted per project.'}</p>

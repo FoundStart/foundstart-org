@@ -247,7 +247,7 @@ const DomainInquiry = () => {
                   </a>
 
                   <a 
-                    href="mailto:momo@foundstart.org"
+                    href="mailto:info@foundstart.org"
                     className="flex items-center gap-3 p-3 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
                   >
                     <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
@@ -255,7 +255,7 @@ const DomainInquiry = () => {
                     </div>
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-sm text-muted-foreground">momo@foundstart.org</p>
+                      <p className="text-sm text-muted-foreground">info@foundstart.org</p>
                     </div>
                   </a>
                 </CardContent>

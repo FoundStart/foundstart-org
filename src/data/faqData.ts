@@ -27,8 +27,8 @@ export const faqCategories: FaqCategory[] = [
         qAr: 'هل FoundStart مكتب محاماة أو مستشار ضرائب؟', aAr: 'لا. FoundStart خدمة تأسيس شركات. لا شيء في هذا الموقع يُعد استشارة قانونية أو ضريبية. لقرارات تخص وضعك، استشر محامياً أو محاسباً مرخصاً.' },
       { q: 'Is the website available in Arabic?', a: `Yes. The whole site and your dashboard are available in English and Arabic. Use the language button in the header.`,
         qAr: 'هل الموقع متاح بالعربية؟', aAr: 'نعم. الموقع كله ولوحة التحكم متاحان بالإنجليزية والعربية. استخدم زر اللغة في أعلى الصفحة.' },
-      { q: 'How can I contact FoundStart?', a: `Use the Contact page, WhatsApp, or email momo@foundstart.org.`,
-        qAr: 'كيف أتواصل مع FoundStart؟', aAr: 'استخدم صفحة تواصل معنا أو واتساب أو البريد momo@foundstart.org.' },
+      { q: 'How can I contact FoundStart?', a: `Use the Contact page, WhatsApp, or email info@foundstart.org.`,
+        qAr: 'كيف أتواصل مع FoundStart؟', aAr: 'استخدم صفحة تواصل معنا أو واتساب أو البريد info@foundstart.org.' },
     ],
   },
   {

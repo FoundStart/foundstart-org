@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 
-const SALES_EMAIL = 'momo@foundstart.org';
+const SALES_EMAIL = 'info@foundstart.org';
 
 const ContactSales = () => {
   const navigate = useNavigate();

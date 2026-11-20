@@ -106,7 +106,7 @@ const MobileDomainCard = ({
           </a>
         </Button>
         <Button variant="outline" size="icon" className="h-10 w-10 touch-manipulation" asChild>
-          <a href="mailto:momo@foundstart.org">
+          <a href="mailto:info@foundstart.org">
             <Mail className="w-4 h-4" />
           </a>
         </Button>
