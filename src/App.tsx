@@ -208,9 +208,6 @@ function App() {
                   <Route path="/blog/uk-vs-us-company-formation-ar" element={<Navigate to="/blog" replace />} />
                   {["marketing-agency-usa","marketing-agency-usa-ar","digital-agency-uk","digital-agency-uk-ar"].map((sl) => <Route key={sl} path={`/blog/${sl}`} element={<Navigate to="/blog" replace />} />)}
                   <Route path="/blog/egypt-one-person-company" element={<EgyptOnePersonCompanyEN />} />
-                  {/* Temporarily withheld pending factual and promotion review. Source retained in commit 1252113. */}
-                  <Route path="/blog/virtual-cards-egypt-egp-guide-founders" element={<Navigate to="/blog" replace />} />
-                  <Route path="/blog/virtual-cards-egypt-egp-guide-founders-ar" element={<Navigate to="/blog" replace />} />
                   <Route path="/blog/:slug" element={<BlogSlugDispatcher />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/media" element={<Media />} />

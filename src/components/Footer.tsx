@@ -39,20 +39,6 @@ const Footer = ({ hideExchangeRateNotice = false }: { hideExchangeRateNotice?: b
       { name: L("All Countries", "كل الدول"), href: "/countries" }
     ]
   }, {
-    title: L("Products", "منتجاتنا"),
-    links: [
-      { name: 'Namelizer', href: 'https://namelizer.com', external: true },
-      { name: 'HeyKeyword', href: 'https://heykeyword.com', external: true },
-      { name: 'Shortet', href: 'https://shortet.com', external: true },
-      { name: 'ClotheCart', href: 'https://clothecart.com', external: true },
-      { name: 'Cartgy', href: 'https://cartgy.com', external: true },
-      { name: 'Tafsirly', href: 'https://tafsirly.com', external: true },
-      { name: 'YesShoot', href: 'https://yesshoot.com', external: true },
-      { name: 'Toolstogethers', href: 'https://toolstogethers.com', external: true },
-      { name: 'Hosstec', href: 'https://hosstec.com', external: true }
-      ,{ name: L('Launch your shop', 'ابدأ متجرك'), href: 'https://link.fourthwall.com/join/cartgy', external: true, rel: 'nofollow sponsored' }
-    ]
-  }, {
     title: L("Resources", "المصادر"),
     links: [
       { name: L("Blog", "المدونة"), href: "/blog" },
@@ -80,7 +66,7 @@ const Footer = ({ hideExchangeRateNotice = false }: { hideExchangeRateNotice?: b
     <footer className="bg-card border-t border-border">
 <div className="container mx-auto px-4"><ExchangeRateNotice /></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <span className="flex items-center gap-2"><img src="/logo-mark.png" alt="FoundStart logo" className="h-7 w-auto" /><span className="text-lg font-bold gradient-text">FoundStart</span></span>
@@ -95,9 +81,9 @@ const Footer = ({ hideExchangeRateNotice = false }: { hideExchangeRateNotice?: b
           </div>
 
           {footerSections.map((section, index) => (
-            <div key={index} className={section.title === L("Products", "منتجاتنا") ? "md:col-span-2" : ""}>
+            <div key={index}>
               <h4 className="font-semibold mb-4">{section.title}</h4>
-              <ul className={section.title === L("Products", "منتجاتنا") ? "grid grid-cols-2 gap-x-4 gap-y-2" : "space-y-2"}>
+              <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {(link as any).external ? (

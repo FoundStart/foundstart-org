@@ -1,3 +1,4 @@
+import FormationInfoVideo from '@/components/FormationInfoVideo';
 import { countryPartnerEmptyState } from '@/data/countryPartnerEmptyState';
 import OwnedVideoPlayer, { ownedVideoSource } from "@/components/OwnedVideoPlayer";
 import { useState } from 'react';
@@ -58,11 +59,13 @@ const HomeTwoOptions = ({ language, isRTL }: { language: string; isRTL: boolean 
         {mode === 'partners' ? (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
             {partnerRows(ar).map((r) => (
-              <div key={r.id} className="rounded-xl border bg-card p-5 space-y-3">
+              <div key={r.id} data-country-card={r.id} className="rounded-xl border bg-card p-5 space-y-3">
                 <h3 className="font-semibold text-lg">{r.flag} {r.name}</h3>
                 {r.partners.length === 0 ? (
                   <div className="space-y-3">
                     <p className="text-sm text-muted-foreground">{countryPartnerEmptyState(r, ar)}</p>
+                    {(r.id === 'CA' || r.id === 'EG') && <FormationInfoVideo countryId={r.id} ar={ar} />}
+                    {r.id === 'EG' && <Button className="w-full h-auto min-h-10 whitespace-normal text-start" asChild><Link to={user ? formationPath : '/auth?mode=signup'} state={{redirectTo: formationPath}}>{ar ? 'سجل لدى FoundStart للتأسيس في مصر' : 'Register with FoundStart for Egypt formation'}</Link></Button>}
                     {r.id !== 'EG' && <Link className="inline-flex text-sm underline underline-offset-4" to={`/country/${r.id}`}>
                       {ar ? `معلومات عن التأسيس في ${r.name}` : `Company formation information for ${r.name}`}
                     </Link>}

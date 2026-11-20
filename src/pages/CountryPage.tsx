@@ -1,3 +1,4 @@
+import FormationInfoVideo from '@/components/FormationInfoVideo';
 import ServicePrice, { ServicePriceText } from '@/components/ServicePrice';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -84,7 +85,7 @@ const CountryPage = () => {
             </Card>
             )}
 
-            {country.offerAvailable && getCountryVideoUrl(country.id, isRTL, country.videoUrl) && (
+            {(country.id === 'CA' || country.id === 'EG') ? <FormationInfoVideo countryId={country.id} ar={isRTL} /> : country.offerAvailable && getCountryVideoUrl(country.id, isRTL, country.videoUrl) && (
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-4 text-center">{isRTL ? 'شاهد فيديو التأسيس' : 'Watch Formation Demo'}</h2>
                 <VideoThumbnail videoUrl={getCountryVideoUrl(country.id, isRTL, country.videoUrl)!} title={`${country.name} Company Formation Demo`} className="w-full h-64 md:h-96" />

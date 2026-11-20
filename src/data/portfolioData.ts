@@ -1,4 +1,6 @@
 export const portfolioProjects = [
+{"id": "dealago", "name": "Dealago", "url": "https://momosa.gumroad.com/", "category": "stores", "description": ["Our Gumroad store for ebooks on domain trading, digital products and affiliate marketing.", "متجرنا على Gumroad للكتب عن تجارة الدومينات والمنتجات الرقمية والتسويق بالأفلييت."], "image": "/portfolio/dealago.webp"},
+{"id": "etivago", "name": "EtiVago", "url": "https://www.etivago.com/", "category": "business", "description": ["Travel discovery and planning website with a public travel interface. Reloadly product sections are in sandbox, not live purchase services.", "موقع لاكتشاف الرحلات والتخطيط لها بواجهة سفر عامة. أقسام منتجات Reloadly تجريبية وليست خدمات شراء فعلية."], "image": "/portfolio/etivago.webp"},{"id": "creativoya", "name": "Creativoya", "url": "https://www.creativoya.com/", "category": "marketing", "description": ["A directory of business tools and services, including affiliate links.", "دليل لأدوات وخدمات الأعمال، يتضمن روابط أفلييت."], "image": "/portfolio/creativoya.webp"},
   {
     "id": "foundstart",
     "name": "FoundStart",
@@ -74,7 +76,7 @@ export const portfolioProjects = [
       "A link-management platform for short URLs, link-in-bio pages and QR codes.",
       "منصة لإدارة الروابط القصيرة وصفحات البايو وأكواد QR."
     ],
-    "image": "/portfolio/linkliz.webp"
+    "image": "/portfolio/linkliz-20261121.webp"
   },
   {
     "id": "laterssocial",
@@ -177,6 +179,7 @@ export const portfolioProjects = [
   }
 ];
 export const developmentProjects = [
+{"id": "zadafri", "name": "Zad afri", "url": "https://zadafri.com/", "description": ["Agricultural project with a public coming-soon page. The full platform is in development; no live investment or returns are offered here.", "مشروع زراعي له صفحة عامة قريبا. المنصة الكاملة تحت التطوير؛ لا نعرض هنا استثمارا متاحا أو عوائد."], "image": "/portfolio/zadafri.webp"},{"id": "coursaro", "name": "Coursaro", "url": "https://coursaro.com/", "description": ["Course-library and learning-space project with a public prelaunch preview. Public registration, paid enrolment and school onboarding are not open.", "مشروع لمكتبة كورسات ومساحات تعلم بنسخة عامة قبل الإطلاق. التسجيل العام والاشتراك المدفوع واستقبال المدارس غير متاحين."], "image": "/portfolio/coursaro.webp"},
   {
     "id": "ecardora",
     "name": "Ecardora",
@@ -266,3 +269,6 @@ export const soldDomainSites = [
     "image": "/portfolio/sold-mediadirect.webp"
   }
 ];
+
+// Names/status only. Owner sales table and verified subsequent sales; no buyer or payout data.
+export const soldDomainInventory = ["delago.com", "shopic.com", "mediadirect.com", "ecanso.com", "transactionizer.com", "shortoo.com", "shofic.com", "codestia.com", "caisho.com", "flowmotic.com", "coinslite.com", "tradoq.com", "chatelly.com"];

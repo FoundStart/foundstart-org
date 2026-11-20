@@ -1,4 +1,28 @@
 {
+  "virtual-cards-egypt-egp-guide-founders": {
+    "image": "/article-art/virtual-cards-egypt-egp-guide-founders.svg",
+    "title": "Virtual cards in Egypt: what founders should know from official sources (2026)",
+    "steps": [
+      "The short answer",
+      "Grey: the option with an official Egypt confirmation in our review",
+      "Local Egyptian prepaid cards are a different product"
+    ],
+    "ar": false,
+    "cta": "Browse practical business guides",
+    "href": "/blog"
+  },
+  "virtual-cards-egypt-egp-guide-founders-ar": {
+    "image": "/article-art/virtual-cards-egypt-egp-guide-founders-ar.svg",
+    "title": "البطاقات الافتراضية في مصر: ما يجب أن يعرفه المؤسسون من المصادر الرسمية (2026)",
+    "steps": [
+      "الخلاصة السريعة",
+      "جراي: الخيار الذي له تأكيد رسمي لمصر في مراجعتنا",
+      "البطاقات المصرية المحلية مسبقة الدفع منتج مختلف"
+    ],
+    "ar": true,
+    "cta": "تصفح أدلة الأعمال العملية",
+    "href": "/blog?lang=ar"
+  },
   "supplier-reimbursable-cost-approval": {
     "image": "/article-art/supplier-reimbursable-cost-approval.svg",
     "title": "Agree reimbursable supplier costs before they appear on an invoice",

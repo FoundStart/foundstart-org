@@ -98,7 +98,7 @@ const ArticleBlog: React.FC = () => {
           {/* Content Section */}
           <section className="py-12 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-4xl">
-              <ArticleFigure id={slug || ""} />
+              {!slug?.startsWith("virtual-cards-egypt-egp-guide-founders") && <ArticleFigure id={slug || ""} />}
               {content.heroImage && (
                 <img
                   src={content.heroImage}
@@ -109,7 +109,7 @@ const ArticleBlog: React.FC = () => {
               )}
 
               <div
-                className="prose prose-lg dark:prose-invert max-w-none prose-img:rounded-xl prose-a:text-primary"
+                className="prose prose-lg dark:prose-invert max-w-none prose-img:rounded-xl prose-a:text-primary [&>p]:text-lg [&>p]:leading-8"
                 dangerouslySetInnerHTML={{ __html: linkifyHtml(content.html) }}
               />
 
