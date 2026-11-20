@@ -207,40 +207,7 @@ export const developmentProjects = [
     ]
   }
 ];
-export const soldDomainSites = [
-  {
-    "id": "delago",
-    "name": "delago.com",
-    "url": "https://delago.de/",
-    "image": "/portfolio/sold-delago-20261121.webp",
-    "description": [
-      "Redirects to the delago.de personal website hub.",
-      "يعيد التوجيه إلى صفحة مواقع شخصية على delago.de."
-    ],
-    "status": "site"
-  },
-  {
-    "id": "shopic",
-    "name": "shopic.com",
-    "url": "https://shopic.com/",
-    "image": "/portfolio/sold-shopic-20261121.webp",
-    "description": [
-      "The current page advertises the domain for sale. This is a parking/sale page, not an operating website.",
-      "الصفحة الحالية بتعرض الدومين للبيع. دي صفحة عرض بيع، مش موقع لخدمة شغالة."
-    ],
-    "status": "sale"
-  },
-  {
-    "id": "mediadirect",
-    "name": "mediadirect.com",
-    "url": "http://mediadirect.com/",
-    "image": "/portfolio/sold-mediadirect-20261121.webp",
-    "description": [
-      "Marketing and design agency page. The accessible public version uses HTTP.",
-      "صفحة وكالة تسويق وتصميم. النسخة العامة المتاحة تستخدم HTTP."
-    ],
-    "status": "site"
-  },
+export const soldDomainSites =[
   {
     "id": "ecanso",
     "name": "ecanso.com",
@@ -348,6 +315,39 @@ export const soldDomainSites = [
     "description": [
       "Custom bots and AI-agents service website.",
       "موقع لخدمات البوتات ومساعدات الذكاء الاصطناعي المخصصة."
+    ],
+    "status": "site"
+  },
+  {
+    "id": "delago",
+    "name": "delago.com",
+    "url": "https://delago.de/",
+    "image": "/portfolio/sold-delago-20261121.webp",
+    "description": [
+      "Redirects to the delago.de personal website hub.",
+      "يعيد التوجيه إلى صفحة مواقع شخصية على delago.de."
+    ],
+    "status": "site"
+  },
+  {
+    "id": "shopic",
+    "name": "shopic.com",
+    "url": "https://shopic.com/",
+    "image": "/portfolio/sold-shopic-20261121.webp",
+    "description": [
+      "The current page advertises the domain for sale. This is a parking/sale page, not an operating website.",
+      "الصفحة الحالية بتعرض الدومين للبيع. دي صفحة عرض بيع، مش موقع لخدمة شغالة."
+    ],
+    "status": "sale"
+  },
+  {
+    "id": "mediadirect",
+    "name": "mediadirect.com",
+    "url": "http://mediadirect.com/",
+    "image": "/portfolio/sold-mediadirect-20261121.webp",
+    "description": [
+      "Marketing and design agency page. The accessible public version uses HTTP.",
+      "صفحة وكالة تسويق وتصميم. النسخة العامة المتاحة تستخدم HTTP."
     ],
     "status": "site"
   }
