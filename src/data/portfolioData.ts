@@ -209,64 +209,147 @@ export const developmentProjects = [
 ];
 export const soldDomainSites = [
   {
+    "id": "delago",
+    "name": "delago.com",
+    "url": "https://delago.de/",
+    "image": "/portfolio/sold-delago-20261121.webp",
+    "description": [
+      "Redirects to the delago.de personal website hub.",
+      "يعيد التوجيه إلى صفحة مواقع شخصية على delago.de."
+    ],
+    "status": "site"
+  },
+  {
+    "id": "shopic",
+    "name": "shopic.com",
+    "url": "https://shopic.com/",
+    "image": "/portfolio/sold-shopic-20261121.webp",
+    "description": [
+      "The current page advertises the domain for sale. This is a parking/sale page, not an operating website.",
+      "الصفحة الحالية بتعرض الدومين للبيع. دي صفحة عرض بيع، مش موقع لخدمة شغالة."
+    ],
+    "status": "sale"
+  },
+  {
+    "id": "mediadirect",
+    "name": "mediadirect.com",
+    "url": "http://mediadirect.com/",
+    "image": "/portfolio/sold-mediadirect-20261121.webp",
+    "description": [
+      "Marketing and design agency page. The accessible public version uses HTTP.",
+      "صفحة وكالة تسويق وتصميم. النسخة العامة المتاحة تستخدم HTTP."
+    ],
+    "status": "site"
+  },
+  {
+    "id": "ecanso",
+    "name": "ecanso.com",
+    "url": "https://ecanso.com",
+    "image": null,
+    "description": [
+      "A readable public website could not be captured during our check. No substitute preview is shown.",
+      "تعذر التقاط موقع عام قابل للقراءة وقت المراجعة. لا نعرض صورة بديلة."
+    ],
+    "status": "unavailable"
+  },
+  {
+    "id": "transactionizer",
+    "name": "transactionizer.com",
+    "url": "https://transactionizer.com",
+    "image": null,
+    "description": [
+      "A readable public website could not be captured during our check. No substitute preview is shown.",
+      "تعذر التقاط موقع عام قابل للقراءة وقت المراجعة. لا نعرض صورة بديلة."
+    ],
+    "status": "unavailable"
+  },
+  {
     "id": "shortoo",
-    "name": "Shortoo.com",
+    "name": "shortoo.com",
     "url": "https://www.shortoo.com/",
+    "image": "/portfolio/sold-shortoo-20261121.webp",
     "description": [
       "Short-drama viewing website and app landing page.",
       "موقع لمشاهدة الدراما القصيرة وصفحة للتطبيق."
     ],
-    "image": "/portfolio/sold-shortoo.webp"
+    "status": "site"
   },
   {
     "id": "shofic",
-    "name": "Shofic.com",
+    "name": "shofic.com",
     "url": "https://shofic.com/en",
+    "image": "/portfolio/sold-shofic-20261121.webp",
     "description": [
       "Social-media services website.",
       "موقع لخدمات وسائل التواصل الاجتماعي."
     ],
-    "image": "/portfolio/sold-shofic.webp"
+    "status": "site"
+  },
+  {
+    "id": "codestia",
+    "name": "codestia.com",
+    "url": "https://codestia.com",
+    "image": null,
+    "description": [
+      "A readable public website could not be captured during our check. No substitute preview is shown.",
+      "تعذر التقاط موقع عام قابل للقراءة وقت المراجعة. لا نعرض صورة بديلة."
+    ],
+    "status": "unavailable"
+  },
+  {
+    "id": "caisho",
+    "name": "caisho.com",
+    "url": "https://caisho.com",
+    "image": null,
+    "description": [
+      "A readable public website could not be captured during our check. No substitute preview is shown.",
+      "تعذر التقاط موقع عام قابل للقراءة وقت المراجعة. لا نعرض صورة بديلة."
+    ],
+    "status": "unavailable"
   },
   {
     "id": "flowmotic",
-    "name": "Flowmotic.com",
+    "name": "flowmotic.com",
     "url": "https://flowmotic.com/",
+    "image": "/portfolio/sold-flowmotic-20261121.webp",
     "description": [
       "Currently presents Automintly Content Studio, a video-repurposing product in beta.",
       "يعرض حاليًا Automintly Content Studio، منتجًا لإعادة استخدام الفيديو في مرحلة تجريبية."
     ],
-    "image": "/portfolio/sold-flowmotic.webp"
+    "status": "site"
   },
   {
     "id": "coinslite",
-    "name": "CoinsLite.com",
+    "name": "coinslite.com",
     "url": "https://www.coinslite.com/en",
+    "image": "/portfolio/sold-coinslite-20261121.webp",
     "description": [
       "Collection-record software for coins, banknotes and stamps.",
       "برنامج لتوثيق مجموعات العملات المعدنية والورقية والطوابع."
     ],
-    "image": "/portfolio/sold-coinslite.webp"
+    "status": "site"
   },
   {
-    "id": "delago",
-    "name": "Delago.com",
-    "url": "https://delago.de/",
+    "id": "tradoq",
+    "name": "tradoq.com",
+    "url": "https://tradoq.com",
+    "image": null,
     "description": [
-      "The sold domain currently redirects to a personal website hub at delago.de.",
-      "الدومين المباع يعيد التوجيه حاليًا إلى صفحة مواقع شخصية على delago.de."
+      "A readable public website could not be captured during our check. No substitute preview is shown.",
+      "تعذر التقاط موقع عام قابل للقراءة وقت المراجعة. لا نعرض صورة بديلة."
     ],
-    "image": "/portfolio/sold-delago.webp"
+    "status": "unavailable"
   },
   {
-    "id": "mediadirect",
-    "name": "MediaDirect.com",
-    "url": "http://mediadirect.com/",
+    "id": "chatelly",
+    "name": "chatelly.com",
+    "url": "https://chatelly.com/",
+    "image": "/portfolio/sold-chatelly-20261121.webp",
     "description": [
-      "A marketing and design agency website. Its current public page uses HTTP.",
-      "موقع وكالة للتسويق والتصميم. الصفحة العامة الحالية تستخدم HTTP."
+      "Custom bots and AI-agents service website.",
+      "موقع لخدمات البوتات ومساعدات الذكاء الاصطناعي المخصصة."
     ],
-    "image": "/portfolio/sold-mediadirect.webp"
+    "status": "site"
   }
 ];
 
