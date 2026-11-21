@@ -2,6 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/blog/who-is-momo",
+      "destination": "/blog/who-is-momo/index.html"
+    },
+    {
+      "source": "/blog/who-is-momo-ar",
+      "destination": "/blog/who-is-momo-ar/index.html"
+    },
+    {
       "source": "/admin/:path*",
       "destination": "/index.html"
     },

@@ -36,7 +36,7 @@ const Blog = () => {
       />
 
       <div className="w-full max-w-full px-4 sm:px-6 lg:px-8 py-16">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-7xl"><section data-momo-biography="true" style={{margin:"28px 0",padding:24,border:"1px solid #94a3b8",borderRadius:16}}><h2 style={{fontSize:24,fontWeight:700}}>Who is MoMo? Connecting business work with digital projects</h2><p>A business idea needs more than a name. It needs a clear offer, an audience and a practical route to launch. MoMo works across these areas through digital products, services, domains and web projects. His LinkedIn history connects MSA, MSA Gold Group, Deeemoz, QIMPACT Egypt and FoundStart, with overlapping roles rather than a single linear career.</p><nav style={{display:"flex",gap:24,flexWrap:"wrap"}}><a href="/blog/who-is-momo" style={{textDecoration:"underline"}}>Read in English</a><a href="/blog/who-is-momo-ar" style={{textDecoration:"underline"}}>اقرأ بالعربية</a></nav></section>
           <div>
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-2 mb-12">
