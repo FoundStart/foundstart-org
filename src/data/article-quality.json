@@ -194,5 +194,29 @@
     "ar": true,
     "cta": "سجل طلب التغيير قبل العمل الإضافي",
     "href": "/blog/business-change-request-record-ar"
+  },
+  "document-verbal-client-agreement": {
+    "image": "/article-art/document-verbal-client-agreement.svg",
+    "title": "How to Document a Verbal Client Agreement Before It Becomes a Dispute",
+    "steps": [
+      "Write the summary yourself, send it first",
+      "Silence is not agreement: set a default",
+      "Anchor the money to a milestone"
+    ],
+    "ar": false,
+    "cta": "Define what the client is accepting at handover",
+    "href": "/blog/client-handover-acceptance-boundary"
+  },
+  "document-verbal-client-agreement-ar": {
+    "image": "/article-art/document-verbal-client-agreement-ar.svg",
+    "title": "إزاي توثّق اتفاق شفوي مع عميل قبل ما يتحوّل لنزاع",
+    "steps": [
+      "اكتب الملخص بنفسك، وابعته الأول",
+      "السكوت مش موافقة، فحطّ قاعدة افتراضية",
+      "اربط الفلوس بمرحلة واضحة"
+    ],
+    "ar": true,
+    "cta": "حدد ما يقبله العميل عند التسليم",
+    "href": "/blog/client-handover-acceptance-boundary-ar"
   }
 }
