@@ -13,6 +13,17 @@ export const portfolioProjects = [
     "image": "/portfolio/foundstart.webp"
   },
   {
+    "id": "affillex",
+    "name": "Affillex",
+    "url": "https://affillex.com/",
+    "category": "marketing",
+    "description": [
+      "Affiliate marketplace connecting vendors with affiliates, in English and Arabic. Commission payouts are not yet live.",
+      "سوق للتسويق بالعمولة يربط أصحاب المنتجات بالمسوّقين، بالعربية والإنجليزية. صرف العمولات لم يبدأ بعد."
+    ],
+    "image": "/portfolio/affillex.webp"
+  },
+  {
     "id": "heykeyword",
     "name": "HeyKeyword",
     "url": "https://heykeyword.com/",
